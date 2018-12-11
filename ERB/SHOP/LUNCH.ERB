@@ -7,16 +7,16 @@ DRAWLINE
 PRINTL  □ 술집 『일각수의 모퉁이』 □
 DRAWLINE
 PRINTFORML 보통의 식사에 무언가 메뉴를 더해 심신을 알차게 하자!  (소지금:%MONEY_C(MONEY)%)
-PRINTFORML 덧붙여서 식사에 의한다체력노회복하100％를 넘습니다
-PRINTFORML 드란크 하면조교노실행치하지만 상승합니다만,술주정그러자 이상한 행동을 이따금 취합니다
-PRINTFORML （우단의[해설]를 클릭or식사의 명칭을 입력하는 것으로 해설을ON/OFF할 수 있습니다）
+PRINTFORML 덧붙여서 식사에 의한 체력의 회복은 100％를 넘습니다
+PRINTFORML 마시면 조교의 실행치가 상승합니다만, 술주정이나 이상한 행동을 이따금 취합니다
+PRINTFORML （우단의 [해설]을 클릭or식사의 명칭을 입력하는 것으로 해설을 ON/OFF할 수 있습니다）
 ;食器で회복量UP
 IF ITEM:미스릴스푼
-	PRINTFORML 미스릴스푼를 소지하고 있으므로,체력＆정력회복효과가60％높아지고 있습니다.
+	PRINTFORML 미스릴스푼을 소지하고 있으므로, 체력＆정력회복효과가 60％ 높아지고 있습니다.
 ELSEIF ITEM:은스푼
-	PRINTFORML 은스푼를 소지하고 있으므로,체력＆정력회복효과가40％높아지고 있습니다.
+	PRINTFORML 은스푼을 소지하고 있으므로, 체력＆정력회복효과가 40％ 높아지고 있습니다.
 ELSEIF ITEM:도자기스푼
-	PRINTFORML 도자기스푼를 소지하고 있으므로,체력＆정력회복효과20％높아지고 있습니다.
+	PRINTFORML 도자기스푼울 소지하고 있으므로, 체력＆정력회복효과 20％ 높아지고 있습니다.
 ENDIF
 
 CALL EAT_LUNCH_BUY
@@ -33,14 +33,14 @@ PRINTFORM  [ 0] %"시프리샌드", 24, LEFT% ＄９０ %TEXT_LJ("체력小회�
 PRINTBUTTON "[해설]", "시프리샌드"
 PRINTL 
 SIF GETBIT(FLAG:41, 0)
-	CALL PRINTL_COLORTEXT, "　　　チーズとたっぷりの玉ネギを乗せたシプリ名物オープンサンド", DEF_COLOR("황색")
+	CALL PRINTL_COLORTEXT, " 치즈와 충분한 양파를 실은 시프리 명물 오픈 샌드", DEF_COLOR("황색")
 PRICE:0 = 90
 
 PRINTFORM  [ 1] %"마운틴스테이크", 24, LEFT% ＄９０ %TEXT_LJ("체력中회복", 33)%
 PRINTBUTTON "[해설]", "마운틴스테이크"
 PRINTL 
 SIF GETBIT(FLAG:41, 1)
-	CALL PRINTL_COLORTEXT, "　　　山羊の肉をさまざまなハーブと共に焼いたステーキ", DEF_COLOR("황색")
+	CALL PRINTL_COLORTEXT, "   염소의 고기를 다양한 허브와 함께 구운 스테이크", DEF_COLOR("황색")
 PRICE:1 = 90
 
 ;軽食やサラダ
@@ -48,14 +48,14 @@ PRINTFORM  [10] %"과일샐러드", 24, LEFT% ＄６０ %TEXT_LJ("체력小회�
 PRINTBUTTON "[해설]", "과일샐러드"
 PRINTL 
 SIF GETBIT(FLAG:41, 10)
-	CALL PRINTL_COLORTEXT, "　　　森で採れるナッツをふんだんに使ったサラダ", DEF_COLOR("황색")
+	CALL PRINTL_COLORTEXT, "   숲에서 얻는 너트를 충분하게 사용한 샐러드", DEF_COLOR("황색")
 PRICE:10 = 60
 
-PRINTFORM  [11] %"훈제연어", 24, LEFT% ＄７５ %TEXT_LJ("체력小회복＆猫大好き", 33)%
+PRINTFORM  [11] %"훈제연어", 24, LEFT% ＄７５ %TEXT_LJ("체력小회복＆고양이좋아함", 33)%
 PRINTBUTTON "[해설]", "훈제연어"
 PRINTL 
 SIF GETBIT(FLAG:41, 11)
-	CALL PRINTL_COLORTEXT, "　　　鮭の切り身を燻製にした料理。そのままでも美味だが、食材としても価値が高い", DEF_COLOR("황색")
+	CALL PRINTL_COLORTEXT, "   연어의 생선 토막을 훈제로 한 요리. 그대로도 맛좋지만, 식품 재료로서도 가치가 높다", DEF_COLOR("황색")
 PRICE:11 = 75
 
 ;お菓子やデザート
@@ -63,14 +63,14 @@ PRINTFORM  [20] %"허니비스킷", 24, LEFT% ＄１０ %TEXT_LJ("체력小회�
 PRINTBUTTON "[해설]", "허니비스킷"
 PRINTL 
 SIF GETBIT(FLAG:41, 20)
-	CALL PRINTL_COLORTEXT, "　　　蜂蜜を塗って硬めに焼いた焼き菓子。손軽なおやつとして広く인기がある", DEF_COLOR("황색")
+	CALL PRINTL_COLORTEXT, "   벌꿀을 발라 딱딱하게 구운 구운 과자.손가벼운 간식으로서 넓고인기(이)가 있다", DEF_COLOR("황색")
 PRICE:20 = 10
 
 PRINTFORM  [21] %"베이크드애플", 24, LEFT% ＄３０ %TEXT_LJ("체력小회복＆호감도小상승", 33)%
 PRINTBUTTON "[해설]", "베이크드애플"
 PRINTL 
 SIF GETBIT(FLAG:41, 21)
-	CALL PRINTL_COLORTEXT, "　　　シナモン等を詰めた린ゴを洋酒で香り付けしてオーブンで焼いたお菓子", DEF_COLOR("황색")
+	CALL PRINTL_COLORTEXT, " 시나몬등을 채웠다린고를 양주로 향기 내기 해 오븐으로 구운 과자", DEF_COLOR("황색")
 PRICE:21 = 30
 
 ;お酒や飲み物
@@ -78,21 +78,21 @@ PRINTFORM  [30] %"벌꿀술", 24, LEFT% ＄６０ %TEXT_LJ("드렁크(술주정�
 PRINTBUTTON "[해설]", "벌꿀술"
 PRINTL 
 SIF GETBIT(FLAG:41, 30)
-	CALL PRINTL_COLORTEXT, "　　　蜂蜜を発酵させて作った蜜酒。全国的によく飲まれる一般的なお酒", DEF_COLOR("황색")
+	CALL PRINTL_COLORTEXT, "   벌꿀을 발효 시켜 만든 밀술. 전국적으로 자주(잘) 마셔지는 일반적인 술", DEF_COLOR("황색")
 PRICE:30 = 60
 ;칼피스 사워의 패러디로 보인다
 PRINTFORM  [31] %"파두르사워", 24, LEFT% ＄４５ %TEXT_LJ("드렁크(술주정率：高)", 33)%
 PRINTBUTTON "[해설]", "파두르사워"
 PRINTL 
 SIF GETBIT(FLAG:41, 31)
-	CALL PRINTL_COLORTEXT, "　　　ファドゥル麦を発酵させて作った麦酒。庶民に인기がある", DEF_COLOR("황색")
+	CALL PRINTL_COLORTEXT, " 파두르보리를 발효 시켜 만든 맥주. 서민에게인기(이)가 있다", DEF_COLOR("황색")
 PRICE:31 = 45
 
-PRINTFORM  [32] %"개다래와인", 24, LEFT% ＄７０ %TEXT_LJ("드렁크(술주정率：並)＆猫大好き", 33)%
+PRINTFORM  [32] %"개다래와인", 24, LEFT% ＄７０ %TEXT_LJ("드렁크(술주정率：並)＆고양이좋아함", 33)%
 PRINTBUTTON "[해설]", "개다래와인"
 PRINTL 
 SIF GETBIT(FLAG:41, 32)
-	CALL PRINTL_COLORTEXT, "　　　マタタビの実から作った果実酒。滋養強壮に効果があり、猫の大好物でもある", DEF_COLOR("황색")
+	CALL PRINTL_COLORTEXT, " 마타타비의 열매로부터 만든 과실주. 자양 강장에 효과가 있어, 고양이의 좋아하는 것이기도 하다", DEF_COLOR("황색")
 PRICE:32 = 70
 
 IF ITEM:문드롭스
@@ -108,11 +108,11 @@ PRINTFORM {ITEM:문드롭스} %TEXT_LJ("체력中회복＆호감도大상승", 3
 PRINTBUTTON "[해설]", "문드롭스"
 PRINTL 
 SIF GETBIT(FLAG:41, 50)
-	CALL PRINTL_COLORTEXT, "　　　몽마の好む不思議なキャンディ。몽마でない者は舐めることが出来ない", DEF_COLOR("황색")
+	CALL PRINTL_COLORTEXT, " 몽마(이)가 좋아하는 이상한 캔디.몽마(이)가 아닌 사람은 빠는 것이 할 수 없다", DEF_COLOR("황색")
 
 RESETCOLOR
 
-PRINTFORM [100] 돌아온다
+PRINTFORM [100] 돌아온다      
 PRINTBUTTON "[해설ＡＬＬON]", "해설ＡＬＬON"
 PRINT 　
 PRINTBUTTON "[해설ＡＬＬOFF]", "해설ＡＬＬOFF"

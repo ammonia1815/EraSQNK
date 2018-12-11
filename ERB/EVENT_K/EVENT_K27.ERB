@@ -78,8 +78,8 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 	SETBIT CFLAG:201, 3
 ;연모
 ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
-	PRINTFORMW 「저기, 지금 보였지만……당신는 지금부터여자아이에 사랑받아요」
-	PRINTFORMW 「그리고, 당신는 그 호의를 받아들인다. 이것은 운명이야？」
+	PRINTFORMW 「저기, 지금 보였지만……당신은 지금부터여자아이에 사랑받아요」
+	PRINTFORMW 「그리고, 당신은 그 호의를 받아들인다. 이것은 운명이야？」
 	PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%에신체를 공격, 입술을 가까이 하고 나서 살그머니 눈을 감았다. 
 	DRAWLINE
 	PRINTL [0] 키스해 준다
@@ -1932,7 +1932,7 @@ IF SELECTCOM == 90
 			PRINTFORMW 
 		;焦らし
 		ELSEIF TEQUIP:넘어뜨리기 && COND("절정", PLAYER) && BASE:기력 > 300 && (TALENT:연모 || ABL:새드끼 >= 3) && TEQUIP:PLAYER:손대중 == 0
-			PRINTFORMW 「당신는 이길 수 없다.당신는 나의 것이 된다」
+			PRINTFORMW 「당신은 이길 수 없다.당신은 나의 것이 된다」
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 귓전으로 속삭이면서, %조사처리(CALLNAME:PLAYER,"를")% 교묘하게 초조하게 하고 있다…
 			TEQUIP:PLAYER:손대중 = 2
 		;연모＋봉사정신Lv5
@@ -1943,7 +1943,7 @@ IF SELECTCOM == 90
 		;봉사정신Lv3이상
 		ELSEIF ABL:봉사정신 >= 3
 			PRINTFORML 「예언해요」
-			PRINTFORMW 「당신는 이대로, 나를 진하양로 해요♪」
+			PRINTFORMW 「당신은 이대로, 나를 진하양로 해요♪」
 		;それ以外
 		ELSE
 			PRINTFORML 
@@ -2020,7 +2020,7 @@ IF SELECTCOM == 92
 				PRINTFORMW 
 			;それ以外
 			ELSE
-				PRINTFORMW 「예언해요… 당신는 나의 고문에 계속 참을 수 없다」
+				PRINTFORMW 「예언해요… 당신은 나의 고문에 계속 참을 수 없다」
 				PRINTFORMW 「후훗…반드시 그렇게 되어요」
 			ENDIF
 			CFLAG:355 = 1
@@ -2116,7 +2116,7 @@ IF SELECTCOM == 93
 		;それ以外
 		ELSE
 			PRINTFORMW 「쓸데없어요…」
-			PRINTFORMW 「이런 일 해도당신는 나의매력에 저항할 수 없다」
+			PRINTFORMW 「이런 일 해도당신은 나의매력에 저항할 수 없다」
 		ENDIF
 		CFLAG:244 = 1
 		RETURN 1
@@ -2534,7 +2534,7 @@ IF SELECTCOM == 139
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 「예언해요…조금 쉬면,당신는 가득 나를 사랑해 준다고…정답, 이겠지？」
+			PRINTFORMW 「예언해요…조금 쉬면,당신은 가득 나를 사랑해 준다고…정답, 이겠지？」
 		;굴복각인Lv3
 		ELSEIF MARK:굴복각인 == 3
 			PRINTFORMW 「당신하지만 사람을 애태운다심술쟁이사람도, 예언 되어 있었지만…」
@@ -2553,7 +2553,7 @@ IF SELECTCOM == 139
 			IF RAND:2
 				PRINTFORMW 「아무것도 해 주지 않는 것은 외로워요…응 부탁…좀 더…손대어？」
 			ELSE
-				PRINTFORMW 「예언해요…조금 쉬면,당신는 가득 나를 사랑해 준다고…정답, 이겠지？」
+				PRINTFORMW 「예언해요…조금 쉬면,당신은 가득 나를 사랑해 준다고…정답, 이겠지？」
 			ENDIF
 		;굴복각인Lv3
 		ELSEIF MARK:굴복각인 == 3
@@ -3150,7 +3150,7 @@ IF SELECTCOM == 64
 		;연모
 		ELSEIF TALENT:연모
 			IF RAND:2 == 0
-				PRINTFORMW 「예언해요.당신는 지금부터 나를 위나 아래도 가득 귀여워해 주어♪」
+				PRINTFORMW 「예언해요.당신은 지금부터 나를 위나 아래도 가득 귀여워해 주어♪」
 			ELSE
 				PRINTFORMW 「저기･･･가득 해？위도, 아래도」
 			ENDIF
@@ -4596,7 +4596,7 @@ CASE "매각した"
 	ELSEIF TALENT:음란
 		PRINTFORMW 「이것이 마지막 예언이야」
 		PRINTFORMW 「나를손놓은 것」
-		PRINTFORMW 「반드시당신는 후회해요」
+		PRINTFORMW 「반드시당신은 후회해요」
 	;それ以外
 	ELSE
 		PRINTFORMW 

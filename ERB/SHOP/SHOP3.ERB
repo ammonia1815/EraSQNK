@@ -623,10 +623,10 @@ FOR LCOUNT, 0, 100
 			SIF TALENT:남자
 				CONTINUE
 			CALL CALC, "폭유化", TARGET
-		CASE "超乳"
+		CASE "초유"
 			SIF TALENT:남자
 				CONTINUE
-			CALL CALC, "超乳化", TARGET
+			CALL CALC, "초유化", TARGET
 		CASE "작은엉덩이"
 			SIF COND("작은엉덩이")
 				CONTINUE
@@ -657,7 +657,7 @@ FOR LCOUNT, 0, 100
 				NEXT
 			ENDIF
 			TALENT:큰엉덩이 = 1
-		CASE "爆尻"
+		CASE "폭엉덩이"
 			SIF COND("큰엉덩이") == 2
 				CONTINUE
 
@@ -676,7 +676,7 @@ FOR LCOUNT, 0, 100
 				NEXT
 			ENDIF
 			TALENT:큰엉덩이 = 2
-		CASE "超尻"
+		CASE "초엉덩이"
 			SIF COND("큰엉덩이") == 3
 				CONTINUE
 
@@ -735,7 +735,7 @@ FOR LCOUNT, 0, 100
 
 			SELECTCASE RAND:10
 			CASE 9
-				CALL CALC, "超乳化", TARGET
+				CALL CALC, "초유化", TARGET
 			CASE 8
 				CALL CALC, "폭유化", TARGET
 			CASE 7
@@ -749,7 +749,7 @@ FOR LCOUNT, 0, 100
 
 			SELECTCASE RAND:10
 			CASE 7 TO 9
-				CALL CALC, "超乳化", TARGET
+				CALL CALC, "초유化", TARGET
 			CASE 4 TO 6
 				CALL CALC, "폭유化", TARGET
 			CASE 0
@@ -763,7 +763,7 @@ FOR LCOUNT, 0, 100
 
 			SELECTCASE RAND:10
 			CASE 7 TO 9
-				CALL CALC, "超乳化", TARGET
+				CALL CALC, "초유化", TARGET
 			CASE 4 TO 6
 				CALL CALC, "거유化", TARGET
 			CASE 0
@@ -771,7 +771,7 @@ FOR LCOUNT, 0, 100
 			CASEELSE
 				CALL CALC, "並乳化", TARGET
 			ENDSELECT
-		CASE "超乳"
+		CASE "초유"
 			SIF TALENT:남자 || TALENT:거유 != 3
 				CONTINUE
 
@@ -814,7 +814,7 @@ FOR LCOUNT, 0, 100
 				NEXT
 			ENDIF
 			CALL SETFLAG, "힙설정", TARGET
-		CASE "爆尻"
+		CASE "폭엉덩이"
 			SIF COND("큰엉덩이") != 2
 				CONTINUE
 
@@ -832,7 +832,7 @@ FOR LCOUNT, 0, 100
 				NEXT
 			ENDIF
 			CALL SETFLAG, "힙설정", TARGET
-		CASE "超尻"
+		CASE "초엉덩이"
 			SIF COND("큰엉덩이") != 3
 				CONTINUE
 
@@ -1048,11 +1048,12 @@ ABL_SAMON = 1 + (TALENT:MASTER:소환천재（天才） > 0)*2 + (TALENT:MASTER:
 
 MEMO_LINECOUNT = LINECOUNT
 PRINTL 
-PRINTFORML 특정의소질중에서{ABL_SAMON}개만 고정or제외해,소환를 조작할 수가 있습니다
-PRINTFORML 다만,슬라임노[확장적정]등 제외 할 수 없는 것도 몇인가 있습니다
-CALL PRINT_STR, "(選べる数は_황색_[소환천재（天才）]_で２つ、_暗황색_[소환천재（天災）][수수께끼의매력][금단의지식]_で１つ増えます)_L"
-CALL PRINT_STR, "なお固定した소질は_초록_녹색_、除外した소질は_파랑_청색_で표시します_L"
-CALL PRINT_STR, "それでは이하から選んでください。선택するごとに_초록_固定_→_파랑_除外_→指定なし と変化します_L"
+PRINTFORML 특정한 소질중에서 {ABL_SAMON}개만 고정or제외하여, 소환을 조작할 수가 있습니다
+PRINTFORML 다만, 슬라임의 [확장적정]등 제외 할 수 없는 것도 몇가지 있습니다
+;오리지날스트링 "(選べる数は_황색_[소환천재（天才）]_で２つ、_暗황색_[소환천재（天災）][수수께끼의매력][금단의지식]_で１つ増えます)_L"
+CALL PRINT_STR, "(선택할 수 있는 소질 수는 _황색_[소환천재（天才）]_는 2개、_暗황색_[소환천재（天災）][수수께끼의매력][금단의지식]_는 1개 증가합니다)_L"
+CALL PRINT_STR, "또한 고정된 소질은 _초록_녹색_、제외한 소질은 _파랑_청색_으로 표시됩니다_L"
+CALL PRINT_STR, "이하 소질 중에서 선택하십시오。선택할 때마다 _초록_고정_→_파랑_제외_→지정안함 순으로 바뀝니다_L"
 PRINTL 
 
 VARSET LOCALS
@@ -1110,24 +1111,24 @@ CASEELSE
 			CALL DEL_CEVENT, "固定：작은몸집", MASTER
 			CALL DEL_CEVENT, "除外：장신", MASTER
 			CALL DEL_CEVENT, "除外：작은몸집", MASTER
-		CASE "빈유", "거유", "폭유", "超乳"
+		CASE "빈유", "거유", "폭유", "초유"
 			CALL DEL_CEVENT, "固定：빈유", MASTER
 			CALL DEL_CEVENT, "固定：거유", MASTER
 			CALL DEL_CEVENT, "固定：폭유", MASTER
-			CALL DEL_CEVENT, "固定：超乳", MASTER
+			CALL DEL_CEVENT, "固定：초유", MASTER
 			CALL DEL_CEVENT, "除外：빈유", MASTER
 			CALL DEL_CEVENT, "除外：거유", MASTER
 			CALL DEL_CEVENT, "除外：폭유", MASTER
-			CALL DEL_CEVENT, "除外：超乳", MASTER
-		CASE "작은엉덩이", "큰엉덩이", "爆尻", "超尻"
+			CALL DEL_CEVENT, "除外：초유", MASTER
+		CASE "작은엉덩이", "큰엉덩이", "폭엉덩이", "초엉덩이"
 			CALL DEL_CEVENT, "固定：貧尻", MASTER
 			CALL DEL_CEVENT, "固定：큰엉덩이", MASTER
-			CALL DEL_CEVENT, "固定：爆尻", MASTER
-			CALL DEL_CEVENT, "固定：超尻", MASTER
+			CALL DEL_CEVENT, "固定：폭엉덩이", MASTER
+			CALL DEL_CEVENT, "固定：초엉덩이", MASTER
 			CALL DEL_CEVENT, "除外：貧尻", MASTER
 			CALL DEL_CEVENT, "除外：큰엉덩이", MASTER
-			CALL DEL_CEVENT, "除外：爆尻", MASTER
-			CALL DEL_CEVENT, "除外：超尻", MASTER
+			CALL DEL_CEVENT, "除外：폭엉덩이", MASTER
+			CALL DEL_CEVENT, "除外：초엉덩이", MASTER
 		CASE "갈색피부", "백옥", "파란피부"
 			CALL DEL_CEVENT, "固定：갈색피부", MASTER
 			CALL DEL_CEVENT, "固定：백옥", MASTER
@@ -1153,7 +1154,7 @@ RESTART
 @HIGH_RANKER_SHOW, ARG
 ;その種に상위몽마がいるか체크
 IF IS_HIGH_RANKER(ARG)
-	PRINTFORML ～같음종족노몽마의 프로필 열람은 이쪽～
+	PRINTFORML ～같은 종족 몽마의 프로필 열람은 이쪽～
 ELSE
 	CALL ONEINPUT_SELECT, 4
 	RETURN RESULT

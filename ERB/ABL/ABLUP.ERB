@@ -347,9 +347,9 @@ CASE "기교"
 		;펠라경험～커닐링구스경험の合計によるEXPLVによる軽減
 		SELECTCASE GET_EXP_LV(EXP:키스경험 + (EXP:펠라경험+EXP:수음경험+EXP:풋잡경험+EXP:허리사용경험+EXP:파이즈리경험+EXP:Ａ자극경험+EXP:커닐링구스경험)*5) - ABL:기교
 		CASE IS >= 9
-			PRINTFORML （기교에 관련되는 경험의 합계 회수가 굉장히 많기 때문에,필요%PALAMNAME:B%노구슬하지만 격감하고 있습니다）
+			PRINTFORML （기교에 관련되는 경험의 합계 회수가 굉장히 많기 때문에,필요%PALAMNAME:B%의 구슬이 격감하고 있습니다）
 		CASE IS >= 6
-			PRINTFORML （기교에 관련되는 경험의 합계 회수가 매우 많기 때문에,필요%PALAMNAME:B%노구슬하지만 격감하고 있습니다）
+			PRINTFORML （기교에 관련되는 경험의 합계 회수가 매우 많기 때문에,필요%PALAMNAME:B%의 구슬이 격감하고 있습니다）
 		CASE IS >= 3
 			PRINTFORML （기교에 관한 경험의 총 횟수가 많으므로, 필요한 %PALAMNAME:B%의 구슬이 감소합니다）
 		ENDSELECT
@@ -553,7 +553,7 @@ CASE "요도광"
 		PRINTFORM 회）
 	ENDIF
 	PRINTFORML 
-	PRINTFORM  [\@ Z == 0 ? 20 # × \@] - %PALAMNAME:B%노구슬 
+	PRINTFORM  [\@ Z == 0 ? 20 # × \@] - %PALAMNAME:B%의 구슬 
 	SIF JUEL:B < A
 		SETCOLOR DEF_COLOR("회색")
 	PRINTFORM {JUEL:B}

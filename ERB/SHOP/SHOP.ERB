@@ -1287,9 +1287,9 @@ IF DAYEV("土曜") && TEXTS("시간") == "밤"
 	PRINTFORMW  ……뭐어, 어려워서 못읽을 지는 모르지만？ 쿡쿡쿡」
 	PRINTFORML 
 	PRINTFORML  [마법사]의 소질을 갖고있다면 돈을 내고 아르카나를 습득할 수 있습니다
-	PRINTFORML  다만, 주인 이외는 1개 기억하는 것에 대해습득노구슬하지만1,000필요됩니다
-	CALL PRINT_COLORTEXT, " 色の異なるもの", DEF_COLOR("물색")
-	PRINTFORML 는 중급이상의 마도서입니다.[현명함]없고[상위몽마]하지만필요입니다
+	PRINTFORML  다만, 주인 이외는 1개 기억하는 것에 대해습득의 구슬이1,000필요됩니다
+	CALL PRINT_COLORTEXT, " 다른 색깔", DEF_COLOR("물색")
+	PRINTFORML 은 중급이상의 마도서입니다.[현명함]없고[상위몽마]가 필요입니다
 	PRINTFORMW （어떤 (뜻)이유인가,스톡(와)과바인드는 주인에게는 팔아 주지 않는 것 같습니다……）
 	CALL ARCANA_SHOP_BUY, "中級"
 	PRINTFORMW 「다음에 또봐」
@@ -1299,9 +1299,9 @@ ELSE
 	PRINTFORMW  ……근데, 머리가 나쁜 아이라면 읽기 어려울지도？」
 	PRINTFORML 
 	PRINTFORML  [마법사]의 소질을 갖고있다면 금을 내고 아르카나를 습득할 수 있습니다
-	PRINTFORML  다만, 주인 이외는 1개 기억하는 것에 대해습득노구슬하지만1,000필요됩니다
-	CALL PRINT_COLORTEXT, " 色の異なるもの", DEF_COLOR("물색")
-	PRINTFORML 는 중급이상의 마도서입니다.[현명함]없고[상위몽마]하지만필요입니다
+	PRINTFORML  다만, 주인 이외는 1개 기억하는 것에 대해습득의 구슬이1,000필요됩니다
+	CALL PRINT_COLORTEXT, " 다른 색깔", DEF_COLOR("물색")
+	PRINTFORML 은 중급이상의 마도서입니다. [현명함]없고[상위몽마]가 필요입니다
 	PRINTFORMW （어떤 (뜻)이유인가,스톡(와)과바인드는 주인에게는 팔아 주지 않는 것 같습니다……）
 	CALL ARCANA_SHOP_BUY, "中級"
 	PRINTFORMW 「또봐」
@@ -2454,7 +2454,7 @@ CASE 330 TO 349
 	CASE 334
 		IF TALENT:CHOICE:거유 >= 2
 			PRINTFORMW ＜%NAME:CHOICE%노가슴의 사이즈는, 있을 수 없는 크기의 초유가 되었습니다＞
-			CALL CALC, "超乳化", CHOICE
+			CALL CALC, "초유化", CHOICE
 		ELSEIF TALENT:CHOICE:거유
 			PRINTFORMW ＜%NAME:CHOICE%노가슴의 사이즈는, 터질듯한폭유(이)가 되었습니다＞
 			CALL CALC, "폭유化", CHOICE

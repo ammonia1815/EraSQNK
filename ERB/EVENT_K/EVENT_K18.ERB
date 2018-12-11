@@ -103,7 +103,7 @@ ELSEIF GETBIT(CFLAG:201, 25) == 0 && (COND("호접지몽") == MASTER || COND("�
 		PRINTFORMW 요리의 볼륨에 어이를 상실한다%조사처리(CALLNAME:MASTER,"를")% 거들떠보지도 않고, %조사처리(CALLNAME:TARGET,"는")% 굉장한 기세로 먹기 시작했다…
 		PRINTFORML 「응, 맛있어♪인간의 음식이 이렇게 맛있다니 처음이예요」
 		PRINTFORMW 「에？ 조교？조금 기다리고 있어, 배를 채워둠이 끝나자마자 시작하기 때문에♪」
-		PRINTFORMW 「…그것보다당신는 먹지 않는거야？」
+		PRINTFORMW 「…그것보다당신은 먹지 않는거야？」
 		PRINTFORML %조사처리(CALLNAME:TARGET,"가")% 전부 먹어 버릴 것 같은 기세였으므로, 조교는 뒤로 해
 		PRINTFORMW 당황해 포크와 스푼, 나이프에 젓가락에 연꽃도손에 잡기, 지지 않으려고 먹기로 했다
 		;마스터の기교が低い
@@ -113,7 +113,7 @@ ELSEIF GETBIT(CFLAG:201, 25) == 0 && (COND("호접지몽") == MASTER || COND("�
 	ELSE
 		;연모
 		IF TALENT:연모
-			PRINTFORML 「별로당신는 신의 분노를 샀을 것도 아니지만…」
+			PRINTFORML 「별로당신은 신의 분노를 샀을 것도 아니지만…」
 			PRINTFORMW 그 소리에 뒤돌아 보았다%CALLNAME:MASTER%의 뺨에, %CALLNAME:TARGET%의 양손하지만 더해진다
 			PRINTFORMW 「당신에 있어서는, 독거미에게 물렸다…그런 곳일까」
 			PRINTFORML 「미안해요, 당신의 의사도 관계없이, 이런 일 해 버려」
@@ -170,7 +170,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	PRINTFORMW 「그렇지 않으면……나는 몰랐을까？」
 	PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% %CALLNAME:MASTER%에 다시 향한다. %CALLNAME:TARGET%의 눈동자가 물기를 띠고 있다…
 	PRINTFORMW 「…혼자가 외롭다든가, 허무하다든가…누군가를 그립다든가, 사랑스럽다든가…!」
-	PRINTFORMW 「당신는 이런 감정, 안은 적 있어？」
+	PRINTFORMW 「당신은 이런 감정, 안은 적 있어？」
 	PRINTFORMW 「저기, 부탁…나에게, 이 감정의 의미를 가르쳐 줘？」
 	SETBIT CFLAG:201, 4
 ;조수の有無を체크（いない場合は二回目以降へ飛ぶ）
@@ -774,7 +774,7 @@ IF SELECTCOM == 3 && TEQUIP:샤워 == 0
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 눈을 숙여 자신의 비처[秘處]를 만지작거리기 시작했다
 		;それ以外
 		ELSE
-			PRINTFORMW 「당신는 보고 있을 뿐？킥킥…언제까지 참을 수 있을까？」
+			PRINTFORMW 「당신은 보고 있을 뿐？킥킥…언제까지 참을 수 있을까？」
 		ENDIF
 		CFLAG:224 = 1
 		RETURN 1
@@ -1447,7 +1447,7 @@ IF SELECTCOM == 30
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 「또당신는 이상한 것 가지고 오기 때문에」
+			PRINTFORMW 「또당신은 이상한 것 가지고 오기 때문에」
 			PRINTFORMW 「그것을 기대하고 있는 나도 오염되어 버리고 있어요. 우후훗」
 		;それ以外
 		ELSE
@@ -2089,7 +2089,7 @@ IF SELECTCOM == 63
 			PRINTFORMW 「껴안는다는 간단하고…저기？」
 		;굴복각인Lv2
 		ELSEIF MARK:굴복각인 >= 2
-			PRINTFORMW 「당신에 몸을 맡겨 흔들어지는 것도 좋네요…기분 좋아서 의식을손놓아 버릴 것 같다」
+			PRINTFORMW 「당신에 몸을 맡겨 흔들어지는 것도 좋네요…기분 좋아서 의식을 놓아 버릴 것 같다」
 		;それ以外
 		ELSE
 			IF TALENT:거유 && RAND:4 == 0
@@ -2205,7 +2205,7 @@ ELSEIF SELECTCOM == 64 && TEQUIP:수치플레이
 			PRINTFORMW 「결합 부분이 매우 추잡해요…이것은 충분히 반찬이 될 것 같아요…!」
 		;굴복각인Lv2
 		ELSEIF MARK:굴복각인 >= 2
-			PRINTFORMW 「나는, 이런얼굴해 허덕이고 있는 거네…우후후, 당신는 이런얼굴에 흥분해 주고 있을까」
+			PRINTFORMW 「나는, 이런얼굴해 허덕이고 있는 거네…우후후, 당신은 이런얼굴에 흥분해 주고 있을까」
 		;それ以外
 		ELSE
 			PRINTFORMW 「뭔가 묘하게냉정에 보고 있을 수 있어요. 나는 이상한 것일까？」
@@ -2222,7 +2222,7 @@ IF SELECTCOM == 65 && TEQUIP:넘어뜨리기
 	IF CFLAG:356 == 0
 		;연모
 		IF TALENT:연모
-			PRINTFORMW 「…지금만은, 당신는 나의 것…아아앗!」
+			PRINTFORMW 「…지금만은, 당신은 나의 것…아아앗!」
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%, 정옷감에 몸부림 시키고 있다…
 		;それ以外
 		ELSE
@@ -2234,7 +2234,7 @@ IF SELECTCOM == 65 && TEQUIP:넘어뜨리기
 	;연모
 	ELSEIF TALENT:연모
 		IF CHOSECOM(SELECTCOM) == 0 && RAND:3 == 0
-			PRINTFORML 「…지금만은, 당신는 나의 것…아아앗!」
+			PRINTFORML 「…지금만은, 당신은 나의 것…아아앗!」
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%, 정옷감에 몸부림 시키고 있다…
 		ELSEIF NOWEX:절정수합계 && RAND:3 == 0
 			IF COND("절정", PLAYER) && RAND:3 == 0
@@ -3482,12 +3482,12 @@ IF SELECTCOM == 120 || SELECTCOM == 121
 	IF TALENT:PLAYER:처녀
 		;연모
 		IF TALENT:연모
-			PRINTFORMW 「당신는 도대체 무엇을 생각하고 있어？」
+			PRINTFORMW 「당신은 도대체 무엇을 생각하고 있어？」
 			PRINTFORMW 「나를 이런 몸으로 해 둬…자신의처녀를 빼앗게 한다…」
 			PRINTFORMW 「…당신하…」
 		;それ以外
 		ELSE
-			PRINTFORMW 「당신는 도대체 무엇을 생각하고 있어？」
+			PRINTFORMW 「당신은 도대체 무엇을 생각하고 있어？」
 			PRINTFORMW 「나를 이런 몸으로 해 둬…자신의처녀를 빼앗게 한다…」
 			PRINTFORMW 「…당신하, 나에게 깔봐지는 것을 바라고 있어？」
 		ENDIF
@@ -4194,7 +4194,7 @@ IF SELECTCOM == 170 && TEQUIP:비디오카메라
 			PRINTFORMW 「비춘 것을 기록해 둘 수 있는 거네. 당신(와)과 나의 정사의 기록…두근두근 해요」
 		;それ以外
 		ELSE
-			PRINTFORMW 「비춘 것을 기록해 둘 수 있는 거네. 그렇지만, 당신는 보는 것만으로만족(이)야？」
+			PRINTFORMW 「비춘 것을 기록해 둘 수 있는 거네. 그렇지만, 당신은 보는 것만으로만족(이)야？」
 		ENDIF
 		CFLAG:257 = 1
 		RETURN 1
@@ -6567,7 +6567,7 @@ CASE "조수で성처리"
 				IF RAND:2
 					PRINTFORMW 「참지 않아도 괜찮아요……하고 싶은 일, 전부 나에게 부딪쳐？」
 				ELSE
-					PRINTFORMW 「응후후…당신는 아무것도 하지 않아도 괜찮아요.  전부 나에게 맡겨？」
+					PRINTFORMW 「응후후…당신은 아무것도 하지 않아도 괜찮아요.  전부 나에게 맡겨？」
 				ENDIF
 			ELSE
 				PRINTFORMW %TEXTR("舌で舐めまわし", "舐めしゃぶり")%개개눈을 치켜 뜨고 봄으로 모습을 살펴 왔다
