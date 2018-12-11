@@ -240,7 +240,7 @@ SIF MAXBASE:MASTER:스톡 >= 1
 	PRINTFORM ×{BASE:MASTER:스톡}/{MAXBASE:MASTER:스톡}
 ;溜まっている
 SIF BASE:MASTER:정력 >= MAXBASE:MASTER:정력 && BASE:MASTER:스톡 >= MAXBASE:MASTER:스톡 && PENIS(MASTER)
-	CALL PRINT_COLORTEXT, "(たまっている) ", DEF_COLOR("하트핑크")
+	CALL PRINT_COLORTEXT, "(쌓여있다) ", DEF_COLOR("하트핑크")
 PRINTL 
 ;조수がいて, ダウンしていないなら表示
 IF ASSI && STATE("撃沈", ASSI) == 0 && TEQUIP:Ｗ넘어뜨리기 == 0
@@ -255,7 +255,7 @@ IF ASSI && STATE("撃沈", ASSI) == 0 && TEQUIP:Ｗ넘어뜨리기 == 0
 	PRINTFORM  정력({BASE:ASSI:정력}/{MAXBASE:ASSI:정력})
 	;溜まっている
 	SIF BASE:ASSI:정력 >= MAXBASE:ASSI:정력 && BASE:ASSI:스톡 >= MAXBASE:ASSI:스톡 && PENIS(ASSI)
-		CALL PRINT_COLORTEXT, "(たまっている) ", DEF_COLOR("하트핑크")
+		CALL PRINT_COLORTEXT, "(쌓여있다) ", DEF_COLOR("하트핑크")
 	PRINTL 
 ENDIF
 
