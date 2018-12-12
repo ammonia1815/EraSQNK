@@ -79,7 +79,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	DRAWLINE
 	PRINTFORMW （아직일까～…아직일까～…여기서 기다리고 있는 것 지루하다～…）
 	PRINTFORMW （그렇지만, 이제(벌써)%NICKNAME:TARGET%이렇게 강해졌고, 그 사람의 옆에 없어도 괜찮은 것인지도…）
-	PRINTFORMW （…우응, 다른 걸!  %NICKNAME:TARGET%하지만 강해지면 그 사람도 강하게 해 주면 좀 더%NICKNAME:TARGET%강해지는 걸～! ）
+	PRINTFORMW （…우응, 다른 걸!  %NICKNAME:TARGET%의 강해지면 그 사람도 강하게 해 주면 좀 더%NICKNAME:TARGET%강해지는 걸～! ）
 	PRINTFORMW （그러니까, 누나들이 부르러 올 때까지…쭉 함께 있어도, 좋지요…？）
 	PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 방에 들어가면, %조사처리(CALLNAME:TARGET,"는")% 꽃이 피는 것 같은 대륜[大輪]의 소얼굴를 보여 줘%조사처리(CALLNAME:MASTER,"를")% 밀어넘어뜨린다! 
 	PRINTFORMW 「그런데, 그렇네요～읏!  당신이 좋다고 말할 때까지, %NICKNAME:TARGET%는 쭉 당신의 것이야!」
@@ -238,7 +238,7 @@ ELSEIF MARK:굴복각인 == 2 && BASE:체력 < 500
 ELSEIF MARK:굴복각인 == 3 && TALENT:연모 == 0
 	DRAWLINE
 	PRINTFORMW 「아우우～～읏, 가 버려……？ 좀 더로 좋으니까 옆에 있었으면 좋구나」
-	PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 외로운 나머지 딱 주저앉음, 눈을 치켜 뜨고 봄의 눈물고인 눈으로%CALLNAME:MASTER%에 졸라댐을 한다…
+	PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 외로운 나머지 딱 주저앉음, 눈을 치켜 뜨고 봄의 눈물고인 눈으로 %CALLNAME:MASTER%에 졸라댐을 한다…
 	RETURN 1
 ;연모＋만족
 ELSEIF TALENT:연모 && CFLAG:99
@@ -309,7 +309,7 @@ IF SELECTCOM == 0
 			PRINTFORMW 「히우읏…%NICKNAME:TARGET%, 여자아이의 약한 곳(뿐)만 공부해 버리네요？」
 		;それ以外
 		ELSEIF MARK:굴복각인 <= 1
-			PRINTFORMW 「있지있지, %NICKNAME:TARGET%하지만 손대어질 뿐으로는 연습이 되지 않는 것이 아닐까？」
+			PRINTFORMW 「있지있지, %NICKNAME:TARGET%의 손대어질 뿐으로는 연습이 되지 않는 것이 아닐까？」
 			PRINTFORMW 「앗…아우, 이제(벌써), 엣치한 손대는 방법 할 뿐(만큼)이 아니고 (들)물어～」
 		ENDIF
 		RETURN 1
@@ -345,7 +345,7 @@ IF SELECTCOM == 1
 			IF TALENT:연모
 				PRINTFORMW 「응우～읏…햐읏, 아우～♪ 혀가%NICKNAME:TARGET%노보지넓혀 가…」
 				PRINTFORMW 「아, 코가 츤츤은%NICKNAME:TARGET%의 콩 찌르고 있다아…안돼, 안돼에～♪」
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 망아의 표정으로%CALLNAME:PLAYER%의 얼굴면에비렬를 문지르고, 허리를 진동시키고 있다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 망아의 표정으로 %CALLNAME:PLAYER%의 얼굴면에비렬를 문지르고, 허리를 진동시키고 있다…
 			;それ以外
 			ELSE
 				PRINTFORMW 「앗…앗, 아우～～읏♪ 좀더 좀더～!」
@@ -371,7 +371,7 @@ IF SELECTCOM == 1
 			;それ以外
 			ELSE
 				PRINTFORMW 「야읏♪」
-				PRINTFORMW 혀를 댄 것 뿐으로%CALLNAME:TARGET%의 허리가 튀어, 아직 어린 듯한비렬하지만 쫑긋쫑긋 경련한다
+				PRINTFORMW 혀를 댄 것 뿐으로 %CALLNAME:TARGET%의 허리가 튀어, 아직 어린 듯한비렬하지만 쫑긋쫑긋 경련한다
 				PRINTFORMW 꽃봉오리를 생각하게 한다비렬는 달콤하고, 꽃잎과 같이 향기가 난다…
 			ENDIF
 			CFLAG:222 = 1
@@ -1556,7 +1556,7 @@ IF SELECTCOM == 65
 			ELSE
 				;V감각Lv3이상
 				IF ABL:Ｖ감각 >= 3 && RAND:2 == 0
-					PRINTFORMW 「아아, 아읏♪ %NICKNAME:TARGET%하지만 해 주고 싶은데…아아, 기분 좋아서 겁쟁이라고 버릴 것 같아～읏♪」
+					PRINTFORMW 「아아, 아읏♪ %NICKNAME:TARGET%의 해 주고 싶은데…아아, 기분 좋아서 겁쟁이라고 버릴 것 같아～읏♪」
 				ELSE
 					PRINTFORMW 「아핫, 아아읏♪어떨까, %NICKNAME:TARGET%능숙하겠지요？」
 				ENDIF
@@ -2632,12 +2632,12 @@ IF SELECTCOM == 94
 		;봉사정신Lv3이상
 		ELSEIF ABL:봉사정신 >= 3
 			PRINTFORMW 「아, 씻어 주어―？」
-			PRINTFORMW 「아우？ %NICKNAME:TARGET%하지만 씻어？아우아우……잘 모르지만 알았다」
+			PRINTFORMW 「아우？ %NICKNAME:TARGET%의 씻어？아우아우……잘 모르지만 알았다」
 			PRINTFORMW 우선 이해한 것 같다……
 		;それ以外
 		ELSE
 			PRINTFORMW 「아, 씻어 주어―？」
-			PRINTFORMW 「아우？ %NICKNAME:TARGET%하지만 씻어？ ？？」
+			PRINTFORMW 「아우？ %NICKNAME:TARGET%의 씻어？ ？？」
 			PRINTFORMW 자주(잘) 삼킬 수 있지 않는 것 같다……
 		ENDIF
 		CFLAG:318 = 1
@@ -3710,7 +3710,7 @@ CASE "다방"
 		IF RAND:2
 			PRINTFORML 「누군가%NICKNAME:TARGET%에 케이크 주는 사람이 오지 않을까～」
 		ELSE
-			PRINTFORML 「어서오세요%NAMES("다방")%에 어서 오십시오～! 에～와 그러면%NICKNAME:TARGET%하지만 안내해 주네요～」
+			PRINTFORML 「어서오세요%NAMES("다방")%에 어서 오십시오～! 에～와 그러면%NICKNAME:TARGET%의 안내해 주네요～」
 		ENDIF
 	;ENDIF
 	RETURN 1

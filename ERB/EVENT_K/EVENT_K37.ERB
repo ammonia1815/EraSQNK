@@ -661,7 +661,7 @@ ELSEIF MARK:굴복각인 == 0
 		IF GETBIT(CFLAG:201, 41) == 0 && RAND:8 == 0
 			PRINTFORMW 「에？이 꽃을%CNAME("一人称")%에？」
 			PRINTFORMW 「………………어떤 바람의 불어 돌리기일까」
-			PRINTFORMW 당황스러움의 표정으로%CALLNAME:TARGET%를 꽃을 받았다
+			PRINTFORMW 당황스러움의 표정으로 %CALLNAME:TARGET%를 꽃을 받았다
 			PRINTFORMW 「뭐, 나쁜 기분이 아니지만………」
 			PRINTFORMW <%CALLNAME:TARGET%의 반발각인하지만 사라졌습니다. >
 			MARK:반발각인 = 0
@@ -923,7 +923,7 @@ ELSEIF MARK:굴복각인 == 2
 	IF MARK:정액각인 >= 4 && EXP_GAIN(17) > 20 && (EXP_GAIN(20) > 50 || EXP_GAIN(68) > 10 || EXP_GAIN(8) + EXP_GAIN(12) > 100)
 		PRINTFORMW 「하아…하아…하아………별일 아니었지요…」
 		PRINTFORMW 「로즈닐이 도우러 오면…기억해 주세요」
-		PRINTFORMW 힘껏 강한척 한다%CALLNAME:TARGET%하지만, 그 시선은%CALLNAME:MASTER%를 향하고 있었다…
+		PRINTFORMW 힘껏 강한척 한다%CALLNAME:TARGET%의, 그 시선은%CALLNAME:MASTER%를 향하고 있었다…
 		;5이하なら40％ぐらいで정액중독が上がる
 		IF ABL:정액중독 < 5 && RAND:5 < 2
 			ABL:정액중독 += 1
@@ -952,7 +952,7 @@ ELSEIF MARK:굴복각인 == 3 && TALENT:연모 == 0
 		PRINTFORMW \@ EXP_GAIN(68) > 10 ? 자궁内 # 질内 \@를 철저하게 꾸짖을 수 있었다%CALLNAME:TARGET%를 정액각인의 영향으로
 		PRINTFORMW 암컷의 본능에 거역하지 못하고, 다 느슨해진 음분인 표정을 띄우고 있다…
 		PRINTFORMW 「제, 절대로 지지 않기 때문에…」
-		PRINTFORMW 그렇게 말하고 있지만, %CALLNAME:TARGET%를 무의식 중에정액하지만 붙었다손가락를입원래에 옮겼다…
+		PRINTFORMW 그렇게 말하고 있지만, %CALLNAME:TARGET%를 무의식 중에정액하지만 붙었다손가락를 입원래에 옮겼다…
 		;5이하なら40％ぐらいで정액중독が上がる
 		IF ABL:정액중독 < 5 && RAND:5 < 2
 			ABL:정액중독 += 1
@@ -3041,7 +3041,7 @@ IF SELECTCOM == 60
 			ELSEIF TALENT:연모
 				PRINTFORMW 「우후훗, 상당히 기다리게 되어 버렸습니다……」
 				PRINTFORMW 「그렇지만……기쁩니다♪」
-				PRINTFORMW 넋을 잃은 표정으로%CALLNAME:MASTER%의 것을 받아들인다…
+				PRINTFORMW 넋을 잃은 표정으로 %CALLNAME:MASTER%의 것을 받아들인다…
 				PRINTFORMW 그 행복한얼굴에가슴하지만 따뜻해졌다…
 			;굴복각인Lv3
 			ELSEIF MARK:굴복각인 == 3 && TALENT:연모 == 0
@@ -3287,7 +3287,7 @@ IF SELECTCOM == 62
 				PRINTFORMW 질안쪽에페니스를 내던질 때마다%CALLNAME:TARGET%의 얼굴는 뇌가 다 구울 수 있던 것 같은 표정을 띄우고 있다…
 			ELSEIF RAND:3 == 0 && TEQUIP:아이마스크 == 0
 				PRINTFORMW 「앗…아앗♪……%CNAME("二人称")%의가 들어가 있다…♪」
-				PRINTFORMW %CALLNAME:TARGET%를 %CALLNAME:PLAYER%의 페니스하지만 출입하는 자신의보지를, 초롱초롱 보고 있다……
+				PRINTFORMW %CALLNAME:TARGET%를 %CALLNAME:PLAYER%의 페니스가 출입하는 자신의보지를, 초롱초롱 보고 있다……
 			ELSEIF RAND:2 == 0 
 				PRINTFORMW 「아앙♪평소보다 안쪽까지 오고 있습니닷♪」
 				PRINTFORMW 「이렇게 안쪽을 비비어지면…몸의 깊은 속이 큥큥 해 버립니닷♪」
@@ -3690,7 +3690,7 @@ IF SELECTCOM == 67
 				PRINTFORM 앗
 				CALL HEARTMARK
 				PRINTFORMW …느낍니까？…읏…%CNAME("一人称")%(와)과%CNAME("二人称")%가 질안쪽에서키스하고 있는 것을♪」
-				PRINTFORMW %CALLNAME:TARGET%를 자궁구(와)과페니스하지만 동글동글 서로 자극하는 쾌락에음주알려지고 있다…
+				PRINTFORMW %CALLNAME:TARGET%를 자궁구(와)과페니스가 동글동글 서로 자극하는 쾌락에음주알려지고 있다…
 			ELSE
 				PRINTFORM 「아읏
 				CALL HEARTMARK
@@ -4612,7 +4612,7 @@ IF SELECTCOM == 91
 			ELSEIF TALENT:연모 && ABL:봉사정신 >= 5
 				IF RAND:3 == 0
 					PRINTFORMW 「응쥬룻…%CNAME("二人称")%의 뜨거워서, 딱딱해서……매우 멋집니다…좀 더 물게 해 주세요…응츄, 응쥬우♪」
-					PRINTFORMW 돋워 떠난다페니스를 근원까지 가득 넣으면서%CALLNAME:TARGET%를 야무지지 못한 표정으로%CALLNAME:PLAYER%를 응시하고 있다
+					PRINTFORMW 돋워 떠난다페니스를 근원까지 가득 넣으면서%CALLNAME:TARGET%를 야무지지 못한 표정으로 %CALLNAME:PLAYER%를 응시하고 있다
 				ELSEIF RAND:2 == 0
 					PRINTFORMW 「할짝…츄…츄루, 쥬루, …쥬루룻…」
 					PRINTFORMW 「%CNAME("二人称")%가 기뻐하도록(듯이) 노력할테니까…좀 더 기분 좋아져♪」
@@ -5423,7 +5423,7 @@ IF SELECTCOM == 140
 			;촬영
 			IF TEQUIP:비디오카메라
 				PRINTFORMW 「응뭇……쥬, 쥬루, 쥬루루, 쥬우우…! 읏…」
-				PRINTFORML 카메라로 찍히고 있는 탓인지%CALLNAME:TARGET%를 평소보다 끈적페니스를입안에 달라붙게 하고 있다…
+				PRINTFORML 카메라로 찍히고 있는 탓인지%CALLNAME:TARGET%를 평소보다 끈적페니스를 입안에 달라붙게 하고 있다…
 			ELSEIF RAND:3 == 0
 				PRINTFORMW 「응뭇……쥬, 쥬루, 쥬루루, 쥬우우…! 」
 				PRINTFORMW 「하아하아…%CNAME("一人称")%의입, 완전히 성기에 예의범절을 가르쳐져 버렸습니다…♪」
@@ -5949,7 +5949,7 @@ IF SELECTCOM == 147
 				PRINTFORMW 「콜록…」
 			ELSE
 				PRINTFORMW 「우에에…」
-				PRINTFORMW %CALLNAME:TARGET%를 삼킬 수 없었다정액를입로부터 토해냈다…
+				PRINTFORMW %CALLNAME:TARGET%를 삼킬 수 없었다정액를 입로부터 토해냈다…
 			ENDIF
 		ENDIF
 	ENDIF
@@ -7119,7 +7119,7 @@ IF SELECTCOM == 179 && TEQUIP:수치플레이
 		ELSEIF TALENT:연모
 			PRINTFORMW 「이런 큰 거울……전부 보여 버리네요…」
 			SIF ABL:노출벽 >= 3
-				PRINTFORMW 부끄러워하고 있다%CALLNAME:TARGET%하지만 그 비부[秘部]는 애액으로 흘러넘치고 있었다……
+				PRINTFORMW 부끄러워하고 있다%CALLNAME:TARGET%의 그 비부[秘部]는 애액으로 흘러넘치고 있었다……
 		;それ以外
 		ELSE
 			PRINTFORMW 
@@ -8285,7 +8285,7 @@ ELSEIF SHOOT("입")
 	;봉사정신Lv3이상
 	ELSEIF ABL:봉사정신 >= 3
 		PRINTFORMW 「츄룻, 츄루룻……」
-		PRINTFORMW 조교의 성과인가%조사처리(CALLNAME:TARGET,"는")% 일심 불란에%CALLNAME:PLAYER%의 정액를입그리고 받아 들이고 있다. 
+		PRINTFORMW 조교의 성과인가%조사처리(CALLNAME:TARGET,"는")% 일심 불란에%CALLNAME:PLAYER%의 정액를 입그리고 받아 들이고 있다. 
 		PRINTFORMW 「읏, 응읏……끄덕, 끄덕……」
 	;それ以外
 	ELSE
@@ -8346,7 +8346,7 @@ ELSEIF SHOOT("Ｖ내사정")
 		;大量かつ정액각인
 		IF COND("절정", PLAYER) >= 3 && MARK:정액각인 >= 4
 			PRINTFORMW 「앗♪…아아……아………」
-			PRINTFORMW %CALLNAME:PLAYER%의 페니스하지만 맥동 할 때%CALLNAME:TARGET%의 신체는 쾌락으로 움찔움찔 진동시킨다
+			PRINTFORMW %CALLNAME:PLAYER%의 페니스가 맥동 할 때%CALLNAME:TARGET%의 신체는 쾌락으로 움찔움찔 진동시킨다
 			PRINTFORMW 「오, 저속해졌다고 생각하면 큰 실수야……절대%CNAME("二人称")%무언가에 지지 않아요」
 		ELSE
 			PRINTFORMW 「와, 이 외도! ! ! 」
@@ -8437,7 +8437,7 @@ ELSEIF SHOOT("Ｖ내사정")
 		;大量かつ정액각인
 		IF COND("절정", PLAYER) >= 3 && MARK:정액각인 >= 4
 			PRINTFORMW 「앗♪…아아……아………♪」
-			PRINTFORMW %CALLNAME:PLAYER%의 페니스하지만 맥동 할 때%CALLNAME:TARGET%의 신체는 쾌락으로 움찔움찔 진동시킨다
+			PRINTFORMW %CALLNAME:PLAYER%의 페니스가 맥동 할 때%CALLNAME:TARGET%의 신체는 쾌락으로 움찔움찔 진동시킨다
 			PRINTFORMW 결합부로부터는 다 수습되지 않았다정액하지만 비쥬 비쥬와 늘어지고 떨어지고 있었다…
 		ELSE
 			IF RAND:2 == 0

@@ -581,7 +581,7 @@ IF MARK:반발각인 == 0
 			ABL:순종 = 5
 			PRINTL 순종하지만LV5(이)가 되었다
 		ENDIF
-		PRINTFORMW %CALLNAME:TARGET%하지만매각가능(이)가 되었습니다
+		PRINTFORMW %CALLNAME:TARGET%의매각가능(이)가 되었습니다
 		SETBIT CFLAG:1, 0
 	;好感度が2500이상、순종が3이상かつ봉사쾌락경험500이상で연모
 	ELSEIF CONFIG("연모と음란の任意획득") == 0 && COND("연모취득가능")
@@ -607,7 +607,7 @@ SIF ABL:욕망 < 4 && (TALENT:냉정 || TALENT:억압 || TALENT:저항)
 
 IF COND("매각가능플래그") == 0
 	IF ABL:순종 >= 5 || ABL:욕망 >= 5 || (ABL:기교 >= 3 && ABL:봉사정신 >= 3) || (ABL:노출벽 >= 3 && ABL:자위중독 >= 2) || ABL:마조끼 >= 3 || ABL:Ｃ감각+ABL:Ｖ감각+ABL:Ａ감각+ABL:Ｂ감각+ABL:Ｍ감각 >= 13
-		PRINTFORMW %CALLNAME:TARGET%하지만매각가능(이)가 되었습니다
+		PRINTFORMW %CALLNAME:TARGET%의매각가능(이)가 되었습니다
 		SETBIT CFLAG:1, 0
 	ENDIF
 ENDIF
@@ -617,7 +617,7 @@ SIF MARK:반발각인
 
 IF COND("조수가능플래그") == 0
 	IF ABL:순종 >= 3 && (ABL:기교 >= 4 || (ABL:욕망 >= 3 && ABL:기교 >= 3) || ABL:순종 >= 5 || ABL:레즈끼 >= 3)
-		PRINTFORMW %CALLNAME:TARGET%하지만%TEXTS("조수の명칭")%(이)가 될 수 있게 되었습니다
+		PRINTFORMW %CALLNAME:TARGET%의%TEXTS("조수の명칭")%(이)가 될 수 있게 되었습니다
 		SETBIT CFLAG:1, 1
 	ENDIF
 ENDIF
