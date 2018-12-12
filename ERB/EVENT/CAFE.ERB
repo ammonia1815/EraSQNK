@@ -2766,14 +2766,14 @@ CASE "査察"
 	IF ABL:MASTER:기교 - ABL:기교/2 - RAND:10 >= 0
 		PRINTFORMW 솜씨좋게 변장해%CALLNAME:MASTER%는 입점시 누구에게도 들키지 않고 몰래 매장의 모습을 들었습니다
 		IF RAND:2 && (FIND_COND("출연가능な점원", "강기") || TALENT:상사상애)
-			PRINTFORMW 그러자,%CALLNAME:TARGET%하지만 폐인 손님 이 따라다녀 성희롱 비슷한 행위를 받고 있습니다！
+			PRINTFORMW 그러자,%CALLNAME:TARGET%의 폐인 손님 이 따라다녀 성희롱 비슷한 행위를 받고 있습니다！
 			IF FIND_COND("출연가능な점원", "강기") && RANDIF(1, TALENT:상사상애)
 				WAITRESS = FIND_COND("출연가능な점원", "강기")
 				SETBIT CFLAG:WAITRESS:95, 1
 				PRINTFORMW 이것은 돕는 것이 좋은가……？라고 생각한 정면,%CALLNAME:WAITRESS%하지만 손님의 앞에 서%TEXTR("一睨み", "微笑み一つ", "実力行使")%그리고 되돌려 보냈습니다！
 				PRINTFORMW 그녀가 있으면 가게 중(안)에서 트러블을 일으키려는 손님은 없게 될 것 같다…
 			ELSE
-				PRINTFORMW 보기 힘들었다%CALLNAME:MASTER%하지만 자연스럽게 구조선을 내면, 다시 반했다%CALLNAME:TARGET%하지만 혼잡한 틈을 노림에 껴안아 왔습니다…
+				PRINTFORMW 보기 힘들었다%CALLNAME:MASTER%하지만 자연스럽게 구조선을 내면, 다시 반했다%CALLNAME:TARGET%의 혼잡한 틈을 노림에 껴안아 왔습니다…
 			ENDIF
 		ELSE
 			PRINTFORMW 점내는 보기좋게 번성하고 있어,몽마들의 일하는 태도에도 문제는 없는 것 같습니다
