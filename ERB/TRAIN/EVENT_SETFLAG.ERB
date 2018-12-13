@@ -3172,9 +3172,9 @@ CASE "경험취득"
 	CASE 15
 		EXP:요도경험 += 1
 		;指を動かしても大丈夫になるサイズまでは拡張
-		IF SIZE("指の直径", PLAYER) > MIN_STR(CONDS("요도확장度") )
-			CALL SETFLAG, "요도확장", SIZE("指の直径", PLAYER), TARGET
-		ELSEIF SIZE("指の直径", PLAYER)*4/3 > MIN_STR(CONDS("요도확장度") )
+		IF SIZE("손가락の直径", PLAYER) > MIN_STR(CONDS("요도확장度") )
+			CALL SETFLAG, "요도확장", SIZE("손가락の直径", PLAYER), TARGET
+		ELSEIF SIZE("손가락の直径", PLAYER)*4/3 > MIN_STR(CONDS("요도확장度") )
 			CALL SETFLAG, "요도확장", MIN_STR(CONDS("요도확장度") ) + 1, TARGET
 		ENDIF
 		EXP:PLAYER:요도고문경험 += 1
