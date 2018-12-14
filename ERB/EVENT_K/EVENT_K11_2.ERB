@@ -1119,7 +1119,7 @@ IF SELECTCOM == 6
 			;연모
 			ELSEIF TALENT:연모
 				PRINTFORMW 「응츄, 츄…응……응우…후우………응, 후아」
-				PRINTFORMW 「응…모처럼의 처음의키스무엇입니다～…도─와%CNAME("一人称")%의입에 새겨 관이야～이…」
+				PRINTFORMW 「응…모처럼의 처음의키스무엇입니다～…도─와%CNAME("一人称")%의 입에 새겨 관이야～이…」
 				PRINTFORMW %CALLNAME:TARGET%는 날개의 첨단으로 입술을 훑어 보여, 게다가 뜨겁다키스를 공갈해 온다
 				PRINTFORMW 그녀의 소원을 거절하는 당연도 없기 때문에 한번 더, 보다 농후한키스그리고 응했다
 			;それ以外
@@ -7769,7 +7769,7 @@ CASE "카운터없음"
 	ELSEIF TEQUIP:촉수
 		PRINTFORMW %CALLNAME:TARGET%는 꿈틀거린다촉수에 희롱해지고 있다……
 	ELSEIF TEQUIP:넘어뜨리기
-		PRINTFORMW %CALLNAME:TARGET%하%CALLNAME:PLAYER%의 위에서 미소를 띄우고 있다……
+		PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의 위에서 미소를 띄우고 있다……
 	ELSE
 		CALL COUNTER_TEXT, ARGS
 	ENDIF
@@ -7788,12 +7788,12 @@ CASE "Ｖ인서트"
 		PRINTFORMW %CALLNAME:TARGET%는 질벽을 조종해%CALLNAME:PLAYER%의페니스를 훑어 왔다……
 	;反撃・失敗
 	CASEELSE
-		PRINTFORMW %CALLNAME:TARGET%하%CALLNAME:PLAYER%의 격렬한 삽입질에 희롱해지고 있다……
+		PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의 격렬한 삽입질에 희롱해지고 있다……
 	ENDSELECT
 CASE "Ａ인서트"
 	SELECTCASE CONDS("카운터：強度")
 	CASE "必殺"
-		PRINTFORMW %CALLNAME:TARGET%하%CALLNAME:PLAYER%의 민감한 곳을 단번에 몰아세워 왔다！
+		PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의 민감한 곳을 단번에 몰아세워 왔다！
 	;反撃・強
 	CASE "強"
 		PRINTFORMW %CALLNAME:TARGET%는 틈을 봐 반격 해 왔다……
@@ -7805,12 +7805,12 @@ CASE "Ａ인서트"
 		PRINTFORMW %CALLNAME:TARGET%는 틈을 봐 반격 해 왔다……
 	;反撃・失敗
 	CASEELSE
-		PRINTFORMW %CALLNAME:TARGET%하%CALLNAME:PLAYER%의 고문에 희롱해지고 있다……
+		PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의 고문에 희롱해지고 있다……
 	ENDSELECT
 CASE "애무"
 	SELECTCASE CONDS("카운터：強度")
 	CASE "必殺"
-		PRINTFORMW %CALLNAME:TARGET%하%CALLNAME:PLAYER%의 민감한 곳을 단번에 몰아세워 왔다！
+		PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의 민감한 곳을 단번에 몰아세워 왔다！
 	;反撃・強
 	CASE "強"
 		PRINTFORMW %CALLNAME:TARGET%는 틈을 봐 반격 해 왔다……
@@ -7822,13 +7822,13 @@ CASE "애무"
 		PRINTFORMW %CALLNAME:TARGET%는 틈을 봐 반격 해 왔다……
 	;反撃・失敗
 	CASEELSE
-		PRINTFORMW %CALLNAME:TARGET%하%CALLNAME:PLAYER%의 고문에 희롱해지고 있다……
+		PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의 고문에 희롱해지고 있다……
 	ENDSELECT
 CASE "봉사"
 	IF PENIS(PLAYER)
 		SELECTCASE CONDS("카운터：強度")
 		CASE "必殺"
-			PRINTFORMW %CALLNAME:TARGET%하%CALLNAME:PLAYER%의페니스를 격렬하게 훑어 내고 왔다！
+			PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의페니스를 격렬하게 훑어 내고 왔다！
 		;反撃・強
 		CASE "強"
 			PRINTFORMW %CALLNAME:TARGET%는 쉬는 동안을 주지 않고%CALLNAME:PLAYER%의페니스를 계속 훑어 내고 있다……
@@ -7840,12 +7840,12 @@ CASE "봉사"
 			PRINTFORMW %CALLNAME:TARGET%는 쉬는 동안을 주지 않고%CALLNAME:PLAYER%의페니스를 계속 훑어 내고 있다……
 		;反撃・失敗
 		CASEELSE
-			PRINTFORMW %CALLNAME:TARGET%하%CALLNAME:PLAYER%의페니스에 열중하고 있다……
+			PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의페니스에 열중하고 있다……
 		ENDSELECT
 	ELSE
 		SELECTCASE CONDS("카운터：強度")
 		CASE "必殺"
-			PRINTFORMW %CALLNAME:TARGET%하%CALLNAME:PLAYER%의 민감한 곳을 단번에 몰아세워 왔다！
+			PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의 민감한 곳을 단번에 몰아세워 왔다！
 		;反撃・強
 		CASE "強"
 			PRINTFORMW %CALLNAME:TARGET%는 쉬는 동안을 주지 않고%CALLNAME:PLAYER%에 쾌감을 계속 주고 있다……
@@ -7857,13 +7857,13 @@ CASE "봉사"
 			PRINTFORMW %CALLNAME:TARGET%는 쉬는 동안을 주지 않고%CALLNAME:PLAYER%에 쾌감을 계속 주고 있다……
 		;反撃・失敗
 		CASEELSE
-			PRINTFORMW %CALLNAME:TARGET%하%CALLNAME:PLAYER%의 몸에 열중하고 있다……
+			PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의 몸에 열중하고 있다……
 		ENDSELECT
 	ENDIF
 CASE "ＳＭ"
 	SELECTCASE CONDS("카운터：強度")
 	CASE "必殺"
-		PRINTFORMW %CALLNAME:TARGET%하%CALLNAME:PLAYER%의 민감한 곳을 단번에 몰아세워 왔다！
+		PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의 민감한 곳을 단번에 몰아세워 왔다！
 	;反撃・強
 	CASE "強"
 		PRINTFORMW %CALLNAME:TARGET%는 틈을 봐 반격 해 왔다……
@@ -7875,7 +7875,7 @@ CASE "ＳＭ"
 		PRINTFORMW %CALLNAME:TARGET%는 틈을 봐 반격 해 왔다……
 	;反撃・失敗
 	CASEELSE
-		PRINTFORMW %CALLNAME:TARGET%하%CALLNAME:PLAYER%의 고문에 희롱해지고 있다……
+		PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의 고문에 희롱해지고 있다……
 	ENDSELECT
 CASE "아르카나"
 	SELECTCASE CONDS("카운터：아르카나")

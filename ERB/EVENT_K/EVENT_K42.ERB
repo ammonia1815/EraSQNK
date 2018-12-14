@@ -123,7 +123,7 @@ ELSEIF GETBIT(CFLAG:201, 31) == 0 && FIRSTCOM(134)
 	LOCAL = BASE:MASTER:정력
 	BASE:MASTER:정력 = MAX(BASE:MASTER:정력 - 10, 1)
 	SIF LOCAL > BASE:MASTER:정력
-		PRINTFORMW %CALLNAME:MASTER%노정력－{LOCAL - BASE:MASTER:정력}
+		PRINTFORMW %CALLNAME:MASTER%의정력－{LOCAL - BASE:MASTER:정력}
 	SETBIT CFLAG:201, 31
 ;반발각인Lv3
 ELSEIF MARK:반발각인 == 3
@@ -181,7 +181,7 @@ ELSEIF GETBIT(CFLAG:201, 25) == 0 && (COND("호접지몽") == MASTER || COND("�
 			PRINTFORMW 「므우, 본래의 신체라면 감시는 살짝살짝의 조금인데, 이 신체에서는 마음대로 되지 않습니다, %조사처리(CALLNAME:TARGET,"는")% 딜레마를 느낍니다」
 		ELSE
 			PRINTFORMW 「과연……찾고 있다얼굴하……이런얼굴(이)가 아니었는지!？」
-			PRINTFORMW 눈앞의딸하지만 변장 마스크를 벗겨내면, 거기에는%CALLNAME:MASTER%노얼굴하지만! 
+			PRINTFORMW 눈앞의딸하지만 변장 마스크를 벗겨내면, 거기에는%CALLNAME:MASTER%의얼굴하지만! 
 			PRINTFORML 
 			PRINTFORMW ……
 			PRINTFORMW 「……」
@@ -1807,7 +1807,7 @@ IF SELECTCOM == 61
 				PRINTFORMW 「훗, 앗, 하아! 격렬한 것도, 점점……아훗!」
 			ELSE
 				PRINTFORMW 「아앗, 하……후, 우응!」
-				PRINTFORMW %CALLNAME:TARGET%의 얼굴에손를 돌리기, 반쯤 열려 있는 상태의입에손가락를 돌진한다
+				PRINTFORMW %CALLNAME:TARGET%의 얼굴에손를 돌리기, 반쯤 열려 있는 상태의 입에손가락를 돌진한다
 				PRINTFORMW 「응!？후아……츄, 첨벙……츄……응웃! 읏, 아핫!」
 			ENDIF
 		;굴복각인Lv2이상
@@ -3268,7 +3268,7 @@ IF SELECTCOM == 147
 			;반발각인Lv3
 			IF MARK:반발각인 == 3
 				PRINTFORMW 「꿀꺽……펙!」
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 입안에 남았다정액를%CALLNAME:MASTER%에 내뱉었다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 입안에 남았다정액를 %CALLNAME:MASTER%에 내뱉었다…
 			;정액중독Lv5
 			ELSEIF ABL:정액중독 >= 5
 				PRINTFORMW 「읏……프학! 이제(벌써) 인 것입니다」

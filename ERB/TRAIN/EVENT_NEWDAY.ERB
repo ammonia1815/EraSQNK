@@ -65,7 +65,7 @@ CASE "아침逆정상위"
 		ELSEIF RAND:2
 			PRINTFORM 질의 야무짐의 변화로%CALLNAME:MASTER%(이)가 눈을 뜸을 감지했다%CALLNAME:TARGET%하,
 		ELSE
-			PRINTFORM 잠들어 있음을 덮쳤던 것에 대해 즐길 수 있다%CALLNAME:MASTER%노입를키스그리고 막았다%CALLNAME:TARGET%하,
+			PRINTFORM 잠들어 있음을 덮쳤던 것에 대해 즐길 수 있다%CALLNAME:MASTER%의입를키스그리고 막았다%CALLNAME:TARGET%하,
 			CALL SIMULATE_TRAIN_COM, 6, 1 + RAND:2
 		ENDIF
 		IF EXP:사정경험 > MEMO_EXP:3 && RAND:3 == 0
@@ -137,7 +137,7 @@ CASE "아침풋잡"
 	PRINTFORML 우월감에 잠긴 것 같은 얼굴로 아침의 인사를 해 왔다
 
 	CALL CALC, "욕구불만解消", TARGET, 1
-CASE "아침の母乳搾り"
+CASE "아침の모유搾り"
 	LOCAL = MAX(LOCAL + MIN(GET_EXP_LV(EXP:분유경험), 5), 1)
 	;거유
 	IF TALENT:거유
@@ -145,7 +145,7 @@ CASE "아침の母乳搾り"
 		;임신または출산경험
 		IF TALENT:임신 || TALENT:출산경험
 			IF RAND:2 == 0
-				PRINTFORML %CALLNAME:TARGET%는 팡팡 긴장되었다가슴로부터, 황홀의 표정으로 모유를 분출하고 있다…
+				PRINTFORML %CALLNAME:TARGET%는 팡팡 긴장된 가슴로부터, 황홀의 표정으로 모유를 분출하고 있다…
 			ELSE
 				PRINTFORML %CALLNAME:TARGET%는 자애로 가득 찬 표정으로, 힘차게 뿜어 나오는 모유를 그릇에 짜내고 있다…
 			ENDIF
@@ -161,8 +161,8 @@ CASE "아침の母乳搾り"
 		PRINTFORML %EXPNAME:54%＋{LOCAL*2}
 		IF TALENT:헌신 || TALENT:호색
 			IF RAND:2 == 0
-				PRINTFORML %CALLNAME:TARGET%하%CALLNAME:MASTER%를 찾아내면, 생긋 미소손불러 해 왔다…
-				PRINTFORML 가까워지면,%CALLNAME:TARGET%하%CALLNAME:MASTER%의 머리를 움켜 쥐어, 아직도 모유가 방울져 떨어진다유두를%CALLNAME:MASTER%노입에 밀어넣어 기쁜듯이 짜기 시작했다…
+				PRINTFORML %CALLNAME:TARGET%(은)는 %CALLNAME:MASTER%를 찾아내면, 생긋 미소손불러 해 왔다…
+				PRINTFORML 가까워지면,%CALLNAME:TARGET%(은)는 %CALLNAME:MASTER%의 머리를 움켜 쥐어, 아직도 모유가 방울져 떨어지는 유두를 %CALLNAME:MASTER%의 입에 밀어넣어 기쁜듯이 짜기 시작했다…
 			ELSE
 				PRINTFORML %CALLNAME:TARGET%는 맥주잔 한 잔의 농후한 모유를 웃는 얼굴로 내몄다
 			ENDIF
@@ -200,7 +200,7 @@ CASE "아침の새댁플레이"
 
 	PRINTFORML 무심코 아침 식사전에%CALLNAME:TARGET%를{LOCAL}회 정도 받아 버렸다…
 	SIF TALENT:부끄럼쟁이
-		PRINTFORML %CALLNAME:TARGET%하%CALLNAME:MASTER%의 행위에 불평하거나 하고 있지만, 분명하게 기쁜 듯하다…
+		PRINTFORML %CALLNAME:TARGET%(은)는 %CALLNAME:MASTER%의 행위에 불평하거나 하고 있지만, 분명하게 기쁜 듯하다…
 	CALL CALC, "욕구불만解消", TARGET, LOCAL
 CASE "아침파이즈리"
 	LOCAL = MAX(LOCAL + (ABL:봉사정신 + ABL:정액중독)/3, 1)
@@ -350,7 +350,7 @@ CASE "아침펠라"
 	IF ABL:봉사정신 + TALENT:헌신 - (COND("포경", MASTER) > 0) >= 3
 		;ＭＡＳＴＥＲが포경
 		IF COND("포경", MASTER) && ABL:봉사정신 + TALENT:헌신 >= 4 && RAND:3
-			PRINTFORM %CALLNAME:TARGET%하%CALLNAME:MASTER%노
+			PRINTFORM %CALLNAME:TARGET%(은)는 %CALLNAME:MASTER%의
 			IF COND("진성포경", MASTER)
 				PRINTFORML 귀두를 싸는 가죽안에 혀를 넣어, 내부에 모였다치구를 혀로 긁어내면서 아침의 인사를 해 왔다
 			ELSE
@@ -360,20 +360,20 @@ CASE "아침펠라"
 			IF EXP:정액경험 > MEMO_EXP:20
 				PRINTFORML %CALLNAME:TARGET%하정액를\@ ABL:정액중독 >= 3 ? 美味しそう # 零さず \@에 삼키면,입그래서청소하면서 아침의 인사를 해 왔다
 			ELSE
-				PRINTFORML %CALLNAME:TARGET%하%CALLNAME:MASTER%노페니스를 입그래서청소하면서 아침의 인사를 해 왔다
+				PRINTFORML %CALLNAME:TARGET%(은)는 %CALLNAME:MASTER%의페니스를 입그래서청소하면서 아침의 인사를 해 왔다
 			ENDIF
 		ENDIF
 		PRINTFORML 청소펠라경험＋１
 		EXP:청소펠라경험 += 1
 	ELSEIF (TALENT:호색 || ABL:봉사정신 >= 5) && COND("다리 사용") && CLO_ORI(TARGET,"下着") && COND("身嗜み：노팬티") == 0 && RAND:3 == 0
-		PRINTFORM %CALLNAME:TARGET%는 체온이 남는다팬티그래서%CALLNAME:MASTER%노페니스를 닦아 맑은
+		PRINTFORM %CALLNAME:TARGET%는 체온이 남는다팬티그래서%CALLNAME:MASTER%의페니스를 닦아 맑은
 		IF RAND:2
 			PRINTFORML (이)면서 아침의 인사를 해 왔다
 		ELSE
 			PRINTFORML 누, 눈앞에서 더러워진 그것을 입으면서 아침의 인사를 해 왔다
 		ENDIF
 	ELSEIF SELECTCOM == 99 && ABL:새드끼 && RAND:2
-		PRINTFORML %CALLNAME:TARGET%하%CALLNAME:MASTER%의 얼굴쑥 사타구니를 내려, 어깨 너머에 아침의 인사를 해 왔다
+		PRINTFORML %CALLNAME:TARGET%(은)는 %CALLNAME:MASTER%의 얼굴쑥 사타구니를 내려, 어깨 너머에 아침의 인사를 해 왔다
 	ELSEIF EXP:정액경험 > MEMO_EXP:20 && RAND:3
 		IF ABL:새드끼 >= 3 && RAND:2
 			PRINTFORML %CALLNAME:TARGET%하정액를 맛보면서 삼키면, 입술을 낼름 빨아 아침의 인사를 해 왔다
@@ -418,7 +418,7 @@ CALL COM_ABLE6
 SIF RESULT && TALENT:연모 && ABL:순종 >= 3 && CHECK_COM("키스")
 	LOCALS:0 = 아침키스
 SIF TALENT:연모 && TALENT:모유체질 && ABL:순종 >= 3 && ABL:봉사정신 >= 3 && EXP:분유경험 >= 20
-	LOCALS:1 = 아침の母乳搾り
+	LOCALS:1 = 아침の모유搾り
 CALL COM_ABLE95
 SIF RESULT && ABL:새드끼 >= 3
 	LOCALS:2 = 아침풋잡
