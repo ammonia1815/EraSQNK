@@ -339,7 +339,7 @@ SIF CFLAG:209 != 1
 IF GETBIT(CFLAG:201, 30) == 0 && COND("권속", MASTER) == TARGET && ABL:MASTER:ＬＶ >= 20 && EXP:MASTER:Ｖ경험 >= 150 && EXP:MASTER:동정탈취경험
 	PRINTFORML 「우후후…%CNAME("二人称")%매우 훌륭한서큐버스(이)가 되었군요. 이제(벌써)상위몽마라고 불러도 좋아요」
 	PRINTFORMW 「원래는 음마가 아니었는데 자주(잘) 노력했군요,%CNAME("一人称")%,%CNAME("二人称")%를 자랑으로 생각해요」
-	PRINTFORMW 그렇게 상냥하게 고한다%CALLNAME:TARGET%를 보고 있으면,%CALLNAME:MASTER%노가슴에 부끄러움과 기쁨이 울컥거려 온다.
+	PRINTFORMW 그렇게 상냥하게 고한다%CALLNAME:TARGET%를 보고 있으면,%CALLNAME:MASTER%의가슴에 부끄러움과 기쁨이 울컥거려 온다.
 	PRINTFORML 「후후,%CNAME("二人称")%울고 있어요？그렇지만 아직도 지금부터」
 	PRINTFORMW 「앞으로도 많이Ｈ일 해 최고의서큐버스(이)가 됩시다？」
 	CALL PRINT_STR, "「私と一緒に、ね_H_」_W"
@@ -587,7 +587,7 @@ IF SELECTCOM == 1
 						PRINTFORM %CALLNAME:TARGET%는 애액을 방울져 떨어지게 했다
 						SIF COND("음모") == 1 || COND("음모") == 2 || COND("음모") == 3
 							PRINTFORM 무모의
-						PRINTFORMW 다리 사이를%CALLNAME:PLAYER%의 안면에 문질러 왔다…
+						PRINTFORMW 다리 사이를 %CALLNAME:PLAYER%의 안면에 문질러 왔다…
 					ELSEIF RAND:2 == 0
 						PRINTFORMW 「'아앙,  그렇게 소리를 내 %CNAME("일인칭")%의 즙을 햘짝거리면 부끄러워요♪」
 					ELSE
@@ -619,7 +619,7 @@ IF SELECTCOM == 1
 					PRINTFORM %CALLNAME:TARGET%는 애액을 방울져 떨어지게 했다
 					SIF COND("음모") == 1 || COND("음모") == 2 || COND("음모") == 3
 						PRINTFORM 무모의
-					PRINTFORMW 다리 사이를%CALLNAME:PLAYER%의 안면에 문질러 왔다…
+					PRINTFORMW 다리 사이를 %CALLNAME:PLAYER%의 안면에 문질러 왔다…
 				ELSEIF RAND:4 == 0
 					PRINTFORMW 「후훗 ,  그렇게 열내버리면……좀더 서비스 해 주고 싶게 되 버려요♪」
 				ELSEIF RAND:3 == 0
@@ -1093,7 +1093,7 @@ IF SELECTCOM == 6
 		;それ以外
 		ELSE
 			IF RAND:2 == 0
-				PRINTFORMW %CALLNAME:TARGET%하%CALLNAME:PLAYER%의입에 달라붙어, 탐욕에 혀를 걸어 온다…
+				PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의 입에 달라붙어, 탐욕에 혀를 걸어 온다…
 			ELSE
 				PRINTFORMW 「,  쪽 ,  쪽우우 ,  쪽……아」
 			ENDIF
@@ -1261,7 +1261,7 @@ IF SELECTCOM == 8
 				PRINTFORMW 「좀더 돌려……그렇게 ,  좋다」
 			;それ以外
 			ELSE
-				PRINTFORMW %CALLNAME:TARGET%는 가끔 헐떡이는 소리를 주면서 허리를%CALLNAME:PLAYER%의 리듬과 맞추어 움직이고 있다
+				PRINTFORMW %CALLNAME:TARGET%는 가끔 헐떡이는 소리를 주면서 허리를 %CALLNAME:PLAYER%의 리듬과 맞추어 움직이고 있다
 			ENDIF
 			RETURN 1
 		ENDIF
@@ -6070,7 +6070,7 @@ IF SELECTCOM == 175
 			PRINTFORMW 「그러면, 선생님과 함께 공부 시작합시다♪」
 		ELSEIF CHECK_SHIRT("간호사") && TALENT:남자 == 0 && PENIS(PLAYER)
 			PRINTFORMW 「선생님, 주사의시간(이에)예요.……자, 아무쪼록♪」
-			PRINTFORMW %CALLNAME:TARGET%하%CALLNAME:PLAYER%에 향하여 저기를 밀어 열어 눈을 치켜 뜨고 봄으로 응시해 왔다
+			PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%에 향하여 저기를 밀어 열어 눈을 치켜 뜨고 봄으로 응시해 왔다
 		ELSEIF CHECK_SHIRT("차이나드레스")
 			IF RAND:2 == 0
 				PRINTFORMW 「어머나 ,  슬릿으로부터 보이는 다리를 좋아해?」
@@ -7208,7 +7208,7 @@ CASE "Ｖ윤LV3돌파"
 		;それ以外（로션以外で）
 		ELSE
 			PRINTFORMW 「이봐요 봐서,  아무개 씨의 탓으로…이렇게 젖어 와 버렸다♪」
-			PRINTFORMW %CALLNAME:TARGET%는 눅진눅진에 자포자기한 스스로의 비밀장소를%CALLNAME:PLAYER%에 과시하고 있다…
+			PRINTFORMW %CALLNAME:TARGET%는 눅진눅진에 자포자기한 스스로의 비밀장소를 %CALLNAME:PLAYER%에 과시하고 있다…
 		ENDIF
 	ENDIF
 ;-------------------------------------------------
@@ -8798,7 +8798,7 @@ CASE "一言이벤트"
 		ELSEIF RANDF(5) == 0 && TALENT:ARG:냄새민감 && ABL:ARG:봉사정신 >= 3
 			PRINTFORML 「쿠…쿠……안 돼요, 정중하게 씻지 않으면. 조금 냄새나요？」
 			IF PENIS(MASTER)
-				PRINTFORML %CALLNAME:ARG%는 흐르는 것 같은 동작으로 %CALLNAME:MASTER%노페니스를 입에 포함해, 더러움을 혀로 깎아 내고 취하기 시작했다
+				PRINTFORML %CALLNAME:ARG%는 흐르는 것 같은 동작으로 %CALLNAME:MASTER%의페니스를 입에 포함해, 더러움을 혀로 깎아 내고 취하기 시작했다
 			ELSE
 				PRINTFORML %CALLNAME:ARG%는 멈추는 사이도 없고%CALLNAME:MASTER%의 사타구니에 얼굴을 돌진해, 저기를 혀로 맑은 시작했다
 			ENDIF
@@ -8981,7 +8981,7 @@ CASE "서류작업：무시"
 			IF TALENT:음란 && RAND:2
 				PRINTFORMW %CALLNAME:ARG%하%CALLNAME:MASTER%의 사타구니에손를 늘려, 상냥하게 더듬어 왔다…
 			ELSE
-				PRINTFORMW %CALLNAME:ARG%는 뒤로부터 껴안아 귓전으로달콤한말를 속삭이면서,%CALLNAME:MASTER%노가슴을더듬어 왔다…
+				PRINTFORMW %CALLNAME:ARG%는 뒤로부터 껴안아 귓전으로달콤한말를 속삭이면서,%CALLNAME:MASTER%의가슴을더듬어 왔다…
 			ENDIF
 			SETBIT CFLAG:ARG:71, 40
 		ENDIF

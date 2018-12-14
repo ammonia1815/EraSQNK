@@ -863,7 +863,7 @@ IF SELECTCOM == 5
 			ELSE
 				IF RAND:3 == 0
 					PRINTFORMW 「응읏……조금 너무 열중하는 것이군. 이봐요, 군침이야 누구」
-					PRINTFORMW %CALLNAME:TARGET%하%CALLNAME:PLAYER%의 턱과 자신의 유방을 타 누구를 닦았다
+					PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의 턱과 자신의 유방을 타 누구를 닦았다
 				ELSEIF RAND:2
 					PRINTFORMW 「이봐요 왼쪽뿐 빨지 말고……오른쪽의유두하지만 쓸쓸해 하고 있다♪」
 				ELSE
@@ -2025,7 +2025,7 @@ ELSEIF SELECTCOM >= 60 && SELECTCOM <= 69 && FIRSTCOM(SELECTCOM) && CHOSECOMS("�
 		ELSEIF RAND:2
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 덮어누를 수 있어 황새 걸음을 연 자세로, %조사처리(CALLNAME:PLAYER,"를")% 올려봐\@ TALENT:연모 ? 고양이のような # 不敵な \@미소를 띄우고 있다…
 		ELSE
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 허리를 꾸욱 내밀어 밀착시키고, 클리토리스를%CALLNAME:PLAYER%에 칠해 온다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 허리를 꾸욱 내밀어 밀착시키고, 클리토리스를 %CALLNAME:PLAYER%에 칠해 온다…
 		ENDIF
 	CASE 62
 		;연모
@@ -5288,13 +5288,13 @@ IF SHOOT("정액세례")
 				CALL SET_CEVENT, "髪にぶっかけ：初回"
 			ELSEIF CEVENT("髪にぶっかけ：２回目") == 0
 				PRINTFORMW 「후─………입로 말해도 모르는 녀석의 상대는 지치네요, 완전히！」
-				PRINTFORMW %CALLNAME:TARGET%하%CALLNAME:PLAYER%의 머리를 찔렀다
+				PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의 머리를 찔렀다
 				;무드減少
 				TFLAG:33 -= 5
 				CALL SET_CEVENT, "髪にぶっかけ：２回目"
 			ELSE
 				PRINTFORMW 「그러니까―. 머리카락에 걸치지 말라고 말했을 것이지만, 이 아보가！」
-				PRINTFORMW 화가 치밀었다%CALLNAME:TARGET%하%CALLNAME:PLAYER%의 머리를 정말로 때렸다！
+				PRINTFORMW 화가 치밀었다%CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의 머리를 정말로 때렸다！
 				;무드減少
 				TFLAG:33 -= 10
 			ENDIF
@@ -6267,7 +6267,7 @@ CASE "서류작업：무시"
 		IF RAND:2
 			PRINTFORMW %CALLNAME:ARG%하%CALLNAME:MASTER%의 사타구니에손를 늘려, 상냥하게 더듬어 왔다…
 		ELSE
-			PRINTFORMW %CALLNAME:ARG%는 뒤로부터 껴안아,%CALLNAME:MASTER%노가슴을더듬어 왔다…
+			PRINTFORMW %CALLNAME:ARG%는 뒤로부터 껴안아,%CALLNAME:MASTER%의가슴을더듬어 왔다…
 		ENDIF
 
 		SETBIT CFLAG:ARG:71, 40
