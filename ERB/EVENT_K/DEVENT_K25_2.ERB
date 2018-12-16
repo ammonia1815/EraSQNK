@@ -501,7 +501,7 @@ ELSEIF EVENT_NUM && (RAND:3 == 0 || CEVENT(LOCALS:EVENT_NUM) == 0)
 			PRINTFORMW 창으로부터 밖을 보면, 일용품을 사러 갔다%CALLNAME:TARGET%(와)과%CALLNAME:GUEST%하지만 돌아오는 것이 보였습니다
 			PRINTFORMW %CALLNAME:TARGET%의 양손그리고 짐을 전부 가져,%CALLNAME:GUEST%는 그녀에게 양산을 가려 주고 있습니다
 			PRINTFORMW 훌륭한 역할 분담이라고 말해야할 것인가, 서로 굉장히 편한 것 같습니다……
-		ELSEIF RAND:2 == 0 && COND("夏")
+		ELSEIF RAND:2 == 0 && TEXTS("계절") == "여름"
 			PRINTFORMW 깜빡 졸음 하고 있다%CALLNAME:TARGET%에,%CALLNAME:GUEST%하지만 밀착하고 있습니다
 			PRINTFORMW 네%CALLNAME:GUEST%의 체온이 낮은 것 같고, 피부를 대면 썰렁 한다라는 일입니다
 			PRINTFORMW …………아직 일어날 것 같지 않기 때문에%CALLNAME:MASTER%도 량을 취했습니다
@@ -820,7 +820,7 @@ ELSEIF EVENT_NUM && (RAND:3 == 0 || CEVENT(LOCALS:EVENT_NUM) == 0)
 		IF CFLAG:GUEST:209 == 1
 			;昼
 			IF TIME == 0 
-				IF RAND:2 == 0 && (TEXTS("季節") == "春" || TEXTS("季節") == "夏") && COND("상성○", GUEST)
+				IF RAND:2 == 0 && (TEXTS("季節") == "봄" || TEXTS("季節") == "여름") && COND("상성○", GUEST)
 					PRINTFORMW 문득, 창 밖에서 뜰을 보면……나무의 그늘에서%CALLNAME:TARGET%의 낮잠을 자고 있었습니다
 					PRINTFORMW 낮부터 밖으로 나와 있다니 드문 일입니다만, 그 근처에는%CALLNAME:GUEST%의 모습도 보입니다. 아무래도 그녀가 데리고 나간 것 같습니다
 					PRINTFORMW 두 명의 상태를 보고 있으면,%CALLNAME:MASTER%까지 낮잠을 자고 싶어졌습니다……
@@ -850,7 +850,7 @@ ELSEIF EVENT_NUM && (RAND:3 == 0 || CEVENT(LOCALS:EVENT_NUM) == 0)
 		ELSE
 			;昼
 			IF TIME == 0 
-				IF RAND:2 == 0 && (TEXTS("季節") == "春" || TEXTS("季節") == "夏") && COND("상성○", GUEST)
+				IF RAND:2 == 0 && (TEXTS("季節") == "봄" || TEXTS("季節") == "여름") && COND("상성○", GUEST)
 					PRINTFORMW 문득, 창 밖에서 뜰을 보면……%CALLNAME:GUEST%하지만 양산을 가렸다%CALLNAME:TARGET%노손를 당기고 있었습니다！
 					PRINTFORMW %CALLNAME:TARGET%의 낮부터 밖을 걷고 싶어한다고는 생각하기 어렵습니다만……그 표정은 의외로 즐거운 듯 합니다
 					PRINTFORMW 당분간 두 명의 산책하는 모습을 바라보았습니다……
@@ -970,7 +970,7 @@ ELSEIF EVENT_NUM && (RAND:3 == 0 || CEVENT(LOCALS:EVENT_NUM) == 0)
 			IF RAND:3 == 0 && COND("상성◎", GUEST)
 				PRINTFORMW 완전히 햇빛도 빠짐 현관의 열쇠를 잠그려고 했을 때, 문이 열려%CALLNAME:TARGET%(와)과%CALLNAME:GUEST%하지만 돌아왔습니다
 				PRINTFORMW 이런시간까지 둘이서 무엇을 하고 있던 것입니까……？
-				IF TEXTS("季節") == "冬"
+				IF TEXTS("季節") == "겨울"
 					IF RAND:4 == 0 
 						PRINTFORMW 『훅, 이렇게 아름다운 밤하늘을 날지 않는다흡혈귀등……！』
 					ELSEIF RAND:3 == 0 
@@ -1478,7 +1478,7 @@ ELSEIF TIME == 0 && RAND:10
 	;연모の時
 	IF TALENT:연모
 		;季節限定の구상はだいたいこっちに。通年ものよりはちょっと확률低め
-		IF RAND:3 == 0 && TEXTS("季節") == "夏"
+		IF RAND:3 == 0 && TEXTS("季節") == "여름"
 			PRINTFORMW %CALLNAME:TARGET%의 방을 들여다 보면,%CALLNAME:TARGET%의 수영복 모습으로 거울의 전에 서 있었습니다……
 			PRINTFORMW %CALLNAME:TARGET%는 수영복의 시착을 하고 있는 것 같아, 그 상태를 차분히 확인하고 있습니다
 			PRINTFORM 잠시 후에%CALLNAME:TARGET%는 입고 있는 수영복을 벗어, 이번은
@@ -1919,7 +1919,7 @@ ELSEIF TIME == 1 && RAND:10
 		;季節限定の구상はだいたいこっちに。通年ものよりはちょっと확률低め
 		;夏のワイングラスを分離させるべきか考え中
 		IF RAND:3 == 0 
-			IF TEXTS("季節") == "春"
+			IF TEXTS("季節") == "봄"
 				PRINTFORMW 리빙에서는%CALLNAME:TARGET%의 뭔가의 책을 흥미로운 것 같게 읽고 있습니다……
 				PRINTFORMW 「아, 좋은 곳에 왔습니다. 조금 이것을 봐 주세요♪」
 				PRINTFORMW 그렇게 말해%CALLNAME:TARGET%의 내민 것은 가이드 북이었습니다
@@ -1934,7 +1934,7 @@ ELSEIF TIME == 1 && RAND:10
 					PRINTFORMW 「여자 아이의 꿈의 1개군요………」
 					PRINTFORMW %CALLNAME:TARGET%는 넋을 잃은 표정으로 사진을 바라보고 있습니다
 				ENDIF
-			ELSEIF TEXTS("季節") == "夏"
+			ELSEIF TEXTS("季節") == "여름"
 				IF RAND:2 == 0
 					PRINTFORMW 리빙에서는%CALLNAME:TARGET%의 뭔가의 책을 흥미로운 것 같게 읽고 있습니다……
 					PRINTFORMW 「아, 좋은 곳에 왔습니다. 조금 이것을 봐 주세요♪」
@@ -1962,7 +1962,7 @@ ELSEIF TIME == 1 && RAND:10
 					PRINTFORMW 특이한 몸이 원인인 것인가,%CALLNAME:TARGET%의 몸은 썰렁 하고 있었습니다. 이것은 기분이 좋다！
 					PRINTFORMW 얼굴을 새빨갛게 했다%CALLNAME:TARGET%의 몸으로, 당분간 량을 취했습니다……
 				ENDIF
-			ELSEIF TEXTS("季節") == "秋"
+			ELSEIF TEXTS("季節") == "가을"
 				PRINTFORMW 리빙에서는%CALLNAME:TARGET%의 뭔가의 책을 흥미로운 것 같게 읽고 있습니다……
 				PRINTFORMW 「아, 좋은 곳에 왔습니다. 조금 이것을 봐 주세요♪」
 				PRINTFORML 그렇게 말해%CALLNAME:TARGET%의 내민 것은 가이드 북이었습니다
@@ -2047,7 +2047,7 @@ ELSEIF TIME == 1 && RAND:10
 				PRINTFORMW %CALLNAME:TARGET%는 기쁜듯이 웃었습니다……
 			ELSEIF RAND:3 == 0
 				PRINTFORMW 리빙으로 %CALLNAME:TARGET%의 글래스를 기울이고 있었습니다
-				IF RAND:10 == 0 && TEXTS("季節") == "夏"
+				IF RAND:10 == 0 && TEXTS("季節") == "여름"
 					PRINTFORMW 글래스안은 투명한액체그리고 채워져 거기에 떠오르는 얼음의 덩어리가 시원한 음색을 미치게 하고 있습니다
 					PRINTFORMW 「내용이 신경이 쓰입니다？단순한 빙수예요, 이것」
 					PRINTFORMW 「그렇지만 여름의목욕후에 마시면, 이상한 정도 맛있지요～♪」
