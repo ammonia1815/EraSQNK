@@ -4186,12 +4186,12 @@ ELSEIF TEQUIP:야외플레이 && GETBIT(CFLAG:201, 30) == 0
 					ENDIF
 				ELSE
 					;여름だと가능性あり
-					IF RAND:5 == 0 && TEXTS("季節") == "夏"
+					IF RAND:5 == 0 && TEXTS("季節") == "여름"
 						PRINTFORMW 「……덥지 않습니다？수건 올까요」
 						PRINTFORMW %CALLNAME:TARGET%는 손수건을 꺼내면,%CALLNAME:MASTER%의 이마에 떠오른 땀을 휙 닦아냈다
 						PRINTFORMW 「돌아가면 차가운 음료라도 마셔, 좀 쉬어요♪」
 					;秋だと가능性あり
-					ELSEIF RAND:4 == 0 && TEXTS("季節") == "秋"
+					ELSEIF RAND:4 == 0 && TEXTS("季節") == "가을"
 						PRINTFORMW 관에의 돌아가는 길,%CALLNAME:TARGET%(은)는 %CALLNAME:MASTER%(와)과손를 잡으면서……뿐만이 아니고, 매우 몸을 붙여 걷고 있다
 						PRINTFORMW 「모처럼 몸을 서로 따뜻하게 한 것 인거야. 귀가도 따뜻하게 해 돌아가지 않으면♪」
 					ELSEIF RAND:3 == 0
@@ -4341,11 +4341,11 @@ ELSEIF TEQUIP:야외플레이 && GETBIT(CFLAG:201, 30) == 0
 					ENDIF
 				ELSE
 					;여름だと가능性あり
-					IF RAND:6 == 0 && TEXTS("季節") == "夏"
+					IF RAND:6 == 0 && TEXTS("季節") == "여름"
 						PRINTFORMW 「햇빛도 떨어져 시원해졌어요. 바람이 기분이 좋습니다……」
 						PRINTFORMW 「……관에 도착하는 무렵에는 몸도 식고, 또 안아 받을 수 있는 기회의 예정입니다♪」
 					;秋だと가능性あり
-					ELSEIF RAND:5 == 0 && TEXTS("季節") == "秋"
+					ELSEIF RAND:5 == 0 && TEXTS("季節") == "가을"
 						PRINTFORMW 관에의 돌아가는 길,%CALLNAME:TARGET%(은)는 %CALLNAME:MASTER%(와)과손를 잡으면서……뿐만이 아니고, 매우 몸을 붙여 걷고 있다
 						PRINTFORMW 「모처럼 몸을 서로 따뜻하게 한 것 인거야. 귀가도 따뜻하게 해 돌아가지 않으면♪」
 					ELSEIF RAND:4 == 0
@@ -12184,7 +12184,7 @@ IF SELECTCOM == 171 && COND("마을")
 							PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 손를 당겨, 인기(이)가 없는 뒷골목으로 이동했다……
 						ELSE
 							;가을で낮だと가능性あり
-							IF TEXTS("季節") == "秋" && COND("낮") && RAND:2
+							IF TEXTS("季節") == "가을" && COND("낮") && RAND:2
 								PRINTFORMW 「……조금 전 엇갈렸다컵르, 함께의 머플러를 감아 따뜻한 것 같았습니다」
 								PRINTFORMW 「우리도 지지 않을 정도, 두껍다 것을 합시다♪」
 							ELSE
@@ -19220,9 +19220,9 @@ CASE "お土産"
 		ELSEIF CEVENT("最新土産：一本歯の高下駄") && RAND:10
 			PRINTFORMW 「모처럼 받았기 때문에, 이것을 신어 축제라든지 가고 싶네요♪」
 		ELSEIF CEVENT("最新土産：ガラス細工の風鈴") && RAND:9
-			IF TEXTS("季節") == "春"
+			IF TEXTS("季節") == "봄"
 				PRINTFORMW 「여름이 되면 장식해요♪」
-			ELSEIF TEXTS("季節") == "夏"
+			ELSEIF TEXTS("季節") == "여름"
 				PRINTFORMW 「돌아가면 즉시 장식합시다. 투명해, 시원하게 될 수 있을 것 같은 음색입니다……♪」
 			ELSE
 				PRINTFORMW 「내년의 여름은 보내기 쉬워질 것 같네요♪」
@@ -19537,13 +19537,13 @@ CASE "一言이벤트"
 		;ゲーム内시간
 		ELSE
 			IF COND("낮")
-				IF RANDF(8) == 0 && TEXTS("季節") == "夏"
+				IF RANDF(8) == 0 && TEXTS("季節") == "여름"
 					IF RANDF(2) == 0
 						PRINTFORML 「오늘도 더워질 것 같네요. 나？뜨거운 것뿐이라면 괜찮지만」
 					ELSE
 						PRINTFORML 「노력하면 여름의 태양도 아무렇지도 않게 되지 않을까요……？」
 					ENDIF
-				ELSEIF RANDF(7) == 0 && TEXTS("季節") == "冬"
+				ELSEIF RANDF(7) == 0 && TEXTS("季節") == "겨울"
 					;연모持ちが5人이상いると가능性
 					IF RANDF(3) == 0 && CHARA_NUM("연모") >= 5
 						PRINTFORML 「날씨 좋네요. 모두가 눈싸움이라도 하고 싶은 기분입니다」
@@ -19571,13 +19571,13 @@ CASE "一言이벤트"
 					PRINTFORML 「아, 와인이라도 가득……라고 아직 낮이었지요」
 				ENDIF
 			ELSE
-				IF RANDF(9) == 0 && TEXTS("季節") == "夏"
+				IF RANDF(9) == 0 && TEXTS("季節") == "여름"
 					IF RANDF(2) == 0
 						PRINTFORML 「더운 밤은흡혈귀(와)과 함께 자는 것이 추천이에요……♪」
 					ELSE
 						PRINTFORML 「해가 떨어져 시원해졌습니다만, 뜨거운 밤이 기다리고 있어요♪」
 					ENDIF
-				ELSEIF RANDF(8) == 0 && TEXTS("季節") == "冬"
+				ELSEIF RANDF(8) == 0 && TEXTS("季節") == "겨울"
 					IF RANDF(4) == 0 && CHARA_NUM("연모") >= 5
 						PRINTFORML 「춥지는 않아도, 수다 하고 싶었으면 난로전에 누군가 있으므로 좋아요」
 					ELSEIF RANDF(3) == 0

@@ -4,6 +4,7 @@
 #DIM LIMIT_ACTOR
 #DIM MEMO_TARGET
 #DIM MEMO_FLAG8
+#DIM LASTCHARA
 
 MEMO_TARGET = TARGET
 TARGET = -1
@@ -54,8 +55,9 @@ FOR LCOUNT, 2, CHARANUM
 	SIF COND("하룻밤개방실행끝", LCOUNT) == 0 || LCOUNT == ACTOR
 		CONTINUE
 	PRINTPLAINFORM , [{LCOUNT, 2}]%CALLNAME:LCOUNT%
+	LASTCHARA = LCOUNT
 NEXT
-PRINTFORMW \@ CHARA_NUM("하룻밤개방실행끝") >= 3 ? 들이 # %조사만처리(CALLNAME:LCOUNT, "가")% \@ 저택 밖에서 즐기고 온 모양이다…
+PRINTFORMW \@ CHARA_NUM("하룻밤개방실행끝") >= 3 ? 들이 # %조사만처리(CALLNAME:LASTCHARA, "가")% \@ 저택 밖에서 즐기고 온 모양이다…
 
 ;하룻밤개방中フラグOFF
 CLEARBIT FLAG:99, 12
