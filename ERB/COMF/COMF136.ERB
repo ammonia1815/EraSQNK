@@ -4,7 +4,7 @@
 ;배설を촬영すると, 初回は굴복が凄まじい事になる
 
 IF COND("애널栓") || (TEQUIP:촉수 && TEQUIP:관장)
-	IF COND("大量관장")
+	IF COND("대량관장")
 		PRINT 대량배설
 	ELSEIF COND("액체관장")
 		PRINT 배설
@@ -163,12 +163,12 @@ CALL CALC, "조교소스", LOCAL:0, LOCAL:1, LOCAL:2, LOCAL:3, LOCAL:4, LOCAL:5,
 ;10bit 정액관장
 ;11bit 온천관장
 
-;관장プラグの着脱
+;관장플러그の着脱
 IF COND("애널栓")
 	CALL SETFLAG, "배설"
 ELSE
 	IF TEQUIP:관장
-		IF COND("大量관장")
+		IF COND("대량관장")
 			PRINTFORMW %CALLNAME:TARGET%에게 한계까지 관장액을 추가로 주입했다
 			PRINTFORMW 대략의 액채로 가득찬 %CALLNAME:TARGET%의 배는 개구리처럼 부풀어올라있다…
 			TEQUIP:관장 = 1p1 + 1p2 + 1p3 + 1p4
@@ -236,7 +236,7 @@ ENDIF
 IF COND("애널栓")
 	CALL SETFLAG, "배설"
 ELSE
-	;액체量MAX＆プラグつき
+	;액체量MAX＆플러그つき
 	TEQUIP:관장 = 1p1 + 1p2 + 1p3 + 1p4 + 1p9
 	PRINTFORMW 극태의 촉수가 %CALLNAME:TARGET%의 애널을 막고, 체액을 흘려넣었다…
 	CALL ADD_STAIN, TARGET, "Ａ", "촉수"
@@ -386,7 +386,7 @@ ELSEIF COND("액체관장")
 			PRINTFORML 그 표정은 쾌락에 칠칠맞게 풀어져, 입\@ TALENT:남자 == 0 ? 과 질구 # \@에서 똑똑 군침을 흘리고있다…
 		ENDSELECT
 		SIF COND("배설：限界")
-			CALL SELF_KOJO, "プラグ無し관장이벤트"
+			CALL SELF_KOJO, "플러그無し관장이벤트"
 	ENDIF
 ENDIF
 EXP:관장경험 += 1

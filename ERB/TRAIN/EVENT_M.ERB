@@ -1104,7 +1104,7 @@ SIF LINECOUNT > MEMO_LINECOUNT
 IF COND("액체관장") + COND("정액관장") && COND("애널栓") == 0
 	;限界値を越えているかどうか
 	IF COND("배설：限界")
-		CALL SELF_KOJO, "プラグ無し관장이벤트"
+		CALL SELF_KOJO, "플러그無し관장이벤트"
 		;애널がふさがれていれば漏れない
 		IF INSERT("Ａ인서트") == 0
 			PRINTFORML 
@@ -1129,7 +1129,7 @@ IF COND("액체관장") + COND("정액관장") && COND("애널栓") == 0
 			ENDSELECT
 			SELECTCASE BASE:배설물
 			CASE 0
-				PRINTFORML 장내의 오염 액을\@ COND("大量관장") ? 성대하게 털어 놓아 # 흘리고 \@아차…
+				PRINTFORML 장내의 오염 액을\@ COND("대량관장") ? 성대하게 털어 놓아 # 흘리고 \@아차…
 			CASE IS <= 2
 				IF COND("정액관장")
 					PRINTFORM 정액 범벅이 된
@@ -1138,7 +1138,7 @@ IF COND("액체관장") + COND("정액관장") && COND("애널栓") == 0
 				ELSE
 					PRINTFORM 약물로 연화 된
 				ENDIF
-				PRINTFORMW 장내의 오물을 항문에서\@ COND("大量관장") ? 성대히 # \@뿌려 버렸다…
+				PRINTFORMW 장내의 오물을 항문에서\@ COND("대량관장") ? 성대히 # \@뿌려 버렸다…
 			CASE IS <= 6
 				PRINTFORMW 장에 모아져 있던 몇 일 분이라고 여겨지는 오물 을\@ COND("정액관장") ? 쏟아 지고 정액과 함께 # \@굉장한 기세로 쏟아 버린다…
 			CASEELSE
@@ -1151,7 +1151,7 @@ IF COND("액체관장") + COND("정액관장") && COND("애널栓") == 0
 			;배설した時のSOURCEを加算
 			CALL SOURCE_COM136, 100
 
-			CALL SELF_KOJO, "プラグ無し관장이벤트"
+			CALL SELF_KOJO, "플러그無し관장이벤트"
 		ENDIF
 	ELSEIF COND("액체관장")
 		PRINTFORML 
@@ -1173,7 +1173,7 @@ IF COND("액체관장") + COND("정액관장") && COND("애널栓") == 0
 				PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 새어나오지 않도록 변의를 견디고있다…
 			ENDIF
 		ENDSELECT
-		CALL SELF_KOJO, "プラグ無し관장이벤트"
+		CALL SELF_KOJO, "플러그無し관장이벤트"
 	ENDIF
 ENDIF
 
