@@ -8,7 +8,7 @@
 SIF FIND_COND("Ｃ뱀파이어２", "연모")
 	RESULT = FIND_COND("Ｃ뱀파이어２")
 ;☆トマト収穫が行われなかったとき用
-SIF TEXTS("季節") == "秋" && CEVENT("ミニトマト栽培初回") && CEVENT("ミニトマト収穫") == 0
+SIF TEXTS("季節") == "가을" && CEVENT("ミニトマト栽培初回") && CEVENT("ミニトマト収穫") == 0
 	CALL SET_CEVENT, "ミニトマト栽培二回目以降"
 
 ;반발각인Lv3の時
@@ -31,7 +31,7 @@ ELSEIF CEVENT("브래지어ッドサック습득") == 0 && GETBIT(CFLAG:RESULT:2
 	PRINTFORMW ………%CALLNAME:TARGET%의 왠지 불온한 일을입로 하고 있습니다
 	CALL SET_CEVENT, "브래지어ッドサック습득"
 ;☆トマト栽培開始이벤트
-ELSEIF TEXTS("季節") == "春" && TIME == 0 && CEVENT("ミニトマト栽培") == 0 && TALENT:연모
+ELSEIF TEXTS("季節") == "봄" && TIME == 0 && CEVENT("ミニトマト栽培") == 0 && TALENT:연모
 	;☆初回
 	IF CEVENT("ミニトマト栽培初回") == 0
 		PRINTFORMW %CALLNAME:MASTER%하지만 자기 방의 창으로부터 아무렇지도 않게 뜰을 바라보면,%CALLNAME:TARGET%의 나무 그늘에 주저앉고 있는 것이 보였다.
@@ -62,7 +62,7 @@ ELSEIF TEXTS("季節") == "春" && TIME == 0 && CEVENT("ミニトマト栽培") 
 		CALL DEL_CEVENT, "ミニトマト収穫"
 	ENDIF
 ;☆ミニトマト収穫이벤트
-ELSEIF TEXTS("季節") == "夏" && CEVENT("ミニトマト栽培") && CEVENT("ミニトマト収穫") == 0 && TALENT:연모
+ELSEIF TEXTS("季節") == "여름" && CEVENT("ミニトマト栽培") && CEVENT("ミニトマト収穫") == 0 && TALENT:연모
 	;☆初回
 	IF CEVENT("収穫경험あり") == 0
 		PRINTFORMW %CALLNAME:MASTER%하지만 복도를 걷고 있으면,%CALLNAME:TARGET%의 방으로부터 나왔다.

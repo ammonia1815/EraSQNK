@@ -51,7 +51,7 @@ CASE "성희롱이력"
 ;ARG:1がARG:2のARG（種別）を受け入れた
 ;"Ｖ受け入れ페니스", 3, TARGET, PLAYER　ならTARGETがPLAYERの大きさ3の페니스を受け入れた場合となる
 ;関数の書式変更の가능性ある感じだ…
-CASE "Ｖ受け入れ페니스", "Ｖ受け入れ바이브", "Ｖ受け入れ피스트", "Ｖ受け入れプラグ"
+CASE "Ｖ受け入れ페니스", "Ｖ受け入れ바이브", "Ｖ受け入れ피스트", "Ｖ受け入れ플러그"
 	;ARG:2はマイナスの値を取り得る
 	SIF ARG < 0 || ARG:1 < 0
 		RETURN 0
@@ -86,8 +86,8 @@ CASE "Ｖ受け入れ페니스", "Ｖ受け入れ바이브", "Ｖ受け入れ피
 		MEMOS = 바이브：%TOSTR(ARG)%＠%MEMOS%＃%TOSTR(DAY)%＊
 	CASE "Ｖ受け入れ피스트"
 		MEMOS = フィスト：%TOSTR(ARG)%＠%MEMOS%＃%TOSTR(DAY)%＊
-	CASE "Ｖ受け入れプラグ"
-		MEMOS = プラグ：%TOSTR(ARG)%＠%MEMOS%＃%TOSTR(DAY)%＊
+	CASE "Ｖ受け入れ플러그"
+		MEMOS = 플러그：%TOSTR(ARG)%＠%MEMOS%＃%TOSTR(DAY)%＊
 	ENDSELECT
 
 	VARSET LOCALS
@@ -129,7 +129,7 @@ CASE "Ｖ受け入れ페니스", "Ｖ受け入れ바이브", "Ｖ受け入れ피
 	;確認用
 	;PRINTFORML CSTR:V수용이력 = %CSTR:(ARG:1):V수용이력%
 
-CASE "Ａ受け入れ페니스", "Ａ受け入れ바이브", "Ａ受け入れ피스트", "Ａ受け入れプラグ"
+CASE "Ａ受け入れ페니스", "Ａ受け入れ바이브", "Ａ受け入れ피스트", "Ａ受け入れ플러그"
 	;ARG:2はマイナスの値を取り得る
 	SIF ARG < 0 || ARG:1 < 0
 		RETURN 0
@@ -164,8 +164,8 @@ CASE "Ａ受け入れ페니스", "Ａ受け入れ바이브", "Ａ受け入れ피
 		MEMOS = 바이브：%TOSTR(ARG)%＠%MEMOS%＃%TOSTR(DAY)%＊
 	CASE "Ａ受け入れ피스트"
 		MEMOS = フィスト：%TOSTR(ARG)%＠%MEMOS%＃%TOSTR(DAY)%＊
-	CASE "Ａ受け入れプラグ"
-		MEMOS = プラグ：%TOSTR(ARG)%＠%MEMOS%＃%TOSTR(DAY)%＊
+	CASE "Ａ受け入れ플러그"
+		MEMOS = 플러그：%TOSTR(ARG)%＠%MEMOS%＃%TOSTR(DAY)%＊
 	ENDSELECT
 
 	VARSET LOCALS
@@ -3398,12 +3398,12 @@ CASE "경험취득"
 		IF TEQUIP:확장벌룬 == 1
 			EXP:Ｖ경험 += 2
 			EXP:Ｖ확장경험 += 2
-			CALL SETFLAG, "Ｖ受け入れプラグ", ABL:Ｖ확장 + 1
+			CALL SETFLAG, "Ｖ受け入れ플러그", ABL:Ｖ확장 + 1
 		ELSEIF TEQUIP:확장벌룬 == 2
 			EXP:PLAYER:Ａ자극경험 += 2
 			EXP:Ａ경험 += 2
 			EXP:Ａ확장경험 += 2
-			CALL SETFLAG, "Ａ受け入れプラグ", ABL:Ａ확장 + 1
+			CALL SETFLAG, "Ａ受け入れ플러그", ABL:Ａ확장 + 1
 		ENDIF
 	CASE 138
 		EXP:PLAYER:방뇨경험 += 1
