@@ -32,12 +32,12 @@ $SELECT_MOOD
 PRINTL 
 ;모드선택
 PRINTL ★★모드와 설정을 선택해주세요★★
-PRINTFORML  [ 0] NORMAL （통상모드 목표금액%TEXT_RJ(MONEY_C(NUM("목표금액：ＮＯＲＭＡＬ") ), 10)%）
-PRINTFORML  [ 1] EASY    (간단모드 목표금액%TEXT_RJ(MONEY_C(NUM("목표금액：ＥＡＳＹ") ), 10)%) 
-PRINTFORML  [10] 컨피그
+PRINTFORML  [ 0] %"NORMAL", 18, LEFT% (통상모드 / 목표금액 : %TEXT_RJ(MONEY_C(NUM("목표금액：ＮＯＲＭＡＬ") ), 10)%)
+PRINTFORML  [ 1] %"EASY", 18, LEFT% (간단모드 / 목표금액 : %TEXT_RJ(MONEY_C(NUM("목표금액：ＥＡＳＹ") ), 10)%)
+PRINTFORML  [10] %"컨피그", 18, LEFT%
 SIF GLOBAL:99 > 0 && LOCAL == 0
-	PRINTFORML  [11] 컨피그설정（기록일:{GLOBAL:99/10000}년{(GLOBAL:99%10000)/100}월{GLOBAL:99%100}일）로드
-PRINTFORML [100] 돌아간다
+	PRINTFORML  [11] %"컨피그 설정 로드", 18, LEFT% (기록일 : {GLOBAL:99/10000}년 {(GLOBAL:99%10000)/100}월 {GLOBAL:99%100}일)
+PRINTFORML [100] %"돌아간다", 18, LEFT%
 
 $INPUT_LOOP
 INPUT
@@ -77,31 +77,31 @@ IF NO:MASTER == 0
 	;オープニングのはじまりはじまり
 	PRINTL 
 	PRINTFORMW 「몽마」
-	PRINTFORMW 꿈의 마물. 꿈에 나타나, 사람과 만난다. 
+	PRINTFORMW 꿈의 마물. 꿈 속에 나타나, 사람과 만난다. 
 	PRINTFORMW 그 모습은 언제나 아름답고, 결코 몽마의 유혹에서 벗어날 수 없다. 
 	PRINTFORMW 몽마에게 매료되어 그 쾌락의 포로가 된다면 그 사람도 또한, 영원히 꿈속에서 살게 된다. 
 	PRINTFORMW 
-	PRINTFORMW 여긴 어디일까. 위도 아래도 알수없는 몽롱한 장소에서 %조사처리(CALLNAME:PLAYER,"는")% 있었다. 
+	PRINTFORMW 여긴 어디일까. 위도 아래도 분간할 수 없는 몽롱한 장소에 %조사처리(CALLNAME:PLAYER,"는")% 있었다. 
 	PRINTFORMW 그 어슴푸레한 장소에서, 사람의 이목을 끄는 요염한 여자가 분명히 서있었다. 
 	PRINTFORMW 여자는 그 젖은 입술에서, 마치 노래하는 듯이 말을 자아냈다. 
 	PRINTFORMW 「당신은『조교사』, 이제부터 당신은 『몽마』를 『조교』하는거야」
-	PRINTFORMW 「더욱 엉망진창으로 범해서…. 어때? 두근두근하지않아? 」
-	PRINTFORMW 「당신의, 장소를, 사람을, 역사를, 여기에 만들어…」
-	PRINTFORMW 『몽마』? 『조교』? 무슨 일인걸까. 
+	PRINTFORMW 「더욱 엉망진창으로 범해서…. 어때? 두근두근하지 않아? 」
+	PRINTFORMW 「당신의 장소를, 사람을, 역사를, 여기에 만들어…」
+	PRINTFORMW 『몽마』? 『조교』? 무슨 말인걸까. 
 	PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 입을 여는 것보다 빠르게, 그 의식은 멀어져갔다. 
 	PRINTFORMW 「그럼, 힘내♪」
 	PRINTFORMW ………
 	PRINTFORMW ……
 	PRINTFORMW …
 	PRINTFORMW 눈을 뜨자 낯선 장소에 있다. 아니 틀리다. 여기는 「%CALLNAME:PLAYER%의 서재」다. 
-	PRINTFORMW 지금 여기에서 %CALLNAME:PLAYER%의 조련사로서의 빛나는 나날이 시작되는 거다. 
+	PRINTFORMW 지금 여기에서 %CALLNAME:PLAYER%의 조교사로서의 빛나는 나날이 시작되는 거다. 
 	PRINTFORMW 목이 타는 듯이 마르다…. 
-	PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 눈앞에 놓여진 묘즈를 손에 들고 글라스에 찰랑찰랑하게 따르고
-	PRINTFORMW 뇌리에 눌러붙는 위화감괴 함께 목에 흘려보냈다. 
+	PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 눈앞에 놓여진 벌꿀술을 손에 들어 술잔에 찰랑찰랑하게 따르고,
+	PRINTFORMW 뇌리에 눌러 붙는 위화감과 함께 목에 흘려보냈다. 
 	PRINTFORMW 
 	PRINTFORMW 「네에～～엣, 어서오세요 eraSQ의 세계에」
-	PRINTFORMW 「오늘부터 당신은 몽마라고 불리는 여자아이들을 조교하는 조련사의 생활을 하게 되는거다」
-	PRINTFORMW 「어떻게 조교하는 지, 그후 무엇을 하는지, 어떻게 시간을 보낼지는 너의 자유야」
+	PRINTFORMW 「오늘부터 당신은 몽마라고 불리는 여자아이들을 조교하는 조교사의 생활을 하게 되는거다」
+	PRINTFORMW 「어떻게 조교하는 지, 그 후 무엇을 할지, 어떻게 시간을 보낼지는 너의 자유야」
 	PRINTFORMW 「왜냐면 여기는…」
 	DRAWLINE
 ELSEIF NO:MASTER == 34
@@ -214,7 +214,7 @@ PRINTL 성별을 선택해주세요
 PRINTL [ 0] ♂
 PRINTL [ 1] ♀
 PRINTL [ 2] 후타나리
-PRINTL [ 3] 오토코노코(남자로는 보이지않는 귀여운 외모에, 여성같은 행동을 즐기는 소년)
+PRINTL [ 3] 오토코노코 (남자로는 보이지않는 귀여운 외모에, 여성같은 행동을 즐기는 소년)
 
 CALL INPUT_SELECT, 4
 
@@ -353,450 +353,450 @@ VARSET LOCAL
 PRINTL 
 PRINTL 소질이나 경험 등을 결정해주세요
 IF TALENT:ARG:남자 == 0
-	PRINT Ｖ경험 …
+	PRINTFORM %"Ｖ경험", 12, LEFT% …
 	SETCOLOR DEF_COLOR("暗황색")
 	SELECTCASE EXP:ARG:Ｖ경험
 	CASE IS >= 300
-		PRINT 풍부
+		PRINTFORM %"풍부", 6, LEFT%
 	CASE IS >= 150
-		PRINT 많음
+		PRINTFORM %"많음", 6, LEFT%
 	CASE IS >= 20
-		PRINT 있음
+		PRINTFORM %"있음", 6, LEFT%
 	CASEELSE
-		PRINT 처녀
+		PRINTFORM %"처녀", 6, LEFT%
 	ENDSELECT
 	RESETCOLOR
 	PRINTL  [  0]처녀 [  1]있음 [  2]많음 [  3]풍부
 	LOCAL:0 = 1
 	IF EXP:ARG:Ｖ경험
-		PRINT Ｖ성교경험 …
+		PRINTFORM %"Ｖ성교경험", 12, LEFT% …
 		SETCOLOR DEF_COLOR("暗황색")
 		SELECTCASE EXP:ARG:Ｖ성교경험
 		CASE IS >= 150
-			PRINT 풍부
+			PRINTFORM %"풍부", 6, LEFT%
 		CASE IS >= 50
-			PRINT 많음
+			PRINTFORM %"많음", 6, LEFT%
 		CASE IS >= 20
-			PRINT 있음
+			PRINTFORM %"있음", 6, LEFT%
 		CASEELSE
-			PRINT 없음
+			PRINTFORM %"없음", 6, LEFT%
 		ENDSELECT
 		RESETCOLOR
 		PRINTL  [  5]없음 [  6]있음 [  7]많음 [  8]풍부
 		LOCAL:5 = 1
-		PRINT Ｖ확장경험 …
+		PRINTFORM %"Ｖ확장경험", 12, LEFT% …
 		SETCOLOR DEF_COLOR("暗황색")
 		SELECTCASE EXP:ARG:Ｖ확장경험
 		CASE IS >= 50
-			PRINT 풍부
+			PRINTFORM %"풍부", 6, LEFT%
 		CASE IS >= 20
-			PRINT 많음
+			PRINTFORM %"많음", 6, LEFT%
 		CASE IS >= 3
-			PRINT 있음
+			PRINTFORM %"있음", 6, LEFT%
 		CASEELSE
-			PRINT 없음
+			PRINTFORM %"없음", 6, LEFT%
 		ENDSELECT
 		RESETCOLOR
 		PRINTL  [ 10]없음 [ 11]있음 [ 12]많음 [ 13]풍부
 		LOCAL:10 = 1
 	ENDIF
 ENDIF
-PRINT Ａ경험 …
+PRINTFORM %"Ａ경험", 12, LEFT% …
 SETCOLOR DEF_COLOR("暗황색")
 SELECTCASE EXP:ARG:Ａ경험
 CASE IS >= 300
-	PRINT 풍부
+	PRINTFORM %"풍부", 6, LEFT%
 CASE IS >= 150
-	PRINT 많음
+	PRINTFORM %"많음", 6, LEFT%
 CASE IS >= 20
-	PRINT 있음
+	PRINTFORM %"있음", 6, LEFT%
 CASEELSE
-	PRINT 없음
+	PRINTFORM %"없음", 6, LEFT%
 ENDSELECT
 RESETCOLOR
 PRINTL  [ 15]없음 [ 16]있음 [ 17]많음 [ 18]풍부
 LOCAL:15 = 1
 IF EXP:ARG:Ａ경험
-	PRINT Ａ성교경험 …
+	PRINTFORM %"Ａ성교경험", 12, LEFT% …
 	SETCOLOR DEF_COLOR("暗황색")
 	SELECTCASE EXP:ARG:Ａ성교경험
 	CASE IS >= 150
-		PRINT 풍부
+		PRINTFORM %"풍부", 6, LEFT%
 	CASE IS >= 50
-		PRINT 많음
+		PRINTFORM %"많음", 6, LEFT%
 	CASE IS >= 20
-		PRINT 있음
+		PRINTFORM %"있음", 6, LEFT%
 	CASEELSE
-		PRINT 없음
+		PRINTFORM %"없음", 6, LEFT%
 	ENDSELECT
 	RESETCOLOR
 	PRINTL  [ 20]없음 [ 21]있음 [ 22]많음 [ 23]풍부
 	LOCAL:20 = 1
-	PRINT Ａ확장경험 …
+	PRINTFORM %"Ａ확장경험", 12, LEFT% …
 	SETCOLOR DEF_COLOR("暗황색")
 	SELECTCASE EXP:ARG:Ａ확장경험
 	CASE IS >= 50
-		PRINT 풍부
+		PRINTFORM %"풍부", 6, LEFT%
 	CASE IS >= 20
-		PRINT 많음
+		PRINTFORM %"많음", 6, LEFT%
 	CASE IS >= 3
-		PRINT 있음
+		PRINTFORM %"있음", 6, LEFT%
 	CASEELSE
-		PRINT 없음
+		PRINTFORM %"없음", 6, LEFT%
 	ENDSELECT
 	RESETCOLOR
 	PRINTL  [ 25]없음 [ 26]있음 [ 27]많음 [ 28]풍부
 	LOCAL:25 = 1
 ENDIF
 IF PENIS(ARG)
-	PRINT Ｖ삽입경험 …
+	PRINTFORM %"Ｖ삽입경험", 12, LEFT% …
 	SETCOLOR DEF_COLOR("暗황색")
 	SELECTCASE EXP:ARG:Ｖ삽입경험
 	CASE IS >= 150
-		PRINT 풍부
+		PRINTFORM %"풍부", 6, LEFT%
 	CASE IS >= 50
-		PRINT 많음
+		PRINTFORM %"많음", 6, LEFT%
 	CASE IS >= 20
-		PRINT 있음
+		PRINTFORM %"있음", 6, LEFT%
 	CASEELSE
-		PRINT 동정
+		PRINTFORM %"동정", 6, LEFT%
 	ENDSELECT
 	RESETCOLOR
 	PRINTL  [ 30]동정 [ 31]있음 [ 32]많음 [ 33]풍부
 	LOCAL:30 = 1
-	PRINT Ａ삽입경험 …
+	PRINTFORM %"Ａ삽입경험", 12, LEFT% …
 	SETCOLOR DEF_COLOR("暗황색")
 	SELECTCASE EXP:ARG:Ａ삽입경험
 	CASE IS >= 150
-		PRINT 풍부
+		PRINTFORM %"풍부", 6, LEFT%
 	CASE IS >= 50
-		PRINT 많음
+		PRINTFORM %"많음", 6, LEFT%
 	CASE IS >= 20
-		PRINT 있음
+		PRINTFORM %"있음", 6, LEFT%
 	CASEELSE
-		PRINT 없음
+		PRINTFORM %"없음", 6, LEFT%
 	ENDSELECT
 	RESETCOLOR
 	PRINTL  [ 35]없음 [ 36]있음 [ 37]많음 [ 38]풍부
 	LOCAL:35 = 1
 ENDIF
 
-PRINT 몸집 …
+PRINTFORM %"몸집", 12, LEFT% …
 SETCOLOR DEF_COLOR("暗황색")
 IF TALENT:ARG:장신
-	PRINT 장신
+	PRINTFORM %"장신", 6, LEFT%
 ELSEIF TALENT:ARG:작은몸집
-	PRINT 작음
+	PRINTFORM %"작음", 6, LEFT%
 ELSE
-	PRINT 보통
+	PRINTFORM %"보통", 6, LEFT%
 ENDIF
 RESETCOLOR
 PRINTFORML  [100]작음 [101]보통 \@ TALENT:ARG:오토코노코 == 0 ? [102]장신 # \@
 LOCAL:100 = 1
 IF TALENT:ARG:남자 == 0
-	PRINT 가슴 크기  …
+	PRINTFORM %"가슴 크기", 12, LEFT% …
 	SETCOLOR DEF_COLOR("暗황색")
 	IF TALENT:ARG:거유 == 2
-		PRINT 폭유
+		PRINTFORM %"폭유", 6, LEFT%
 	ELSEIF TALENT:ARG:거유
-		PRINT 거유
+		PRINTFORM %"거유", 6, LEFT%
 	ELSEIF TALENT:ARG:빈유
-		PRINT 빈유
+		PRINTFORM %"빈유", 6, LEFT%
 	ELSE
-		PRINT 보통
+		PRINTFORM %"보통", 6, LEFT%
 	ENDIF
 	RESETCOLOR
 	PRINTL  [105]빈유 [106]보통 [107]거유 [108]폭유
 	LOCAL:105 = 1
 ENDIF
 IF PENIS(ARG) && CONFIG("페니스상세설정")
-	PRINT 페니스사이즈…
+	PRINTFORM %"페니스사이즈", 12, LEFT% …
 	SETCOLOR DEF_COLOR("暗황색")
 	IF GETBIT(TALENT:ARG:페니스, 3)
-		PRINT 말잦이
+		PRINTFORM %"말잦이", 6, LEFT%
 	ELSEIF GETBIT(TALENT:ARG:페니스, 2)
-		PRINT 거근
+		PRINTFORM %"거근", 6, LEFT%
 	ELSEIF GETBIT(TALENT:ARG:페니스, 1)
-		PRINT 작음
+		PRINTFORM %"작음", 6, LEFT%
 	ELSEIF GETBIT(TALENT:ARG:페니스, 0)
-		PRINT 보통
+		PRINTFORM %"보통", 6, LEFT%
 	ENDIF
 	RESETCOLOR
 	PRINTFORML  [110]작음 [111]보통 [112]거근 [113]말잦이
 	LOCAL:110 = 1
-	PRINTFORM 포경안함 …
+	PRINTFORM %"포경안함", 12, LEFT% …
 	SETCOLOR DEF_COLOR("暗황색")
 	IF GETBIT(TALENT:ARG:페니스, 12)
-		PRINT 진성
+		PRINTFORM %"진성", 6, LEFT%
 	ELSEIF GETBIT(TALENT:ARG:페니스, 11)
-		PRINT 가성
+		PRINTFORM %"가성", 6, LEFT%
 	ELSE
-		PRINT 없음
+		PRINTFORM %"없음", 6, LEFT%
 	ENDIF
 	RESETCOLOR
 	PRINTFORML  [115]진성 [116]가성 [117]없음
 	LOCAL:115 = 1
 ENDIF
 IF CONFIG("음모")
-	PRINT 음모 …
+	PRINTFORM %"음모", 12, LEFT% …
 	SETCOLOR DEF_COLOR("暗황색")
 	SELECTCASE COND("음모", ARG)
 	CASE 1
-		PRINT 무모
+		PRINTFORM %"무모", 6, LEFT%
 	CASE 2, 3
-		PRINT 제모
+		PRINTFORM %"제모", 6, LEFT%
 	CASE 4, 6
-		PRINT 있음
+		PRINTFORM %"있음", 6, LEFT%
 	CASE 5
-		PRINT 다듬음
+		PRINTFORM %"다듬음", 6, LEFT%
 	CASE 7
-		PRINT 밀림
+		PRINTFORM %"밀림", 6, LEFT%
 	ENDSELECT
 	RESETCOLOR
 	PRINTL  [120]무모 [121]제모 [122]있음 [123]다듬음 [124]밀림
 	LOCAL:120 = 1
 ENDIF
 IF CONFIG("겨털")
-	PRINTFORM %TEXTS("겨드랑이")%털 …
+	PRINTFORM %TEXTS("겨드랑이")+"털", 12, LEFT% …
 	SETCOLOR DEF_COLOR("暗황색")
 	SELECTCASE COND("겨털", ARG)
 	CASE 1
-		PRINT 무모
+		PRINTFORM %"무모", 6, LEFT%
 	CASE 2
-		PRINT 탈모
+		PRINTFORM %"탈모", 6, LEFT%
 	CASE 3
-		PRINT 제모
+		PRINTFORM %"제모", 6, LEFT%
 	CASE 4
-		PRINT 있음
+		PRINTFORM %"있음", 6, LEFT%
 	CASE 7
-		PRINT 밀림
+		PRINTFORM %"밀림", 6, LEFT%
 	ENDSELECT
 	RESETCOLOR
 	PRINTL  [125]무모 [126]제모 [127]있음 [128]밀림
 	LOCAL:125 = 1
 ENDIF
-PRINT 피부색 …
+PRINTFORM %"피부색", 12, LEFT% …
 SETCOLOR DEF_COLOR("暗황색")
 SELECTCASE TALENT:ARG:피부색
 CASE 0
-	PRINT 보통
+	PRINTFORM %"보통", 6, LEFT%
 CASE 1
-	PRINT 갈색
+	PRINTFORM %"갈색", 6, LEFT%
 CASE 2
-	PRINT 백색
+	PRINTFORM %"백색", 6, LEFT%
 CASE 3
-	PRINT 푸른색
+	PRINTFORM %"푸른색", 6, LEFT%
 ENDSELECT
 RESETCOLOR
 PRINTL  [130]보통 [131]갈색 [132]흰색 [133]푸른색
 LOCAL:130 = 1
 
-PRINT 외견연령 …
+PRINTFORM %"외견연령", 12, LEFT% …
 SETCOLOR DEF_COLOR("暗황색")
 SELECTCASE AGE(ARG)
 CASE 1
-	PRINTFORM 아이
+	PRINTFORM %"아이", 6, LEFT%
 CASE 2
-	PRINTFORM \@ TALENT:ARG:남자 ? 소년 # 소녀 \@
+	PRINTFORM %TALENT:ARG:남자 ? "소년" # "소녀", 6, LEFT%
 CASE 3
-	PRINTFORM 청년
+	PRINTFORM %"청년", 6, LEFT%
 CASE 4
-	PRINTFORM 성인
+	PRINTFORM %"어른", 6, LEFT%
 ENDSELECT
 RESETCOLOR
 IF TALENT:ARG:오토코노코
-	PRINTFORML  [135]아이[136]소년
+	PRINTFORML  [135]아이 [136]소년
 ELSE
-	PRINTFORML  [135]아이[136]\@ TALENT:ARG:남자 ? 소년 # 소녀 \@ [137]청년[138]어른
+	PRINTFORML  [135]아이 [136]\@ TALENT:ARG:남자 ? 소년 # 소녀 \@ [137]청년 [138]어른
 ENDIF
 LOCAL:135 = 1
 
 IF TALENT:ARG:남자 == 0 && CONFIG("유두비대")
-	PRINT 유두비대 …
+	PRINTFORM %"유두비대", 12, LEFT% …
 	SETCOLOR DEF_COLOR("暗황색")
 	SELECTCASE COND("유두비대", ARG)
 	CASE IS >= 3
-		PRINT LV３
+		PRINTFORM %"LV３", 6, LEFT%
 	CASE 2
-		PRINT LV２
+		PRINTFORM %"LV２", 6, LEFT%
 	CASE 1
-		PRINT LV１
+		PRINTFORM %"LV１", 6, LEFT%
 	CASEELSE
-		PRINT 없음
+		PRINTFORM %"없음", 6, LEFT%
 	ENDSELECT
 	RESETCOLOR
-	PRINTL  [140]없음[141]LV１ [142]LV２ [143]LV３
+	PRINTL  [140]없음 [141]LV１ [142]LV２ [143]LV３
 	LOCAL:140 = 1
 ENDIF
 IF TALENT:ARG:남자 == 0 && CONFIG("함몰유두")
-	PRINT 함몰유두 …
+	PRINTFORM %"함몰유두", 12, LEFT% …
 	SETCOLOR DEF_COLOR("暗황색")
 	SELECTCASE COND("함몰유두", ARG)
 	CASE 2
-		PRINT 진성
+		PRINTFORM %"진성", 6, LEFT%
 	CASE 1
-		PRINT 가성
+		PRINTFORM %"가성", 6, LEFT%
 	CASEELSE
-		PRINT 없음
+		PRINTFORM %"없음", 6, LEFT%
 	ENDSELECT
 	RESETCOLOR
 	PRINTL  [145]없음 [146]가성 [147]진성
 	LOCAL:145 = 1
 ENDIF
 IF TALENT:ARG:남자 == 0 && CONFIG("거유륜")
-	PRINT 거유륜 …
+	PRINTFORM %"거유륜", 12, LEFT% …
 	SETCOLOR DEF_COLOR("暗황색")
 	SELECTCASE COND("거유륜", ARG)
 	CASE IS >= 3
-		PRINT LV３
+		PRINTFORM %"LV３", 6, LEFT%
 	CASE 2
-		PRINT LV２
+		PRINTFORM %"LV２", 6, LEFT%
 	CASE 1
-		PRINT LV１
+		PRINTFORM %"LV１", 6, LEFT%
 	CASEELSE
-		PRINT 없음
+		PRINTFORM %"없음", 6, LEFT%
 	ENDSELECT
 	RESETCOLOR
-	PRINTL  [150]없음[151]LV１ [152]LV２ [153]LV３
+	PRINTL  [150]없음 [151]LV１ [152]LV２ [153]LV３
 	LOCAL:150 = 1
 ENDIF
 
 
 IF TALENT:ARG:남자 == 0
-	PRINT Ｃ감각 …
+	PRINTFORM %"Ｃ감각", 12, LEFT% …
 	SETCOLOR DEF_COLOR("暗황색")
 	IF TALENT:ARG:Ｃ민감
-		PRINT 민감
+		PRINTFORM %"민감", 6, LEFT%
 	ELSEIF TALENT:ARG:Ｃ둔감
-		PRINT 둔감
+		PRINTFORM %"둔감", 6, LEFT%
 	ELSE
-		PRINT 보통
+		PRINTFORM %"보통", 6, LEFT%
 	ENDIF
 	RESETCOLOR
 	PRINTL  [200]둔감 [201]보통 [202]민감
 	LOCAL:200 = 1
-	PRINT Ｖ감각 …
+	PRINTFORM %"Ｖ감각", 12, LEFT% …
 	SETCOLOR DEF_COLOR("暗황색")
 	IF TALENT:ARG:Ｖ민감
-		PRINT 민감
+		PRINTFORM %"민감", 6, LEFT%
 	ELSEIF TALENT:ARG:Ｖ둔감
-		PRINT 둔감
+		PRINTFORM %"둔감", 6, LEFT%
 	ELSE
-		PRINT 보통
+		PRINTFORM %"보통", 6, LEFT%
 	ENDIF
 	RESETCOLOR
 	PRINTL  [205]둔감 [206]보통 [207]민감
 	LOCAL:205 = 1
 ENDIF
-PRINT Ａ감각 …
+PRINTFORM %"Ａ감각", 12, LEFT% …
 SETCOLOR DEF_COLOR("暗황색")
 IF TALENT:ARG:Ａ민감
-	PRINT 민감
+	PRINTFORM %"민감", 6, LEFT%
 ELSEIF TALENT:ARG:Ａ둔감
-	PRINT 둔감
+	PRINTFORM %"둔감", 6, LEFT%
 ELSE
-	PRINT 보통
+	PRINTFORM %"보통", 6, LEFT%
 ENDIF
 RESETCOLOR
 PRINTL  [210]둔감 [211]보통 [212]민감
 LOCAL:210 = 1
 IF TALENT:ARG:남자 == 0
-	PRINT Ｂ감각 …
+	PRINTFORM %"Ｂ감각", 12, LEFT% …
 	SETCOLOR DEF_COLOR("暗황색")
 	IF TALENT:ARG:Ｂ민감
-		PRINT 민감
+		PRINTFORM %"민감", 6, LEFT%
 	ELSEIF TALENT:ARG:Ｂ둔감
-		PRINT 둔감
+		PRINTFORM %"둔감", 6, LEFT%
 	ELSE
-		PRINT 보통
+		PRINTFORM %"보통", 6, LEFT%
 	ENDIF
 	RESETCOLOR
 	PRINTL  [215]둔감 [216]보통 [217]민감
 	LOCAL:215 = 1
-	PRINT Ｍ감각 …
+	PRINTFORM %"Ｍ감각", 12, LEFT% …
 	SETCOLOR DEF_COLOR("暗황색")
 	IF TALENT:ARG:Ｍ민감
-		PRINT 민감
+		PRINTFORM %"민감", 6, LEFT%
 	ELSEIF TALENT:ARG:Ｍ둔감
-		PRINT 둔감
+		PRINTFORM %"둔감", 6, LEFT%
 	ELSE
-		PRINT 보통
+		PRINTFORM %"보통", 6, LEFT%
 	ENDIF
 	RESETCOLOR
 	PRINTL  [220]둔감 [221]보통 [222]민감
 	LOCAL:220 = 1
 ENDIF
 
-PRINT 새드끼 …
+PRINTFORM %"새드끼", 12, LEFT% …
 SETCOLOR DEF_COLOR("暗황색")
 IF TALENT:ARG:새드
-	PRINT 새드
+	PRINTFORM %"새드", 6, LEFT%
 ELSEIF ABL:ARG:새드끼 >= 3
-	PRINT 강함
+	PRINTFORM %"강함", 6, LEFT%
 ELSEIF ABL:ARG:새드끼 >= 1
-	PRINT 있음
+	PRINTFORM %"있음", 6, LEFT%
 ELSE
-	PRINT 없음
+	PRINTFORM %"없음", 6, LEFT%
 ENDIF
 RESETCOLOR
 PRINTL  [225]없음 [226]있음 [227]강함 [228]새드
 LOCAL:225 = 1
-PRINT 마조끼 …
+PRINTFORM %"마조끼", 12, LEFT% …
 SETCOLOR DEF_COLOR("暗황색")
 IF TALENT:ARG:마조
-	PRINT 마조
+	PRINTFORM %"마조", 6, LEFT%
 ELSEIF ABL:ARG:마조끼 >= 3
-	PRINT 강함
+	PRINTFORM %"강함", 6, LEFT%
 ELSEIF ABL:ARG:마조끼 >= 1
-	PRINT 있음
+	PRINTFORM %"있음", 6, LEFT%
 ELSE
-	PRINT 없음
+	PRINTFORM %"없음", 6, LEFT%
 ENDIF
 RESETCOLOR
 PRINTL  [230]없음 [231]있음 [232]강함 [233]마조
 LOCAL:230 = 1
 IF TALENT:ARG:남자
-	PRINT ＢＬ끼 …
+	PRINTFORM %"ＢＬ끼", 12, LEFT% …
 	SETCOLOR DEF_COLOR("暗황색")
 	SELECTCASE ABL:ARG:ＢＬ끼
 	CASE IS >= 5
-		PRINT 다분함
+		PRINTFORM %"다분함", 6, LEFT%
 	CASE IS >= 3
-		PRINT 강함
+		PRINTFORM %"강함", 6, LEFT%
 	CASE IS >= 1
-		PRINT 있음
+		PRINTFORM %"있음", 6, LEFT%
 	CASEELSE
-		PRINT 없음
+		PRINTFORM %"없음", 6, LEFT%
 	ENDSELECT
 	RESETCOLOR
 	PRINTL  [235]없음 [236]있음 [237]강함 [238]다분함
 	LOCAL:235 = 1
 ELSE
-	PRINT 레즈끼 …
+	PRINTFORM %"레즈끼", 12, LEFT% …
 	SETCOLOR DEF_COLOR("暗황색")
 	SELECTCASE ABL:ARG:레즈끼
 	CASE IS >= 5
-		PRINT 다분함
+		PRINTFORM %"다분함", 6, LEFT%
 	CASE IS >= 3
-		PRINT 강함
+		PRINTFORM %"강함", 6, LEFT%
 	CASE IS >= 1
-		PRINT 있음
+		PRINTFORM %"있음", 6, LEFT%
 	CASEELSE
-		PRINT 없음
+		PRINTFORM %"없음", 6, LEFT%
 	ENDSELECT
 	RESETCOLOR
 	PRINTL  [240]없음 [241]있음 [242]강함 [243]다분함
 	LOCAL:240 = 1
 ENDIF
-PRINT 성기술 …
+PRINTFORM %"성기술", 12, LEFT% …
 SETCOLOR DEF_COLOR("暗황색")
 SELECTCASE ABL:ARG:기교
 CASE IS >= 5
-	PRINT 능란함
+	PRINTFORM %"능란함", 6, LEFT%
 CASE IS >= 3
-	PRINT 잘함
+	PRINTFORM %"잘함", 6, LEFT%
 CASE IS >= 1
-	PRINT 있음
+	PRINTFORM %"있음", 6, LEFT%
 CASEELSE
 	PRINTFORM \@ TALENT:ARG:성경험전무 ? 전무 # 없음 \@
 ENDSELECT
@@ -1428,15 +1428,15 @@ PRINTL 플레이어를선택해 주세요
 ;周回플래그がある場合
 IF FLAG:4
 	PRINTL 
-	PRINTL [ 0] 통상의 주인……이른바"당신".선택뒤로 캐릭터 메이크로 옮깁니다
-	PRINTL [ 1] 몽마의 일람로부터 선택한다
-	PRINTL [ 2] 이 주회에서의 주인을 계속해선택
+	PRINTL [ 0] 통상의 주인……이른바 "당신"을 선택하고 캐릭터 메이크를 실행합니다.
+	PRINTL [ 1] 몽마의 목록에서 선택한다
+	PRINTL [ 2] 이전 주차의 주인을 계승
 	CALL INPUT_SELECT, 3
 ELSE
-	PRINTL 기본적으로는 [ 0]을 추천합니다
+	PRINTPLAIN 기본적으로는 [ 0]을 추천합니다
 	PRINTL 
-	PRINTL [ 0] 통상의 주인……이른바 "당신"으로 선택하고 캐릭터 메이크를 실행합니다
-	PRINTL [ 1] 몽마의 일람로부터 선택한다
+	PRINTL [ 0] 통상의 주인……이른바 "당신"을 선택하고 캐릭터 메이크를 실행합니다
+	PRINTL [ 1] 몽마의 목록에서 선택한다
 	CALL INPUT_SELECT, 2
 ENDIF
 
@@ -1505,7 +1505,7 @@ CALL SET_CHARA_BUY_SHOW
 ITEMSALES:당신 = 0
 
 DRAWLINE
-PRINTFORML [ 0]변경하지 않는다
+PRINTFORML [ 0] 변경하지 않는다
 
 
 @KURIKOSI_MUMA
@@ -1529,9 +1529,9 @@ FOR LCOUNT, 1, CHARANUM
 NEXT
 
 IF CHARA_NUM("繰り越しキャラ")
-	PRINTL  [100]이것으로 좋다
+	PRINTL  [100] 이것으로 좋다
 ELSE
-	PRINTL  [100]아무도 남기지 않는다
+	PRINTL  [100] 아무도 남기지 않는다
 ENDIF
 
 $INPUT_LOOP
@@ -1843,14 +1843,14 @@ CASE 50
 		ELSE
 			ARG += TFLAG:0 * 5
 			TFLAG:0 = 0
-			PRINTFORML ～손원래에 남길 수 있는 캐릭터일람～
+			PRINTFORML ～계승할 수 있는 캐릭터 목록～
 			FOR LCOUNT, 1, CHARANUM
 				SIF TALENT:LCOUNT:연모 + TALENT:LCOUNT:음란 == 0
 					CONTINUE
 				CALL PRINT_NUM_NAME, "체력", LCOUNT
 			NEXT
-			PRINTFORML 다음의 주에 데리고 가는 캐릭터를 한사람 늘리는 것에 대해,５Ｐ필요입니다.
-			PRINTFORML 여기서 포인트를 지불하지 않아도 한사람은 데리고 갈 수 있습니다만, 몇 사람 추가로 데리고 갑니까？
+			PRINTFORML 다음 주차에 계승할 캐릭터 1명 당 5Ｐ필요합니다.
+			PRINTFORML 여기서 포인트를 지불하지 않아도 1명은 데리고 갈 수 있습니다. 몇 사람 추가로 데리고 갑니까？
 			PRINTL 
 			PRINTFORML [ 0] 추가하지 않는다
 			FOR LCOUNT, 1, MIN(ARG/5, CHARA_NUM("연모음란") - 1) + 1
