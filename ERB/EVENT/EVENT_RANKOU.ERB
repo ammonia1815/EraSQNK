@@ -357,7 +357,7 @@ FOR LCOUNT, 0, ARG:1
 
 	DO
 		;まずは키스や애무
-		SIF CANTRAIN("키스한다") && RAND:(ARG:1) == 0 && (RAND:3 == 0 || TALENT:연모 || TALENT:음탕한입술 || COND("唇에약함", MASTER) )
+		SIF CANTRAIN("키스한다") && RAND:(ARG:1) == 0 && (RAND:3 == 0 || TALENT:연모 || TALENT:음탕한입술 || COND("키스에약함", MASTER) )
 			CALL SIMULATE_TRAIN_COM, 6, 1
 		SIF CANTRAIN("엉덩이애무") && RAND:(ARG:1) == 0 && (TALENT:거유 >= RAND:4 || TALENT:음유 || COND("가슴에약함", MASTER) )
 			CALL SIMULATE_TRAIN_COM, 5, 1

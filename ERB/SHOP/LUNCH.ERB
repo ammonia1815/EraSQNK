@@ -4,7 +4,7 @@ REDRAW 0
 
 PRINTL 
 DRAWLINE
-PRINTL  □ 술집 『일각수의 모퉁이』 □
+PRINTL  □ 술집 『일각수의 뿔』 □
 DRAWLINE
 PRINTFORML 보통의 식사에 무언가 메뉴를 더해 심신을 알차게 하자!  (소지금:%MONEY_C(MONEY)%)
 PRINTFORML 덧붙여서 식사에 의한 체력의 회복은 100％를 넘습니다
@@ -29,86 +29,84 @@ MEMO_LINECOUNT = LINECOUNT
 
 PRINTL 
 ;メインディッシュ
-PRINTFORM  [ 0] %"시프리샌드", 24, LEFT% ＄９０ %TEXT_LJ("체력小회복＆정력小회복", 33)%
+PRINTFORM  [ 0] %"시프리샌드", 24, LEFT% ＄９０ %TEXT_LJ("체력小회복＆정력小회복", 45)%
 PRINTBUTTON "[해설]", "시프리샌드"
 PRINTL 
 SIF GETBIT(FLAG:41, 0)
-	CALL PRINTL_COLORTEXT, " 치즈와 충분한 양파를 실은 시프리 명물 오픈 샌드", DEF_COLOR("황색")
+	CALL PRINTL_COLORTEXT, "      치즈와 양파를 듬뿍 얹은 시프리의 명물, 오픈 샌드위치", DEF_COLOR("황색")
 PRICE:0 = 90
 
-PRINTFORM  [ 1] %"마운틴스테이크", 24, LEFT% ＄９０ %TEXT_LJ("체력中회복", 33)%
+PRINTFORM  [ 1] %"마운틴스테이크", 24, LEFT% ＄９０ %TEXT_LJ("체력中회복", 45)%
 PRINTBUTTON "[해설]", "마운틴스테이크"
 PRINTL 
 SIF GETBIT(FLAG:41, 1)
-	CALL PRINTL_COLORTEXT, "   염소의 고기를 다양한 허브와 함께 구운 스테이크", DEF_COLOR("황색")
+	CALL PRINTL_COLORTEXT, "      산양의 고기를 다양한 허브와 함께 구운 스테이크", DEF_COLOR("황색")
 PRICE:1 = 90
 
 ;軽食やサラダ
-PRINTFORM  [10] %"과일샐러드", 24, LEFT% ＄６０ %TEXT_LJ("체력小회복＆에올군", 33)%
+PRINTFORM  [10] %"과일샐러드", 24, LEFT% ＄６０ %TEXT_LJ("체력小회복＆에올군", 45)%
 PRINTBUTTON "[해설]", "과일샐러드"
 PRINTL 
 SIF GETBIT(FLAG:41, 10)
-	CALL PRINTL_COLORTEXT, "   숲에서 얻는 너트를 충분하게 사용한 샐러드", DEF_COLOR("황색")
+	CALL PRINTL_COLORTEXT, "      숲에서 딴 과일을 듬뿍 넣은 샐러드", DEF_COLOR("황색")
 PRICE:10 = 60
 
-PRINTFORM  [11] %"훈제연어", 24, LEFT% ＄７５ %TEXT_LJ("체력小회복＆고양이좋아함", 33)%
+PRINTFORM  [11] %"훈제연어", 24, LEFT% ＄７５ %TEXT_LJ("체력小회복＆고양이좋아함", 45)%
 PRINTBUTTON "[해설]", "훈제연어"
 PRINTL 
 SIF GETBIT(FLAG:41, 11)
-	CALL PRINTL_COLORTEXT, "   연어의 생선 토막을 훈제로 한 요리. 그대로도 맛좋지만, 식품 재료로서도 가치가 높다", DEF_COLOR("황색")
+	CALL PRINTL_COLORTEXT, "      연어를 훈제한 요리. 그대로 먹어도 맛있지만, 요리 재료로서도 가치가 높다", DEF_COLOR("황색")
 PRICE:11 = 75
 
 ;お菓子やデザート
-PRINTFORM  [20] %"허니비스킷", 24, LEFT% ＄１０ %TEXT_LJ("체력小회복＆호감도小상승", 33)%
+PRINTFORM  [20] %"허니비스킷", 24, LEFT% ＄１０ %TEXT_LJ("체력小회복＆호감도小상승", 45)%
 PRINTBUTTON "[해설]", "허니비스킷"
 PRINTL 
 SIF GETBIT(FLAG:41, 20)
-	CALL PRINTL_COLORTEXT, "   벌꿀을 발라 딱딱하게 구운 구운 과자.손가벼운 간식으로서 넓고인기(이)가 있다", DEF_COLOR("황색")
+	CALL PRINTL_COLORTEXT, "      벌꿀을 발라 딱딱하게 구운 과자. 간단한 간식으로 널리 인기가 있다", DEF_COLOR("황색")
 PRICE:20 = 10
 
-PRINTFORM  [21] %"베이크드애플", 24, LEFT% ＄３０ %TEXT_LJ("체력小회복＆호감도小상승", 33)%
+PRINTFORM  [21] %"베이크드애플", 24, LEFT% ＄３０ %TEXT_LJ("체력小회복＆호감도小상승", 45)%
 PRINTBUTTON "[해설]", "베이크드애플"
 PRINTL 
 SIF GETBIT(FLAG:41, 21)
-	CALL PRINTL_COLORTEXT, " 시나몬등을 채웠다린고를 양주로 향기 내기 해 오븐으로 구운 과자", DEF_COLOR("황색")
+	CALL PRINTL_COLORTEXT, "      시나몬 등을 채워넣은 사과를 양주로 향을 넣어 오븐에 구운 과자", DEF_COLOR("황색")
 PRICE:21 = 30
 
 ;お酒や飲み物
-PRINTFORM  [30] %"벌꿀술", 24, LEFT% ＄６０ %TEXT_LJ("드렁크(술주정率：並)", 33)%
+PRINTFORM  [30] %"벌꿀술", 24, LEFT% ＄６０ %TEXT_LJ("드렁크(술주정률：보통)", 45)%
 PRINTBUTTON "[해설]", "벌꿀술"
 PRINTL 
 SIF GETBIT(FLAG:41, 30)
-	CALL PRINTL_COLORTEXT, "   벌꿀을 발효 시켜 만든 밀술. 전국적으로 자주(잘) 마셔지는 일반적인 술", DEF_COLOR("황색")
+	CALL PRINTL_COLORTEXT, "      벌꿀을 발효 시켜 만든 밀술. 전국적으로 마시는 대중적인 술", DEF_COLOR("황색")
 PRICE:30 = 60
 ;칼피스 사워의 패러디로 보인다
-PRINTFORM  [31] %"파두르사워", 24, LEFT% ＄４５ %TEXT_LJ("드렁크(술주정率：高)", 33)%
+PRINTFORM  [31] %"파두르사워", 24, LEFT% ＄４５ %TEXT_LJ("드렁크(술주정률：높음)", 45)%
 PRINTBUTTON "[해설]", "파두르사워"
 PRINTL 
 SIF GETBIT(FLAG:41, 31)
-	CALL PRINTL_COLORTEXT, " 파두르보리를 발효 시켜 만든 맥주. 서민에게인기(이)가 있다", DEF_COLOR("황색")
+	CALL PRINTL_COLORTEXT, "      파두르보리를 발효 시켜 만든 맥주. 서민들에게 인기가 있다", DEF_COLOR("황색")
 PRICE:31 = 45
 
-PRINTFORM  [32] %"개다래와인", 24, LEFT% ＄７０ %TEXT_LJ("드렁크(술주정率：並)＆고양이좋아함", 33)%
+PRINTFORM  [32] %"개다래와인", 24, LEFT% ＄７０ %TEXT_LJ("드렁크(술주정률：보통)＆고양이좋아함", 45)%
 PRINTBUTTON "[해설]", "개다래와인"
 PRINTL 
 SIF GETBIT(FLAG:41, 32)
-	CALL PRINTL_COLORTEXT, " 마타타비의 열매로부터 만든 과실주. 자양 강장에 효과가 있어, 고양이의 좋아하는 것이기도 하다", DEF_COLOR("황색")
+	CALL PRINTL_COLORTEXT, "      개다래 열매로 만든 과실주. 자양 강장에 효과가 있고, 고양이들이 좋아한다", DEF_COLOR("황색")
 PRICE:32 = 70
 
 IF ITEM:문드롭스
 	PRINTFORM  [50] %"문드롭스", 24, LEFT% 
 ELSE
 	SETCOLOR DEF_COLOR("회색")
-	PRINTPLAINFORM  [×] %"문드롭스", 24, LEFT% 
+	PRINTPLAINFORM  [✕] %"문드롭스", 24, LEFT% 
 ENDIF
-PRINT 나머지
-SIF ITEM:문드롭스 < 10
-	PRINT  
-PRINTFORM {ITEM:문드롭스} %TEXT_LJ("체력中회복＆호감도大상승", 33)%
+PRINT 재고
+PRINTFORM {ITEM:문드롭스, 2} %TEXT_LJ("체력中회복＆호감도大상승", 45)%
 PRINTBUTTON "[해설]", "문드롭스"
 PRINTL 
 SIF GETBIT(FLAG:41, 50)
-	CALL PRINTL_COLORTEXT, " 몽마(이)가 좋아하는 이상한 캔디.몽마(이)가 아닌 사람은 빠는 것이 할 수 없다", DEF_COLOR("황색")
+	CALL PRINTL_COLORTEXT, "      몽마가 좋아하는 이상한 캔디. 몽마가 아닌 사람은 먹을 수 없다", DEF_COLOR("황색")
 
 RESETCOLOR
 
@@ -128,7 +126,7 @@ CASE "해설ＡＬＬON"
 CASE "해설ＡＬＬOFF"
 	FLAG:41 = 0
 ;入力する人は居ないだろうが念のため
-CASE "×"
+CASE "✕"
 
 CASE "시프리샌드"
 	INVERTBIT FLAG:41, 0
@@ -164,7 +162,7 @@ CASEELSE
 		IF MONEY >= PRICE:TOINT(RESULTS)
 			MONEY -= PRICE:TOINT(RESULTS)
 		ELSE
-			PRINTFORML 돈이발선
+			PRINTFORML 돈이 부족합니다
 			GOTO INPUT_LOOP
 		ENDIF
 	CASE 50
@@ -194,7 +192,7 @@ RESTART
 ;食べたものはFLAG:40で記録されている
 @EAT_LUNCH_2
 #DIM LCOUNT
-;0は체력％、1は정력％、2は호감도、3は술주정率
+;0は체력％、1は정력％、2は호감도、3は술주정률
 #DIM DYNAMIC LUNCH_BONUS, 5
 #DIM MOON_DROP
 #DIM CAT_FAVOR
@@ -280,12 +278,12 @@ FOR LCOUNT, 1, CHARANUM
 NEXT
 
 IF MOON_DROP
-	PRINTFORMW 몽마들에게문드롭스를 행동했다！
+	PRINTFORMW 몽마들에게 문드롭스를 먹였다！
 ELSEIF LUNCH_BONUS:3
-	PRINTFORML 모두가%NAMES("食事", FLAG:40)%를 즐겼다！
+	PRINTFORML 모두가 %NAMES("食事", FLAG:40)%를 즐겼다！
 	CALL PRINT_STR, "핑크_※드렁크状態だと조교が무드が高い상태で개시されます※_W"
 ELSE
-	PRINTFORMW 모두가%NAMES("食事", FLAG:40)%에 입맛을 다셨다！
+	PRINTFORMW 모두가 %NAMES("食事", FLAG:40)%에 입맛을 다셨다！
 ENDIF
 
 LOCALS = 
@@ -313,10 +311,10 @@ IF LUNCH_BONUS:3
 		;술주정判定(약독내성持ちは술주정しづらい)
 		IF RAND:100 * (1 + TALENT:LCOUNT:약독내성) < LUNCH_BONUS:3
 			CALL ADD_STATE, LCOUNT, "술주정"
-			LOCALS = %LOCALS%\@ LOCALS != "" ? と # …… \@%CALLNAME:LCOUNT%
+			LOCALS = %LOCALS%\@ LOCALS != "" ? %조사만처리(LOCALS,"와")% # …… \@ %CALLNAME:LCOUNT%
 		ENDIF
 	NEXT
 	SIF LOCALS != ""
-		PRINTFORMW %LOCALS%하,술주정해 버렸다…
+		PRINTFORMW %조사처리(LOCALS,"는")% 술주정해 버렸다…
 ENDIF
 
