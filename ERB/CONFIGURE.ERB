@@ -372,7 +372,7 @@ CASE "３사이즈：Ｈ"
 	RETURNF GETBIT(FLAG:239, 3)
 CASE "상사상애"
 	RETURNF FLAG:241
-CASE "상사상애：人数제한없음"
+CASE "상사상애：인수제한없음", "상사상애：인원수제한없음", "상사상애：인数제한없음"
 	RETURNF GETBIT(FLAG:241, 0)
 CASE "상사상애：요바이제한"
 	RETURNF GETBIT(FLAG:241, 1)
@@ -690,7 +690,7 @@ CASE "システム＆이벤트全般"
 	PRINTFORML  [ 1] \@ CONFIG("연모と음란の任意획득") ? ○ # －\@ 연모・음란의 임의 획득
 	PRINTFORM  [ 2] \@ CONFIG("상사상애") ? ○ # －\@ 소질：상사상애 설정：
 	SETCOLOR DEF_COLOR("暗황색")
-	PRINTFORM \@ CONFIG("상사상애：人数제한없음") ? 몇명이라도 # 한명만 \@
+	PRINTFORM \@ CONFIG("상사상애：인수제한없음") ? 몇명이라도 # 한명만 \@
 	PRINTFORML ＆\@ CONFIG("상사상애：요바이제한") ? 밤덮치기 제한있음 # 밤덮치기 제한없음 \@
 	RESETCOLOR
 	PRINTFORML  [ 3] \@ CONFIG("경험표시詰め") ? ○ # －\@ 능력표시에서, 갖고있지 않은 경험을 표시하지 않는다
@@ -1602,7 +1602,7 @@ CASE "상사상애"
 	PRINTFORML 변경할 항목을 선택해주세요：
 	PRINTFORML 
 	PRINTFORM  [ 0] 상사상애가 된 인원수 \@ITEM:서약의반지 >= 2 ?（변경불가!）# %BL(14)% \@　　　　　　　
-	IF CONFIG("상사상애：人数제한없음")
+	IF CONFIG("상사상애：인수제한없음")
 		PRINTFORML 사랑에 한계는 없다
 	ELSE
 		PRINTFORML 한명만

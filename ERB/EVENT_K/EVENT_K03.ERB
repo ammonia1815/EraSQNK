@@ -143,7 +143,7 @@ ELSEIF GETBIT(CFLAG:201, 26) == 0 && COND("권속", MASTER) == TARGET
 		PRINTFORMW 그리고 당신이 기절한 후, 저는 실행 했습니다･･･그치만 후회는 안 합니다･･･」
 		PRINTFORMW 당신은 한숨을 내뱉고 낯선 나무를 움직여%CALLNAME:TARGET%의 나무와 엉키게 했다
 		PRINTFORMW 그리고 당신은
-		PRINTFORML [0] 음을%CALLNAME:TARGET%에게 부딪쳤다\@(CONFIG("상사상애：人数제한없음") || TALENT:MASTER:상사상애 == 0) ? (※상사상애となります) # \@
+		PRINTFORML [0] 음을%CALLNAME:TARGET%에게 부딪쳤다\@(CONFIG("상사상애：인수제한없음") || TALENT:MASTER:상사상애 == 0) ? (※상사상애となります) # \@
 		PRINTL [1] 우선은 머리를 쓰다듬었다
 		CALL INPUT_SELECT, 2
 		;愛っていいですよね
@@ -161,7 +161,7 @@ ELSEIF GETBIT(CFLAG:201, 26) == 0 && COND("권속", MASTER) == TARGET
 			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 이제부터 자신이 어떻게 될지 상상이 된다
 			PRINTFORMW 하지만, 후의 인생을 인간이 아니라 드라이어드라는 몽마로 생활할 것이 기대 되었다
 			;イイハナシダナー
-			IF CONFIG("상사상애：人数제한없음") || TALENT:MASTER:상사상애 == 0
+			IF CONFIG("상사상애：인수제한없음") || TALENT:MASTER:상사상애 == 0
 				TALENT:서약 = 0
 				TALENT:상사상애 = 1
 				TALENT:MASTER:상사상애 = 1
