@@ -1615,7 +1615,7 @@ IF CONFIG("임신패치")
 ENDIF
 
 ;複数반지が渡せる설정orまだ渡していない
-IF CONFIG("상사상애：人数제한없음") || TALENT:MASTER:상사상애 == 0
+IF CONFIG("상사상애：인수제한없음") || TALENT:MASTER:상사상애 == 0
 	FOR LCOUNT, 1, CHARANUM
 		SIF TALENT:LCOUNT:연모 == 0 || TALENT:LCOUNT:상사상애
 			CONTINUE
@@ -2460,7 +2460,7 @@ CASE 330 TO 349
 			CALL CALC, "폭유化", CHOICE
 		ELSEIF TALENT:CHOICE:빈유
 			PRINTFORMW ＜%NAME:CHOICE%의 가슴의 사이즈는 특히 희소 가치도 없는 보통의 크기가 되었습니다＞
-			CALL CALC, "並乳化", CHOICE
+			CALL CALC, "평유化", CHOICE
 		ELSE
 			PRINTFORMW ＜%NAME:CHOICE%의 가슴의 사이즈는[거유](이)가 되었습니다＞
 			CALL CALC, "거유化", CHOICE
@@ -2474,7 +2474,7 @@ CASE 330 TO 349
 			CALL CALC, "거유化", CHOICE
 		ELSEIF TALENT:CHOICE:거유
 			PRINTFORMW ＜%NAME:CHOICE%의 가슴의 사이즈는거유로부터 일전해 보통의 크기가 되었습니다＞
-			CALL CALC, "並乳化", CHOICE
+			CALL CALC, "평유化", CHOICE
 		ELSE
 			PRINTFORMW ＜%NAME:CHOICE%의 가슴의 사이즈는[빈유](이)가 되었습니다＞
 			CALL CALC, "빈유化", CHOICE

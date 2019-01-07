@@ -490,7 +490,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 			PRINTFORMW %CALLNAME:MASTER%는 다시 한번 입을 맞추며, %CALLNAME:TARGET%의 몸에 손을 뻗기 시작한다…
 			PRINTFORMW 말로는 전해지지 않는 사랑을, 넘칠 정도로 쏟아 붓는 것이다…
 			;상사상애になれる状態ならお금をかけずに両思い! 
-			IF CONFIG("상사상애：人数제한없음") || TALENT:MASTER:상사상애 == 0
+			IF CONFIG("상사상애：인수제한없음") || TALENT:MASTER:상사상애 == 0
 				TALENT:서약 = 0
 				TALENT:상사상애 = 1
 				TALENT:MASTER:상사상애 = 1
@@ -602,7 +602,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 		PRINTL [0] 거짓말을 해, 조련사로써의 역할에 충실한다
 		PRINTL [1] 대답할 수 있을리가 없다…
 		;상사상애になれない場合には, この台詞の後売れるわけだが…
-		PRINTFORML [2] 좋은 것도 나쁜 것도 있을까！할멈을 좋아하다！결혼해 줘！ \@(CONFIG("상사상애：人数제한없음") || TALENT:MASTER:상사상애 == 0) ? ※상사상애となります # \@
+		PRINTFORML [2] 좋은 것도 나쁜 것도 있을까！할멈을 좋아하다！결혼해 줘！ \@(CONFIG("상사상애：인수제한없음") || TALENT:MASTER:상사상애 == 0) ? ※상사상애となります # \@
 		CALL INPUT_SELECT, 3
 		;嘘をつく
 		IF RESULT == 0
@@ -674,7 +674,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 			PRINTFORMW 어, 이제서야 설교 끝? 이제 그렇고 그런걸 해도 괜찮은겁니까? 해냈다-!
 			PRINTFORMW 「후후, 다른 여자같은 건 눈에 보이지 않을 정도로, 나에게 푹 빠지게 해줄테니까♪ 각오하도록 하여라♪」
 			;상사상애になれる状態ならお금をかけずに両思い! 
-			IF CONFIG("상사상애：人数제한없음") || TALENT:MASTER:상사상애 == 0
+			IF CONFIG("상사상애：인수제한없음") || TALENT:MASTER:상사상애 == 0
 				TALENT:서약 = 0
 				TALENT:상사상애 = 1
 				TALENT:MASTER:상사상애 = 1

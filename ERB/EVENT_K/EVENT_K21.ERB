@@ -147,7 +147,7 @@ ELSEIF GETBIT(CFLAG:201, 26) == 0 && COND("권속", MASTER) == TARGET
 		PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% 지금까지 알고 있어 죄를 거듭했을 것인데…이제 와서지요」
 		PRINTFORMW 말을 끝내, 그대로%조사처리(CALLNAME:TARGET,"가")% 숙여 침묵을 지켰다…
 		;상사상애の枠が空いていれば, 선택지を表示する
-		IF CONFIG("상사상애：人数제한없음") || TALENT:MASTER:상사상애 == 0
+		IF CONFIG("상사상애：인수제한없음") || TALENT:MASTER:상사상애 == 0
 			PRINTL [0] 조금 말을 걸 수 없다…
 			PRINTFORML [1] 그것이 어떻게 했다! 나는%조사처리(CALLNAME:TARGET,"가")% 좋아한다―!   ※상사상애됩니다
 			CALL INPUT_SELECT, 2
