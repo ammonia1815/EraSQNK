@@ -1237,42 +1237,42 @@ CASE "커맨드"
 
 		;성감대の処理
 		SELECTCASE SELECTCOM
-		;손に弱い
+		;손에약함
 		CASE 90
 			SETBIT WEEKNESS, 0
 		CASE 97
 			SETBIT WEEKNESS, 0
 			SIF TALENT:남자 == 0
 				SETBIT WEEKNESS, 4
-		;입に弱い
+		;입에약함
 		CASE 91, 96, 98, 99, 140
 			SETBIT WEEKNESS, 1
-		;가슴に弱い
+		;가슴에약함
 		CASE 5, 81, 92, 104
 			SETBIT WEEKNESS, 2
-		;다리に弱い
+		;다리에약함
 		CASE 95
 			SETBIT WEEKNESS, 3
-		;♀に弱い
+		;♀에약함
 		CASE 1
 			SIF TEQUIP:넘어뜨리기 || TEQUIP:안면기승 || TEQUIP:식스나인
 				SETBIT WEEKNESS, 4
 		CASE 13, 65, 99
 			SETBIT WEEKNESS, 4
-		;키스に弱い
+		;키스에약함
 		CASE 6
 			SIF NUM("턴수")
 				SETBIT WEEKNESS, 5
 		CASE 63, 73
 			SIF CHECK_COM("키스") && TALENT:연모
 				SETBIT WEEKNESS, 5
-		;애널に弱い
+		;애널에약함
 		CASE 9
 			SIF TEQUIP:넘어뜨리기 || TEQUIP:안면기승 || TEQUIP:식스나인
 				SETBIT WEEKNESS, 6
 		CASE 14, 75
 			SETBIT WEEKNESS, 6
-		;♂に弱い
+		;♂에약함
 		CASE 4
 			SIF TEQUIP:넘어뜨리기 || TEQUIP:안면기승 || TEQUIP:식스나인
 				SETBIT WEEKNESS, 7

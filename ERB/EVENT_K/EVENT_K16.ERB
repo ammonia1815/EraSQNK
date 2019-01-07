@@ -538,7 +538,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 			PRINTFORMW %CALLNAME:TARGET%는 감동한건지, 눈물을 흘리면서 매달리듯이 팔을 두른다…
 			PRINTFORMW 「나, 꿈이라도 꾸고있는 건 아닌지 모르겠구나…♪ %CNAME("二人称")%…… 이 꿈이 깨지 않도록, 내 곁을, 한시도 떨어지지 말아주거라…♪」
 			;상사상애になれる状態ならお금をかけずに両思い! 
-			IF CONFIG("상사상애：人数제한없음") || TALENT:MASTER:상사상애 == 0
+			IF CONFIG("상사상애：인수제한없음") || TALENT:MASTER:상사상애 == 0
 				TALENT:서약 = 0
 				TALENT:상사상애 = 1
 				TALENT:MASTER:상사상애 = 1
@@ -8998,7 +8998,7 @@ IF SELECTCOM == 92
 			ELSEIF TALENT:연모
 				;直前に파이즈리
 				IF PREVCOM == 92 && RAND:2 == 0
-					;가슴に弱い
+					;가슴에약함
 					IF COND("가슴에약함", PLAYER) && RAND:2 == 0
 						PRINTFORM 「후후후, 벌써 나의 가슴으로부터 멀어질 수 없는 의 것인지네…? 되면 %CNAME("二人称")%가 바라는 대로 이
 					ELSE
@@ -9024,7 +9024,7 @@ IF SELECTCOM == 92
 						PRINTFORMW %CALLNAME:PLAYER%의 페니스가%CALLNAME:TARGET%의 부드러운 가슴에 싸인다…
 					ENDIF
 					PRINTFORMW 「글쎄…극락에 이끌어 주자 …♪ 나의 가슴, 확실히 맛보지만 좋다♪」
-				;가슴に弱い
+				;가슴에약함
 				ELSEIF COND("가슴에약함", PLAYER) && RAND:2 == 0
 					PRINTFORMW 「후후후, %CNAME("二人称")%는 나의 가슴에 꿈 속과 같지…좋은 얼굴을 하고 있겠어♪」
 				;빈유
@@ -16380,14 +16380,14 @@ IF SELECTCOM == 92
 			ELSEIF TALENT:연모 || TALENT:음란
 				;直前に파이즈리
 				IF PREVCOM == 92 && RAND:2 == 0
-					;가슴に弱い
+					;가슴에약함
 					IF COND("가슴에약함", PLAYER) && RAND:2 == 0
 						PRINTFORMW 「-어머♪ %CNAME("二人称")%의 정말 좋아하는 젖가슴은 ♪」
 					ELSE
 						PRINTFORM 「,  한번 더는♪ 이렇게 해서 욕구 밖에 의?
 					ENDIF
 				ELSE
-					;가슴に弱い
+					;가슴에약함
 					IF COND("가슴에약함", PLAYER) && RAND:2 == 0
 						PRINTFORMW 「이런, 침을 삼켜 붐비어 무슨 일이야는? 후후후, 아무래도 %CNAME("二人称")%는 이것을 갖고 싶게는의♪」
 					;빈유
@@ -17928,7 +17928,7 @@ ELSEIF SHOOT("가슴")
 		ELSEIF TALENT:연모
 			;直前に파이즈리
 			IF PREVCOM == 92 && RAND:2 == 0
-				;가슴に弱い
+				;가슴에약함
 				IF COND("가슴에약함", PLAYER) && RAND:2 == 0
 					PRINTFORM 「참을 수 있는 어쩐지 네…？후후, %조사처리(CNAME("二人称"),"가")% 가슴에 약한 일 따위 훨씬 전에 꿰뚫어 보심인 것은♪」
 					PRINTFORM 「…, 사양하지 않고 저의가슴
@@ -17961,7 +17961,7 @@ ELSEIF SHOOT("가슴")
 				ENDIF
 			ELSE
 				PRINTFORMW 「햣…우응…가슴에, 화요일에 응과…」
-				;가슴に弱い
+				;가슴에약함
 				IF COND("가슴에약함", PLAYER) && RAND:2 == 0
 					PRINTFORMW 「아아…평소보다 많이 나오고 있을 생각이 드는구먼…%CNAME("二人称")%, 역시 저의가슴를 아주 좋아하다♪기뻐♪」
 				;빈유
