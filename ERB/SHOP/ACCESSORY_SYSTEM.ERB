@@ -198,7 +198,7 @@ NEXT
 ;악세사리の詳細表示
 CALL PRINT_ACCESSORY, LOCAL
 
-PRINTW (이)었다!
+PRINTFORMW %조사만처리(LASTWORD, "이었")%다!
 
 
 ;-------------------------------------------------
@@ -216,9 +216,8 @@ PRINTW (이)었다!
 LOCAL = 300 + ARG*10
 SIF FLAG:LOCAL == 0
 	RETURN 0
-	
-LASTWORD = [{ARG, 2}] %PRINT_ACCESSORY_NAME(FLAG:LOCAL)%
-PRINTFORM  %LASTWORD% ＬＶ{FLAG:(LOCAL + 9) + 1, 2}
+
+PRINTFORM  [{ARG, 2}] %PRINT_ACCESSORY_NAME(FLAG:LOCAL)% ＬＶ{FLAG:(LOCAL + 9) + 1, 2}
 IF FLAG:399 == ARG
 	PRINT [
 	CALL PRINT_COLORTEXT, "Ｅ", DEF_COLOR("황색")
@@ -256,7 +255,7 @@ FOR LCOUNT, 1, 6
 		PRINTFORML %BL(5)% %ACCESSORY_EFFECT(FLAG:(300 + ARG*10 + LCOUNT) )%
 NEXT
 RESETCOLOR
-
+LASTWORD = %PRINT_ACCESSORY_NAME(FLAG:LOCAL)%
 
 @ACCESSORY_LVUP
 #DIM MEMO_LINECOUNT
@@ -423,7 +422,7 @@ ELSEIF 1 <= RESULT && RESULT <= 8 && FLAG:(300 + RESULT*10)
 		;배추흰나비플래그消去
 		CLEARBIT FLAG:(300 + CHOICE:2*10 + 8), 0
 		CALL PRINT_ACCESSORY, CHOICE:2
-		PRINTL %LASTWORD를()% 합성한 결과, 
+		PRINTFORML %조사만처리(LASTWORD,"를")% 합성한 결과, 
 
 		ITEM:배추흰나비 -= 1
 		;ＬＶＵＰ
@@ -597,22 +596,22 @@ RESTART
 @ACCESSORY_HELP
 PRINTL ～악세사리 부가효과 일람～
 PRINTL 
-PRINTL  ＥＰ ＋○％ 사정게이지의 ＭＡＸ가 ○％ 증가
-PRINTL  정력 ＋○％ 정력의 ＭＡＸ가 ○％ 증가
-PRINTL  기교 ＋○％ 주는 쾌감 등이 ○％ 증가
-PRINTL  정신력＋○％ 받는 쾌감＆황홀확률 등이 ○％ 감소
-PRINTL  매력 ＋○％ 상대에게 주는 불쾌감이 ○％ 감소＆20%이상이라면 호감도＋１
-PRINTL  스톡증가 스톡을１개 추가（중복 불가）
-PRINTL  (부위)강화＋○％ 대응하는 부위에 받는 쾌감이 ○％ 증가
-PRINTL  무드＋○ 무드 상승이 ○ 증가
-PRINTL  실행치＋○ 커맨드 실행치가 ○ 증가
-PRINTL  받는쾌감＋○％ 받는쾌감 등이 ○％ 증가
-PRINTL  밀려넘어짐＋○％ 밀려넘어질 확률이 ○％ 증가
-PRINTL  획득경험치＋○％ 장비자가 획득하는 경험치가 ○％ 증가
-PRINTL  항상(상태명) 항상 대응되는 상태가 된다
-PRINTL  은밀＋○％ 탐색 중에 적과 만날 확률이 ○％ 감소
-PRINTL  보물상자출현률＋○％ 탐색중에 보물상자를 발견할 확률이 ○％ 증가
-PRINTL  문발견률＋○％ 탐색 중에 문을 발견할 확률이 ○％ 증가
+PRINTFORML  %"ＥＰ ＋○％", 20, LEFT% : 사정게이지의 ＭＡＸ가 ○％ 증가
+PRINTFORML  %"정력 ＋○％", 20, LEFT% : 정력의 ＭＡＸ가 ○％ 증가
+PRINTFORML  %"기교 ＋○％", 20, LEFT% : 주는 쾌감 등이 ○％ 증가
+PRINTFORML  %"정신력＋○％", 20, LEFT% : 받는 쾌감＆황홀확률 등이 ○％ 감소
+PRINTFORML  %"매력 ＋○％", 20, LEFT% : 상대에게 주는 불쾌감이 ○％ 감소＆20％이상이라면 호감도＋１
+PRINTFORML  %"스톡증가", 20, LEFT% : 스톡을 １개 추가（중복 불가）
+PRINTFORML  %"(부위)강화＋○％", 20, LEFT% : 대응하는 부위에 받는 쾌감이 ○％ 증가
+PRINTFORML  %"무드＋○", 20, LEFT% : 무드 상승이 ○ 증가
+PRINTFORML  %"실행치＋○", 20, LEFT% : 커맨드 실행치가 ○ 증가
+PRINTFORML  %"받는쾌감＋○％", 20, LEFT% : 받는 쾌감 등이 ○％ 증가
+PRINTFORML  %"밀려넘어짐＋○％", 20, LEFT% : 밀려넘어질 확률이 ○％ 증가
+PRINTFORML  %"획득경험치＋○％", 20, LEFT% : 장비자가 획득하는 경험치가 ○％ 증가
+PRINTFORML  %"항상(상태명)", 20, LEFT% : 항상 대응되는 상태가 된다
+PRINTFORML  %"은밀＋○％", 20, LEFT% : 탐색 중에 적과 만날 확률이 ○％ 감소
+PRINTFORML  %"보물상자출현율＋○％", 20, LEFT% : 탐색 중에 보물상자를 발견할 확률이 ○％ 증가
+PRINTFORML  %"문발견율＋○％", 20, LEFT% : 탐색 중에 문을 발견할 확률이 ○％ 증가
 WAIT
 
 
@@ -885,10 +884,10 @@ CASEELSE
 	;은밀+○ 敵に出会う확률軽減. 
 	IF RAND:3 == 0
 		LOCAL = 50000
-	;보물상자출현률アップ
+	;보물상자출현율アップ
 	ELSEIF RAND:2
 		LOCAL = 51000
-	;문발견률アップ
+	;문발견율アップ
 	ELSE
 		LOCAL = 52000
 	ENDIF
@@ -951,9 +950,9 @@ CASE 33
 CASE 50
 	LOCALS = 은밀＋{ARG%1000}％
 CASE 51
-	LOCALS = 보물상자출현률＋{ARG%1000}％
+	LOCALS = 보물상자출현율＋{ARG%1000}％
 CASE 52
-	LOCALS = 문발견률＋{ARG%1000}％
+	LOCALS = 문발견율＋{ARG%1000}％
 ENDSELECT
 
 RETURNF LOCALS
