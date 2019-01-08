@@ -262,8 +262,10 @@ NEXT_LINE = 0
 VARSET COM_NAMES
 VARSET COM_NAMES_HIDDEN
 
-IF CONFIG("조교컨피그모드") || (CONFIG("항목표시필터：Ｂ") == 0 && CONFIG("항목표시필터：Ｃ") == 0)
-	SIF CONFIG("애무系비표시")
+;조교컨피그모드가 켜져 있거나, 항목표시필터가 A이거나,
+;비표시컨피그가 모두 꺼져 있으면(GETBIT(FLAG:210, 0) 에서 GETBIT(FLAG:210, 13)까지 0이면)  
+IF CONFIG("조교컨피그모드") || (CONFIG("항목표시필터：Ｂ") == 0 && CONFIG("항목표시필터：Ｃ") == 0) || (FLAG:210 & (1p14 - 1)) == 0
+    SIF CONFIG("애무系비표시")
 		SETCOLOR DEF_COLOR("황색")
 	PRINTC 애무계[300]
 	RESETCOLOR
@@ -311,7 +313,7 @@ IF CONFIG("조교컨피그모드") || (CONFIG("항목표시필터：Ｂ") == 0 &
 	PRINTC 특수계[309]
 	RESETCOLOR
 	SIF CONFIG("촉수系비표시")
-		SETCOLOR DEF_COLOR("황색")
+		
 	PRINTC 촉수계[310]
 	RESETCOLOR
 	SIF CONFIG("아르카나系비표시")
@@ -328,8 +330,47 @@ IF CONFIG("조교컨피그모드") || (CONFIG("항목표시필터：Ｂ") == 0 &
 		SETCOLOR DEF_COLOR("황색")
 	PRINTC 그 외[313]
 	RESETCOLOR
-	PRINTC 표시커맨드군의반전[320]
+	SIF (CONFIG("항목표시필터：Ｂ") == 0 && CONFIG("항목표시필터：Ｃ") == 0)
+	    PRINTC 표시커맨드군의반전[320]
+	PRINTL
+
+;켜져있는 메뉴만 표시
+ELSE
+	SETCOLOR DEF_COLOR("황색")
+	SIF CONFIG("애무系비표시")
+		PRINTC 애무계[300]
+	SIF CONFIG("도구系비표시")
+		PRINTC 도구계[301]
+	SIF CONFIG("Ｖ섹스系비표시")
+		PRINTC Ｖ섹스계[302] 
+
+	SIF CONFIG("Ａ섹스系비표시")
+		PRINTC Ａ섹스계[303]
+	SIF CONFIG("특수섹스系비표시")
+		PRINTC 특수섹스계[304]
+	SIF CONFIG("봉사系비표시")
+		PRINTC 봉사계[305]
+
+	SIF CONFIG("조교자に삽입系비표시")
+		PRINTC 조교자에삽입계[306]
+	SIF CONFIG("ＳＭ・하드코어系비표시")
+		PRINTC ＳＭ·하드코어계[307]
+	SIF CONFIG("조수系비표시")
+	    PRINTFORMC 조수계[308]
+
+	SIF CONFIG("특수系비표시")
+		PRINTC 특수계[309]
+	SIF CONFIG("촉수系비표시")
+		PRINTC 촉수계[310]
+	SIF CONFIG("아르카나系비표시")
+		PRINTC 아르카나계[311]
+
+	SIF CONFIG("소비아이템系비표시")
+		PRINTC 소비아이템계[312]
+	SIF CONFIG("その他비표시")
+		PRINTC 그 외[313]
 	PRINTL 
+	RESETCOLOR
 ENDIF
 
 IF CONFIG("조교컨피그모드") == 0
@@ -382,7 +423,7 @@ IF CONFIG("조교컨피그모드") == 0
 		IF ASSIPLAY
 			PRINTFORMC 주인과 교대[430]
 		ELSE
-			PRINTFORMC %조사처리(TEXTS("조수の명칭"),"와")% 교대[430]
+			PRINTFORMC %조사처리(TEXTS("조수の명칭"), "와")% 교대[430]
 		ENDIF
 		RESETCOLOR
 
@@ -390,11 +431,11 @@ IF CONFIG("조교컨피그모드") == 0
 			SETCOLOR DEF_COLOR("회색")
 		IF PLAYER == MASTER
 			IF TEQUIP:Ｗ넘어뜨리기
-				PRINTFORMC 주도측을 교대하다[431]
+				PRINTFORMC 주도측을 교대한다[431]
 			ELSEIF TEQUIP:넘어뜨리기
-				PRINTFORMC %TEXTS("조수の명칭")%(와)과 교대한다[431]
+				PRINTFORMC %조사처리(TEXTS("조수の명칭"), "와")% 교대한다[431]
 			ELSE
-				PRINTFORMC %TEXTS("조수の명칭")%를 상대 한다[431]
+				PRINTFORMC %조사처리(TEXTS("조수の명칭"), "를")% 상대한다[431]
 			ENDIF
 		ELSE
 			PRINTFORMC 입장을 역전한다[431]
@@ -424,34 +465,34 @@ ELSE
 	IF CONFIG("Ｖ조교필터")
 		PRINTC Ｖ조교필터：○[360]
 	ELSE
-		PRINTC Ｖ조교필터：×[360]
+		PRINTC Ｖ조교필터：✕[360]
 	ENDIF
 	IF CONFIG("Ａ조교필터")
 		PRINTC Ａ조교필터：○[361]
 	ELSE
-		PRINTC Ａ조교필터：×[361]
+		PRINTC Ａ조교필터：✕[361]
 	ENDIF
 	IF CONFIG("실행치필터")
 		PRINTC 실행치필터：○[362]
 	ELSE
-		PRINTC 실행치필터：×[362]
+		PRINTC 실행치필터：✕[362]
 	ENDIF
 	PRINTL 
 
 	IF CONFIG("脱동정필터")
 		PRINTC 탈동정필터：○[363]
 	ELSE
-		PRINTC 탈동정필터：×[363]
+		PRINTC 탈동정필터：✕[363]
 	ENDIF
 	IF CONFIG("脱처녀필터")
 		PRINTC 탈처녀필터：○[364]
 	ELSE
-		PRINTC 탈처녀필터：×[364]
+		PRINTC 탈처녀필터：✕[364]
 	ENDIF
 	IF CONFIG("페니스밴드필터")
 		PRINTC 페니스밴드필터：○[365]
 	ELSE
-		PRINTC 페니스밴드필터：×[365]
+		PRINTC 페니스밴드필터：✕[365]
 	ENDIF
 	PRINTL 
 
@@ -501,7 +542,7 @@ ELSE
 	PRINTL 
 	PRINTC 조교에 돌아온다[888]
 	IF CONFIG("조교컨피그모드：全커맨드표시")
-		PRINTC 실행불가커맨드숨김[890]
+		PRINTC 실행불가커맨드 숨김[890]
 	ELSE
 		PRINTC 조교커맨드의 전표시[890]
 	ENDIF
@@ -525,63 +566,64 @@ SIF MAX(PREVCOM, PREVCOM:2) >= 0 && CONFIG("조교컨피그모드") == 0
 SELECTCASE TFLAG:103
 CASE 360
 	SIF CONFIG("Ｖ조교필터")
-		PRINTFORML  Ｖ조교필터ＯＮ.처녀의 때에, 질을 사용한다조교를실행불가로 합니다
+		PRINTFORML  Ｖ조교필터ＯＮ. 처녀의 경우, 질을 사용하는 조교를 실행불가로 합니다
 CASE 361
 	SIF CONFIG("Ａ조교필터")
-		PRINTFORML  Ａ조교필터ＯＮ.애널를 사용한다조교를실행불가로 합니다
+		PRINTFORML  Ａ조교필터ＯＮ. 애널을 사용하는 조교를 실행불가로 합니다
 CASE 362
 	SIF CONFIG("실행치필터")
-		PRINTFORML  실행치필터ＯＮ.실행치하지만 충분하지 않았다조교를실행불가로 합니다
+		PRINTFORML  실행치필터ＯＮ. 실행치가 충분하지 않은 조교를 실행불가로 합니다
 CASE 363
 	SIF CONFIG("脱동정필터")
-		PRINTFORML  탈동정필터ＯＮ.동정를 잃는다조교를실행불가로 합니다
+		PRINTFORML  탈동정필터ＯＮ. 동정을 잃는 조교를 실행불가로 합니다
 CASE 364
 	SIF CONFIG("脱처녀필터")
-		PRINTFORML  탈처녀필터ＯＮ. 인서트때에처녀를 빼앗는지 확인합니다
+		PRINTFORML  탈처녀필터ＯＮ. 사입 시에 처녀를 빼앗는지 확인합니다
 CASE 365
 	SIF CONFIG("페니스밴드필터")
-		PRINTFORML  페니스밴드필터ＯＮ.페니스밴드의 사용을 금지합니다
+		PRINTFORML  페니스밴드필터ＯＮ. 페니스밴드의 사용을 금지합니다
 CASE 372
 	SIF CONFIG("画面표시：조교커맨드４列") && GETCONFIG("ウィンドウ幅") < 1000
-		PRINTFORML  ４열표시의 경우에는, 윈드우폭은1000정도가 추천입니다
+		PRINTFORML  ４열표시의 경우에는, 윈도우 폭은 1000정도가 추천입니다
 CASE 373
 	IF CONFIG("画面표시：未実行커맨드の色")
-		PRINTFORM  아직 선택했던 적이 없다커맨드하지만
+		PRINTFORM  아직 선택했던 적이 없는 커맨드는
 		CALL PRINT_COLORTEXT, "회색", DEF_COLOR("明회색")
-		PRINTFORML (이)가 됩니다
+		PRINTFORML 이 됩니다
 	ENDIF
 CASE 890
 	IF CONFIG("조교컨피그모드：全커맨드표시")
-		PRINTFORML  [{TARGET, 2}]%CALLNAME:TARGET%의 실행 할 수 없다커맨드도 모두표시합니다
+		PRINTPLAINFORM  [{TARGET, 2}]%CALLNAME:TARGET%가 실행할 수 없는 커맨드도 모두 표시합니다
 	ELSE
-		PRINTFORML  [{TARGET, 2}]%CALLNAME:TARGET%의 실행할 수 있다커맨드만을표시합니다
+		PRINTPLAINFORM  [{TARGET, 2}]%CALLNAME:TARGET%가 실행할 수 있는 커맨드만 표시합니다
 	ENDIF
+	PRINTL
 CASE 888
 	IF CONFIG("조교컨피그모드")
-		PRINT  선택했다조교커맨드를
+		PRINT  선택한 조교커맨드를 
 		CALL PRINT_COLORTEXT, "비표시", DEF_COLOR("파랑")
-		PRINT ,
+		PRINT , 
 		CALL PRINT_COLORTEXT, "금지", DEF_COLOR("초록")
-		PRINTFORM 상태로 바꿉니다（
-			CALL PRINT_COLORTEXT, "この色", DEF_COLOR("暗황색")
+		PRINTFORM  상태로 바꿉니다（
+			CALL PRINT_COLORTEXT, "이 색", DEF_COLOR("暗황색")
 		PRINTFORML 의 것은 금지 불가)
 	ENDIF
 CASE 891
 	IF CONFIG("조교컨피그모드：비표시커맨드を숨김")
 		CALL PRINT_COLORTEXT, " 비표시", DEF_COLOR("파랑")
-		PRINTFORML 노커맨드를 숨깁니다（조교컨피그모드에 한정한다）
+		PRINTFORML 의 커맨드를 숨깁니다（조교컨피그모드에 한정한다）
 	ELSEIF CONFIG("조교컨피그모드：금지커맨드を숨김")
 		CALL PRINT_COLORTEXT, " 금지", DEF_COLOR("초록")
-		PRINTFORML 노커맨드를 숨깁니다
+		PRINTFORML 의 커맨드를 숨깁니다
 	ENDIF
 CASE 900
 	;前回커맨드がない時に限り説明出す
 	IF MEMO_LINECOUNT == LINECOUNT
 		IF CONFIG("항목표시필터：Ｂ")
 			PRINTPLAIN  [300]～[320]
-			PRINTFORML 노커맨드군필터를 숨깁니다
+			PRINTFORML 비표시 커맨드군 필터를 숨깁니다
 		ELSEIF CONFIG("항목표시필터：Ｃ")
-			PRINTFORML  사용 빈도의 낮다항목를 모두 숨깁니다
+			PRINTFORML  사용 빈도가 낮은 항목를 모두 숨깁니다
 		ENDIF
 	ENDIF
 ENDSELECT
@@ -752,15 +794,15 @@ ELSEIF CONFIG("조교컨피그모드") == 0
 	;反撃するか선택[420]
 	ELSEIF LOCAL == 420 && PLAYER == MASTER
 		IF CONFIG("ＨＡＲＤ")
-			PRINTFORMW 난이도가HARD라면선택할 수 없습니다
+			PRINTFORMW 난이도가 HARD면 선택할 수 없습니다
 			RETURN 0
 		ELSEIF TALENT:연모 == 0
-			PRINTFORMW 현재노조교대상하지만[연모]의 때에 한정해선택할 수 있습니다
+			PRINTFORMW 현재의 조교대상이 [연모]인 경우에 한정해 선택할 수 있습니다
 			RETURN 0
 		ELSEIF CFLAG:9 == 1
-			PRINTFORMW %CALLNAME:TARGET%(와)과 서로 서로 사랑하기로 했다.
+			PRINTFORMW %조사처리(CALLNAME:TARGET, "과")% 서로 서로 사랑하기로 했다.
 		ELSEIF CFLAG:9 == 0
-			PRINTFORMW %CALLNAME:TARGET%를 마음 가는 대로 귀여워하기로 했다.
+			PRINTFORMW %조사처리(CALLNAME:TARGET, "를")% 마음가는 대로 귀여워하기로 했다.
 		ENDIF
 		INVERTBIT CFLAG:9, 0
 	;交代[430]
