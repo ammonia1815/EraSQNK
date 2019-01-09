@@ -89,7 +89,7 @@ CASEELSE
 		PRINTFORML [0] %"지시하지 않는다", 20, LEFT%…수치 변동 없음
 		PRINTFORML [1] %"팍팍 가자구！", 20, LEFT%…조우율＆문발견율ＵＰ, 보물 발견율DOWN. 전투에 자신있을 때
 		PRINTFORML [2] %"목숨을 소중히", 20, LEFT%…보물 발견율DOWN, 전투 유리. 전투에 자신없을 때
-		PRINTFORML [3] %"플래그를 세운다", 20, LEFT%…가게 한 몽마가 따라 올지도 모른다. 몽마를 늘리고 싶을 때
+		PRINTFORML [3] %"플래그를 세운다", 20, LEFT%…가게 한 몽마가 따라 올지도 모른다. 동료마를 늘리고 싶을 때
 
 		CALL INPUT_SELECT, 4
 
@@ -698,7 +698,7 @@ ELSEIF IS_ITEMGET + MONEY:6 == 0
 ENDIF
 
 SIF I:999 && PLAYER == MASTER
-	PRINTFORML %조사처리(NAME:TARGET,"를")% 동료마로 했으므로 경험치에 보너스가 발생합니다
+	PRINTFORML %조사처리(NAME:TARGET,"를")% 동료마로 만들었으므로 경험치에 보너스가 발생합니다
 ;LVUP
 SIF PLAYER == MASTER
 	CALL ABLUP_MASTER, "通常"
