@@ -259,7 +259,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 		PRINTFORML [0]그만둔다
 		PRINTFORML [1]싸인한다
 		;상사상애枠が残ってたら「반지」も表示
-		IF CONFIG("상사상애：人数제한없음") || TALENT:MASTER:상사상애 == 0
+		IF CONFIG("상사상애：인수제한없음") || TALENT:MASTER:상사상애 == 0
 			PRINTFORMW [2]그런 것 보다 반지가 좋다
 			CALL INPUT_SELECT, 3
 		ELSE
@@ -3381,7 +3381,7 @@ IF SELECTCOM == 132
 			;いいえ마조です
 			ELSEIF TALENT:PLAYER:마조
 				PRINTFORMW 겠지, 이 등뒤를 뛰어 돌아다니는 한기와 같은 고양감은…
-				PRINTFORMW %CALLNAME:PLAYER%는%CALLNAME:TARGET%의 이야기에 %CALLNAME:PLAYER%가 강요해지는 모습을 상상해, 흥분을 느껴 버렸다
+				PRINTFORMW %CALLNAME:PLAYER%는 %CALLNAME:TARGET%의 이야기에 %CALLNAME:PLAYER%가 강요해지는 모습을 상상해, 흥분을 느껴 버렸다
 				PRINTFORMW 「어, 어째서 기쁜듯이 하고 있는 것입니까…야, 군침을 닦아주세요!」
 				PRINTFORMW %CALLNAME:TARGET%는 식은 땀을 흘려 이야기를 한 것을 후회하고 있다
 			;そこまで上級者じゃありません（새드마조발して５이상）
