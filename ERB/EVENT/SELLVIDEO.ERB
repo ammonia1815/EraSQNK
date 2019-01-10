@@ -7,7 +7,7 @@
 #DIMS VIDEO
 #DIMS VIDEO_FLAG
 
-;조교時に録画したビデオの매각
+;조교時に録画した비디오の매각
 ;TODO 価格설정再考・状況による価格をプラスできるか(처녀開通時など)
 
 ;録画してなければスキップ
@@ -16,7 +16,7 @@ SIF CSTR:81 == ""
 
 VARSET LOCAL
 
-;ビデオタイトル生成用플래그をリセット
+;비디오タイトル生成用플래그をリセット
 CSTR:82 = 
 
 VARSET LOCALS
@@ -700,7 +700,7 @@ PRINTFORML 이번에 촬용한 비디오, 제목으로：
 PRINTFORML 『%VIDEONAME%』
 SIF LOCALS != ""
 	PRINTFORML （장르：%LOCALS%）
-;ビデオ매각선택지플래그の체크
+;비디오매각선택지플래그の체크
 IF CONFIG("비디오매각の선택")
 	PRINTFORMW %조사만처리(VIDEONAME,"를")% 팝니까? 
 	PRINTL [0] 예
@@ -716,13 +716,13 @@ IF LOCAL == 0
 	IF VIDEO_VALUE >= 2000
 		PRINTFORMW 『%VIDEONAME%』를 팔아,%MONEY_C(VIDEO_VALUE)%손에 넣었다.
 		MONEY += VIDEO_VALUE
-		LOCALS = ビデオ매각
+		LOCALS = 비디오매각
 	ELSE
 		PRINTFORMW 『%VIDEONAME%』%조사만처리(VIDEONAME,"는")% 거의 팔리지 않고, 얼마안되는 수입도 경비로 사라졌습니다. 
 		MONEY += MIN(500, VIDEO_VALUE)
-		LOCALS = ビデオ매각失敗
+		LOCALS = 비디오매각失敗
 	ENDIF
-	;ビデオについての記録色々
+	;비디오についての記録色々
 	CFLAG:60 += 1
 	CFLAG:61 = MAX(CFLAG:61, VIDEO_VALUE)
 	CFLAG:62 += VIDEO_VALUE
@@ -730,11 +730,11 @@ IF LOCAL == 0
 	CFLAG:64 = CFLAG:65
 	CFLAG:65 = VIDEO_VALUE
 	VIDEOLABEL = No.\@ CFLAG:60 < 100 ? 0 # \@\@ CFLAG:60 < 10 ? 0 # \@{CFLAG:60}
-;売らなかったビデオの行方
+;売らなかった비디오の行方
 ELSE
 	PRINTFORM 『%VIDEONAME%』
 	;送りつけることができる상대がいないと送れない
-	LOCALS = ビデオ送付
+	LOCALS = 비디오送付
 	SELECTCASE NO:TARGET
 	;빌리져・V빌리져
 	CASE 8, 9
@@ -751,7 +751,7 @@ ELSE
 			PRINTFORMW %조사만처리(VIDEONAME,"를")% %조사만처리(CALLNAME:TARGET,"과")% 사이가 좋다는 몽마에게 보내주기로 했다. 
 		ELSE
 			PRINTFORMW %조사만처리(VIDEONAME,"를")% 감상용으로 남겨두기로 했습니다. 
-			LOCALS = ビデオ保存
+			LOCALS = 비디오保存
 		ENDIF
 	;멜로나（스투나がいない）
 	CASE 35
@@ -759,7 +759,7 @@ ELSE
 			PRINTFORMW %조사만처리(VIDEONAME,"를")% %조사만처리(CALLNAME:TARGET,"과")% 사이가 좋다는 몽마에게 보내주기로 했다. 
 		ELSE
 			PRINTFORMW %조사만처리(VIDEONAME,"를")% 감상용으로 남겨두기로 했습니다. 
-			LOCALS = ビデオ保存
+			LOCALS = 비디오保存
 		ENDIF
 	;프레데리카
 	CASE 37
@@ -773,14 +773,14 @@ ELSE
 			PRINTFORMW %조사만처리(VIDEONAME,"를")% %조사처리(CALLNAME:TARGET,"를")% 찾고있을 용자에게 보내주기로 했다. 
 		ELSE
 			PRINTFORMW %조사만처리(VIDEONAME,"를")% 감상용으로 남겨두기로 했습니다. 
-			LOCALS = ビデオ保存
+			LOCALS = 비디오保存
 		ENDIF
 	;흑사피
 	CASE 57
 		PRINTFORMW %조사만처리(VIDEONAME,"를")% 변태 할아버지에게 보내주기로 했다. 
 	CASEELSE
 		PRINTFORMW %조사만처리(VIDEONAME,"를")% 감상용으로 남겨두기로 했습니다. 
-		LOCALS = ビデオ保存
+		LOCALS = 비디오保存
 	ENDSELECT
 
 	SELECTCASE LOCALS

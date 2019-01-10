@@ -359,7 +359,7 @@ CASEELSE
     BUG_CHECK += 333
 ENDSELECT
 SIF BUG_CHECK == 666
-    THROW "%ARGS%" 를 찾을 수 없습니다.
+    THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
 RETURNF LOCAL
 
 ;-------------------------------------------------
@@ -447,7 +447,7 @@ FOR LCOUNT, 0, 7
 	CASE ""
 	    ;비워둠
 	CASEELSE
-        THROW "%ARGS:LCOUNT%" 를 찾을 수 없습니다.
+        THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS:LCOUNT%" 를 찾을 수 없습니다.
 	ENDSELECT
 	SIF LOCAL
 		RETURNF LOCAL
@@ -524,7 +524,7 @@ CASE "Ｖ치구"
 CASE "Ｐ치구"
 	SETBIT ARG, 21
 CASEELSE
-    THROW "%ARGS%" 를 찾을 수 없습니다.
+    THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 RETURNF ARG
 
@@ -577,7 +577,7 @@ CASE "Ａ"
 CASE "Ｂ"
 	STAIN:ARG:Ｂ = 0
 CASEELSE
-    THROW "%ARGS%" 를 찾을 수 없습니다.
+    THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 
 ;-------------------------------------------------
@@ -1128,7 +1128,7 @@ CASE "와일드스윙"
 	SIF TEQUIP:ARG:체위
 		RETURNF GETBIT(TEQUIP:ARG:특수행동, 0)
 CASEELSE
-    THROW "%ARGS%" 를 찾을 수 없습니다.
+    THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 RETURNF 0
 
@@ -3251,7 +3251,7 @@ CASE "양손피스트"
 CASE "드래곤"
 	RETURNF 5
 CASEELSE
-    THROW "%ARGS%" 를 찾을 수 없습니다.
+    THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 RETURNF LOCAL
 
@@ -3326,7 +3326,7 @@ CASE "피스트"
 CASE "드래곤"
 	RETURNF 4
 CASEELSE
-    THROW "%ARGS%" 를 찾을 수 없습니다.
+    THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 RETURNF LOCAL
 
@@ -3429,7 +3429,7 @@ CASE "バッド"
 	LOCAL += GETBITS(EQUIP:ARG:스테이트변화, 3, 6, 8) + GETBITS(EQUIP:ARG:스테이트변화, 11, 14, 16)
 	RETURNF LOCAL
 CASEELSE
-    THROW "%ARGS%" 를 찾을 수 없습니다.
+    THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 RETURNF 0
 
@@ -3505,7 +3505,7 @@ CASE "에올군"
 	;EQUIP:ARG:에올군 = MIN(EQUIP:ARG:에올군 + 1, 3)
 	EQUIP:ARG:에올군 = 3
 CASEELSE
-    THROW "%ARGS%" 를 찾을 수 없습니다.
+    THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 
 @REMOVE_STATE, ARG, ARGS
@@ -3600,7 +3600,7 @@ CASE "バッド"
 	CLEARBIT TEQUIP:ARG:구속, 30
 	CLEARBIT TEQUIP:ARG:구속, 31
 CASEELSE
-    THROW "%ARGS%" 를 찾을 수 없습니다.
+    THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 
 ;-------------------------------------------------
@@ -4191,9 +4191,9 @@ SETBIT TCVAR:ARG:(140 + LOCAL/64), LOCAL%64
 SETBIT CFLAG:ARG:(700 + LOCAL/64), LOCAL%64
 
 ;-------------------------------------------------
-;특수な이벤트の番号と이벤트名の対応
-;조교中などの이벤트番号管理もここで行う(이벤트番号0は설정禁止)
-;記録するために用意されているFLAGのビット数の問題があるので, とりあえず640番まで. 
+;특수한 이벤트 번호와 이벤트명의 대응
+;조교中등의 EVENT 번호 관리도 여기서 실시한다.(EVENT 번호 0은 설정 금지)
+;기록하기 위하여 준비되어 있는 FLAG의 비트수의 문제가 있기 때문에 일단 640번까지.
 ;-------------------------------------------------
 @NUM_EV(ARGS)
 #FUNCTION
@@ -4311,6 +4311,7 @@ CASE "용간구상개시"
 CASE "용간구상종료"
 	RETURNF 106
 
+;아이템 사용 이벤트
 CASE "피임약"
 	RETURNF 107
 CASE "긴급피임약"
@@ -4532,16 +4533,82 @@ CASE "주인がトイレで"
 CASE "お茶を淹れる"
 CASE "コスプレ"
 
-;기타
+;아이템 사용 이벤트
+CASE "후타나리약"
+CASE "검은드롭스"
 CASE "무지개의약"
+CASE "정액각인"
+
+;용간NTR 이벤트
+CASE "용간寝取られ：일상挨拶"
+CASE "용간寝取られ：일상ＶＡお楽しみ中"
+CASE "용간寝取られ：일상ＶＡおねだり"
+CASE "용간寝取られ：일상Ｖお楽しみ中"
+CASE "용간寝取られ：일상Ｖおねだり"
+CASE "용간寝取られ：일상Ｖ夢中"
+CASE "용간寝取られ：일상Ａお楽しみ中"
+CASE "용간寝取られ：일상Ａおねだり"
+
+;여행 이벤트
+CASE "여행전날"
+CASE "여행出発"
+CASE "여행到着"
+CASE "秘湯食事"
+CASE "秘湯お風呂"
+CASE "秘湯お風呂フェーズ１"
+CASE "秘湯お風呂フェーズ２：처녀"
+CASE "秘湯お風呂フェーズ２개시：洗い"
+CASE "秘湯お風呂フェーズ２"
+CASE "秘湯お風呂フェーズ３"
+CASE "秘湯フェーズ１개시：誘い"
+CASE "秘湯フェーズ１개시：襲い"
+CASE "秘湯フェーズ１개시：襲われ"
+CASE "秘湯フェーズ１개시：レズ"
+CASE "秘湯フェーズ１종료"
+CASE "秘湯フェーズ２개시：파이즈리"
+CASE "秘湯フェーズ２개시：스마타"
+CASE "秘湯フェーズ２개시：키스"
+CASE "秘湯フェーズ２개시：お청소される"
+CASE "秘湯フェーズ２개시：お청소する"
+CASE "秘湯フェーズ２개시：レズ"
+CASE "秘湯フェーズ２종료"
+CASE "秘湯フェーズ３개시：정상위"
+CASE "秘湯フェーズ３개시：기승"
+CASE "秘湯フェーズ３개시：襲われ"
+CASE "秘湯フェーズ３개시：レズ"
+CASE "秘湯フェーズ３종료"
+CASE "秘湯翌아침개시"
+CASE "秘湯翌아침종료"
+CASE "お토産"
+CASE "帰宅"
+
+;요바이 난교 이벤트
+CASE "重ねて交互突き"
+CASE "次々に犯す"
+CASE "기승위輪姦"
+CASE "Ｗ스마타"
+CASE "풋잡"
+CASE "オナホプレイ"
+CASE "식스나인"
+
+;기타
 CASE "おねだり：Ｖ피스트"
 CASE "おねだり：Ｖ삽입"
 CASE "おねだり：Ａ피스트"
 CASE "おねだり：Ａ삽입"
 CASE "おねだり：요도삽입"
 CASE "おねだり：정액"
+
+CASE "요도확장기추가구상"
+CASE "日常：食事当番"
+
 CASEELSE
-    THROW "%ARGS%" 를 찾을 수 없습니다.
+	IF MATCH(ITEMNAME, ARGS)
+		;아이템 사용 이벤트
+		;CASE ITEMNAME:BOUGHT에 대응
+	ELSE
+    	THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+	ENDIF
 ENDSELECT
 RETURNF 0
 
@@ -4947,7 +5014,7 @@ CASE "청소Ａ핥기"
 	SIF GETBIT(TCVAR:ARG:151, 50)
 		RETURNF 1
 CASEELSE
-    THROW "%ARGS%" 를 찾을 수 없습니다.
+    THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 RETURNF 0
 
