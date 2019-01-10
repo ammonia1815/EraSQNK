@@ -27,9 +27,9 @@ PRINTFORML  [ 0] 조교신 전반에 깊게 관련된 설정
 PRINTFORML  [ 1] 시스템 및 이벤트 관련 설정
 PRINTFORML  [ 2] 임신 시스템과 관련된 설정（임신패치 사용상황：\@ CONFIG("임신패치") ? ○ # －\@）
 IF CONFIG("ユニコード")
-	PRINTFORML  [ 3] 확장 UNICODE 사용 설정：확장 유니코드를 사용하지 않습니다.
+	PRINTFORML  [ 3] 확장 UNICODE 사용 설정：%UNI("드래곤")% ⬅ 드래곤 마크가 정상적으로 표시됩니다.
 ELSE
-	PRINTFORML  [ 3] 확장 UNICODE 사용 설정：%UNI("드래곤")% ⬅ 용 마크가 정상적으로 표시될 때 사용해 주세요.
+	PRINTFORML  [ 3] 확장 UNICODE 사용 설정：%UNI("드래곤")% ⬅ 드래곤 마크 대신 한자를 사용합니다
 ENDIF
 IF CONFIG("EmueraTunes")
 	PRINTFORM  [ 4] 보이스설정：
@@ -559,7 +559,7 @@ CASE "ボイス"
 CASE "EmueraTunes"
 	RETURNF FLAG:501
 CASEELSE
-	THROW "%ARGS%" 를 찾을 수 없습니다
+	THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다
 ENDSELECT
 RETURNF 0
 
@@ -2170,8 +2170,8 @@ CASEELSE
 			RESTART
 		ENDIF
 
-		MEMO_CNAME = 一人称主人：%RESULTS%
-		MEMO_CNAME_KANA = 一人称主人かな：%RESULTS%
+		MEMO_CNAME = 一人称주인：%RESULTS%
+		MEMO_CNAME_KANA = 一人称주인かな：%RESULTS%
 
 		;呼び名フラグリセット
 		CALL DEL_CEVENT_GROUP_EX, "一人称주인", ARG
@@ -2188,7 +2188,7 @@ CASEELSE
 
 		PRINTL 
 		SIF RESULTS != ""
-			MEMO_CNAME_KANA = 一人称主人かな：%RESULTS%
+			MEMO_CNAME_KANA = 一人称주인かな：%RESULTS%
 
 		CALL SET_CEVENT, MEMO_CNAME_KANA, ARG
 
@@ -2202,8 +2202,8 @@ CASEELSE
 			RESTART
 		ENDIF
 
-		MEMO_CNAME = 二人称主人：%RESULTS%
-		MEMO_CNAME_KANA = 二人称主人かな：%RESULTS%
+		MEMO_CNAME = 二人称주인：%RESULTS%
+		MEMO_CNAME_KANA = 二人称주인かな：%RESULTS%
 
 		;呼び名フラグリセット
 		CALL DEL_CEVENT_GROUP_EX, "二人称주인", ARG
@@ -2220,7 +2220,7 @@ CASEELSE
 
 		PRINTL 
 		SIF RESULTS != ""
-			MEMO_CNAME_KANA = 二人称主人かな：%RESULTS%
+			MEMO_CNAME_KANA = 二人称주인かな：%RESULTS%
 
 		CALL SET_CEVENT, MEMO_CNAME_KANA, ARG
 
@@ -2239,7 +2239,7 @@ IF NAME:ARG != MEMO_NAME && CALLNAME:ARG != NAME:ARG
 	PRINTFORML [ 2] 호칭을 이름（%NAME:ARG%）과 같게한다
 	CALL INPUT_SELECT, 3
 	IF RESULT == 0
-		PRINTFORML %NAME:ARG%の呼び名「%CALLNAME:ARG%」を変更します
+		PRINTFORML %NAME:ARG%의 호칭%조사처리("「"+CALLNAME:ARG+"」", "를")% 변경합니다.
 		PRINTFORML 호칭을 입력해주세요. 아무것도 입력하지 않으면 변경하지 않습니다. 
 
 		CALL INPUTS_SELECT, 16
@@ -2308,9 +2308,9 @@ CASE 100
 	RETURN 0
 CASE 200
 	PRINTL 
-	PRINTFORML 오느 요소로 정렬합니까？
+	PRINTFORML 어느 요소를 기준으로 정렬합니까？
 	PRINTFORML  [ 0] 가입순서　　　　　　　　（이것의 오름차순이 초기 정렬순입니다）
-	PRINTFORML  [ 1] 캐릭터번호　　　　　　　（소환할때에 표시되어있는 번호순입니다）
+	PRINTFORML  [ 1] 캐릭터번호　　　　　　　（소환할 때에 표시되어 있는 번호순입니다）
 	PRINTFORML  [ 2] 호감도
 	PRINTFORML  [ 3] 마지막으로 상대한 날짜　（최근 상대한 캐릭터일수록 값이 큽니다）
 	PRINTFORML  [ 4] ＬＶ
@@ -2375,7 +2375,7 @@ CLEARLINE LINECOUNT - MEMO_LINECOUNT
 MEMO_LINECOUNT = LINECOUNT
 
 PRINTL 
-PRINTFORML 순서를 교채할 첫번째 [{CHOICE:1, 2}]%조사처리(CALLNAME:(CHOICE:1),"를")% 선택했습니다
+PRINTFORML 순서를 교체할 첫번째 [{CHOICE:1, 2}]%조사처리(CALLNAME:(CHOICE:1),"를")% 선택했습니다
 PRINTL 
 PRINTFORML 한명 더 선택해주세요
 

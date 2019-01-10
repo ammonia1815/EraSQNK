@@ -28,15 +28,15 @@ SELECTCASE FLAG:246
 CASE 0
 	PRINTFORML 지시 없음
 CASE 1
-	PRINTFORML 팍팍 가버리자구! 
+	PRINTFORML 팍팍 가자구!
 CASE 2
 	PRINTFORML 목숨을 소중히
 CASE 3
-	PRINTFORML 플래그 꽂기
+	PRINTFORML 플래그를 세운다
 ENDSELECT
 
 ;악세사리の탐색効果
-IF TALENT:MASTER:은밀 > 0 || TALENT:MASTER:보물상자출현률 > 0 || TALENT:MASTER:문발견률 > 0
+IF TALENT:MASTER:은밀 > 0 || TALENT:MASTER:보물상자출현율 > 0 || TALENT:MASTER:문발견율 > 0
 	PRINTFORM 악세사리의 효과：
 	FOR LOCAL, 301, 306
 		SELECTCASE FLAG:LOCAL / 1000
@@ -53,25 +53,25 @@ INPUTS
 SELECTCASE RESULTS
 ;탐색での능력
 CASE "遭遇回避"
-	CALL PRINT_STR, "몽마との遭遇率が_황색_５％減少_します_W"
+	CALL PRINT_STR, "몽마와의 조우율이 _황색_５％ 감소_합니다_W"
 CASE "遭遇증가"
-	CALL PRINT_STR, "몽마との遭遇率が_파랑_５％上昇_します_W"
+	CALL PRINT_STR, "몽마와의 조우율이 _파랑_５％ 상승_합니다_W"
 CASE "罠解除"
-	CALL PRINT_STR, "宝箱を開ける際のトラップ発動率が_황색_４分の一_になります_W"
+	CALL PRINT_STR, "보물상자를 열 때 트랩발동률이 _황색_４분의 1_로 줄어듭니다_W"
 CASE "罠誘発"
-	CALL PRINT_STR, "宝箱を開ける際のトラップ発動率が_파랑_2.5倍_になります_W"
+	CALL PRINT_STR, "보물상자를 열 때 트랩발동률이 _파랑_2.5배_로 늘어납니다_W"
 CASE "財宝発見"
-	CALL PRINT_STR, "宝箱を見つける확률が_황색_５％上昇_します_W"
+	CALL PRINT_STR, "보물상자를 발견할 확률이 _황색_５％ 상승_합니다_W"
 CASE "財宝見逃し"
-	CALL PRINT_STR, "宝箱を見つける확률が_파랑_５％減少_します_W"
+	CALL PRINT_STR, "보물상자를 발견할 확률이 _파랑_５％ 감소_합니다_W"
 CASE "階段発見"
-	CALL PRINT_STR, "次の階層へのドアを見つける확률が_황색_５％上昇_します_W"
+	CALL PRINT_STR, "다음 층으로 가는 문을 발견할 확률이 _황색_５％ 상승_합니다_W"
 CASE "회복"
-	CALL PRINT_STR, "各行動ごとに정력が_황색_１Ｐ회복_し、戦闘종료時は_황색_２Ｐ多く회복_します_W"
+	CALL PRINT_STR, "각 행동마다 정력이 _황색_１Ｐ회복_하고, 전투 종료 시엔_황색_２Ｐ 더 회복_합니다_W"
 CASE "戦闘補助"
-	CALL PRINT_STR, "数値の分だけ탐색者の戦闘力が増えます_W"
+	CALL PRINT_STR, "수치만큼 탐색자의 전투력이 증가합니다_W"
 CASE "상태異常無効"
-	CALL PRINT_STR, "宝箱の罠での상태異常を無効化します_W"
+	CALL PRINT_STR, "보물상자의 함정에 의한 상태 이상을 무효화합니다_W"
 ;それ以外は数値入力へ変換
 CASEELSE
 	RESULT = TOINT(RESULTS)
@@ -84,17 +84,17 @@ CASEELSE
 		FLAG:45 = 0
 		RESTART
 	ELSEIF RESULT == 200
-		PRINTFORML 탐색의 (분)편바늘를 결정합니다. 어느 것으로 합니까？
+		PRINTFORML 탐색 방침을 결정합니다. 어느 것으로 합니까？
 		PRINTL 
-		PRINTFORML [0] 지시하지 않는다…수치 변동 없음
-		PRINTFORML [1] 땅땅 가자구！…조우율＆문발견률ＵＰ, 보물 발견율DOWN. 자신이 있을 때에
-		PRINTFORML [2] 생명을 중요하게…보물 발견율DOWN, 전투 유리. 자신이 없을 때에
-		PRINTFORML [3] 플래그를 건축…가게 했다몽마하지만 따라 올지도. 중마를 늘리고 싶을 때에
+		PRINTFORML [0] %"지시하지 않는다", 20, LEFT%…수치 변동 없음
+		PRINTFORML [1] %"팍팍 가자구！", 20, LEFT%…조우율＆문발견율ＵＰ, 보물 발견율DOWN. 전투에 자신있을 때
+		PRINTFORML [2] %"목숨을 소중히", 20, LEFT%…보물 발견율DOWN, 전투 유리. 전투에 자신없을 때
+		PRINTFORML [3] %"플래그를 세운다", 20, LEFT%…가게 한 몽마가 따라 올지도 모른다. 동료마를 늘리고 싶을 때
 
 		CALL INPUT_SELECT, 4
 
 		FLAG:246 = RESULT
-		PRINTW 탐색(분)편바늘를 변경했습니다.
+		PRINTW 탐색 방침을 변경했습니다.
 		PRINTL 
 
 		RESTART
@@ -146,7 +146,7 @@ RESTART
 #DIM ASSI_EXPLORER
 #DIM MEMO_LINECOUNT
 #DIMS DUNGEON, 10
-#DIMS FEILD_EXPLORER
+#DIMS FIELD_EXPLORER
 
 REDRAW 1
 
@@ -203,9 +203,9 @@ CASEELSE
 		LASTWORD = 도시락
 	ELSE
 		IF TIME == 0
-			PRINT 점심의 나머지를 사이에 두었다
+			PRINT 점심에 먹다 남은 것들을 끼워 넣은
 		ELSE
-			PRINT 저녁식사의 나머지를 사이에 두었다
+			PRINT 저녁에 먹다 남은 것들을 끼워 넣은
 		ENDIF
 		LASTWORD = 샌드위치
 	ENDIF
@@ -242,11 +242,11 @@ PRINTFORML
 FOR LCOUNT, 0, 10
 	SIF DUNGEON:LCOUNT == ""
 		CONTINUE
-	;CALL SET_DATA_FEILD_EXPLORER, DUNGEON:LCOUNT
+	;CALL SET_DATA_FIELD_EXPLORER, DUNGEON:LCOUNT
 	PRINTFORM  [{LCOUNT, 2}] %TEXT_LJ(DUNGEON:LCOUNT, 22)%
 	LOCALS = %DUNGEON:LCOUNT%：보스격파
 	SIF PALAM_EXPLORER(LOCALS)
-		CALL PRINT_COLORTEXT, "※踏破済み※", DEF_COLOR("노랑")
+		CALL PRINT_COLORTEXT, "※답파완료※", DEF_COLOR("노랑")
 	;PRINTFORM 遭遇率{PALAM_EXPLORER("遭遇率")}％　
 	;PRINTFORM 難易度{PALAM_EXPLORER("敵の強さ")}　
 	;PRINTFORM トレジャーLV{PALAM_EXPLORER("아이템레벨")}　
@@ -266,20 +266,20 @@ CASE 100
 CASE 0 TO 10
 	SIF DUNGEON:RESULT == ""
 		GOTO INPUT_LOOP
-	FEILD_EXPLORER = %DUNGEON:RESULT%
+	FIELD_EXPLORER = %DUNGEON:RESULT%
 CASEELSE
 	GOTO INPUT_LOOP
 ENDSELECT
 
-CALL SET_DATA_FEILD_EXPLORER, FEILD_EXPLORER
+CALL SET_DATA_FIELD_EXPLORER, FIELD_EXPLORER
 
-CALL TITLE_DATA_FEILD_EXPLORER, FEILD_EXPLORER
+CALL TITLE_DATA_FIELD_EXPLORER, FIELD_EXPLORER
 
-SELECTCASE FEILD_EXPLORER
+SELECTCASE FIELD_EXPLORER
 CASE "키아즈마의유곽"
-	PRINTFORML %FEILD_EXPLORER%노탐색에는%TEXTS("조수の명칭")%하지만 동행하지 못하고,$1,000～$10,000의 대금이 듭니다
+	PRINTFORML %FIELD_EXPLORER%의 탐색에는 %조사처리(TEXTS("조수の명칭"), "가")% 동행하지 못하고, $1,000～$10,000의 대금이 듭니다
 	IF MONEY < 1000
-		PRINTFORML …안됐지만 가지고 있는게 없는 것같네요
+		PRINTFORML …안 됐지만 가지고 있는 게 없는 것같네요
 		PRINTFORML 다음 방문을 기다리겠습니다
 		RESTART
 	ENDIF
@@ -292,7 +292,7 @@ CALL INPUT_SELECT, 2
 SIF RESULT == 1
 	RESTART
 
-SAVESTR:15 = %FEILD_EXPLORER%
+SAVESTR:15 = %FIELD_EXPLORER%
 ;60-63	범용フラグ（毎回탐색開始の時にリセットされる）
 FLAG:50 = CLEARBITS(FLAG:50, 60, 63)
 
@@ -305,37 +305,37 @@ SIF PLAYER == MASTER && ASSI
 
 SIF LINECOUNT != MEMO_LINECOUNT
 	PRINTL 
-PRINTFORMW %TEXTS("탐색先")%노탐색를 개시합니다.
+PRINTFORMW %TEXTS("탐색先")%의 탐색을 개시합니다.
 
 CALL START_EXPLORER
 
 
-@TITLE_DATA_FEILD_EXPLORER, ARGS
+@TITLE_DATA_FIELD_EXPLORER, ARGS
 DRAWLINE
 SELECTCASE ARGS
 CASE "초원"
-	PRINTFORML ～초원～
+	PRINTFORML %"～초원～", 25, LEFT%
 CASE "에르툼삼림"
-	PRINTFORML ～에르툼삼림～ BOSS：스코그스라 유니크：티타니아
+	PRINTFORML %"～에르툼삼림～", 25, LEFT% %"BOSS：스코그스라", 25, LEFT% 유니크：티타니아
 CASE "류두흐동굴"
-	PRINTFORML ～류두흐동굴～ BOSS：스투나＆멜로나 유니크：뷔브르
+	PRINTFORML %"～류두흐동굴～", 25, LEFT% %"BOSS：스투나＆멜로나", 25, LEFT% 유니크：뷔브르
 CASE "안쇼스海"
-	PRINTFORML ～안쇼스바다～ BOSS：레비아탄 유니크：카류브디스
+	PRINTFORML %"～안쇼스海～", 25, LEFT% %"BOSS：레비아탄", 25, LEFT% 유니크：카류브디스
 CASE "베르나도트의대미궁"
-	PRINTFORML ～베르나도트의대미궁～ BOSS：베르나도트
+	PRINTFORML %"～베르나도트의 대미궁～", 25, LEFT% %"BOSS：베르나도트", 25, LEFT%
 CASE "고즈번 사막"
-	PRINTFORML ～베르나도트의대미궁～ BOSS：하피3 자매유니크：스핑크스
+	PRINTFORML %"～베르나도트의 대미궁～", 25, LEFT% %"BOSS：하피 세 자매", 25, LEFT% 유니크：스핑크스
 CASE "키아즈마의유곽"
-	PRINTFORML ～키아즈마의유곽～ BOSS：린 유니크：하트메, 타마모
+	PRINTFORML %"～키아즈마의 유곽～", 25, LEFT% %"BOSS：린", 25, LEFT% 유니크：하트메, 타마모
 ENDSELECT
-PRINTFORM 조우율{PALAM_EXPLORER("遭遇率")}％ 
-PRINTFORM 난이도{PALAM_EXPLORER("敵の強さ")} 
-PRINTFORM 트레져LV{PALAM_EXPLORER("아이템레벨")} 
-PRINTFORML 보물상자 발견율{PALAM_EXPLORER("아이템発見率")}％
+PRINTFORM 조우율：{PALAM_EXPLORER("遭遇率")}％     
+PRINTFORM 난이도：{PALAM_EXPLORER("敵の強さ")}     
+PRINTFORM 트레져：LV{PALAM_EXPLORER("아이템레벨")}     
+PRINTFORML 보물상자 발견율：{PALAM_EXPLORER("아이템発見率")}％
 DRAWLINE
 
 
-@SET_DATA_FEILD_EXPLORER, ARGS
+@SET_DATA_FIELD_EXPLORER, ARGS
 VARSET TFLAG
 SELECTCASE ARGS
 CASE "초원"
@@ -510,7 +510,7 @@ CASE "키아즈마의유곽"
 		CALL SET_PALAM_EXPLORER, "몽마", 444, 10
 	ENDSELECT
 CASEELSE
-	THROW "%TEXTS("탐색先")%"를 찾을 수 없습니다.
+	THROW %GAMEBASE_YEAR%버젼 BUG : "%TEXTS("탐색先")%"를 찾을 수 없습니다.
 ENDSELECT
 
 ;탐색者と조수の効果
@@ -544,17 +544,17 @@ IF TALENT:PLAYER:은밀 > 0
 	CALL SET_PALAM_EXPLORER, "遭遇率", -LOCAL
 ENDIF
 ;宝箱
-IF TALENT:PLAYER:보물상자출현률 > 0
-	LOCAL = MULTIPLY(PALAM_EXPLORER("아이템発見率"), TALENT:PLAYER:보물상자출현률)
+IF TALENT:PLAYER:보물상자출현율 > 0
+	LOCAL = MULTIPLY(PALAM_EXPLORER("아이템発見率"), TALENT:PLAYER:보물상자출현율)
 	CALL SET_PALAM_EXPLORER, "아이템発見率", LOCAL
 ENDIF
 ;ドア
-IF TALENT:PLAYER:문발견률 > 0
-	LOCAL = MULTIPLY(PALAM_EXPLORER("계단발견率"), TALENT:PLAYER:문발견률)
+IF TALENT:PLAYER:문발견율 > 0
+	LOCAL = MULTIPLY(PALAM_EXPLORER("계단발견率"), TALENT:PLAYER:문발견율)
 	CALL SET_PALAM_EXPLORER, "계단발견率", LOCAL
 ENDIF
 ;作戦方바늘보정
-;ガンガンいこうぜ!  문발견률小ＵＰ, 宝発見率小DOWN
+;ガンガンいこうぜ!  문발견율小ＵＰ, 宝発見率小DOWN
 IF FLAG:246 == 1
 	CALL SET_PALAM_EXPLORER, "遭遇率", 10
 	CALL SET_PALAM_EXPLORER, "아이템発見率", -10
@@ -689,7 +689,7 @@ NEXT
 IF IS_ITEMGET
 	PRINTFORML 입수아이템：%GETITEMS%
 	SIF GETBIT(IS_ITEMGET, 1)
-		PRINTFORML 스푼이나 찻잔은 식사때는 물론, 탐험중의 휴식에서도 우아한 한때를 연출하겠지요…
+		PRINTFORML 스푼이나 찻잔은 식사때는 물론, 탐험 중의 휴식에서도 우아한 한때를 연출하겠지요…
 	;악세사리の鑑定
 	SIF GETBIT(IS_ITEMGET, 2)
 		PRINTFORML 감정되지않은 악세사리는 『신기루당』에 가져가시는 것을 추천합니다
@@ -698,7 +698,7 @@ ELSEIF IS_ITEMGET + MONEY:6 == 0
 ENDIF
 
 SIF I:999 && PLAYER == MASTER
-	PRINTFORML %조사처리(NAME:TARGET,"를")% 동료마로 했으므로 경험치에 보너스가 발생합니다
+	PRINTFORML %조사처리(NAME:TARGET,"를")% 동료마로 만들었으므로 경험치에 보너스가 발생합니다
 ;LVUP
 SIF PLAYER == MASTER
 	CALL ABLUP_MASTER, "通常"
@@ -913,7 +913,7 @@ CASE "中보스격파"
 CASE "보스격파"
 	SETBIT FLAG:50, 61
 CASEELSE
-	THROW "%ARGS%" 를 찾을 수 없습니다.
+	THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 
 @PALAM_EXPLORER(ARGS, ARG)
@@ -1105,6 +1105,6 @@ CASE "中보스격파"
 CASE "보스격파"
 	RETURNF GETBIT(FLAG:50, 61)
 CASEELSE
-	THROW "%ARGS%" 를 찾을 수 없습니다.
+	THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 RETURNF 0
