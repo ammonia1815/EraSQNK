@@ -510,7 +510,7 @@ CASE "키아즈마의유곽"
 		CALL SET_PALAM_EXPLORER, "몽마", 444, 10
 	ENDSELECT
 CASEELSE
-	THROW "%TEXTS("탐색先")%"를 찾을 수 없습니다.
+	THROW %GAMEBASE_YEAR%버젼 BUG : "%TEXTS("탐색先")%"를 찾을 수 없습니다.
 ENDSELECT
 
 ;탐색者と조수の効果
@@ -913,7 +913,7 @@ CASE "中보스격파"
 CASE "보스격파"
 	SETBIT FLAG:50, 61
 CASEELSE
-	THROW "%ARGS%" 를 찾을 수 없습니다.
+	THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 
 @PALAM_EXPLORER(ARGS, ARG)
@@ -1105,6 +1105,6 @@ CASE "中보스격파"
 CASE "보스격파"
 	RETURNF GETBIT(FLAG:50, 61)
 CASEELSE
-	THROW "%ARGS%" 를 찾을 수 없습니다.
+	THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 RETURNF 0
