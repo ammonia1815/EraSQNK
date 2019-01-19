@@ -90,7 +90,7 @@ CASE "通常", "通常：２", "キャラメイク", "ＬＶＵＰ"
 			PRINT 　
 	ENDIF
 	IF TALENT:ARG:임신
-		PRINTFORM %CONDS("정액의우세", ARG)%의 아이를임신中
+		PRINTFORM %CONDS("정액의우세", ARG)%의 아이를 임신中
 	ELSEIF COND("발정기", ARG)
 		SETCOLOR DEF_COLOR("하트핑크")
 		PRINTFORM 발정기
@@ -102,7 +102,7 @@ CASE "通常", "通常：２", "キャラメイク", "ＬＶＵＰ"
 		IF TALENT:ARG:피임의부적
 			PRINTFORM 피임의부적
 		ELSEIF TALENT:ARG:피임약복용
-			PRINTFORM 피임약복용안:그리고{TALENT:ARG:피임약복용}일분
+			PRINTFORM 피임약복용中:잔량{TALENT:ARG:피임약복용}일분
 		ENDIF
 	ELSEIF COND("안전일", ARG)
 		PRINTFORM 안전일
@@ -164,9 +164,9 @@ CASE "通常"
 		DRAWLINE
 		PRINTFORM [ 0]몸가짐의 변경
 		IF NUM("所持악세사리")
-			PRINTFORM  [ 7]악세사리세트
+			PRINTFORM  [ 7]악세사리 관리
 		ELSE
-			PRINTPLAINFORM  [×]악세사리세트
+			PRINTPLAINFORM  [×]악세사리 관리
 		ENDIF
 		PRINTL 
 
