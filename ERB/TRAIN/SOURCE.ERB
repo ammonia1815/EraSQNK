@@ -996,7 +996,7 @@ IF FLAG:217 && ARGS == "数値표시"
 		PRINTFORML 절정을 견딜 확률：{LIMIT(30*MAXBASE:성감허용치여자/(BASE:성감허용치여자 + 1), 20, 90)}％
 ENDIF
 
-SIF NOWEX:가는것을참았다 && NOWEX:라그쟈라스히트 == 0
+SIF NOWEX:가는것을참았다 && NOWEX:럭셔리어스히트 == 0
 	RETURN 1
 
 NOWEX:가는것을참았다 = 0
@@ -1020,7 +1020,7 @@ FOR LCOUNT, 0, 16
 			NOWEX:(LOCAL + 6) = 1
 		ENDSELECT
 	;イくのを堪えたor손대중で게이지が1万超えたままのは, 他の절정が発生した時に同時に절정する. (ここを2回見るのでOK)
-	ELSEIF CUP:LCOUNT || NOWEX:절정수합계 || NOWEX:라그쟈라스히트
+	ELSEIF CUP:LCOUNT || NOWEX:절정수합계 || NOWEX:럭셔리어스히트
 		SELECTCASE UP_PALAM(LCOUNT)
 		CASE IS >= 100000
 			NOWEX:LOCAL = 5
@@ -1070,8 +1070,8 @@ SIF ARGS == "数値표시" || NOWEX:절정수합계 == 0
 ;연모の人は당신の절정に合わせてくれます
 IF TALENT:연모 && PLAYER == MASTER && COND("절정", PLAYER) >= MAX(2, 1 + RAND:5) && RAND:3 == 0
 	EX:가는것을참았다 = 0
-;라그쟈라스히트の時にはこらえることが出来ない
-ELSEIF NOWEX:라그쟈라스히트 || NOWEX:정액절정
+;럭셔리어스히트の時にはこらえることが出来ない
+ELSEIF NOWEX:럭셔리어스히트 || NOWEX:정액절정
 	EX:가는것을참았다 = 0
 ;배설していたらこらえることはできない
 ELSEIF NOWEX:방뇨 || NOWEX:배설 || NOWEX:사정

@@ -911,7 +911,7 @@ CASE "イきそう"
 			RETURNF 1
 	ENDSELECT
 CASE "こらえる"
-	SIF TFLAG:7 >= 4 && NOWEX:ARG:라그쟈라스히트 == 0
+	SIF TFLAG:7 >= 4 && NOWEX:ARG:럭셔리어스히트 == 0
 		RETURNF 1
 CASE "潮噴き가능"
 	;여성器があることと, ある程度の요의が必須
@@ -1726,7 +1726,7 @@ CASE "조교종료가능"
 	SIF CONFIG("ＨＡＲＤ") == 0 || TEQUIP:넘어뜨리기 == 0
 		RETURNF 1
 	IF TEQUIP:Ｗ넘어뜨리기 && TARGET:1
-		SIF COND("満발", TARGET) && COND("満발", TARGET:1)
+		SIF COND("만족", TARGET) && COND("만족", TARGET:1)
 			RETURNF 1
 	ELSEIF COND("만족", TARGET) || BASE:체력 < 1000 || BASE:기력 == 0 || BASE:정력 == 0
 		RETURNF 1

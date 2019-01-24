@@ -1819,7 +1819,7 @@ IF TIME == 0 && TALENT:연모 && RAND:4 == 0
 	ELSEIF COND("밤이벤트", MASTER) && RANDIF(1, COND("조교後이벤트") )
 		;쿠즈노하が상대
 		IF COND("밤이벤트")
-			IF COND("夜이벤트") == NUM_EV("요바이키스")
+			IF COND("밤이벤트") == NUM_EV("요바이키스")
 				PRINTFORMW 「후후후♪」
 				PRINTFORMW %CALLNAME:MASTER%가 방에 들어온 뒤부터, %CALLNAME:TARGET%는 계속 이 상태다.
 				PRINTFORMW %CALLNAME:MASTER%의 얼굴을 보고 히죽거려서, 그걸 이상하게 여긴 %CALLNAME:MASTER%가 쳐다보면 당황해서 눈을 돌린다…
@@ -1827,12 +1827,12 @@ IF TIME == 0 && TALENT:연모 && RAND:4 == 0
 				PRINTFORMW 「후후…훗♪」
 				PRINTFORMW 대체 뭐지…
 				RETURN 1
-			;ELSEIF COND("夜이벤트") == NUM_EV("요바이기승위")
+			;ELSEIF COND("밤이벤트") == NUM_EV("요바이기승위")
 			;	PRINTFORMW 
 			;	RETURN 1
 			ENDIF
 		ELSE
-			IF COND("夜이벤트", MASTER) == NUM_EV("요바이기승위") && TALENT:연모
+			IF COND("밤이벤트", MASTER) == NUM_EV("요바이기승위") && TALENT:연모
 				PRINTFORMW 「흥, 어젯 밤은 꽤나 즐거웠던 모양이구나…」
 				PRINTFORMW 방에 들어가자마자 %CALLNAME:TARGET%가 노려봐서, %CALLNAME:MASTER%는 당황한다…
 				PRINTFORMW 어젯 밤은, 이라는 건 %CONDS("밤 상대", MASTER)%에게 간 것을 말하는 건가…

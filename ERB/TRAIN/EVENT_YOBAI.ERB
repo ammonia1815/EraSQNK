@@ -5,7 +5,7 @@
 @EVENT_YOBAI
 #DIM LCOUNT
 
-;夜이벤트の記録初期化
+;밤이벤트の記録初期化
 CVARSET CFLAG, 91
 CVARSET CFLAG, 96
 ;요바이フラグ
@@ -13,7 +13,7 @@ CVARSET CSTR, 61
 
 VARSET LOCAL
 
-;夜이벤트の決定。内容は CSTR:요바이 に入っている
+;밤이벤트の決定。内容は CSTR:요바이 に入っている
 CALL PLAY_AT_EVENING
 SIF CSTR:요바이 == ""
 	RETURN 0
@@ -241,7 +241,7 @@ CASEELSE
 ENDSELECT
 PRINTL 
 
-;夜이벤트の記録
+;밤이벤트の記録
 IF CSTR:요바이 != ""
 	CFLAG:PLAYER:91 = NUM_EV(CSTR:요바이)
 	CFLAG:91 = NUM_EV(CSTR:요바이)
@@ -280,7 +280,7 @@ CASE "요바이Ａ기승위", "요바이기승위", "添い寝"
 		PRINTFORMW 사타구니를 싸는 쾌락에 눈을 떴다당신노입를 재빠르게 막아,%CALLNAME:(TARGET:1)%하%CALLNAME:TARGET%에 발각되지 않게 소리를 죽여욕망인 채 허리를 흔든다…
 		PRINTFORMW 사랑한다몽마의 근처에서 행위에 이르는 배덕감과 쾌락만을 추구한다%CALLNAME:(TARGET:1)%의 교묘한허리놀림에당신이야기할 방법도 없게 달하게 된다…
 		PRINTFORMW %CALLNAME:(TARGET:1)%하자궁를 두드리는 뜨거운 물보라를 눈을 감아, 넋을 잃은 표정으로 만끽하면, 다시 허리를 움직이기 시작한다…！
-		LOCALS = 당신は%CALLNAME:(TARGET:1)%が満발するまでの間、愛する%CALLNAME:TARGET%のすぐ隣で%TEXTR("弄ばれ", "玩具にされ", "オモチャにされ", "搾られ")%続けた…
+		LOCALS = 당신は%CALLNAME:(TARGET:1)%が만족するまでの間、愛する%CALLNAME:TARGET%のすぐ隣で%TEXTR("弄ばれ", "玩具にされ", "オモチャにされ", "搾られ")%続けた…
 	CASE 120
 		PRINTFORMW %CALLNAME:(TARGET:1)%하%CALLNAME:TARGET%의 근처에서 푹 잔다당신를 확인하면, 살그머니 가랑이를 열어 속옷을 비켜 놓았다…
 		PRINTFORMW 그리고 뜨겁게 끓어올랐다페니스를 스스로의 타액으로 적시면, 단번에당신의 저기를 관철했다…！
