@@ -5,7 +5,7 @@
 @EVENT_YOBAI
 #DIM LCOUNT
 
-;夜이벤트の記録初期化
+;밤이벤트の記録初期化
 CVARSET CFLAG, 91
 CVARSET CFLAG, 96
 ;요바이フラグ
@@ -13,7 +13,7 @@ CVARSET CSTR, 61
 
 VARSET LOCAL
 
-;夜이벤트の決定。内容は CSTR:요바이 に入っている
+;밤이벤트の決定。内容は CSTR:요바이 に入っている
 CALL PLAY_AT_EVENING
 SIF CSTR:요바이 == ""
 	RETURN 0
@@ -241,7 +241,7 @@ CASEELSE
 ENDSELECT
 PRINTL 
 
-;夜이벤트の記録
+;밤이벤트の記録
 IF CSTR:요바이 != ""
 	CFLAG:PLAYER:91 = NUM_EV(CSTR:요바이)
 	CFLAG:91 = NUM_EV(CSTR:요바이)
