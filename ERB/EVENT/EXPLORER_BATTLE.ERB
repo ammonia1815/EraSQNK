@@ -419,13 +419,13 @@ CASEELSE
 			LASTWORD = %CALLNAME:TARGET%
 			;ストメロ限定
 			IF NO:TARGET == 34 && PALAM_EXPLORER("敵キャラ数") >= 2 && NO:PALAM_EXPLORER("二人目") == 35
-				PRINTFORML %LASTWORD와()% 멜로나는 일어나, 중마가 되고 싶다고 하게%CALLNAME:PLAYER%를 보고 있다…
+				PRINTFORML %LASTWORD와()% 멜로나는 일어나, 동료마가 된 듯이 %CALLNAME:PLAYER%를 보고 있다…
 			;하피姉妹
 			ELSEIF NO:TARGET == 38 && PALAM_EXPLORER("敵キャラ数") >= 2
-				PRINTFORML %LASTWORD와()% 여동생은 일어나, 중마가 되고 싶다고 하게%CALLNAME:PLAYER%를 보고 있다…
+				PRINTFORML %LASTWORD와()% 여동생은 일어나, 동료마가 된 듯이 %CALLNAME:PLAYER%를 보고 있다…
 			;강기かツンデレ（스투나と리저드맨）限定
 			ELSEIF NO:TARGET == 12 || NO:TARGET == 34
-				PRINTFORM %조사만처리(CALLNAME:TARGET,"는")%  
+				PRINTFORM %LASTWORD는()%  
 				IF RAND:3 == 0
 					PRINTFORM 억울해하는 듯하면서도, 
 				ELSEIF RAND:2 == 0
@@ -443,7 +443,7 @@ CASEELSE
 				ENDIF
 			;その他범용
 			ELSE
-				PRINTFORM %조사만처리(CALLNAME:TARGET,"는")% 
+				PRINTFORM %LASTWORD는()% 
 				IF RAND:4 == 0
 					PRINTFORM 가로누워 얼굴만을 이쪽으로 향한 채, 
 				ELSEIF RAND:3 == 0
