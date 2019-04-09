@@ -7,7 +7,7 @@
 ;9	레벨
 @ACCESSORY_SHOP
 DRAWLINE
-PRINTL  □ 악세사리 상점『가게』 □
+PRINTL  □ 악세사리 상점『신기루당』 □
 DRAWLINE
 PRINTL 「오우, 어서옵셔.
 PRINTL  여긴 아무것도 없는 가게다.
@@ -23,7 +23,7 @@ PRINTFORML  [ 0] %TEXT_LJ("아련한 팔찌", 30)% 정신력 중시（$2,000）\
 PRINTFORML  [ 1] %TEXT_LJ("아련한 소매장식", 30)% 매력 중시 （$2,000）\@ ITEM:아련한소매장식 ? 미감정：{ITEM:아련한소매장식, 2}개 # \@
 PRINTFORML  [ 2] %TEXT_LJ("아련한 장갑", 30)% 기교 중시 （$2,000）\@ ITEM:아련한장갑 ? 미감정：{ITEM:아련한장갑, 2}개 # \@
 PRINTFORML  [ 3] %TEXT_LJ("아련한 장식띠", 30)% 정력 중시 （$2,000）\@ ITEM:아련한장식띠 ? 미감정：{ITEM:아련한장식띠, 2}개 # \@
-PRINTFORML  [ 4] %TEXT_LJ("아련한 반지", 30)% 효과수 중시（$5,000）\@ ITEM:아련한반지 ? 미감정：{ITEM:아련한반지, 2}개 # \@
+PRINTFORML  [ 4] %TEXT_LJ("아련한 반지", 30)% 효과 수 중시（$5,000）\@ ITEM:아련한반지 ? 미감정：{ITEM:아련한반지, 2}개 # \@
 SIF ITEM:아련한보석
 	PRINTFORML  [ 5] %TEXT_LJ("아련한 보석", 30)%  \@ ITEM:아련한보석 ? 미감정：{ITEM:아련한보석, 2}개 # \@
 
@@ -33,7 +33,7 @@ IF NUM("所持악세사리")
 	PRINTFORML  [\@ ITEM:사고연마의돌 ? 80 # × \@] 사고연마의 돌을 사용한다  （{ITEM:사고연마의돌, 2}개）
 	PRINTFORML  [\@ ITEM:사고를태우는불꽃 ? 81 # × \@] 사고를 태우는 불꽃을 사용한다 （{ITEM:사고를태우는불꽃, 2}개）
 	PRINTFORML  [\@ ITEM:배추흰나비 && NUM("所持악세사리") >= 2 ? 82 # × \@] 배추흰나비를 사용한다 （{ITEM:배추흰나비, 2}마리）
-	PRINTFORML  [90] 악세사리세트（주인의 능력 표시 화면으로부터도 할 수 있습니다）
+	PRINTFORML  [90] 악세사리 관리（주인의 능력 표시 화면으로부터도 할 수 있습니다）
 ENDIF
 PRINTFORML [100] 가게를 나간다
 
@@ -313,8 +313,8 @@ DRAWLINE
 PRINTL 
 PRINTFORM 악세사리의 
 CALL PRINT_COLORTEXT, "이 색깔", DEF_COLOR("황색")
-PRINTFORML 로 표시된 효과를 위에서부터 한개 제거합니다. 
-PRINTFORML 어느 악세사리에 사용합니까？ (사고를태우는불꽃：{ITEM:사고를태우는불꽃}개)
+PRINTFORML 로 표시된 효과를 위에서부터 한 개 제거합니다. 
+PRINTFORML 어느 악세사리에 사용합니까？ (사고를 태우는 불꽃：{ITEM:사고를태우는불꽃}개)
 
 ;全ての악세사리を羅列
 FOR LOCAL, 1, 9
@@ -362,6 +362,7 @@ RESTART
 #DIM LCOUNT, 2
 #DIM CHOICE, 3
 #DIM MEMO_LINECOUNT
+#DIM TABLENGTH = 44
 
 VARSET CHOICE
 MEMO_LINECOUNT = LINECOUNT
@@ -369,8 +370,8 @@ REDRAW 0
 
 DRAWLINE
 PRINTL 
-PRINTFORML 두개의 악세사리를 한개로 만듭니다. 
-PRINTFORML 다음 중에서 두개 선택해주세요.  (배추흰나비：{ITEM:배추흰나비}마리)
+PRINTFORML 두 개의 악세사리를 하나로 합성합니다. 
+PRINTFORML 다음 중에서 두 개를 선택해주세요.  (배추흰나비：{ITEM:배추흰나비}마리)
 PRINTFORML （먼저 고른 쪽이 베이스가 됩니다）
 
 ;全ての악세사리を羅列
@@ -397,68 +398,125 @@ INPUT
 
 IF RESULT == 100
 	FOR LCOUNT, 1, 9
-		;배추흰나비플래그消去
+		;배추흰나비플래그 소거
 		CLEARBIT FLAG:(300 + LCOUNT*10 + 8), 0
 	NEXT
 	CALL ACCESSORY_EQUIP
 	REDRAW 1
 	RETURN 0
 ELSEIF 1 <= RESULT && RESULT <= 8 && FLAG:(300 + RESULT*10)
-	CHOICE:2 = RESULT
-	INVERTBIT FLAG:(300 + CHOICE:2*10 + 8), 0
-	;合成開始？
+	CHOICE:2 = 300 + RESULT * 10
+	INVERTBIT FLAG:(CHOICE:2 + 8), 0
+	;합성 개시？
 	FOR LCOUNT, 1, 9
-		SIF GETBIT(FLAG:(300 + LCOUNT*10 + 8), 0) == 0
+		SIF GETBIT(FLAG:(300 + LCOUNT * 10 + 8), 0) == 0
 			CONTINUE
-		SIF LCOUNT != CHOICE:2
-			CHOICE:1 = LCOUNT
+		SIF (300 + LCOUNT * 10) != CHOICE:2
+			CHOICE:1 = 300 + LCOUNT * 10
 	NEXT
-	;２個選んでいるなら合成開始
+	;2개가 선택되어 있으면 합성 개시
 	IF CHOICE:1 && CHOICE:2
 		PRINTL 
-		CALL PRINT_ACCESSORY, CHOICE:1
-		PRINTL 에
+		;합성 전 아이템 소개
+		LOCALS = [{ARG, 2}] %PRINT_ACCESSORY_NAME(FLAG:(CHOICE:1))% ＬＶ{FLAG:(CHOICE:1 + 9) + 1, 2}
+		PRINTFORM %BL(1)%%LOCALS, TABLENGTH-5, LEFT%
+		LOCALS = +
+		PRINTFORM %TOFULL(LOCALS)%%BL(2)%
 
+		LOCALS = [{ARG, 2}] %PRINT_ACCESSORY_NAME(FLAG:(CHOICE:2))% ＬＶ{FLAG:(CHOICE:2 + 9) + 1, 2}
+		PRINTFORM %BL(1)%%LOCALS, TABLENGTH-1, LEFT%
+
+		PRINTL
+		FOR LCOUNT, 1, 3
+			LOCAL = FLAG:(CHOICE:LCOUNT + 9)
+			SELECTCASE FLAG:(CHOICE:LCOUNT)/10
+			CASE 0
+				LOCALS = 정신력＋{25 + LOCAL * 10}％ 매력＋{5 + LOCAL * 5}％
+			CASE 1
+				LOCALS = 정신력＋{5 + LOCAL * 5}％ 매력＋{25 + LOCAL * 10}％
+			CASE 2
+				LOCALS = 기교＋{15 + LOCAL * 5}％ 정신력＋{5 + LOCAL * 5}％ 매력＋{15 + LOCAL * 5}％
+			CASE 3
+				LOCALS = 정력＋{15 + LOCAL * 5}％ 정신력＋{5 + LOCAL * 5}％ 매력＋{15 + LOCAL * 5}％
+			CASE 4
+				LOCALS = 기교＆정력＆정신력＆매력＋{5 + LOCAL * 5}％
+			CASE 5
+				LOCALS = 기교＆정력＆정신력＆매력＋{25 + LOCAL * 10}％
+			ENDSELECT
+			PRINTFORM %BL(1)%%LOCALS, TABLENGTH-1, LEFT%
+		NEXT
+		PRINTL
+
+		SETCOLOR DEF_COLOR("황색")
+		FOR LCOUNT:1, 1, 6
+			FOR LCOUNT, 1, 3
+				LOCALS =
+				SIF FLAG:(CHOICE:LCOUNT + LCOUNT:1)
+					LOCALS = %BL(5)% %ACCESSORY_EFFECT(FLAG:(CHOICE:LCOUNT + LCOUNT:1) )%
+				PRINTFORM %LOCALS, TABLENGTH, LEFT%
+			NEXT
+			SIF LINEISEMPTY() == 0
+				PRINTL
+		NEXT
+		RESETCOLOR
+
+<<<<<<< HEAD
 		;배추흰나비플래그消去
 		CLEARBIT FLAG:(300 + CHOICE:2*10 + 8), 0
 		CALL PRINT_ACCESSORY, CHOICE:2
 		PRINTFORML %조사만처리(LASTWORD,"를")% 합성한 결과, 
+=======
+>>>>>>> 6271e063c9fe8a355e9608d3285b92c15777131a
 
-		ITEM:배추흰나비 -= 1
-		;ＬＶＵＰ
-		FLAG:(300 + CHOICE:1*10 + 9) += (FLAG:(300 + CHOICE:2*10 + 9) + 1)/2
-		SIF FLAG:(300 + CHOICE:1*10 + 9) > 9
-			FLAG:(300 + CHOICE:1*10 + 9) = 9
-		;効果を移動
+		;악세사리 합성
+		;ＬＶＵＰ, 최대레벨 30
+		FLAG:(CHOICE:1 + 9) += (FLAG:(CHOICE:2 + 9) + 1) / 2
+		SIF FLAG:(CHOICE:1 + 9) > 29
+			FLAG:(CHOICE:1 + 9) = 29
+		;효과를 이동
 		FOR LCOUNT, 1, 6
-			SIF FLAG:(300 + CHOICE:1*10 + LCOUNT)
+			;베이스 아이템에 옵션이 없는 플래그를 찾는다.
+			SIF FLAG:(CHOICE:1 + LCOUNT)
 				CONTINUE
+			;옵션이 없는 플래그에 아이템2의 옵션을 차례대로 추가
+			;하나의 아이템은 최대 5개의 옵션 보유 가능
 			FOR LCOUNT:1, 0, 5
 				SIF LCOUNT + LCOUNT:1 > 5
 					BREAK
-				FLAG:(300 + CHOICE:1*10 + LCOUNT + LCOUNT:1) = FLAG:(300 + CHOICE:2*10 + 1 + LCOUNT:1)
+				FLAG:(CHOICE:1 + LCOUNT + LCOUNT:1) = FLAG:(CHOICE:2 + 1 + LCOUNT:1)
 			NEXT
 			BREAK
 		NEXT
-
+		PRINTL
+		REUSELASTLINE 합성 중.........
+		WAIT
+		REUSELASTLINE 합성 중......
+		WAIT
+		REUSELASTLINE 합성 중...
+		WAIT
+		PRINTW 합성 완료!
 		;배추흰나비플래그消去
-		CLEARBIT FLAG:(300 + CHOICE:1*10 + 8), 0
+		CLEARBIT FLAG:(CHOICE:1 + 8), 0
+		CLEARBIT FLAG:(CHOICE:2 + 8), 0
+		ITEM:배추흰나비 -= 1
 
-		CALL PRINT_ACCESSORY, CHOICE:1
-		PRINTFORMW %조사만처리(LASTWORD,"가")% 되었습니다. 
+		CALL PRINT_ACCESSORY, (CHOICE:1 - 300) / 10
+		PRINTW 
 
-		;合成された악세사리を無くす
-		IF FLAG:399 == CHOICE:2
-			FLAG:399 = CHOICE:1
+		;합성한 악세사리를 없앤다
+		;(CHOICE:1 - 300) / 10 는 악세사리 번호
+		IF FLAG:399 == (CHOICE:2 - 300) / 10
+			FLAG:399 = (CHOICE:1 - 300) / 10
 			CALL ACCESSORY_EQUIP
-		ELSEIF FLAG:399 > CHOICE:2
+		ELSEIF FLAG:399 > (CHOICE:2 - 300) / 10
 			FLAG:399 -= 1
 		ENDIF
-		;FLAGリセット
-		VARSET FLAG, 0, 300 + CHOICE:2*10, 310 + CHOICE:2*10
-		;番号をつめる
+		;FLAG리셋
+		VARSET FLAG, 0, CHOICE:2, CHOICE:2 + 10
+		;번호를 변경 
+		;예) 6번 악세사리를 소모 시, 7번 8번 악세사리가 6번 7번이 된다 
 		FOR LCOUNT, 0, 8
-			LOCAL = 300 + CHOICE:2*10 + LCOUNT*10
+			LOCAL = CHOICE:2 + LCOUNT * 10
 
 			SIF LOCAL >= 380
 				BREAK

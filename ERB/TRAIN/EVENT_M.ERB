@@ -1213,7 +1213,7 @@ IF TALENT:남자 == 0
 ENDIF
 
 ;-------------------------------------------------
-;라그쟈라스히트と황홀判定
+;럭셔리어스히트と황홀判定
 ;ARGSは今のところ"커맨드"と"정액"がある
 ;PLAYERかTARGETかどうかで別物だけどここで一括
 ;-------------------------------------------------
@@ -1340,11 +1340,11 @@ CASE "커맨드"
 
 		SETCOLOR DEF_COLOR("하트핑크")
 
-		PRINTFORML ＜럭져리어스 히트! （%CALLNAME:PLAYER%）＞
+		PRINTFORML ＜럭셔리어스 히트! （%CALLNAME:PLAYER%）＞
 		PRINTFORML %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%에게 빠져버리고 말았다! 
 
-		NOWEX:PLAYER:라그쟈라스히트 = 1
-		EX:PLAYER:라그쟈라스히트 += 1
+		NOWEX:PLAYER:럭셔리어스히트 = 1
+		EX:PLAYER:럭셔리어스히트 += 1
 		BASE:PLAYER:절정 += LOCAL
 		TCVAR:PLAYER:101 += LOCAL
 
@@ -1379,11 +1379,11 @@ CASE "커맨드"
 
 		SETCOLOR DEF_COLOR("하트핑크")
 
-		PRINTFORML ＜럭져리어스 히트! ＞
+		PRINTFORML ＜럭셔리어스 히트!＞
 		PRINTFORML %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 약점을 찔렀다! 
 
-		NOWEX:라그쟈라스히트 = 1
-		EX:라그쟈라스히트 += 1
+		NOWEX:럭셔리어스히트 = 1
+		EX:럭셔리어스히트 += 1
 
 		SIF TALENT:Ｃ민감 || TALENT:음핵
 			TIMES CUP:쾌Ｃ, 2.00
@@ -1451,8 +1451,8 @@ CASE "정액"
 
 	NOWEX:정액절정 = 1
 	EX:정액절정 += 1
-	NOWEX:라그쟈라스히트 = 1
-	EX:라그쟈라스히트 += 1
+	NOWEX:럭셔리어스히트 = 1
+	EX:럭셔리어스히트 += 1
 	NOWEX:가는것을참았다 = 0
 	EX:가는것을참았다 = 0
 
@@ -1461,7 +1461,7 @@ CASE "정액"
 
 	SETCOLOR DEF_COLOR("하트핑크")
 
-	PRINTFORML ＜럭져리어스 히트! ＞
+	PRINTFORML ＜럭셔리어스 히트!＞
 
 	IF SHOOT("입")
 		IF COND("절정", PLAYER) >= 2 && RAND:2 
@@ -1522,7 +1522,7 @@ CASE "정액"
 			ELSE
 				PRINTFORM %TEXTR("勢いよく", "熱い", "濃厚な")%
 			ENDIF
-			PRINTFORM 정액를%TEXTR("ニプルにご馳走された", "유방の中に流し込まれた", "성감대に注がれた")%
+			PRINTFORM 정액을 %TEXTR("ニプルにご馳走された", "유방の中に流し込まれた", "성감대に注がれた")%
 		ELSEIF COND("절정", PLAYER) >= 2 && RAND:2
 			PRINTFORM 대량으로유방에내사정를 되었다
 		ELSE
@@ -1538,7 +1538,7 @@ CASE "정액"
 			ELSE
 				PRINTFORM %TEXTR("勢いよく", "熱い", "濃厚な")%
 			ENDIF
-			PRINTFORM 정액를%TEXTR("大好きな場所にご馳走された", "オシッコの穴に流し込まれた", "성감대に注がれた")%
+			PRINTFORM 정액을 %TEXTR("大好きな場所にご馳走された", "オシッコの穴に流し込まれた", "성감대に注がれた")%
 		ELSEIF COND("절정", PLAYER) >= 2 && RAND:2
 			PRINTFORM 대량으로방광에의내사정를 되었다
 		ELSE
