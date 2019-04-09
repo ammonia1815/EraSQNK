@@ -789,6 +789,7 @@ SIF ARGS == "こらえた" && NOWEX:ARG:가는것을참았다
 SIF COND("절정", ARG) == 0
 	RETURNF 0
 SELECTCASE ARGS
+CASE "드래곤"
 CASE "머리카락"
 	SIF TCVAR:ARG:3 == 1
 		RETURNF 1
@@ -1504,7 +1505,7 @@ IF SHOOT("정액세례")
 			CASEELSE
 				PRINTFORM 노려
 			ENDSELECT
-			PRINTFORMW %TEXTR("、정액を吐き出した", "사정した", "、정액をぶっかけた")%
+			PRINTFORMW %TEXTR("、정액を吐き出した", "사정した", "、정액を정액세례た")%
 		ENDIF
 		;보지が노출していない
 		IF CHECK_CLO("Ｖ노출") == 0 && SELECTCOM != 97
@@ -1563,7 +1564,7 @@ IF SHOOT("정액세례")
 		CASEELSE
 			PRINTFORM 노려
 		ENDSELECT
-		PRINTFORMW %TEXTR("、정액を吐き出した", "사정した", "、정액をぶっかけた")%
+		PRINTFORMW %TEXTR("、정액を吐き出した", "사정した", "、정액を정액세례た")%
 		PRINTFORMW 점도의 높다백탁액이,%CALLNAME:TARGET%노%TEXTR("不浄の穴", "ソコ", "アヌス")%를 덮어 가린 뒤로 걸죽 흘러내려 간다…
 	ELSEIF SHOOT("お腹")
 		IF TEQUIP:넘어뜨리기

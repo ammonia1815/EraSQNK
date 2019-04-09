@@ -5283,15 +5283,15 @@ IF SHOOT("정액세례")
 		IF TALENT:연모
 			PRINTFORMW 「얼굴은 차치하고, 머리카락에 내는 것은 이런 째야…」
 		ELSE
-			IF CEVENT("髪にぶっかけ：初回") == 0
+			IF CEVENT("머리카락に정액세례：初回") == 0
 				PRINTFORMW 「머리카락은 이런 째. 다음에 하면 후려친다」
-				CALL SET_CEVENT, "髪にぶっかけ：初回"
-			ELSEIF CEVENT("髪にぶっかけ：２回目") == 0
+				CALL SET_CEVENT, "머리카락に정액세례：初回"
+			ELSEIF CEVENT("머리카락に정액세례：２回目") == 0
 				PRINTFORMW 「후─………입로 말해도 모르는 녀석의 상대는 지치네요, 완전히！」
 				PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의 머리를 찔렀다
 				;무드減少
 				TFLAG:33 -= 5
-				CALL SET_CEVENT, "髪にぶっかけ：２回目"
+				CALL SET_CEVENT, "머리카락に정액세례：２回目"
 			ELSE
 				PRINTFORMW 「그러니까―. 머리카락에 걸치지 말라고 말했을 것이지만, 이 아보가！」
 				PRINTFORMW 화가 치밀었다%CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의 머리를 정말로 때렸다！
