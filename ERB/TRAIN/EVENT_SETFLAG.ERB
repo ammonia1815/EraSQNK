@@ -208,7 +208,7 @@ CASE "Ａ受け入れ페니스", "Ａ受け入れ바이브", "Ａ受け入れ피
 	;PRINTFORML CSTR:A수용이력 = %CSTR:(ARG:1):A수용이력%
 
 ;ARG:1がARG:2にARGの量だけ내사정等された
-CASE "질내정액경험", "장내정액경험", "정음경험", "유内정액경험", "방광정액경험", "정액ぶっかけ경험"
+CASE "질내정액경험", "장내정액경험", "정음경험", "유内정액경험", "방광정액경험", "정액정액세례경험"
 	;ARG:2はマイナスの値を取り得る
 	SIF ARG < 0 || ARG:1 < 0
 		RETURN 0
@@ -336,7 +336,7 @@ CASE "질내정액경험", "장내정액경험", "정음경험", "유内정액�
 		;記録を分解する
 		SPLIT CSTR:(ARG:1):15, "/", LOCALS
 	;まだ無し
-	CASE "정액ぶっかけ경험"
+	CASE "정액정액세례경험"
 		RETURN 1
 	ENDSELECT
 
@@ -3803,10 +3803,10 @@ CASE "절정させた処理"
 			CALL SETFLAG, "유内정액경험", COND("절정", PLAYER), ARG
 		ELSEIF SHOOT("自分以外に내사정")
 			LOCAL = 0
-		;ぶっかけ
+		;정액세례
 		ELSEIF SHOOT("보온병") == 0
 			LOCAL = 1
-			CALL SETFLAG, "정액ぶっかけ경험", COND("절정", PLAYER), ARG
+			CALL SETFLAG, "정액정액세례경험", COND("절정", PLAYER), ARG
 			;액체추가のソース
 			IF SHOOT("くぱぁ")
 				SOURCE:ARG:액체추가 += COND("절정", PLAYER) * LOCAL * 100
