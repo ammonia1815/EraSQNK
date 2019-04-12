@@ -1,26 +1,27 @@
 ﻿;-------------------------------------------------
-;쿠즈노하구상_更新일_2011_06_11
-;製作者　eraSQ製作スレッド2>>857
-;ロリババア加筆スレ9>>619
-;基本は임프です. 
-;손대중のとこは범용性の高かった서큐버스使わせて頂いてます. 
-;個人的に쿠즈노하は「ホロ」のイメージがあるのでこれからも손を加えます
-;소질に忠実に書こうとしたんですが…ちょっと[부끄럼쟁이]と[大人しい]が強すぎかもしんないっす. 
-;本当はもっと似非平安語っぽく書きたかったんですが初心者だから仕方ないかなーと言うことで. 
-;自分が良く使う플레이にしか対応していないうえに, 랜덤구상もほとんどないですが一応これで完成です. 
+;쿠즈노하구상_갱신일_2011_06_11
+;製作者　eraSQ제작스레드2>>857
+;번역다듬기 및 오류수정 190412 by mosochu
+;로리바바구상스레9>>619
+;기본구상은임프입니다.
+;손대중의 구상은 범용성이 높았던 서큐버스의 것을 사용했습니다. 
+;개인적으로 쿠즈노하는「호로」의 이미지가 있으므로 지금부터 손보겠습니다
+;소질에 충실하게 쓰려고 했습니다만…[부끄럼쟁이]랑[얌전함]이 강조되는게 아닌가 싶습니다. 
+;사실 좀 더 고어처럼 쓰고 싶었는데 초보라서 어쩔수 없네여. 
+;제작자가 자주 쓰는 플레이만 잘 써졌고, 랜덤구상도 거의 없지만 일단 이걸로 완성입니다. 
 ;
-;＠メモ
-;個人的嗜好により, 굴복각인LV3あたりから呼び方がお主→そなたに変わります. 
-;むしろそなたで良いんじゃないかと思い修正しました（１０월２９일）
-;연모ゲットあたりから主様（ぬしさま）と呼ぶようにしてみたｗ
-;ＳなんだかＭなんだか分からなくなってきています
-;굴복각인以外では조교のことをまぐわいと言っていますあってるか不安です
-;구상の追加, 改変等はご自由にどうぞ. むしろお願いします. 
-;구상の追加, 改変等はご自由にどうぞ. むしろお願いします. 
+;＠메모
+;개인적취향으로, 굴복각인LV3이 되면 부르는 방법이 お主→そなた으로 바뀝니다. 
+;오히려そなた가 낫지 않나 싶어서 수정했습니다（10월29일)
+;연모 얻으면 ら主様（ぬしさま）라고 부르게 함 ㅋ
+;Ｓ인지Ｍ인지 구분이 안 갑니다
+;굴복각인없는데 조교를 잘하고 있다고 말하는지 불안함(?)
+;구상의 추가, 수정은 자유롭게 해주세요. 오히려 부탁드립니다. 
+;구상의 추가, 수정은 자유롭게 해주세요. 오히려 부탁드립니다. 
 ;
 ;-------------------------------------------------
-;EVENTTRAIN関係（16を캐릭터번호に置換）
-;조교개시時のセリフ CFLAG 201～210を使用
+;EVENTTRAIN관계（16を캐릭터번호に置換）
+;조교개시때 대사 CFLAG 201～210을 사용
 ;-------------------------------------------------
 @EVENTTRAIN
 SIF NO:TARGET != 16
@@ -29,40 +30,40 @@ SIF CFLAG:209 != 1
 	RETURN 1
 
 ;-------------------------------------------------
-;※カウンター行動の플래그ON／OFF　CFLAG:9
-;CFLAG:9 = 1 に変更するとOFF
+;※카운터행동 플래그ON／OFF　CFLAG:9
+;CFLAG:9 = 1 로변경하면 OFF
 ;-------------------------------------------------
 ;CFLAG:9 = 1
 
 DRAWLINE
 ;-------------------------------------------------
-;CFLAG:201のビット値で조교개시時이벤트を管理する
-;29bitまでは全キャラ共通で, 30bit～は各キャラで自由に使ってよい
-; 0bit 初조교
+;CFLAG:201의 값으로 조교개시때 이벤트를 관리함
+;29bit까진 캐릭터공통으로, 30bit부터는 각 캐릭터마다 자유롭게 써도 좋음
+; 0bit 첫조교
 ; 1bit 굴복각인LV1
 ; 2bit 굴복각인LV2
 ; 3bit 굴복각인LV3
 ; 4bit 연모
 ; 5bit 음란
-; 6bit 연모＆임신中 
-; 7bit 연모＆明일出産
-; 8bit 연모＆初出産後
-;20bit 몽마화Lv1（몽마화直後）
+; 6bit 연모＆임신中중
+; 7bit 연모＆다음날출산
+; 8bit 연모＆첫출산후
+;20bit 몽마화Lv1（몽마화직후）
 ;21bit 몽마화Lv2
 ;22bit 몽마화Lv3
 ;25bit 호접지몽
-;26bit 권속化
-;30bit 연모取得時に嘘をついた
-;31bit 연모取得時に正直に話した
-;32bit 연모取得時に상사상애となった
+;26bit 권속화
+;30bit 연모얻을때 거짓말을 했다
+;31bit 연모얻을때 솔직하게 말했다
+;32bit 연모얻을때 상사상애도 되었다
 ;33bit 음란연모END플래그
-;35bit 연모より先に음란を取得した
-;38bit MASTERが完全굴복
+;35bit 연모보다 먼저 음란을 얻었다
+;38bit MASTER가 완전 굴복
 ;39bit 마법소녀이벤트
-;55bit 二人称変更이벤트플래그
+;55bit 2인칭변경이벤트플래그
 
 ;-------------------------------------------------
-;初조교時 CFLAG201
+;첫조교시 CFLAG201
 ;-------------------------------------------------
 IF GETBIT(CFLAG:201, 0) == 0
 	PRINTFORMW 「…여기는 어디지？」
@@ -84,7 +85,7 @@ IF GETBIT(CFLAG:201, 0) == 0
 	;작은몸집
 	ELSEIF TALENT:작은몸집
 		PRINTFORMW 「%CNAME("二人称")%인가, 나를 불러낸 놈은…」
-		PRINTFORM 「무엇, 로리바바아？ 누, 누가 할멈이다！사람을 보든지 바바 부름이란,%CNAME("二人称")%, 상당히 무례한
+		PRINTFORM 「무엇, 로리바바아？ 누, 누가 할망구냐！ 사람을 보자마자 할망구라고 부르다니,%CNAME("二人称")%, 상당히 무례한
 		;오토코노코
 		IF TALENT:MASTER:오토코노코
 			PRINTFORMW 여자구나!」
@@ -109,7 +110,7 @@ IF GETBIT(CFLAG:201, 0) == 0
 			;새드
 			IF TALENT:새드
 				PRINTFORMW 「%CNAME("二人称")%같은 발칙한 놈은 역으로 내가 길들여주마…」
-				PRINTFORMW 전언철회, 아무래도 다른 의미로 의욕이 넘치는 것 같다…
+				PRINTFORMW 아니, 아무래도 다른 의미로 의욕이 넘치는 것 같다…
 			ELSE
 				PRINTFORMW 「%CNAME("二人称")% 따위에게 굴복할 내가 아니다」
 			ENDIF
@@ -137,12 +138,12 @@ IF GETBIT(CFLAG:201, 0) == 0
 	ENDIF
 	SETBIT CFLAG:201, 0
 ;-------------------------------------------------
-;조교개시時（一回のみ） CFLAG201
+;조교개시할때（단 한번） CFLAG201
 ;-------------------------------------------------
 ;반발각인Lv3
 ELSEIF MARK:반발각인 == 3
 	CALL K16_KOJO2_1
-;주인公が몽마にされたor호접지몽で入れ替わり中(似た이벤트なので一つにまとめてあります)
+;주인이 몽마가 됌or호접지몽에서 교체중(비슷한 이벤트라서 하나로 처리했습니다)
 ELSEIF GETBIT(CFLAG:201, 25) == 0 && (COND("호접지몽") == MASTER || COND("권속", MASTER) == TARGET)
 	PRINTFORMW 이건 대체…
 	PRINTFORMW %CALLNAME:MASTER%는 거울에 비치는 자신의 모습을 보고는 망연히 서있다……
@@ -151,8 +152,8 @@ ELSEIF GETBIT(CFLAG:201, 25) == 0 && (COND("호접지몽") == MASTER || COND("�
 	IF COND("호접지몽") == MASTER
 		;작은몸집
 		IF TALENT:MASTER:작은몸집
-			PRINTFORMW 그리고 무엇보다 이 작은 신체！무슨 일이다, 아침에 일어 나면 로리바바아가 되어 있었다는건 무슨 포상！？
-			PRINTFORMW 아니아니 아니, 자신은 로리바바아를 찬미하고 싶은 것이어 되고 싶은 것은…그러나 이것은 이것대로……
+			PRINTFORMW 그리고 무엇보다 이 작은 신체！무슨 일이다, 아침에 일어 나면 로리바바가 되어 있었다는건 무슨 포상！？
+			PRINTFORMW 아니아니 아니, 자신은 로리바바를 좋아하지만 되고 싶은 것은…그러나 이것은 이것대로……
 			PRINTFORMW 「뭘 꿍얼꿍얼 말하고 있느냐. 정말이지, 대단치도 않은 술법이나 쓰고… 나와 육체를 바꿔서 무얼 하려는거냐…」
 			PRINTFORMW 앗?! 그 모습은 설마……랄까, 바, 바뀌었다고…?
 			PRINTFORMW 「자기가 해놓고서 자각이 없다는 것이냐. 뭐, 괜찮겠지… 여하튼, 그 육체는 내 것이니 소중히 다루어야 하느니라?」
@@ -184,7 +185,7 @@ ELSEIF GETBIT(CFLAG:201, 25) == 0 && (COND("호접지몽") == MASTER || COND("�
 		PRINTFORMW 그건 좀 아닌 것 같은데…
 		PRINTFORMW 「뭐, 사소한 것에 신경쓰지 말거라. 그것보다도 %CNAME("二人称")%… 모처럼 몽마가 된 것이니라. 그 육체, 충분히 맛보는 것이 어떠냐…?」
 	ELSE
-		PRINTFORMW 「역시 원래 몸이 좋은게냐? 안심하거라, 금방 이 육체의 좋은 점을 알게해줄테니…♪」
+		PRINTFORMW 「역시 원래 몸이 좋은게냐? 안심하거라, 금방 이 육체의 좋은 점을 알게 해줄테니…♪」
 	ENDIF
 	PRINTFORMW 저항할 겨를도 없이, 침대 위로 넘어뜨리는 %CALLNAME:TARGET%…
 	PRINTFORMW 「우선은 귀이니라…… 얼마나 민감한지 느껴보거라♪」
@@ -217,7 +218,7 @@ ELSEIF GETBIT(CFLAG:201, 25) == 0 && (COND("호접지몽") == MASTER || COND("�
 	PRINTFORMW 「귀와 꼬리를 함께 만져지면… 어떻게 되려나…… 후후」
 	PRINTFORMW 사형선고와 같은 말에, 공포심을 느끼며 %CALLNAME:MASTER%는 잘게 몸을 떤다
 	PRINTFORMW %CALLNAME:TARGET%는 그런 %CALLNAME:MASTER%의 귀를 손가락으로 쓰다듬으며…
-	PRINTFORMW 「괜찮느니라, 몽마가 된 %CNAME("二人称")%는 간단히 죽지는 않으니…… 단지, 조금 천국에 들르는 것 뿐이니라…♪」
+	PRINTFORMW 「괜찮느니라, 몽마가 된 %CNAME("二人称")%는 간단히 죽지는 않으니…… 단지, 조금 천국에 들리는 것 뿐이니라…♪」
 	PRINTFORMW 더할 나위 없이 매력적으로 웃으며 그리 말하는 것이었다…
 	PRINTFORML 　
 	PRINTFORMW %CALLNAME:MASTER%의 굴복각인의 레벨이 3이 되었습니다.
@@ -227,11 +228,11 @@ ELSEIF GETBIT(CFLAG:201, 25) == 0 && (COND("호접지몽") == MASTER || COND("�
 	PRINTFORMW ……
 	PRINTFORML 　
 	PRINTFORMW 라는 꿈을 꿨는데, 이런건 어떨까나 %CALLNAME:TARGET% 군!
-	;夢だけど, 夢じゃなかった! （연모だと本当にやってくれる）
+	;꿈이지만, 꿈은 아니었어! （연모라면 진짜로 해준다）
 	IF TALENT:연모
 		PRINTFORMW 「과연, %CNAME("二人称")%는 그런 취향이었던건가…」
 		PRINTFORMW ……응?
-		;새드끼Lv3이상（激しく）
+		;새드끼Lv3이상（격렬하게）
 		IF ABL:새드끼 >= 3
 			PRINTFORMW 「그렇다면 그 쾌감, 그 몸에 싫다고 할 정도로 새겨주마…♪」
 			PRINTFORMW %CALLNAME:MASTER%가 제대로 저항할 틈도 없이, %CALLNAME:TARGET%가 덮친다!
@@ -270,7 +271,7 @@ ELSEIF GETBIT(CFLAG:201, 25) == 0 && (COND("호접지몽") == MASTER || COND("�
 			TEQUIP:넘어뜨리기 = 1
 			CALL ADD_STATE, PLAYER, "황홀"
 			CALL ADD_STATE, PLAYER, "센시브"
-		;봉사정신Lv3이상（優しく？）
+		;봉사정신Lv3이상（상냥하게?）
 		ELSEIF ABL:봉사정신 >= 3
 			PRINTFORMW 「긴장하지 말거라… 1부터 10까지, 내가 알려줄테니…♪」
 			PRINTFORM %CALLNAME:MASTER%는 제대로 된 저항도 하지 못한채, %CALLNAME:TARGET%의
@@ -310,10 +311,10 @@ ELSEIF GETBIT(CFLAG:201, 25) == 0 && (COND("호접지몽") == MASTER || COND("�
 			PRINTFORMW 「훗… 푸흐흐, 조금 무섭다, 라고? 꽤나 귀여운 말을 하는구나♪」
 			PRINTFORMW %CALLNAME:TARGET%는 한바탕 웃고나서, %CALLNAME:MASTER%를 꼭 껴안는다…
 			PRINTFORMW 「내가 얼마나 기분이 좋던지 간에, %CNAME("二人称")%가 망가져버릴 일을 할 리가 없지않은가?」
-			PRINTFORMW %CALLNAME:TARGET%는 약한 모습을 보이는 %CALLNAME:MASTER%의 머리를 쓰다듬는다…… 라고 생각했는데, 갑작스레 그 손으로 귀를 지분거린다!
+			PRINTFORMW %CALLNAME:TARGET%는 약한 모습을 보이는 %CALLNAME:MASTER%의 머리를 쓰다듬는다…… 라고 생각했는데, 갑작스레 그 손으로 귀를 괴롭힌다!
 			PRINTFORMW 「랄까나♪ 자아자아, 귀를 가지고 놀아주마♪」
 			PRINTFORMW %CALLNAME:MASTER%는 떨리는 목소리로 그만두라고 하지만, %CALLNAME:TARGET%는 들을 생각이 없다…!
-			PRINTFORMW 「싫다고 하는 것도 좋아한다는 의미, 라는게지? 흠, 뭔가 다른가… 아아, 이 경우에는 싫지 않으니 좀더 해주세요, 인건가♪」
+			PRINTFORMW 「싫다고 하는 것도 좋아한다는 의미, 라는게지? 흠, 뭔가 다른가… 아아, 이 경우에는 싫지 않으니 좀 더 해주세요, 인건가♪」
 			PRINTFORMW 다, 달라… 아앙, 거긴… 그만…… 앗-!
 			PRINTFORMW %CALLNAME:MASTER%는 %CALLNAME:TARGET%의 조교에, 역으로 잔뜩 당했다!
 		ENDIF
@@ -338,15 +339,15 @@ ELSEIF GETBIT(CFLAG:201, 1) == 0 && MARK:굴복각인 == 1
 		PRINTL [0] 뭔가 문제라도?
 		PRINTL [1] 로, 로로로, 로리콘이라니!
 		CALL INPUT_SELECT, 2
-		;로리コン
+		;로리콘
 		IF RESULT == 0
 			PRINTFORMW 「이 놈… 갑자기 정색을 하고는…… 하아, 나는 어쩌다가 이런 바보에게 붙잡혀버린 걸까…」
 			PRINTFORMW 불쌍하다는 듯 바라보는 %CALLNAME:TARGET%의 시선이 따갑다……
-			;マスターが남자かどうか
+			;마스터가 남자인지
 			PRINTFORMW 「말해두지만…… %CNAME("二人称")%를 \@ TALENT:MASTER:남자? 오빠 # 언니 \@라고는 하늘이 무너져도 말하지 않을것이니라?」
 			PRINTFORMW 엑-
 			PRINTFORMW 「뭘 아쉽다는 듯한 얼굴을 하고 있느냐…… %CNAME("二人称")%는 정말 머리가 어떻게 된 것 아닌가…」
-		;로리コン疑惑
+		;로리콘 의혹
 		ELSEIF RESULT == 1
 			PRINTFORMW 「오호라, 아니라는 것이냐? 그렇다면 그렇게까지 당황하지 않아도 괜찮다고 생각한다만」
 			PRINTFORMW %CALLNAME:TARGET%가 의심스럽게 바라본다……
@@ -370,7 +371,7 @@ ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2
 		PRINTL [1] 당연히 너밖에 없지, 허니-♪
 		PRINTL [2] 「이런 거」라니 구체적으로 말해줬으면 싶은데?
 		CALL INPUT_SELECT, 3
-		;肯定
+		;긍정
 		IF RESULT == 0
 			IF RAND:2 == 0
 				PRINTFORMW 「……예상은 했지만, 나 이외에도 있다는 것인가…」
@@ -378,9 +379,9 @@ ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2
 				PRINTFORMW 어, 어째서 그런 이야기를……?
 			ELSE
 				PRINTFORMW 「…어디까지나 일이라는 말인가…」
-				PRINTFORMW %CALLNAME:MASTER%의 대답을 들은 %CALLNAME:TARGET%는 확실히 기분이 안좋아보인다…
+				PRINTFORMW %CALLNAME:MASTER%의 대답을 들은 %CALLNAME:TARGET%는 확실히 기분이 안 좋아보인다…
 				PRINTFORMW 「…그렇다면 내 손으로 그럴 마음이 들게 하면 되는것이니라」
-				PRINTFORMW 라고 생각하니 갑자기 의욕이 넘친다… 뭐야 대체……
+				PRINTFORMW 라고 생각하니 갑자기 의욕이 넘친다… 뭐야 정말……
 			ENDIF
 		;부정
 		ELSEIF RESULT == 1
@@ -438,10 +439,10 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 			PRINTFORMW 「무, 무슨…… 이게 부탁하는 태도냐, 고……?」
 			PRINTFORMW 「내 마음까지 길들이려고 하는게냐……%CNAME("二人称")%는, 정말로 잔인한 \@ TALENT:MASTER:남자 ? 남자 # 여자 \@로구나…」
 			PRINTFORMW %CALLNAME:TARGET%는 수치심에 얼굴을 붉히면서도, 쾌락에 자신을 잃어버릴 것만 같은 걸 간신히 버티고 있다.
-			PRINTFORMW 「으, 크으… %CNAME("二人称")%는, 최저니라…… 내가 쾌감에 저항할 수 없는 걸 알고, 이런 치욕을 주고있는 것이니…」
+			PRINTFORMW 「으, 크으… %CNAME("二人称")%는, 최악이니라…… 내가 쾌감에 저항할 수 없는 걸 알고, 이런 치욕을 주고있는 것이니…」
 			PRINTFORMW %CALLNAME:TARGET%는 정욕에 흐려진 눈으로 분하다는 듯이 %CALLNAME:MASTER%를 노려보며, 띠를 풀며, 옷 앞섶을 풀어헤친다…
-			PRINTFORMW 「……이, 이 꼴사나운 여우의 천박한 구멍에, 부디 자비를… 자비를 베풀지 않겠는가……？ 제, 제발 부탁이니라, 이렇게 창피함을 무릎쓰고 말하는 것이닛…♪」
-			PRINTFORMW %CALLNAME:TARGET%의 말에 만족한 %CALLNAME:MASTER%는 를 쓰러뜨리며, 억지로 옷을 벗겨낸다
+			PRINTFORMW 「……이, 이 꼴사나운 여우의 천박한 구멍에, 부디 자비를… 자비를 베풀지 않겠는가……？ 제, 제발 부탁이니라, 이렇게 창피함을 무릎쓰고 말하는 것이니…♪」
+			PRINTFORMW %CALLNAME:TARGET%의 말에 만족한 %CALLNAME:MASTER%는 %CALLNAME:TARGET%를 쓰러뜨리며, 억지로 옷을 벗겨낸다
 			PRINTFORMW 「아아… 빨리, 빨리 나를 엉망진창으로 범해주거라……♪」
 		ENDIF
 	ELSE
@@ -453,11 +454,12 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 		PRINTFORML %CALLNAME:MASTER%가 %CALLNAME:TARGET%를 침대에 넘어뜨리니 젖은 눈동자로 올려다보며, 즐겁게 미소짓는다
 		PRINTFORMW 「자, 백년해로 하자꾸나…」
 	ENDIF
+	;플래그:전라가되다
 	CALL SETFLAG, "衣装全脱ぎ", TARGET
 	SETBIT CFLAG:201, 3
 ;연모
 ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
-	;연모と음란を同時に取得
+	;연모와 음란을 동시에 얻음
 	IF TALENT:음란 &&GETBIT(CFLAG:201, 5) == 0
 		PRINTFORMW 「이제서야 와주었구나. 그대가 오기만을 기다리고 있었단다…?」
 		PRINTFORMW 방에 들어가니, %CALLNAME:TARGET%가 볼을 붉히며, %CALLNAME:MASTER%의 품에 뛰어들었다
@@ -470,7 +472,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 		PRINTFORMW %CALLNAME:TARGET%가 이끄는 대로 손을 뻗으니 %CALLNAME:TARGET%의 보지가 촉촉히 젖어있다…
 		PRINTFORMW 「음란하게 되어버린게다…♪ 아아, 더는 참을수가 없구나… 안아줘, 안아주려무나, %CNAME("二人称")%, 앗♪」
 		PRINTFORML %CALLNAME:MASTER%는 침대로 이끄는 %CALLNAME:TARGET%를…
-		;상사상애になるかを선택
+		;상사상애가 될 것인가 선택
 		PRINTFORML [0] 제멋대로인 음란한 암여우에게는 벌을 줘야겠네!
 		PRINTFORML [1] 귀엽고 귀여운 음란한 암여우! 행복하게 해주겠어! \@(CONFIG("상사상애：인수제한없음") || TALENT:MASTER:상사상애 == 0) ? ※서로 사랑하는 사이가 됩니다 # \@
 		CALL INPUT_SELECT, 2
@@ -489,7 +491,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 			PRINTFORMW 「%CNAME("二人称")%… 말만으로는 부족한 것이니라아…앗♪ 그러니까……으응…읏♪」
 			PRINTFORMW %CALLNAME:MASTER%는 다시 한번 입을 맞추며, %CALLNAME:TARGET%의 몸에 손을 뻗기 시작한다…
 			PRINTFORMW 말로는 전해지지 않는 사랑을, 넘칠 정도로 쏟아 붓는 것이다…
-			;상사상애になれる状態ならお금をかけずに両思い! 
+			;상사상애가 될 수 있는 상태라면 돈 안 써도 서로 사랑함! 
 			IF CONFIG("상사상애：인수제한없음") || TALENT:MASTER:상사상애 == 0
 				TALENT:서약 = 0
 				TALENT:상사상애 = 1
@@ -503,7 +505,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 			SETBIT CFLAG:201, 32
 		ENDIF
 		SETBIT CFLAG:201, 5
-	;음란を先に取得
+	;음란을 먼저 얻음
 	ELSEIF TALENT:음란 && GETBIT(CFLAG:201, 5)
 		PRINTFORMW 「아, 아아… %CNAME("二人称")%, %CNAME("二人称")%…♪ 응, 후아, 아…앗♪ 거기, 아, 아앗, 좀 더……흣♪」
 		PRINTFORMW 방에 들어온 %CALLNAME:MASTER%가 마주한 것은, 한눈 팔지 않고, 무아무중으로 자위를 하고 있는 %CALLNAME:TARGET%였다…
