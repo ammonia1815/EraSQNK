@@ -29,7 +29,7 @@
 ;　6 = ちんぐり返し状態で사정（【애널애무】･【애널핥기】後に【손훑기する】）
 ;　7 = 동정で逆봉사系ですぐイッてしまう
 ;　8 = 동정で逆봉사系ですぐイッてしまう(상대が처녀)
-;　9 = 정상위or대면좌위（Ａ含む)時にカウンター브래지어ッドサックでPLAYERを사정させる
+;　9 = 정상위or대면좌위（Ａ含む)時にカウンター흡혈でPLAYERを사정させる
 ;☆CFLAG:462　
 
 
@@ -77,7 +77,7 @@ DRAWLINE
 ;26bit 권속化
 ;30bit 연모時の呼び方変更
 ;31bit チンカス大好き化
-;32bit 브래지어ッドサック습득
+;32bit 흡혈습득
 ;-------------------------------------------------
 ;初조교時 CFLAG201
 ;-------------------------------------------------
@@ -394,8 +394,8 @@ ELSEIF GETBIT(CFLAG:201, 31) == 0 && CHECK_STAIN(STAIN:PLAYER:Ｐ, "Ｐ치구") 
 		TALENT:냄새민감 = 1
 	ENDIF
 	SETBIT CFLAG:201, 31
-;브래지어ッドサック습득
-ELSEIF GETBIT(CFLAG:201, 32) == 0 && CEVENT("브래지어ッドサック습득") == 1
+;흡혈습득
+ELSEIF GETBIT(CFLAG:201, 32) == 0 && CEVENT("흡혈습득") == 1
 	PRINTFORMW %CALLNAME:MASTER%를 방에 불러들였다%CALLNAME:TARGET%하, 어쩐지 겁없는 미소를 띄우고 있었다.
 	PRINTFORML 
 	PRINTFORMW 「후훈, 오늘의%CNAME("一人称")%는 한가닥 다르겠어！고귀한흡혈귀에 어울린 필살기를 몸에 댄 것이다！」
@@ -405,9 +405,9 @@ ELSEIF GETBIT(CFLAG:201, 32) == 0 && CEVENT("브래지어ッドサック습득")
 	PRINTL 
 	;MASTERの年齢が低いと威力も控えめにしてくれる
 	IF TALENT:MASTER:외견연령 <= 1
-		CALL COUNTER_SKILL, "브래지어ッドサック", 1
+		CALL COUNTER_SKILL, "흡혈", 1
 	ELSE
-		CALL COUNTER_SKILL, "브래지어ッドサック", 2
+		CALL COUNTER_SKILL, "흡혈", 2
 	ENDIF
 	PRINTL 
 	PRINTFORMW 「후훈, 이거야 피가 배이는 것 같은 수행의 끝손에 넣은 새로운 힘 『브래지어드삭크』！어때, 고귀한흡혈귀인 나에게 딱 맞을 것이다！」
@@ -3433,7 +3433,7 @@ IF SELECTCOM == 60
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모 && PLAYER == MASTER
-			;☆브래지어ッドサック修得時にMASTERが절정
+			;☆흡혈修得時にMASTERが절정
 			IF GETBIT(CFLAG:201, 32) == 1 && BASE:PLAYER:절정 >= MAXBASE:PLAYER:절정
 				;☆뱀파이어Ｖ절정
 				IF NOWEX:Ｖ절정
@@ -3445,7 +3445,7 @@ IF SELECTCOM == 60
 					CALL HEARTMARK_E
 					PRINTFORMW 「%CNAME("二人称")%……%CNAME("二人称")%도,%CNAME("一人称")%(와)과 함께……！！」
 					PRINTL
-					CALL COUNTER_SKILL, "브래지어ッドサック", 3
+					CALL COUNTER_SKILL, "흡혈", 3
 					CALL SET_SHOOT, PLAYER, "변경불가"
 				ELSE
 					PRINTFORM 「후훅, 이제(벌써) 갈 것 같은 것인가？질안에서 자지가 움찔움찔 하고 있겠어
@@ -3453,7 +3453,7 @@ IF SELECTCOM == 60
 					PRINTFORM 「참지 않아도 괜찮아%CNAME("二人称")%……%CNAME("一人称")%노질안에, 마음껏사정해 버려라♪이봐요……
 					CALL HEARTMARK_E
 					PRINTL
-					CALL COUNTER_SKILL, "브래지어ッドサック", 3
+					CALL COUNTER_SKILL, "흡혈", 3
 					CALL SET_SHOOT, PLAYER, "변경불가"
 				ENDIF
 			ELSE
@@ -3462,20 +3462,20 @@ IF SELECTCOM == 60
 		;새드끼Lv3이상で삽입中ではない＆조교자が마조끼Lv3이하、새드끼Lv3이상
 		ELSEIF  INSERT("Ｖ인서트") == 0 && ABL:새드끼 >= 3 && ABL:PLAYER:마조끼 <= 3 && ABL:PLAYER:새드끼 >= 3
 			PRINTFORMW 「왓！？이, 이봐！%CNAME("一人称")%는 아직삽입라고 좋다고는 말해……아웃……！」
-		;☆브래지어ッドサック修得時にMASTERが절정
+		;☆흡혈修得時にMASTERが절정
 		ELSEIF GETBIT(CFLAG:201, 32) == 1 && BASE:PLAYER:절정 >= MAXBASE:PLAYER:절정
 			;☆뱀파이어Ｖ절정
 			IF NOWEX:Ｖ절정
 				PRINTFORMW 「쿳, 우웃……이, 이 자식……%CNAME("一人称","どもり")%를, 가게 하자 등,건방짐……！」
 				PRINTFORMW 「%CNAME("一人称")%혼자서, 가는 것 할까 보냐……！%CNAME("二人称")%도, 다……！」
 				PRINTL
-				CALL COUNTER_SKILL, "브래지어ッドサック", 3
+				CALL COUNTER_SKILL, "흡혈", 3
 				CALL SET_SHOOT, PLAYER, "변경불가"
 			ELSE
 				PRINTFORMW 「상당히 안타까운 것 같은 얼굴을 하고 있구나……쿠쿡, 아무래도 인내도 한계라고 하는 곳인 것 같다？」
 				PRINTFORMW 「후훈, 그러면%CNAME("一人称")%하지만 결정타를 찔러 준다고 할까……이렇게 해서 말이야！」
 				PRINTL
-				CALL COUNTER_SKILL, "브래지어ッドサック", 3
+				CALL COUNTER_SKILL, "흡혈", 3
 				CALL SET_SHOOT, PLAYER, "변경불가"
 			ENDIF
 		;それ以外
@@ -3602,7 +3602,7 @@ IF SELECTCOM == 63
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모 && PLAYER == MASTER
-			;☆브래지어ッドサック修得時にMASTERが절정
+			;☆흡혈修得時にMASTERが절정
 			IF GETBIT(CFLAG:201, 32) == 1 && BASE:PLAYER:절정 >= MAXBASE:PLAYER:절정
 				;☆뱀파이어Ｖ절정
 				IF NOWEX:Ｖ절정
@@ -3614,7 +3614,7 @@ IF SELECTCOM == 63
 					CALL HEARTMARK_E
 					PRINTFORMW 「%CNAME("二人称")%……%CNAME("二人称")%도,%CNAME("一人称")%(와)과 함께……！！」
 					PRINTL
-					CALL COUNTER_SKILL, "브래지어ッドサック", 3
+					CALL COUNTER_SKILL, "흡혈", 3
 					PRINTL
 					CALL SET_SHOOT, PLAYER, "변경불가"
 				ELSE
@@ -3623,28 +3623,28 @@ IF SELECTCOM == 63
 					PRINTFORM 「참지 않아도 괜찮아%CNAME("二人称")%……%CNAME("一人称")%노질안에, 마음껏사정해 버려라♪이봐요……
 					CALL HEARTMARK_E
 					PRINTL
-					CALL COUNTER_SKILL, "브래지어ッドサック", 3
+					CALL COUNTER_SKILL, "흡혈", 3
 					PRINTL
 					CALL SET_SHOOT, PLAYER, "변경불가"
 				ENDIF
 			ELSE
 				PRINTFORMW 
 			ENDIF
-		;☆브래지어ッドサック修得時にMASTERが절정
+		;☆흡혈修得時にMASTERが절정
 		ELSEIF GETBIT(CFLAG:201, 32) == 1 && BASE:PLAYER:절정 >= MAXBASE:PLAYER:절정
 			;☆뱀파이어Ｖ절정
 			IF NOWEX:Ｖ절정
 				PRINTFORMW 「쿳, 우웃……이, 이 자식……%CNAME("一人称","どもり")%를, 가게 하자 등,건방짐……！」
 				PRINTFORMW 「%CNAME("一人称")%혼자서, 가는 것 할까 보냐……！%CNAME("二人称")%도, 다……！」
 				PRINTL
-				CALL COUNTER_SKILL, "브래지어ッドサック", 3
+				CALL COUNTER_SKILL, "흡혈", 3
 				PRINTL
 				CALL SET_SHOOT, PLAYER, "변경불가"
 			ELSE
 				PRINTFORMW 「상당히 안타까운 것 같은 얼굴을 하고 있구나……쿠쿡, 아무래도 인내도 한계라고 하는 곳인 것 같다？」
 				PRINTFORMW 「후훈, 그러면%CNAME("一人称")%하지만 결정타를 찔러 준다고 할까……이렇게 해서 말이야！」
 				PRINTL
-				CALL COUNTER_SKILL, "브래지어ッドサック", 3
+				CALL COUNTER_SKILL, "흡혈", 3
 				PRINTL
 				CALL SET_SHOOT, PLAYER, "변경불가"
 			ENDIF
@@ -6438,7 +6438,7 @@ IF SELECTCOM == 91
 					IF COND("포경", PLAYER) && COND("포경の皮を剥いた", PLAYER) == 0 && RAND:4 == 0
 						PRINTFORMW 「후훅……어때, 이런 일은포경(이)가 아니면 맛볼 수 없을 것이다？」
 						PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 남은 가죽을 살짝 깨물기 하거나, 가죽이 후퇴하지 않도록손가락그리고 누르면서 귀두와 가죽의 사이에 혀를 넣거나 하고 있다……
-					;☆PLAYERが절정間近かつ새드끼Lv4이상＆브래지어ッドサックを使用가능
+					;☆PLAYERが절정間近かつ새드끼Lv4이상＆흡혈を使用가능
 					ELSEIF BASE:PLAYER:절정 >= MAXBASE:PLAYER:절정  && GETBIT(CFLAG:201, 32) == 1 && ABL:새드끼 >= 4 && RAND:3 == 0
 						PRINTFORM 「응훗……♪자지,%CNAME("一人称")%하지만 빨 때마다 움찔움찔 하고 있겠어
 						CALL HEARTMARK_E
@@ -6454,7 +6454,7 @@ IF SELECTCOM == 91
 							PRINTFORMW 「뭐, 그렇게 걱정일 것 같은 얼굴을 하지마, 조금 아픈 것뿐이니까……♪」
 							PRINTFORMW %CALLNAME:TARGET%는 반 쇠약해지고 상태의페니스에입를 접근하고……
 							PRINTL
-							CALL COUNTER_SKILL, "브래지어ッドサック", 1
+							CALL COUNTER_SKILL, "흡혈", 1
 							PRINTL
 							PRINTFORMW 아픔에 뛰어 오를 것 같게 된다%CALLNAME:PLAYER%(이었)였지만,%CALLNAME:TARGET%노입로부터해방되었다페니스는 피가 나와 있기는 커녕 잇자국조차 남지 않았다.
 							PRINTFORMW 그 뿐만 아니라브래지어드삭크의 영향인가,사정했던 바로 직후라고 말하는데 쇠약해지는 일 없이 다시 그 경도를 되찾고 있었다……
@@ -13591,42 +13591,42 @@ CASE "카운터없음"
 		CALL COUNTER_TEXT, ARGS
 	ENDIF
 CASE "Ｖ인서트"
-	;☆브래지어ッドサック修得이벤트を見ており、재갈をされていない状態で정상위or대면좌위
+	;☆흡혈修得이벤트を見ており、재갈をされていない状態で정상위or대면좌위
 	IF GETBIT(CFLAG:201, 32) == 1 && TEQUIP:재갈 == 0 && (INSERT("정상위") || INSERT("대면좌위")) && RAND:4 == 0
 		;☆조교자が子供・少年の場合は손加減してくれる
 		IF TALENT:PLAYER:외견연령 <= 1
 			SELECTCASE CONDS("카운터：強度")
 			CASE "必殺"
-				CALL COUNTER_SKILL, "브래지어ッドサック", 4
+				CALL COUNTER_SKILL, "흡혈", 4
 			;反撃・強
 			CASE "強"
-				CALL COUNTER_SKILL, "브래지어ッドサック", 3
+				CALL COUNTER_SKILL, "흡혈", 3
 			;反撃・中
 			CASE "中"
-				CALL COUNTER_SKILL, "브래지어ッドサック", 2
+				CALL COUNTER_SKILL, "흡혈", 2
 			;反撃・弱
 			CASE "弱"
-				CALL COUNTER_SKILL, "브래지어ッドサック", 1
+				CALL COUNTER_SKILL, "흡혈", 1
 			;反撃・失敗
 			CASEELSE
-				CALL COUNTER_SKILL, "브래지어ッドサック", 0
+				CALL COUNTER_SKILL, "흡혈", 0
 			ENDSELECT
 		ELSE
 			SELECTCASE CONDS("카운터：強度")
 			CASE "必殺"
-				CALL COUNTER_SKILL, "브래지어ッドサック", 5
+				CALL COUNTER_SKILL, "흡혈", 5
 			;反撃・強
 			CASE "強"
-				CALL COUNTER_SKILL, "브래지어ッドサック", 4
+				CALL COUNTER_SKILL, "흡혈", 4
 			;反撃・中
 			CASE "中"
-				CALL COUNTER_SKILL, "브래지어ッドサック", 3
+				CALL COUNTER_SKILL, "흡혈", 3
 			;反撃・弱
 			CASE "弱"
-				CALL COUNTER_SKILL, "브래지어ッドサック", 2
+				CALL COUNTER_SKILL, "흡혈", 2
 			;反撃・失敗
 			CASEELSE
-				CALL COUNTER_SKILL, "브래지어ッドサック", 0
+				CALL COUNTER_SKILL, "흡혈", 0
 			ENDSELECT
 		ENDIF
 		IF  BASE:PLAYER:절정 >= MAXBASE:PLAYER:절정
@@ -13652,42 +13652,42 @@ CASE "Ｖ인서트"
 		ENDSELECT
 	ENDIF
 CASE "Ａ인서트"
-	;☆브래지어ッドサック修得이벤트を見ており、재갈をされていない状態で정상위or대면좌위
+	;☆흡혈修得이벤트を見ており、재갈をされていない状態で정상위or대면좌위
 	IF GETBIT(CFLAG:201, 32) == 1 && TEQUIP:재갈 == 0 && (INSERT("Ａ정상위") || INSERT("Ａ대면좌위")) && RAND:4 == 0
 		;☆조교자が子供・少年の場合は손加減してくれる
 		IF TALENT:PLAYER:외견연령 <= 1
 			SELECTCASE CONDS("카운터：強度")
 			CASE "必殺"
-				CALL COUNTER_SKILL, "브래지어ッドサック", 4
+				CALL COUNTER_SKILL, "흡혈", 4
 			;反撃・強
 			CASE "強"
-				CALL COUNTER_SKILL, "브래지어ッドサック", 3
+				CALL COUNTER_SKILL, "흡혈", 3
 			;反撃・中
 			CASE "中"
-				CALL COUNTER_SKILL, "브래지어ッドサック", 2
+				CALL COUNTER_SKILL, "흡혈", 2
 			;反撃・弱
 			CASE "弱"
-				CALL COUNTER_SKILL, "브래지어ッドサック", 1
+				CALL COUNTER_SKILL, "흡혈", 1
 			;反撃・失敗
 			CASEELSE
-				CALL COUNTER_SKILL, "브래지어ッドサック", 0
+				CALL COUNTER_SKILL, "흡혈", 0
 			ENDSELECT
 		ELSE
 			SELECTCASE CONDS("카운터：強度")
 			CASE "必殺"
-				CALL COUNTER_SKILL, "브래지어ッドサック", 5
+				CALL COUNTER_SKILL, "흡혈", 5
 			;反撃・強
 			CASE "強"
-				CALL COUNTER_SKILL, "브래지어ッドサック", 4
+				CALL COUNTER_SKILL, "흡혈", 4
 			;反撃・中
 			CASE "中"
-				CALL COUNTER_SKILL, "브래지어ッドサック", 3
+				CALL COUNTER_SKILL, "흡혈", 3
 			;反撃・弱
 			CASE "弱"
-				CALL COUNTER_SKILL, "브래지어ッドサック", 2
+				CALL COUNTER_SKILL, "흡혈", 2
 			;反撃・失敗
 			CASEELSE
-				CALL COUNTER_SKILL, "브래지어ッドサック", 0
+				CALL COUNTER_SKILL, "흡혈", 0
 			ENDSELECT
 		ENDIF
 		IF  BASE:PLAYER:절정 >= MAXBASE:PLAYER:절정
@@ -13741,42 +13741,42 @@ CASE "애무"
 		ENDSELECT
 	;☆それ以外
 	ELSE
-		;☆브래지어ッドサック修得이벤트を見ており、재갈をされていないのが条件
+		;☆흡혈修得이벤트を見ており、재갈をされていないのが条件
 		IF GETBIT(CFLAG:201, 32) == 1 && TEQUIP:재갈 == 0 && RAND:4 == 0
 			;☆조교자が子供・少年の場合は손加減してくれる
 			IF TALENT:PLAYER:외견연령 <= 1
 				SELECTCASE CONDS("카운터：強度")
 				CASE "必殺"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 4
+					CALL COUNTER_SKILL, "흡혈", 4
 				;反撃・強
 				CASE "強"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 3
+					CALL COUNTER_SKILL, "흡혈", 3
 				;反撃・中
 				CASE "中"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 2
+					CALL COUNTER_SKILL, "흡혈", 2
 				;反撃・弱
 				CASE "弱"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 1
+					CALL COUNTER_SKILL, "흡혈", 1
 				;反撃・失敗
 				CASEELSE
-					CALL COUNTER_SKILL, "브래지어ッドサック", 0
+					CALL COUNTER_SKILL, "흡혈", 0
 				ENDSELECT
 			ELSE
 				SELECTCASE CONDS("카운터：強度")
 				CASE "必殺"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 5
+					CALL COUNTER_SKILL, "흡혈", 5
 				;反撃・強
 				CASE "強"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 4
+					CALL COUNTER_SKILL, "흡혈", 4
 				;反撃・中
 				CASE "中"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 3
+					CALL COUNTER_SKILL, "흡혈", 3
 				;反撃・弱
 				CASE "弱"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 2
+					CALL COUNTER_SKILL, "흡혈", 2
 				;反撃・失敗
 				CASEELSE
-					CALL COUNTER_SKILL, "브래지어ッドサック", 0
+					CALL COUNTER_SKILL, "흡혈", 0
 				ENDSELECT
 			ENDIF
 		ELSE
@@ -13832,42 +13832,42 @@ CASE "봉사"
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 페니스에 열중하고 있다……
 		ENDSELECT
 	ELSE
-		;☆브래지어ッドサック修得이벤트を見ており、재갈をされていないのが条件
+		;☆흡혈修得이벤트を見ており、재갈をされていないのが条件
 		IF GETBIT(CFLAG:201, 32) == 1 && TEQUIP:재갈 == 0 && RAND:4 == 0
 			;☆조교자が子供・少年の場合は손加減してくれる
 			IF TALENT:PLAYER:외견연령 <= 1
 				SELECTCASE CONDS("카운터：強度")
 				CASE "必殺"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 4
+					CALL COUNTER_SKILL, "흡혈", 4
 				;反撃・強
 				CASE "強"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 3
+					CALL COUNTER_SKILL, "흡혈", 3
 				;反撃・中
 				CASE "中"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 2
+					CALL COUNTER_SKILL, "흡혈", 2
 				;反撃・弱
 				CASE "弱"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 1
+					CALL COUNTER_SKILL, "흡혈", 1
 				;反撃・失敗
 				CASEELSE
-					CALL COUNTER_SKILL, "브래지어ッドサック", 0
+					CALL COUNTER_SKILL, "흡혈", 0
 				ENDSELECT
 			ELSE
 				SELECTCASE CONDS("카운터：強度")
 				CASE "必殺"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 5
+					CALL COUNTER_SKILL, "흡혈", 5
 				;反撃・強
 				CASE "強"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 4
+					CALL COUNTER_SKILL, "흡혈", 4
 				;反撃・中
 				CASE "中"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 3
+					CALL COUNTER_SKILL, "흡혈", 3
 				;反撃・弱
 				CASE "弱"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 2
+					CALL COUNTER_SKILL, "흡혈", 2
 				;反撃・失敗
 				CASEELSE
-					CALL COUNTER_SKILL, "브래지어ッドサック", 0
+					CALL COUNTER_SKILL, "흡혈", 0
 				ENDSELECT
 			ENDIF
 		ELSE
@@ -13964,42 +13964,42 @@ CASE "ＳＭ"
 		ENDSELECT
 	;☆それ以外
 	ELSE
-		;☆브래지어ッドサック修得이벤트を見ており、재갈をされていないのが条件
+		;☆흡혈修得이벤트を見ており、재갈をされていないのが条件
 		IF GETBIT(CFLAG:201, 32) == 1 && TEQUIP:재갈 == 0 && RAND:4 == 0
 			;☆조교자が子供・少年の場合は손加減してくれる
 			IF TALENT:PLAYER:외견연령 <= 1
 				SELECTCASE CONDS("카운터：強度")
 				CASE "必殺"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 4
+					CALL COUNTER_SKILL, "흡혈", 4
 				;反撃・強
 				CASE "強"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 3
+					CALL COUNTER_SKILL, "흡혈", 3
 				;反撃・中
 				CASE "中"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 2
+					CALL COUNTER_SKILL, "흡혈", 2
 				;反撃・弱
 				CASE "弱"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 1
+					CALL COUNTER_SKILL, "흡혈", 1
 				;反撃・失敗
 				CASEELSE
-					CALL COUNTER_SKILL, "브래지어ッドサック", 0
+					CALL COUNTER_SKILL, "흡혈", 0
 				ENDSELECT
 			ELSE
 				SELECTCASE CONDS("카운터：強度")
 				CASE "必殺"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 5
+					CALL COUNTER_SKILL, "흡혈", 5
 				;反撃・強
 				CASE "強"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 4
+					CALL COUNTER_SKILL, "흡혈", 4
 				;反撃・中
 				CASE "中"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 3
+					CALL COUNTER_SKILL, "흡혈", 3
 				;反撃・弱
 				CASE "弱"
-					CALL COUNTER_SKILL, "브래지어ッドサック", 2
+					CALL COUNTER_SKILL, "흡혈", 2
 				;反撃・失敗
 				CASEELSE
-					CALL COUNTER_SKILL, "브래지어ッドサック", 0
+					CALL COUNTER_SKILL, "흡혈", 0
 				ENDSELECT
 			ENDIF
 		ELSE
