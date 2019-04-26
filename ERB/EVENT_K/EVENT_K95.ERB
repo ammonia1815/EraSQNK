@@ -87,12 +87,12 @@ IF GETBIT(CFLAG:201, 0) == 0
 	PRINTFORMW ★시작하기 전의 겹요정선택★
 	PRINTFORML 
 	PRINTFORMW 구상제작자의 취향（？）에 의해２살의 루트가 있습니다
-	PRINTFORMW 거기서, 당신(이)가 좋아하는 (분)편을 선택해 주세요
-	PRINTFORMW 또한, 「아무것도하지않는다」를선택그러자 보기 드물게 변경할 수도 있습니다. 
+	PRINTFORMW 거기서, 당신이 좋아하는 을 선택해 주세요
+	PRINTFORMW 또한, 「아무것도하지않는다」를 선택 하면 드물게 변경할 수도 있습니다. 
 	PRINTFORML 
 	PRINTFORMW %CALLNAME:TARGET%를 …
-	PRINTFORML [0] 여자용품이 어울린다오토코노코! 
-	PRINTFORML [1] 작고 사랑스럽다쇼타! 
+	PRINTFORML [0] 여자용품이 어울리는 오토코노코! 
+	PRINTFORML [1] 작고 사랑스러운 쇼타! 
 	PRINTFORML ※성장시켰을 경우에 대해서는 책임을 질 수 없기 때문에 주의! 
 	CALL INPUT_SELECT, 2
 	IF RESULT == 0
@@ -103,14 +103,14 @@ IF GETBIT(CFLAG:201, 0) == 0
 		PRINTFORMW ……
 		PRINTFORMW …
 		IF COND("부친") == MASTER || COND("모친") == MASTER
-			PRINTFORMW %CALLNAME:TARGET%…자신의아들이다
+			PRINTFORMW %CALLNAME:TARGET%…자신의 아들이다
 		ELSE
-			PRINTFORMW %CALLNAME:TARGET%…몽마노아이이다
+			PRINTFORMW %CALLNAME:TARGET%…몽마의 아이이다
 		ENDIF
-		PRINTFORMW 주위에여성하지만 많은 생활을 계속해 온 탓인지, 그에게 「남자이다」라고 하는 실감은 얇다…
-		PRINTFORMW 오히려 여자용품의옷를 몸에 대고, 여성다운 행동을 기꺼이 있다…이른바 「오토코노코」(이)다
+		PRINTFORMW 주위에 여성과 많은 생활을 계속해 온 탓인지, 그에게 「남자」라고 하는 실감은 거의 없다…
+		PRINTFORMW 오히려 여자용품의옷를 몸에 대고, 여성다운 행동을 기꺼이 있다…이른바 「오토코노코」다
 		SIF COND("부친") == MASTER || COND("모친") == MASTER
-			PRINTFORMW 그런 열매의아들를조교한다그렇다고 하는 배덕에%CALLNAME:MASTER%는 마음을 뛰게 할 수 있다…
+			PRINTFORMW 그런 친아들을 조교한다그렇다고 하는 배덕에%CALLNAME:MASTER%는 마음을 뛰게 할 수 있다…
 		PRINTFORMW 
 		PRINTFORMW 「아, %CNAME("二人称")%…여기서 뭐 해…？」
 		PRINTFORMW %CALLNAME:TARGET%를 이상할 것 같은얼굴그래서%CALLNAME:MASTER%에게 물어 온다
@@ -121,10 +121,10 @@ IF GETBIT(CFLAG:201, 0) == 0
 			PRINTFORMW 「(이)다, 안돼, 그런 일…%CNAME("一人称")%(와)과%CNAME("二人称")%는 남자끼리인 것이야…？」
 			PRINTFORMW ………거기는 알고 있었는가
 		ELSE
-			PRINTFORMW 「이 관에 있는 사람들 같은 일을 해…？」
+			PRINTFORMW 「이 집에 있는 사람들 같은 일을 해…？」
 		ENDIF
-		PRINTFORMW 이 아이를 어떠한 색에 물들여 줄까…머릿속에서 입맛을 다심을 하면서, 
-		PRINTFORMW 싫어한다%CALLNAME:TARGET%를 넘어뜨리기라고조교를 시작했다…
+		PRINTFORMW 이 아이를 어떠한 색에 물들여 줄까…머릿속에서 입맛을 다시면서, 
+		PRINTFORMW 싫어하는 %CALLNAME:TARGET%를 넘어뜨리고 조교를 시작했다…
 	ELSEIF RESULT == 1
 		;소질の変更
 		TALENT:오토코노코 = 0
@@ -137,11 +137,11 @@ IF GETBIT(CFLAG:201, 0) == 0
 		IF COND("부친") == MASTER || COND("모친") == MASTER
 			PRINTFORMW %CALLNAME:TARGET%…자신의아들이다
 		ELSE
-			PRINTFORMW %CALLNAME:TARGET%…몽마노아이이다
+			PRINTFORMW %CALLNAME:TARGET%…몽마의아이이다
 		ENDIF
-		PRINTFORMW 여성에 둘러싸인 생활을 위해서(때문에), 주위로부터는 대인기(이었)였다
+		PRINTFORMW 여성에 둘러싸인 생활을 때문에, 주위로 부터는 대인기였다
 		SIF COND("부친") == MASTER || COND("모친") == MASTER
-			PRINTFORMW 그런 열매의아들를조교한다그렇다고 하는 배덕에%CALLNAME:MASTER%는 마음을 뛰게 할 수 있다…
+			PRINTFORMW 그런 친아들를조교한다그렇다고 하는 배덕에%CALLNAME:MASTER%는 마음을 뛰게 할 수 있다…
 		PRINTFORMW 
 		PRINTFORMW 「아, %CNAME("二人称")%…여기서 뭐 해…？」
 		PRINTFORMW %CALLNAME:TARGET%를 이상할 것 같은얼굴그래서%CALLNAME:MASTER%에게 물어 온다
@@ -168,7 +168,7 @@ ELSEIF MARK:반발각인 == 3
 ELSEIF GETBIT(CFLAG:201, 1) == 0 && MARK:굴복각인 == 1
 	PRINTFORMW 「%CNAME("二人称")%…저기요, %CNAME("二人称")%가 오면 마음이 두근두근 한다…」
 	SIF COND("부친") == MASTER || COND("모친") == MASTER
-		PRINTFORMW 「%CNAME("一人称")%들부모와 자식인데……」
+		PRINTFORMW 「%CNAME("一人称")%들 부모와 자식인데……」
 	PRINTFORMW 「어째서…？」
 	SETBIT CFLAG:201, 1
 ;굴복각인Lv2
@@ -190,7 +190,7 @@ ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2
 		PRINTFORMW 「같은 성별의 사람과 서로 사랑해서는 안된다는 것은 책에 써 있었다! 」
 	ENDIF
 	PRINTFORMW 「………그렇지만, 책에 써 있는 것은 올바른 것인지…」
-	PRINTFORMW 「%CNAME("二人称")%(와)과의에로기분 좋았고…」
+	PRINTFORMW 「%CNAME("二人称")%(와)과의 에로기분 좋았고…」
 	PRINTFORMW 문의 틈새로부터%CALLNAME:TARGET%를 들여다 보고 있었다%CALLNAME:MASTER%는 , 조교의 성과가 나와 있는 일에 빙긋 웃었다…
 	SETBIT CFLAG:201, 2
 ;굴복각인Lv3
@@ -200,7 +200,7 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 	IF ABL:Ａ감각 >= 3 && ABL:Ｂ감각 >= 3 && TALENT:오토코노코
 		PRINTFORMW 「하아하아…%CNAME("二人称", "かな", "甘え")%, 좀 더 해…」
 		PRINTFORMW 「좀 더…엉덩이부비부비 하거나, 오가슴동글동글 해 주었으면 하는 것…」
-		PRINTFORMW 「하아…♪좀 더%CNAME("一人称")%에여자아이에로해엣! ! 」
+		PRINTFORMW 「하아…♪좀 더%CNAME("一人称")%에 여자아이에로해엣! ! 」
 	;TARGETが동정
 	ELSEIF TALENT:동정
 		;マスターが남자でない
@@ -226,11 +226,11 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 			IF ASSI && TALENT:ASSI:남자 == 0
 				PRINTFORMW 「그리고%CNAME("조수")%의 보지에 자지 넣고 싶은 것! ! 」
 			ELSE
-				PRINTFORMW 「그리고엉덩이그리고 좋으니까%CNAME("二人称")%에 쑤컹쑤컹은 하고 싶다앗! ! 」
+				PRINTFORMW 「그리고엉덩이로 좋으니까%CNAME("二人称")%에 쑤컹쑤컹 하고 싶다앗! ! 」
 			ENDIF
 		ENDIF
 	ENDIF
-	PRINTFORMW %CALLNAME:TARGET%가 쾌락의 세계에 떨어지고 있는 것을 확인해만족했다%CALLNAME:MASTER%는 , 힘차게 문을 연다
+	PRINTFORMW %CALLNAME:TARGET%가 쾌락의 세계에 떨어지고 있는 것을 확인해 만족한%CALLNAME:MASTER%는 , 힘차게 문을 연다
 	PRINTFORMW 「…읏! , %CNAME("二人称")%…혹시…보고 있었다…？」
 	PRINTFORMW 수긍한 후, 당신의 상상하고 있던 것 해 주지만……싫다？라고 (들)물어 본다
 	PRINTFORMW 「…읏! 우, 우응, 부탁합니닷, %CNAME("二人称", "かな", "甘え")%…♪」
@@ -242,11 +242,11 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	PRINTFORMW 「저기요…%CNAME("一人称")%…%CNAME("二人称")%가 좋아하게 되어 버린 것 같다…♪」
 	SIF COND("부친") == MASTER || COND("모친") == MASTER
 	PRINTFORMW 「근친상간 같은거 관계없닷…%CNAME("一人称")%는 %CNAME("二人称")%사랑하고 있다…」
-	PRINTFORMW 「그러니까 마다일마다일…%CNAME("一人称")%기분 좋게 했으면 좋겠다……」
+	PRINTFORMW 「그러니까 매일매일…%CNAME("一人称")% 기분 좋게 했으면 좋겠다……」
 	PRINTFORMW %CALLNAME:TARGET%를 뜨거운 한숨을 흘리면서, %CALLNAME:MASTER%에 껴안아 온다
 	;マスター生えてるかつ오토코노코
 	IF PENIS(MASTER) && TALENT:오토코노코
-		PRINTFORMW 「%CNAME("一人称")%…남자이니까아이는 낳을 수 없다……그렇지만」
+		PRINTFORMW 「%CNAME("一人称")%…남자이니까 아이는 낳을 수 없다……그렇지만」
 		PRINTFORMW 「이런%CNAME("一人称")%그렇지만 신부로 해 주지 않겠습니까…？」
 	ELSEIF TALENT:오토코노코
 		PRINTFORMW 「조금 이상한 관계이지만…」
@@ -276,7 +276,7 @@ ENDIF
 @K95_KOJO2_1
 ;반발각인Lv3
 IF MARK:반발각인 == 3
-	PRINTFORMW %CALLNAME:TARGET%를 %CALLNAME:MASTER%의 모습을 보면 눈물을 흘려저항했다
+	PRINTFORMW %CALLNAME:TARGET%를 %CALLNAME:MASTER%의 모습을 보면 눈물을 흘려 저항했다
 	PRINTFORMW 「싫다…싫다 싫다 싫다아………」
 ;굴복각인Lv1이하
 ELSEIF MARK:굴복각인 <= 1
@@ -290,7 +290,7 @@ ELSEIF MARK:굴복각인 == 2
 	ELSE
 		LOCAL = FIND_COND("연모")
 		PRINTFORMW 「%CALLNAME:LOCAL%하지만%CNAME("二人称")%쇼타콩 말해 있었다지만…쇼타콩은 뭐？」
-		PRINTFORMW …%CALLNAME:LOCAL%는 다음에 벌 해 두려고 생각한다%CALLNAME:MASTER%(이었)였다
+		PRINTFORMW …%CALLNAME:LOCAL%는 다음에 벌 해 두려고 생각하는%CALLNAME:MASTER%였다
 	ENDIF
 ;굴복각인Lv3＋연모無し
 ELSEIF MARK:굴복각인 == 3 && TALENT:연모 == 0
@@ -315,11 +315,11 @@ ELSEIF TALENT:연모
 		TEQUIP:넘어뜨리기 = 1
 	ELSEIF RAND:2 == 0
 		PRINTFORMW 「아아읏…기분이 좋다! 자지 기분이 좋다♪」
-		PRINTFORMW %CALLNAME:MASTER%가 방에 들어 오면 음미로운 소얼굴를 이쪽에 향한다
+		PRINTFORMW %CALLNAME:MASTER%가 방에 들어 오면 음란한 얼굴를 이쪽에 향한다
 		PRINTFORMW 「%CNAME("二人称", "かな", "甘え")%…%CNAME("一人称")%기다리고 있던 것이야…？」
 		IF TALENT:오토코노코 && SIZE("페니스", TARGET) == 0
 			IF ABL:Ａ감각 >= 3 && TALENT:Ａ처녀 == 0
-				PRINTFORMW 「이봐요, %CNAME("一人称")%노엉덩이도 기대해 흠칫흠칫 하고 있다…」
+				PRINTFORMW 「이봐요, %CNAME("一人称")%의 엉덩이도 기대해 흠칫흠칫 하고 있다…」
 			ELSE
 				PRINTFORMW 「이봐요, %CNAME("一人称")%의 자지도 기다릴 수 없어서 움찔움찔 해 버리고 있다…」
 			ENDIF
@@ -376,12 +376,12 @@ IF STATE("撃沈", MASTER)
 			PRINTFORMW 문득 의식이 돌아왔다
 			PRINTFORMW %CALLNAME:MASTER%의 배가 출렁출렁 하고 있을 생각이 드는 것은%CALLNAME:TARGET%가 쭉질내사정하고 있던 탓일 것이다…
 			PRINTFORMW 근처에는 기분 좋은 것 같이 자고 있다%CALLNAME:TARGET%가 있다…
-			PRINTFORMW 「……%CNAME("二人称")%에빨강, 선물 해 준다…로부터…무냐………」
+			PRINTFORMW 「……%CNAME("二人称")%에 아기, 선물 해 줄…꺼니까……무냐………」
 		;逆Aで終了
 		ELSEIF SELECTCOM >= 125 && SELECTCOM <= 129
 			PRINTFORMW 「%CNAME("二人称")%♪ %CNAME("二人称")%♪ %CNAME("二人称")%♪ ………」
 			PRINTFORMW %CALLNAME:MASTER%의체력는 이제 한계라고 말하는데%CALLNAME:TARGET%를 허리를 멈추려고 하지 않는다
-			PRINTFORMW 엉덩이구멍을 꾸짖어지고 있다%CALLNAME:MASTER%의 의식은 점점 희미해져………
+			PRINTFORMW 엉덩이구멍을 꾸짖어지고 있는%CALLNAME:MASTER%의 의식은 점점 희미해져………
 			PRINTFORMW ………
 			PRINTFORMW ……
 			PRINTFORMW …
@@ -9034,10 +9034,10 @@ IF SELECTCOM == 202 && TEQUIP:애널바이브
 			ELSE
 				PRINTFORMW 「아읏, 안됏, 그것이상하엉덩이가아앗♪」
 				PRINTFORMW 여러가지 형상을 했다촉수들이 일제히%CALLNAME:TARGET%의 애널에 침입해 나간다
-				PRINTFORMW 많은 돌기가 붙었다촉수하지만 항문을 자극해, 
-				PRINTFORMW 브래지어시 상태의 이빨을 가졌다촉수하지만 전립선을 더듬어, 
-				PRINTFORMW 가는 사상의촉수하지만장의 안쪽까지 침입해애무해 온다
-				PRINTFORMW 여러가지 쾌락이애널에 일제히 주어진 결과, %CALLNAME:TARGET%를 쾌락으로 머리가 소 끊어질 것 같게 되어, 
+				PRINTFORMW 많은 돌기가 붙은 촉수가 항문을 자극해, 
+				PRINTFORMW 브러쉬 모양의 이를 가진 촉수가 전립선을 어루만지고, 
+				PRINTFORMW 가는 모양의 촉수가 장의 안쪽까지 침입해애무해 온다
+				PRINTFORMW 여러가지 쾌락이 애널에 일제히 주어진 결과, %CALLNAME:TARGET%를 쾌락으로 머리가 소 끊어질 것 같게 되어, 
 				PRINTFORMW 야무지지 못하게 녹았다얼굴를 %CALLNAME:MASTER%에 보였다
 			ENDIF
 		ELSE
@@ -9049,7 +9049,7 @@ IF SELECTCOM == 202 && TEQUIP:애널바이브
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 「응하아앗, 거기, 거기…♪」
 				PRINTFORMW 촉수는 적확하게%CALLNAME:TARGET%의 애널에 향해 간다
-				PRINTFORMW 첨단이브래지어시장이 된 그촉수하, %CALLNAME:TARGET%의 전립선을 닦도록(듯이) 자극해 터무니없는 쾌락을 주어 온다
+				PRINTFORMW 끝이 브러쉬 모양이 된 그 촉수는, %CALLNAME:TARGET%의 전립선을 닦도록(듯이) 자극해 터무니없는 쾌락을 주어 온다
 				PRINTFORMW 「실마리, 조파 안돼에♪♪」
 				IF TEQUIP:오나홀
 					PRINTFORMW 참지 못하고사정했다%CALLNAME:TARGET%의 정액를, 페니스에 달라붙고 있다촉수하지만 꿀꺽꿀꺽 삼켜 갔다…
@@ -9072,9 +9072,9 @@ IF SELECTCOM == 202 && TEQUIP:애널바이브
 			PRINTFORMW 개발되어 있지 않다%CALLNAME:TARGET%의 엉덩이구멍하, 촉수노삽입에 계속 참지 못하고 비명을 올리고 있다…
 		ELSE
 			IF RAND:2 == 0
-				PRINTFORMW 「응아아앗…오, 엉덩이읏, 엉덩이하지만…」
-				PRINTFORMW %CALLNAME:TARGET%의 엉덩이구멍의 안에브래지어시 상태의촉수하지만 푸욱푸욱 비집고 들어간다
-				PRINTFORMW 「앗, (이)다, 안됏, 거기 어루만지지 맛, 앗! 」
+				PRINTFORMW 「응아아앗…오, 엉덩이읏, 엉덩이 하…」
+				PRINTFORMW %CALLNAME:TARGET%의 엉덩이구멍의 안에 브러쉬 모양의 촉수가 푹푹 들어간다.
+				PRINTFORMW 「앗, 아, 안됏, 거기 어루만지지 맛, 앗! 」
 				PRINTFORMW 촉수는 어디가성감대인가 알아 있는 것 같이%CALLNAME:TARGET%의 전립선을 자극했다…
 			ELSE
 				PRINTFORMW 「햐앗…응읏…아아…」
@@ -9180,33 +9180,33 @@ IF SELECTCOM == 209 && TEQUIP:오나홀
 				PALAM:쾌Ｃ += 10000
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 「하우웃♪앗♪앗♪응하앗♪」
-				PRINTFORMW 브래지어시 상태의촉수들이, %CALLNAME:TARGET%의 페니스를 닦도록(듯이)애무한다
-				PRINTFORMW 「앗♪, 야아…♪들, 앙돼엣♪타마타마 비비고넣고♪」
-				PRINTFORMW 입하지만 옆에 퍼진 형태의촉수하지만 뻐끔 불알을 뭄, 비비도록(듯이) 우물우물 하고 있다…
-				PRINTFORMW 끈기가 있는 점액 투성이로 되면서촉수그리고 닦아지고 있는 것으로, 
-				PRINTFORMW %CALLNAME:TARGET%의 페니스피부응이다 와사정감을 높여져 간다…
+				PRINTFORMW 브러쉬 모양의 촉수들이, %CALLNAME:TARGET%의 페니스를 닦듯이 애무한다
+				PRINTFORMW 「앗♪, 야아…♪ 앙돼엣♪ 가끔 비벼 넣어져♪」
+				PRINTFORMW 입이 옆으로 벌어진 형태의 촉수가 슬쩍하고 고환을 물고 씹듯 움찔거리고 있다.
+				PRINTFORMW 끈기있는 점액투성이가 되면서 촉수로 닦여짐으로써, 
+				PRINTFORMW %CALLNAME:TARGET%의 페니스는 점점 사정감을 높여간다...
 			ELSE
 				PRINTFORMW 「응호오옷♪좀 더, 좀 더 해엣♪」
-				PRINTFORMW 오나홀 상태의촉수에 덥썩페니스를 물어지고, %CALLNAME:TARGET%를 쾌감으로얼굴를 녹게 한다
-				PRINTFORMW 「♪들, 앙됏, 그렇게 자지 날름날름 하고넣고♪」
-				PRINTFORMW 촉수중(안)에서는 섬모상의 주름이 귀두의 기러기나 성기 뒷부분으로부터 구석구석까지 훑도록(듯이)애무해 온다
-				PRINTFORMW 페니스의 특히민감부분을 꾸짖을 수 있는 강렬한 쾌감에, %CALLNAME:TARGET%를 새우와 같이허리를 뒤로 젖힐 수 있어 좋아하고 있다…
+				PRINTFORMW 오나홀 상태의 촉수에 덥썩페니스를 물어지고, %CALLNAME:TARGET%를 쾌감으로 얼굴를 녹게 한다
+				PRINTFORMW 「♪아, 앙됏, 그렇게 자지 날름날름 하고넣고♪」
+				PRINTFORMW 촉수안에서는 섬모상의 주름이 귀두의 끝부분과 성기 뒷부분으로부터 구석구석까지 훑듯이 애무해 온다
+				PRINTFORMW 페니스의 특히 민감한 부분을 꾸짖을 수 있는 강렬한 쾌감에, %CALLNAME:TARGET%를 새우 같이 허리를 뒤로 젖히며 좋아하고 있다…
 			ENDIF
 		ELSE
 			;前立腺責め
 			IF RAND:3 == 0 && TEQUIP:애널바이브
 				PRINTFORMW 「하앗하앗…읏…응후아아♪」
-				PRINTFORMW 오나홀상태의촉수에 잡아당겨져, %CALLNAME:TARGET%를 황홀하고 있다…
-				PRINTFORMW 거기에 다른촉수하지만, %CALLNAME:TARGET%의 애널목표로 하고 향해 왔다
+				PRINTFORMW 오나홀모양의촉수에 잡아당겨져, %CALLNAME:TARGET%를 황홀하고 있다…
+				PRINTFORMW 거기에 다른촉수하지만, %CALLNAME:TARGET%의 애널을 목표로 하고 향해 왔다
 				;ヤられたことがあるかで分岐
 				IF ABL:Ａ감각 < 1
 					PRINTFORMW 「햣……응, 응…？, 뭐 해…？」
-					PRINTFORMW 향해 왔다촉수하애널에 비집고 들어가, %CALLNAME:TARGET%의 전립선을 자극한다
+					PRINTFORMW 촉수가애널에 비집고 들어가, %CALLNAME:TARGET%의 전립선을 자극한다
 					PRINTFORMW 「아, 앗─! 오, 엉덩이잇♪ 엉덩이동글동글 되고 있는데 기분이 좋아♪앗─♪」
-					PRINTFORMW %CALLNAME:TARGET%를 전립선을 꾸짖을 수 있어, 오나홀 상태의촉수의 안에 마음껏사정해 버렸다…
+					PRINTFORMW %CALLNAME:TARGET%를 전립선을 꾸짖을 수 있어, 오나홀모양의촉수의 안에 마음껏 사정해 버렸다…
 				ELSE
 					PRINTFORMW 「햣…읏…앗♪넣어 버리는 것이군…♪」
-					PRINTFORMW 향해 왔다촉수하애널에 비집고 들어가, %CALLNAME:TARGET%의 전립선을 자극한다
+					PRINTFORMW 촉수가 애널에 비집고 들어가, %CALLNAME:TARGET%의 전립선을 자극한다
 					PRINTFORMW 「읏…앗, 응하아♪앗, 사정룻♪ 사정♪」
 					PRINTFORMW %CALLNAME:TARGET%를 전립선을 꾸짖을 수 있어, 촉수의 안에 도푸도푸사정해 나간다…
 				ENDIF
@@ -9241,8 +9241,8 @@ IF SELECTCOM == 209 && TEQUIP:오나홀
 				ELSE
 					;포경
 					IF COND("포경")
-						PRINTFORMW 촉수하%CALLNAME:TARGET%의 민감귀두 부분만큼을 노려 집요하게애무해 온다
-						PRINTFORMW 민감장소가 조준사격되고, %CALLNAME:TARGET%를 새우 휘어진 상태가 되면서 움찔움찔 떨고 있다
+						PRINTFORMW 촉수가%CALLNAME:TARGET%의 민감귀두 부분만큼을 노려 집요하게애무해 온다
+						PRINTFORMW 민감한 장소가 조준사격되고, %CALLNAME:TARGET%를 새우 휘어진 상태가 되면서 움찔움찔 떨고 있다
 						PRINTFORMW 「하앗…읏♪(이)다, 안돼에, 거기민감인 것♪」
 						IF COND("진성포경")
 							PRINTFORMW 결정타라는 듯이 가늘다촉수하지만 많이 가죽안에 비집고 들어가, 더듬어 갔다…
