@@ -5125,11 +5125,11 @@ ENDSELECT
 RETURNF LOCALS
 
 ;-------------------------------------------------
-;ビデオで촬영した内容の判定
+;비디오로 촬영한 내용의 판정
 ;-------------------------------------------------
 @VIDEO(ARGS)
 #FUNCTION
-;LOCALにのみ0이상の値を代入すると"커맨드番号==LOCAL", LOCAL:1にも値を代入すると"LOCAL이상でLOCAL:1이하"の커맨드なら1を返す
+;LOCAL에만 0이상의 값을 대입하든 "커맨드번호==LOCAL", LOCAL:1에도 값을 대입하든 "LOCAL이상でLOCAL:1이하"의 커맨드라면 1을 반환함
 LOCAL = -1
 LOCAL:1 = - 1
 SELECTCASE ARGS
@@ -5141,6 +5141,10 @@ CASE "절정방뇨"
 	RETURNF GETBIT(CFLAG:69, 12)
 CASE "관장"
 	LOCAL = 136
+CASE "역레이프"
+	LOCAL = 120
+CASE "역애널"
+	LOCAL = 126
 CASE "섹스"
 	LOCAL = 60
 	LOCAL:1 = 69
@@ -5177,10 +5181,10 @@ FOR LOCAL, 0, 64
 NEXT
 RETURNF LOCAL:1
 
-;페니스の名前
+;페니스의 명칭
 @PENISNAME(ARG)
 #FUNCTIONS
-;持ち主はPLAYER
+;소유주가 PLAYER
 IF TALENT:ARG:후타나리 || TALENT:ARG:남자
 	RESULTS = 페니스
 ELSE
@@ -5188,7 +5192,7 @@ ELSE
 ENDIF
 RETURNF RESULTS
 
-;ハートマーク!!  ちょっと, ハートマークは一時休止
+;하트마크!!  잠깐, 하트마크는 일시정지 ;<-폰트마다 달라서 폰트적용한다고 이러는듯?
 @HEART()
 #FUNCTIONS
 CHKFONT "ＭＳ ゴシック"
