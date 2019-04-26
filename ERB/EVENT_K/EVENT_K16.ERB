@@ -1160,15 +1160,15 @@ ELSEIF GETBIT(CFLAG:201, 55) == 0 && (TALENT:연모 || TALENT:음란)
 	PRINTFORML 
 	PRINTFORML  [ 0] 주인
 	PRINTFORML  [ 1] 주인님
-	PRINTFORML  [ 2] 네녀석
+	PRINTFORML  [ 2] 당신
 	PRINTFORML  [ 3] 주군
 	PRINTFORML  [ 4] 그대
 	PRINTFORML  [ 5] 자네
-	PRINTFORML  [ 6] \@ TALENT:MASTER:남자 && TALENT:MASTER:오토코노코 == 0 ? ダー린 # 女王様 \@
-	PRINTFORML  [ 7] \@ TALENT:MASTER:남자 && TALENT:MASTER:오토코노코 == 0 ? 旦那様 # お嬢様 \@
-	PRINTFORML  [ 8] \@ TALENT:MASTER:남자 && TALENT:MASTER:오토코노코 == 0 ? お兄様 # お姉様 \@
+	PRINTFORML  [ 6] \@ TALENT:MASTER:남자 && TALENT:MASTER:오토코노코 == 0 ? 달링 # 여왕님 \@
+	PRINTFORML  [ 7] \@ TALENT:MASTER:남자 && TALENT:MASTER:오토코노코 == 0 ? 서방님 # 아가씨 \@
+	PRINTFORML  [ 8] \@ TALENT:MASTER:남자 && TALENT:MASTER:오토코노코 == 0 ? 오라버님 # 언니 \@
 	IF TALENT:MASTER:작은몸집
-		PRINTFORML  [ 9] \@ TALENT:MASTER:남자 && TALENT:MASTER:오토코노코 == 0 ? 小童 # 小娘 \@
+		PRINTFORML  [ 9] \@ TALENT:MASTER:남자 && TALENT:MASTER:오토코노코 == 0 ? 도령 # 낭자 \@
 		LOCAL:9 = 9
 	ENDIF
 	;TARGETが새드, MASTERの마조끼がLv3이상
@@ -1181,17 +1181,17 @@ ELSEIF GETBIT(CFLAG:201, 55) == 0 && (TALENT:연모 || TALENT:음란)
 
 	SELECTCASE RESULT
 	CASE 100
-		PRINTFORMW 「호우……그럼 어떻게 매도해지고 싶은 것인지 말해 본다…후후후♪」
-		PRINTFORML %CALLNAME:TARGET%님이 무려 업신여겨 받습니까？
+		PRINTFORMW 「호우……그럼 어떻게 매도해지고 싶은 것인지 말해 보아라…후후후♪」
+		PRINTFORML %CALLNAME:TARGET%님에게 뭐라고 업신여겨 받습니까？
 		SETCOLOR DEF_COLOR("노랑")
-		PRINTFORML ※재설정하기억소거약를 사용할까 네토리 반환시 밖에 할 수 없기 때문에 신중하게선택해 주세요
-		PRINTFORML ※또, 격렬하게 위화감이 있는 경우가 있습니다
+		PRINTFORML ※재설정은 기억을 지우는 약을 사용하거나 NTR 당한 걸 되찾을 때만 가능하니 신중하게 선택하세요
+		PRINTFORML ※또, 심한 위화감이 있는 경우가 있습니다
 		RESETCOLOR
 		PRINTFORML 
 		PRINTFORML  [ 0] 쓰레기
-		PRINTFORML  [ 1] \@ TALENT:MASTER:남자 && TALENT:MASTER:오토코노코 == 0 ? 牡豚 # 牝豚 \@
-		PRINTFORML  [ 2] \@ TALENT:MASTER:남자 && TALENT:MASTER:오토코노코 == 0 ? 牡犬 # 牝犬 \@
-		PRINTFORML [100] 역시 보통 같게 부탁합니다
+		PRINTFORML  [ 1] \@ TALENT:MASTER:남자 && TALENT:MASTER:오토코노코 == 0 ? 수퇘지 # 암퇘지 \@
+		PRINTFORML  [ 2] \@ TALENT:MASTER:남자 && TALENT:MASTER:오토코노코 == 0 ? 수캐 # 암캐 \@
+		PRINTFORML [100] 역시 보통처럼 부탁합니다
 
 		CALL INPUT_SELECT, 3, 100
 
@@ -1200,30 +1200,30 @@ ELSEIF GETBIT(CFLAG:201, 55) == 0 && (TALENT:연모 || TALENT:음란)
 			PRINTFORMW 「다시 생각하는지？뭐, 그것도 좋을 것이다」
 			GOTO NAME16
 		CASE 0
-			CALL SET_CEVENT, "二人称주인：クズ殿"
+			CALL SET_CEVENT, "二人称주인：쓰레기씨"
 			CALL SET_CEVENT, "二人称주인かな：くずどの"
-			PRINTFORMW 「흠, 최저의 쓰레기라면 자각이 있었는지…후후후♪」
-			PRINTFORMW 「그러나 아무튼,몽마들에게로의 체면이라는 것이 있자…거기서는, 서비스로"전"정도는 붙여 주자♪」
+			PRINTFORMW 「흠, 최저의 쓰레기라는 자각이 있었는지…후후후♪」
+			PRINTFORMW 「그러나 뭐, 몽마들에게 체면이라는 것이 있겠지…그럼, 서비스로 "씨"정도는 달아 주마♪」
 		CASE 1
 			IF TALENT:MASTER:남자 && TALENT:MASTER:오토코노코 == 0
-				CALL SET_CEVENT, "二人称주인：牡豚殿"
+				CALL SET_CEVENT, "二人称주인：수퇘지씨"
 				CALL SET_CEVENT, "二人称주인かな：おすぶたどの"
 			ELSE
-				CALL SET_CEVENT, "二人称주인：牝豚殿"
+				CALL SET_CEVENT, "二人称주인：암퇘지씨"
 				CALL SET_CEVENT, "二人称주인かな：めすぶたどの"
 			ENDIF
 			PRINTFORMW 「가축 취급이 소망이란…구제할 길 없는 변태구먼…후후후♪」
-			PRINTFORMW 「그러나 아무튼,몽마들에게로의 체면이라는 것이 있자…거기서는, 서비스로"전"정도는 붙여 주자♪」
+			PRINTFORMW 「그러나 뭐, 몽마들에게 체면이라는 것이 있겠지…그럼, 서비스로 "씨"정도는 달아 주마♪」
 		CASE 2
 			IF TALENT:MASTER:남자 && TALENT:MASTER:오토코노코 == 0
-				CALL SET_CEVENT, "二人称주인：牡犬殿"
+				CALL SET_CEVENT, "二人称주인：수캐씨"
 				CALL SET_CEVENT, "二人称주인かな：おすいぬどの"
 			ELSE
-				CALL SET_CEVENT, "二人称주인：牝犬殿"
+				CALL SET_CEVENT, "二人称주인：암캐씨"
 				CALL SET_CEVENT, "二人称주인かな：めすいぬどの"
 			ENDIF
 			PRINTFORMW 「애완동물 취급이 소망이나？후후, 좋을 것이다, 내가 기르고 해♪」
-			PRINTFORMW 「그러나 아무튼,몽마들에게로의 체면이라는 것이 있자…거기서는, 서비스로"전"정도는 붙여 주자♪」
+			PRINTFORMW 「그러나 뭐, 몽마들에게 체면이라는 것이 있겠지…그럼, 서비스로 "씨"정도는 달아 주마♪」
 		ENDSELECT
 	CASE 0
 		PRINTFORMW 「흐음, %CNAME("二人称")%… 으로 괜찮은게냐?」
@@ -1232,56 +1232,56 @@ ELSEIF GETBIT(CFLAG:201, 55) == 0 && (TALENT:연모 || TALENT:음란)
 		CALL SET_CEVENT, "二人称주인かな：ごしゅじんさま"
 		PRINTFORMW 「흐음, %CNAME("二人称")%… 으로 괜찮은게냐?」
 	CASE 2
-		CALL SET_CEVENT, "二人称주인：お前様"
+		CALL SET_CEVENT, "二人称주인：당신"
 		CALL SET_CEVENT, "二人称주인かな：おまえさま"
 		PRINTFORMW 「흐음, %CNAME("二人称")%… 으로 괜찮은게냐?」
 	CASE 3
-		CALL SET_CEVENT, "二人称주인：御館様"
+		CALL SET_CEVENT, "二人称주인：주군"
 		CALL SET_CEVENT, "二人称주인かな：おやかたさま"
 		PRINTFORMW 「흐음, %CNAME("二人称")%… 으로 괜찮은게냐?」
 	CASE 4
-		CALL SET_CEVENT, "二人称주인：そなた"
+		CALL SET_CEVENT, "二人称주인：그대"
 		CALL SET_CEVENT, "二人称주인かな：そなた"
 		PRINTFORMW 「흐음, %CNAME("二人称")%… 으로 괜찮은게냐?」
 	CASE 5
-		CALL SET_CEVENT, "二人称주인：おぬし"
+		CALL SET_CEVENT, "二人称주인：자네"
 		CALL SET_CEVENT, "二人称주인かな：おぬし"
 		PRINTFORMW 「흐음, %CNAME("二人称")%… 으로 괜찮은게냐?」
 	CASE 6
 		IF TALENT:MASTER:남자 && TALENT:MASTER:오토코노코 == 0
-			CALL SET_CEVENT, "二人称주인：ダー린"
+			CALL SET_CEVENT, "二人称주인：달링"
 			CALL SET_CEVENT, "二人称주인かな：だーりん"
-			PRINTFORMW 「%CNAME("二人称")%사라…으, 으음우…하이칼라와 쑥스럽지만, 아무튼이야 있고일 것이다…후후♪」
+			PRINTFORMW 「%CNAME("二人称")%말이냐…으, 으음… 유행어는 쑥스럽지만, 뭐 괜찮은 것이다…후후♪」
 		ELSE
-			CALL SET_CEVENT, "二人称주인：女王様"
+			CALL SET_CEVENT, "二人称주인：여왕님"
 			CALL SET_CEVENT, "二人称주인かな：じょおうさま"
-			PRINTFORMW 「%CNAME("二人称")%사라！？뭐, 뭐, 그래서 좋은 것이면 저는 상관없겠지만…」
+			PRINTFORMW 「%CNAME("二人称")%말이냐！？뭐, 뭐, 그래서 좋은 것이면 이 몸은 상관없겠지만…」
 		ENDIF
 	CASE 7
 		IF TALENT:MASTER:남자 && TALENT:MASTER:오토코노코 == 0
-			CALL SET_CEVENT, "二人称주인：旦那様"
+			CALL SET_CEVENT, "二人称주인：서방님"
 			CALL SET_CEVENT, "二人称주인かな：だんなさま"
-			PRINTFORMW 「%CNAME("二人称")%사라…후후, 그럼 저의 일도 부부답게 불러 받을까의…후후♪」
+			PRINTFORMW 「%CNAME("二人称")%말이냐…후후, 그럼 이 몸의 일도 부부답게 불러줄까…후후♪」
 		ELSE
-			CALL SET_CEVENT, "二人称주인：お嬢様"
+			CALL SET_CEVENT, "二人称주인：아가씨"
 			CALL SET_CEVENT, "二人称주인かな：おぜうさま"
-			PRINTFORMW 「%CNAME("二人称")%사라…흠, 시녀와 같이 행동하면 좋은 것인지？」
+			PRINTFORMW 「%CNAME("二人称")%말이냐…흠, 시녀같이 굴면 되는 것이냐？」
 		ENDIF
 	CASE 8
 		IF TALENT:MASTER:남자 && TALENT:MASTER:오토코노코 == 0
-			CALL SET_CEVENT, "二人称주인：お兄様"
+			CALL SET_CEVENT, "二人称주인：오라버님"
 			CALL SET_CEVENT, "二人称주인かな：おにいさま"
 		ELSE
-			CALL SET_CEVENT, "二人称주인：お姉様"
+			CALL SET_CEVENT, "二人称주인：언니"
 			CALL SET_CEVENT, "二人称주인かな：おねえさま"
 		ENDIF
 		PRINTFORMW 「%CNAME("二人称")%인가… 뭐, 뭐어, 그걸로 괜찮다면 나는 상관없다만…」
 	CASE 9
 		IF TALENT:MASTER:남자 && TALENT:MASTER:오토코노코 == 0
-			CALL SET_CEVENT, "二人称주인：小童"
+			CALL SET_CEVENT, "二人称주인：도령"
 			CALL SET_CEVENT, "二人称주인かな：こわっぱ"
 		ELSE
-			CALL SET_CEVENT, "二人称주인：小娘"
+			CALL SET_CEVENT, "二人称주인：낭자"
 			CALL SET_CEVENT, "二人称주인かな：こむすめ"
 		ENDIF
 		PRINTFORMW 「%CNAME("二人称")%인가… 뭐, 뭐어, 그걸로 괜찮다면 나는 상관없다만…」
@@ -1432,7 +1432,7 @@ IF COND("발정기") && RAND:3 > 0
 		PRINTFORML 
 		SETCOLOR DEF_COLOR("노랑")
 		ALIGNMENT CENTER
-		PRINTFORML ★☆★【 다녀왔습니다(바로 지금) 발정중! 】★☆★
+		PRINTFORML ★☆★【 현재 발정중! 】★☆★
 		ALIGNMENT LEFT
 		RESETCOLOR
 		PRINTFORML 
