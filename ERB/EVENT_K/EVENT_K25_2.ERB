@@ -2370,20 +2370,20 @@ IF TALENT:ARG:상사상애 == 0
 ENDIF
 
 SELECTCASE ARGS
-CASE "お正月"
+CASE "정월"
 	RETURNF 1
 CASE "발렌타인"
 	RETURNF 1
 CASE "발렌타인다음날"
 
-CASE "ホワイトデー"
+CASE "화이트데이"
 	RETURNF 1
 CASE "바다의날"
 	RETURNF 1
-CASE "ハロウィン"
+CASE "할로윈"
 	RETURNF 1
-CASE "크리스마스一週間前"
-	SIF CEVENT("날짜：크리스마스一週間前") == 0
+CASE "크리스마스일주일전"
+	SIF CEVENT("날짜：크리스마스일주일전") == 0
 		RETURNF 1
 CASE "크리스마스"
 	RETURNF 1
@@ -2394,7 +2394,7 @@ CASE "크리스마스다음날"
 	;크리스마스に訪れている
 	SIF CEVENT("날짜：크리스마스", ARG)
 		RETURNF 1
-CASE "크리스마스期間"
+CASE "크리스마스주간"
 
 ENDSELECT
 
@@ -2424,11 +2424,11 @@ IF TALENT:연모 && GETBIT(CFLAG:201, 30) == 0 && ( (COND("조교공백기간") 
 	IF ASSI > 0 && NO:ASSI == 16 && CEVENT("조수会話：쿠즈노하") && TALENT:연모 && TALENT:ASSI:연모
 		;쿠즈노하の1/1元旦이벤트경험済み, 쿠즈노하に반발각인がない. リスペクトさせて頂く
 		;쿠즈노하반발각인なしで이벤트見る→조교後반발각인取得, となってると이벤트が見れない. また, 請求書→반발각인解消だと辻褄が合わない. 
-		IF CDAYEV("お正月") && CEVENT("날짜：お正月", ASSI) && MARK:ASSI:반발각인 == 0
+		IF CDAYEV("정월") && CEVENT("날짜：정월", ASSI) && MARK:ASSI:반발각인 == 0
 			;初回
-			IF !CEVENT("날짜：お正月쿠즈노하")
+			IF !CEVENT("날짜：정월쿠즈노하")
 				;単独で会っていない
-				IF !CEVENT("날짜：お正月")
+				IF !CEVENT("날짜：정월")
 					PRINTFORMW 「아라, 두 사람 모두 잘 와 주었습니다. 새해 복많이 받으세요♪」
 					PRINTFORMW 신년의 인사를 해 왔다%CALLNAME:TARGET%에, %CALLNAME:MASTER%(와)과%CALLNAME:ASSI%도 신년의 인사를 돌려주었습니다
 				ELSE
@@ -2442,8 +2442,8 @@ IF TALENT:연모 && GETBIT(CFLAG:201, 30) == 0 && ( (COND("조교공백기간") 
 				PRINTFORMW %CALLNAME:TARGET%를 침대아래로부터 라이스 와인을 꺼냈습니다! 
 				PRINTFORMW 「%CALLNAME:ASSI%씨도 마시는군요？, 자♪」
 				PRINTFORMW %CALLNAME:MASTER%들세 명은, 꽤 상질의 라이스 와인을 맛보았습니다……
-				CALL SET_CEVENT, "날짜：お正月"
-				CALL SET_CEVENT, "날짜：お正月쿠즈노하"
+				CALL SET_CEVENT, "날짜：정월"
+				CALL SET_CEVENT, "날짜：정월쿠즈노하"
 			ELSE
 				PRINTFORMW 『오오%CNAMET(ASSI, "二人称")%, 미안하지만 먼저 하고 있겠어』
 				PRINTFORMW 조금 전의 라이스 와인으로 완전히 재미를 붙였다%CALLNAME:ASSI%는 , %CALLNAME:TARGET%(와)과 함께 술잔치를 하고 있었습니다! 
@@ -2490,13 +2490,13 @@ IF TALENT:연모 && GETBIT(CFLAG:201, 30) == 0 && ( (COND("조교공백기간") 
 	SIF LINECOUNT > MEMO_LINECOUNT
 		RETURN 1
 
-	;1/1お正月
-	IF CDAYEV("お正月")
+	;1/1정월
+	IF CDAYEV("정월")
 		;初回
-		IF !CEVENT("날짜：お正月")
+		IF !CEVENT("날짜：정월")
 			PRINTFORMW 「신년 아침이 되어서…축하합니다♪」
 			PRINTFORMW 「또당신(와)과 새로운 해를 보낼 수 있다고 생각하면, 굉장히 기쁩니다! 금년도 잘 부탁드려요♪」
-			CALL SET_CEVENT, "날짜：お正月"
+			CALL SET_CEVENT, "날짜：정월"
 		ELSE
 			IF RAND:4 == 0 
 				PRINTFORMW 「설날은 천천히 하고 싶지만, 너무 질질 하고 있으면 살쪄 버리는군요？」
@@ -2560,10 +2560,10 @@ IF TALENT:연모 && GETBIT(CFLAG:201, 30) == 0 && ( (COND("조교공백기간") 
 			CALL SET_CEVENT, "날짜：발렌타인"
 			CALL SET_CEVENT, "チョコＧＥＴ"
 		ENDIF
-	;3/14ホワイトデー（발렌타인경험済みorホワイトデー이벤트発生済み）
-	ELSEIF CDAYEV("ホワイトデー") && CEVENT("チョコＧＥＴ") + CEVENT("날짜：ホワイトデー")
+	;3/14화이트데이（발렌타인경험済みor화이트데이이벤트発生済み）
+	ELSEIF CDAYEV("화이트데이") && CEVENT("チョコＧＥＴ") + CEVENT("날짜：화이트데이")
 		;初回ではない
-		IF CEVENT("날짜：ホワイトデー")
+		IF CEVENT("날짜：화이트데이")
 			IF RAND:2 == 0 && CHARA_NUM("연모") >= 5 
 				PRINTFORMW 「나는 답례라고 받고 있습니다만…다른딸에는 했습니다？」
 				PRINTFORMW 「만약 아직이라면, 제대로 해 오지 않으면 안 되기 때문에. 여자 아이는 절대 기다리고 있으니까」
@@ -2612,7 +2612,7 @@ IF TALENT:연모 && GETBIT(CFLAG:201, 30) == 0 && ( (COND("조교공백기간") 
 					TEQUIP:넘어뜨리기 = 1
 				ENDIF
 			ENDIF
-			CALL SET_CEVENT, "날짜：ホワイトデー"
+			CALL SET_CEVENT, "날짜：화이트데이"
 			CALL DEL_CEVENT, "チョコＧＥＴ"
 		ENDIF
 	;7/16바다의날
@@ -2650,11 +2650,11 @@ IF TALENT:연모 && GETBIT(CFLAG:201, 30) == 0 && ( (COND("조교공백기간") 
 			PRINTFORMW 「…거짓말이에요. 지금일도 바쁘겠지요？빨리 시작합시다♪」
 			CALL SET_CEVENT, "날짜：바다의날"
 		ENDIF
-	;10/31ハロウィン
-	ELSEIF CDAYEV("ハロウィン")
+	;10/31할로윈
+	ELSEIF CDAYEV("할로윈")
 		IF COND("낮")
 			;初めてではない
-			IF CEVENT("날짜：ハロウィン")
+			IF CEVENT("날짜：할로윈")
 				;키스경험ありだと가능性
 				IF RAND:4 == 0 && FIRSTCOM(6) 
 					PRINTFORMW %CALLNAME:MASTER%가 방 안에 들어가면, 테이블 위에 벌꿀의 병이 놓여져 있었습니다
@@ -2694,11 +2694,11 @@ IF TALENT:연모 && GETBIT(CFLAG:201, 30) == 0 && ( (COND("조교공백기간") 
 				PRINTFORMW 「과자를 잊어 버린 것인거야, 당신에 장난 해 받지 않으면……♪」
 				PRINTFORMW %CALLNAME:MASTER%는 언제나 대로의 소얼굴에 돌아왔다%CALLNAME:TARGET%를 , 천천히넘어뜨리기했다
 				PRINTFORMW 「후후후……당신의 기분이 풀릴 때까지, 나에게 장난 해 주세요♪」
-				CALL SET_CEVENT, "날짜：ハロウィン"
+				CALL SET_CEVENT, "날짜：할로윈"
 			ENDIF
 		ELSE
 			;初めてではない
-			IF CEVENT("날짜：ハロウィン")
+			IF CEVENT("날짜：할로윈")
 				PRINTFORMW 「트릭 오어 트리트♪」
 				PRINTFORMW %CALLNAME:TARGET%를 문을 열었다%CALLNAME:MASTER%에 향하여, 할로윈 상투적인 말을 말해 왔습니다
 				IF RAND:4 == 0 
@@ -2740,17 +2740,17 @@ IF TALENT:연모 && GETBIT(CFLAG:201, 30) == 0 && ( (COND("조교공백기간") 
 				PRINTFORMW 「……장난 할 수 밖에 없지요♪」
 				PRINTFORMW %CALLNAME:MASTER%는 소얼굴노%CALLNAME:TARGET%에 밀어 넘어뜨려졌습니다
 				TEQUIP:넘어뜨리기 = 1
-				CALL SET_CEVENT, "날짜：ハロウィン"
+				CALL SET_CEVENT, "날짜：할로윈"
 			ENDIF
 		ENDIF
 		RETURN 1
-	;12/18크리스마스一週間前
-	ELSEIF CDAYEV("크리스마스一週間前") && !CEVENT("날짜：크리스마스一週間前")
+	;12/18크리스마스일주일전
+	ELSEIF CDAYEV("크리스마스일주일전") && !CEVENT("날짜：크리스마스일주일전")
 		PRINTFORMW 「～～～♪」
 		PRINTFORMW %CALLNAME:TARGET%를 매우 기쁜 듯합니다…
 		PRINTFORMW 「에？왜냐하면 이봐요…저일까지 앞으로 일주일간이랍니다♪」
 		PRINTFORMW %CALLNAME:TARGET%의 얼굴하지만 한층 느슨해졌습니다. 그렇게 말하면 일주일간 후는“저일”입니다……
-		CALL SET_CEVENT, "날짜：크리스마스一週間前"
+		CALL SET_CEVENT, "날짜：크리스마스일주일전"
 	;12/25크리스마스
 	ELSEIF CDAYEV("크리스마스")
 		;初めてではない
@@ -3953,8 +3953,8 @@ IF STATE("撃沈", MASTER)
 			CFLAG:2 -= 500
 			PRINTFORMW 호감도-500
 		ELSE
-			;ハロウィン
-			IF CDAYEV("ハロウィン")
+			;할로윈
+			IF CDAYEV("할로윈")
 				PRINTFORMW 「아, 저것？장난 너무 해 버렸습니다？」
 			ELSE
 				IF COND("욕구불만") 
@@ -4427,8 +4427,8 @@ ELSEIF TALENT:연모 && COND("만족")
 			CLEARBIT CFLAG:201, 30
 		ENDIF
 	ELSE
-		;お正月
-		IF CDAYEV("お正月")
+		;정월
+		IF CDAYEV("정월")
 			IF RAND:3 == 0
 				PRINTFORMW 「하후우……설날로부터 행복 가득입니다……♪」
 			ELSEIF RAND:2 == 0
@@ -4443,16 +4443,16 @@ ELSEIF TALENT:연모 && COND("만족")
 			ELSE
 				PRINTFORMW 「발렌타인, 즐겨 받을 수 있었습니까？」
 			ENDIF
-		;ホワイトデー（발렌타인경험済み）
-		ELSEIF CDAYEV("ホワイトデー") && CEVENT("날짜：ホワイトデー")
+		;화이트데이（발렌타인경험済み）
+		ELSEIF CDAYEV("화이트데이") && CEVENT("날짜：화이트데이")
 			IF RAND:2 == 0
 				PRINTFORMW 「발렌타인의 답례를 충분히 받아 버렸습니다」
 				PRINTFORMW 「…내년의발렌타인, 기대하고 있어 주세요♪」
 			ELSE
 				PRINTFORMW 「후우……당신의 답례, 충분히 만끽했어요♪」
 			ENDIF
-		;ハロウィン
-		ELSEIF CDAYEV("ハロウィン")
+		;할로윈
+		ELSEIF CDAYEV("할로윈")
 			IF RAND:4 == 0
 				PRINTFORMW 「후우……맛있는 것 가득 받았습니다……♪」
 			ELSEIF RAND:3 == 0
@@ -4585,18 +4585,18 @@ ELSEIF TALENT:연모
 			PRINTFORMW 「좀 더 마시고 싶었는데……유감이구나」
 		ENDIF
 	ELSE
-		;お正月
-		IF CDAYEV("お正月")
+		;정월
+		IF CDAYEV("정월")
 			PRINTFORMW 「금년도 행복한 일년으로 해요……♪」
 		;발렌타인
 		ELSEIF CDAYEV("발렌타인") 
 			PRINTFORMW 「충분히 맛봐 주었습니다？」
-		;ホワイトデー（발렌타인경험済み）
-		ELSEIF CDAYEV("ホワイトデー") && CEVENT("날짜：ホワイトデー")
+		;화이트데이（발렌타인경험済み）
+		ELSEIF CDAYEV("화이트데이") && CEVENT("날짜：화이트데이")
 			PRINTFORMW 「달콤해서, 농후해…화이트 데이라고 해일그렇네요」
 			PRINTFORMW 「그렇지만, 나는 아직도 먹을 수 있어요♪」
-		;ハロウィン
-		ELSEIF CDAYEV("ハロウィン")
+		;할로윈
+		ELSEIF CDAYEV("할로윈")
 			IF RAND:2 == 0
 				PRINTFORMW 「만약시간(이)가 있다면…또 와 주면 기쁩니다」
 			ELSE
@@ -4724,7 +4724,7 @@ IF SELECTCOM == 0
 			PRINTFORMW 「나만을 사랑한다는 것이라면, 좋아할 뿐(만큼) 접해도 좋은거야…」
 		;연모+굴복각인Lv3
 		ELSEIF TALENT:연모 && MARK:굴복각인 == 3
-			IF CDAYEV("ハロウィン")
+			IF CDAYEV("할로윈")
 				IF COND("낮")
 					IF RAND:2 == 0
 						PRINTFORMW 「꺄……♪」
@@ -4932,7 +4932,7 @@ IF SELECTCOM == 1
 						ELSE
 							PRINTFORMW 「나의 코코…맛있습니까？지금일는 좋아할 뿐(만큼) 먹어도 좋아요…♪」
 						ENDIF
-					ELSEIF CDAYEV("ハロウィン")
+					ELSEIF CDAYEV("할로윈")
 						IF RAND:3 == 0
 							PRINTFORMW 「그렇게 달라붙지 않아도, 천천히 충분히 날름날름 해도 좋아요……♪」
 						ELSEIF RAND:2 == 0
@@ -5040,7 +5040,7 @@ IF SELECTCOM == 2
 			ENDIF
 		;연모+플레이受け入れ가능
 		ELSEIF TALENT:연모 && CHECK("Ａ손가락넣기")
-			IF CDAYEV("ハロウィン")
+			IF CDAYEV("할로윈")
 				IF RAND:2 == 0
 					PRINTFORMW 「그쪽에 장난이라니…쿠우……인내 할 수 없닷…♪」
 				ELSE
@@ -5451,8 +5451,8 @@ ELSEIF SELECTCOM == 3
 			ENDIF
 		;연모
 		ELSEIF TALENT:연모
-			;ハロウィン
-			IF CDAYEV("ハロウィン")
+			;할로윈
+			IF CDAYEV("할로윈")
 				IF RAND:2 == 0
 					PRINTFORMW 「보는데 질리면, 충분히 못된 장난해 주세요…♪」
 				ELSE
@@ -5694,7 +5694,7 @@ IF SELECTCOM == 5
 			ENDIF
 		;연모
 		ELSEIF TALENT:연모
-			IF CDAYEV("ハロウィン")
+			IF CDAYEV("할로윈")
 				IF RAND:2 == 0
 					PRINTFORMW 「나의 젖가슴, 충분히 맛봐 주세요…♪」
 				ELSE
@@ -5865,15 +5865,15 @@ IF SELECTCOM == 6
 					PRINTFORMW 「아…후앗……♪」
 					PRINTFORMW 「평소보다 달콤해서…녹아 버린다……무웃♪응읏♪」
 				ENDIF
-			;ホワイトデー
-			ELSEIF CDAYEV("ホワイトデー") 
+			;화이트데이
+			ELSEIF CDAYEV("화이트데이") 
 				IF RAND:2 == 0
 					PRINTFORMW 「우……응……당신노키스까지 달콤한 것 같다…♪」
 				ELSE
 					PRINTFORMW 「츗, 츄풋, 하믓, 츄………후후♪」
 					PRINTFORMW 「이렇게 뜨겁다키스…평소보다 굉장해서 녹아 버려요♪」
 				ENDIF
-			ELSEIF CDAYEV("ハロウィン")
+			ELSEIF CDAYEV("할로윈")
 				IF COND("낮")
 					IF RAND:2 == 0
 						PRINTFORMW 「들이마셔도, 마셔도, 핥아대도……」
@@ -6286,7 +6286,7 @@ IF SELECTCOM == 13
 			PRINTFORMW 「………눈을 피하면, 절대 허락하지 않는다」
 		;연모
 		ELSEIF TALENT:연모
-			IF CDAYEV("ハロウィン")
+			IF CDAYEV("할로윈")
 				;前回내사정했다
 				IF PREVEX("Ｖ내사정")
 					IF COND("낮")
@@ -8124,7 +8124,7 @@ IF SELECTCOM == 65
 				PRINTFORMW 「이대로…어떤 것이라도………」
 			;연모
 			ELSEIF TALENT:연모
-				IF CDAYEV("ハロウィン")
+				IF CDAYEV("할로윈")
 					IF COND("낮")
 						PRINTFORMW 「내가 위로지만……」
 						PRINTFORMW 「좋아할 뿐 찔러…휘저어…따라 괜찮아요…♪」
@@ -8186,7 +8186,7 @@ IF SELECTCOM == 65
 				PRINTFORMW 「이대로…어떤 것이라도………」
 			;연모
 			ELSEIF TALENT:연모
-				IF CDAYEV("ハロウィン")
+				IF CDAYEV("할로윈")
 					IF COND("낮")
 						PRINTFORMW 「내가 위이지만……좋아할 뿐(만큼) 찔러, 휘저어, 따라도 좋아요…♪」
 					ELSE
@@ -8824,13 +8824,13 @@ IF SELECTCOM == 90
 						ENDIF
 					ENDIF
 				ELSE
-					IF CDAYEV("ホワイトデー")
+					IF CDAYEV("화이트데이")
 						IF RAND:2 == 0
 							PRINTFORMW 「발렌타인의 답례…충분히 받아 버려요♪」
 						ELSE
 							PRINTFORMW 「발렌타인의 삼배 내 줄 때까지 허락하지 않으니까♪」
 						ENDIF
-					ELSEIF CDAYEV("ハロウィン")
+					ELSEIF CDAYEV("할로윈")
 						IF COND("낮")
 							PRINTFORMW 「나에게 장난 할 것인데…유감이었지요」
 							PRINTFORMW 「장난을 좋아하는 자지에는, 조금 벌이필요그렇네요♪」
@@ -8911,13 +8911,13 @@ IF SELECTCOM == 90
 				PRINTFORMW 「무리시리■■■라는 나만의 물건에 할 수 있으면…아무리 멋질까…」
 			;연모
 			ELSEIF TALENT:연모 
-				IF CDAYEV("ホワイトデー")
+				IF CDAYEV("화이트데이")
 					IF RAND:2 == 0
 						PRINTFORMW 「지금일를 위해서(때문에) 모아 두어 준 것입니까？평소보다 끙끙이예요♪」
 					ELSE
 						PRINTFORMW 「어봉사해 뽑아 줍니다만……발렌타인의 분은 따로 내 받으니까요♪」
 					ENDIF
-				ELSEIF CDAYEV("ハロウィン")
+				ELSEIF CDAYEV("할로윈")
 					IF COND("낮")
 						PRINTFORMW 「나에게 장난 되어…즐겁습니까?」
 						PRINTFORMW 「즐거웠으면, 그…나에게도 장난 하며……♪」
@@ -9140,13 +9140,13 @@ IF SELECTCOM == 91
 				PRINTFORMW 「자…이대로 내…이것도 저것도…♪」
 			;연모
 			ELSEIF TALENT:연모
-				IF CDAYEV("ホワイトデー")
+				IF CDAYEV("화이트데이")
 					IF RAND:2 == 0
 						PRINTFORMW 「이봐요 이봐요, 빨리발렌타인의 답례를 해 주세요♪」
 					ELSE
 						PRINTFORMW 「여기로부터 달콤한 냄새를 감돌게 하고 있는 걸요…인내 같은거 할 수 없습니다♪ …아뭇…쥬풋♪♪」
 					ENDIF
-				ELSEIF CDAYEV("ハロウィン")
+				ELSEIF CDAYEV("할로윈")
 					IF COND("낮")
 						PRINTFORMW 「정말은 내가 과자를 주지 않으면 안된다  것에…이대로는 반대로있어요♪」
 					ELSE
@@ -9227,13 +9227,13 @@ IF SELECTCOM == 91
 				PRINTFORMW 「자…이대로 내…이것도 저것도…♪」
 			;연모
 			ELSEIF TALENT:연모 
-				IF CDAYEV("ホワイトデー")
+				IF CDAYEV("화이트데이")
 					IF RAND:2 == 0
 						PRINTFORMW 「이봐요 이봐요, 빨리발렌타인의 답례를 해 주세요♪」
 					ELSE
 						PRINTFORMW 「여기로부터 달콤한 냄새를 감돌게 하고 있는 걸요…인내 같은거 할 수 없습니다♪ …아뭇…쥬풋♪♪」
 					ENDIF
-				ELSEIF CDAYEV("ハロウィン")
+				ELSEIF CDAYEV("할로윈")
 					IF COND("낮")
 						PRINTFORMW 「정말은 내가 과자를 주지 않으면 안된다  것에…이대로는 반대로있어요♪」
 					ELSE
@@ -9312,7 +9312,7 @@ IF SELECTCOM == 92
 				PRINTFORMW 「기분 좋다…？자 쭉 이대로…입다물어사정하고 있는 것만이라도 좋은거야……후후」
 			;연모
 			ELSEIF TALENT:연모
-				IF CDAYEV("ハロウィン")
+				IF CDAYEV("할로윈")
 					IF RAND:2 == 0
 						PRINTFORMW 「…빨리 내 주세요, 당신의 달콤하다정액♪」
 					ELSE
@@ -9371,8 +9371,8 @@ IF SELECTCOM == 92
 			;病み時
 			ELSEIF GETBIT(CFLAG:201, 30)
 				PRINTFORMW 「저기…어때？내가…내가 제일이지요…？」
-			;연모＋ハロウィン
-			ELSEIF TALENT:연모 && CDAYEV("ハロウィン")
+			;연모＋할로윈
+			ELSEIF TALENT:연모 && CDAYEV("할로윈")
 				IF RAND:2 == 0
 					PRINTFORMW 「…빨리 내 주세요, 당신의 달콤하다정액♪」
 				ELSE
@@ -9437,7 +9437,7 @@ IF SELECTCOM == 93
 			CALL COUNTER_SKILL, "블러드 썩", 3
 		;연모
 		ELSEIF TALENT:연모
-			IF CDAYEV("ホワイトデー")
+			IF CDAYEV("화이트데이")
 				IF RAND:2 == 0
 					PRINTFORMW 「우웃…빨리 답례해 주었으면 한데…♪♪」
 				ELSE
@@ -9974,7 +9974,7 @@ IF SELECTCOM == 98
 				PRINTFORMW 「그렇다면…일생 이대로 없습니까？ 당신하지만…나의 옆에 있어 줍니다 것……」
 			;연모
 			ELSEIF TALENT:연모
-				IF CDAYEV("ハロウィン")
+				IF CDAYEV("할로윈")
 					IF RAND:2 == 0
 						PRINTFORMW 「이대로 장난 되어…과자까지 주면 기쁘네요 ♪」
 					ELSE
@@ -10040,7 +10040,7 @@ IF SELECTCOM == 98
 				PRINTFORMW 「한 방울도 나오지 않게 될 때까지 쭉…쭉………후후후…」
 			;연모
 			ELSEIF TALENT:연모
-				IF CDAYEV("ハロウィン")
+				IF CDAYEV("할로윈")
 					IF RAND:2 == 0
 						PRINTFORMW 「이대로 장난 되어…과자까지 주면 기쁘네요 ♪」
 					ELSE
@@ -10354,7 +10354,7 @@ IF SELECTCOM == 130
 			ENDIF
 		;연모＋마조끼Lv5
 		ELSEIF TALENT:연모 && ABL:마조끼 >= 5
-			IF CDAYEV("ハロウィン")
+			IF CDAYEV("할로윈")
 				IF COND("낮")
 					PRINTFORMW 「잇…좋아요…♪장난 너무 해 버린 나에게, 좀 더…벌을……히잉♪」
 				ELSE
@@ -10550,7 +10550,7 @@ IF SELECTCOM == 133 && TEQUIP:아이마스크
 			PRINTFORMW 「아무것도 안보이는 것은 아니꼽지만, 기분은 마치밤. 자…빨리 여기에 와, 나에게 그 모두를 들이마시게 해――! 」
 		;연모
 		ELSEIF TALENT:연모
-			IF CDAYEV("ハロウィン")
+			IF CDAYEV("할로윈")
 				PRINTFORMW 「눈 가림되어…무엇을 되는지 모르는 채…」
 				PRINTFORMW 「도대체 어떤 장난 되는지 생각하면……♪」
 			ELSE
@@ -10598,7 +10598,7 @@ ELSEIF SELECTCOM == 133 && TEQUIP:아이마스크 == 0
 		PRINTFORMW 「어둠은 훌륭했어요.  당신도…어때？」
 	;연모
 	ELSEIF TALENT:연모
-		IF CDAYEV("ハロウィン")
+		IF CDAYEV("할로윈")
 			PRINTFORMW 「다음은 어떤 장난을 하시는지…모르는 것도 두근두근 합니다만…」
 			PRINTFORMW 「무엇을 되고 있는 것인가…보이는 것이 좋네요♪」
 		ELSE
@@ -10665,7 +10665,7 @@ IF SELECTCOM == 134 && TEQUIP:구속
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 킥킥 웃고 있다…
 		;연모＋마조끼Lv5
 		ELSEIF TALENT:연모 && ABL:마조끼 > 4
-			IF CDAYEV("ハロウィン")
+			IF CDAYEV("할로윈")
 				IF RAND:2 == 0
 					PRINTFORMW 「자 다음은 어떻게 합니다？나에게 과자를 먹이는 것인가…나에게 장난 하는 것인가…♪」
 				ELSE
@@ -10707,7 +10707,7 @@ ELSEIF SELECTCOM == 134 && TEQUIP:구속 == 0
 		CALL COUNTER_SKILL, "블러드 썩", 5
 	;연모
 	ELSEIF TALENT:연모
-		IF CDAYEV("ハロウィン")
+		IF CDAYEV("할로윈")
 			PRINTFORMW 「…장난의 시간은 마지막입니까?」
 			PRINTFORMW 「그렇지 않으면…나에게 장난 되고 싶어졌습니까?」
 		ELSE
@@ -10997,8 +10997,8 @@ IF SELECTCOM == 139
 					PRINTFORMW 「하아～, 산뜻하네요♪」
 				ENDIF
 			ELSE
-				;ハロウィン
-				IF CDAYEV("ハロウィン")
+				;할로윈
+				IF CDAYEV("할로윈")
 					IF RAND:2 == 0
 						PRINTFORMW 「입다물지 말고, 나에게 장난 해 주세요…♪」
 					ELSE
@@ -11700,7 +11700,7 @@ IF SELECTCOM == 160
 			CALL COUNTER_SKILL, "블러드 썩", 5
 		;연모
 		ELSEIF TALENT:연모
-			IF CDAYEV("ハロウィン")
+			IF CDAYEV("할로윈")
 				IF RAND:2 == 0
 					PRINTFORMW 「우우…나도 장난해 주었으면 한데…」
 				ELSE
@@ -13333,8 +13333,8 @@ ENDIF
 ;-------------------------------------------------
 IF SELECTCOM == 266 
 	IF TALENT:연모
-		;ハロウィン
-		IF CDAYEV("ハロウィン")
+		;할로윈
+		IF CDAYEV("할로윈")
 			IF RAND:3 == 0 && PENIS(PLAYER)
 				PRINTFORMW 「그리고…당신의 젤리로 데코레이트도 합시다♪」
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 페니스에 뜨거운 시선을 보내고 있다…
@@ -14954,8 +14954,8 @@ IF SELECTCOM == 300
 			PRINTFORMW 「후응………그 말이 거짓이 아닌가, 확인하게 해 받아요」
 		;연모
 		ELSEIF TALENT:연모
-			;ホワイトデー
-			IF CDAYEV("ホワイトデー")
+			;화이트데이
+			IF CDAYEV("화이트데이")
 				PRINTFORMW 「화이트 데이에 딱 맞는 달콤한 답례군요」
 				PRINTFORMW 「그렇지만…말의 다음은 몸으로 답례해 주세요♪」
 			;크리스마스
@@ -16075,7 +16075,7 @@ ELSEIF SHOOT("다리")
 			PRINTFORMW 「후……후후……. 아직 끝나지 마……좀 더 가는 모습을 보여 줘……」
 		;연모
 		ELSEIF TALENT:연모
-			IF CDAYEV("ハロウィン")
+			IF CDAYEV("할로윈")
 				IF RAND:2 == 0
 					PRINTFORMW 「우후후…좀더 장난 해도 괜찮습니다야♪」
 				ELSE
@@ -16157,7 +16157,7 @@ ELSEIF SHOOT("스마타")
 			PRINTFORMW 「후……후후……. 아직 끝나지 마……좀 더 가는 모습을 보여 줘……」
 		;연모
 		ELSEIF TALENT:연모
-			IF CDAYEV("ハロウィン")
+			IF CDAYEV("할로윈")
 				IF RAND:2 == 0
 					PRINTFORMW 「우후후…좀더 장난 해도 괜찮습니다야♪」
 				ELSE
@@ -16228,15 +16228,15 @@ ELSEIF SHOOT("입")
 			ELSE
 				PRINTFORMW 「초콜렛보다 달콤해서눅진눅진한 당신노정액…푹 빠지게 되어 버립니다♪」
 			ENDIF
-		;ホワイトデー
-		ELSEIF CDAYEV("ホワイトデー")  && TALENT:연모
+		;화이트데이
+		ELSEIF CDAYEV("화이트데이")  && TALENT:연모
 			IF RAND:2 == 0
 				PRINTFORMW 「아아…입의 안이당신의 밀크 초콜릿으로 가득입니다♪」
 			ELSE
 				PRINTFORMW 「오입에 직접 답례이라니…멋집니다♪」
 			ENDIF
-		;ハロウィン
-		ELSEIF CDAYEV("ハロウィン") && TALENT:연모
+		;할로윈
+		ELSEIF CDAYEV("할로윈") && TALENT:연모
 			IF RAND:2 == 0
 				PRINTFORMW 「후후후…맛있는 과자 받아 버렸습니다♪」
 			ELSE
@@ -16322,7 +16322,7 @@ ELSEIF SHOOT("가슴")
 		PRINTFORMW 「어떻게 하지…책임 취해 받지 않으면…후후, 후후후후후」
 	;봉사정신Lv5
 	ELSEIF ABL:봉사정신 >= 5
-		IF CDAYEV("ハロウィン") && TALENT:연모
+		IF CDAYEV("할로윈") && TALENT:연모
 			IF RAND:2 == 0
 				PRINTFORMW 「이것도 장난입니까？후훗…♪」
 			ELSE
@@ -16383,7 +16383,7 @@ ELSEIF SHOOT("손")
 		PRINTFORMW 「당신의 생명…한 방울 남김없이…」
 	;봉사정신Lv5
 	ELSEIF ABL:봉사정신 >= 5
-		IF CDAYEV("ハロウィン") && TALENT:연모
+		IF CDAYEV("할로윈") && TALENT:연모
 			;押し倒されているとき
 			IF TEQUIP:넘어뜨리기
 				IF COND("낮")
@@ -16511,15 +16511,15 @@ ELSEIF SHOOT("Ｖ내사정")
 		PRINTFORMW 「다른 여자는…보지 않아도 괜찮은거야…」
 	;연모
 	ELSEIF TALENT:연모
-		;ホワイトデー
-		IF CDAYEV("ホワイトデー")
+		;화이트데이
+		IF CDAYEV("화이트데이")
 			;大量사정
 			IF COND("절정", PLAYER) >= 3
 				PRINTFORMW 「읏…아아♪와, 이렇게 단번에정액선물 되어도♪」
 			ELSE
 				PRINTFORMW 「읏…♪이것도발렌타인의 답례군요…♪」
 			ENDIF
-		ELSEIF CDAYEV("ハロウィン") && TALENT:연모
+		ELSEIF CDAYEV("할로윈") && TALENT:연모
 			;大量사정
 			IF COND("절정", PLAYER) >= 3
 				PRINTFORMW 「쿠우우웃♪이렇게 가득…다 먹을 수 없어요…♪」
@@ -18457,8 +18457,8 @@ CASE "自発脱ぎ"
 			;발렌타인
 			IF CDAYEV("발렌타인") 
 				PRINTFORMW 「이봐요 이봐요, 여기도 드세요♪」
-			;ハロウィン
-			ELSEIF CDAYEV("ハロウィン") && TALENT:연모
+			;할로윈
+			ELSEIF CDAYEV("할로윈") && TALENT:연모
 				PRINTFORMW 「자, 장난 해 버려요……♪」
 			ELSE
 				IF RAND:2 == 0
@@ -18682,10 +18682,10 @@ CASE "하룻밤개방スキンシップ"
 				PRINTFORMW 「이유？왜냐하면 이봐요, 지금일하……저기？」
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 캘린더의 지금일노날짜, 「2월14일」를손가락가리고 있습니다……
 			ENDIF
-		;ホワイトデー（발렌타인경험済み）
-		ELSEIF DAYEV("ホワイトデー") && CEVENT("날짜：ホワイトデー")
-			;ホワイトデーの조교개시이벤트を見ている
-			IF CEVENT("날짜：ホワイトデー") && RAND:2 == 0 
+		;화이트데이（발렌타인경험済み）
+		ELSEIF DAYEV("화이트데이") && CEVENT("날짜：화이트데이")
+			;화이트데이の조교개시이벤트を見ている
+			IF CEVENT("날짜：화이트데이") && RAND:2 == 0 
 				PRINTFORMW 「발렌타인의 답례에 이런 것도 좋지만, 나는“좋아”라는 기분도 보낸 것이에요？」
 				PRINTFORMW 「그러니까당신에도, “좋아”라는 기분을 돌려주어 받지 않으면♪」
 				PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:TARGET%의 전으로, 사랑의 말을 속삭여 주기로 했습니다
@@ -18693,8 +18693,8 @@ CASE "하룻밤개방スキンシップ"
 			ELSE
 				PRINTFORMW 「당신(와)과 보내는 초콜렛보다 달콤한 한 때……하아, 행복합니다♪」
 			ENDIF
-		;ハロウィン
-		ELSEIF DAYEV("ハロウィン") 
+		;할로윈
+		ELSEIF DAYEV("할로윈") 
 			PRINTFORMW 「지금밤는 스킨십에 온 생각이지만…역시 장난 하고 싶네요♪」
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%의 피부를 간질이도록(듯이) 어루만지고 있습니다…
 		;크리스마스
@@ -18836,8 +18836,8 @@ CASE "다방"
 			ELSE
 				PRINTFORML 「책일는 초콜릿의 과자가 추천이에요. 부디주문주세요♪」
 			ENDIF
-		;ハロウィン
-		ELSEIF DAYEV("ハロウィン") 
+		;할로윈
+		ELSEIF DAYEV("할로윈") 
 			IF RAND:2 == 0 
 				PRINTFORML 「책일는 하로윈페스중입니다만……스탭에게로의 장난은 안됩니다♪」
 			ELSE
@@ -19391,8 +19391,8 @@ CASE "一言이벤트"
 	;연모
 	ELSEIF TALENT:ARG:연모
 		;날짜限定이벤트で現実の날짜参照の場合には100％
-		;お正月と크리스마스も同じくどうにかしたいが、どの시간帯にコピーするべきだろうか
-		IF DAYEV("お正月", "現実のみ")
+		;정월と크리스마스も同じくどうにかしたいが、どの시간帯にコピーするべきだろうか
+		IF DAYEV("정월", "現実のみ")
 			IF RANDF(3) == 0 && CHARA_NUM("조교경험あり") > 4
 				PRINTFORML 「신년의 인사, 모두로 했습니까？」
 			ELSEIF RANDF(2) == 0
@@ -19419,10 +19419,10 @@ CASE "一言이벤트"
 					PRINTFORML 「（그리고는 이것을 건네줄 뿐입니다만……）」
 				ENDIF
 			ENDIF
-		;3/14ホワイトデー（발렌타인경험済みorホワイトデー이벤트発生済み）
-		ELSEIF DAYEV("ホワイトデー") && CEVENT("チョコＧＥＴ") + CEVENT("날짜：ホワイトデー")
-			;ホワイトデーに合っている
-			IF CEVENT("날짜：ホワイトデー")
+		;3/14화이트데이（발렌타인경험済みor화이트데이이벤트発生済み）
+		ELSEIF DAYEV("화이트데이") && CEVENT("チョコＧＥＴ") + CEVENT("날짜：화이트데이")
+			;화이트데이に合っている
+			IF CEVENT("날짜：화이트데이")
 				;연모持ちが5人이상いると가능性
 				IF RANDF(3) == 0 && CHARA_NUM("연모") >= 5
 					PRINTFORML 「발렌타인의 답례는 끝났습니다？」
@@ -19458,8 +19458,8 @@ CASE "一言이벤트"
 					PRINTFORML 「응─, 보기좋게 개여 있네요.……외출 날씨라고 생각하지 않습니다？」
 				ENDIF
 			ENDIF
-		;ハロウィン
-		ELSEIF DAYEV("ハロウィン", "現実のみ")
+		;할로윈
+		ELSEIF DAYEV("할로윈", "現実のみ")
 			IF RANDF(3) == 0 && CHARA_NUM("조교경험あり") > 4
 				PRINTFORML 「응─……나도 누군가에게 장난 해 버릴까」
 			ELSEIF RANDF(2) == 0
@@ -19469,15 +19469,15 @@ CASE "一言이벤트"
 			ENDIF
 		;크리스마스
 		ELSEIF DAYEV("크리스마스", "現実のみ")
-			;크리스마스ツリー設置済
-			IF RANDF(8) == 0 && COND("크리스마스ツリー", ARG)
+			;크리스마스트리設置済
+			IF RANDF(8) == 0 && COND("크리스마스트리", ARG)
 				PRINTFORML 「응, 꽤 예쁘게 트리를 장식되어지고 있다고 생각하지 않습니까？」
-			ELSEIF RANDF(7) == 0 && COND("크리스마스ツリー", ARG)
+			ELSEIF RANDF(7) == 0 && COND("크리스마스트리", ARG)
 				PRINTFORML 「역시크리스마스트리가 있으면 분위기가 다르네요♪」
-			;크리스마스ツリーが複数本
-			ELSEIF RANDF(6) == 0 && NUM("크리스마스ツリー") >= 2
+			;크리스마스트리が複数本
+			ELSEIF RANDF(6) == 0 && NUM("크리스마스트리") >= 2
 				PRINTFORML 「무, 저쪽의크리스마스트리는 좀 더 장식해 두지 않으면……」
-			ELSEIF RANDF(5) == 0 && NUM("크리스마스ツリー") >= 2
+			ELSEIF RANDF(5) == 0 && NUM("크리스마스트리") >= 2
 				PRINTFORML 「욧……(와)과. 후후, 관안이크리스마스트리투성이입니다♪」
 			ELSEIF RANDF(4) == 0 && CEVENT("날짜：크리스마스プレゼント") 
 				PRINTFORML 「사랑의 산타씨, 일은 순조롭습니까？후훗」
@@ -19513,8 +19513,8 @@ CASE "一言이벤트"
 					PRINTFORML 「후후, 오늘도 하루 수고 하셨습니닷♪」
 				ENDIF
 			ELSEIF DAYEV("深夜")
-				;ハロウィン
-				IF RANDF(6) == 0 && DAYEV("ハロウィン")
+				;할로윈
+				IF RANDF(6) == 0 && DAYEV("할로윈")
 					IF RANDF(3, 2) == 0 && CHARA_NUM("조교경험あり") > 4
 						PRINTFORML 「응─나도 누군가에게 장난 해 버릴까」
 					ELSEIF RANDF(2, 2) == 0
@@ -19982,7 +19982,7 @@ CASE "서류작업：도움"
 		PRINTFORMW 부탁한 것과는 전혀 다른 것이 나왔습니다만……적당한 달콤함이%CALLNAME:MASTER%의 몸을 달래 주었습니다.
 		PRINTL 
 		PRINTFORMW %CALLNAME:MASTER%하지만 또 대접해 주고라고 말하면,%CALLNAME:ARG%하 「맡겨 주시길♪」라고 말해 미소지었습니다.
-	ELSEIF CEVENT("날짜：ホワイトデー")
+	ELSEIF CEVENT("날짜：화이트데이")
 		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에 차를 끓여 받기로 했습니다
 		PRINTL 
 		PRINTFORMW 「목이 마른 것입니까？ 자 조금 기다리고 있어 주세요……」

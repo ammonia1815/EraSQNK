@@ -272,11 +272,11 @@ ENDIF
 PRINTL 
 
 IF EX:절대착정량 && EX:주인에대한절대사정량
-	PRINTFORMW %CALLNAME:TARGET%는 이번조교그래서{EX:절대착정량}ml노정액를 그 몸으로 받아 들여,{EX:주인에대한절대사정량}ml노정액를 %CALLNAME:MASTER%에 따랐습니다.
+	PRINTFORMW %CALLNAME:TARGET%는 이번조교는 {EX:절대착정량}ml의 정액를 그 몸으로 받아 들여,{EX:주인에대한절대사정량}ml의 정액를 %CALLNAME:MASTER%에 따랐습니다.
 ELSEIF EX:절대착정량
-	PRINTFORMW %CALLNAME:TARGET%는 이번조교그래서{EX:절대착정량}ml노정액를 그 몸으로 받아 들였습니다.
+	PRINTFORMW %CALLNAME:TARGET%는 이번조교는 {EX:절대착정량}ml의 정액를 그 몸으로 받아 들였습니다.
 ELSEIF EX:주인에대한절대사정량
-	PRINTFORMW %CALLNAME:TARGET%는 이번조교그래서{EX:주인에대한절대사정량}ml노정액를 %CALLNAME:MASTER%에 따랐습니다.
+	PRINTFORMW %CALLNAME:TARGET%는 이번조교는 {EX:주인에대한절대사정량}ml의 정액를 %CALLNAME:MASTER%에 따랐습니다.
 ELSE
 	CLEARLINE 1
 ENDIF
@@ -367,12 +367,12 @@ IF ABL:기교 > MEMO_TEC || ABL:ＬＶ > MEMO_LV
 	DRAWLINE
 	PRINTFORMW 능력의 자동 레벨업이 발생했습니다…
 	SIF ABL:기교 > MEMO_TEC
-		PRINTFORMW %CALLNAME:TARGET%의 기교하{ABL:기교 - MEMO_TEC}LV상승해{ABL:기교}LV(이)가 되었습니다! 
+		PRINTFORMW %CALLNAME:TARGET%의 기교가{ABL:기교 - MEMO_TEC}LV상승해{ABL:기교}LV이 되었습니다! 
 	IF ABL:ＬＶ > MEMO_LV
-		PRINTFORMW %CALLNAME:TARGET%의 ＬＶ하{ABL:ＬＶ - MEMO_LV}LV상승해{ABL:ＬＶ}LV(이)가 되었습니다! 
+		PRINTFORMW %CALLNAME:TARGET%의 ＬＶ이{ABL:ＬＶ - MEMO_LV}LV상승해{ABL:ＬＶ}LV이 되었습니다! 
 		;ＬＶが10이상になると상위몽마화の가능性あり. LV14だと確実に상위몽마になる
 		IF ABL:ＬＶ >= 10 && ABL:ＬＶ + ABL:기교/2 >= 10 + RAND:5 && TALENT:몽마 && TALENT:상위몽마 == 0
-			PRINTFORMW %CALLNAME:TARGET% 는 상위 몽마되었습니다! 
+			PRINTFORMW %CALLNAME:TARGET% 는 상위 몽마가 되었습니다! 
 			TALENT:몽마 = 0
 			TALENT:상위몽마 = 1
 		ENDIF

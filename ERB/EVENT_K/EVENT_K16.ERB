@@ -919,8 +919,8 @@ SIF ARGS == ""
 	ARGS = %TEXTS("날짜対応이벤트")%
 
 SELECTCASE ARGS
-CASE "お正月"
-	SIF CEVENT("날짜：お正月종료", ARG)
+CASE "정월"
+	SIF CEVENT("날짜：정월종료", ARG)
 		RETURNF 0
 	RETURNF 1
 CASE "발렌타인"
@@ -931,26 +931,26 @@ CASE "발렌타인다음날"
 	SIF CEVENT("날짜：발렌타인다음날종료", ARG)
 		RETURNF 0
 	RETURNF 1
-CASE "ホワイトデー"
-	SIF CEVENT("날짜：ホワイトデー종료", ARG)
+CASE "화이트데이"
+	SIF CEVENT("날짜：화이트데이종료", ARG)
 		RETURNF 0
 	RETURNF 1
 CASE "바다의날"
 	;RETURNF 1
-CASE "ハロウィン"
-	;ハロウィンは연모음란が필요
+CASE "할로윈"
+	;할로윈は연모음란が필요
 	SIF TALENT:ARG:연모 == 0 && TALENT:ARG:음란 == 0
 		RETURNF 0
-	SIF CEVENT("날짜：ハロウィン종료", ARG)
+	SIF CEVENT("날짜：할로윈종료", ARG)
 		RETURNF 0
 	RETURNF 1
-CASE "크리스마스一週間前"
+CASE "크리스마스일주일전"
 	;RETURNF 1
 CASE "크리스마스"
 	;RETURNF 1
 CASE "크리스마스다음날"
 	;RETURNF 1
-CASE "크리스마스期間"
+CASE "크리스마스주간"
 	;RETURNF 1
 ENDSELECT
 
@@ -961,7 +961,7 @@ RETURNF 0
 ;-------------------------------------------------
 @K16_KOJO2_1
 ;1/1元旦이벤트
-IF CDAYEV("お正月") && !CEVENT("날짜：お正月")
+IF CDAYEV("정월") && !CEVENT("날짜：정월")
 	PRINTFORML 「후후, 잘 왔느니라♪ %CNAME("二人称")%에게는 이걸 주마…♪」
 	PRINTFORML %CALLNAME:TARGET%는 방에 들어온 %CALLNAME:MASTER%에게 작은 봉투를 건넨다…
 	PRINTFORMW 세뱃돈인가!
@@ -987,7 +987,7 @@ IF CDAYEV("お正月") && !CEVENT("날짜：お正月")
 			PRINTFORMW %CALLNAME:TARGET%에게 칭찬받았다!
 		ENDIF
 	ENDIF
-	CALL SET_CEVENT, "날짜：お正月"
+	CALL SET_CEVENT, "날짜：정월"
 	RETURN 1
 ;2/14발렌타인デー
 ELSEIF CDAYEV("발렌타인") && !CEVENT("날짜：발렌타인３")
@@ -1050,8 +1050,8 @@ ELSEIF CDAYEV("발렌타인다음날") && !CEVENT("날짜：발렌타인다음�
 	ENDIF
 	CALL SET_CEVENT, "날짜：발렌타인다음날"
 	RETURN 1
-;3/14ホワイトデー
-ELSEIF CDAYEV("ホワイトデー") && !CEVENT("날짜：ホワイトデー")
+;3/14화이트데이
+ELSEIF CDAYEV("화이트데이") && !CEVENT("날짜：화이트데이")
 	IF PENIS(MASTER)
 		PRINTFORMW 「오오, %CNAME("二人称")%, 잘 왔느니라♪ 나를 만나러 왔다는 것은, 오늘이 무슨 날인지 알고 있는 것이겠지♪」
 		PRINTFORMW %CALLNAME:TARGET%는 방에 들어온 %CALLNAME:MASTER%의 품에 안겨, 얼굴을 보곤 눈을 빛낸다…
@@ -1082,10 +1082,10 @@ ELSEIF CDAYEV("ホワイトデー") && !CEVENT("날짜：ホワイトデー")
 		PRINTFORMW %CALLNAME:TARGET%는 당황하는%CALLNAME:MASTER%의 허리를 안으면, 그대로 침대 위로 밀어 넘어뜨려 왔다!
 		TEQUIP:넘어뜨리기 = 1
 	ENDIF
-	CALL SET_CEVENT, "날짜：ホワイトデー"
+	CALL SET_CEVENT, "날짜：화이트데이"
 	RETURN 1
-;ハロウィン（연모, 음란）
-ELSEIF CDAYEV("ハロウィン") && (TALENT:연모 || TALENT:음란) && !CEVENT("날짜：ハロウィン")
+;할로윈（연모, 음란）
+ELSEIF CDAYEV("할로윈") && (TALENT:연모 || TALENT:음란) && !CEVENT("날짜：할로윈")
 	PRINTFORMW 「후후, 기다리고 있었느니라 %CNAME("二人称")%!」
 	PRINTFORMW 방에 들어온 %CALLNAME:MASTER%는 새하얀 이불을 뒤집어 쓴 %CALLNAME:TARGET%의 환영을 받는다…
 	PRINTFORMW 손에 들린 호박등을 보건데, 아무래도 할로윈 분장을 하고있는 것 같다!
@@ -1108,7 +1108,7 @@ ELSEIF CDAYEV("ハロウィン") && (TALENT:연모 || TALENT:음란) && !CEVENT(
 	ENDIF
 	PRINTFORMW %CALLNAME:TARGET%는 %CALLNAME:MASTER%를 덮친다!
 	TEQUIP:넘어뜨리기 = 1
-	CALL SET_CEVENT, "날짜：ハロウィン"
+	CALL SET_CEVENT, "날짜：할로윈"
 	RETURN 1
 ENDIF
 
@@ -2880,16 +2880,16 @@ ELSEIF MARK:굴복각인 <= 1
 ENDIF
 
 ;날짜이벤트の終了フラグ
-SIF CEVENT("날짜：お正月")
-	CALL SET_CEVENT, "날짜：お正月종료"
+SIF CEVENT("날짜：정월")
+	CALL SET_CEVENT, "날짜：정월종료"
 SIF CEVENT("날짜：발렌타인３")
 	CALL SET_CEVENT, "날짜：발렌타인종료"
 SIF CEVENT("날짜：발렌타인다음날")
 	CALL SET_CEVENT, "날짜：발렌타인다음날종료"
-SIF CEVENT("날짜：ホワイトデー")
-	CALL SET_CEVENT, "날짜：ホワイトデー종료"
-SIF CEVENT("날짜：ハロウィン")
-	CALL SET_CEVENT, "날짜：ハロウィン종료"
+SIF CEVENT("날짜：화이트데이")
+	CALL SET_CEVENT, "날짜：화이트데이종료"
+SIF CEVENT("날짜：할로윈")
+	CALL SET_CEVENT, "날짜：할로윈종료"
 
 RETURN 1
 
