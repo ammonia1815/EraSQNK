@@ -8,15 +8,15 @@ PRINTL  □ 술집 『일각수의 뿔』 □
 DRAWLINE
 PRINTFORML 보통의 식사에 무언가 메뉴를 더해 심신을 알차게 하자!  (소지금:%MONEY_C(MONEY)%)
 PRINTFORML 덧붙여서 식사에 의한 체력의 회복은 100％를 넘습니다
-PRINTFORML 마시면 조교의 실행치가 상승합니다만, 술주정이나 이상한 행동을 이따금 취합니다
-PRINTFORML （우단의 [해설]을 클릭or식사의 명칭을 입력하는 것으로 해설을 ON/OFF할 수 있습니다）
+PRINTFORML 마시면 조교의 실행치가 상승하지만, 술주정이나 이상한 행동을 이따금 취합니다
+PRINTFORML （오른쪽의 [해설]을 클릭 or 식사의 명칭을 입력하는 것으로 해설을 ON/OFF할 수 있습니다）
 ;食器で회복量UP
 IF ITEM:미스릴스푼
-	PRINTFORML 미스릴스푼을 소지하고 있으므로, 체력＆정력회복효과가 60％ 높아지고 있습니다.
+	PRINTFORML 미스릴스푼을 소지하고 있으므로, 체력＆정력회복효과가 60％ 높아집니다.
 ELSEIF ITEM:은스푼
-	PRINTFORML 은스푼을 소지하고 있으므로, 체력＆정력회복효과가 40％ 높아지고 있습니다.
+	PRINTFORML 은스푼을 소지하고 있으므로, 체력＆정력회복효과가 40％ 높아집니다.
 ELSEIF ITEM:도자기스푼
-	PRINTFORML 도자기스푼울 소지하고 있으므로, 체력＆정력회복효과 20％ 높아지고 있습니다.
+	PRINTFORML 도자기스푼울 소지하고 있으므로, 체력＆정력회복효과 20％ 높아집니다.
 ENDIF
 
 CALL EAT_LUNCH_BUY
@@ -152,7 +152,8 @@ CASE "개다래와인"
 
 CASE "문드롭스"
 	INVERTBIT FLAG:41, 50
-
+CASE ""
+	GOTO INPUT_LOOP
 CASEELSE
 	SELECTCASE TOINT(RESULTS)
 	CASE  100
@@ -280,8 +281,8 @@ NEXT
 IF MOON_DROP
 	PRINTFORMW 몽마들에게 문드롭스를 먹였다！
 ELSEIF LUNCH_BONUS:3
-	PRINTFORML 모두가 %NAMES("食事", FLAG:40)%를 즐겼다！
-	CALL PRINT_STR, "핑크_※드렁크状態だと조교が무드が高い상태で개시されます※_W"
+	PRINTFORML 모두가 %조사처리(NAMES("食事", FLAG:40),"를")% 즐겼다！
+	CALL PRINT_STR, "핑크_※드렁크상태라면 조교의 무드가 높아진 상태에서 시작합니다※_W"
 ELSE
 	PRINTFORMW 모두가 %NAMES("食事", FLAG:40)%에 입맛을 다셨다！
 ENDIF
@@ -295,9 +296,9 @@ SIF LUNCH_BONUS:1
 IF LUNCH_BONUS:2
 	LOCALS = %LOCALS%\@ LOCALS != "" ? ＆ # \@호감도{LUNCH_BONUS:2}ＵＰ！
 ELSEIF MOON_DROP
-	LOCALS = %LOCALS%\@ LOCALS != "" ? ＆ # \@몽마の호감도{MOON_DROP}ＵＰ！
+	LOCALS = %LOCALS%\@ LOCALS != "" ? ＆ # \@몽마의 호감도{MOON_DROP}ＵＰ！
 ELSEIF CAT_FAVOR
-	LOCALS = %LOCALS%\@ LOCALS != "" ? ＆ # \@猫の호감도{CAT_FAVOR}ＵＰ！
+	LOCALS = %LOCALS%\@ LOCALS != "" ? ＆ # \@고양이의 호감도{CAT_FAVOR}ＵＰ！
 ENDIF
 
 SIF LOCALS != ""

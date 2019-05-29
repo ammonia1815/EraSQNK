@@ -7,7 +7,7 @@
 
 IF ARGS != "コス확인" && CONFIG("세대別표시")
 	IF ARG:1 == 0
-		PRINTL [2001]아이의 표시(제 1 세대)
+		PRINTL [2001]아이의 표시(1세대)
 	ELSEIF ARG:1 == 1
 		PRINTL [2000]신부의 표시
 		PRINTL [2001]다음 세대 아이의 표시	
@@ -160,7 +160,7 @@ CASE "조교대상변경"
 ENDSELECT
 
 SIF CONFIG("표시人数") && Z > CONFIG("표시人数") * (ARG + 1)
-	PRINTFORM  [{1000 + ARG + 2}]다음 page로
+	PRINTFORM  [{1000 + ARG + 2}]다음 page
 
 PRINTL 
 
@@ -203,19 +203,19 @@ CASE "능력표시"
 	PRINTL 능력 표시 화면의 각 항목(□ 소질 □같은)은 클릭해서 열고 닫을 수 있습니다
 CASE "조수변경"
 	IF CONFIG("조수への지시")
-		PRINTL []의 수만큼지시를 줄 수가 있습니다. 
-		PRINTL 누구의지시를 변경합니까？
+		PRINTL []의 수 만큼 지시를 할 수 있습니다. 
+		PRINTL 누구의 지시를 변경합니까？
 	ELSE
-		PRINTFORML 누구를%TEXTS("조수の명칭")%로 합니까？（선택끝난 캐릭터를 선택하면%TEXTS("조수の명칭")%없음이 됩니다）
+		PRINTFORML 누구를 %TEXTS("조수の명칭")%로 합니까？（선택 끝난 캐릭터를 선택하면 %TEXTS("조수の명칭")%에서 해임합니다）
 		IF CONFIG("조수の탐색능력표시")
-			PRINTFORML %TEXTS("조수の명칭")%의 능력(재보 발견같은)은 클릭해서 능력의 설명을 볼 수 있습니다.
+			PRINTFORML %TEXTS("조수の명칭")%의 능력(재보 발견 등)은 클릭해서 능력의 설명을 볼 수 있습니다.
 		ELSE
-			PRINTFORML %TEXTS("조수の명칭")%의 능력(조제 따위)는 클릭 하는 것으로 효과의 해설을 볼 수가 있습니다
-			PRINTFORML （기억하고 있다아르카나를 확인하려면 마법사 or 아르카나 를 클릭 해 주세요）
+			PRINTFORML %TEXTS("조수の명칭")%의 능력(조제 등)는 클릭 하는 것으로 효과의 해설을 볼 수가 있습니다
+			PRINTFORML （습득하고 있는 아르카나를 확인하려면 마법사 or 아르카나 를 클릭 해 주세요）
 		ENDIF
 	ENDIF
 	DRAWLINE
-	LOCALS = %TEXTS("조수の명칭")%なし
+	LOCALS = %TEXTS("조수の명칭")%없음
 	PRINTFORM  [ 0]%TEXT_LJ(LOCALS, 16)% 
 	IF CONFIG("탐색동행자선택中") == 0
 		IF CHARA_NUM("지시가능な조수")
@@ -229,10 +229,10 @@ CASE "조수변경"
 	PRINTL 
 CASE "조교대상변경"
 	IF CONFIG("조교대상변경で애널라이즈")
-		PRINTL 누구를 조교합니까？（강함은100점만점으로써,50점이라면 주인과호각입니다）
+		PRINTL 누구를 조교합니까？（강함은 100점 만점으로, 50점이라면 주인과 호각입니다）
 		DRAWLINE
 		PRINTFORM  [200]통상정보를표시
-		PRINTPLAINFORM  욕구불만  호감도  방치  민감도  공격력 주인기준의강함
+		PRINTPLAINFORM  욕구불만  호감도   방치  민감도  공격력 주인기준강함
 	ELSE
 		PRINTL 누구를 조교합니까？（☆마크는 마음에듬의 표시입니다）
 		DRAWLINE
@@ -243,35 +243,35 @@ CASE "매각"
 	PRINTL 누구를 팝니까? 
 	PRINTL 계산식은 능력×변동하지 않는 소질×변동하는 소질＝평가pt→가격으로 되어있습니다
 CASE "탐색"
-	PRINTFORML 주인인가%TEXTS("조수の명칭")%에 한계탐색에 나갈 수가 있습니다. 누가 향합니까？
+	PRINTFORML 주인또는 %TEXTS("조수の명칭")%만 탐색할 수 있습니다. 누가 갑니까？
 	IF ASSI
 		PRINTPLAINFORM （[ 1]%마스터를()% 선택하면 
 		SETCOLOR DEF_COLOR("노랑")
 		PRINTPLAINFORM %TEXTS("조수の명칭")%[{ASSI, 2}]%NAME:ASSI%
 		RESETCOLOR
 		PRINTL 도 동행합니다）
-		PRINTFORML %TEXTS("조수の명칭")%의 능력(재보 발견같은)은 클릭해서 능력의 설명을 볼 수 있습니다.
+		PRINTFORML %TEXTS("조수の명칭")%의 능력(재보 발견등)은 클릭으로 능력설명을 볼 수 있습니다.
 	ENDIF
 	;食器で회복量UP
 	IF ITEM:미스릴찻잔
-		PRINTFORML 미스릴찻잔을 소지하고있으므로, 전투종료시의 휴식효과가 6Ｐ 높아집니다. 
+		PRINTFORML 미스릴찻잔을 소지하고 있으므로, 전투종료시 휴식효과가 6Ｐ 높아집니다. 
 	ELSEIF ITEM:미스릴스푼
-		PRINTFORML 미스릴스푼을 소지하고있으므로,전투종료시의 휴식효과가 5Ｐ 높아집니다. 
+		PRINTFORML 미스릴스푼을 소지하고 있으므로,전투종료시 휴식효과가 5Ｐ 높아집니다. 
 	ELSEIF ITEM:은찻잔
-		PRINTFORML 은찻잔을 소지하고있으므로, 전투종료시의 휴식효과가 4Ｐ 높아집니다. 
+		PRINTFORML 은찻잔을 소지하고 있으므로, 전투종료시 휴식효과가 4Ｐ 높아집니다. 
 	ELSEIF ITEM:은스푼
-		PRINTFORML 은스푼을 소지하고있으므로, 전투종료시의 휴식효과가 3Ｐ 높아집니다. 
+		PRINTFORML 은스푼을 소지하고 있으므로, 전투종료시 휴식효과가 3Ｐ 높아집니다. 
 	ELSEIF ITEM:도자기찻잔
-		PRINTFORML 도자기찻잔을 소지하고있으므로, 전투종료시의 휴식효과가 2Ｐ 높아집니다. 
+		PRINTFORML 도자기찻잔을 소지하고 있으므로, 전투종료시 휴식효과가 2Ｐ 높아집니다. 
 	ELSEIF ITEM:도자기스푼
-		PRINTFORML 도자기스푼을 소지하고있으므로, 전투종료시의 휴식효과가 1Ｐ 높아집니다. 
+		PRINTFORML 도자기스푼을 소지하고 있으므로, 전투종료시 휴식효과가 1Ｐ 높아집니다. 
 	ENDIF
 CASE "마음에듬"
 	PRINTFORML 누구를 마음에 드는 인물로 설정합니까? 
 	PRINTFORML ※한번 설정을 변경하면, 일주일간 변경할 수 없습니다※
-	PRINTFORML (마음에 드는 인물은 ☆로 기록됩니다. 그 상대로부터는, 쾌락을 더 많이 받을 수 있습니다…)
+	PRINTFORML (마음에 드는 인물은 ☆로 기록됩니다. 그 상대로부터 쾌락을 더 많이 받을 수 있습니다…)
 	PRINTFORML 또한, [ 0]이나[ 1]을 입력해서, %CALLNAME:MASTER%의 성감대나 성벽을 설정하는 것도 가능합니다
-	PRINTFORML (취향에 직구인 상대에게는, 받을 수 있는 쾌락이 더 많아집니다)
+	PRINTFORML (취향에 직격인 상대에게는, 받을 수 있는 쾌락이 더 많아집니다)
 	PRINTFORML 
 	PRINTFORM  [ 0] 성감대를 설정한다 현재의 성감대:
 	SELECTCASE NUM_BIT(TALENT:MASTER:성감대)
@@ -312,15 +312,15 @@ CASE "애널라이즈"
 CASE "하룻밤개방허가"
 	PRINTL 누구의 외출을 허가합니까? 
 CASE "유두선택"
-	PRINTFORML 비대, 함몰, 유륜아래의 열의 문자를 클릭 하는 일로,
+	PRINTFORML 비대, 함몰, 유륜 아래 열의 문자 클릭으로,
 	PRINTFORML 유두비대,유두의 함몰 상태, 유륜의 크기를 변화시킬 수가 있습니다.
-	PRINTFORML １클릭을 뒤따라１LV변화하므로 딱딱선택해 조정해 주세요.
+	PRINTFORML １클릭으로 １LV이 변화하므로 신중히 조정해 주세요.
 	DRAWLINE
 	PRINTFORML             비대 함몰 유륜
 ENDSELECT
 
 ;-------------------------------------------------
-;ステータス表示（Pは初期値0）
+;스테이터스 표시（P의 초기치는 0）
 ;-------------------------------------------------
 @SHOW_CHARADATA, P, M
 #DIM MEMO_LINECOUNT
@@ -347,7 +347,7 @@ ELSEIF RESULT == 110 && CHARA_NUM("控えキャラ") && CONFIG("조교상대변�
 ELSEIF RESULT == 200 && CONFIG("３사이즈：표시")
 	INVERTBIT FLAG:46, 0
 	RESTART
-;CLEARキャラ表示（暫定）
+;CLEAR캐릭터표시（잠정）
 ELSEIF RESULT == 999 && FLAG:31
 	CALL SHOW_CHARA_CAPTURED
 	RESTART
@@ -399,118 +399,118 @@ SPLIT RESULTS, "/", CHOICES
 SELECTCASE CHOICES
 CASE "상성:☆"
 	IF TARGET
-		PRINTFORML %CALLNAME:TARGET%(와)과의 궁합이 최고로 좋습니다！
-		PRINTFORMW (커맨드노실행치에30의 보너스가 붙습니다)
+		PRINTFORML %조사처리(CALLNAME:TARGET,"와")% 궁합이 최고로 좋습니다！
+		PRINTFORMW (커맨드의 실행치에 30의 보너스가 붙습니다)
 	ENDIF
 CASE "상성:◎"
 	IF TARGET
-		PRINTFORML %CALLNAME:TARGET%(와)과의 궁합이 훌륭하고 좋습니다！
-		PRINTFORMW (커맨드노실행치에15의 보너스가 붙습니다)
+		PRINTFORML %조사처리(CALLNAME:TARGET,"와")% 궁합이 훌륭합니다！
+		PRINTFORMW (커맨드의 실행치에 15의 보너스가 붙습니다)
 	ENDIF
 CASE "상성:〇"
 	IF TARGET
-		PRINTFORML %CALLNAME:TARGET%(와)과의 궁합이 좋습니다
-		PRINTFORMW (커맨드노실행치에５의 보너스가 붙습니다)
+		PRINTFORML %조사처리(CALLNAME:TARGET,"와")% 궁합이 좋습니다
+		PRINTFORMW (커맨드의 실행치에 ５의 보너스가 붙습니다)
 	ENDIF
 CASE "바늘"
 	PRINTFORMW 바늘커맨드의 효과가 오릅니다
 CASE "調合"
-	PRINTFORML 미약커맨드의 효과가 현저하게 오릅니다
-	PRINTFORMW 또,음마의물방울를 조제해 여러가지 약물을 만들 수가 있습니다
+	PRINTFORML 미약커맨드의 효과가 뚜렷하게 오릅니다
+	PRINTFORMW 또한, 음마의 물방울를 조제해 여러가지 약물을 만들 수 있습니다
 CASE "새드"
-	PRINTFORMW 일반적으로 말한다ＳＭ에 있어서의Ｓ커맨드야행때문을 실행하는 것이 자신있습니다
+	PRINTFORMW 일반적으로 말하는 ＳＭ에 있어 Ｓ커맨드와 행위을 실행하는 것에 자신있습니다
 CASE "요호"
-	PRINTFORMW 조교종료시에미약를 1개 받을 수 있습니다
+	PRINTFORMW 조교종료시에 미약를 1개 받을 수 있습니다
 CASE "슬라임"
-	PRINTFORMW 조교종료시에로션를 1개 받을 수 있습니다
+	PRINTFORMW 조교종료시에 로션를 1개 받을 수 있습니다
 CASE "드라이어드"
-	PRINTFORMW 조교종료시에재스민를 1개 받을 수 있습니다
+	PRINTFORMW 조교종료시에 재스민를 1개 받을 수 있습니다
 CASE "치료"
-	PRINTFORMW 시간경과 마다조교대상노체력하지만500많이회복합니다
+	PRINTFORMW 시간경과마다 조교대상의 체력이 500만큼 회복합니다
 CASE "고무"
-	PRINTFORML %TEXTS("조수の명칭")%히, 힘내라 힘내라 할 수 있는 것으로 오면 옆에서 응원해 줍니다
-	PRINTFORMW (커맨드노실행치에10의 보너스가 붙습니다)
+	PRINTFORML %조사선택(TEXTS("조수の명칭"),"이")%, 힘내라 힘내라 하는 것으로 옆에서 응원해 줍니다
+	PRINTFORMW (커맨드의 실행치에 10의 보너스가 붙습니다)
 CASE "후타나리"
 	PRINTFORMW 후타나리입니다
 CASE "♂"
 	PRINTFORMW 남자입니다
 CASE "금단의지식"
-	PRINTFORML 가게로 위험한 상품을 팔아 받을 수 있게 됩니다
-	PRINTFORMW 또,조합지식(와)과 같게미약의 효과가 강해집니다
+	PRINTFORML 가게에서 위험한 상품을 살 수 있게 됩니다
+	PRINTFORMW 또,조합지식과 같이 미약의 효과가 강해집니다
 CASE "구현"
-	PRINTFORMW 여성에게페니스를 기를 수가 있습니다
+	PRINTFORMW 여성에게 페니스를 기를 수 있습니다
 CASE "大마법사"
-	PRINTFORMW 무려 모든아르카나를 사용할 수가 있습니다.마법사로서는 최강이라고 말해도 좋을 것입니다
+	PRINTFORMW 모든 아르카나를 사용할 수가 있습니다. 마법사로서는 최강이라고 쳐도 됩니다.
 CASE "마법사"
-	PRINTFORML 마도 책을 읽는 것으로아르카나를 기억할 수가 있습니다. 또,소비정력도 적게 끝납니다
-	PRINTFORML -%CALLNAME:TOINT(CHOICES:1)%하지만 기억하고 있다아르카나노일람-
+	PRINTFORML 마도서를 읽는 것으로 아르카나를 기억할 수가 있습니다. 또, 소비정력도 적습니다
+	PRINTFORML -%조사처리(CALLNAME:TOINT(CHOICES:1),"이")% 기억하고 있는 아르카나의 목록-
 	FOR LCOUNT, 230, 260
 		SIF TALENT:TOINT(CHOICES:1):LCOUNT
 			PRINTFORML %TEXT_LJ(TALENT_NAME(LCOUNT, TALENT:TOINT(CHOICES:1):LCOUNT, TOINT(CHOICES:1)), 20)% %TEXTS("아르카나解説", LCOUNT)%
 	NEXT
 	WAIT
 CASE "아르카나"
-	PRINTFORML 전문가가 아닙니다만,아르카나를 사용할 수가 있습니다
-	PRINTFORML -%CALLNAME:TOINT(CHOICES:1)%하지만 기억하고 있다아르카나노일람-
+	PRINTFORML 전문가가 아니지만, 아르카나를 사용할 수가 있습니다
+	PRINTFORML -%조사처리(CALLNAME:TOINT(CHOICES:1),"이")% 기억하고 있는 아르카나의 목록-
 	FOR LCOUNT, 230, 260
 		SIF TALENT:TOINT(CHOICES:1):LCOUNT
 			PRINTFORML %TEXT_LJ(TALENT_NAME(LCOUNT, TALENT:TOINT(CHOICES:1):LCOUNT, TOINT(CHOICES:1)), 20)% %TEXTS("아르카나解説", LCOUNT)%
 	NEXT
 	WAIT
 CASE "애무・봉사지식"
-	PRINTFORML 봉사야애무에 의해 주는 쾌감을５할증으로 해,공포야반감등의 마이너스파라미터를 반감시킵니다
-	PRINTFORMW 다만,%TEXTS("조수の명칭")%자신이 상대를조교하지 않으면 의미가 없습니다
+	PRINTFORML 봉사와 애무로 주는 쾌감이 5할 증가하고, 두려움과 반감 등의 파라미터를 반감시킵니다
+	PRINTFORMW 다만, %TEXTS("조수の명칭")%자신이 상대를 조교하지 않으면 의미가 없습니다
 CASE "教え上手"
-	PRINTFORML 봉사될 때에 상대보다기교LV등이 높으면 상대가 획득하는 경험을 각+１시킵니다
-	PRINTFORML 또,조교대상의 획득한다봉사쾌락경험를1.5배로 합니다
-	PRINTFORMW 다만,%TEXTS("조수の명칭")%자신이 상대를조교하지 않으면 의미가 없습니다
+	PRINTFORML 봉사될 때에 상대보다 기교LV등이 높으면 상대가 획득하는 경험을 각+１시킵니다
+	PRINTFORML 또, 조교대상의 획득하는 봉사쾌락경험을 1.5배로 합니다
+	PRINTFORMW 다만, %TEXTS("조수の명칭")%자신이 직접 상대를 조교하지 않으면 의미가 없습니다
 CASE "ＳＭ지식"
-	PRINTFORML 스팽킹등,ＳＭ플레이에 속한다커맨드의 실행시에게만 효과가 있는 지식입니다
-	PRINTFORML 욕정(와)과굴복노파라미터-를５할증으로 해,공포야반감를 반감시킵니다
-	PRINTFORML 또, 상대의 획득한다가학쾌락경험(와)과고통쾌락경험를1.5배로 합니다
-	PRINTFORMW 다만,%TEXTS("조수の명칭")%자신이 상대를조교하지 않으면 의미가 없습니다
+	PRINTFORML 스팽킹등,ＳＭ플레이에 속하는 커맨드의 실행시에만 효과가 있는 지식입니다
+	PRINTFORML 욕정과 굴복의 파라미터가 ５할 증가하고, 공포와 반감을 절반으로 합니다
+	PRINTFORML 또, 상대의 획득하는 가학쾌락경험과 고통쾌락경험을 1.5배로 합니다
+	PRINTFORMW 다만, %TEXTS("조수の명칭")%자신이 직접 상대를 조교하지 않으면 의미가 없습니다
 CASE "Ａ조교지식"
-	PRINTFORML 애널를 만지작거린다커맨드실행시에쾌Ａ야욕정노파라미터-를５할증으로 해,
-	PRINTFORML 고통야반감등의 마이너스파라미터-의 발생을 반감시킵니다
-	PRINTFORMW 다만,%TEXTS("조수の명칭")%자신이 상대를조교하지 않으면 의미가 없습니다
+	PRINTFORML 애널을 희롱하는 커맨드를 실행시에 Ａ쾌락과 욕정의 파라미터를 ５할 증가하고,
+	PRINTFORML 고통과 반감등의 마이너스파라미터의 발생을 반감시킵니다
+	PRINTFORMW 다만, %TEXTS("조수の명칭")%자신이 직접 상대를 조교하지 않으면 의미가 없습니다
 CASE "성기확장지식"
-	PRINTFORML 성기를 확장시킬 때의고통야공포를 반감시켜, 확장 경험의 증가량에 보너스를 얻습니다
-	PRINTFORMW 다만,%TEXTS("조수の명칭")%자신이 상대를조교하지 않으면 의미가 없습니다
+	PRINTFORML 성기를 확장시킬 때의 고통과 공포를 반감시키고, 확장 경험의 증가량에 보너스를 얻습니다
+	PRINTFORMW 다만, %TEXTS("조수の명칭")%자신이 직접 상대를 조교하지 않으면 의미가 없습니다
 CASE "도구使い"
-	PRINTFORML 바이브등도구를 이용했다커맨드실행시에 쾌락이나욕정노파라미터-를５할증으로 해,
-	PRINTFORML 공포야반감등의 마이너스파라미터-의 발생을 반감시킵니다
-	PRINTFORMW 다만,%TEXTS("조수の명칭")%자신이 상대를조교하지 않으면 의미가 없습니다
+	PRINTFORML 바이브등 도구를 이용하는 커맨드실행시에 쾌락과 욕정의 파라미터를 ５할 증가하고,
+	PRINTFORML 공포와 반감등의 마이너스파라미터의 발생을 반감시킵니다
+	PRINTFORMW 다만, %TEXTS("조수の명칭")%자신이 직접 상대를 조교하지 않으면 의미가 없습니다
 CASE "노출지식"
-	PRINTFORML 조교대상노치정노파라미터를 항상５할증으로 해,노출경험(와)과수치쾌락경험의 획득량을 늘립니다
-	PRINTFORMW 이 지식은,%TEXTS("조수の명칭")%하지만 가지고 있는 것만이라도 효과를 발휘합니다
+	PRINTFORML 조교대상의 치정 파라미터를 항상 ５할증가하고, 노출경험과 수치쾌락경험의 획득량을 늘립니다
+	PRINTFORMW 이 지식은,%조사처리(TEXTS("조수の명칭"),"이")% 가지고 있는 것으로도 효과를 발휘합니다
 CASE "달콤한말"
-	PRINTFORMW 달콤한말를 속삭일 수가 있습니다
+	PRINTFORMW 달콤한말을 속삭일 수 있습니다
 CASE "손대중"
-	PRINTFORMW 손가감(상태)를 실시할 수가 있습니다
+	PRINTFORMW 손대중을 실시할 수 있습니다
 CASE "歌唱"
-	PRINTFORMW 여러가지 효과의 노래를 연주할 수가 있습니다
+	PRINTFORMW 여러가지 효과의 노래를 연주할 수 있습니다
 
 ;탐색での能力
 CASE "遭遇回避"
-	CALL PRINT_STR, "몽마との遭遇率が_황색_５％減少_します_W"
+	CALL PRINT_STR, "몽마와 조우율이_황색_５％감소_합니다_W"
 CASE "遭遇증가"
-	CALL PRINT_STR, "몽마との遭遇率が_파랑_５％上昇_します_W"
+	CALL PRINT_STR, "몽마와 조우율이_파랑_５％증가_합니다_W"
 CASE "罠解除"
-	CALL PRINT_STR, "宝箱を開ける際のトラップ発動率が_황색_４分の一_になります_W"
+	CALL PRINT_STR, "보물 상자를 열 때 함정 발동율이_황색_25%_가 됩니다_W"
 CASE "罠誘発"
-	CALL PRINT_STR, "宝箱を開ける際のトラップ発動率が_파랑_2.5倍_になります_W"
+	CALL PRINT_STR, "보물 상자를 열 때 함정 발동율이_파랑_2.5배_이 됩니다_W"
 CASE "財宝発見"
-	CALL PRINT_STR, "宝箱を見つける확률が_황색_５％上昇_します_W"
+	CALL PRINT_STR, "보물상자를 찾을 확률이_황색_５％증가_합니다_W"
 CASE "財宝見逃し"
-	CALL PRINT_STR, "宝箱を見つける확률が_파랑_５％減少_します_W"
+	CALL PRINT_STR, "보물상자를 찾을 확률이_파랑_５％감소_합니다_W"
 CASE "階段発見"
-	CALL PRINT_STR, "次の階層へのドアを見つける확률が_황색_５％上昇_します_W"
+	CALL PRINT_STR, "다음층의 문을 찾을 확률이_황색_５％상승_합니다_W"
 CASE "회복"
-	CALL PRINT_STR, "各行動ごとに정력が_황색_１Ｐ회복_し、戦闘종료時は_황색_２Ｐ多く회복_します_W"
+	CALL PRINT_STR, "각 행동마다 정력이_황색_１Ｐ회복_하고、전투종료시_황색_２Ｐ회복_합니다_W"
 CASE "戦闘補助"
-	CALL PRINT_STR, "数値の分だけ탐색者の戦闘力が増えます_W"
+	CALL PRINT_STR, "수치만큼 탐색자의 전투력이 증가합니다_W"
 CASE "상태異常無効"
-	CALL PRINT_STR, "宝箱の罠での상태異常を無効化します_W"
+	CALL PRINT_STR, "보물상자 함정의 상태 이상을 해제합니다_W"
 
 ;それ以外は数値入力へ変換
 CASEELSE
@@ -532,7 +532,7 @@ CASEELSE
 		RESTART
 	ELSEIF RESULT == 400
 		PRINTFORML 이른바 "조수"의 직함명을 변경합니다.
-		PRINTFORML 현재의 직함명은『%TEXTS("조수の명칭")%』입니다. 무엇으로 변경합니까？
+		PRINTFORML 현재의 직함명은 『%TEXTS("조수の명칭")%』입니다. 무엇으로 변경합니까？
 		PRINTFORML  [ 0] 조수
 		PRINTFORML  [ 1] 비서
 		PRINTFORML  [ 2] 부관
@@ -847,7 +847,7 @@ INPUT
 IF RESULT >= 1001 && RESULT <= 1000+Q && CONFIG("표시人数") && Q >= 2 && P != RESULT - 1001
 	P = RESULT - 1001
 	RESTART
-;100以外でもSHOP画面に戻します
+;100以外でもSHOP画面に戻합니다
 ELSE
 	RETURN 0
 ENDIF
@@ -882,7 +882,7 @@ IF CHOICE == 100
 			SIF TFLAG:LCOUNT == TALENT:LCOUNT:마음에듬
 				CONTINUE
 		ENDSELECT
-		PRINTW 설정을 변경했기때문에, 일주일간 재설정할 수 없게되었습니다
+		PRINTW 설정을 변경했기에, 일주일간 재설정할 수 없게 되었습니다
 		FLAG:208 = 7
 		BREAK
 	NEXT
@@ -910,7 +910,7 @@ ELSEIF TALENT:CHOICE:마음에듬
 	TALENT:CHOICE:마음에듬 = 0
 ELSE
 	TALENT:CHOICE:마음에듬 = 1
-	PRINTFORMW %NAME:CHOICE%를마음에듬로 했습니다
+	PRINTFORMW %조사처리(NAME:CHOICE,"를")% 마음에 든다고 했습니다
 ENDIF
 
 CLEARLINE LINECOUNT - MEMO_LINECOUNT
@@ -958,13 +958,13 @@ ELSEIF CHOICE < MASTER || CHOICE >= CHARANUM || COND("バイト가능", CHOICE) 
 ENDIF
 
 IF CHOICE == 200
-	PRINTFORML 전원의 근무 태도（엣치한 행동의상한등）를 지시해 주세요.
+	PRINTFORML 전원의 근무 태도（엣치한 행동의 상한등）를 지시해 주세요.
 ELSE
-	PRINTFORML %NAME:CHOICE%의 근무 태도（엣치한 행동의상한등）를 지시해 주세요.
+	PRINTFORML %NAME:CHOICE%의 근무 태도（엣치한 행동의 상한등）를 지시해 주세요.
 ENDIF
 PRINTFORML  [ 0] 마음대로 하게 한다
 PRINTFORML  [ 1] 펠라치오 정도까지
-PRINTFORML  [ 2] 접촉（가슴에 닫거나）정도까지
+PRINTFORML  [ 2] 접촉（가슴에 닿거나）정도까지
 PRINTFORML  [ 3] 판치라 정도까지
 PRINTFORML  [10] 야한 일은 전면 금지
 PRINTFORML  [99] 바이트시키지 않는다
@@ -1013,12 +1013,15 @@ ELSEIF CHOICE == 200
 ELSEIF CHOICE == 2000 && CONFIG("세대別표시")
 	M = 0
 	P = 0
+	RESTART
 ELSEIF CHOICE == 2001 && CONFIG("세대別표시")
 	M += 1
 	P = 0
+	RESTART
 ELSEIF CHOICE == 2002 && CONFIG("세대別표시")
 	M -= 1
 	P = 0
+	RESTART
 ELSEIF CHOICE >= 1001 && CHOICE <= 1000+Q && CONFIG("표시人数") && Q >= 2 && P != CHOICE - 1001
 	P = CHOICE - 1001
 	RESTART
@@ -1031,7 +1034,7 @@ PRINTFORML  [ 0] 외출하게 하지 않는다
 PRINTFORML  [ 1] 좋아하게 외출하게 한다
 PRINTFORML  [ 2] 피임中만 허가한다
 PRINTFORML  [ 3] 임신하기 쉬운 날은 외출하게 하지 않는다（안전일or피임中이라면ＯＫ）
-PRINTFORML  [ 4] 임신하기 쉬운 날만 허가한다（위험일이나 발정중이라면ＯＫ.피임中은 안돼）
+PRINTFORML  [ 4] 임신하기 쉬운 날만 허가한다（위험일이나 발정중이라면ＯＫ.피임中은 NO）
 CALL INPUT_SELECT, 5
 CHOICE:1 = RESULT
 
