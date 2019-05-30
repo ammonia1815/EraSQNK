@@ -18,9 +18,9 @@
 ;ちょいちょい加筆しつつアドバイスを元に病み状態追加. 執着心が強くなりストーカーっぽくなる. 
 ;前回조교から30일이상상대していないと発生. CFLAG:201の30bitを使用
 ;쿠즈노하を参考に날짜이벤트とか試験運用
-;特定条件下でカウンターに블러드 썩の追撃
-;블러드 썩をカウンターでの技として関数化しました. COUNTER_SYSTEM.ERB内の@COUNTER_SKILLにあります
-;ちなみに数字は블러드 썩の強さで, １に付きPLAYERの정력-1, 뱀파이어の체력100회복となります
+;特定条件下でカウンターに흡혈の追撃
+;흡혈をカウンターでの技として関数化しました. COUNTER_SYSTEM.ERB内の@COUNTER_SKILLにあります
+;ちなみに数字は흡혈の強さで, １に付きPLAYERの정력-1, 뱀파이어の체력100회복となります
 ;病み時に스톡の使用にカウンター. 정력頼りのゴリ押しに저항
 ;-------------------------------------------------
 ;구상설정雛形
@@ -241,12 +241,12 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 	PRINTFORMW 
 	PRINTFORMW 「이것이라면…나도 조금 진심을 보여도 좋은 것 같네요」
 	PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 그렇게 말해 크고입를 열어라, 그리고……
-	CALL COUNTER_SKILL, "블러드 썩", 5
+	CALL COUNTER_SKILL, "흡혈", 5
 	PRINTFORMW %CALLNAME:MASTER%의 몸으로부터 급속히 힘이 빠져 갑니다…! 
 	PRINTFORMW 「후후…실감 할 수 있었을까？내가흡혈귀왜냐하면[だって]……」
 	PRINTFORMW 「나를 옆에 둔다고 하는 것이 어떻게 말하는 일인가……그 몸에 새겨 주어요」
 	PRINTFORMW %CALLNAME:TARGET%의 입원이야말로 웃고 있습니다만, 그 눈동자는 힘이 빠지고 있지 않습니다……
-	PRINTFORMW ※블러드 썩하지만 해금되었습니다
+	PRINTFORMW ※흡혈하지만 해금되었습니다
 	LOCAL:1 = 0
 	FOR LOCAL, 20, 28
 		SELECTCASE LOCAL
@@ -3890,7 +3890,7 @@ ELSEIF MARK:굴복각인 == 3
 			PRINTFORMW 손목에는 잡아진 자취가 선명하게 남아 있습니다…
 		ENDIF
 		PRINTFORMW 「……그런데, 그러면 즉시……」
-		CALL COUNTER_SKILL, "블러드 썩", 3
+		CALL COUNTER_SKILL, "흡혈", 3
 	ELSE
 		IF RAND:5 == 0
 			PRINTFORMW 「…내가 흡혈귀도 일, 정말로 기억하고 있습니까?」
@@ -3918,7 +3918,7 @@ ELSEIF MARK:굴복각인 == 3
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 시선을 피하면, 점점%CALLNAME:MASTER%의 의식이 돌아왔습니다…
 		ENDIF
 		PRINTFORMW 「……그런데, 그러면 즉시……」
-		CALL COUNTER_SKILL, "블러드 썩", 5
+		CALL COUNTER_SKILL, "흡혈", 5
 	ENDIF
 ENDIF
 RETURN 1
@@ -5614,9 +5614,9 @@ IF SELECTCOM == 5
 			PRINTFORMW 「나의가슴……좋아？」
 			PRINTFORMW 「나도 말야……당신노■…너무 좋아…♪」
 			IF TEQUIP:구속 == 0 && TEQUIP:아이마스크 == 0 && TEQUIP:재갈 == 0 && TEQUIP:촉수 == 0
-				CALL COUNTER_SKILL, "블러드 썩", 1
+				CALL COUNTER_SKILL, "흡혈", 1
 				PRINTFORMW 「아아…맛있어……좀 더……좀 더……」
-				CALL COUNTER_SKILL, "블러드 썩", 2
+				CALL COUNTER_SKILL, "흡혈", 2
 				PRINTFORMW 「후…후후……아하하하하하♪」
 			ELSE
 				PRINTFORMW 「언젠가 반드시…………다 마셔 준다……♪」
@@ -5643,9 +5643,9 @@ IF SELECTCOM == 5
 			PRINTFORMW 「나의가슴……좋아？」
 			PRINTFORMW 「나도 말야……당신노■…너무 좋아…♪」
 			IF TEQUIP:구속 == 0 && TEQUIP:아이마스크 == 0 && TEQUIP:재갈 == 0 && TEQUIP:촉수 == 0
-				CALL COUNTER_SKILL, "블러드 썩", 1
+				CALL COUNTER_SKILL, "흡혈", 1
 				PRINTFORMW 「아아…맛있어……좀 더……좀 더……」
-				CALL COUNTER_SKILL, "블러드 썩", 2
+				CALL COUNTER_SKILL, "흡혈", 2
 				PRINTFORMW 「후…후후……아하하하하하♪」
 			ELSE
 				PRINTFORMW 「언젠가 반드시…………다 마셔 준다……♪」
@@ -5818,16 +5818,16 @@ IF SELECTCOM == 6
 					PRINTFORMW 「후후…나에게 바쳐 주는 거네……」
 				ENDIF
 				PRINTFORMW %CALLNAME:PLAYER%의 입의 안에 따끔아픔하지만 달린다……! 
-				CALL COUNTER_SKILL, "블러드 썩", 1
+				CALL COUNTER_SKILL, "흡혈", 1
 			ELSE
 				IF RAND:2 == 0
 					PRINTFORMW 「또입붙이다니……정말말사슴이군요」
 					PRINTFORMW %CALLNAME:PLAYER%의 입의 안에 따끔아픔하지만 달린다……! 
-					CALL COUNTER_SKILL, "블러드 썩", 2
+					CALL COUNTER_SKILL, "흡혈", 2
 				ELSE
 					PRINTFORMW 「다른 여자는 흉내내고 할 수 없다키스를 해 준다…」
 					PRINTFORMW %CALLNAME:PLAYER%의 입의 안에 따끔아픔하지만 달린다……! 
-					CALL COUNTER_SKILL, "블러드 썩", 2
+					CALL COUNTER_SKILL, "흡혈", 2
 				ENDIF
 			ENDIF
 		;조수플레이時
@@ -5945,7 +5945,7 @@ IF SELECTCOM == 7
 		ELSEIF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「우후후…몸의 구석구석까지당신에 바쳐요」
 			PRINTFORMW 「그 대신당신에도…내며 받지 않으면」
-			CALL COUNTER_SKILL, "블러드 썩", 3
+			CALL COUNTER_SKILL, "흡혈", 3
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「상냥하게 부탁드릴게요…♪」
@@ -5966,7 +5966,7 @@ IF SELECTCOM == 7
 		ELSEIF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「우후후…몸의 구석구석까지당신에 바쳐요」
 			PRINTFORMW 「그 대신당신에도…내며 받지 않으면」
-			CALL COUNTER_SKILL, "블러드 썩", 3
+			CALL COUNTER_SKILL, "흡혈", 3
 		;연모
 		ELSEIF TALENT:연모
 			;내사정後にお청소
@@ -6386,7 +6386,7 @@ IF SELECTCOM == 24 && TEQUIP:칭찬하기
 				PRINTFORMW 「,  후후후후후후후 후후 후후………」
 			ENDIF
 			PRINTFORMW 「그러면…………포상을 받읍시다」
-			CALL COUNTER_SKILL, "블러드 썩", 3
+			CALL COUNTER_SKILL, "흡혈", 3
 		;연모
 		ELSEIF TALENT:연모
 			IF RAND:3 == 0 && TALENT:상사상애
@@ -6418,7 +6418,7 @@ IF SELECTCOM == 24 && TEQUIP:칭찬하기
 				PRINTFORMW 「,  후후후후후후후 후후 후후………」
 			ENDIF
 			PRINTFORMW 「그러면…………포상을 받읍시다」
-			CALL COUNTER_SKILL, "블러드 썩", 3
+			CALL COUNTER_SKILL, "흡혈", 3
 		;연모
 		ELSEIF TALENT:연모
 			IF RAND:5 == 0
@@ -6453,7 +6453,7 @@ IF SELECTCOM == 24 && TEQUIP:칭찬하기
 				PRINTFORMW 「,  후후후후후후후 후후 후후………」
 			ENDIF
 			PRINTFORMW 「그러면…………포상을 받읍시다」
-			CALL COUNTER_SKILL, "블러드 썩", 3
+			CALL COUNTER_SKILL, "흡혈", 3
 		;연모
 		ELSEIF TALENT:연모
 			IF RAND:3 == 0
@@ -6481,7 +6481,7 @@ IF SELECTCOM == 24 && TEQUIP:칭찬하기
 				PRINTFORMW 「,  후후후후후후후 후후 후후………」
 			ENDIF
 			PRINTFORMW 「그러면…………포상을 받읍시다」
-			CALL COUNTER_SKILL, "블러드 썩", 3
+			CALL COUNTER_SKILL, "흡혈", 3
 		;연모かつ마조끼Lv3이상
 		ELSEIF TALENT:연모 && ABL:마조끼 >= 3
 			IF RAND:2 == 0
@@ -6524,7 +6524,7 @@ IF SELECTCOM == 24 && TEQUIP:칭찬하기
 					PRINTFORMW 「,  후후후후후후후 후후 후후………」
 				ENDIF
 				PRINTFORMW 「그러면…………포상을 받읍시다」
-				CALL COUNTER_SKILL, "블러드 썩", 3
+				CALL COUNTER_SKILL, "흡혈", 3
 			;연모
 			ELSEIF TALENT:연모 
 				;노출벽Lv5だと가능性
@@ -6568,7 +6568,7 @@ IF SELECTCOM == 24 && TEQUIP:칭찬하기
 				PRINTFORMW 「,  후후후후후후후 후후 후후………」
 			ENDIF
 			PRINTFORMW 「그러면…………포상을 받읍시다」
-			CALL COUNTER_SKILL, "블러드 썩", 3
+			CALL COUNTER_SKILL, "흡혈", 3
 		;연모
 		ELSEIF TALENT:연모 
 			;노출벽Lv5だと가능性
@@ -6601,7 +6601,7 @@ IF SELECTCOM == 24 && TEQUIP:칭찬하기
 				PRINTFORMW 「,  후후후후후후후 후후 후후………」
 			ENDIF
 			PRINTFORMW 「그러면…………포상을 받읍시다」
-			CALL COUNTER_SKILL, "블러드 썩", 3
+			CALL COUNTER_SKILL, "흡혈", 3
 		;연모
 		ELSEIF TALENT:연모
 			IF RAND:3 == 0
@@ -6835,7 +6835,7 @@ ELSEIF SELECTCOM == 31 && TEQUIP:바이브 == 0
 	ELSEIF GETBIT(CFLAG:201, 30)
 		PRINTFORMW 「우후……후후후……역시 이런 차가운 것은 채워지지 않아요…」
 		PRINTFORMW 「좀 더…좀 더…■(와)과 같이 뜨겁다―――」
-		CALL COUNTER_SKILL, "블러드 썩", 3
+		CALL COUNTER_SKILL, "흡혈", 3
 	;연모
 	ELSEIF TALENT:연모
 		IF PENIS(PLAYER) && RAND:2
@@ -7008,7 +7008,7 @@ IF SELECTCOM == 34 && TEQUIP:클리캡
 		;病み時
 		ELSEIF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「여자아이의 중요한 부분을 만지작거립니다……거기에 알맞는 물건을 받지 않으면…♪」
-			CALL COUNTER_SKILL, "블러드 썩", 3
+			CALL COUNTER_SKILL, "흡혈", 3
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「당신에게 손대어 받은 편이 기쁘지만요 ……」
@@ -7025,7 +7025,7 @@ IF SELECTCOM == 34 && TEQUIP:클리캡
 		;病み時
 		ELSEIF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「여자아이의 중요한 부분을 만지작거립니다……거기에 알맞는 물건을 받지 않으면…♪」
-			CALL COUNTER_SKILL, "블러드 썩", 3
+			CALL COUNTER_SKILL, "흡혈", 3
 		;연모
 		ELSEIF TALENT:연모
 			IF RAND:2 == 0
@@ -7076,7 +7076,7 @@ IF SELECTCOM == 35 && TEQUIP:니플캡
 		;病み時
 		ELSEIF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「장난감 따위가 아니고…좀 더 리얼에 접촉합시다」
-			CALL COUNTER_SKILL, "블러드 썩", 3
+			CALL COUNTER_SKILL, "흡혈", 3
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「유두는 민감하니까, 상냥하게 취급해 주세요?」
@@ -7093,7 +7093,7 @@ IF SELECTCOM == 35 && TEQUIP:니플캡
 		;病み時
 		ELSEIF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「장난감 따위가 아니고…좀 더 리얼에 접촉합시다」
-			CALL COUNTER_SKILL, "블러드 썩", 3
+			CALL COUNTER_SKILL, "흡혈", 3
 		;연모
 		ELSEIF TALENT:연모
 			IF RAND:2 == 0
@@ -7116,7 +7116,7 @@ ELSEIF SELECTCOM == 35 && TEQUIP:니플캡 == 0
 	ELSEIF GETBIT(CFLAG:201, 30)
 		PRINTFORMW 「장난감을 멈추어 준다니 이해력이 좋네요」
 		PRINTFORMW 「그러면…내가 포상을 줍시다…」
-		CALL COUNTER_SKILL, "블러드 썩", 3
+		CALL COUNTER_SKILL, "흡혈", 3
 	;연모
 	ELSEIF TALENT:연모
 		IF RAND:2 == 0
@@ -7191,7 +7191,7 @@ ELSEIF SELECTCOM == 36 && TEQUIP:착유기 == 0
 	;病み時
 	ELSEIF GETBIT(CFLAG:201, 30)
 		PRINTFORMW 「끝？그러면…이번은 나의 차례군요」
-		CALL COUNTER_SKILL, "블러드 썩", 5
+		CALL COUNTER_SKILL, "흡혈", 5
 	;연모
 	ELSEIF TALENT:연모
 		IF RAND:2 == 0
@@ -7683,7 +7683,7 @@ IF SELECTCOM >= 60 && SELECTCOM <= 79 && COND("３Ｐ")
 			ELSEIF GETBIT(CFLAG:201, 30)
 				PRINTFORMW 「후후……나의 몸으로, 쾌락을 탐내면 좋아요」
 				PRINTFORMW 「그러니까, 당신들도……나에게 빠져……」
-				CALL COUNTER_SKILL, "블러드 썩", 3
+				CALL COUNTER_SKILL, "흡혈", 3
 			;연모
 			ELSEIF TALENT:연모
 				IF RAND:2 == 0 && TALENT:상사상애 && TALENT:ASSI:상사상애 && PENIS(MASTER) && PENIS(ASSI)
@@ -7731,7 +7731,7 @@ IF SELECTCOM == 60
 		ELSEIF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「허리를 움직이는 일뿐 생각하고 있다고……이렇게 하면 있어요」
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 연 입이, %CALLNAME:PLAYER%의 목덜미에 강요한다…!
-			CALL COUNTER_SKILL, "블러드 썩", 2
+			CALL COUNTER_SKILL, "흡혈", 2
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「…죄송합니다…나의 몸……전혀 깨끗한 인가가 아니어서……」
@@ -7754,7 +7754,7 @@ IF SELECTCOM == 60
 		ELSEIF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「허리를 움직이는 일뿐 생각하고 있다고……이렇게 하면 있어요」
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 연 입이, %CALLNAME:PLAYER%의 목덜미에 강요한다…!
-			CALL COUNTER_SKILL, "블러드 썩", 2
+			CALL COUNTER_SKILL, "흡혈", 2
 		;연모
 		ELSEIF TALENT:연모
 			;미약
@@ -7962,7 +7962,7 @@ IF SELECTCOM == 63
 		ELSEIF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「이런 모습 한다는 일은, 이렇게 해도 좋다는 것이군요……」
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 연 입이, %CALLNAME:PLAYER%의 목덜미에 강요한다…!
-			CALL COUNTER_SKILL, "블러드 썩", 2
+			CALL COUNTER_SKILL, "흡혈", 2
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「다, 당신의 얼굴이 너무 가깝습니다 ………」
@@ -7984,11 +7984,11 @@ IF SELECTCOM == 63
 			IF CHOSECOM(SELECTCOM) == 0
 				PRINTFORMW 「우후후……정액뿐이 아니고……여기도 받을까」
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 연 입이, %CALLNAME:PLAYER%의 목덜미에 강요한다…!
-				CALL COUNTER_SKILL, "블러드 썩", 2
+				CALL COUNTER_SKILL, "흡혈", 2
 			ELSE
 				PRINTFORMW 「또 이 모습이라는 것은…■■되고 싶네요？ ……버릇이 되어 버렸을까♪」
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 연 입이, %CALLNAME:PLAYER%의 목덜미에 강요한다…!
-				CALL COUNTER_SKILL, "블러드 썩", 3
+				CALL COUNTER_SKILL, "흡혈", 3
 			ENDIF
 		;연모
 		ELSEIF TALENT:연모
@@ -9434,7 +9434,7 @@ IF SELECTCOM == 93
 		;病み時
 		ELSEIF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「언제까지나 초조해 해진 것은……다른 것도 갖고 싶어져 와 버려요」
-			CALL COUNTER_SKILL, "블러드 썩", 3
+			CALL COUNTER_SKILL, "흡혈", 3
 		;연모
 		ELSEIF TALENT:연모
 			IF CDAYEV("화이트데이")
@@ -10327,7 +10327,7 @@ IF SELECTCOM == 130
 		ELSEIF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「아픔를 줘주인를 철저히 가르치자이라니……오슬오슬 해요」
 			PRINTFORMW 「왜냐하면[だって]……나도 같은 것을 생각하고 있는 걸요」
-			CALL COUNTER_SKILL, "블러드 썩", 3
+			CALL COUNTER_SKILL, "흡혈", 3
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「햐웃!  …이제(벌써), 갑자기 두드린다니 심해요」
@@ -10346,11 +10346,11 @@ IF SELECTCOM == 130
 			;今回の조교で初선택
 			IF CHOSECOM(SELECTCOM) == 0
 				PRINTFORMW 「혼내줘…따르게 한다……후후, 나도 본받지 않으면」
-				CALL COUNTER_SKILL, "블러드 썩", 3
+				CALL COUNTER_SKILL, "흡혈", 3
 			ELSE
 				PRINTFORMW 「우후후…좀 더, 좀 더 두드려」
 				PRINTFORMW 「…나도 똑같이해 주기 때문에」
-				CALL COUNTER_SKILL, "블러드 썩", 5
+				CALL COUNTER_SKILL, "흡혈", 5
 			ENDIF
 		;연모＋마조끼Lv5
 		ELSEIF TALENT:연모 && ABL:마조끼 >= 5
@@ -10704,7 +10704,7 @@ ELSEIF SELECTCOM == 134 && TEQUIP:구속 == 0
 	;病み時
 	ELSEIF GETBIT(CFLAG:201, 30)
 		PRINTFORMW 「아아…아팠어요……. 이아픔, 당신에도 맛보여 받지 않으면」
-		CALL COUNTER_SKILL, "블러드 썩", 5
+		CALL COUNTER_SKILL, "흡혈", 5
 	;연모
 	ELSEIF TALENT:연모
 		IF CDAYEV("할로윈")
@@ -10757,7 +10757,7 @@ IF SELECTCOM == 135 && TEQUIP:재갈
 
 				PRINTFORMW 「후후…무르네요……」
 				PRINTFORMW 「그런데……입가심을 시켜 줄까……」
-				CALL COUNTER_SKILL, "블러드 썩", 50
+				CALL COUNTER_SKILL, "흡혈", 50
 			ELSE
 				PRINTFORMW 「무엇으로…무엇으로 이런 일 해？」
 				PRINTFORMW 「이런 것 제외해…나를 받아들여？나의입하, 절대, 절대당신를 기분 좋게 해 줄 수 있는거야…？」
@@ -10791,7 +10791,7 @@ IF SELECTCOM == 135 && TEQUIP:재갈
 
 				PRINTFORMW 「후후…무르네요……」
 				PRINTFORMW 「그런데……입가심을 시켜 줄까……」
-				CALL COUNTER_SKILL, "블러드 썩", 50
+				CALL COUNTER_SKILL, "흡혈", 50
 			ELSE
 				PRINTFORMW 「무엇으로…무엇으로 이런 일 해？」
 				PRINTFORMW 「이런 것 제외해…나를 받아들여？나의입하, 절대, 절대당신를 기분 좋게 해 줄 수 있는거야…？」
@@ -10838,7 +10838,7 @@ ELSEIF SELECTCOM == 135 && TEQUIP:재갈 == 0
 	ELSEIF GETBIT(CFLAG:201, 30)
 		PRINTFORMW 「아앗…기쁘다…!  당신은 나의 말을 믿어 주었다……! 」
 		PRINTFORMW 「기다리고 있어…금방당신에, 지상의 기쁨을……!! !」
-		CALL COUNTER_SKILL, "블러드 썩", 10
+		CALL COUNTER_SKILL, "흡혈", 10
 	;연모
 	ELSEIF TALENT:연모
 		IF RAND:2 == 0
@@ -10957,7 +10957,7 @@ IF SELECTCOM == 139
 		;病み時
 		ELSEIF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「당신하지만아무것도하지않는다그렇다고 한다면……내가손를 내요？」
-			CALL COUNTER_SKILL, "블러드 썩", 5
+			CALL COUNTER_SKILL, "흡혈", 5
 		;연모
 		ELSEIF TALENT:연모
 			;湯船に浸かる
@@ -10983,7 +10983,7 @@ IF SELECTCOM == 139
 			PRINTFORMW 
 		ELSEIF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「당신하지만아무것도하지않는다그렇다고 한다면……내가손를 내요？」
-			CALL COUNTER_SKILL, "블러드 썩", 5
+			CALL COUNTER_SKILL, "흡혈", 5
 		ELSEIF TALENT:연모
 			;湯船に浸かる
 			IF TEQUIP:목욕탕플레이
@@ -11188,7 +11188,7 @@ IF SELECTCOM == 144
 			;病み時
 			ELSEIF GETBIT(CFLAG:201, 30)
 				PRINTFORMW 「나도…마셔 준다……♪」
-				CALL COUNTER_SKILL, "블러드 썩", 5
+				CALL COUNTER_SKILL, "흡혈", 5
 			;연모
 			ELSEIF TALENT:연모
 				PRINTFORMW 「자신으로부터 마시고 싶어하다니, 정말로 곤란한 사람이군요, 당신하♪」
@@ -11208,7 +11208,7 @@ IF SELECTCOM == 144
 		;病み時
 		ELSEIF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「나는……노력해 낸 것인거야.  당신도 같다흘려 주는군요？」
-			CALL COUNTER_SKILL, "블러드 썩", 5
+			CALL COUNTER_SKILL, "흡혈", 5
 		;연모
 		ELSEIF TALENT:연모 
 			;야외플레이
@@ -11279,7 +11279,7 @@ IF SELECTCOM == 144
 			PRINTFORMW 「후앗…나오고 있다…나의 몸으로부터…가득……♪」
 			PRINTFORMW 「그래도…가득 나왔기 때문에…가득 취하지 않으면…」
 			PRINTFORML %CALLNAME:TARGET%의 공허한 눈동자가%조사처리(CALLNAME:PLAYER,"를")% 파악한다……
-			CALL COUNTER_SKILL, "블러드 썩", 7
+			CALL COUNTER_SKILL, "흡혈", 7
 		;연모
 		ELSEIF TALENT:연모
 			;야외플레이
@@ -11348,7 +11348,7 @@ IF SELECTCOM == 145
 		ELSEIF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「기쁘다……나의 몸, 봐 주고 있던 거네……」
 			PRINTFORMW 「나도…답례하지 않으면……」
-			CALL COUNTER_SKILL, "블러드 썩", 5
+			CALL COUNTER_SKILL, "흡혈", 5
 		;연모
 		ELSEIF TALENT:연모
 			SELECTCASE CONDS("음모")
@@ -11379,7 +11379,7 @@ IF SELECTCOM == 145
 		ELSEIF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「기쁘다……나의 몸, 봐 주고 있던 거네……」
 			PRINTFORMW 「나도…답례하지 않으면……」
-			CALL COUNTER_SKILL, "블러드 썩", 5
+			CALL COUNTER_SKILL, "흡혈", 5
 		;연모
 		ELSEIF TALENT:연모
 			IF RAND:2 == 0
@@ -11676,7 +11676,7 @@ IF SELECTCOM == 160
 		ELSEIF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「후후훗……나를 내팽개쳐…이렇게 해허리를 털고 있었어？」
 			PRINTFORMW 「자 제대로 예의범절을 가르쳐 주지 않으면 안 되네요……당신를」
-			CALL COUNTER_SKILL, "블러드 썩", 5
+			CALL COUNTER_SKILL, "흡혈", 5
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「어머나, 그쪽에도 손을 내 버립니다인가?」
@@ -11697,7 +11697,7 @@ IF SELECTCOM == 160
 		ELSEIF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「후후훗……나를 내팽개쳐…이렇게 해허리를 털고 있었어？」
 			PRINTFORMW 「자 제대로 예의범절을 가르쳐 주지 않으면 안 되네요……당신를」
-			CALL COUNTER_SKILL, "블러드 썩", 5
+			CALL COUNTER_SKILL, "흡혈", 5
 		;연모
 		ELSEIF TALENT:연모
 			IF CDAYEV("할로윈")
@@ -13482,7 +13482,7 @@ IF SELECTCOM == 173 && TEQUIP:새댁플레이
 			PRINTFORMW 「우후훗, 부부의 흉내를 내는데 이런 것은필요없어요」
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 에이프런를 벗어 던졌다……
 			PRINTFORMW 「나와당신를 연결하는 것은…모습에서도, 말도 아니고……빨강이빨강있고 빛이야」
-			CALL COUNTER_SKILL, "블러드 썩", 10
+			CALL COUNTER_SKILL, "흡혈", 10
 			DITEMTYPE:TARGET:SELECTCOM = 1
 			TEQUIP:새댁플레이 = 0
 		;연모
@@ -13512,7 +13512,7 @@ IF SELECTCOM == 173 && TEQUIP:새댁플레이
 			PRINTFORMW 「우후훗, 부부의 흉내를 내는데 이런 것은필요없어요」
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 에이프런를 벗어 던졌다……
 			PRINTFORMW 「나와당신를 연결하는 것은…모습에서도, 말도 아니고……빨강이빨강있고 빛이야」
-			CALL COUNTER_SKILL, "블러드 썩", 10
+			CALL COUNTER_SKILL, "흡혈", 10
 			DITEMTYPE:TARGET:SELECTCOM = 1
 			TEQUIP:새댁플레이 = 0
 		;연모
@@ -13620,7 +13620,7 @@ IF SELECTCOM == 174 && TEQUIP:관내노출플레이
 			PRINTFORMW ……아니, 데리고 가려고 했지만---
 			PRINTFORMW 「여기에서 나와……어디에 가자고 해？」
 			PRINTFORMW 「밖 따위에 가지 않아도, 훌륭한 것이 있다 라고 가르쳐 주어요」
-			CALL COUNTER_SKILL, "블러드 썩", 10
+			CALL COUNTER_SKILL, "흡혈", 10
 			PRINTFORMW %CALLNAME:TARGET%는 방으로부터 나오지 않았다
 			DITEMTYPE:TARGET:SELECTCOM = 1
 			TEQUIP:관내노출플레이 = 0
@@ -13653,7 +13653,7 @@ IF SELECTCOM == 174 && TEQUIP:관내노출플레이
 			PRINTFORMW ……아니, 데리고 가려고 했지만---
 			PRINTFORMW 「여기에서 나와……어디에 가자고 해？」
 			PRINTFORMW 「밖 따위에 가지 않아도, 훌륭한 것이 있다 라고 가르쳐 주어요」
-			CALL COUNTER_SKILL, "블러드 썩", 10
+			CALL COUNTER_SKILL, "흡혈", 10
 			PRINTFORMW %CALLNAME:TARGET%는 방으로부터 나오지 않았다
 			DITEMTYPE:TARGET:SELECTCOM = 1
 			TEQUIP:관내노출플레이 = 0
@@ -14261,7 +14261,7 @@ ELSEIF SELECTCOM == 179 && TEQUIP:수치플레이 == 0
 		;굴복각인Lv3
 		ELSEIF MARK:굴복각인 == 3
 			PRINTFORMW 「이런 일 한 대상, 지불해 받아요」
-			CALL COUNTER_SKILL, "블러드 썩", 3
+			CALL COUNTER_SKILL, "흡혈", 3
 		;노출벽Lv3이상
 		ELSEIF ABL:노출벽 >= 3
 			PRINTFORMW 「뭐,  꽤 좋았어요…♪」
@@ -14297,7 +14297,7 @@ ELSEIF SELECTCOM == 179 && TEQUIP:수치플레이 == 0
 		;굴복각인Lv3
 		ELSEIF MARK:굴복각인 == 3
 			PRINTFORMW 「당신의 차례는 마지막？그러면…다음은 나의 차례군요」
-			CALL COUNTER_SKILL, "블러드 썩", 3
+			CALL COUNTER_SKILL, "흡혈", 3
 		;노출벽Lv3이상
 		ELSEIF ABL:노출벽 >= 3
 			PRINTFORMW 「이제(벌써) 마지막？좀 더 봐서 좋았을텐데…♪」
@@ -14427,7 +14427,7 @@ IF SELECTCOM == 231
 		;病み時
 		ELSEIF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「후훗……민감(이)가 된 그 몸에, 최고의 순간을 주어요……!」
-			CALL COUNTER_SKILL, "블러드 썩", 10
+			CALL COUNTER_SKILL, "흡혈", 10
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「평소보다 가게 되고 싶네요？좋아요, 당신의 마구 가는 모습을 나에게 보이게 해 주세요…♪」
@@ -14444,7 +14444,7 @@ IF SELECTCOM == 231
 		;病み時
 		ELSEIF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「후훗……민감(이)가 된 그 몸에, 최고의 순간을 주어요……!」
-			CALL COUNTER_SKILL, "블러드 썩", 10
+			CALL COUNTER_SKILL, "흡혈", 10
 		;연모
 		ELSEIF TALENT:연모
 			;봉사정신Lv3
@@ -14594,7 +14594,7 @@ IF SELECTCOM == 261
 		;病み時
 		ELSEIF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「아아…이런 건 간사해요.  당신의 정령을…피를…다 마시지 않으면 인내 할 수 없다……! 」
-			CALL COUNTER_SKILL, "블러드 썩", 10
+			CALL COUNTER_SKILL, "흡혈", 10
 		;연모
 		ELSEIF TALENT:연모
 			IF TEQUIP:넘어뜨리기
@@ -14649,7 +14649,7 @@ IF SELECTCOM == 261
 				PRINTFORMW 「몸도 마음도 녹아…나만을 응시하고 있으면 좋은거야……」
 			ELSE
 				PRINTFORMW 「아아…이런 건 간사해요.  당신의 정령을…피를…다 마시지 않으면 인내 할 수 없다……! 」
-				CALL COUNTER_SKILL, "블러드 썩", 10
+				CALL COUNTER_SKILL, "흡혈", 10
 			ENDIF
 		;연모
 		ELSEIF TALENT:연모
@@ -14856,7 +14856,7 @@ IF SELECTCOM == 280
 		IF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「저항이라니…서로의 입장을 모르고 있는 것일까？」
 			PRINTFORMW 「나는 사냥꾼으로, 당신은 사냥감이랍니다」
-			CALL COUNTER_SKILL, "블러드 썩", 5
+			CALL COUNTER_SKILL, "흡혈", 5
 		;연모
 		ELSEIF TALENT:연모
 			IF RAND:3 == 0 
@@ -14995,7 +14995,7 @@ IF SELECTCOM == 300
 		;病み時
 		IF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「그렇게 싸구려 같은 말이 아니고……다른 물건을 갖고 싶네요」
-			CALL COUNTER_SKILL, "블러드 썩", 5
+			CALL COUNTER_SKILL, "흡혈", 5
 		;연모
 		ELSEIF TALENT:연모
 			IF RAND:2 == 0
@@ -15079,7 +15079,7 @@ ELSEIF SELECTCOM == 301 && TEQUIP:손대중 == 0
 		;病み時
 		ELSEIF GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「아…아아……최고……이렇게 되어서는, 인내 할 수 없다……읏! 」
-			CALL COUNTER_SKILL, "블러드 썩", 10
+			CALL COUNTER_SKILL, "흡혈", 10
 		;연모
 		ELSEIF TALENT:연모
 			IF RAND:2 == 0
@@ -15520,7 +15520,7 @@ CASE "공포LV3돌파"
 			PRINTFORMW 「이 내가공포를 기억하다니……」
 			PRINTFORMW 「……그렇지만」
 			PRINTFORMW 「어느 쪽이 무서운 것인지, 가르쳐 주어요…」
-			CALL COUNTER_SKILL, "블러드 썩", 50
+			CALL COUNTER_SKILL, "흡혈", 50
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「힛! 아………」
@@ -16557,7 +16557,7 @@ ELSEIF SHOOT("Ｖ내사정")
 				ELSE
 					PRINTFORMW 「아아…이렇게 따라지면…나 이제 인내 할 수 없다…읏♪」
 				ENDIF
-				CALL COUNTER_SKILL, "블러드 썩", 2
+				CALL COUNTER_SKILL, "흡혈", 2
 				IF RAND:3 == 0
 					PRINTFORMW 「응～～～…푸하아♪ 당신의 피를 마시면, 몸이 뜨거워져 버립니다…♪」
 					PRINTFORMW 「자…좀 더 안아 주세요…♪」
@@ -16689,7 +16689,7 @@ ELSEIF SHOOT("키스")
 	ELSEIF GETBIT(CFLAG:201, 30)
 		PRINTFORMW 「후후후…나의입, 그렇게 좋은거야？」
 		PRINTFORMW 「그러면…좀 더 기분 좋게 해 주지 않으면…♪」
-		CALL COUNTER_SKILL, "블러드 썩", 2
+		CALL COUNTER_SKILL, "흡혈", 2
 	;연모
 	ELSEIF TALENT:연모
 		IF RAND:6 == 0 && ABL:정액중독 >= 3
@@ -16877,7 +16877,7 @@ ENDIF
 ;-------------------------------------------------
 @COUNTER_KOJO_25_2, ARGS
 
-;블러드 썩
+;흡혈
 SELECTCASE ARGS
 CASE "Ｖ인서트", "Ａ인서트", "애무", "봉사", "ＳＭ", 
 	;病み時かつ재갈なし
@@ -16888,23 +16888,23 @@ CASE "Ｖ인서트", "Ａ인서트", "애무", "봉사", "ＳＭ",
 				PRINTFORML 「당신은 거기에 있는거죠？안보여도…놓치지 않아요…」
 				IF COND("ご無沙汰")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 평소보다 크고입를 열었다…
-					CALL COUNTER_SKILL, "블러드 썩", 20
+					CALL COUNTER_SKILL, "흡혈", 20
 				ELSEIF COND("욕구불만")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 굶고 있다…
-					CALL COUNTER_SKILL, "블러드 썩", 15
+					CALL COUNTER_SKILL, "흡혈", 15
 				ELSE
-					CALL COUNTER_SKILL, "블러드 썩", 10
+					CALL COUNTER_SKILL, "흡혈", 10
 				ENDIF
 			ELSE
 				PRINTFORML 「아아…당신라고 정말로 맛있을 것 같다…」
 				IF COND("ご無沙汰")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 평소보다 크고입를 열었다…
-					CALL COUNTER_SKILL, "블러드 썩", 10
+					CALL COUNTER_SKILL, "흡혈", 10
 				ELSEIF COND("욕구불만")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 굶고 있다…
-					CALL COUNTER_SKILL, "블러드 썩", 8
+					CALL COUNTER_SKILL, "흡혈", 8
 				ELSE
-					CALL COUNTER_SKILL, "블러드 썩", 7
+					CALL COUNTER_SKILL, "흡혈", 7
 				ENDIF
 			ENDIF
 			RETURN 1
@@ -16913,23 +16913,23 @@ CASE "Ｖ인서트", "Ａ인서트", "애무", "봉사", "ＳＭ",
 				PRINTFORML 「……찾아냈다」
 				IF COND("ご無沙汰")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 평소보다 크고입를 열었다…
-					CALL COUNTER_SKILL, "블러드 썩", 7
+					CALL COUNTER_SKILL, "흡혈", 7
 				ELSEIF COND("욕구불만")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 굶고 있다…
-					CALL COUNTER_SKILL, "블러드 썩", 5
+					CALL COUNTER_SKILL, "흡혈", 5
 				ELSE
-					CALL COUNTER_SKILL, "블러드 썩", 4
+					CALL COUNTER_SKILL, "흡혈", 4
 				ENDIF
 			ELSE
 				PRINTFORML 「당신의 몸에 새겨 주겠어요…」
 				IF COND("ご無沙汰")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 평소보다 크고입를 열었다…
-					CALL COUNTER_SKILL, "블러드 썩", 8
+					CALL COUNTER_SKILL, "흡혈", 8
 				ELSEIF COND("욕구불만")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 굶고 있다…
-					CALL COUNTER_SKILL, "블러드 썩", 6
+					CALL COUNTER_SKILL, "흡혈", 6
 				ELSE
-					CALL COUNTER_SKILL, "블러드 썩", 5
+					CALL COUNTER_SKILL, "흡혈", 5
 				ENDIF
 			ENDIF
 			RETURN 1
@@ -16938,34 +16938,34 @@ CASE "Ｖ인서트", "Ａ인서트", "애무", "봉사", "ＳＭ",
 				PRINTFORML 「안보여도…당신의 장소 정도 알아요…」
 				IF COND("ご無沙汰")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 평소보다 크고입를 열었다…
-					CALL COUNTER_SKILL, "블러드 썩", 5
+					CALL COUNTER_SKILL, "흡혈", 5
 				ELSEIF COND("욕구불만")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 굶고 있다…
-					CALL COUNTER_SKILL, "블러드 썩", 3
+					CALL COUNTER_SKILL, "흡혈", 3
 				ELSE
-					CALL COUNTER_SKILL, "블러드 썩", 2
+					CALL COUNTER_SKILL, "흡혈", 2
 				ENDIF
 			ELSE
 				PRINTFORML 「당신의 모두를 갖고 싶은거야…」
 				IF COND("ご無沙汰")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 평소보다 크고입를 열었다…
-					CALL COUNTER_SKILL, "블러드 썩", 7
+					CALL COUNTER_SKILL, "흡혈", 7
 				ELSEIF COND("욕구불만")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 굶고 있다…
-					CALL COUNTER_SKILL, "블러드 썩", 5
+					CALL COUNTER_SKILL, "흡혈", 5
 				ELSE
-					CALL COUNTER_SKILL, "블러드 썩", 4
+					CALL COUNTER_SKILL, "흡혈", 4
 				ENDIF
 			ENDIF
 			RETURN 1
 		CASE "弱"
 			IF TEQUIP:아이마스크
 				PRINTFORML 「당신하…여기에 있어…？」
-				CALL COUNTER_SKILL, "블러드 썩", 0
+				CALL COUNTER_SKILL, "흡혈", 0
 				PRINTFORMW 「어디에 있을까 라고…곧바로 맞혀 주어요…」
 			ELSE
 				PRINTFORML 「움직이지 마. 괜찮아, 곧 기분 좋아져요…」
-				CALL COUNTER_SKILL, "블러드 썩", 3
+				CALL COUNTER_SKILL, "흡혈", 3
 			ENDIF
 			RETURN 1
 		ENDSELECT
@@ -16977,23 +16977,23 @@ CASE "Ｖ인서트", "Ａ인서트", "애무", "봉사", "ＳＭ",
 				PRINTFORML 「안보인다고 생각해…방심하네요?」
 				IF COND("ご無沙汰")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 평소보다 크고입를 열었다…
-					CALL COUNTER_SKILL, "블러드 썩", 7
+					CALL COUNTER_SKILL, "흡혈", 7
 				ELSEIF COND("욕구불만")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 굶고 있다…
-					CALL COUNTER_SKILL, "블러드 썩", 5
+					CALL COUNTER_SKILL, "흡혈", 5
 				ELSE
-					CALL COUNTER_SKILL, "블러드 썩", 4
+					CALL COUNTER_SKILL, "흡혈", 4
 				ENDIF
 			ELSE
 				PRINTFORML 「다 들이마셔 주겠어요…」
 				IF COND("ご無沙汰")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 평소보다 크고입를 열었다…
-					CALL COUNTER_SKILL, "블러드 썩", 8
+					CALL COUNTER_SKILL, "흡혈", 8
 				ELSEIF COND("욕구불만")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 굶고 있다…
-					CALL COUNTER_SKILL, "블러드 썩", 6
+					CALL COUNTER_SKILL, "흡혈", 6
 				ELSE
-					CALL COUNTER_SKILL, "블러드 썩", 5
+					CALL COUNTER_SKILL, "흡혈", 5
 				ENDIF
 			ENDIF
 			RETURN 1
@@ -17002,47 +17002,47 @@ CASE "Ｖ인서트", "Ａ인서트", "애무", "봉사", "ＳＭ",
 				PRINTFORML 「안보이면 어렵네요……」
 				IF COND("ご無沙汰")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 평소보다 크고입를 열었다…
-					CALL COUNTER_SKILL, "블러드 썩", 5
+					CALL COUNTER_SKILL, "흡혈", 5
 				ELSEIF COND("욕구불만")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 굶고 있다…
-					CALL COUNTER_SKILL, "블러드 썩", 3
+					CALL COUNTER_SKILL, "흡혈", 3
 				ELSE
-					CALL COUNTER_SKILL, "블러드 썩", 2
+					CALL COUNTER_SKILL, "흡혈", 2
 				ENDIF
 			ELSE
 				PRINTFORML 「 내가 마른 목을 촉촉하게 해 주네요…」
 				IF COND("ご無沙汰")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 평소보다 크고입를 열었다…
-					CALL COUNTER_SKILL, "블러드 썩", 7
+					CALL COUNTER_SKILL, "흡혈", 7
 				ELSEIF COND("욕구불만")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 굶고 있다…
-					CALL COUNTER_SKILL, "블러드 썩", 5
+					CALL COUNTER_SKILL, "흡혈", 5
 				ELSE
-					CALL COUNTER_SKILL, "블러드 썩", 4
+					CALL COUNTER_SKILL, "흡혈", 4
 				ENDIF
 			ENDIF
 			RETURN 1
 		CASE "中"
 			IF TEQUIP:아이마스크
 				PRINTFORML 「이 근처일까…」
-				CALL COUNTER_SKILL, "블러드 썩", 0
+				CALL COUNTER_SKILL, "흡혈", 0
 			ELSE
 				PRINTFORML 「무방비군요…」
 				IF COND("ご無沙汰")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 평소보다 크고입를 열었다…
-					CALL COUNTER_SKILL, "블러드 썩", 6
+					CALL COUNTER_SKILL, "흡혈", 6
 				ELSEIF COND("욕구불만")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 굶고 있다…
-					CALL COUNTER_SKILL, "블러드 썩", 4
+					CALL COUNTER_SKILL, "흡혈", 4
 				ELSE
-					CALL COUNTER_SKILL, "블러드 썩", 3
+					CALL COUNTER_SKILL, "흡혈", 3
 				ENDIF
 			ENDIF
 			RETURN 1
 		CASE "弱"
 			IF TEQUIP:아이마스크
 				PRINTFORML 「눈 가림이 방해군요……」
-				CALL COUNTER_SKILL, "블러드 썩", 0
+				CALL COUNTER_SKILL, "흡혈", 0
 				IF RAND:2 == 0
 					PRINTFORMW 「쿳……눈가리개조차 없으면……」
 				ELSE
@@ -17052,12 +17052,12 @@ CASE "Ｖ인서트", "Ａ인서트", "애무", "봉사", "ＳＭ",
 				PRINTFORML 「후후…빈틈」
 				IF COND("ご無沙汰")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 평소보다 크고입를 열었다…
-					CALL COUNTER_SKILL, "블러드 썩", 0
+					CALL COUNTER_SKILL, "흡혈", 0
 				ELSEIF COND("욕구불만")
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 굶고 있다…
-					CALL COUNTER_SKILL, "블러드 썩", 0
+					CALL COUNTER_SKILL, "흡혈", 0
 				ELSE
-					CALL COUNTER_SKILL, "블러드 썩", 0
+					CALL COUNTER_SKILL, "흡혈", 0
 				ENDIF
 				IF RAND:2 == 0
 					PRINTFORMW 「……지금에 봐 주세요」
@@ -17158,7 +17158,7 @@ CASE "카운터없음"
 		;病み時
 		IF GETBIT(CFLAG:201, 30) 
 			PRINTFORML 「당신의 피……먹여 주어요」
-			CALL COUNTER_SKILL, "블러드 썩", 3
+			CALL COUNTER_SKILL, "흡혈", 3
 		ELSE
 			PRINTFORMW %조사만처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 위로 미소를 띄우고 있다……
 		ENDIF
@@ -17241,22 +17241,22 @@ CASE "스톡사용"
 	;病み時
 	ELSEIF GETBIT(CFLAG:201, 30)
 		PRINTFORMW 「아핫…아직 들이마시게 해 주는 거네……」
-		;블러드 썩の制限をしていなくて, 정력が5이상だと정력半減
+		;흡혈の制限をしていなくて, 정력が5이상だと정력半減
 		IF TEQUIP:구속 == 0 && TEQUIP:아이마스크 == 0 && TEQUIP:재갈 == 0 && TEQUIP:촉수 == 0 && BASE:PLAYER:정력 >= 5
 			PRINTFORMW 「이것이라면…나의 마름도 촉촉할까…」
 			PRINTFORMW %CALLNAME:TARGET%의 송곳니가 둔하게 빛난다…! 
 			LOCAL = BASE:PLAYER:정력/2
-			CALL COUNTER_SKILL, "블러드 썩", LOCAL
+			CALL COUNTER_SKILL, "흡혈", LOCAL
 			;정력が5이상あると1/2で更に半減
 			IF RAND:2 == 0 && BASE:PLAYER:정력 >= 5
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 아직 떨어지지 않는다! 
 				LOCAL = BASE:PLAYER:정력/2
-				CALL COUNTER_SKILL, "블러드 썩", LOCAL
+				CALL COUNTER_SKILL, "흡혈", LOCAL
 				;정력が5이상あると1/2で更に半減
 				IF RAND:2 == 0 && BASE:PLAYER:정력 >= 5
 					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 아직 떨어지지 않는다! 
 					LOCAL = BASE:PLAYER:정력/2
-					CALL COUNTER_SKILL, "블러드 썩", LOCAL
+					CALL COUNTER_SKILL, "흡혈", LOCAL
 					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 간신히입를 떼어 놓았다…
 				ELSE
 					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 서운한 듯이입를 떼어 놓았다…
@@ -17271,18 +17271,18 @@ CASE "스톡사용"
 	ELSEIF TALENT:연모
 		PRINTFORMW 「좀 더 즐길 수 있을 것 같네요…♪」
 		PRINTFORMW 「그렇지만…무리해서는 안됩니다？」
-	;굴복각인Lv3で블러드 썩の制限をしていない
+	;굴복각인Lv3で흡혈の制限をしていない
 	ELSEIF MARK:굴복각인 == 3 && TEQUIP:구속 == 0 && TEQUIP:아이마스크 == 0 && TEQUIP:재갈 == 0 && TEQUIP:촉수 == 0 
 		PRINTFORMW 그러나―
 		PRINTFORMW 「후후, 정말말사슴씨인 것이지요. 나에게 일순간에서도 틈을 보이다니…♪」
 		PRINTFORMW %CALLNAME:TARGET%의 송곳니가 둔하게 빛난다…! 
 		LOCAL = BASE:PLAYER:정력/2
-		CALL COUNTER_SKILL, "블러드 썩", LOCAL
+		CALL COUNTER_SKILL, "흡혈", LOCAL
 		;정력が5이상あると1/2で更に半減
 		IF RAND:2 == 0 && BASE:PLAYER:정력 >= 5
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 아직 떨어지지 않는다! 
 			LOCAL = BASE:PLAYER:정력/2
-			CALL COUNTER_SKILL, "블러드 썩", LOCAL
+			CALL COUNTER_SKILL, "흡혈", LOCAL
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 서운한 듯이입를 떼어 놓았다…
 		ELSE
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 천천히입를 떼어 놓았다…
@@ -17509,7 +17509,7 @@ CASE "아침기승위"
 		IF RAND:2 == 0
 			PRINTFORMW 「읏……아…기분 좋아서 일어나 버렸습니다？자고 있는 동안도 기분 좋은 것 같이 신음하고 있었던 것이군요♪」
 			PRINTFORMW 「그러면 답례에…1입받네요」
-			PRINTFORMW %CALLNAME:TARGET%의 블러드 썩! %CALLNAME:MASTER%의 목덜미로부터 뭐라고도 말할 수 없는 달콤한 영향이 퍼진다…
+			PRINTFORMW %CALLNAME:TARGET%의 흡혈! %CALLNAME:MASTER%의 목덜미로부터 뭐라고도 말할 수 없는 달콤한 영향이 퍼진다…
 			PRINTFORMW 「후훗, 당신의 것이 커지고 있어요…♪」
 		ELSE
 			PRINTFORMW 「후후…겨우 눈을 떴어요, 잠꾸러기♪」
@@ -17562,7 +17562,7 @@ CASE "아침키스"
 			PRINTFORML 갑자기%CALLNAME:MASTER%의 목덜미에 아픔이 달린다!
 			PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 수수께끼의아픔에 놀라 일어나면, 그 목덜미에%조사처리(CALLNAME:TARGET,"가")% 물고 있었다! 
 			PRINTFORMW 「후후…눈이 깬 것 같지만…이대로……♪」
-			PRINTFORMW %CALLNAME:TARGET%의 블러드 썩!  %CALLNAME:MASTER%의 사지에 서서한 쾌감이 퍼진다…
+			PRINTFORMW %CALLNAME:TARGET%의 흡혈!  %CALLNAME:MASTER%의 사지에 서서한 쾌감이 퍼진다…
 			PRINTFORMW 「잘 먹었어요♪ …당신의 여기도, 완전히 일어나 버린 것 같네요♪」
 			PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 옷옷의 위로부터라도 아는만큼 커졌다%CALLNAME:MASTER%의
 			IF PENIS(MASTER)
@@ -18640,7 +18640,7 @@ CASE "질내사정후황홀"
 	IF GETBIT(CFLAG:201, 30)
 		PRINTFORMW 「후…후후……발리나 있고. 좀 더…좀 더……」
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 힘이 들어가지 않는 몸에채찍쳐, %CALLNAME:MASTER%앞으로체를 댄다…
-		CALL COUNTER_SKILL, "블러드 썩", 10
+		CALL COUNTER_SKILL, "흡혈", 10
 	;연모
 	ELSEIF TALENT:연모
 		PRINTFORMW 「키, 기분 너무 좋아 힘이………」
