@@ -51,13 +51,13 @@ IF FLAG:22 != 2
 	;NTR이벤트
 	CALL EVENT_DRAGON_NTR, "寝取られ判定"
 
-	;조교後行為の체크
+	;조교후 행위의 체크
 	CALL SELF_CHECK
 
-	;搾乳した모유の매각
+	;짜낸 모유의 매각
 	CALL SELL_MILK
 
-	;조교時に録画したビデオを매각
+	;조교시 촬영한 비디오 매각
 	CALL SELL_VIDEO
 	IF ASSI
 		SWAP TARGET, ASSI
@@ -65,10 +65,10 @@ IF FLAG:22 != 2
 		SWAP TARGET, ASSI
 	ENDIF
 
-	;조수の조교종료時特典（여우で미약入手など）
+	;조수의 조교종료시 특전（여우가 미약주는등）
 	CALL AFTERTRA_BONUS_ASSI
 
-	;소모품のオート購入
+	;소모품 자동구입
 	CALL CALC, "소모품の自動購入"
 ENDIF
 
@@ -78,31 +78,31 @@ BEGIN ABLUP
 
 
 @EVENT_AFTER_TRAIN
-;기력・체력の上昇체크
+;기력・체력의 상승  체크
 CALL EVENT_GROWTH
 
-;何의 구슬を得られたか
+;어떤 구슬을 얻었는지
 CALL JUEL_CHECK
 
 ;사정플래그, 처녀상실플래그などをリセット
 VARSET TFLAG, 0, 0, 101
 
-;조교経験を増やす
+;조교경험을 늘림
 EXP:조교횟수 += 1
 
-;날짜の記録
+;조교한 날짜를 기록
 CFLAG:97 = DAY
 
 @EVENT_AFTER_TRAIN_COS, ARG
 #DIM LCOUNT
-;汚れを初期化
+;더러움을 초기화
 CALL RESET_STAIN_EX, "全部", ARG
 
 SELECTCASE CONFIG("조교종료時の복장")
-;終了時に本人の옷に着替えてもらうなら
+;종료시본인의 옷으로 갈아입는다면
 CASE 0
 	CALL COORDINATE_MUMA, ARG
-;終了時に마음에듬の옷に着替えてもらうなら
+;종료시마음에드는옷으로 갈아입는다면
 CASE 2
 	;ここでは밤の衣装にのみ着替えるのに注意. 낮の衣装については@EVENTSHOPの早아침이벤트後に改めて着替える
 	IF GETBIT(IS_FAVORITE_DRESS(ARG), 6)
@@ -110,7 +110,7 @@ CASE 2
 	ELSEIF GETBIT(IS_FAVORITE_DRESS(ARG), 0)
 		CALL SET_FAVORITE_DRESS, ARG, 0
 	ENDIF
-;終了時に마음에듬の옷のどれかに着替えてもらうなら
+;종료시마음에드는옷중 어느것으로 갈아입는다면
 CASE 3
 	IF IS_FAVORITE_DRESS(ARG) == 0
 		;팬티の着用禁止
@@ -119,7 +119,7 @@ CASE 3
 		RETURN 0
 	ENDIF
 
-	;たまには着替えないかもしれなくてもいいじゃない! 
+	;가끔은 못 입을지도 모르잖아! 
 	FOR LCOUNT, 0, 100
 		LOCAL = RAND:10
 		SIF GETBIT(IS_FAVORITE_DRESS(ARG), LOCAL) == 0
@@ -128,13 +128,13 @@ CASE 3
 		CALL SET_FAVORITE_DRESS, ARG, LOCAL
 		BREAK
 	NEXT
-;終了時に薄着なら옷を着てもらう
+;종료시に薄着なら옷を着てもらう
 CASE 4
 	SIF EQUIP:ARG:웃옷 + EQUIP:ARG:보디슈츠 == 0
 		CALL COORDINATE_MUMA, ARG
 ENDSELECT
 
-;팬티の着用禁止
+;팬티 착용 금지
 SIF COND("身嗜み：노팬티", ARG)
 	CALL SET_PANTIES, ARG
 
@@ -148,7 +148,7 @@ SIF COND("身嗜み：노팬티", ARG)
 DRAWLINE
 VARSET LOCAL
 BONUS = 0
-;성욕などの充발보너스
+;성욕등 만족보너스
 IF COND("성욕대만족")
 	PRINT 성욕대만족
 	BONUS += MAX(ABL:욕망 * 4, 10)
@@ -268,20 +268,20 @@ ELSE
 	CLEARLINE 1
 ENDIF
 
-;정액のやり取り
+;정액의 주고받음
 PRINTL 
 
 IF EX:절대착정량 && EX:주인에대한절대사정량
-	PRINTFORMW %CALLNAME:TARGET%는 이번조교그래서{EX:절대착정량}ml노정액를 그 몸으로 받아 들여,{EX:주인에대한절대사정량}ml노정액를 %CALLNAME:MASTER%에 따랐습니다.
+	PRINTFORMW %타겟은()% 이번조교에서 {EX:절대착정량}ml의 정액를 그 몸으로 받아 들여,{EX:주인에대한절대사정량}ml의 정액를 %CALLNAME:MASTER%에 따랐습니다.
 ELSEIF EX:절대착정량
-	PRINTFORMW %CALLNAME:TARGET%는 이번조교그래서{EX:절대착정량}ml노정액를 그 몸으로 받아 들였습니다.
+	PRINTFORMW %타겟은()% 이번조교에서 {EX:절대착정량}ml의 정액를 그 몸으로 받아 들였습니다.
 ELSEIF EX:주인에대한절대사정량
-	PRINTFORMW %CALLNAME:TARGET%는 이번조교그래서{EX:주인에대한절대사정량}ml노정액를 %CALLNAME:MASTER%에 따랐습니다.
+	PRINTFORMW %타겟은()% 이번조교에서 {EX:주인에대한절대사정량}ml의 정액를 %CALLNAME:MASTER%에 따랐습니다.
 ELSE
 	CLEARLINE 1
 ENDIF
 
-;욕구불만の解消
+;욕구불만의 해소
 LOCAL = 0
 SELECTCASE BASE:성욕
 CASE IS >= MAXBASE:성욕 * 2
@@ -303,11 +303,11 @@ CASE IS >= 1
 	LOCAL += 1
 ENDSELECT
 
-;욕망と정액욕を同時に만족させると, 욕구불만が大幅に解消される
+;욕망과 정액욕구를 동시에 만족시키면, 욕구불만이 큰폭으로 해소된다
 SIF COND("성욕만족") && COND("정액욕만족")
 	LOCAL += 10
 
-;욕구불만の解消
+;욕구불만의 해소
 IF BASE:욕구불만 && COND("성욕만족") && COND("정액욕만족")
 	PRINTL 
 	MEMO_LINECOUNT = LINECOUNT
@@ -316,7 +316,7 @@ IF BASE:욕구불만 && COND("성욕만족") && COND("정액욕만족")
 	IF COND("성욕대만족") && COND("정액욕대만족")
 		PRINTFORMW %CALLNAME:TARGET%의 욕구불만이 완전히 해소되었습니다! 
 	ELSEIF COND("성욕만족") && COND("정액욕만족")
-		PRINTFORMW %CALLNAME:TARGET%의 욕구불만이 크게 해소되었습니다. 
+		PRINTFORMW %CALLNAME:TARGET%의 욕구불만이 큰 폭으로 해소되었습니다. 
 	ENDIF
 	RESETCOLOR
 
@@ -326,7 +326,7 @@ ENDIF
 
 CALL CALC, "욕구불만解消", TARGET, LOCAL
 
-;절정보너스はここでリセット
+;절정보너스는 여기서 리셋트
 JUEL:20 = 0
 JUEL:21 = 0
 JUEL:22 = 0
@@ -372,7 +372,7 @@ IF ABL:기교 > MEMO_TEC || ABL:ＬＶ > MEMO_LV
 		PRINTFORMW %CALLNAME:TARGET%의 ＬＶ하{ABL:ＬＶ - MEMO_LV}LV상승해{ABL:ＬＶ}LV(이)가 되었습니다! 
 		;ＬＶが10이상になると상위몽마화の가능性あり. LV14だと確実に상위몽마になる
 		IF ABL:ＬＶ >= 10 && ABL:ＬＶ + ABL:기교/2 >= 10 + RAND:5 && TALENT:몽마 && TALENT:상위몽마 == 0
-			PRINTFORMW %CALLNAME:TARGET% 는 상위 몽마되었습니다! 
+			PRINTFORMW %타겟은()% 상위 몽마가 되었습니다! 
 			TALENT:몽마 = 0
 			TALENT:상위몽마 = 1
 		ENDIF
@@ -423,7 +423,7 @@ FOR LCOUNT, 0, 100
 	SIF J:11 <= 0
 		BREAK
 NEXT
-;減少量表示
+;감소량 표시
 FOR LCOUNT, 4, 11
 	SIF LCOUNT == 7 || LOCAL:LCOUNT == 0
 		CONTINUE
