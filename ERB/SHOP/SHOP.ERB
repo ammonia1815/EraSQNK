@@ -240,10 +240,10 @@ PRINTL
 IF TEXTS("날짜対応이벤트") != ""
 	SETCOLOR DEF_COLOR("황색")
 	PRINTFORM %TEXTS("날짜対応이벤트")%
-	;크리스마스ツリー체크
-	IF DAYEV("크리스마스期間") && NUM("크리스마스ツリー")
+	;크리스마스트리체크
+	IF DAYEV("크리스마스주간") && NUM("크리스마스트리")
 		SETCOLOR DEF_COLOR("하트핑크")
-		FOR LCOUNT, 0, NUM("크리스마스ツリー")
+		FOR LCOUNT, 0, NUM("크리스마스트리")
 			PRINTFORM %UNICODE(0xD83C)%%UNICODE(0xDF84)%
 		NEXT
 	ENDIF

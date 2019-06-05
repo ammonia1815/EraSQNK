@@ -698,9 +698,9 @@ CASE "小柄の상한"
 CASE "보통の상한"
 	RETURNF 163
 ;날짜이벤트など특수이벤트
-CASE "크리스마스ツリー"
+CASE "크리스마스트리"
 	FOR LCOUNT, 2, CHARANUM
-		SIF CEVENT("날짜：크리스마스ツリー", LCOUNT)
+		SIF CEVENT("날짜：크리스마스트리", LCOUNT)
 			LOCAL += 1
 	NEXT
 CASEELSE
@@ -2877,8 +2877,8 @@ CASE "탐색：상태異常無効持ちが居る"
 	ENDIF
 
 ;날짜이벤트など특수이벤트
-CASE "크리스마스ツリー"
-	SIF CEVENT("날짜：크리스마스ツリー", ARG)
+CASE "크리스마스트리"
+	SIF CEVENT("날짜：크리스마스트리", ARG)
 		RETURNF 1
 
 ;종족や캐릭터의判定用
@@ -4133,7 +4133,7 @@ ENDSELECT
 ;それぞれの이벤트日は다음날の深夜まではＯＫとする
 SELECTCASE ARGS
 ;날짜이벤트
-CASE "お正月"
+CASE "정월"
 	SIF ARGS:1 != "現実のみ" && CONFIG("날짜고정이벤트재현") && FLAG:871 == 101
 		RETURNF 1
 	SIF MONTH_DAY >= 10100 && MONTH_DAY <= 10203
@@ -4153,7 +4153,7 @@ CASE "발렌타인다음날"
 		RETURNF 1
 	SIF MONTH_DAY >= 21504 && MONTH_DAY <= 21603
 		RETURNF 1
-CASE "ホワイトデー"
+CASE "화이트데이"
 	;１年目は無し
 	SIF FLAG:872 < 2
 		RETURNF 0
@@ -4166,12 +4166,12 @@ CASE "바다의날"
 		RETURNF 1
 	SIF MONTH_DAY >= 71600 && MONTH_DAY <= 71703
 		RETURNF 1
-CASE "ハロウィン"
+CASE "할로윈"
 	SIF ARGS:1 != "現実のみ" && CONFIG("날짜고정이벤트재현") && FLAG:871 == 80
 		RETURNF 1
 	SIF MONTH_DAY >= 103100 && MONTH_DAY <= 110103
 		RETURNF 1
-CASE "크리스마스一週間前"
+CASE "크리스마스일주일전"
 	SIF ARGS:1 != "現実のみ" && CONFIG("날짜고정이벤트재현") && FLAG:871 == 91
 		RETURNF 1
 	SIF MONTH_DAY >= 121800 && MONTH_DAY <= 121903
@@ -4187,7 +4187,7 @@ CASE "크리스마스다음날"
 		RETURNF 1
 	SIF MONTH_DAY >= 122604 && MONTH_DAY <= 122703
 		RETURNF 1
-CASE "크리스마스期間"
+CASE "크리스마스주간"
 	SIF ARGS:1 != "現実のみ" && CONFIG("날짜고정이벤트재현") && FLAG:871 >= 91 && FLAG:871 <= 99
 		RETURNF 1
 	SIF MONTH_DAY >= 121800 && MONTH_DAY <= 122703
@@ -5773,7 +5773,7 @@ CALL SETFLAG, "성전환플래그", ARG
 CALL EXP50_CHECK, ARG
 
 IF CONFIG("페니스상세설정") && ARG == MASTER && PENIS(ARG) && TALENT:ARG:페니스 == 0
-	PRINTFORML 성별의 변화에 따라 %CALLNAME:MASTER%의 다리사이에 변화가 일어나고 있습니다…
+	PRINTFORML 성별의 변화에 따라 %CALLNAME:MASTER%의 다리 사이에 변화가 일어나고 있습니다…
 	CALL SETCONFIG, "페니스상세설정：주인"
 ENDIF
 

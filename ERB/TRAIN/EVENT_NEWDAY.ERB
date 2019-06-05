@@ -47,13 +47,13 @@ CASE "아침逆정상위"
 	SIF EXP:사정경험 == MEMO_EXP:3
 		CALL SIMULATE_TRAIN_COM, 120, LOCAL
 
-	PRINTFORMW %CALLNAME:MASTER%는 하복부\@ RAND:2 ? を襲う衝撃 # から広がる快感 \@를 깨달아 눈을 떴다
-	PRINTFORMW 아무래도,%CALLNAME:TARGET%의 자고 있다%CALLNAME:MASTER%를 범하고 즐기고 있는 한중간인 것 같다…
+	PRINTFORMW %마스터는()% 하복부\@ RAND:2 ? 를 덮치는 충격 # 에 활짝 퍼지는 쾌감 \@을 깨달아 눈을 떴다
+	PRINTFORMW 아무래도,%타겟이()% 자고 있는 %마스터를()% 범해 즐기고 있는 한중간인 것 같다…
 	IF TARGET == ASSI
 		IF EXP:사정경험 > MEMO_EXP:3 && RAND:2
-			PRINTFORMW 완전히 깨어났다%CALLNAME:MASTER%는 허리를 내밀어%CALLNAME:TARGET%에 확실히봉사하도록(듯이) 명령하면, 질 안쪽을 두드린다정액의 감촉을 즐기면서 오늘의 스케줄을 보고시켰습니다…
+			PRINTFORMW 완전히 깨어난 %마스터는()% 허리를 내밀어 %CALLNAME:TARGET%에 확실히 봉사하도록 명령하고, 질 안쪽을 두드리는 정액의 감촉을 즐기면서 오늘의 스케줄을 보고시켰습니다…
 		ELSE
-			PRINTFORMW 주인이 눈을 뜬 것을 확인하면,%CALLNAME:TARGET%는 유유히 허리를 움직여%CALLNAME:MASTER%에 교성을 주게 하면서 오늘의 스케줄을 보고하기 시작했다…
+			PRINTFORMW 주인이 눈을 뜬 것을 확인하면, %타겟은()% 유유히 허리를 움직여 %CALLNAME:MASTER%에 교성을 지르게 하면서 오늘의 스케줄을 보고하기 시작했다…
 		ENDIF
 	;ＭＡＳＴＥＲ主導権な展開はまだできてない
 	;ELSEIF RAND:2
@@ -61,22 +61,22 @@ CASE "아침逆정상위"
 	;	PRINTFORML しどろもどろになって言い訳するAへ당신は妖艶に笑いかけながら、발を開いてAを誘った…
 	ELSE
 		IF EXP:사정경험 > MEMO_EXP:3 && RAND:3 == 0
-			PRINTFORM %CALLNAME:MASTER%하지만 일어날 때까지사정를 참고 있던 것 같다%CALLNAME:TARGET%하,
+			PRINTFORM %마스터가()% 일어날 때까지 사정을 참고 있던 것 같은 %타겟은()%,
 		ELSEIF RAND:2
-			PRINTFORM 질의 야무짐의 변화로%CALLNAME:MASTER%(이)가 눈을 뜸을 감지했다%CALLNAME:TARGET%하,
+			PRINTFORM 질의 야무짐의 변화로 %마스터가()% 눈을 뜸을 감지한 %타겟은()%,
 		ELSE
-			PRINTFORM 잠들어 있음을 덮쳤던 것에 대해 즐길 수 있다%CALLNAME:MASTER%의입를키스그리고 막았다%CALLNAME:TARGET%하,
+			PRINTFORM 잠들어 있는동안 덮쳤던 것을 즐기게 된 %CALLNAME:MASTER%의 입을 키스로 막은 %타겟은()%,
 			CALL SIMULATE_TRAIN_COM, 6, 1 + RAND:2
 		ENDIF
 		IF EXP:사정경험 > MEMO_EXP:3 && RAND:3 == 0
-			PRINTFORMW 허리를 내밈과 동시에 대량의정액를\@ COND("위험일", MASTER) ? 危険日の자궁に流し込み # 気持ちよさそうに中出しし \@(이)면서 아침의 인사를 해 왔다…
+			PRINTFORMW 허리를 내밈과 동시에 대량의 정액을\@ COND("위험일", MASTER) ? 위험일의 자궁에 내 # 기분 좋은 듯이 사정하 \@면서 아침의 인사를 해 왔다…
 		ELSEIF ABL:허리놀림 >= 3 && RAND:3 == 0
 			PRINTFORMW 교묘하게 허리를 움직여 서로의 쾌감을 높이면서 아침의 인사를 해 왔다…
 		ELSEIF ABL:새드끼 >= 3 && RAND:2
-			PRINTFORMW 자고 일어나기로\@ RAND:2 ? 저항が弱い # 動きの鈍い \@의를 구실로\@ (EXP:사정경험 > MEMO_EXP:3 && RAND:2) ? たっぷりと種付け # 更に激しく犯 \@하면서 아침의 인사를 해 왔다…
+			PRINTFORMW 자다 일어나\@ RAND:2 ? 저항이 약한 # 움직임이 굼뜬 \@것을 구실로\@ (EXP:사정경험 > MEMO_EXP:3 && RAND:2) ? 듬뿍 씨를 내 # 더욱 격렬하게 범하 \@면서 아침의 인사를 해 왔다…
 			CALL SIMULATE_TRAIN_COM, 120, 2
 		ELSE
-			PRINTFORMW 내던지도록(듯이) 허리를 흔들어 기분 좋은 것 같은 얼굴을 보이면서 아침의 인사를 해 왔다…
+			PRINTFORMW 내던지듯 허리를 흔들어 기분 좋은 것 같은 얼굴을 보이면서 아침의 인사를 해 왔다…
 		ENDIF
 	ENDIF
 
@@ -102,10 +102,10 @@ CASE "아침컨닐링구스"
 	ELSE
 		PRINTFORM 다리의 사이에 신체를 끼어들게 해
 	ENDIF
-	PRINTFORMW 저기를 빨고 있다%CALLNAME:TARGET%(와)과 시선이 마주쳤다
-	PRINTFORM %CALLNAME:TARGET%는 날름 혀를 내밀어 웃는 얼굴을 띄워,
+	PRINTFORMW 저기를 빨고 있는 %타겟과()% 시선이 마주쳤다
+	PRINTFORM %타겟은()% 날름 혀를 내밀어 웃는 얼굴을 띄워,
 	IF ABL:봉사정신 >= 3 && RAND:2
-		PRINTFORML 음순을 예쁘게청소하면서 아침의 인사를 해 왔다…
+		PRINTFORML 음순을 예쁘게 청소하면서 아침의 인사를 해 왔다…
 		CALL SELF_KOJO, LOCALS
 		CALL RESET_STAIN_EX, "Ｖ", MASTER
 	ELSE
@@ -115,43 +115,43 @@ CASE "아침컨닐링구스"
 	CALL SIMULATE_TRAIN, 98, LOCAL
 	IF ABL:레즈끼 >= 3 && COND("身嗜み：노팬티", MASTER) == 0 && RAND:2
 		PRINTFORML %CALLNAME:TARGET%의 방을 나간 뒤로 거울의 앞에 서면, 무방비인 하반신이 눈에 들어온다
-		PRINTFORML …아무래도,%CALLNAME:TARGET%에팬티를 가지고 가진 것 같다……
+		PRINTFORML …아무래도, %타겟이()% 팬티를 가지고 가진 것 같다……
 	ENDIF
 	CALL CALC, "욕구불만解消", TARGET, 1
 CASE "아침풋잡"
 	LOCAL = MAX(LOCAL + (ABL:새드끼 + ABL:발놀림)/3, 1)
 
-	PRINTFORML 아침,%CALLNAME:TARGET%\@ PENIS(MASTER) ? の풋잡で # に발でアソコを責められて \@눈을 떴다
+	PRINTFORML 아침,%CALLNAME:TARGET%\@ PENIS(MASTER) ? 의 풋잡으로 # 의 발로 그곳을 괴롭혀져 \@눈을 떴다
 	
 	CALL SELF_KOJO, LOCALS
 	CALL SIMULATE_TRAIN, 95, LOCAL
 	
-	PRINTFORM %CALLNAME:TARGET%하
+	PRINTFORM %타겟은()%
 	IF TALENT:심술쟁이 || TALENT:소악마
 		IF EXP:정액경험 > MEMO_EXP:20
-			PRINTFORM 발에 부착했다정액를 손가락으로 닦아 낼름한번 빨기 하면서,
+			PRINTFORM 발에 붙은 정액를 손가락으로 닦아 낼름 한번 빨면서,
 		ELSEIF PENIS(MASTER) == 0
-			PRINTFORM 발에 부착한 애액을 손가락으로 닦아 낼름한번 빨기 하면서,
+			PRINTFORM 발에 붙은 애액을 손가락으로 닦아 낼름 한번 빨면서,
 		ENDIF
 	ENDIF
-	PRINTFORML 우월감에 잠긴 것 같은 얼굴로 아침의 인사를 해 왔다
+	PRINTFORML 우월감에 젖은 듯한 얼굴로 아침 인사를 해왔다.
 
 	CALL CALC, "욕구불만解消", TARGET, 1
 CASE "아침の모유搾り"
 	LOCAL = MAX(LOCAL + MIN(GET_EXP_LV(EXP:분유경험), 5), 1)
 	;거유
 	IF TALENT:거유
-		PRINTFORML 아침, 부엌에 오면%CALLNAME:TARGET%의 그 큰가슴로부터 모유를 짜내고 있었다
+		PRINTFORML 아침, 부엌에 오자 %CALLNAME:TARGET%의  큰 가슴로부터 모유를 짜내고 있었다
 		;임신または출산경험
 		IF TALENT:임신 || TALENT:출산경험
 			IF RAND:2 == 0
-				PRINTFORML %CALLNAME:TARGET%는 팡팡 긴장된 가슴로부터, 황홀의 표정으로 모유를 분출하고 있다…
+				PRINTFORML %타겟은()% 팡팡 긴장된 가슴로부터, 황홀한 표정으로 모유를 분출하고 있다…
 			ELSE
-				PRINTFORML %CALLNAME:TARGET%는 자애로 가득 찬 표정으로, 힘차게 뿜어 나오는 모유를 그릇에 짜내고 있다…
+				PRINTFORML %타겟은()% 자애로 가득 찬 표정으로, 힘차게 뿜어 나오는 모유를 용기에 짜내고 있다…
 			ENDIF
 		ENDIF
 	ELSE
-		PRINTFORML 아침, 부엌에 오면%CALLNAME:TARGET%의 스스로의 모유를 그릇에 짜내고 있었다
+		PRINTFORML 아침, 부엌에 오자 %CALLNAME:TARGET%의 스스로의 모유를 용기에 짜내고 있었다
 	ENDIF
 
 	CALL SELF_KOJO, LOCALS
@@ -161,10 +161,10 @@ CASE "아침の모유搾り"
 		PRINTFORML %EXPNAME:54%＋{LOCAL*2}
 		IF TALENT:헌신 || TALENT:호색
 			IF RAND:2 == 0
-				PRINTFORML %CALLNAME:TARGET%(은)는 %CALLNAME:MASTER%를 찾아내면, 생긋 미소손불러 해 왔다…
-				PRINTFORML 가까워지면,%CALLNAME:TARGET%(은)는 %CALLNAME:MASTER%의 머리를 움켜 쥐어, 아직도 모유가 방울져 떨어지는 유두를 %CALLNAME:MASTER%의 입에 밀어넣어 기쁜듯이 짜기 시작했다…
+				PRINTFORML %타겟은()% %마스터를()% 찾아내자, 생긋 미소지으며 손짓 해 왔다…
+				PRINTFORML 가까워지자, %타겟은()% %CALLNAME:MASTER%의 머리를 감싸 안고, 아직도 모유가 방울져 떨어지는 유두를 %CALLNAME:MASTER%의 입에 밀어넣고 기쁜듯이 짜기 시작했다…
 			ELSE
-				PRINTFORML %CALLNAME:TARGET%는 맥주잔 한 잔의 농후한 모유를 웃는 얼굴로 내몄다
+				PRINTFORML %타겟은()% 큰 한 잔의 농후한 모유를 웃는 얼굴로 내밀었다
 			ENDIF
 		ENDIF
 		PRINTFORML %PALAMNAME:4%의 구슬＋{LOCAL*60}
@@ -173,15 +173,15 @@ CASE "아침の모유搾り"
 		JUEL:욕정 += LOCAL*60
 		JUEL:습득 += LOCAL*20
 		JUEL:쾌Ｂ += LOCAL*50
-		PRINTFORML %CALLNAME:MASTER%하%CALLNAME:TARGET%의 짜냈다{LOCAL*100*(TALENT:거유 + 1)}cc의 모유의 반을 병조림 해, 매도에 냈다
+		PRINTFORML %마스터는()% %CALLNAME:TARGET%의 짜낸 {LOCAL*100*(TALENT:거유 + 1)}cc의 모유의 반을 병에 담아 팔았다
 		;出した人のプロフィールが見れる安心品質
-		PRINTFORML %CALLNAME:TARGET%의 모유1차례 눌러 짬은%MONEY_C(LOCAL*250*(TALENT:거유 + 1) )%그리고 팔렸다
+		PRINTFORML %CALLNAME:TARGET%의 1번 모유는 %MONEY_C(LOCAL*250*(TALENT:거유 + 1) )%으로 팔렸다
 		PRINTFORML 소지금+%MONEY_C(LOCAL*250*(TALENT:거유 + 1) )%
 		MONEY += LOCAL*250*(TALENT:거유 + 1)
 	ELSE
 		EXP:분유경험 += LOCAL
 		PRINTFORML %EXPNAME:54%＋{LOCAL}
-		PRINTFORML %CALLNAME:TARGET%는 갓 짜낸 모유를 컵에 넣어손건네주었다
+		PRINTFORML %타겟은()% 갓 짜낸 모유를 컵에 부어 건네주었다
 		PRINTFORML %PALAMNAME:4%의 구슬＋{LOCAL*60}
 		PRINTFORML %PALAMNAME:7%의 구슬＋{LOCAL*20}
 		PRINTFORML %PALAMNAME:14%의 구슬＋{LOCAL*50}
@@ -192,62 +192,62 @@ CASE "아침の모유搾り"
 CASE "아침の새댁플레이"
 	LOCAL = MAX(LOCAL + (ABL:봉사정신 + ABL:노출벽)/3, 1)
 	PRINTFORML 아침에 일어 나면, 키친으로부터 좋은 냄새가 감돌아 왔다
-	PRINTFORML 거기에 가면%CALLNAME:TARGET%의 알몸에이프런그리고 아침 식사를 만들고 있었다…
+	PRINTFORML 거기에 가자 %타겟이()% 알몸에이프런으로 아침 식사를 만들고 있었다…
 	PRINTFORML ―――충동적으로 뒤로부터 덤벼 들었다
 
 	CALL SELF_KOJO, LOCALS
 	CALL SIMULATE_TRAIN, 61, LOCAL
 
-	PRINTFORML 무심코 아침 식사전에%CALLNAME:TARGET%를{LOCAL}회 정도 받아 버렸다…
+	PRINTFORML 무심코 아침 식사전에 %타겟을()% {LOCAL}회 정도 받아 버렸다…
 	SIF TALENT:부끄럼쟁이
-		PRINTFORML %CALLNAME:TARGET%(은)는 %CALLNAME:MASTER%의 행위에 불평하거나 하고 있지만, 분명하게 기쁜 듯하다…
+		PRINTFORML %타겟은()% %CALLNAME:MASTER%의 행위에 불평하고 있지만, 분명하게 기쁜 듯하다…
 	CALL CALC, "욕구불만解消", TARGET, LOCAL
 CASE "아침파이즈리"
 	LOCAL = MAX(LOCAL + (ABL:봉사정신 + ABL:정액중독)/3, 1)
-		PRINTFORML 아침, 깨어나는 것과 동시에 하복부에 위화감이 있는것을 눈치챘다
+		PRINTFORML 아침, 깨어나는 것과 동시에 하복부에 위화감이 있는 것을 눈치챘다
 	;빈유の場合
 	IF TALENT:빈유
-		PRINTFORML 눈치채지지 않게 눈을 돌리면,%CALLNAME:TARGET%의가슴그래서페니스를 만지작거리고 있었다
-		PRINTFORML 아무래도파이즈리의 연습을 하고 있는 것 같다……
+		PRINTFORML 눈치채지지 않게 눈을 돌리자 ,%CALLNAME:TARGET%의 가슴으로 페니스를 훑고 있었다
+		PRINTFORML 아무래도 파이즈리의 연습을 하고 있는 것 같다……
 	;거유の場合
 	ELSEIF TALENT:거유
-		PRINTFORML 눈을 돌리면%CALLNAME:TARGET%의 큰가슴그래서페니스를 사이에 둬, 쓸어올리고 있다
+		PRINTFORML 눈을 돌리자%CALLNAME:TARGET%의 큰가슴으로 페니스를 사이에 둬, 쓸어올리고 있다
 	;それ以外
 	ELSE
-		PRINTFORML 눈을 돌리면%CALLNAME:TARGET%의가슴그래서페니스를 쓸어올려, 첨단으로부터 흘러넘친다액체를 들이마시고 있다
+		PRINTFORML 눈을 돌리자%CALLNAME:TARGET%의 가슴으로 페니스를 쓸어올려, 끝으로부터 흘러넘치는 액체를 들이마시고 있다
 	ENDIF
 
 	CALL SELF_KOJO, LOCALS
 	CALL SIMULATE_TRAIN, 92, LOCAL
 	IF EXP:정액경험 > MEMO_EXP:20
-		PRINTFORML %CALLNAME:TARGET%하정액의 들러붙은 얼굴로 아침의 인사를 해 왔다
+		PRINTFORML %타겟은()%정액의 들러붙은 얼굴로 아침의 인사를 해 왔다
 	ELSE
-		PRINTFORML %CALLNAME:TARGET%는 사타구니에 얼굴을 묻은 채로의 자세로 아침의 인사를 해 왔다
+		PRINTFORML %타겟은()% 사타구니에 얼굴을 묻은 채로의 자세로 아침의 인사를 해 왔다
 	ENDIF
 	CALL CALC, "욕구불만解消", TARGET, 1
 CASE "아침기승위"
 	LOCAL = MAX(LOCAL + (ABL:Ｖ감각 + ABL:정액중독)/3, 1)
 
-	PRINTFORML 아침에 일어 나면 허리의 근처에 중량감을 느꼈다
-	PRINTFORML 눈을 돌리면%CALLNAME:TARGET%의 위에 걸쳐 허덕이고 있다……
+	PRINTFORML 아침에 일어 나자 허리의 근처에 중량감을 느꼈다
+	PRINTFORML 눈을 돌리면 %타겟이()% 위에 걸쳐 허덕이고 있다……
 	CALL SELF_KOJO, LOCALS
 	IF TARGET == ASSI
 		IF RAND:2
-			PRINTFORMW %CALLNAME:MASTER%하지만 눈을 뜬 것을 확인하면,%CALLNAME:TARGET%는 유유히 허리를 움직여, 교성을 사이에 두면서, 오늘의 스케줄을 보고했다…
+			PRINTFORMW %마스터가()% 눈을 뜬 것을 확인하고, %타겟은()% 유유히 허리를 움직여, 교성을 사이에 두면서, 오늘의 스케줄을 보고했다…
 		ELSE
-			PRINTFORMW 완전히 깨어났다%CALLNAME:MASTER%하,%CALLNAME:TARGET%의 허리를 잡아 밀어올리면서, 오늘의 스케줄을 허덕이는 소리 섞임으로 보고시켰다…
+			PRINTFORMW 완전히 깨어난 %마스터는()%,%CALLNAME:TARGET%의 허리를 잡아 밀어올리면서, 오늘의 스케줄을 교성을 섞으며 보고시켰다…
 		ENDIF
 		LOCAL += 1
 	ENDIF
 	CALL SIMULATE_TRAIN, 65, LOCAL
 	IF EXP:MASTER:사정경험 > MEMO_EXP:3
 		IF TARGET != ASSI
-			PRINTFORML %CALLNAME:TARGET%하질안에서사정를 받아 들이면서, 아침의 인사를 해 왔다
+			PRINTFORML %타겟은()% 질안에서 사정을 받아 들이면서, 아침의 인사를 해 왔다
 		ELSE
-			PRINTFORML 기승위그래서%CALLNAME:TARGET%노질안에 몽정 하면서 눈을 떴습니다
+			PRINTFORML 기승위로 %CALLNAME:TARGET%의 질안에 몽정 하면서 눈을 떴습니다
 		ENDIF
 	ELSE
-		PRINTFORML 기승위그리고 눈을 떴습니다
+		PRINTFORML 기승위로 눈을 떴습니다
 	ENDIF
 	CALL CALC, "욕구불만解消", TARGET, LOCAL
 CASE "아침키스"
@@ -255,29 +255,29 @@ CASE "아침키스"
 
 	;봉사레벨が高いと、先に起きている확률が高い
 	IF ABL:봉사정신 >= 3 && RANDF(2)
-		PRINTFORML 아침,%CALLNAME:TARGET%노\@ LOCAL >= 3 ? 濃厚な # \@입청구서로 눈을 떴다
+		PRINTFORML 아침,%CALLNAME:TARGET%의 \@ LOCAL >= 3 ? 농후한 # \@입맞춤으로 눈을 떴다
 	ELSE
 		IF AGE(TARGET) == 1 && RAND:2
-			PRINTFORML 아침,%CALLNAME:MASTER%는 돌연의 흔들림과 신체에 걸리는 중량감으로 눈을 떴다
-			PRINTFORMW 아무래도,%CALLNAME:TARGET%의가슴에 걸쳐 흔들흔들하고 있던 것 같다…
-			PRINTFORMW %CALLNAME:MASTER%(이)가 눈을 뜸을 알아차렸다%CALLNAME:TARGET%어, 얼굴을 접근해 안녕의키스를 해 왔다
+			PRINTFORML 아침,%마스터는()% 갑자기 흔들림과 신체에 걸리는 중량감으로 눈을 떴다
+			PRINTFORMW 아무래도, %CALLNAME:TARGET%의 가슴에 닿아 흔들흔들하고 있던 것 같다…
+			PRINTFORMW %마스터가()% 눈을 뜸을 알아차린 %타겟은()% 얼굴을 접근해 모닝 키스를 해 왔다
 		ELSEIF TALENT:거유 && RAND:2
-			PRINTFORML 아침, 눈을 뜨면 베개가 묘하게 부드러워서 기분 좋다……
+			PRINTFORML 아침, 눈을 뜨자 베개가 묘하게 부드러워서 기분 좋다……
 			IF TALENT:부끄럼없음 && RAND:3 == 0
 				PRINT 전라로
 			ELSEIF RAND:2
 				PRINT 속옷 모습으로
 			ENDIF
-			PRINTFORMW 침대에 기어들었다%CALLNAME:TARGET%의,%CALLNAME:MASTER%의 머리를가슴에 껴안고 있는 것 같다
-			PRINTFORMW %CALLNAME:MASTER%(이)가 눈을 뜸을 알아차렸다%CALLNAME:TARGET%어, 얼굴을 접근해 안녕의키스를 해 왔다
+			PRINTFORMW 침대에 기어들어온 %타겟이()% ,%CALLNAME:MASTER%의 머리를 가슴에 껴안고 있는 것 같다
+			PRINTFORMW %마스터가()% 눈을 뜸을 알아차린 %타겟이()% 얼굴을 접근해 모닝 키스를 해 왔다
 		ELSE
 			PRINTFORML 아침, 눈을 뜨면 신체가 무겁다……
-			PRINTFORMW 어느새인가 침대에 기어들었다%CALLNAME:TARGET%의,%CALLNAME:MASTER%를 껴안는 베게[抱き枕]로 하고 있는 것 같다
+			PRINTFORMW 어느새인가 침대에 기어들어온 %타겟이()% %마스터를()% 껴안는 베게로 하고 있는 것 같다
 			IF TALENT:상사상애 && RAND:2
-				PRINTFORML %CALLNAME:MASTER%하지만 사랑스러움에 계속 참지 못하고 자고 있다%CALLNAME:TARGET%에입청구서를 하면,
-				PRINTFORML %CALLNAME:TARGET%는 꿈 같은 기분인 채로%CALLNAME:MASTER%의 뺨을 잡아, 깊다 깊다키스를 돌려주어 왔다…
+				PRINTFORML %마스터가()% 사랑스러움에 계속 참지 못하고 자고 있는%CALLNAME:TARGET%에 입맞춤을 하면,
+				PRINTFORML %타겟은()% 꿈 꾸는 기분인 채로%CALLNAME:MASTER%의 뺨을 잡아, 깊고 깊은 키스를 돌려줬다…
 			ELSE
-				PRINTFORMW %CALLNAME:MASTER%(이)가 눈을 뜸을 알아차렸다%CALLNAME:TARGET%어, 얼굴을 접근해 안녕의키스를 해 왔다
+				PRINTFORMW %마스터가()% 눈을 뜸을 알아차린 %타겟이()% 얼굴을 접근해 모닝 키스를 해 왔다
 			ENDIF
 		ENDIF
 	ENDIF
@@ -287,11 +287,11 @@ CASE "아침키스"
 	CALL SIMULATE_TRAIN, 6, LOCAL
 
 	IF ABL:봉사정신 >= 3 && RANDF(2)
-		PRINTFORM %CALLNAME:TARGET%하
+		PRINTFORM %타겟은()%
 		IF RAND:4 && TALENT:부끄럼쟁이 && TALENT:솔직 + TALENT:상사상애 == 0
 			PRINTFORM 얼굴을 주홍에 물들이면서
 		ELSE
-			PRINTFORM %CALLNAME:MASTER%에 안아 개\@ TALENT:호색 ? いて、가랑이を撫でさすり # き \@(이)면서,
+			PRINTFORM %마스터를()% 껴안\@ TALENT:호색 ? 고 가랑이를 쓰다듬 # \@으면서,
 		ENDIF
 		PRINTFORML 아침의 인사를 해 왔다
 	ENDIF
@@ -302,30 +302,30 @@ CASE "아침펠라"
 	PRINTFORML 아침, 깨어나면 묘하게 하복부가 기분 좋다…
 	CALL COM_ABLE99
 	IF RESULT && COND("다리 사용") && ABL:욕망 >= 3 && ABL:봉사정신 >= 3 && CLO_ORI(TARGET,"겉옷") == 0 && RAND:2
-		PRINTFORM 시선을 그 쪽으로 향하면…다리를 크게 벌림의 몸의 자세로 신체에 걸친다%CALLNAME:TARGET%노
+		PRINTFORM 시선을 그 쪽으로 향하자…다리를 크게 벌린 자세로 신체에 걸친 %CALLNAME:TARGET%의
 		IF (TALENT:음란 && ABL:노출벽 >= 5 && RAND:2) || CLO_ORI(TARGET,"スーツ","下着") == 0 || COND("身嗜み：노팬티")
 			IF RAND:3 == 0
-				PRINT 당장 애액이 늘어질 것 같은 저기
+				PRINT 당장 애액이 늘어질 것 같은 그곳
 			ELSEIF RAND:2
-				PRINT 완전히 발정한 저기
+				PRINT 완전히 발정한 그곳
 			ELSE
-				PRINT 노출의 저기
+				PRINT 노출의 그곳
 			ENDIF
 		ELSEIF CLO_ORI(TARGET,"スーツ")
 			IF (ABL:욕망 >= 4 || TALENT:젖기쉬움) && RAND:2
-				PRINTFORM 얼룩이 떴다팬티
+				PRINTFORM 얼룩이 뜬 팬티
 			ELSEIF AGE(TARGET) >= 3
-				PRINTFORM 사타구니에 먹혀든다팬티
+				PRINTFORM 사타구니에 먹혀든 팬티
 			ELSE
-				PRINTFORM 사랑스럽다팬티
+				PRINTFORM 사랑스러운 팬티
 			ENDIF
 		ELSE
 			IF (ABL:욕망 >= 4 || TALENT:젖기쉬움) && RAND:2
-				PRINTFORM 얼룩이 떴다
+				PRINTFORM 얼룩이 뜬
 			ELSEIF AGE(TARGET) >= 3
-				PRINTFORM 사타구니에 먹혀든다
+				PRINTFORM 사타구니에 먹혀든
 			ELSE
-				PRINTFORM 사랑스럽다
+				PRINTFORM 사랑스러운
 			ENDIF
 			IF EQUIP:팬티
 				PRINTFORM %PANTIES(TARGET, 1)%
@@ -333,11 +333,11 @@ CASE "아침펠라"
 				PRINTFORM 팬티
 			ENDIF
 		ENDIF
-		PRINTL 하지만 눈에 들어왔다
-		PRINTFORML 아무래도,%CALLNAME:TARGET%의 자고 있다%CALLNAME:MASTER%의 얼굴에 사타구니를 문지르면서펠라치오를 하고 있던 것 같다…
+		PRINTL 가 눈에 들어왔다
+		PRINTFORML 아무래도, %타겟이()% 자고 있는 %CALLNAME:MASTER%의 얼굴에 사타구니를 문지르면서 펠라치오를 하고 있던 것 같다…
 		SELECTCOM = 99
 	ELSE
-		PRINTFORML 아무래도,%CALLNAME:TARGET%의 자고 있다%CALLNAME:MASTER%에펠라치오를 하고 있던 것 같다…
+		PRINTFORML 아무래도, %타겟이()% 자고 있는 %CALLNAME:MASTER%에 펠라치오를 하고 있던 것 같다…
 		SELECTCOM = 91
 	ENDIF
 
@@ -350,46 +350,46 @@ CASE "아침펠라"
 	IF ABL:봉사정신 + TALENT:헌신 - (COND("포경", MASTER) > 0) >= 3
 		;ＭＡＳＴＥＲが포경
 		IF COND("포경", MASTER) && ABL:봉사정신 + TALENT:헌신 >= 4 && RAND:3
-			PRINTFORM %CALLNAME:TARGET%(은)는 %CALLNAME:MASTER%의
+			PRINTFORM %타겟은()% %CALLNAME:MASTER%의
 			IF COND("진성포경", MASTER)
-				PRINTFORML 귀두를 싸는 가죽안에 혀를 넣어, 내부에 모였다치구를 혀로 긁어내면서 아침의 인사를 해 왔다
+				PRINTFORML 귀두를 싸는 가죽안에 혀를 넣어, 내부에 모인 치구를 혀로 긁어내면서 아침의 인사를 해 왔다
 			ELSE
-				PRINTFORML 포경페니스의 가죽을 훨씬 근원(분)편에 대어 귀두를 노출로 해, 자고 있는 동안에 모였다치구를 혀로청소하면서 아침의 인사를 해 왔다
+				PRINTFORML 포경페니스의 가죽을 꾹 뿌리쪽으로 밀어 귀두를 노출해, 자고 있는 동안에 모인 치구를 혀로 청소하면서 아침의 인사를 해 왔다
 			ENDIF
 		ELSE
 			IF EXP:정액경험 > MEMO_EXP:20
-				PRINTFORML %CALLNAME:TARGET%하정액를\@ ABL:정액중독 >= 3 ? 美味しそう # 零さず \@에 삼키면,입그래서청소하면서 아침의 인사를 해 왔다
+				PRINTFORML %타겟은()% 정액을\@ ABL:정액중독 >= 3 ? 맛있게 # 남김없이 \@ 삼키고, 입으로 청소하면서 아침의 인사를 해 왔다
 			ELSE
-				PRINTFORML %CALLNAME:TARGET%(은)는 %CALLNAME:MASTER%의페니스를 입그래서청소하면서 아침의 인사를 해 왔다
+				PRINTFORML %타겟은()% %CALLNAME:MASTER%의 페니스를 입으로 청소하면서 아침의 인사를 해 왔다
 			ENDIF
 		ENDIF
 		PRINTFORML 청소펠라경험＋１
 		EXP:청소펠라경험 += 1
 	ELSEIF (TALENT:호색 || ABL:봉사정신 >= 5) && COND("다리 사용") && CLO_ORI(TARGET,"下着") && COND("身嗜み：노팬티") == 0 && RAND:3 == 0
-		PRINTFORM %CALLNAME:TARGET%는 체온이 남는다팬티그래서%CALLNAME:MASTER%의페니스를 닦아 맑은
+		PRINTFORM %타겟은()% 체온이 남은 팬티로 %CALLNAME:MASTER%의 페니스를 닦아 깨끗이
 		IF RAND:2
-			PRINTFORML (이)면서 아침의 인사를 해 왔다
+			PRINTFORML 하면서 아침의 인사를 해 왔다
 		ELSE
-			PRINTFORML 누, 눈앞에서 더러워진 그것을 입으면서 아침의 인사를 해 왔다
+			PRINTFORML 해 눈앞에서 더러워진 그것을 입으면서 아침의 인사를 해 왔다
 		ENDIF
 	ELSEIF SELECTCOM == 99 && ABL:새드끼 && RAND:2
-		PRINTFORML %CALLNAME:TARGET%(은)는 %CALLNAME:MASTER%의 얼굴쑥 사타구니를 내려, 어깨 너머에 아침의 인사를 해 왔다
+		PRINTFORML %타겟은()% %CALLNAME:MASTER%의 얼굴에 사타구니를 내려, 어깨 너머에서 아침의 인사를 해 왔다
 	ELSEIF EXP:정액경험 > MEMO_EXP:20 && RAND:3
 		IF ABL:새드끼 >= 3 && RAND:2
-			PRINTFORML %CALLNAME:TARGET%하정액를 맛보면서 삼키면, 입술을 낼름 빨아 아침의 인사를 해 왔다
+			PRINTFORML %타겟은()% 정액를 맛보면서 삼키면서 입술을 낼름 빨고 아침의 인사를 해 왔다
 		ELSE
-			PRINTFORML %CALLNAME:TARGET%하정액의 들러붙은 얼굴로 아침의 인사를 해 왔다
+			PRINTFORML %타겟은()% 정액의 들러붙은 얼굴로 아침의 인사를 해 왔다
 		ENDIF
 	ELSE
-		PRINTFORM %CALLNAME:TARGET%는 사타구니에 얼굴을 묻고
+		PRINTFORM %타겟은()% 사타구니에 얼굴을 묻고
 		IF COND("손가락 사용") && RAND:4 == 0
-			PRINTFORM 라고 손가락의 미끄러짐을 빨아내면서, 웃는 얼굴로
+			PRINTFORM 손가락의 점액을 빨아내면서, 웃는 얼굴로
 		ELSEIF RAND:3 == 0
-			PRINTFORM 라고,페니스를 빨면서
+			PRINTFORM 페니스를 빨면서
 		ELSEIF RAND:2
-			PRINTFORM 라고입도 도 기대하게 하면서, 흐려진 소리로
+			PRINTFORM  입을 우물거리면서 우물거리는 소리로
 		ELSE
-			PRINTFORM 의 자세로
+			PRINTFORM 있는 그 자세로
 		ENDIF
 		PRINTFORML 아침의 인사를 해 왔다
 	ENDIF
@@ -522,11 +522,11 @@ CALL SIMULATE_TRAIN_FIRST, LOCAL:3
 SELECTCASE LOCALS
 CASE "아침ＳＭ"
 	PRINTFORMW 아침, 깨어나면 신체가 움직이지 않는다……
-	PRINTFORMW 몇시의 사이에인가 알몸으로 침대에 얽매이고 있다
-	PRINTFORMW 이쪽을 내려다 보고 있다%LOCALS:1%하지만, 기학과 정욕에 탁해진 시선으로 인사해 왔다……
+	PRINTFORMW 어느새인가 알몸으로 침대에 얽매이고 있다
+	PRINTFORMW 이쪽을 내려다 보고 있는 %조사처리(LOCALS:1,"가")%, 기학과 정욕에 탁해진 시선으로 인사해 왔다……
 	CALL SELF_KOJO, LOCALS
 	PRINTL 
-	PRINTFORMW 그대로 밤이 될 때까지%LOCALS:2%에 희롱해졌다……
+	PRINTFORMW 그대로 밤이 될 때까지 %LOCALS:2%에 희롱해졌다……
 	FOR LCOUNT, 0, LOCAL:3
 		SWAP TARGET, TARGET:LCOUNT
 		SIF RAND:2
@@ -557,26 +557,26 @@ CASE "아침ＳＭ"
 		SWAP TARGET, TARGET:LCOUNT
 	NEXT
 CASE "아침구속기승위"
-	PRINTFORMW 아침, 깨어나면 신체가 무겁다……\@ TARGET:1 > 0 ? だけでなく、呼吸も苦しい… # \@
+	PRINTFORMW 아침, 깨어나면 신체가 무겁다……\@ TARGET:1 > 0 ? 뿐만 아니라 호흡도 어렵다… # \@
 	IF TARGET:1
-		PRINTFORM …상황의 파악에시간하지만 걸렸지만, 아무래도%CALLNAME:(TARGET:1)%하지만 얼굴에
+		PRINTFORM …상황의 파악에 시간이 걸렸지만, 아무래도 %CALLNAME:(TARGET:1)%의 얼굴에
 		SIF TARGET:2
-			PRINTFORM ,%CALLNAME:(TARGET:2)%하지만 팔에,
+			PRINTFORM ,%CALLNAME:(TARGET:2)%의 팔에,
 		PRINTFORMW 사타구니를 열중해 문지르고 있는 것 같다
-		PRINTFORMW 게다가,%CALLNAME:TARGET%의기승위그리고 즐기고 있는 것 같고, 사타구니는 다양한액체그리고 굉장한 모양이다…
+		PRINTFORMW 게다가,%타겟이()% 기승위를 즐기고 있는 것 같고, 사타구니는 다양한 액체로 굉장한 모양이다…
 		PRINTL 
-		PRINTFORMW 깨어났다%CALLNAME:MASTER%를 눈치챘다%LOCALS:3%의 기학과 정욕에 탁해진 시선을 보건데, 당분간해방해 받을 수 없는 것 같다…
+		PRINTFORMW 깨어난 %마스터를()% 눈치챈 %LOCALS:3%의 기학과 정욕에 탁해진 시선을 보건데, 당분간 해방받을 수 없는 것 같다…
 	ELSE
-		PRINTFORMW 아무래도, 몇시의 사이에인가 알몸으로 침대에 얽매이고 있는 것 같다…
-		PRINTFORMW 무게가 걸리고 있는 장소를 바라보면, 허리에 걸치고 있다%CALLNAME:TARGET%(와)과 시선이 마주쳐 버렸다
-		PRINTFORMW 상당한시간즐긴 후의 같아, 그 결합부는 거품이 일었다액체하지만 뒤룩뒤룩늘어져, 질척질척이 되어 있다…
+		PRINTFORMW 아무래도, 어느새 알몸으로 침대에 얽매이고 있는 것 같다…
+		PRINTFORMW 무게가 걸리고 있는 장소를 바라보자, 허리에 걸치고 있는 %타겟과()% 시선이 마주쳐 버렸다
+		PRINTFORMW 상당한 시간을 즐긴 것 처럼, 그 결합부는 거품이 일은 액체가 주르륵 늘어져, 질척질척 되어 있다…
 		PRINTL 
-		PRINTFORMW %CALLNAME:TARGET%의 기학과 정욕에 탁해진 시선을 보건데, 당분간해방해 받을 수 없는 것 같다…
+		PRINTFORMW %CALLNAME:TARGET%의 기학과 정욕에 탁해진 시선을 보건데, 당분간 해방받을 수 없는 것 같다…
 	ENDIF
 
 	CALL SELF_KOJO, LOCALS
 	PRINTL 
-	PRINTFORMW 그대로 밤이 될 때까지%LOCALS:2%에 계속 좁혀져, 희롱해졌다……
+	PRINTFORMW 그대로 밤이 될 때까지%LOCALS:2%에 계속 짜여져, 농락당해졌다……
 	FOR LCOUNT, 0, LOCAL:3
 		SWAP TARGET, TARGET:LCOUNT
 		CALL SIMULATE_TRAIN_COM, 1, LOCAL:LCOUNT/(2 + RAND:4)
@@ -596,26 +596,26 @@ CASE "아침구속기승위"
 		SWAP TARGET, TARGET:LCOUNT
 	NEXT
 CASE "아침구속Ａ기승위"
-	PRINTFORMW 아침, 깨어나면 신체가 무겁다……\@ TARGET:1 > 0 ? だけでなく、呼吸も苦しい… # \@
+	PRINTFORMW 아침, 깨어나면 신체가 무겁다……\@ TARGET:1 > 0 ? 뿐만 아니라 호흡도 어렵다… # \@
 	IF TARGET:1
-		PRINTFORM …상황의 파악에시간하지만 걸렸지만, 아무래도%CALLNAME:(TARGET:1)%하지만 얼굴에
+		PRINTFORM …상황의 파악에 시간이 걸렸지만, 아무래도 %CALLNAME:(TARGET:1)%의 얼굴에
 		SIF TARGET:2
-			PRINTFORM ,%CALLNAME:(TARGET:2)%하지만 팔에,
+			PRINTFORM ,%CALLNAME:(TARGET:2)%의 팔에,
 		PRINTFORMW 사타구니를 열중해 문지르고 있는 것 같다
-		PRINTFORMW 게다가,%CALLNAME:TARGET%의엉덩이의 구멍에서 즐기고 있는 것 같고, 사타구니는 다양한액체그리고 굉장한 모양이다…
+		PRINTFORMW 게다가,%타겟이()% 엉덩이의 구멍으로 즐기고 있는 것 같고, 사타구니는 다양한 액체로 굉장한 모양이다…
 		PRINTL 
-		PRINTFORMW 깨어났다%CALLNAME:MASTER%를 눈치챘다%LOCALS:3%의 기학과 정욕에 탁해진 시선을 보건데, 당분간해방해 받을 수 없는 것 같다…
+		PRINTFORMW 깨어난 %마스터를()% 눈치챈 %LOCALS:3%의 기학과 정욕에 탁해진 시선을 보건데, 당분간 해방받을 수 없는 것 같다…
 	ELSE
-		PRINTFORMW 아무래도, 몇시의 사이에인가 알몸으로 침대에 얽매이고 있는 것 같다…
-		PRINTFORMW 무게가 걸리고 있는 장소를 바라보면, 허리에 걸쳐애널에페니스를 물고 있다%CALLNAME:TARGET%(와)과 시선이 마주쳐 버렸다
-		PRINTFORMW 상당한시간즐긴 후의 같아, 그 결합부는 거품이 일었다액체하지만 뒤룩뒤룩늘어져, 질척질척이 되어 있다…
+		PRINTFORMW 아무래도, 어느새 알몸으로 침대에 얽매이고 있는 것 같다…
+		PRINTFORMW 무게가 걸리고 있는 장소를 바라보자, 허리에 걸쳐 애널에 페니스를 물고 있는 %타겟과()% 시선이 마주쳐 버렸다
+		PRINTFORMW 상당한 시간을 즐긴 것 처럼, 그 결합부는 거품이 일은 액체가 주르륵 늘어져, 질척질척 되어 있다…
 		PRINTL 
-		PRINTFORMW %CALLNAME:TARGET%의 기학과 정욕에 탁해진 시선을 보건데, 당분간해방해 받을 수 없는 것 같다…
+		PRINTFORMW %CALLNAME:TARGET%의 기학과 정욕에 탁해진 시선을 보건데, 당분간 해방받을 수 없는 것 같다…
 	ENDIF
 
 	CALL SELF_KOJO, LOCALS
 	PRINTL 
-	PRINTFORMW 그대로 밤이 될 때까지%LOCALS:2%에 계속 좁혀져, 희롱해졌다……
+	PRINTFORMW 그대로 밤이 될 때까지%LOCALS:2%에 계속 짜여져, 농락당해졌다……
 	FOR LCOUNT, 0, LOCAL:3
 		SWAP TARGET, TARGET:LCOUNT
 		CALL SIMULATE_TRAIN_COM, 1, MAX(LOCAL:LCOUNT/(2 + RAND:4), 1)
@@ -637,16 +637,16 @@ CASE "아침구속Ａ기승위"
 ;今のところこの下は無し
 CASE "아침구속역레이프"
 	PRINTFORMW 아침, 깨어나면 신체가 움직이지 않는다……
-	PRINTFORMW 몇시의 사이에인가 알몸으로 침대에 얽매이고 있다
-	PRINTFORMW 이쪽을 내려다 보고 있다%LOCALS:1%하지만, 기학과 정욕에 탁해진 시선으로 인사해 왔다……
+	PRINTFORMW 어느새인가 알몸으로 침대에 얽매이고 있다
+	PRINTFORMW 이쪽을 내려다 보고 있는 %조사처리(LOCALS:1,"가")%, 기학과 정욕에 탁해진 시선으로 인사해 왔다……
 	CALL SELF_KOJO, LOCALS
 	PRINTFORMW 그대로 밤이 될 때까지%LOCALS:2%에 희롱해졌다……
 CASE "아침구속역애널"
 	PRINTFORMW 아침, 깨어나면 신체가 움직이지 않는다……
-	PRINTFORMW 몇시의 사이에인가 알몸으로 침대에 얽매이고 있다
-	PRINTFORMW 이쪽을 내려다 보고 있다%LOCALS:1%하지만, 기학과 정욕에 탁해진 시선으로 인사해 왔다……
+	PRINTFORMW 어느새인가 알몸으로 침대에 얽매이고 있다
+	PRINTFORMW 이쪽을 내려다 보고 있는 %조사처리(LOCALS:1,"가")%, 기학과 정욕에 탁해진 시선으로 인사해 왔다……
 	CALL SELF_KOJO, LOCALS
-	PRINTFORMW 그대로 밤이 될 때까지%LOCALS:2%에 희롱해졌다……
+	PRINTFORMW 그대로 밤이 될 때까지 %LOCALS:2%에 희롱해졌다……
 ENDSELECT
 
 CALL SIMULATE_TRAIN_CALC

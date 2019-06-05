@@ -31,8 +31,8 @@ FLAG:238 = 1
 
 ;계절, 年表示部分
 PRINTFORM {FLAG:872}년 {FLAG:871}일째 %TEXTS("날짜표시")%
-;크리스마스ツリー체크
-IF DAYEV("크리스마스期間") && NUM("크리스마스ツリー")
+;크리스마스트리체크
+IF DAYEV("크리스마스주간") && NUM("크리스마스트리")
 	SETCOLOR DEF_COLOR("하트핑크")
 	PRINTFORM %UNICODE(0xD83C)%%UNICODE(0xDF84)%
 	RESETCOLOR
@@ -865,14 +865,14 @@ REDRAW 0
 PRINTL 
 PRINTFORML 다음이 각 부위의 오염상태입니다. 
 SIF TEQUIP:넘어뜨리기 == 0
-	PRINTFORML 원하면, 손이나 입의 오염등을 깨끗하게할 수도 있습니다. 
+	PRINTFORML 원하면, 손이나 입의 오염등을 깨끗하게 할 수도 있습니다. 
 ;誰かが진성포경
 IF COND("진성포경") || COND("진성포경", MASTER) || COND("진성포경", ASSI)
 	SETCOLOR DEF_COLOR("노랑")
-	PRINTFORML ※진성포경의 사람은Ｐ에 항상<Ｐ치구>더러움이 있습니다. 씻어도청소해도 떨어지지 않습니다
+	PRINTFORML ※진성포경의 사람은Ｐ에 항상 <Ｐ치구> 더러움이 있습니다. 씻고 청소해도 떨어지지 않습니다
 	RESETCOLOR
 ENDIF
-PRINTFORML （입욕중·욕탕에 들어간 상태에는 더러운 것이 뭍기힘들고, 봉사조교도 실행하기 쉬워집니다）
+PRINTFORML （입욕중·욕탕에 들어간 상태에는 더러운 것이 묻기 힘들고, 봉사조교도 실행하기 쉬워집니다）
 CALL STAIN_INFO_SHOW, MASTER
 CALL STAIN_INFO_SHOW, TARGET
 CALL STAIN_INFO_SHOW, TARGET:1
@@ -993,7 +993,7 @@ FOR LCOUNT, 0, 6
 			CONTINUE
 		PRINTFORM  Ｐ：%TEXT_LJ(LOCALS, 32)%
 		SIF TEQUIP:넘어뜨리기 == 0 && CHECK_ADD_STAIN("Ｐ", ARG)
-			PRINTFORM [{LOCAL + LCOUNT}] 페니스를닦는다 \@ INSERT("삽입中", ARG) ? (인서트는해제) # \@
+			PRINTFORM [{LOCAL + LCOUNT}] 페니스를 닦는다 \@ INSERT("삽입中", ARG) ? (인서트는해제) # \@
 	CASE 3
 		SIF TALENT:ARG:남자
 			CONTINUE

@@ -6916,20 +6916,20 @@ CASE "조수に抜擢"
 
 	ENDIF
 CASE "一言이벤트"
-	IF DAYEV("크리스마스期間")
+	IF DAYEV("크리스마스주간")
 		;크리스마스とは何ぞや
 		IF CEVENT("크리스마스とは何ぞや", ARG) == 0
 			PRINTFORML 「최근 어쩐지 다른 사람들이 분주하구나」
 			PRINTFORML 「……크리스마스？무엇이다？그것은」
 			CALL SET_CEVENT, "크리스마스とは何ぞや", ARG
 			RETURN 1
-		;크리스마스ツリー用意した
-		ELSEIF CEVENT("날짜：크리스마스ツリー", ARG) == 0
+		;크리스마스트리用意した
+		ELSEIF CEVENT("날짜：크리스마스트리", ARG) == 0
 			PRINTFORML 「어이, 이것으로 좋은 것인지？」
 			PRINTFORML 「……응？크리스마스트리라는 것은 송이라도 좋을 것이다？」
 			PRINTFORML 이것, 어떻게 봐도 분재…
 			CALL PRINTL_COLORTEXT, "현관에크리스마스트리가 설치되었습니다！", DEF_COLOR("황색")
-			CALL SET_CEVENT, "날짜：크리스마스ツリー", ARG
+			CALL SET_CEVENT, "날짜：크리스마스트리", ARG
 			FORCEWAIT
 			RETURN 1
 		ENDIF

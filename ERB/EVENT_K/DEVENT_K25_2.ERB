@@ -365,8 +365,8 @@ ELSEIF EVENT_NUM && (RAND:3 == 0 || CEVENT(LOCALS:EVENT_NUM) == 0)
 	CASE 3
 		;대상両方が연모
 		IF TALENT:연모 && TALENT:GUEST:연모
-			;10/31ハロウィン
-			IF DAYEV("ハロウィン")
+			;10/31할로윈
+			IF DAYEV("할로윈")
 				IF RAND:2 == 0 && COND("상성○", GUEST)
 					PRINTFORMW 복도의 저 편으로부터 두 명의몽마하지만 걸어 옵니다. 그 복장은……%CALLNAME:TARGET%(와)과%CALLNAME:GUEST%(와)과 같습니다
 					PRINTFORMW ――그렇지만, 자주(잘) 보면 두 명의옷하지만 바뀌고 있었습니다.%CALLNAME:TARGET%의%CALLNAME:GUEST%노옷를,%CALLNAME:GUEST%하지만%CALLNAME:TARGET%노옷를 입고 있습니다
@@ -2206,7 +2206,7 @@ ENDIF
 RETURN 1
 
 @DAILY_LIFE_DAYEV_25_2
-IF DAYEV("お正月")
+IF DAYEV("정월")
 	IF TALENT:연모
 		IF RAND:2 == 0 
 			PRINTFORMW 난로의 앞에서%CALLNAME:TARGET%의 뭔가를 하고 있습니다……
@@ -2222,25 +2222,25 @@ IF DAYEV("お正月")
 			PRINTFORMW %CALLNAME:TARGET%는 응석부리도록(듯이)%CALLNAME:MASTER%에 껴안았습니다……
 		ENDIF
 	ENDIF
-ELSEIF DAYEV("크리스마스期間")
+ELSEIF DAYEV("크리스마스주간")
 	IF TALENT:연모 && CHARA_NUM("연모") >= 5
-		IF RAND:2 || CEVENT("날짜：크리스마스ツリー") == 0
-			IF CEVENT("날짜：크리스마스ツリー")
-				;自分で設置した크리스마스ツリーがある・ツリー五本이상・상사상애・상사상애五人이상 だと가능性
-				IF RAND:5 && COND("크리스마스ツリー") && NUM("크리스마스ツリー") >= 5  && TALENT:상사상애 && CHARA_NUM("상사상애") >= 5
+		IF RAND:2 || CEVENT("날짜：크리스마스트리") == 0
+			IF CEVENT("날짜：크리스마스트리")
+				;自分で設置した크리스마스트리がある・ツリー五本이상・상사상애・상사상애五人이상 だと가능性
+				IF RAND:5 && COND("크리스마스트리") && NUM("크리스마스트리") >= 5  && TALENT:상사상애 && CHARA_NUM("상사상애") >= 5
 					PRINTFORMW 「예와 이것은 여기로 해……그래도 이 색은 저쪽에도……」
 					PRINTFORMW %CALLNAME:TARGET%하크리스마스트리의 장식을 안아 우왕좌왕 하고 있습니다
 					PRINTFORMW 「평등하게는 큰 일이군요. 누군가씨의 기분을 잘 알 생각이 듭니다……」
 					PRINTFORMW %CALLNAME:TARGET%는 의미 있는듯이%CALLNAME:MASTER%의 (분)편을 보았습니다！
-				;크리스마스ツリーが複数あると가능性
-				ELSEIF RAND:4 && NUM("크리스마스ツリー") >= 2
+				;크리스마스트리が複数あると가능性
+				ELSEIF RAND:4 && NUM("크리스마스트리") >= 2
 					PRINTFORMW 「흥후흥흥♪」
 					PRINTFORMW %CALLNAME:TARGET%의크리스마스트리의 장식을 많이 안아 걷고 있습니다……
 					PRINTFORMW 「트리가 가득 있기 때문에, 그 만큼 장식하지 않으면 아깝지 않습니까」
 					PRINTFORMW 「전부 깨끗이 장식해……모두를 깜짝 놀라게 해 보입니다♪」
 					PRINTFORMW %CALLNAME:TARGET%는 드물게 기합이 들어가 있는 것 같습니다……！
-				;크리스마스ツリーが一本이상ある・연모の몽마が他にいると가능性
-				ELSEIF RAND:3 && NUM("크리스마스ツリー") >= 1 && CHARA_NUM("연모") >= 2
+				;크리스마스트리が一本이상ある・연모の몽마が他にいると가능性
+				ELSEIF RAND:3 && NUM("크리스마스트리") >= 1 && CHARA_NUM("연모") >= 2
 					LOCAL = FIND_COND("연모")
 					PRINTFORMW %CALLNAME:TARGET%(와)과%CALLNAME:LOCAL%하지만크리스마스트리를 장식하고 있습니다……
 					PRINTFORMW 「거기의 장식은 좀 더……그래그래」
@@ -2264,7 +2264,7 @@ ELSEIF DAYEV("크리스마스期間")
 				PRINTFORMW 「역시 이런 것이 있으면 기분이 다르지 않습니까？」
 				PRINTFORMW 「금년의크리스마스도 충분히 즐깁시다♪」
 				CALL PRINTL_COLORTEXT, "현관에크리스마스트리가 설치되었습니다！", DEF_COLOR("황색")
-				CALL SET_CEVENT, "날짜：크리스마스ツリー"
+				CALL SET_CEVENT, "날짜：크리스마스트리"
 				FORCEWAIT
 			ENDIF
 		ELSE
@@ -2274,10 +2274,10 @@ ELSEIF DAYEV("크리스마스期間")
 			PRINTFORMW %CALLNAME:MASTER%의 모르는 곳에서몽마들도크리스마스를 만끽하고 있는 것 같습니다……
 		ENDIF
 	ENDIF
-ELSEIF DAYEV("ハロウィン")
-	;ハロウィンで既に訪ねている
-	IF TALENT:연모 && CEVENT("날짜：ハロウィン")
-		PRINTFORMW %CALLNAME:MASTER%하지만 리빙으로 한숨 돌리고 있으면, 거기에 「%TEXTR("ハッピーハロウィーン！", "メリーハロウィーン！","ハロウィンですよー♪","祝☆ハロウィーン！　ぱちぱちぱちー♪","ハロウィンを楽しんでますか～？")%」라고 말해%CALLNAME:TARGET%의 들어 왔습니다
+ELSEIF DAYEV("할로윈")
+	;할로윈で既に訪ねている
+	IF TALENT:연모 && CEVENT("날짜：할로윈")
+		PRINTFORMW %CALLNAME:MASTER%하지만 리빙으로 한숨 돌리고 있으면, 거기에 「%TEXTR("ハッピーハロウィーン！", "メリーハロウィーン！","할로윈ですよー♪","祝☆ハロウィーン！　ぱちぱちぱちー♪","할로윈を楽しんでますか～？")%」라고 말해%CALLNAME:TARGET%의 들어 왔습니다
 		PRINTFORMW %CALLNAME:TARGET%는 테이블 위에 잭 랜턴을 1개 둬, 어딘가에 떠나 갔습니다…
 		PRINTFORMW 리빙에 잭 랜턴이 1개 증가했습니다
 	ENDIF
@@ -2337,10 +2337,10 @@ ELSEIF DAYEV("발렌타인")
 			PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:MASTER%에 선물이 있는 것 같습니다. 다음에 방문해 보는 것도 좋을 것입니다…
 		ENDIF
 	ENDIF
-ELSEIF DAYEV("ホワイトデー")
+ELSEIF DAYEV("화이트데이")
 	IF TALENT:연모
-		;ホワイトデーに会いに行った
-		IF CEVENT("날짜：ホワイトデー")
+		;화이트데이に会いに行った
+		IF CEVENT("날짜：화이트데이")
 			PRINTFORMW %CALLNAME:TARGET%는 조금 전%CALLNAME:MASTER%로부터 받은 과자를, 먹고도 하지 않고 기쁜듯이 보고 있습니다…
 			IF RAND:2 == 0 
 				PRINTFORMW 「왜냐하면[だって], 곧 먹어 버리면 아까운 생각이 듭니다 것」

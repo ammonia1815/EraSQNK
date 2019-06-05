@@ -34,7 +34,9 @@ DRAWLINE
 ;初조교時 CFLAG201
 ;-------------------------------------------------
 IF GETBIT(CFLAG:201, 0) == 0
-	PRINTFORMW 「글쎄, 어서 오세요」
+	PRINTFORMW 당신은 문앞에서 조차 느껴지는 색기에 약간의 불안감을 느꼈지만 
+	PRINTFORMW 조교를 위해선 들어가야 하기에, 각오를 다진다
+	PRINTFORMW 「자, 어서 오세요」
 	PRINTFORMW 문을 연 순간, 알몸의 %조사처리(CALLNAME:TARGET,"가")% 양팔과 양다리를 벌려 유혹해 왔다.
 	PRINTFORMW 그 풍만한 육체와 강렬한 색기와 향기에, 무심코 %CALLNAME:TARGET%에게 달라붙어서 놓지 않고 싶어지는 충동에 사로잡힌다.
 	PRINTFORMW 그러나 필사적으로 「자신은 %CALLNAME:TARGET%를 조교 하러 왔다. 」라고 말해 주며 마음을 고쳐 잡는다.
@@ -43,7 +45,7 @@ IF GETBIT(CFLAG:201, 0) == 0
 	PRINTFORMW 「%CNAME("二人称")%가 육욕에 져서 %CNAME("一人称")%의 노예가 될까? 」
 	PRINTFORMW 「그렇지 않으면 유혹을 버티고 참아 이겨서, %CNAME("一人称")%를 성노예로 만들까?」
 	PRINTFORMW 「글쎄, 시련의 시작이야.」
-	PRINTFORMW %CALLNAME:MASTER%은 「그것은 성교 배틀과 어떻게 다른 것이지」라고 생각하면서, %CALLNAME:TARGET%에게 다가갔다.
+	PRINTFORMW %CALLNAME:MASTER%은 「그것은 성교 배틀과 뭐가 다른 것이지」라고 생각하면서, %CALLNAME:TARGET%에게 다가갔다.
 	SETBIT CFLAG:201, 0
 	RETURN 1
 
@@ -193,6 +195,39 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 		PRINTFORMW 옷이 몸에 닿는 것만으로 굉장한 쾌감을 느끼고 있는 몸과%CALLNAME:TARGET%의 색기와 향기에 괴롭혀지고 있으면서도%CALLNAME:MASTER%은 조교에 착수했다.
 	ENDIF
 	SETBIT CFLAG:201, 4
+;서약되었다
+ELSEIF GETBIT(CFLAG:201, 5) == 0 && MARK:굴복각인 >= 0 && TALENT:서약
+	PRINTFORMW %CALLNAME:MASTER%은 %CALLNAME:TARGET%에게 팔지 않겠다는 내용의 두루마리를 건네주었다
+	PRINTFORMW 「헤에… 분명히 전엔 나를 성노예로 만들어서 판다고 했던것 같은데……」
+	PRINTFORMW %CALLNAME:MASTER%은 그럴 예정이었지만, 마음이 바뀌었다고 전하였다
+	IF PENIS(MASTER)
+		PRINTFORMW 「후후후, 뭔가 고마운 걸? 혹시 나를 좋아하게 된거야?」
+	ELSE
+		PRINTFORMW 「후후후, 뭔가 고마운 걸? 혹시 나를 좋아하게 된거야?」
+		PRINTFORMW 「사랑엔 종족도, 성별도 관계 없다고 하잖아?」
+	ENDIF
+	PRINTFORMW %CALLNAME:MASTER%은 정색을 하며 조교의 준비를 한다
+	PRINTFORMW 「에 뭐야, %CNAME("二人称")% 화내고 있는거야? 후훗, 귀여워」
+	PRINTFORMW 그리곤 %CALLNAME:TARGET%가 기습 키스를 했다.
+	PRINTFORMW 「쪽, 후훗」
+	PRINTFORMW 「고마워」
+	SETBIT CFLAG:201, 5
+;상사상애 상태가 되었다
+ELSEIF GETBIT(CFLAG:201, 6) == 0 && TALENT:상사상애
+	PRINTFORMW %CALLNAME:MASTER%이 방에 들어가자, 침대에 누워 반지를 착용한 손을 보고있는 %CALLNAME:TARGET%가 눈에 뜨인다.
+	PRINTFORMW 「아, 왔구나 %CNAME("二人称")% 기다리고 있었어」
+	PRINTFORMW 「%CNAME("二人称")%, 이젠 다 컷는걸 누님에게 그렇게 진지한 고백을 다 하다니 말이야」
+	PRINTFORMW %CALLNAME:TARGET%는 반지를 받을때의 이야기를 하기 시작하며 당신을 놀리는것 같다
+	PRINTFORMW 「맨처음엔 장난을 하려는 건가?, 라고 생각했어」
+	PRINTFORMW 「그런데 그렇게 진지한 눈빛으로 %CNAME("一人称")%에게 반지를 주다니 말이야」
+	PRINTFORMW 「그때 그 표정이라던가, 말하는 거라던가 정말 나를 놀라게 할 정도였지」
+	PRINTFORMW 「그러니까……달링?」
+	PRINTFORMW %CALLNAME:TARGET%가 당신을 천천히 밀어 넘어뜨린다
+	PRINTFORMW 「오늘의 시작은 내가 확실히 해주겠어…」
+	PRINTFORMW %CALLNAME:TARGET%는 당신을 끌어 안자, 엄청난 양의 색기와 향이 당신을 뒤덮는다
+	TEQUIP:넘어뜨리기 = 1
+	CALL ADD_STATE, PLAYER, "황홀"
+	SETBIT CFLAG:201, 6
 ;조수の有無を체크（いない場合は二回目以降へ飛ぶ）
 ELSEIF ASSI <= 0
 	CALL K14_KOJO2_1
