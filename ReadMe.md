@@ -5,7 +5,7 @@
 * You can download Stable Version at [here](https://github.com/mosochu/EraSQNK/releases)
     * Select .zip file at Assets
 * Also, you can get developing _(unstable)_ version at those branch:
-    * [unstable branch](https://github.com/mosochu/EraSQNK/archive/unstable.zip)
+    * [modifying branch](https://github.com/mosochu/EraSQNK/archive/renovation.zip)
     * [bug patch branch](https://github.com/mosochu/EraSQNK/archive/master.zip)
 ## How to report bugs or leave comments
 * You can report bugs or leave comments [here](https://github.com/mosochu/EraSQNK/issues)
@@ -23,10 +23,10 @@
 * [여기서](https://github.com/mosochu/EraSQNK/releases) 정식 버전을 받을 수 있습니다.
     * Assets에서 .zip 파일을 받으세요.
 * 개발중인 _(불안정한)_ 두가지 브랜치가 있습니다 :
-    * [검수안됀 브랜치](https://github.com/mosochu/EraSQNK/archive/unstable.zip)
-        * 각종 기능개선과 번역수정 작업이 이루어지는 브랜치로, 문제가 없으면 master 브랜치에 통합해 릴리즈 합니다. 오류가 다소 많이 발생할 수 있습니다.
+    * [기능개선 브랜치](https://github.com/mosochu/EraSQNK/archive/renovation.zip)
+        * 각종 기능개선 작업이 이루어지는 브랜치로, 오류가 비교적 많이 발생할 수 있습니다.
     * [버그패치 브랜치](https://github.com/mosochu/EraSQNK/archive/master.zip)
-        * 릴리즈 버전이후 보고된 버그만 고치는 브랜치입니다.
+        * 원본의 보고된 버그와 번역만 고치는 브랜치입니다.
 ## 버그 신고 또는 제안사항 남기는 방법
 * [이 링크](https://github.com/mosochu/EraSQNK/issues)에서 버그 신고와 제안사항을 남기실 수 있습니다.
     * 명확성을 위해 적절한 태그를 달아주세요.
