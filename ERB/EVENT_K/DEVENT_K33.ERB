@@ -101,7 +101,7 @@ ELSEIF RAND:2 == 0
 				PRINTFORMW %CALLNAME:TARGET%는 이쪽을 알아차리면 가지고 있던 책을 당황해서 보물 상자에 던져 붐비었다
 				PRINTFORM 이상하게 생각해 보물 상자를 열면,
 				PRINTFORMW 내용은 텅 비었던…………은이라고?
-				PRINTFORMW %CALLNAME:TARGET%를 보면 아무 일도 없었는지와 같이 싱글벙글 웃고 있다…
+				PRINTFORMW %타겟을()% 보면 아무 일도 없었는지와 같이 싱글벙글 웃고 있다…
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 「아,  안녕하세요,  %CNAME("二人称", "かな")%☆」
 				PRINTFORMW %CALLNAME:MASTER%를 알아차린%CALLNAME:TARGET%는 기쁜듯이 미소지어 걸쳐 왔다
@@ -249,7 +249,7 @@ ELSEIF RAND:2 == 0
 	ELSEIF RAND:5 == 0 && TIME == 1
 		GUEST = FIND_COND("음기")
 		IF GUEST && MARK:GUEST:반발각인 != 3 && RAND:3 >= 1
-			PRINTFORMW %CALLNAME:GUEST%의 방에서,%CALLNAME:TARGET%(와)과%CALLNAME:GUEST%하지만 뭔가 하고 있는 것 같다
+			PRINTFORMW %CALLNAME:GUEST%의 방에서,%타겟과()%%CALLNAME:GUEST%하지만 뭔가 하고 있는 것 같다
 			PRINTFORMW %CALLNAME:TARGET%의, 왠지 슬픈 것 같은 표정의%CALLNAME:GUEST%를 위로하고 있는 것 같다
 			PRINTFORMW %CALLNAME:GUEST%의 표정은 개운치 않다……
 			PRINTFORMW %CALLNAME:TARGET%는 단념하지 않고 상냥한 태도를 취하고 있다……
@@ -311,7 +311,7 @@ ELSEIF RAND:2 == 0
 		PRINTFORMW %CALLNAME:TARGET%는 비단 모자를 취해 두건을 쓰면 의욕에 넘쳐 요리를 시작했다
 		PRINTFORMW …………
 		IF ABL:기교 == 0 || RAND:50 == 0
-			PRINTFORMW %CALLNAME:TARGET%를 할 수 있던 요리를 옮겨 와 주었다
+			PRINTFORMW %타겟을()% 할 수 있던 요리를 옮겨 와 주었다
 			PRINTFORMW 「오늘은 자신작☆가득 먹어♪」
 			PRINTFORMW %CALLNAME:MASTER%는 예의를 말해 먹기 시작했다……
 			PRINTFORMW ……!
@@ -325,17 +325,17 @@ ELSEIF RAND:2 == 0
 			PRINTFORMW 그리고, 둘이서 사이 좋게 녹다운 하게 되었다……
 		ELSEIF ABL:기교 == 1 || RAND:30 == 0
 			PRINTFORMW 「오늘은 자신작☆가득 먹어♪」
-			PRINTFORMW %CALLNAME:TARGET%를 할 수 있던 요리를 옮겨 와 주었다
+			PRINTFORMW %타겟을()% 할 수 있던 요리를 옮겨 와 주었다
 			PRINTFORMW %CALLNAME:MASTER%는 예의를 말해 먹기 시작했다……
 			PRINTFORMW ……!
 			PRINTFORMW 기리기리세이……아니 아웃인 맛입니다……
-			PRINTFORMW %CALLNAME:MASTER%는 싱글벙글 하고 있는%CALLNAME:TARGET%를 봐서,  각오를 결정해 삼켰다……
+			PRINTFORMW %CALLNAME:MASTER%는 싱글벙글 하고 있는%타겟을()% 봐서,  각오를 결정해 삼켰다……
 			PRINTFORMW 「어때? 맛있어?」
 			PRINTFORMW 미를 물어 오는%CALLNAME:TARGET%에, 정직하게 말해야할 것인가 거짓말도 하나의 방편으로 갈까 고민한 순간 대답을 곧 말하지 않으면이라고 하는 방향에 사고가 기울어 후에 생각하는 편의 일단 맛있다고 말했습니다
 			PRINTFORMW 「사실? 좋았다∼♪가득 있기 때문에, 사양말고 먹어♪」
 			PRINTFORMW 한층 더 결단이 요구되게 되었다……
 		ELSEIF (ABL:기교 < 4 && ABL:기교 >= 2) || RAND:20 == 0
-			PRINTFORMW %CALLNAME:TARGET%를 할 수 있던 요리를 옮겨 와 주었다
+			PRINTFORMW %타겟을()% 할 수 있던 요리를 옮겨 와 주었다
 			PRINTFORMW %CALLNAME:MASTER%는 예의를 말해 먹기 시작했다……
 			IF RAND:2 == 0
 				PRINTFORMW 꽤 나쁘지 않은 맛이다……
@@ -356,7 +356,7 @@ ELSEIF RAND:2 == 0
 				PRINTFORMW 납득해 방을 나가는%CALLNAME:TARGET%에 매달아 넣는 기력도 일어나지 않고, %CALLNAME:MASTER%는 책상에 푹 엎드렸다……
 			ENDIF
 		ELSE
-			PRINTFORMW %CALLNAME:TARGET%를 할 수 있던 요리를 옮겨 와 주었다
+			PRINTFORMW %타겟을()% 할 수 있던 요리를 옮겨 와 주었다
 			PRINTFORMW %CALLNAME:MASTER%는 예의를 말해 먹기 시작했다……
 			IF RAND:4 >= 1
 				PRINTFORMW ……매우 맛있다……
@@ -427,7 +427,7 @@ ELSEIF RAND:2 == 0
 				GUEST = FIND_COND("Ｃ딸３３")
 				;미믹の딸、長女
 				IF GUEST && BASE:GUEST:몇번째 == 1
-					PRINTFORMW 복도에서%CALLNAME:TARGET%(와)과%CALLNAME:GUEST%하지만 즐거운 듯이 이야기를 하고 있었다
+					PRINTFORMW 복도에서%타겟과()%%CALLNAME:GUEST%하지만 즐거운 듯이 이야기를 하고 있었다
 					PRINTFORMW 「아,%CNAME("二人称")%☆」
 					PRINTFORMW 『아버님♪』
 					PRINTFORMW 두 명에게 동시에 발견된다
@@ -436,7 +436,7 @@ ELSEIF RAND:2 == 0
 					PRINTFORMW 『……깨끗한 장소…찾아낸 것이야』
 					SIF TALENT:출산경험 >= 2
 						PRINTFORMW 「아래의 아이는 이제(벌써) 시작해 버리고 있다♪」
-					PRINTFORMW %CALLNAME:TARGET%(와)과%CALLNAME:GUEST%에 양측으로부터 잡혀 끌려간다
+					PRINTFORMW %타겟과()%%CALLNAME:GUEST%에 양측으로부터 잡혀 끌려간다
 					PRINTFORMW 꽉 잡히는 팔을 잡아 돌려주어 함께 달리면
 					PRINTFORMW 두 명 동시에 새빨갛게 되어 동시에손를 잡아 돌려주어졌다
 					PRINTFORMW %CALLNAME:MASTER%는 가족 집안끼리의시간를, 천천히 보냈다…
@@ -480,7 +480,7 @@ ELSEIF RAND:2 == 0
 				PRINTFORMW 「아, %CNAME("二人称")%여기의 팀 들어가!」
 				PRINTFORMW 「함께 리벤지 해☆」
 			ELSE
-				PRINTFORMW 대혼전의 끝에%CALLNAME:TARGET%(와)과%CALLNAME:GUEST%하지만 동시에 피탄해 무승부가 되었다
+				PRINTFORMW 대혼전의 끝에%타겟과()%%CALLNAME:GUEST%하지만 동시에 피탄해 무승부가 되었다
 				PRINTFORMW 「아~재미있었다, 후훗♪」
 				PRINTFORMW 「아, %CNAME("二人称")%,  "저기,  다음은 함께 ☆」
 			ENDIF
@@ -501,7 +501,7 @@ ELSEIF RAND:2 == 0
 				PRINTFORMW 안을 들여다 보면,%CALLNAME:TARGET%·%CALLNAME:GUEST%그리고%CALLNAME:GUEST2%하지만 들어가 있었다
 				PRINTFORMW 초만원 상태이지만, 매우 즐거운 것 같다……
 			ELSEIF CHARA_NUM("조교경험あり") >= 2 && RAND:2 == 0
-				PRINTFORMW 안을 들여다 보면, 작은 카마쿠라에%CALLNAME:TARGET%(와)과%CALLNAME:GUEST%하지만 몸을 의지하고 있었다
+				PRINTFORMW 안을 들여다 보면, 작은 카마쿠라에%타겟과()%%CALLNAME:GUEST%하지만 몸을 의지하고 있었다
 				PRINTFORMW 초만원 상태이지만, 매우 즐거운 것 같다……
 			ELSE
 				PRINTFORMW 중을 들여다보면, %조사처리(CALLNAME:TARGET,"가")% 툭 하고 앉아 있었다

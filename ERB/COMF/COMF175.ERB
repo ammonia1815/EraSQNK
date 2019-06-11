@@ -88,7 +88,7 @@ ELSEIF TEQUIP:구속 || TEQUIP:관내노출플레이 || TEQUIP:야외플레이
 		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 팬티를 재빠르게 벗겼다…
 		CALL SET_PANTIES, TARGET
 	ELSEIF CHECK_CLO("알몸") == 0
-		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 옷을 억지로벗겨 알몸으로 만들었다…
+		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 옷을 억지로 벗겨 알몸으로 만들었다…
 		CALL SETFLAG, "전부벗긴다", TARGET
 	ENDIF
 ELSE
@@ -121,7 +121,7 @@ SIF COND("다리 사용")
 	PRINTFORML  [ 2] 보디슈츠, 원피스수영복 등
 	PRINTFORML  [ 3] 속옷, 세퍼레이트수영복 등
 SIF COND("다리 사용")
-	PRINTFORML  [ 4] 블루머, 스패츠, 팬티스타킹 등
+	PRINTFORML  [ 4] 브루마, 스패츠, 팬티스타킹 등
 SIF COND("다리 사용")
 	PRINTFORML  [ 5] 양말 등
 SIF COND("손가락 사용")
@@ -543,7 +543,7 @@ CASEELSE
 					PRINT 애액으로 젖은 
 				ENDIF
 			ELSE
-				PRINTFORM %TEXTS("匂い")%(이)가 배어들었다
+				PRINTFORM %조사처리(TEXTS("匂い"),"가")% 배어들은
 			ENDIF
 			PRINTFORM 가랑이부분을 
 			IF TALENT:부끄럼쟁이
@@ -708,7 +708,7 @@ ELSEIF RESULT >= 0 && RESULT < 50 && LOCAL:RESULT
 	IF CHECK_SHIRT("Ｙ셔츠")
 		IF TALENT:작은몸집
 			PRINTFORMW %CALLNAME:TARGET%에게 헐렁헐렁한, %CALLNAME:MASTER%의 Ｙ셔츠로 갈아입게 시켰습니다
-			PRINTFORMW 워낙 소매에 여유가 있어서, 착착 접어서 손이 나오도록 했습니다
+			PRINTFORMW 워낙 소매에 여유가 있어서, 접어서 손이 나오도록 했습니다
 		ELSE
 			PRINTFORMW %CALLNAME:TARGET%에게 기장이 약간 긴, %CALLNAME:MASTER%의 Ｙ셔츠로 갈아입게 시켰습니다
 			IF TALENT:부끄럼없음 || RAND:6 == 0
@@ -744,7 +744,7 @@ ELSEIF RESULT >= 0 && RESULT < 50 && LOCAL:RESULT
 	ELSEIF CHECK_SHIRT("메이드복")
 		PRINTFORMW 빳빳하게 풀을 먹인, 청결한 메이드복을 입도록 시켰습니다
 	ELSEIF CHECK_SHIRT("체조복")
-		PRINTFORMW \@ COND("다리 사용") ? 블루머에서 뻗어나온 다리가  # \@건강해보이는 체조복으로 갈아입게 시켰습니다
+		PRINTFORMW \@ COND("다리 사용") ? 브루마에서 뻗어나온 다리가  # \@건강해보이는 체조복으로 갈아입게 시켰습니다
 	ELSEIF CHECK_SHIRT("간호사복")
 		PRINTFORMW 백의의 천사가 되도록 시켰습니다
 	ELSEIF CHECK_SHIRT("차이나드레스")
@@ -768,7 +768,7 @@ ELSEIF RESULT >= 0 && RESULT < 50 && LOCAL:RESULT
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 배어나오는 기쁨을 숨기지 않고있습니다…
 		ENDIF
 	ELSEIF CHECK_SHIRT("고스로리드레스")
-		PRINTFORMW \@ AGE(TARGET) <= 2 ? 妖しくも可愛らしい # 可愛らしさとのギャップに妖しい매력を感じる \@고딕＆로리타옷로 갈아입어 받았습니다
+		PRINTFORMW \@ AGE(TARGET) <= 2 ? 이상하게도 귀여운 # 귀여움과의 갭에 요염한 매력을 느끼는 \@고딕＆로리타옷로 갈아입게 했습니다
 	ELSEIF CHECK_SHIRT("치어리더")
 		PRINTFORMW 건강한 매력에, 보는 것만으로 힘이 나게 만드는 치어리더옷으로 갈아입혀주었습니다
 	ELSEIF CHECK_SHIRT("파자마")
@@ -787,11 +787,11 @@ ELSEIF RESULT >= 0 && RESULT < 50 && LOCAL:RESULT
 	ELSEIF CHECK_BODYS("레오타드") && CHECK_BODYS("Ｖ노출")
 		PRINTFORMW 가랑이와 가슴 주변만 노출시킨 레오타드를 입도록 시켰습니다
 	ELSEIF CHECK_BODYS("본디지")
-		PRINTFORMW \@ PENIS(TARGET) == 0 ? 유방이 훤히보이고 # \@ 가랑이에 지퍼가 달린 본디지 차림이 되도록 시켰습니다
+		PRINTFORMW \@ PENIS(TARGET) == 0 ? 유방이 훤히 보이고 # \@ 가랑이에 지퍼가 달린 본디지 차림이 되도록 시켰습니다
 	ELSEIF CHECK_BODYS("바니슈트")
 		PRINTFORMW 어른의 매력이 충만한 바니걸 모습을 하도록 시켰습니다
 	ELSEIF CHECK_BODYS("원피스수영복")
-		PRINTFORMW 조금청초분위기가 감돈다하양이원피스수영복(이)가 되어 받았습니다
+		PRINTFORMW 조금 청초한 분위기가 감도는 하얀 원피스수영복을 입게 시켰습니다
 	ENDIF
 ELSEIF RESULT == 99
 	CALL COORDINATE_MUMA, TARGET
@@ -1094,7 +1094,7 @@ ELSEIF RESULT == 80 && LOCAL:RESULT
 	ELSEIF CHECK_BRA("마이크로")
 		PRINTFORM 피복면적이 비정상적으로 적은 브래지어
 	ELSEIF CHECK_BRA("1/2컵")
-		PRINTFORM 유방의 상반분이 반 보이고 있다브래지어전기밥통
+		PRINTFORM 유방의 상반구가 반 보이고 있는 브래지어
 	ELSE
 		PRINTFORM 브래지어
 	ENDIF
@@ -1107,7 +1107,7 @@ ELSEIF RESULT >= 0 && RESULT < 50 && LOCAL:RESULT
 	SELECTCASE LOCAL
 	CASE 100
 		IF RAND:2 == 0
-			PRINTFORMW 몸의 라인을 살짝 주장하는 줄무늬 속옷을 입도록 시켰습니다
+			PRINTFORMW 몸의 라인을 살짝 보여주는 줄무늬 속옷을 입도록 시켰습니다
 		ELSE
 			PRINTFORMW 사타구니의 음영이 부드럽게 드러내는 줄무니 팬티를  입도록 시켰습니다
 		ENDIF
@@ -1131,7 +1131,7 @@ ELSEIF RESULT >= 0 && RESULT < 50 && LOCAL:RESULT
 		PRINTFORMW 가랑이 위쪽이 얕은 고무끈달린 로우라이즈를 입도록 시켰습니다
 	CASE 106
 		IF RAND:2 == 0
-			PRINTFORMW 대담하게 벌어져있는 속옷을 입도록 시켰습니다
+			PRINTFORMW 대담하게 벌어져 있는 속옷을 입도록 시켰습니다
 		ELSE
 			PRINTFORMW 굉장히 음란한 시스루 팬티를 입도록 시켰습니다
 		ENDIF
@@ -1166,9 +1166,9 @@ ELSEIF RESULT >= 0 && RESULT < 50 && LOCAL:RESULT
 				LOCALS = %조사처리(LOCALS,"를")% 과시하는 듯한 디자인의 
 			ELSEIF RAND:2
 				IF AGE(TARGET) >= 3
-					LOCALS = %조사처리(LOCALS,"는")% 勿論, それどころか클리토리스の鞘が見えている
+					LOCALS = %조사처리(LOCALS,"는")% 물론, 그뿐만 아니라 클리토리스의 콩알이 보이고 있는
 				ELSE
-					LOCALS = %조사처리(LOCALS,"는")% 勿論, それどころかスジの上端が見えかけている
+					LOCALS = %조사처리(LOCALS,"는")% 물론, 그뿐만 아니라 균열의 윗부분이 보이고 있는
 				ENDIF
 			ELSE
 				LOCALS = %LOCALS%\@ ABL:노출벽 >= 3 ? %조사만처리(LOCALS, "를")% 과시하는 데 최적인 모습인 # %조사만처리(LOCALS, "가")% 잘 보이는  \@ 
@@ -1188,14 +1188,14 @@ ELSEIF RESULT >= 0 && RESULT < 50 && LOCAL:RESULT
 			PRINTFORMW 어른 같으면서도 귀여운 레이스팬티를 입도록 시켰습니다
 		ENDIF
 	CASE 113
-		PRINTFORMW 작은 옷감과 형용하는 것이 좋은 것 같은, 굉장히 아슬아슬하다팬티를 입어 받았습니다
+		PRINTFORMW 작은 옷감과 형용하는 것이 좋은 것 같은, 굉장히 아슬아슬한 팬티를 입게 했습니다
 	CASE 114
 		PRINTFORML …어차피라면, 더욱 에로틱한 것을 선택합니까？
 		PRINTFORML [ 0] 시스루! 
 		PRINTFORML [ 1] 구멍 열림! 
-		PRINTFORML [ 2] 아니, 별로보통의로 좋다
+		PRINTFORML [ 2] 아니, 별로 보통옷이 좋다
 		CALL INPUT_SELECT, 3
-		PRINTFORMW 팬티이렇게 말해도 좋은 것인가 헤매는 일품, Ｃ스트링를 붙여 받았습니다
+		PRINTFORMW 팬티라고 말해도 좋은 지 망설이게 하는 물건, Ｃ스트링를 입게 했습니다
 		IF RESULT == 0
 			CSTR:40 = 透けＣスト
 			CALL CALC, "팬티플래그추가", SETFLAG_PANTIES("시스루")
@@ -1211,9 +1211,9 @@ ELSEIF RESULT >= 0 && RESULT < 50 && LOCAL:RESULT
 			PRINTFORMW 보이시한 귀여움이 넘치는 복서팬티를 입도록 시켰습니다
 		ENDIF
 	CASE 121, 122
-		PRINTFORMW \@ TALENT:남자 ? # 남성용  \@%조사처리(PANTIES(TARGET),"를")% 입게했습니다
+		PRINTFORMW \@ TALENT:남자 ? # 남성용  \@%조사처리(PANTIES(TARGET),"를")% 입게 했습니다
 	CASEELSE
-		PRINTFORMW %조사처리(PANTIES(TARGET),"를")% 입게했습니
+		PRINTFORMW %조사처리(PANTIES(TARGET),"를")% 입게했습니다
 	ENDSELECT
 
 	;브래지어も合わせる？
@@ -1235,25 +1235,25 @@ ELSEIF RESULT >= 50 && RESULT <= 80 && LOCAL:RESULT
 	CASE 103
 		PRINTFORMW 사랑스러운 캐미솔을 입도록 시켰습니다
 	CASE 104
-		PRINTFORMW 컵하지만 하반신 밖에 없다브래지어를 붙여 받았습니다
+		PRINTFORMW 컵이 하반신 밖에 없는 브래지어를 입게 했습니다
 	CASE 105
 		PRINTFORMW 활동적인 탱크탑을 입도록 시켰습니다
 	CASE 106
-		PRINTFORMW 옷감의 대부분이 비치고 있다브래지어를 대어 받았습니다
+		PRINTFORMW 옷감의 대부분이 비치고 있는 브래지어를 입게 했습니다
 	CASE 107
 		PRINTFORMW \@ TALENT:남자 ? 위의 ４분의 1이 노출되어있는  # 가슴계곡이 강조되는  \@ 브래지어를 입도록 시켰습니다
 	CASE 108
 		PRINTFORMW 도칙적인 분위기를 풍기는, 가죽 브라를 입도록 시켰습니다
 	CASE 109
-		PRINTFORMW 딱달라붙게 가슴을 가려주는 튜브탑을 입도록 시켰습니다
+		PRINTFORMW 딱 달라붙게 가슴을 가려주는 튜브탑을 입도록 시켰습니다
 	CASE 110
-		PRINTFORMW 대담한비키니타입의브래지어를 대어 받았습니다
+		PRINTFORMW 대담한 비키니타입의 브래지어를 입게 했습니다
 	CASE 111
-		PRINTFORMW 소중한 곳을 전혀 숨길 수 있지 않은 극소 옷감의 수영복을 입어 받았습니다
+		PRINTFORMW 소중한 곳을 전혀 숨길 수 있지 않은 극소 옷감의 수영복을 입게 했습니다
 	CASE 112
-		PRINTFORMW 품위 있는 레이스 옷감의브래지어를 대어 받았습니다
+		PRINTFORMW 품위 있는 레이스 옷감의 브래지어를 입게 했습니다
 	CASE 113
-		PRINTFORMW 작은 옷감과 형용하는 것이 좋은 것 같은, 아슬아슬하다브래지어를 붙여 받았습니다
+		PRINTFORMW 작은 옷감과 형용하는 것이 좋은 것 같은, 아슬아슬한 브래지어를 입게 했습니다
 	CASEELSE
 		PRINTFORMW %조사처리(BRA(TARGET),"를")% 입도록 시켰습니다
 	ENDSELECT
@@ -1408,36 +1408,36 @@ RESTART
 @SHOW_NYUURIN
 IF CHECK_BRA("オープン브래지어") || CHECK_BRA("1/4컵") || CHECK_BRA("1/2컵") || CHECK_BRA("시스루")
 	IF CHECK_BRA("시스루")
-		PRINTFORM %TEXTR("生地越しに透けて見える", "うっすらと透ける", "儚い生地越しに透ける")%
+		PRINTFORM %TEXTR("천지에 비쳐 보이는", "희미하게 비치는", "얇은 옷감 너머로 비치는")%
 	ELSE
-		PRINTFORM %TEXTR("丸見えの", "力強く主張する", "恥ずかしげも無く晒されている")%
+		PRINTFORM %TEXTR("훤히 보이는", "강력하게 주장하는", "부끄러운 기색도 없이 나타나 있는")%
 	ENDIF
 	IF CALCF("Ｂ발정")
 		IF COND("유두비대") && RANDIF(1, TALENT:니플피어스)
 			IF COND("유두비대") >= 2
-				PRINTFORM 비대해 버렸다
+				PRINTFORM 비대해진
 			ELSE
 				PRINTFORM 큰
 			ENDIF
 		ELSEIF TALENT:니플피어스
-			PRINTFORM 피어스로 장식해졌다
+			PRINTFORM 피어스로 장식해진
 		ENDIF
 	ELSE
 		PRINTFORM 함몰
 	ENDIF
-	PRINTFORM 유두(와)과
+	PRINTFORM 유두와
 	SELECTCASE COND("거유륜")
 	CASE IS >= 2
-		PRINTFORM 너무 크다
+		PRINTFORM 거대한
 	CASE 1
 		PRINTFORM 큰
 	ENDSELECT
-	PRINTFORMW 유륜이 뭐라고도%TEXTR("淫靡です", "興奮を誘う", "お洒落です")%…
+	PRINTFORMW 유륜이 정말 %TEXTR("음탕합니다", "흥분되게 합니다", "멋집니다")%…
 ELSEIF CHECK_BRA("마이크로")
 	IF CALCF("Ｂ발정") && COND("유두비대") && RANDIF(1, COND("거유륜") )
-		PRINTFORMW 밀착도의 높은 옷감을 위해서(때문에), 아래에서 주장하고 있다유두의 크기를 숨길 수가 없기는 커녕 반대로 강조되어 버리고 있습니다…
+		PRINTFORMW 밀착도가 높은 옷감때문에, 아래에서 세워진 유두의 크기를 숨길 수가 없기는 커녕 반대로 강조되어 버리고 있습니다…
 	ELSEIF COND("거유륜")
-		PRINTFORM 유두도모하자 글자라고 숨겨져 있지만,
+		PRINTFORM 유두는 겨우 숨기고 있지만,
 		SELECTCASE COND("거유륜")
 		CASE IS >= 2
 			PRINTFORM 부끄러울만큼 큰
@@ -1535,7 +1535,7 @@ CASE 4
 	ELSEIF CHECK_PANTIES("시스루")
 		PRINTW 희미하게 비쳐보이는 부드러운 털이 정말로 흥분을 불러일으킵니다…
 	ELSEIF CHECK_PANTIES("로우레그") && CSTR:40 != "로우레그"
-		PRINTW 팬티의 위쪽으로, 부드러워보이는 언덕이 보이고 있습니다…
+		PRINTW 팬티의 위쪽으로, 부드러워 보이는 언덕이 보이고 있습니다…
 	ENDIF
 ;無毛
 CASE 1 TO 3
@@ -1708,7 +1708,7 @@ ELSEIF RESULT >= 0 && RESULT <= 20 && LOCAL:RESULT
 		PRINTFORML 어떤 메이드복으로 합니까？
 		PRINTFORML  [ 0] 청초하고 노출이 적은 롱스커트 타입
 		PRINTFORML  [ 1] 역시 미니스커트가 최고다
-		PRINTFORML  [ 2] 이게 정말로 메이드？스러운 프렌치메이드 스타일
+		PRINTFORML  [ 2] 이게 정말로 메이드？ 프렌치메이드 스타일
 
 		CALL INPUT_SELECT, 3
 
@@ -1728,7 +1728,7 @@ ELSEIF RESULT >= 0 && RESULT <= 20 && LOCAL:RESULT
 			EQUIP:스커트 = SETFLAG_SKIRT("초미니", "에이프런", "프릴")
 		ENDSELECT
 	CASE "체조복"
-		PRINTFORMW \@ COND("다리 사용") ? 블루머에서 뻗어나온 다리가 # \@건강해보이는 체조복으로 갈아입게 시켰습니다
+		PRINTFORMW \@ COND("다리 사용") ? 브루마에서 뻗어나온 다리가 # \@건강해보이는 체조복으로 갈아입게 시켰습니다
 	CASE "간호사복"
 		PRINTFORMW 백의의 천사가 되도록 시켰습니다
 	CASE "차이나드레스"
@@ -1736,24 +1736,24 @@ ELSEIF RESULT >= 0 && RESULT <= 20 && LOCAL:RESULT
 	CASE "세라복"
 		PRINTFORMW 슬쩍 보이는 배꼽이 매력적인 세라복으로 갈아입게 시켰습니다
 	CASE "무녀복"
-		PRINTFORML …어떠한무녀복로 합시다？
-		PRINTFORML  [ 0] 전통의무녀복
+		PRINTFORML …어떠한 무녀복로 합니까？
+		PRINTFORML  [ 0] 전통의 무녀복
 		PRINTFORML  [ 1] 역시 미니스커트가 최고다
-		PRINTFORML  [ 2] 이것은 정말로 무녀？%TEXTS("겨드랑이")%보이고 스타일
+		PRINTFORML  [ 2] 이것은 정말로 무녀？%TEXTS("겨드랑이")%보이는 스타일
 
 		CALL INPUT_SELECT, 3
 
 		SELECTCASE RESULT
 		CASE 0
-			PRINTFORMW 더러워지고 없는 청순함 흘러넘치는 다홍색하양노무녀복로 갈아입어 받았습니다
+			PRINTFORMW 더러운 곳이 없는 청순함 흘러 넘치는 빨강과 흰색의 무녀복로 갈아입게 했습니다
 		CASE 1
-			PRINTFORMW 반까지노출한 허벅지가 눈에 눈부시다, 미니스커트형태의무녀복를 입어 받았습니다
+			PRINTFORMW 반까지 노출한 허벅지가 눈에 눈부신 미니스커트형태의 무녀복을 입게 했습니다
 
 			CSTR:42 = 미니스커트巫女
 			EQUIP:웃옷 = SETFLAG_SHIRT("스커트着用", "ズリ불가", "무녀복", "순백")
 			EQUIP:스커트 = SETFLAG_SKIRT("미니", "빨강")
 		CASE 2
-			PRINTFORMW 노 슬리브에 초과미니스커트를 맞추었다, 선정적인무녀복를 입어 받았습니다
+			PRINTFORMW 소매가 없고 미니스커트인 선정적인 무녀복를 입게 했습니다
 
 			CSTR:42 = 겨드랑이巫女
 			EQUIP:웃옷 = SETFLAG_SHIRT("스커트着用", "ズリ불가", "겨드랑이노출", "무녀복", "순백")
@@ -1764,23 +1764,23 @@ ELSEIF RESULT >= 0 && RESULT <= 20 && LOCAL:RESULT
 	CASE "웨딩드레스"
 		PRINTFORMW 순백의 웨딩드레스로 갈아입게 시켰습니다
 	CASE "고스로리드레스"
-		PRINTFORMW \@ AGE(TARGET) <= 2 ? 妖しくも可愛らしい # 可愛らしさとのギャップに妖しい매력を感じる \@고딕＆로리타옷로 갈아입어 받았습니다
+		PRINTFORMW \@ AGE(TARGET) <= 2 ? 이상하게도 귀여운 # 귀여움과의 갭에 요염한 매력을 느끼는 \@고딕＆로리타옷로 갈아입게 했습니다
 	CASE "치어리더"
 		PRINTFORMW 건강한 매력에, 보는 것만으로도 힘이 날것같은 치어리더 복장으로 갈아입게 했습니다
 	CASE "파자마"
 		PRINTFORMW 사랑스러운 아이용 파자마롤 갈아입게했습니다. 
 	CASE "괴수파자마"
 		PRINTFORML 괴수의 모습처럼 보이는, 아이답고 귀여운 파자마입게 했습니다. 
-		PRINTFORMW 덧붙여, 위아래가 연결되어있는 구조기때문에 화장실 용의 지퍼도 달려있습니다. 
+		PRINTFORMW 덧붙여, 위아래가 연결되어있는 구조이기 때문에 화장실 용의 지퍼도 달려있습니다. 
 	CASEELSE
 		IF CHECK_SHIRT("Ｙ셔츠")
 			IF TALENT:작은몸집
 				PRINTFORMW %CALLNAME:TARGET%에게 헐렁헐렁한, %CALLNAME:MASTER%의 Ｙ셔츠로 갈아입게 시켰습니다
-				PRINTFORMW 워낙 소매에 여유가 있어서, 착착 접어서 손이 나오도록 했습니다
+				PRINTFORMW 워낙 소매에 여유가 있어서, 접어서 손이 나오도록 했습니다
 			ELSE
 				PRINTFORMW %CALLNAME:TARGET%에게 기장이 약간 긴, %CALLNAME:MASTER%의 Ｙ셔츠로 갈아입게 시켰습니다
 				IF TALENT:부끄럼없음 || RAND:6 == 0
-					IF CHECK_CLO("블루머노출") || CHECK_CLO("스패츠노출")
+					IF CHECK_CLO("브루마노출") || CHECK_CLO("스패츠노출")
 						PRINTFORMW 밑단의 겹쳐지는 곳으로 힐끔힐끔 보이는 %조사선택(OUTER(TARGET, 1), "가")% %CALLNAME:MASTER%의 눈을 빼앗고 있습니다…
 					ELSEIF CHECK_CLO("팬티노출")
 						PRINTFORMW 밑단의 겹쳐지는 곳으로 힐끔힐끔 보이는 %조사선택(PANTIES(TARGET, 1), "가")% %CALLNAME:MASTER%의 눈을 빼앗고 있습니다…
@@ -1872,7 +1872,7 @@ ELSEIF RESULT >= 0 && RESULT <= 20 && LOCAL:RESULT
 		IF CHECK_BODYS("검정")
 			PRINTFORM 귀여운 타이츠 재질의 
 		ELSEIF CHECK_BODYS("하양")
-			PRINTFORM 청초한 흰색과 정 반대인 요염함과의 갭을 느끼게해준다
+			PRINTFORM 청초한 흰색과 정 반대인 요염함과의 갭을 느끼게 해주는
 		ELSE
 			PRINTFORM 새빨간 
 		ENDIF
@@ -1890,7 +1890,7 @@ ELSEIF RESULT >= 0 && RESULT <= 20 && LOCAL:RESULT
 	CASE 109
 		PRINTFORMW 가랑이의 먹힘이 굉장한, 하이레그＆Ｔ백 사양의 원피스수영복을 입게 했습니다
 	CASE 110
-		PRINTFORMW 적절한 하이레그 컷으로 수영하기 쉬워보이는 경기용수영복을 입게 했습니다
+		PRINTFORMW 적절한 하이레그 컷으로 수영하기 쉬워 보이는 경기용 수영복을 입게 했습니다
 	CASEELSE
 		PRINTFORMW %조사처리(BODYS(TARGET),"를")% 입게 했습니다
 	ENDSELECT
@@ -1940,14 +1940,14 @@ IF RESULT == 100
 ELSEIF RESULT >= 0 && RESULT <= 49 && LOCAL:RESULT
 	CALL SET_OUTER, TARGET, RESULT+100
 	IF RESULT == 100
-		PRINTFORMW 각선미가 돋보이는 블루머를 입도록 시켰습니다
+		PRINTFORMW 각선미가 돋보이는 브루마를 입도록 시켰습니다
 	ELSEIF RESULT == 101
-		PRINTFORMW 먹혀든 가랑이와 엉덩이가 사랑스러운 하이레그 블루머를 입도록 시켰습니다
+		PRINTFORMW 먹혀든 가랑이와 엉덩이가 사랑스러운 하이레그 브루마를 입도록 시켰습니다
 	ELSEIF RESULT == 102
 		PRINTFORMW 허벅지와 허리사이를 절묘하게 조여주는 스패츠를 입도록 시켰습니다
 		IF CHECK_CLO("겉옷直穿き")
 			IF RAND:2 == 0
-				PRINTFORMW 부드러워보이는 가랑이의 부푼곳이 굉장히 매력적입니다…
+				PRINTFORMW 부드러워 보이는 가랑이의 부푼 곳이 굉장히 매력적입니다…
 			ELSE
 				PRINTFORMW 먹혀든 가랑이가 굉장히 매력적입니다…
 			ENDIF
@@ -2181,7 +2181,7 @@ PRINTL
 SIF EQUIP:악세사리
 	PRINTFORML  [98] 전부 벗게한다
 SIF STRLENS(NAME_OTHER(BASE:종족, TARGET))
-	PRINTFORML  [99] %CALLNAME:TARGET%의 평소 셋트를 입게 한다
+	PRINTFORML  [99] %CALLNAME:TARGET%의 평소 세트를 입게 한다
 
 PRINTFORML [100] 돌아간다
 
@@ -2575,8 +2575,8 @@ ELSEIF CHECK_CLO("팬티스타킹노출")
 		ENDIF
 		CALL SELF_KOJO, "自発脱ぎ"
 	ENDIF
-;블루머は脱ぎません
-ELSEIF CHECK_OUTER("블루머")
+;브루마は脱ぎません
+ELSEIF CHECK_OUTER("브루마")
 ELSEIF CHECK_CLO("겉옷노출")
 	IF CHECK_OUTER("파스너")
 		IF CHECK_OUTER("파스너閉") && LOCAL >= 20
@@ -2604,7 +2604,7 @@ ELSEIF CHECK_CLO("겉옷노출")
 		IF TALENT:남자 == 0 && TEQUIP:넘어뜨리기 && TALENT:부끄럼없음 + TALENT:호색 + TALENT:음란 + TALENT:소악마 - TALENT:부끄럼쟁이 - TALENT:청초 > 0
 			PRINTFORMW %조사만처리(OUTER(TARGET, 1),"를")% 벗어서, %CALLNAME:PLAYER%의 얼굴 위에 떨어뜨렸다…
 			SIF PALAM:Ｖ윤 >= 3000 && PALAM:욕정 >= 3000 && RAND:3 == 0
-				PRINTFORMW %CALLNAME:PLAYER%의 비강에, 조금 습기찬 옷감의%TEXTS("匂い")%하지만 흘러 온다…
+				PRINTFORMW %CALLNAME:PLAYER%의 비강에, 조금 습기찬 옷감의 %조사처리(TEXTS("匂い"),"이")% 흘러 온다…
 		ELSE
 			PRINTFORMW %조사만처리(OUTER(TARGET, 1),"를")% 벗었다…
 		ENDIF
@@ -2615,7 +2615,7 @@ ELSEIF CHECK_CLO("팬티노출")
 	;ファスナー優先
 	IF CHECK_PANTIES("파스너閉") && LOCAL >= 20
 		PRINTL 
-		PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 가랑이부분의 지퍼를 내렸다
+		PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 가랑이 부분의 지퍼를 내렸다
 		CALL CALC, "팬티플래그추가", SETFLAG_PANTIES("파스너開")
 		IF TALENT:남자 == 0 && (TALENT:연모 || TALENT:부끄럼없음) && CHECK_CLO("Ｖ노출")
 			PRINTW . 
@@ -2644,7 +2644,7 @@ ELSEIF CHECK_CLO("팬티노출")
 				IF RAND:2 && CHECK_PANTIES("Ｃ스트링") == 0
 					PRINTFORMW 많이 더러운 부분에 \@ CHECK_CLO("食い込み") ? 먹혀있던 # 닿아있던 \@ 가랑이의 옷감은, 안에서 넘쳐난 %TEXTR("끈적거리는", "음란한")% 즙으로 진한 색때문에 완전히 색이 변해있다…
 				ELSE
-					PRINTFORMW %CALLNAME:PLAYER%의 비강을%CALLNAME:TARGET%노%TEXTS("匂い")%하지만 자극한다…
+					PRINTFORMW %CALLNAME:PLAYER%의 비강을%CALLNAME:TARGET%의 %조사처리(TEXTS("匂い"),"가")% 자극한다…
 				ENDIF
 			ENDIF
 		ELSE
@@ -2694,7 +2694,7 @@ ELSEIF CHECK_CLO("팬티노출")
 			ENDIF
 			IF TALENT:남자 == 0 && PALAM:Ｖ윤 >= 3000 && PALAM:욕정 >= 3000 && RAND:3 == 0
 				IF CHECK_PANTIES("通気性없음") && TALENT:남자 == 0
-					PRINTFORMW 환기성이 없는 옷감으로 밀봉되고 있던 저기의 발정했다%TEXTS("匂い")%하지만, 금새 근처에 자욱한다…
+					PRINTFORMW 통기성이 없는 옷감으로 밀봉되고 있던 그곳의 발정한 %조사처리(TEXTS("匂い"),"가")% 금새 근처에 자욱한다…
 				ELSEIF CHECK_PANTIES("男物") == 0
 					PRINTFORMW 팬티의 가랑이 부분에는 숨길 수 없을 정도로 얼룩이 져 있었다…
 				ENDIF

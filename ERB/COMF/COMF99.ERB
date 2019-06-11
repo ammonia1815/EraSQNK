@@ -140,7 +140,7 @@ ELSEIF TEQUIP:넘어뜨리기
 	IF PREVCOM == SELECTCOM && COND("前Ｔ조교자") == PLAYER
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 자기가 주도하는 식스나인을 만끽하고있다…
 	ELSEIF PREVCOM == 91 && COND("前Ｔ조교자") == PLAYER
-		PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 페니스를 문채로 %CALLNAME:PLAYER%의 얼굴에 걸터앉아, 
+		PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 페니스를 문 채로 %CALLNAME:PLAYER%의 얼굴에 걸터앉아, 
 		IF TEQUIP:PLAYER:식스나인 == 4
 			PRINTFORMW 눈 앞의 물건을 빨라고 재촉했다…
 		ELSE
@@ -150,7 +150,7 @@ ELSEIF TEQUIP:넘어뜨리기
 		IF TEQUIP:안면기승 && COND("前Ｔ조교자") == PLAYER
 			PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 얼굴에 올라탄채로, 앞으로 몸을 기울이고 
 		ELSE
-			PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%\@ COND("다리 사용") ? に跨り,  # の \@
+			PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%\@ COND("다리 사용") ? 에 올라타,  # 의 \@
 			IF TEQUIP:PLAYER:식스나인 == 4
 				PRINTFORM 입을 범하면서
 				SIF TEQUIP:식스나인 == 91
@@ -187,7 +187,7 @@ ELSE
 			IF TEQUIP:PLAYER:식스나인 == 4
 				PRINTFORMW 눈앞에 흔들리고 있는 육봉을 맛보았다…
 			ELSE
-				PRINTFORMW 엣치한%TEXTS("匂い")%를 시키고 있는 저기에 혀를 기게 했다…
+				PRINTFORMW 엣치한 %(TEXTS("匂い"),"를")% 내뿜고 있는 저기에 혀를 기게 했다…
 			ENDIF
 		ENDIF
 	ENDIF
@@ -432,14 +432,14 @@ CASE 0 TO 2, 4, 7 TO 10, 15, 30 TO 34, 39, 130, 141 TO 143, 150
 			IF TEQUIP:딥스로트
 				;기교４かつ봉사정신３
 				IF ABL:기교 >= 4 && ABL:봉사정신 >= 3 && RAND:3 == 0
-					PRINTFORML 줄줄 목 안을 울리면서 훑어 내고 있다…
+					PRINTFORML 촉촉히 목구멍을 조이면서 훑어 내고 있다…
 				;봉사정신3이상か욕정4이상
 				ELSEIF (ABL:봉사정신 >= 3 || PALAM:욕정 >= PALAMLV:4) && RAND:2 == 0
 					PRINTFORML 열중해 맛보고 있다…
 				ELSEIF  RAND:2 == 0
 					PRINTFORML 계속 격렬하게 빨고 있다…
 				ELSE
-					PRINTFORML 들이 마시도록(듯이) 짠 목으로 빨고 있다…
+					PRINTFORML 들이마시듯 목구멍으로 빨아먹고 있다…
 				ENDIF
 			ELSEIF TALENT:요정 || ABL:순종 <= 1 || ABL:봉사정신 <= 1
 				;작은몸집で追加
@@ -449,21 +449,21 @@ CASE 0 TO 2, 4, 7 TO 10, 15, 30 TO 34, 39, 130, 141 TO 143, 150
 			ELSEIF (ABL:순종 >= 4 || ABL:봉사정신 >= 3 || ABL:마조끼 >= 3) && ABL:기교 >= 3 && EXP:펠라경험 >= 100 && RAND:3 == 0
 				;기교４かつ봉사정신３
 				IF ABL:기교 >= 4 && ABL:봉사정신 >= 3 && RAND:3 == 0
-					PRINTFORML 줄줄 목 안을 울리면서 훑어 내고 있다…
+					PRINTFORML 촉촉히 목구멍을 조이면서 훑어 내고 있다…
 				;봉사정신3이상か욕정4이상
 				ELSEIF (ABL:봉사정신 >= 3 || PALAM:욕정 >= PALAMLV:4) && RAND:2 == 0
 					PRINTFORML 열중해 맛보고 있다…
 				ELSEIF  RAND:2 == 0
 					PRINTFORML 계속 격렬하게 빨고 있다…
 				ELSE
-					PRINTFORML 들이 마시도록(듯이) 짠 목으로 빨고 있다…
+					PRINTFORML 들이마시듯 목구멍으로 빨아먹고 있다…
 				ENDIF
 			ELSE
 				;봉사정신3이상か욕정4이상
 				IF  (ABL:봉사정신 >= 3  || PALAM:욕정 >= PALAMLV:4) && RAND:3 >= 1
 					PRINTFORML 계속 격렬하게 빨고 있다…
 				ELSEIF  RAND:2 == 0
-					PRINTFORML 들이 마시도록(듯이) 빨고 있다…
+					PRINTFORML 들이마시듯 빨고 있다…
 				ELSE
 					PRINTFORML 핥아대고 있다…
 				ENDIF
@@ -473,43 +473,43 @@ CASE 0 TO 2, 4, 7 TO 10, 15, 30 TO 34, 39, 130, 141 TO 143, 150
 			IF ABL:기교 >= 3 && RAND:3 == 0
 				PRINTFORM 완급을 붙이면서
 			ELSEIF ABL:새드끼 && RAND:3 == 0
-				PRINTFORM 물컹 격렬하고
+				PRINTFORM 물컹물컹 격렬하게
 			ELSEIF ABL:욕망 + ABL:봉사정신 >= 3 && RAND:2 == 0
 				PRINTFORM 열중해
 			ENDIF
 			IF TALENT:빈유
-				PRINT 얇다
+				PRINT 얇은
 			ELSEIF TALENT:거유
-				PRINT 풍만
+				PRINT 풍만한
 			ENDIF
-			PRINTL 가슴그리고 쓸어올리고 있다…
+			PRINTL 가슴으로 쓸어올리고 있다…
 		CASE 97
 			PRINTFORM %CALLNAME:PLAYER%의 페니스를
 			IF CHECK_CLO("濡れ") && RAND:2 == 0
-				PRINT 습기찼다
+				PRINT 습기찬
 			ELSEIF CHECK_CLO("蒸れ")
-				PRINT 뜸들었다
+				PRINT 열띈
 			ENDIF
 			PRINTFORM %CLO("가랑이")%
 			IF PREVCOM == SELECTCOM && COND("前Ｔ조교자") == PLAYER
-				PRINTL 그리고 쓱쓱 다루고 있다…
+				PRINTL 로 쓱쓱 다루고 있다…
 			ELSEIF RAND:2 == 0 && (TALENT:부끄럼쟁이 == 0 || TALENT:음란 || TALENT:연모)
-				PRINTL 노보지하지만 접하고 있던 부분에서 비비고 있다…
+				PRINTL 로 보지로 접하고 있던 부분에서 비비고 있다…
 			ELSE
-				PRINTL 그리고 싸 다루고 있다…
+				PRINTL 로 싸 다루고 있다…
 			ENDIF
 		CASE 98
-			PRINTFORML %CALLNAME:PLAYER%의 보지를정신없이 맛보고 있다…
+			PRINTFORML %CALLNAME:PLAYER%의 보지를 정신없이 맛보고 있다…
 		CASE 105
-			PRINTFORM %CALLNAME:PLAYER%의 페니스를오나홀그래서
+			PRINTFORM %CALLNAME:PLAYER%의 페니스를 오나홀로
 			IF ABL:새드끼 >= 3 && RAND:3 == 0
 				PRINTFORM 아플 정도에 힘을 집중해
 			ELSEIF TALENT:호기심 && RAND:3 == 0
 				PRINTFORM 흥미로운 것 같게
 			ELSEIF MARK:굴복각인 == 0 && RAND:3 == 0
-				PRINTFORM 복잡한얼굴를 하면서
+				PRINTFORM 복잡한 얼굴를 하면서
 			ELSEIF RAND:3 == 0
-				PRINTFORM 격렬하고
+				PRINTFORM 격렬하게
 			ELSEIF RAND:2 == 0
 				PRINTFORM 질척질척
 			ELSE

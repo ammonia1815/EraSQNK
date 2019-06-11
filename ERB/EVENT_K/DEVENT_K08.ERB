@@ -137,7 +137,7 @@ ELSEIF EVENT_NUM && (RAND:2 || CEVENT(LOCALS:EVENT_NUM) == 0)
 			ELSEIF RAND:3 == 0
 				PRINTFORMW 리빙에는 소세지를 편손에 가졌다%조사처리(CALLNAME:TARGET,"가")% 있었습니다
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 진지한 시선으로, 소세지를 빨거나 물거나 하고 있습니다 가게
-				PRINTFORMW 그런 상태를 보고 있으면, %CALLNAME:TARGET%(와)과 시선이 마주쳤습니다! 
+				PRINTFORMW 그런 상태를 보고 있으면, %타겟과()% 시선이 마주쳤습니다! 
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 얼굴를빨강꼬치라고 숙여 버렸습니다
 			ELSEIF RAND:2 == 0
 				PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 자기 방으로 돌아가려고 하고 있으면, 방의 앞에서%조사처리(CALLNAME:TARGET,"가")% 우왕좌왕하고 있었습니다
@@ -165,7 +165,7 @@ ELSEIF EVENT_NUM && (RAND:2 || CEVENT(LOCALS:EVENT_NUM) == 0)
 	;살로메オススメの本
 	CASE 2
 		IF RAND:2 == 0
-			PRINTFORMW 도서실을 들여다 보면%CALLNAME:TARGET%(와)과%CALLNAME:GUEST%하지만 책을 읽고 있고, 내일
+			PRINTFORMW 도서실을 들여다 보면%타겟과()%%CALLNAME:GUEST%하지만 책을 읽고 있고, 내일
 			PRINTFORMW 그녀들의 옆에는 몇권의 책이 겹겹이 쌓이고 있다
 			PRINTFORMW 맨 위의 책의 타이틀은………
 			PRINT 『
@@ -281,7 +281,7 @@ ELSEIF EVENT_NUM && (RAND:2 || CEVENT(LOCALS:EVENT_NUM) == 0)
 	;리저드맨
 	CASE 3
 		PRINTFORMW %CALLNAME:GUEST%의 방으로부터 이야기 소리가 새고 있습니다…
-		PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 남몰래 안을 보면…%CALLNAME:TARGET%(와)과%CALLNAME:GUEST%하지만 배트에 줄서 의자, 풋잡의 연습을 하고 있었습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 남몰래 안을 보면…%타겟과()%%CALLNAME:GUEST%하지만 배트에 줄서 의자, 풋잡의 연습을 하고 있었습니다
 		IF RAND:2 == 0
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 상냥하고발를 움직이는 것을, %CALLNAME:GUEST%하지만 어색하게 흉내내고 있었습니다…
 		ELSE
@@ -305,7 +305,7 @@ ELSEIF EVENT_NUM && (RAND:2 || CEVENT(LOCALS:EVENT_NUM) == 0)
 				RESTART
 			ENDIF
 		ELSE
-			PRINTFORMW %CALLNAME:GUEST%의 방으로부터, %CALLNAME:TARGET%(와)과%CALLNAME:GUEST%의 목소리가 들려 온다
+			PRINTFORMW %CALLNAME:GUEST%의 방으로부터, %타겟과()%%CALLNAME:GUEST%의 목소리가 들려 온다
 			PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 안의 모습 보면……
 			;両方연모
 			IF TALENT:연모 && TALENT:GUEST:연모
@@ -318,7 +318,7 @@ ELSEIF EVENT_NUM && (RAND:2 || CEVENT(LOCALS:EVENT_NUM) == 0)
 		ENDIF
 	;엔젤
 	CASE 5
-		PRINTFORMW %CALLNAME:GUEST%의 방으로부터, %CALLNAME:TARGET%(와)과%CALLNAME:GUEST%의 목소리가 들려 온다
+		PRINTFORMW %CALLNAME:GUEST%의 방으로부터, %타겟과()%%CALLNAME:GUEST%의 목소리가 들려 온다
 		PRINTFORMW 도대체 무엇을 하고 있는 것인가 신경이 쓰였다%조사처리(CALLNAME:MASTER,"는")% , 방 안을 사……
 		PRINTFORMW 두 명은가슴에손를 맞히면서, 한숨을 토하거나, 서로 격려하거나 하고 있습니다
 		PRINTFORMW 뭔가를 서로 이야기하고 있는 것 같습니다만, 회화의 내용까지는 알아 들을 수 없습니다
@@ -326,12 +326,12 @@ ELSEIF EVENT_NUM && (RAND:2 || CEVENT(LOCALS:EVENT_NUM) == 0)
 	;ヴァージン빌리져
 	CASE 6
 		IF RAND:2 == 0 
-			PRINTFORMW 리빙에 와 보면, 소파 위에서%CALLNAME:TARGET%(와)과%CALLNAME:GUEST%하지만 어깨를 서로 기대어 자고 있었습니다
+			PRINTFORMW 리빙에 와 보면, 소파 위에서%타겟과()%%CALLNAME:GUEST%하지만 어깨를 서로 기대어 자고 있었습니다
 			PRINTFORMW 두 명은 스으스으 숨소리를 세우는 것만으로, 미동 1개 하지 않습니다…
 			PRINTFORMW …두 명의 용모는 거울에 비춘 것처럼 꼭 닮아, 옷하지만 같으면 분별할 수 없을지도 모릅니다
 			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 두 명을 일으키지 않도록, 살그머니 리빙으로부터 떠났습니다…
 		ELSE
-			PRINTFORMW 복도를 걷고 있으면, %CALLNAME:TARGET%(와)과%CALLNAME:GUEST%하지만탈의곳에 들어가는 것을 목격했습니다
+			PRINTFORMW 복도를 걷고 있으면, %타겟과()%%CALLNAME:GUEST%하지만탈의곳에 들어가는 것을 목격했습니다
 			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 호기심(이)가 향하는 대로, 탈의곳안을 엿봐 보았습니다…
 			IF RAND:2 == 0 
 				PRINTFORMW 두 명은 알몸을 보이는 것이 부끄러운 것인지, 가능한 한 볼 수 없게 타올로 몸을 숨기면서 갈아입고 있습니다
@@ -344,7 +344,7 @@ ELSEIF EVENT_NUM && (RAND:2 || CEVENT(LOCALS:EVENT_NUM) == 0)
 	;쿠노이치
 	CASE 7
 		PRINTFORMW %CALLNAME:GUEST%의 방으로부터 이야기 소리가 들려 옵니다…
-		PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 신경이 쓰여 보면…%CALLNAME:TARGET%(와)과%CALLNAME:GUEST%하지만 재봉을 하고 있었습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 신경이 쓰여 보면…%타겟과()%%CALLNAME:GUEST%하지만 재봉을 하고 있었습니다
 		PRINTFORMW 재봉의 선생님은%CALLNAME:GUEST%(와)과 같아, %CALLNAME:TARGET%에 훌륭한바늘다루기를 보이고 있습니다
 		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 방해를 해서는 안 된다고 생각, 조용하게 그 자리를 떠났습니다…
 	CASE 8
@@ -394,7 +394,7 @@ ELSEIF EVENT_NUM && (RAND:2 || CEVENT(LOCALS:EVENT_NUM) == 0)
 			PRINTFORMW 아무래도, 최악의 사태는 회피된 것 같다……
 		;図書室での談議
 		ELSE
-			PRINTFORMW 도서실의 안쪽에서%조사처리(CALLNAME:MASTER,"가")% 책을 찾고 있으면, 문을 열어%CALLNAME:TARGET%(와)과%CALLNAME:GUEST%하지만 들어 왔다
+			PRINTFORMW 도서실의 안쪽에서%조사처리(CALLNAME:MASTER,"가")% 책을 찾고 있으면, 문을 열어%타겟과()%%CALLNAME:GUEST%하지만 들어 왔다
 			PRINTFORMW 두 명은 그 밖에 아무도 없는 것과 착각 해, 수다를 하고 있습니다…
 			PRINTFORM 수다의 화제는 이윽고
 			IF CFLAG:258 && CFLAG:GUEST:258 && RAND:5 == 0
@@ -439,7 +439,7 @@ ELSEIF EVENT_NUM && (RAND:2 || CEVENT(LOCALS:EVENT_NUM) == 0)
 		ENDIF
 	;윗치
 	CASE 10
-		PRINTFORMW %CALLNAME:TARGET%(와)과%CALLNAME:GUEST%하지만 부엌에 서 있습니다. 아무래도 두 명은 요리중인 것 같습니다
+		PRINTFORMW %타겟과()%%CALLNAME:GUEST%하지만 부엌에 서 있습니다. 아무래도 두 명은 요리중인 것 같습니다
 		PRINTFORMW 모처럼인 것으로 두 명의 모습을 바라봅시다…
 		IF RAND:3 == 0
 			PRINTFORMW 두 명은 선명한손부착으로 요리를 하고 있습니다. 이번 요리가 기다려지게 될 것 같습니다…
@@ -452,9 +452,9 @@ ELSEIF EVENT_NUM && (RAND:2 || CEVENT(LOCALS:EVENT_NUM) == 0)
 		ENDIF
 	;임프, 빌리져, 엔젤
 	CASE 11
-		PRINTFORMW %CALLNAME:TARGET%(와)과%CALLNAME:GUEST%하지만, 우유와 컵을 준비해 리빙으로부터 나갔습니다
+		PRINTFORMW %타겟과()%%CALLNAME:GUEST%하지만, 우유와 컵을 준비해 리빙으로부터 나갔습니다
 		PRINTFORMW 두 명은%CALLNAME:GUEST2%의 방의 앞에서 멈춰 서면, 노크를 해 안에 들어갔습니다……
-		PRINTFORMW %CALLNAME:TARGET%(와)과%CALLNAME:GUEST%(와)과%CALLNAME:GUEST2%………뭔가 특별한 모임인 것입니까？
+		PRINTFORMW %타겟과()%%CALLNAME:GUEST%(와)과%CALLNAME:GUEST2%………뭔가 특별한 모임인 것입니까？
 	;임프, 빌리져, 픽시
 	CASE 12
 		PRINTFORMW 리빙으로 %CALLNAME:GUEST%(와)과%CALLNAME:GUEST2%하지만 식기장으로부터 접시를 내고 있습니다
@@ -464,7 +464,7 @@ ELSEIF EVENT_NUM && (RAND:2 || CEVENT(LOCALS:EVENT_NUM) == 0)
 	;연모持ち呼び出し
 	CASE 13
 		IF COND("밤") && RAND:2 == 0 
-			PRINTFORMW 밤의 리빙에서는%CALLNAME:TARGET%(와)과%CALLNAME:GUEST%하지만 다회를 열고 있었습니다만, 잠시 후에%조사처리(CALLNAME:TARGET,"는")% 꾸벅꾸벅배를 젓기 시작했습니다
+			PRINTFORMW 밤의 리빙에서는%타겟과()%%CALLNAME:GUEST%하지만 다회를 열고 있었습니다만, 잠시 후에%조사처리(CALLNAME:TARGET,"는")% 꾸벅꾸벅배를 젓기 시작했습니다
 			PRINTFORM 여기서 자면 감기에 걸릴 것이라고 생각했다%조사처리(CALLNAME:MASTER,"는")% , %조사처리(CALLNAME:TARGET,"를")% 
 			IF RAND:3 == 0 
 				PRINT 안아
@@ -492,14 +492,14 @@ ELSEIF EVENT_NUM && (RAND:2 || CEVENT(LOCALS:EVENT_NUM) == 0)
 		ELSE
 			;빌리져と상대の両方연모かつ両方음란だと가능性あり
 			IF RAND:2 && TALENT:음란 && TALENT:GUEST:음란
-				PRINTFORMW 리빙에서는%CALLNAME:TARGET%(와)과%CALLNAME:GUEST%하지만 뭔가 서로 이야기하고 있습니다
+				PRINTFORMW 리빙에서는%타겟과()%%CALLNAME:GUEST%하지만 뭔가 서로 이야기하고 있습니다
 				PRINTFORMW 두 명은 진지할 것 같은 표정을 하고 있습니다만…그손에는 왜일까 비엔나가 잡아지고 있었습니다
 			ELSE
 				IF RAND:2 == 0 
-					PRINTFORMW 리빙에서는%CALLNAME:TARGET%(와)과%CALLNAME:GUEST%하지만 뭔가 서로 이야기하고 있습니다
+					PRINTFORMW 리빙에서는%타겟과()%%CALLNAME:GUEST%하지만 뭔가 서로 이야기하고 있습니다
 					PRINTFORMW 두 명은 진지할 것 같은 표정을 하고 있습니다만…그손에는 왜일까 생선살 꼬치구이가 잡아지고 있었습니다
 				ELSE
-					PRINTFORMW 리빙에서는%CALLNAME:TARGET%(와)과%CALLNAME:GUEST%하지만 뭔가 서로 이야기하고 있습니다
+					PRINTFORMW 리빙에서는%타겟과()%%CALLNAME:GUEST%하지만 뭔가 서로 이야기하고 있습니다
 					PRINTFORMW 두 명은 진지할 것 같은 표정을 하고 있습니다만…그손에는 왜일까 소세지가 잡아지고 있었습니다
 				ENDIF
 			ENDIF
@@ -652,7 +652,7 @@ ELSEIF EVENT_NUM && RAND:3 == 0
 				PRINTFORMW 그곳에서는 더듬더듬 고민을 흘린다%조사처리(CALLNAME:TARGET,"를")% , %CALLNAME:GUEST%하지만 격려하려고 하고 있었습니다……
 				PRINTFORMW …방해를 하지 않게 조용하게 떠났습니다
 			ELSE
-				PRINTFORMW 관내를 휘청거리고 있으면, %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:TARGET%(와)과%CALLNAME:GUEST%하지만 환담 하고 있는 것을 찾아냈습니다
+				PRINTFORMW 관내를 휘청거리고 있으면, %조사처리(CALLNAME:MASTER,"는")% %타겟과()%%CALLNAME:GUEST%하지만 환담 하고 있는 것을 찾아냈습니다
 				PRINTFORMW 무슨이야기를 하고 있는지 물으려고%조사처리(CALLNAME:MASTER,"가")% 가까워지면――
 				PRINTFORMW 먼저 깨달았다%CALLNAME:GUEST%하지만%조사처리(CALLNAME:MASTER,"를")% 손가락마주 앉음, 거기에 이끌려%조사처리(CALLNAME:TARGET,"가")% 얼굴를 향하여 왔습니다
 				PRINTFORMW %CALLNAME:TARGET%의 뺨이 순식간에빨강구 되어 갑니다…
@@ -663,7 +663,7 @@ ELSEIF EVENT_NUM && RAND:3 == 0
 			IF RAND:2 == 0
 				PRINTFORMW 밤의 순찰을 하고 있으면, 복도의 안쪽으로부터 두 명 분의발소리가 들려 왔습니다
 				PRINTFORMW 발소리는 자꾸자꾸 커져, 분명하게%CALLNAME:MASTER%의 쪽으로 향해 와 있습니다
-				PRINTFORMW 이윽고 어둠중에서 나타난 것은…%CALLNAME:TARGET%(와)과%CALLNAME:GUEST%(이었)였습니다
+				PRINTFORMW 이윽고 어둠중에서 나타난 것은…%타겟과()%%CALLNAME:GUEST%(이었)였습니다
 				IF RAND:3 == 0 
 					PRINTFORMW 「하우우…도깨비가 아니고 좋았어요……」
 				ELSEIF RAND:2 == 0 

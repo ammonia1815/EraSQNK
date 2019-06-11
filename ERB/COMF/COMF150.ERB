@@ -67,7 +67,7 @@ IF TEQUIP:딥스로트
 			PRINTFORMW 입에서 페니스를 잡아끌었다…
 		ENDIF
 	ELSE
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 는 머리를 당겨 뿌리까지 삼키고 있던, %CALLNAME:PLAYER%의 페니스를 해방했다…
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 머리를 당겨 뿌리까지 삼키고 있던, %CALLNAME:PLAYER%의 페니스를 해방했다…
 	ENDIF
 	TEQUIP:딥스로트 = 0
 	RETURN 0
@@ -122,12 +122,12 @@ ELSE
 	;直前の조교と汚れで分岐
 	IF PREVEX("방뇨", PLAYER)
 		IF RAND:2
-			PRINTFORM 콕하고 코에 오는 구린 냄새를 발하고 있다
+			PRINTFORM 콕하고 코에 오는 구린 냄새를 발하고 있는
 		ELSE
 			PRINTFORM 소변을 더했기 때문에 냄새의 독한 
 		ENDIF
 	ELSEIF PREVCOM == 83 && CHECK_STAIN(STAIN:PLAYER:Ｐ, "尿")
-		PRINTFORM 콕하고 코에 오는 구린 냄새를 발하고 있다
+		PRINTFORM 콕하고 코에 오는 구린 냄새를 발하고 있는
 	ELSEIF CHECK_STAIN(STAIN:PLAYER:Ｐ, "Ｖ", "Ａ")
 		CALL TEXT, "추가地の文：穴から穴へ"
 	ELSEIF RAND:3 == 0
@@ -137,7 +137,7 @@ ELSE
 	ENDIF
 ENDIF
 
-PRINTFORM 페니스를 뿌리까지%TEXTR("단숨에"," 들이마시도록"," 쉽게")% 삼키면 , 
+PRINTFORM 페니스를 뿌리까지 %TEXTR("단숨에"," 들이마시도록"," 쉽게")% 삼키면서
 IF TALENT:연모 && RAND:4 == 0
 	IF RAND:2 && COND("음모", PLAYER) >= 5 && TEQUIP:식스나인 == 0
 		PRINTFORM 음모에 코끝을 묻어 문지르면서 
@@ -163,7 +163,7 @@ IF ABL:기교 >= 4 && ABL:봉사정신 >= 3
 ELSEIF RAND:2
 	PRINTFORMW 목구멍을 울리면서 비벼왔다 …
 ELSE
-	PRINTFORMW 목을 이요하여\@ TEQUIP:넘어뜨리기 ? 몰아세우고 # 봉사해\@온…
+	PRINTFORMW 목을 이용하여\@ TEQUIP:넘어뜨리기 ? 몰아세우고 # 봉사해\@온다…
 ENDIF
 
 ;TEQUIP:딥스로트の値で誰のものを咥えているかを記録

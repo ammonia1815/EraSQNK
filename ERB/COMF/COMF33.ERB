@@ -6,12 +6,12 @@ IF TEQUIP:촉수
 	PRINTFORML 애널촉수
 ELSEIF TEQUIP:애널바이브
 	IF COND("애널비즈")
-		PRINTFORML 애널비즈를뽑는다
+		PRINTFORML 애널비즈를 뽑는다
 	ELSE
-		PRINTFORML 애널바이브를뽑는다
+		PRINTFORML 애널바이브를 뽑는다
 	ENDIF
 ELSE
-	PRINTFORML 애널바이브\@ TALENT:요정 ? (요정用) # \@
+	PRINTFORML 애널바이브\@ TALENT:요정 ? (요정용) # \@
 ENDIF
 
 CALL TRAIN_MESSAGE_B
@@ -184,7 +184,7 @@ IF !CHECK_CLO("Ａ노출")
 	PRINT , 
 ENDIF
 IF (ABL:Ａ확장 >= 5 || (PREVCOM >= 70 && PREVCOM <= 79) || PREVCOM == 142 || PREVCOM == 143) && ABL:Ａ확장 >= 2 && RAND:3 == 0
-	PRINT 야무지지 못하게 임을 열고있는 
+	PRINT 야무지지 못하게 구멍을 열고있는 
 ELSEIF ABL:Ａ확장 >= 2
 	PRINT 완전히 부드러워진 
 ELSEIF TALENT:연모 || RAND:3 == 0
@@ -218,7 +218,7 @@ ELSE
 	PRINT 바이브를 
 	;확장부족
 	IF ABL:Ａ확장 < SIZE("Ａ바이브", TARGET)
-		PRINTFORMW %TEXTR("力任せに", "強引に", "무리矢理に", "抉るように", "肉を押しのける感触を味わいながら", "저항をものともせずに")%쑤셔 넣었다. 
+		PRINTFORMW %TEXTR("힘껏", "억지로", "무리하게", "비집어", "고기를 밀어내는 감촉을 맛보면서", "저항에 아랑곳하지 않고")% 쑤셔 넣었다. 
 	ELSE
 		IF CHECK("Ａ바이브") == 0 && TALENT:PLAYER:새드 && RAND:2 == 0
 			PRINT 힘껏
@@ -334,7 +334,7 @@ ENDIF
 PRINTL 무엇으로 범합니까?
 PRINTFORML  [ 0] 보통 촉수
 PRINTFORML  [ 1] 커다란 촉수 \@ABL:Ａ확장 < 3 - TALENT:요정 ? ※상급자전용!  # \@
-PRINTFORML  [ 2] 극태의 촉수 \@ABL:Ａ확장 < 4 - TALENT:요정 ? ※초승급자용!  # \@
+PRINTFORML  [ 2] 극태의 촉수 \@ABL:Ａ확장 < 4 - TALENT:요정 ? ※초상급자용!  # \@
 PRINTFORML [100] 그만둔다
 
 $INPUT_LOOP

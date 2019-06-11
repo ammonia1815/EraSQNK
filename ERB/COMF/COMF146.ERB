@@ -66,9 +66,9 @@ TFLAG:16 = 0
 
 IF ARG != MASTER
 	PRINTL 
-	PRINTFORML %CALLNAME:ARG%에 평상시의 몸가짐에 대해지시를 냅시다
+	PRINTFORML %CALLNAME:ARG%에 평상시의 몸가짐에 대해 지시합니다
 	IF COND("조교中", ARG)
-		PRINTFORML ※주：이커맨드는 각 조교 중에 한 번 밖에선택할 수 없습니다
+		PRINTFORML ※주의：이 커맨드는 조교 중에마다 한 번 밖에 선택할 수 없습니다
 		;PRINTFORML 出したい지시を全部出してから終了してあげましょう
 	ENDIF
 ENDIF
@@ -206,9 +206,9 @@ IF PENIS(ARG)
 	CASE 0
 		SIF MEMO:5 == 5
 			RESETCOLOR
-		PRINTFORML \@ ARG == MASTER ? 특별히 신경쓰지 않는다 # 지시없음 \@（\@ COND("진성포경", ARG) ? 불결な状態です # 基本的には불결な状態は避けます\@）
+		PRINTFORML \@ ARG == MASTER ? 특별히 신경쓰지 않는다 # 지시없음 \@（\@ COND("진성포경", ARG) ? 불결한 상태입니다 # 기본적으로 불결한 상태는 피합니다\@）
 	CASE 1
-		PRINTFORML \@ ARG == MASTER ? 汚れを意図的にそのままにする # 汚れをそのままにさせる \@
+		PRINTFORML \@ ARG == MASTER ? 더러움을 의도적으로 그대로 두다 # 더러움을 그대로 두게 한다 \@
 	ENDSELECT
 	RESETCOLOR
 ENDIF
@@ -222,9 +222,9 @@ IF TALENT:ARG:남자 == 0
 	CASE 0
 		SIF MEMO:6 == 6
 			RESETCOLOR
-		PRINTFORML \@ ARG == MASTER ? 特に気にしない # 指示なし \@（기본적으로는불결상태는 피합니다）
+		PRINTFORML \@ ARG == MASTER ? 특별히 신경쓰지 않는다 # 지시없음 \@（기본적으로는 불결상태는 피합니다）
 	CASE 1
-		PRINTFORML \@ ARG == MASTER ? 汚れを意図的にそのままにする # 조교前の入浴を控えさせる \@
+		PRINTFORML \@ ARG == MASTER ? 더러움을 의도적으로 그대로 둔다 # 조교전에 목욕하지 않게 한다 \@
 	ENDSELECT
 	RESETCOLOR
 ENDIF
@@ -241,7 +241,7 @@ IF PENIS(ARG) == 0
 			RESETCOLOR
 		PRINTFORML \@ ARG == MASTER ? 특별히 신경쓰지 않는다 # 지시없음 \@
 	CASE 1
-		PRINTFORML \@ ARG == MASTER ? 노팬티금지 # 팬티의 착용 금지 \@
+		PRINTFORML \@ ARG == MASTER ? 노팬티주의 # 팬티의 착용 금지 \@
 	ENDSELECT
 	RESETCOLOR
 ENDIF
@@ -262,7 +262,7 @@ CASE 0
 		RESETCOLOR
 	PRINTFORML \@ ARG == MASTER ? 하지 않는다 # 지시없음 \@
 CASE 1
-	PRINTFORML \@ ARG == MASTER ? する # させる \@
+	PRINTFORML \@ ARG == MASTER ? 한다 # 시킨다 \@
 ENDSELECT
 RESETCOLOR
 
@@ -283,24 +283,24 @@ IF ARG != MASTER
 			RESETCOLOR
 		PRINTFORML 지시 없음
 	CASE 1
-		PRINTFORML 전의 구멍을 사용한 성행위 금지
+		PRINTFORML 앞의 구멍을 사용한 성행위 금지
 	CASE 2
-		PRINTFORML 애널를 사용한 성행위 금지
+		PRINTFORML 애널을 사용한 성행위 금지
 	CASE 3
-		PRINTFORML 입를 사용해봉사금지
+		PRINTFORML 입을 사용한 봉사금지
 	CASE 4
-		PRINTFORML %CALLNAME:MASTER%의외로는키스금지
+		PRINTFORML %CALLNAME:MASTER%말고는 키스금지
 	CASE 5
 		PRINTFORML 페니스를 사용한 성행위 금지
 	CASE 100
-		PRINTFORML %CALLNAME:TARGET%(은)는 %CALLNAME:MASTER%전용
+		PRINTFORML %타겟은()% %CALLNAME:MASTER%전용
 	CASEELSE
 		VARSET LOCALS
-		LOCALS = %LOCALS%\@ COND("身嗜み：Ｖ독점", ARG) ? アソコと # \@
-		LOCALS = %LOCALS%\@ COND("身嗜み：Ａ독점", ARG) ? 애널と # \@
-		LOCALS = %LOCALS%\@ COND("身嗜み：입독점", ARG) ? 입での봉사と # \@
-		LOCALS = %LOCALS%\@ COND("身嗜み：키스독점", ARG) ? 키스と # \@
-		LOCALS = %LOCALS%\@ COND("身嗜み：Ｐ독점", ARG) ? 肉棒と # \@
+		LOCALS = %LOCALS%\@ COND("身嗜み：Ｖ독점", ARG) ? 그곳과 # \@
+		LOCALS = %LOCALS%\@ COND("身嗜み：Ａ독점", ARG) ? 애널과 # \@
+		LOCALS = %LOCALS%\@ COND("身嗜み：입독점", ARG) ? 입으로 봉사와 # \@
+		LOCALS = %LOCALS%\@ COND("身嗜み：키스독점", ARG) ? 키스와 # \@
+		LOCALS = %LOCALS%\@ COND("身嗜み：Ｐ독점", ARG) ? 육봉과 # \@
 		PRINTFORML %SUBSTRING(LOCALS, 0, STRLENS(LOCALS) - 2)%를 이용한 행위를 금지
 	ENDSELECT
 	RESETCOLOR
@@ -332,9 +332,9 @@ ENDIF
 
 
 IF ARG == MASTER
-	PRINTFORML [100] \@ MEMO_FLAG != CFLAG:ARG:368 ? これでいい # やめる\@
+	PRINTFORML [100] \@ MEMO_FLAG != CFLAG:ARG:368 ? 이것으로 됐다 # 그만두다\@
 ELSE
-	PRINTFORML [100] \@ MEMO_FLAG != CFLAG:ARG:368 ? 指示変更終了 # やめる\@
+	PRINTFORML [100] \@ MEMO_FLAG != CFLAG:ARG:368 ? 지시 변경 종료 # 그만두다\@
 ENDIF
 
 $INPUT_LOOP
@@ -398,10 +398,10 @@ PRINTL
 SELECTCASE ARGS
 CASE "身嗜み：음모"
 	PRINTFORML  [ 0] \@ COND(ARGS, ARG) == 0 ? ○ # － \@ \@ ARG == MASTER ? 특별히 신경쓰지 않는다 # 지시없음 \@
-	PRINTFORML  [ 1] \@ COND(ARGS, ARG) == 3 ? ○ # － \@ \@ ARG == MASTER ? 常にツルツル状態を保つ # 常にツルツル状態を保たせる \@
-	PRINTFORML  [ 2] \@ COND(ARGS, ARG) == 5 ? ○ # － \@ \@ ARG == MASTER ? 常に綺麗に剃り整える # 常に綺麗に剃り整えさせる \@
-	PRINTFORML  [ 3] \@ COND(ARGS, ARG) == 7 ? ○ # － \@ \@ ARG == MASTER ? 깎지 않는다 # 自分では剃らないようにお願いする \@
-	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 変更しない # これでいい \@
+	PRINTFORML  [ 1] \@ COND(ARGS, ARG) == 3 ? ○ # － \@ \@ ARG == MASTER ? 늘 매끈한 상태를 유지한다 # 늘 매끈한 상태를 유지하게 한다 \@
+	PRINTFORML  [ 2] \@ COND(ARGS, ARG) == 5 ? ○ # － \@ \@ ARG == MASTER ? 항상 깨끗이 면도한다 # 항상 깨끗이 면도하게 한다 \@
+	PRINTFORML  [ 3] \@ COND(ARGS, ARG) == 7 ? ○ # － \@ \@ ARG == MASTER ? 깎지 않는다 # 스스로 면도하지 않도록 한다 \@
+	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 변경하지않음 # 이것으로 결정 \@
 
 	CALL INPUT_SELECT, 4, 100
 
@@ -422,22 +422,22 @@ CASE "身嗜み：음모"
 		IF COND(ARGS, ARG) != ARG:1
 			SELECTCASE COND(ARGS, ARG)
 			CASE 0
-				LOCALS = 特には지시しないことにしました
+				LOCALS = 특별히 지시하지 않기로 했습니다
 			CASE 3
-				LOCALS = %CALLNAME:ARG%に, 毎아침ツルツルに剃るようにお願いしました
+				LOCALS = %CALLNAME:ARG%에게 매일 아침 면도해 달라고 부탁했습니다
 			CASE 5
-				LOCALS = %CALLNAME:ARG%に, 가능な限り음모の形を綺麗に保つようにお願いしました
+				LOCALS = %CALLNAME:ARG%에게 가능한 한 음모의 형태를 깨끗하게 유지하도록 부탁했습니다.
 			CASE 7
-				LOCALS = %CALLNAME:ARG%に, 음모を剃らないようにお願いしました
+				LOCALS = %CALLNAME:ARG%에게 음모를 면도하지 말아달라고 부탁했습니다.
 			ENDSELECT
 		ENDIF
 	ENDSELECT
 
 CASE "身嗜み：겨털"
 	PRINTFORML  [ 0] \@ COND(ARGS, ARG) == 0 ? ○ # － \@ \@ ARG == MASTER ? 특별히 신경쓰지 않는다 # 지시없음 \@
-	PRINTFORML  [ 1] \@ COND(ARGS, ARG) == 3 ? ○ # － \@ \@ ARG == MASTER ? 常にツルツル状態を保つ # 常にツルツル状態を保たせる \@
-	PRINTFORML  [ 2] \@ COND(ARGS, ARG) == 7 ? ○ # － \@ \@ ARG == MASTER ? 깎지 않는다 # 自分では剃らないようにお願いする \@
-	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 変更しない # これでいい \@
+	PRINTFORML  [ 1] \@ COND(ARGS, ARG) == 3 ? ○ # － \@ \@ ARG == MASTER ? 늘 매끈한 상태를 유지한다 # 늘 매끈한 상태를 유지하게 한다 \@
+	PRINTFORML  [ 2] \@ COND(ARGS, ARG) == 7 ? ○ # － \@ \@ ARG == MASTER ? 깎지 않는다 # 스스로 깎지 않도록 한다 \@
+	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 변경하지 않음 # 이것으로 결정 \@
 
 	CALL INPUT_SELECT, 3, 100
 
@@ -458,30 +458,30 @@ CASE "身嗜み：겨털"
 		IF COND(ARGS, ARG) != ARG:1
 			SELECTCASE COND(ARGS, ARG)
 			CASE 0
-				LOCALS = 特には지시しないことにしました
+				LOCALS = 특별히 지시하지 않기로 했습니다
 			CASE 3
-				LOCALS = %CALLNAME:ARG%に, 毎아침ツルツルに剃るようにお願いしました
+				LOCALS = %CALLNAME:ARG%에게 매일 아침 면도해달라고 부탁했습니다
 			CASE 7
-				LOCALS = %CALLNAME:ARG%に, %TEXTS("겨드랑이")%毛を剃らないようにお願いしました
+				LOCALS = %CALLNAME:ARG%에게 %TEXTS("겨드랑이")%털을 깎지 말아 달라고 부탁했습니다
 			ENDSELECT
 		ENDIF
 	ENDSELECT
 
 CASE "身嗜み：Ｖ확장"
 	IF ARG != MASTER
-		PRINTFORML 질의 길이에 맞추었다바이브를, 조교이외시에는 항상삽입해 받습니다
-		PRINTFORML （상한부착으로Ｖ확장경험등을 획득＆바이브이하의 크기의삽입에서의고통감소）
+		PRINTFORML 질의 길이에 맞춘 바이브를, 조교이외에는 항상 삽입하게 합니다
+		PRINTFORML （제일 큰 것으로 Ｖ확장경험등을 획득＆바이브이하의 크기 삽입으로의 고통감소）
 	ENDIF
 	PRINTFORML 어느 바이브로 하시겠습니까? 
-	PRINTFORML  [ 0] \@ COND(ARGS, ARG) == 0 ? ○ # － \@ \@ ARG == MASTER ? 삽입しない # 지시しない \@
-	PRINTFORML  [ 1] \@ COND(ARGS, ARG) == 1 ? ○ # － \@ 평균적인 크기의바이브
+	PRINTFORML  [ 0] \@ COND(ARGS, ARG) == 0 ? ○ # － \@ \@ ARG == MASTER ? 삽입하지 않는다 # 지시하지 않는다 \@
+	PRINTFORML  [ 1] \@ COND(ARGS, ARG) == 1 ? ○ # － \@ 평균적인 크기의 바이브
 	SIF ABL:ARG:Ｖ확장 >= 2
 		PRINTFORML  [ 2] \@ COND(ARGS, ARG) == 2 ? ○ # － \@ 큰바이브
 	SIF ABL:ARG:Ｖ확장 >= 3
 		PRINTFORML  [ 3] \@ COND(ARGS, ARG) == 3 ? ○ # － \@ 극태[極太]의바이브
 	SIF ABL:ARG:Ｖ확장 >= 4
-		PRINTFORML  [ 4] \@ COND(ARGS, ARG) == 4 ? ○ # － \@ 질의 크기의 한계까지 부풀어 오른다, 벌룬 타입의바이브
-	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 変更しない # これでいい \@
+		PRINTFORML  [ 4] \@ COND(ARGS, ARG) == 4 ? ○ # － \@ 질의 크기의 한계까지 부풀어 오르는 풍선형 바이브
+	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 변경하지 않음 # 이것으로 결정 \@
 
 	CALL INPUT_SELECT, LIMIT(ABL:ARG:Ｖ확장 + 1, 2, 5), 100
 
@@ -502,34 +502,34 @@ CASE "身嗜み：Ｖ확장"
 		IF COND(ARGS, ARG) != ARG:1
 			SELECTCASE COND(ARGS, ARG)
 			CASE 0
-				LOCALS = 特には지시しないことにしました
+				LOCALS = 특별히 지시하지 않기로 했습니다
 			CASE 1
-				LOCALS = %CALLNAME:ARG%に, 常に바이브を삽입しておくようにお願いしました
+				LOCALS = %CALLNAME:ARG%에게 항상 바이브를 넣어두도록 부탁했습니다
 			CASE 2
-				LOCALS = %CALLNAME:ARG%に, 常に大きな바이브を삽입しておくようにお願いしました
+				LOCALS = %CALLNAME:ARG%에게 항상 큰 바이브를 넣어두도록 부탁했습니다
 			CASE 3
-				LOCALS = %CALLNAME:ARG%に, 常に極太の바이브を삽입しておくようにお願いしました
+				LOCALS = %CALLNAME:ARG%에게 항상 극태바이브를 넣어두도록 부탁했습니다
 			CASE 4
-				LOCALS = %CALLNAME:ARG%に, 常に질を限界まで확장しておくようにお願いしました
+				LOCALS = %CALLNAME:ARG%에게 항상 질의 한계까지 확장하도록 부탁했습니다
 			ENDSELECT
 		ENDIF
 	ENDSELECT
 
 CASE "身嗜み：Ａ확장"
 	IF ARG != MASTER
-		PRINTFORML 바이브기능이 붙었다애널플러그를, 조교이외시에는 항상삽입해 받습니다
-		PRINTFORML （상한부착으로Ａ확장경험등을 획득＆Ａ플러그이하의 크기의삽입에서의고통감소）
+		PRINTFORML 바이브기능이 있는 애널플러그를, 조교이외에는 항상 삽입하도록 합니다
+		PRINTFORML （제일 큰 것으로 Ａ확장경험등을 획득＆Ａ플러그이하의 크기 삽입으로의 고통감소）
 	ENDIF
 	PRINTFORML 어느 사이즈로 합니까? 
-	PRINTFORML  [ 0] \@ COND(ARGS, ARG) == 0 ? ○ # － \@ \@ ARG == MASTER ? 삽입しない # 지시しない \@
-	PRINTFORML  [ 1] \@ COND(ARGS, ARG) == 1 ? ○ # － \@ 평균적인 크기의애널플러그
+	PRINTFORML  [ 0] \@ COND(ARGS, ARG) == 0 ? ○ # － \@ \@ ARG == MASTER ? 삽입하지 않는다 # 지시하지 않는다 \@
+	PRINTFORML  [ 1] \@ COND(ARGS, ARG) == 1 ? ○ # － \@ 평균적인 크기의 애널플러그
 	SIF ABL:ARG:Ａ확장 >= 2
-		PRINTFORML  [ 2] \@ COND(ARGS, ARG) == 2 ? ○ # － \@ 출납에 애먹일 것 같은 큰 사이즈
+		PRINTFORML  [ 2] \@ COND(ARGS, ARG) == 2 ? ○ # － \@ 넣고 빼는게 애먹일 것 같은 큰 사이즈
 	SIF ABL:ARG:Ａ확장 >= 3
-		PRINTFORML  [ 3] \@ COND(ARGS, ARG) == 3 ? ○ # － \@ 묵직한 극대 사이즈
+		PRINTFORML  [ 3] \@ COND(ARGS, ARG) == 3 ? ○ # － \@ 육중한 극대 사이즈
 	SIF ABL:ARG:Ａ확장 >= 4
-		PRINTFORML  [ 4] \@ COND(ARGS, ARG) == 4 ? ○ # － \@ 직장를 완전하게 채울 때까지 부풀어 오른다, 벌룬 타입
-	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 変更しない # これでいい \@
+		PRINTFORML  [ 4] \@ COND(ARGS, ARG) == 4 ? ○ # － \@ 직장를 완전하게 채울 때까지 부풀어 오르는 풍선형
+	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 변경하지 않음 # 이것으로 결정 \@
 
 	CALL INPUT_SELECT, LIMIT(ABL:ARG:Ａ확장 + 1, 2, 5), 100
 
@@ -550,30 +550,30 @@ CASE "身嗜み：Ａ확장"
 		IF COND(ARGS, ARG) != ARG:1
 			SELECTCASE COND(ARGS, ARG)
 			CASE 0
-				LOCALS = 特には지시しないことにしました
+				LOCALS = 특별히 지시하지 않기로 했습니다
 			CASE 1
-				LOCALS = %CALLNAME:ARG%に, 常に애널플러그を삽입しておくようにお願いしました
+				LOCALS = %CALLNAME:ARG%에게 항상 애널플러그를 넣어두도록 부탁했습니다
 			CASE 2
-				LOCALS = %CALLNAME:ARG%に, 常に大きな애널플러그を삽입しておくようにお願いしました
+				LOCALS = %CALLNAME:ARG%에게 항상 큰 애널플러그를 넣어두도록 부탁했습니다
 			CASE 3
-				LOCALS = %CALLNAME:ARG%に, 常に極太の애널플러그を삽입しておくようにお願いしました
+				LOCALS = %CALLNAME:ARG%에게 항상 극태애널플러그를 넣어두도록 부탁했습니다
 			CASE 4
-				LOCALS = %CALLNAME:ARG%に, 常に애널を限界まで확장しておくようにお願いしました
+				LOCALS = %CALLNAME:ARG%에게 항상 애널의 한계까지 확장하도록 부탁했습니다
 			ENDSELECT
 		ENDIF
 	ENDSELECT
 
 CASE "身嗜み：Ａ準備"
 	IF ARG != MASTER
-		PRINTFORML 애널에서의플레이를 쾌적하게 실시하기 위해서(때문에)조교전의 전준비를지시합니다
+		PRINTFORML 애널에서의 플레이를 쾌적하게 하기 위해 조교전에 준비를 지시합니다
 		;PRINTFORML （事前に綺麗にさせておくとＡ汚れと배설での見苦しさの緩和作用有り）
-		PRINTFORML （사전에 예쁘게 하게 하면배설등에서의 보기 흉함의 완화 작용 있어）
+		PRINTFORML （사전에 깨끗하게 해두면 배설등에서의 볼품없음의 완화작용 있음）
 	ENDIF
 	PRINTFORML  [ 0] \@ COND(ARGS, ARG) == 0 ? ○ # － \@ \@ ARG == MASTER ? 하지 않는다 # 지시없음 \@
 	PRINTFORML  [ 1] \@ COND(ARGS, ARG) == 1 ? ○ # － \@ \@ ARG == MASTER ? 前もって綺麗にする # 前もって綺麗にさせる \@
 	PRINTFORML  [ 2] \@ COND(ARGS, ARG) == 2 ? ○ # － \@ \@ ARG == MASTER ? 前もって로션を塗りこんでおく # 前もって로션を塗りこませる \@
 	PRINTFORML  [ 3] \@ COND(ARGS, ARG) == 3 ? ○ # － \@ 사전 준비＆로션
-	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 変更しない # これでいい \@
+	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 변경하지 않음 # 이것으로 결정 \@
 
 	CALL INPUT_SELECT, 4, 100
 
@@ -594,24 +594,24 @@ CASE "身嗜み：Ａ準備"
 		IF COND(ARGS, ARG) != ARG:1
 			SELECTCASE COND(ARGS, ARG)
 			CASE 0
-				LOCALS = 特には지시しないことにしました
+				LOCALS = 특별히 지시하지 않기로 했습니다
 			CASE 1
-				LOCALS = %CALLNAME:ARG%に, 조교前に장内を綺麗にしておくようにお願いしました
+				LOCALS = %CALLNAME:ARG%에게 조교전에 장안을 깨끗하게 하도록 부탁했습니다
 			CASE 2
-				LOCALS = %CALLNAME:ARG%に, 조교前に로션を애널に塗りこむようにお願いしました
+				LOCALS = %CALLNAME:ARG%에게 조교전에 로션을 애널에 바르게끔 부탁했습니다
 			CASE 3
-				LOCALS = %CALLNAME:ARG%に, 조교前の장内洗浄と로션의 준비をお願いしました
+				LOCALS = %CALLNAME:ARG%에게 조교전에 장내 세척과 로션의 준비를 부탁했습니다
 			ENDSELECT
 		ENDIF
 	ENDSELECT
 
 CASE "身嗜み：Ｐ準備"
 	IF ARG != MASTER
-		PRINTFORML 페니스에서의플레이를 쾌적하게 실시하기 위해서(때문에)조교전의 전준비를지시합니다
+		PRINTFORML 페니스로 플레이를 쾌적하게 실시하기 위해 조교 전 준비를 지시합니다
 	ENDIF
 	PRINTFORML  [ 0] \@ COND(ARGS, ARG) == 0 ? ○ # － \@ \@ ARG == MASTER ? 특별히 신경쓰지 않는다 # 지시없음 \@（기본적으로는불결상태는 피합니다）
-	PRINTFORML  [ 1] \@ COND(ARGS, ARG) == 1 ? ○ # － \@ \@ ARG == MASTER ? 汚れを意図的にそのままにする # 汚れをそのままにさせる \@
-	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 変更しない # これでいい \@
+	PRINTFORML  [ 1] \@ COND(ARGS, ARG) == 1 ? ○ # － \@ \@ ARG == MASTER ? 더러움을 의도적으로 그대로 두다 # 汚れをそのままにさせる \@
+	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 변경하지 않음 # 이것으로 결정 \@
 
 	CALL INPUT_SELECT, 3, 100
 
@@ -636,20 +636,20 @@ CASE "身嗜み：Ｐ準備"
 		IF COND(ARGS, ARG) != ARG:1
 			SELECTCASE COND(ARGS, ARG)
 			CASE 0
-				LOCALS = 特には지시しないことにしました
+				LOCALS = 특별히 지시하지 않기로 했습니다
 			CASE 1
-				LOCALS = %CALLNAME:ARG%に、페니스の치구をそのままにするようにお願いしました
+				LOCALS = %CALLNAME:ARG%에게 페니스의 치구를 그냥 놔두라고 부탁했습니다
 			ENDSELECT
 		ENDIF
 	ENDSELECT
 
 CASE "身嗜み：Ｖ準備"
 	IF ARG != MASTER
-		PRINTFORML 저기에서의 플레이를 쾌적하게 실시하기 위해서(때문에)조교전의 전준비를 지시합니다
+		PRINTFORML 그곳에서의 플레이를 쾌적하게 실시하기 위해 조교 전 준비를 지시합니다
 	ENDIF
 	PRINTFORML  [ 0] \@ COND(ARGS, ARG) == 0 ? ○ # － \@ \@ ARG == MASTER ? 특별히 신경쓰지 않는다 # 지시없음 \@（기본적으로는불결상태는 피합니다）
-	PRINTFORML  [ 1] \@ COND(ARGS, ARG) == 1 ? ○ # － \@ \@ ARG == MASTER ? 汚れを意図的にそのままにする # 汚れをそのままにさせる \@
-	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 変更しない # これでいい \@
+	PRINTFORML  [ 1] \@ COND(ARGS, ARG) == 1 ? ○ # － \@ \@ ARG == MASTER ? 더러움을 의도적으로 그대로 두다 # 더러움을 그대로 두게 한다 \@
+	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 변경하지 않음 # 이것으로 결정 \@
 
 	CALL INPUT_SELECT, 3, 100
 
@@ -674,17 +674,17 @@ CASE "身嗜み：Ｖ準備"
 		IF COND(ARGS, ARG) != ARG:1
 			SELECTCASE COND(ARGS, ARG)
 			CASE 0
-				LOCALS = 特には지시しないことにしました
+				LOCALS = 특별히 지시하지 않기로 했습니다
 			CASE 1
-				LOCALS = %CALLNAME:ARG%に、조교前には入浴を控えるようにお願いしました
+				LOCALS = %CALLNAME:ARG%에 조교전에는 목욕하지 않도록 부탁했습니다
 			ENDSELECT
 		ENDIF
 	ENDSELECT
 
 CASE "身嗜み：복장"
 	PRINTFORML  [ 0] \@ COND(ARGS, ARG) == 0 ? ○ # － \@ \@ ARG == MASTER ? 특별히 신경쓰지 않는다 # 지시없음 \@
-	PRINTFORML  [ 1] \@ COND(ARGS, ARG) == 1 ? ○ # － \@ \@ ARG == MASTER ? 팬티を穿かない事にする # 팬티の着用を禁止する \@
-	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 変更しない # これでいい \@
+	PRINTFORML  [ 1] \@ COND(ARGS, ARG) == 1 ? ○ # － \@ \@ ARG == MASTER ? 팬티를 입지 않는다 # 팬티의 착용을 금지한다 \@
+	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 변경하지 않음 # 이것으로 결정 \@
 
 	CALL INPUT_SELECT, 2, 100
 
@@ -705,22 +705,22 @@ CASE "身嗜み：복장"
 		IF COND(ARGS, ARG) != ARG:1
 			SELECTCASE COND(ARGS, ARG)
 			CASE 0
-				LOCALS = 特には지시しないことにしました
+				LOCALS = 특별히 지시하지 않기로 했습니다
 			CASE 1
-				LOCALS = %CALLNAME:ARG%に, 팬티を穿かない様にお願いしました
+				LOCALS = %CALLNAME:ARG%에게 팬티를 입지 않도록 부탁했습니다
 			ENDSELECT
 		ENDIF
 	ENDSELECT
 
 CASE "身嗜み：요도확장"
 	IF ARG != MASTER
-		PRINTFORML 점막을 묻어 펴넓히는 브지를,조교이외시에는 항상에삽입해 받습니다
-		PRINTFORML 비즈가 연결한 빠지기 어려운 형상으로, 밖에 나온 부분은 멋진 장식으로 집기 쉬운 만들기입니다
-		PRINTFORML （상한부착으로요도확장경험등을 나날 획득합니다）
+		PRINTFORML 점막을 메우고 넓히는 부지를, 조교이외에는 항상 요도에 삽입합니다
+		PRINTFORML 비즈가 연결되어 뺄 수 없는 형상으로, 밖으로 나온 부분은 세련된 장식으로 잡기 쉽게 만들어졌습니다.
+		PRINTFORML （제일 큰 것으로 요도확장경험등을 매일 획득합니다）
 	ENDIF
-	PRINTFORML  [ 0] \@ COND(ARGS, ARG) == 0 ? ○ # － \@ \@ ARG == MASTER ? 삽입しない # 指示なし \@
-	PRINTFORML  [ 1] \@ COND(ARGS, ARG) == 1 ? ○ # － \@ \@ ARG == MASTER ? 常時拡張する # 常時に삽입させる \@
-	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 変更しない # これでいい \@
+	PRINTFORML  [ 0] \@ COND(ARGS, ARG) == 0 ? ○ # － \@ \@ ARG == MASTER ? 삽입하지 않는다 # 지시없음 \@
+	PRINTFORML  [ 1] \@ COND(ARGS, ARG) == 1 ? ○ # － \@ \@ ARG == MASTER ? 상시 확장한다 # 상시 요도에 삽입시킨다 \@
+	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 변경하지 않음 # 이것으로 결정 \@
 
 	CALL INPUT_SELECT, 2, 100
 
@@ -741,24 +741,24 @@ CASE "身嗜み：요도확장"
 		IF COND(ARGS, ARG) != ARG:1
 			SELECTCASE COND(ARGS, ARG)
 			CASE 0
-				LOCALS = 特には지시しないことにしました
+				LOCALS = 특별히 지시하지 않기로 했습니다
 			CASE 1
-				LOCALS = %CALLNAME:ARG%に、これでを日々鍛えておくようにとお願いしました
+				LOCALS = %CALLNAME:ARG%에게 이것으로 요도를 날마다 단련해 두라고 부탁했습니다.
 			ENDSELECT
 		ENDIF
 	ENDSELECT
 
 CASE "身嗜み：성행위の제한"
-	PRINTFORML %CALLNAME:MASTER%의외로의 성행위에서의 금지항목를 지시합니다
-	PRINTFORML （애무야도구를 이용한 플레이는 놓칩니다）
+	PRINTFORML %CALLNAME:MASTER%의 이외와의 성행위에서의 금지항목를 지시합니다
+	PRINTFORML （애무나 도구를 이용한 플레이는 눈감아줍니다）
 
 	PRINTFORML  [ 0] \@ COND(ARGS, ARG) == 0  ? ○ # － \@ 지시 없음
-	PRINTFORML  [ 1] \@ COND("身嗜み：Ｖ독점", ARG)  ? ○ # － \@ 전의 구멍을 사용한 성행위 금지
-	PRINTFORML  [ 2] \@ COND("身嗜み：Ａ독점", ARG)  ? ○ # － \@ 애널를 사용한 성행위 금지
-	PRINTFORML  [ 3] \@ COND("身嗜み：입독점", ARG)  ? ○ # － \@ 입를 사용해봉사의 금지
-	PRINTFORML  [ 4] \@ COND("身嗜み：키스독점", ARG)  ? ○ # － \@ %CALLNAME:MASTER%의외로는키스금지
+	PRINTFORML  [ 1] \@ COND("身嗜み：Ｖ독점", ARG)  ? ○ # － \@ 앞의 구멍을 사용한 성행위 금지
+	PRINTFORML  [ 2] \@ COND("身嗜み：Ａ독점", ARG)  ? ○ # － \@ 애널을 사용한 성행위 금지
+	PRINTFORML  [ 3] \@ COND("身嗜み：입독점", ARG)  ? ○ # － \@ 입을 사용한 봉사 금지
+	PRINTFORML  [ 4] \@ COND("身嗜み：키스독점", ARG)  ? ○ # － \@ %CALLNAME:MASTER%말고는 키스금지
 	PRINTFORML  [ 5] \@ COND("身嗜み：Ｐ독점", ARG)  ? ○ # － \@ 페니스를 사용한 성행위 금지
-	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 変更しない # これでいい \@
+	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 변경하지 않음 # 이것으로 결정 \@
 
 	CALL INPUT_SELECT, 6, 100
 
@@ -780,30 +780,30 @@ CASE "身嗜み：성행위の제한"
 	IF COND(ARGS, ARG) != ARG:1
 		SELECTCASE COND(ARGS, ARG)
 		CASE 0
-			LOCALS = 特には指示しないことにしました
+			LOCALS = 특별히 지시하지 않기로 했습니다
 		CASE 1
-			LOCALS = %CALLNAME:ARG%にアソコは%CALLNAME:MASTER%専用にするようにとお願いしました
+			LOCALS = %CALLNAME:ARG%에게 그곳은 %CALLNAME:MASTER%전용으로 하자고 부탁했습니다
 		CASE 2
-			LOCALS = %CALLNAME:ARG%に後ろの穴は%CALLNAME:MASTER%専用にするようにとお願いしました
+			LOCALS = %CALLNAME:ARG%에게 뒷구멍은 %CALLNAME:MASTER%전용으로 하자고 부탁했습니다
 		CASE 3
-			LOCALS = %CALLNAME:ARG%に입を使っての봉사は%CALLNAME:MASTER%専用にするようにとお願いしました
+			LOCALS = %CALLNAME:ARG%에게 입으로 하는 봉사는 %CALLNAME:MASTER%전용으로 하자고 부탁했습니다
 		CASE 4
-			LOCALS = %CALLNAME:ARG%に、%CALLNAME:MASTER%以外とは키스をしないようにとお願いしました
+			LOCALS = %CALLNAME:ARG%에게 %CALLNAME:MASTER% 이외에는 키스를 하지 말라고 부탁했습니다
 		CASE 5
-			LOCALS = %CALLNAME:ARG%に페니스を%CALLNAME:MASTER%専用にするようにとお願いしました
+			LOCALS = %CALLNAME:ARG%에게 페니스를 %CALLNAME:MASTER%전용으로 하자고 부탁했습니다
 		CASE 100
-			LOCALS = %CALLNAME:ARG%に%CALLNAME:MASTER%専用になるようにとお願いしました
+			LOCALS = %CALLNAME:ARG%에게 %CALLNAME:MASTER% 전용이 되라고 부탁했습니다
 		CASEELSE
-			LOCALS = %CALLNAME:ARG%に、%CALLNAME:MASTER%が独占したい性行為を細かくお願いしました
+			LOCALS = %CALLNAME:ARG%에게 %CALLNAME:MASTER%가 독점하고 싶은 행위를 세세히 부탁했습니다
 		ENDSELECT
 	ENDIF
 
 CASE "身嗜み：성욕の관리"
-	PRINTFORML %CALLNAME:MASTER%에 허가되었을 때를 제외해,자위행위를 금지합니다
+	PRINTFORML %CALLNAME:MASTER%에 허가받은 때를 제외하고 자위행위를 금지합니다
 
 	PRINTFORML  [ 0] \@ COND(ARGS, ARG) == 0  ? ○ # － \@ 지시 없음
 	PRINTFORML  [ 1] \@ COND("身嗜み：자위금지", ARG)  ? ○ # － \@ 자위를 금지한다
-	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 変更しない # これでいい \@
+	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 변경하지 않음 # 이것으로 결정 \@
 
 	CALL INPUT_SELECT, 2, 100
 
@@ -825,9 +825,9 @@ CASE "身嗜み：성욕の관리"
 	IF COND(ARGS, ARG) != ARG:1
 		SELECTCASE COND(ARGS, ARG)
 		CASE 0
-			LOCALS = 特には指示しないことにしました
+			LOCALS = 특별히 지시하지 않기로 했습니다
 		CASE 1
-			LOCALS = %CALLNAME:ARG%に자위をしないようにとお願いしました
+			LOCALS = %CALLNAME:ARG%에게 자위를 하지 말라고 부탁했습니다
 		ENDSELECT
 	ENDIF
 

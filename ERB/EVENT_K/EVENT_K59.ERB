@@ -25,7 +25,7 @@ DRAWLINE
 IF GETBIT(CFLAG:201, 0) == 0
 	DRAWLINE
 	PRINTFORMW 방에 들어가든지, %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 소매를 이끌어 왔다
-	PRINTFORMW 「있지있지! %CNAME("二人称", "かな")%하지만%CALLNAME:TARGET%(와)과 『』해!？해!？」
+	PRINTFORMW 「있지있지! %CNAME("二人称", "かな")%하지만%타겟과()% 『』해!？해!？」
 	PRINTFORMW …『몽마한다』란 어떤 의미일까
 	PRINTFORMW 「저기요, 『』하면 말이죠, 와~는 해! 아라고 해! 굉장해」
 	PRINTFORMW 어딘지 모르게 납득하면서, 팔에 매달린다%조사처리(CALLNAME:TARGET,"를")% 그대로 방의 침대에 옮겼다
@@ -43,7 +43,7 @@ ELSEIF GETBIT(CFLAG:201, 1) == 0 && MARK:굴복각인 == 1
 	PRINTFORMW 「%CNAME("二人称", "かな")%! 『』는 『』가 아니었던 것이구나!」
 	PRINTFORMW …？
 	PRINTFORMW 「%CNAME("二人称", "かな")%로 하고 있는 것은 『』가 아니고 『나비 오늘』이네요？」
-	PRINTFORMW 「그러니까, 좀 더%CALLNAME:TARGET%(와)과 『나비 오늘』해♪빠르게 빠르게～읏」
+	PRINTFORMW 「그러니까, 좀 더%타겟과()% 『나비 오늘』해♪빠르게 빠르게～읏」
 	PRINTFORMW 미묘하게 어긋난 회화에 쓴웃음 지으면서, %조사처리(CALLNAME:PLAYER,"는")% %조사처리(CALLNAME:TARGET,"를")% 안아 올렸다
 SETBIT CFLAG:201, 1
 	RETURN 1
@@ -2249,7 +2249,7 @@ IF SELECTCOM == 96
 				PRINTFORMW 「%CNAME("二人称", "かな")%의 엉덩이라면, 쭉에서도 『어법 해』할 수 있다」
 			;それ以外
 			ELSE
-				PRINTFORMW 「%CNAME("二人称", "かな")%도 엉덩이가 좋은거야？…쿠스, %CALLNAME:TARGET%(와)과 같다아♪」
+				PRINTFORMW 「%CNAME("二人称", "かな")%도 엉덩이가 좋은거야？…쿠스, %타겟과()% 같다아♪」
 			ENDIF
 		;それ以外
 		ELSE
@@ -2291,7 +2291,7 @@ IF SELECTCOM == 97
 		ELSE
 			;연모
 			IF TALENT:연모
-				PRINTFORMW 「고수 고수…아핫, %CALLNAME:TARGET%(와)과%CNAME("二人称", "かな")%의 국물로 보일듯 말듯팬티(이)가 되어 버렸다♪」
+				PRINTFORMW 「고수 고수…아핫, %타겟과()%%CNAME("二人称", "かな")%의 국물로 보일듯 말듯팬티(이)가 되어 버렸다♪」
 			;それ以外
 			ELSE
 				PRINTFORMW 「우와아…끈적끈적이다아…」
@@ -3100,7 +3100,7 @@ IF SELECTCOM == 179 && TEQUIP:수치플레이
 			PRINTFORMW 「또%CALLNAME:TARGET%의 엣치한얼굴보여지면서 가게 되어 버린다？(이)나♪」
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 「…무─…%CALLNAME:TARGET%(와)과%CNAME("二人称", "かな")%, 연인끼리에게는 안보이지요……커지고 싶다」
+			PRINTFORMW 「…무─…%타겟과()%%CNAME("二人称", "かな")%, 연인끼리에게는 안보이지요……커지고 싶다」
 		;노출벽Lv3이상
 		ELSEIF ABL:노출벽 >= 3
 			PRINTFORMW 「아…일전에 엣치한 국물이 붙은 곳, 예쁘게 되어 있다…」

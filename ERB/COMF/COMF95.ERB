@@ -130,7 +130,7 @@ IF CHECK_COM("Ｗ봉사")
 		ENDIF
 		PRINTFORMW 를 발로 이리저리 돌리며 갖고 놀고있다…
 	ELSE
-		PRINTFORM %CALLNAME:TARGET%(와)과%CALLNAME:(TARGET:1)%하
+		PRINTFORM %타겟과()%%조사처리(CALLNAME:(TARGET:1),"는")%
 		IF TALENT:(TARGET:1):음란 + TALENT:(TARGET:1):연모 && TALENT:음란 + TALENT:연모
 			IF RAND:3 == 0
 				PRINTFORM 상기된 눈동자로 %조사처리(CALLNAME:MASTER,"를")% 바라보면서, 
@@ -258,7 +258,7 @@ ELSE
 				LASTWORD = %LASTWORD%플러그
 			;음란
 			IF TALENT:음란
-				LASTWORD = %LASTWORD%를 물고있는 
+				LASTWORD = %조사처리(LASTWORD,"를")% 물고있는 
 			ELSE
 				LASTWORD = %LASTWORD%가 박힌 
 			ENDIF

@@ -71,7 +71,7 @@ IF TEQUIP:Ｗ넘어뜨리기
 			PRINTFORMW %CALLNAME:MASTER%의 양 구멍을 계속 범하고있다…! 
 		;조수が前回と同じ行動
 		ELSEIF SELECTCOM:1 == PREVCOM:1
-			PRINTFORM %CALLNAME:TARGET%(은)는 %CALLNAME:(TARGET:1)%에애널를 범해지고 있다%CALLNAME:MASTER%의다리를 펴넓히면,
+			PRINTFORM %타겟은()% %CALLNAME:(TARGET:1)%에 애널을 범해지고 있는 %CALLNAME:MASTER%의 다리를 펴넓히고,
 			IF TALENT:MASTER:처녀
 				PRINT 남자를 모르는 
 			ELSE
@@ -104,7 +104,7 @@ IF TEQUIP:Ｗ넘어뜨리기
 			ENDIF
 			PRINTFORM %조사처리(NAMES("페니스"),"로")%  
 			IF TALENT:새드 && RAND:3 == 0
-				PRINT 즐거운듯이 
+				PRINT 즐거운 듯이 
 			ELSEIF ABL:새드끼 && RAND:2 == 0
 				PRINT 거칠게 
 			ELSEIF ABL:욕망 >= 3 && RAND:2 == 0
@@ -113,9 +113,9 @@ IF TEQUIP:Ｗ넘어뜨리기
 			PRINTFORMW 범하기시작했다…! 
 		;役割交換
 		ELSEIF PREVCOM:1 == 120 && SELECTCOM:1 == 121
-			PRINTFORMW %CALLNAME:TARGET%(와)과%CALLNAME:(TARGET:1)%는 범하는 구멍을 교환하거나 해,%CALLNAME:MASTER%그리고 즐기고 있다…！
+			PRINTFORMW %타겟과()% %조사처리(CALLNAME:(TARGET:1),"는")% 범하는 구멍을 교환하거나 해, %마스터로()% 즐기고 있다…！
 		ELSE
-			PRINTFORM %CALLNAME:TARGET%(와)과%CALLNAME:(TARGET:1)%하
+			PRINTFORM %타겟과()% %조사처리(CALLNAME:(TARGET:1),"는")%
 			IF RAND:2 == 0
 				PRINTFORM 경쟁하듯이 
 			ELSE
@@ -137,14 +137,14 @@ IF TEQUIP:Ｗ넘어뜨리기
 	ENDIF
 ELSEIF TEQUIP:넘어뜨리기
 	IF PREVCOM == SELECTCOM && COND("前Ｔ조교자") == PLAYER
-		PRINTFORM %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%
+		PRINTFORM %타겟은()% %CALLNAME:PLAYER%
 		IF TEQUIP:키스
-			PRINTFORM %TEXTS("키스継続助詞付き")%, 콧김 난폭하고
+			PRINTFORM %TEXTS("키스継続助詞付き")%, 콧김 난폭하게
 			CALL SETFLAG, "추가키스플래그", TARGET
 		ELSEIF ABL:기교 >= 4 && STATE("미니멈", TARGET) && RAND:2 == 0
 			PRINTFORM 의 질 안쪽을 후벼파면서, 즐거운 듯이
 		ELSEIF ABL:기교 >= 3 && RAND:2 == 0
-			PRINTFORM 노Ｇ스팟을 중점적으로 비비면서, 격렬하고
+			PRINTFORM 의 Ｇ스팟을 중점적으로 비비면서, 격렬하고
 		ELSE
 			PRINTFORM 의 질을 마음껏
 		ENDIF
@@ -198,7 +198,7 @@ ELSEIF TEQUIP:넘어뜨리기
 		IF ABL:새드끼 >= 5 && RAND:2 == 0
 			PRINTFORMW 능욕했다…
 		ELSE
-			PRINTFORMW 범하기시작했다…
+			PRINTFORMW 범하기 시작했다…
 		ENDIF
 	ENDIF
 ;前回と今回の조교자が同じで, 前回の조교が정상위, 역레이프であり, 抜かない플래그がある場合
@@ -215,7 +215,7 @@ ELSEIF INSERT("Ｖ정상위", PLAYER) && COND("前Ｔ조교자") == PLAYER
 	ELSEIF ABL:기교 >= 3 && EXP:허리사용경험 + ABL:허리놀림*10 >= 30 && RAND:3 == 0
 		PRINTFORM Ｇ스팟을 긁어올리듯이 
 	ELSEIF RAND:2 == 0
-		PRINTFORM 감질나게하듯이 천천히 
+		PRINTFORM 감질나게 하듯이 천천히 
 	ELSE
 		PRINTFORM 두들기듯이 격렬하게 
 	ENDIF

@@ -113,15 +113,15 @@ CALL CALC, "조교소스", LOCAL:0, LOCAL:1, LOCAL:2, LOCAL:3, LOCAL:4, LOCAL:5,
 IF CHECK_COM("Ｗ봉사")
 	;二人とも前回と同じ行動
 	IF SELECTCOM:1 == PREVCOM:1 && SELECTCOM == PREVCOM
-		PRINTFORM 두사람은 
+		PRINTFORM 두 사람은 
 		IF TALENT:(TARGET:1):음란 + TALENT:(TARGET:1):연모 && TALENT:음란 + TALENT:연모 && RAND:3 == 0
-			PRINTFORM 황홀해하면서 
+			PRINTFORM 황홀해 하면서 
 		ELSEIF RAND:2 == 0
 			PRINTFORM 정신없이 
 		ENDIF
-		PRINTFORMW %CALLNAME:MASTER%의 얼굴을 가슴에 끼우고, 부드러운 유방을 맛보게하고있다…
+		PRINTFORMW %CALLNAME:MASTER%의 얼굴을 가슴에 끼우고, 부드러운 유방을 맛보게 하고있다…
 	ELSE
-		PRINTFORM %CALLNAME:TARGET%(와)과%CALLNAME:(TARGET:1)%하
+		PRINTFORM %타겟과()% %조사처리(CALLNAME:(TARGET:1),"는")%
 		SIF TALENT:(TARGET:1):음란 + TALENT:(TARGET:1):연모 + TALENT:음란 + TALENT:연모 && RAND:2 == 0
 			PRINTFORM 상기된 눈동자로 %조사처리(CALLNAME:MASTER,"를")% 바라보면서, 
 		IF RAND:3 == 0
@@ -134,19 +134,19 @@ IF CHECK_COM("Ｗ봉사")
 	ENDIF
 ;同時넘어뜨리기&連続
 ELSEIF SELECTCOM == PREVCOM && SELECTCOM:1 >= 0 && TEQUIP:Ｗ넘어뜨리기
-	PRINTFORMW %CALLNAME:TARGET%(와)과%CALLNAME:(TARGET:1)%하%CALLNAME:MASTER%의 위에서, 쾌락을 탐내고 있다…
+	PRINTFORMW %타겟과()% %조사처리(CALLNAME:(TARGET:1),"는")% %CALLNAME:MASTER%의 위에서, 쾌락을 탐내고 있다…
 ;前回と同じ
 ELSEIF PREVCOM == SELECTCOM && COND("前Ｔ조교자") == PLAYER
 	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 
 	IF TALENT:빈유
 		IF TEQUIP:넘어뜨리기 && RAND:2
-			PRINTFORMW 얼굴을 얄팍한 가슴으로 짓누르고있다…
+			PRINTFORMW 얼굴을 얄팍한 가슴으로 짓누르고 있다…
 		ELSE
-			PRINTFORMW 머리를 가슴에 껴인고, 작은 가슴으로 얼굴에 눌렀다 떼었다하고있다…
+			PRINTFORMW 머리를 가슴에 껴안고, 작은 가슴으로 얼굴에 눌렀다 떼었다 하고 있다…
 		ENDIF
 	ELSE
 		IF TEQUIP:넘어뜨리기 && RAND:2
-			PRINTFORMW 얼굴을 유방으로 짓누르고있다…
+			PRINTFORMW 얼굴을 유방으로 짓누르고 있다…
 		ELSE
 			PRINTFORMW 머리를 가슴에 껴안고, 부비적부비적 가슴사이에 얼굴을 파묻었다…
 		ENDIF

@@ -138,14 +138,14 @@ IF CHECK_COM("Ｗ봉사")
 		ENDIF
 		PRINTFORMW %CALLNAME:MASTER%의 페니스에 가랑이를 문질러붙여, 계속 자극하고있다…
 	ELSE
-		PRINTFORM %CALLNAME:TARGET%(와)과%CALLNAME:(TARGET:1)%하
+		PRINTFORM %타겟과()%%조사처리(CALLNAME:(TARGET:1),"는")%
 		SIF TALENT:(TARGET:1):음란 + TALENT:(TARGET:1):연모 + TALENT:음란 + TALENT:연모 && RAND:2 == 0
 			PRINTFORM 상기된 눈으로 %조사처리(CALLNAME:MASTER,"를")% 바라보면서, 
 		PRINTFORMW 협력해서 페니스를 그곳에 끼우고 훑었다…
 	ENDIF
 ELSE
 	IF TEQUIP:키스
-		PRINTFORM %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%%TEXTS("키스継続助詞付き")%페니스를
+		PRINTFORM %타겟은()% %CALLNAME:PLAYER%%TEXTS("키스継続助詞付き")%페니스를
 		CALL SETFLAG, "추가키스플래그", TARGET
 	ELSE
 		PRINTFORM %CALLNAME:TARGET%하페니스를

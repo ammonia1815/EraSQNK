@@ -229,14 +229,14 @@ ELSEIF GETBIT(CFLAG:201, 30) && GETBIT(CFLAG:201, 31) == 0 && CFLAG:461 >= 2 && 
 	PRINTFORMW 「잠깐, 또 찾아야 하나……그러니까～, 이건 아니고, 이거랑……이건가!」
 	PRINTFORMW 그리고, 서랍 속에서 뭔가를 바스락 바스락 거리며 꺼낸 뒤, 작은 그릇 가득 1명분 정도의 노란 음료를 내밀었다.
 	PRINTFORMW 냄새는 나쁘지 않은 것 같지만, 작은 거품이 부글 부글 일어나는 약품 같은 음료를 어떻게 해야할까…？
-	PRINTFORML [ 0] %CALLNAME:TARGET%를 믿고 전부 마신다.
+	PRINTFORML [ 0] %타겟을()% 믿고 전부 마신다.
 	PRINTFORML [ 1] 죽은 어머니께서, 거품이 생기는 음료는 절대로 마시지 말라는 유언을 남겼다고 거짓말 한다. 
 	CALL INPUT_SELECT, 2
 	IF RESULT == 0
 		PRINTFORMW 과감히 전부 마시자, 생각과는 다르게, 달콤하고 맛있다! 
 		PRINTFORMW 미묘한 약 냄새는 소량의 탄산으로 없어지고, 약이 입에 쓰기는 커녕, 한번 더 마시고 싶은 정도이다…
 		PRINTFORMW 「어때？ 좋은 영약 아니야？」
-		PRINTFORMW 몸에 힘이 넘치는 것을 실감하며, %CALLNAME:MASTER%은 힘이 넘치는것을 자랑 하듯 %CALLNAME:TARGET%를 들고 침대로 향했다…
+		PRINTFORMW 몸에 힘이 넘치는 것을 실감하며, %CALLNAME:MASTER%은 힘이 넘치는것을 자랑 하듯 %타겟을()% 들고 침대로 향했다…
 		CALL ADD_STATE, PLAYER, "우르즈군"
 		BASE:MASTER:정력 = MAXBASE:MASTER:정력
 		BASE:MASTER:스톡 = MAXBASE:MASTER:스톡
@@ -863,7 +863,7 @@ IF SELECTCOM == 5
 			ELSE
 				IF RAND:3 == 0
 					PRINTFORMW 「응읏……조금 너무 열중하는 것이군. 이봐요, 군침이야 누구」
-					PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의 턱과 자신의 유방을 타 누구를 닦았다
+					PRINTFORMW %타겟은()% %CALLNAME:PLAYER%의 턱과 자신의 유방을 타 누구를 닦았다
 				ELSEIF RAND:2
 					PRINTFORMW 「이봐요 왼쪽뿐 빨지 말고……오른쪽의유두하지만 쓸쓸해 하고 있다♪」
 				ELSE
@@ -5288,13 +5288,13 @@ IF SHOOT("정액세례")
 				CALL SET_CEVENT, "머리카락に정액세례：初回"
 			ELSEIF CEVENT("머리카락に정액세례：２回目") == 0
 				PRINTFORMW 「후─………입로 말해도 모르는 녀석의 상대는 지치네요, 완전히！」
-				PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의 머리를 찔렀다
+				PRINTFORMW %타겟은()% %CALLNAME:PLAYER%의 머리를 찔렀다
 				;무드減少
 				TFLAG:33 -= 5
 				CALL SET_CEVENT, "머리카락に정액세례：２回目"
 			ELSE
 				PRINTFORMW 「그러니까―. 머리카락에 걸치지 말라고 말했을 것이지만, 이 아보가！」
-				PRINTFORMW 화가 치밀었다%CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의 머리를 정말로 때렸다！
+				PRINTFORMW 화가 치밀었다%타겟은()% %CALLNAME:PLAYER%의 머리를 정말로 때렸다！
 				;무드減少
 				TFLAG:33 -= 10
 			ENDIF

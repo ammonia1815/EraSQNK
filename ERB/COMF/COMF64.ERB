@@ -77,10 +77,10 @@ IF TEQUIP:러브트랩
 		IF INSERT("배면좌위")
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 목에 팔을 두르고, 몸을 밀착시키며 다시 허리를 흔들기 시작했다…
 		ELSE
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 질내에서 페니스를 해방시키지않고 %CALLNAME:PLAYER%에게 몸을 맡기면서, 허리를 흔들기시작했다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 질내에서 페니스를 해방시키지않고 %CALLNAME:PLAYER%에게 몸을 맡기면서, 허리를 흔들기 시작했다…
 		ENDIF
 	ELSE
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%에게 몸을 맡기고, 안쪽 깊숙한 곳까지 페니스를 삼키면서 허리를 흔들기시작했다…
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%에게 몸을 맡기고, 안쪽 깊숙한 곳까지 페니스를 삼키면서 허리를 흔들기 시작했다…
 	ENDIF
 ELSEIF CHECK_COM("３Ｐ봉사")
 	CALL TRAIN_MESSAGE_3P
@@ -104,7 +104,7 @@ ELSE
 				PRINTFORMW %TEXTS("키스継続")%신체를 흔들기 시작했다…
 				CALL SETFLAG, "추가키스플래그", TARGET
 			ELSE
-				PRINTFORMW 몸을 흔들기시작했다…
+				PRINTFORMW 몸을 흔들기 시작했다…
 			ENDIF
 		ENDIF
 
@@ -117,31 +117,31 @@ ELSE
 			PRINT 깊숙히 
 		PRINTFORM 파묻
 		SIF TEQUIP:수치플레이
-			PRINTFORM 어 다리를 크게 열리게하고 허리를 흔들
+			PRINTFORM 어 다리를 크게 열리게 하고 허리를 흔들
 		PRINTFORMW 었다…
 	ELSE
 		;前回, 삽입前に폭발してしまった
 		IF PREVCOM == 511 && COND("前Ｔ조교자") == PLAYER
-			PRINTFORM 기분을 고쳤다%조사처리(CALLNAME:PLAYER,"는")% , 
+			PRINTFORM 기분을 고친 %조사처리(CALLNAME:PLAYER,"는")% , 
 		ELSE
 			PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 
 		ENDIF
 		IF COND("前Ｔから대상のみ변경") && PREVCOM:1 >= 60 && PREVCOM:1 <= 79
 			CALL TEXT, "추가地の文：穴から穴へ"
-			PRINTFORM %CALLNAME:TARGET%에게 몸을 기대게하면서 %TEXTS("Ｖ삽입前")%
+			PRINTFORM %CALLNAME:TARGET%에게 몸을 기대게 하면서 %TEXTS("Ｖ삽입前")%
 		;穴開きでない팬티をはいていて, ずらされていないなら, 必ずずらす
 		ELSEIF !CHECK_CLO("Ｖ노출") && CHECK_CLO("Ｖ노출可")
 			PRINTFORM %CALLNAME:TARGET%의 
 			CALL SETFLAG, "바텀을노출：텍스트有り", TARGET
-			PRINTFORM 고, 몸을 기대게하면서 %TEXTS("Ｖ삽입前")%
+			PRINTFORM 고, 몸을 기대게 하면서 %TEXTS("Ｖ삽입前")%
 		ELSE
-			PRINTFORM %CALLNAME:TARGET%에게 신체를 몸을 기대게하면서 %TEXTS("Ｖ삽입前")%
+			PRINTFORM %CALLNAME:TARGET%에게 신체를 몸을 기대게 하면서 %TEXTS("Ｖ삽입前")%
 		ENDIF
 
 		IF TEQUIP:수치플레이
 			PRINTFORMW 에 페니스를 천천히 밀어넣어, 다리를 크게 벌어지게 했다…
 		ELSEIF (TALENT:음란 || ABL:노출벽 >= 3) && RAND:2 == 0
-			PRINTFORM 에페니스를 천천히 삼키게 해
+			PRINTFORM 에 페니스를 천천히 삼키게 해
 			IF TEQUIP:키스
 				PRINTFORMW 입술을 빼앗았다…
 				CALL SETFLAG, "추가키스플래그", TARGET
@@ -149,7 +149,7 @@ ELSE
 				PRINTFORMW 다리를 크게 벌렸다…
 			ENDIF
 		ELSEIF TEQUIP:키스
-			PRINTFORMW 를 기다리고 있었다페니스그리고 천천히 관철해, 입술을 빼앗았다…
+			PRINTFORMW 를 기다리고 있었던 페니스로 천천히 관철해, 입술을 빼앗았다…
 			CALL SETFLAG, "추가키스플래그", TARGET
 		ELSE
 			PRINTFORMW %조사만처리(TEXTS("Ｖ삽입前"),"를")% 준비완료된 페니스로 천천히 꿰뚫었다…
@@ -157,17 +157,17 @@ ELSE
 	ENDIF
 	IF COND("삽입前폭발플래그", PLAYER) == 0
 		IF TALENT:임신 && RAND:2 == 0
-			PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 큰 배를 어루만져 주면, %조사처리(CALLNAME:TARGET,"는")% 낯간지러운 것 같은 소리를 내신체를 비틀게 한다…
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 큰 배를 어루만져 주면, %조사처리(CALLNAME:TARGET,"는")% 낯간지러운 것 같은 소리를 내 몸을 비틀게 한다…
 		;수치플레이중
 		ELSEIF TEQUIP:수치플레이 && SELECTCOM != PREVCOM
 			IF ABL:노출벽 >= 5
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 거울에 비치는 치태를 녹은 눈으로 응시하면서 환희의 소리를 높이고 있다…
 			ELSEIF ABL:노출벽 >= 3
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 수치와 쾌락에 빠진 것 같은 표정으로 거울안의 치태를 응시하고 있다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 수치와 쾌락에 빠진 것 같은 표정으로 거울 안의 치태를 응시하고 있다…
 			ELSEIF ABL:노출벽 >= 1
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 얼굴를 수치에 물들이면서 때때로 음란한 소리를 높이고 있다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 얼굴을 수치에 물들이면서 때때로 음란한 소리를 높이고 있다…
 			ELSEIF TALENT:부끄럼없음 == 0 && COND("손가락 사용")
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(NAMES("손"),"로")% 얼굴를 덮어 가리면서 수치에신체를 진동시키고 있다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(NAMES("손"),"로")% 얼굴을 덮어 가리면서 수치에 신체를 진동시키고 있다…
 			ELSE
 				PRINTFORMW 눈앞의 거울에는, %CALLNAME:TARGET%의 치태가 분명히 나타나고 있다…
 			ENDIF

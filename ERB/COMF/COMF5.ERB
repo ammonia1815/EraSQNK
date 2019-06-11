@@ -1,13 +1,13 @@
 ﻿@COM5
 ;가슴애무
 ;TEQUIP:엉덩이애무で行為を記録する
-;0bitで가슴을揉む 1bitで유두を弄る 2bitでピアスをいじめる 10bitで유두を舐める
+;0bitで가슴을揉む 1bitで유두を弄る 2bitでピアスをいじめる 10bitで유두を핥으る
 ;유두が함몰状態かどうかはCALCF("Ｂ발정") == 0 かどうかで判定가능
-;基本的には엉덩이애무→가슴舐め（가능なら揉みながら）となる
+;基本的には엉덩이애무→가슴핥으（가능なら揉みながら）となる
 
 CALL PRINT_TRAIN_NAME(SELECTCOM)
 
-;유두を舐めると、ながら키스フラグは消滅する
+;유두を핥으ると、ながら키스フラグは消滅する
 SIF CHECK_COM("유두핥기に変化")
 	TEQUIP:키스 = 0
 
@@ -103,7 +103,7 @@ CALL CALC, "조교소스", LOCAL:0, LOCAL:1, LOCAL:2, LOCAL:3, LOCAL:4, LOCAL:5,
 
 @TRAIN_MESSAGE_COM5
 ;TEQUIP:엉덩이애무で行為を記録する
-;0bitで가슴을揉む 1bitで유두を弄る 2bitでピアスをいじめる 10bitで유두を舐める 11bitでおっぱいを飲む
+;0bitで가슴을揉む 1bitで유두を弄る 2bitでピアスをいじめる 10bitで유두を핥으る 11bitでおっぱいを飲む
 
 IF TEQUIP:촉수
 	PRINTFORM %CALLNAME:TARGET%의 
@@ -131,7 +131,7 @@ ELSE
 			PRINTFORM 에 손을 찔러넣고, 
 		;가슴元をはだける
 		ELSEIF CHECK_CLO("はだけ可")
-			PRINTFORM 가슴을 을 가린 옷을 풀어해쳐 벌려 노출시키고, 
+			PRINTFORM 가슴을 가린 옷을 풀어 헤쳐 노출시키고, 
 			CALL SETFLAG, "가슴을はだける", TARGET
 		ENDIF
 	ENDIF
@@ -159,8 +159,8 @@ IF TEQUIP:촉수
 	SETBIT TEQUIP:엉덩이애무, 0
 	CLEARBIT TEQUIP:엉덩이애무, 1
 	SIF TALENT:모유체질 && (CHOSECOM(SELECTCOM) == 0 || RAND:4 == 0)
-		PRINTFORMW 유방을 조르는 촉수에 의해가슴의 형태를 바꿀 수 있을 때, 첨단으로부터는 모유가 스며나온다…
-;유두を舐める
+		PRINTFORMW 유방을 조르는 촉수에 의해 가슴의 모양이 바뀌며, 끝에서는 모유가 스며나온다…
+;유두を핥으る
 ELSEIF CHECK_COM("유두핥기に変化")
 	;유두플래그
 	SETBIT TEQUIP:엉덩이애무, 1
@@ -168,9 +168,9 @@ ELSEIF CHECK_COM("유두핥기に変化")
 	;가슴揉みも同時にするか？（主に連続선택時）
 	IF CHECK_COM("가슴揉み") && CHECK_COM("유두핥기")
 		IF CALCF("Ｂ발정")
-			PRINTFORM %TEXTS("유두：描写")%%TEXTR("유두", "돌기")%를%TEXTR("舐め", "舌で転がし", "吸い", "咥え", "甘く噛み")%개개,
+			PRINTFORM %TEXTS("유두：描写")%%TEXTR("유두", "돌기")%를%TEXTR("핥으", "혀를 굴리", "빨아들이", "물", "달게 씹으")%면서,
 		ELSE
-			PRINTFORM %TEXTS("유두：描写")%유두를%TEXTR("舐め", "舌先で突っつき", "吸い上げ", "舐めほじり")%개개,
+			PRINTFORM %TEXTS("유두：描写")%유두를 %TEXTR("핥으", "혀끝으로 돌리", "빨아들이", "핥짝이")%면서,
 		ENDIF
 		SIF TALENT:남자 == 0
 			PRINTFORM %TEXTS("おっぱい：描写")%
@@ -178,9 +178,9 @@ ELSEIF CHECK_COM("유두핥기に変化")
 		IF CHECK_CLO("가슴골노출") && TALENT:빈유 == 0 && RAND:2
 			IF RAND:2 == 0
 				IF TALENT:거유 && RAND:2
-					PRINTFORMW 유육[柔肉]을 조금 강하게 비벼넣었다…
+					PRINTFORMW 젖가슴을 조금 강하게 비벼넣었다…
 				ELSE
-					PRINTFORMW 유육[柔肉]의 쫄깃한 감촉을 즐겼다…
+					PRINTFORMW 젖가슴의 쫄깃한 감촉을 즐겼다…
 				ENDIF
 			ELSE
 				PRINTFORMW 유방에 부드럽게 손가락이 침울해지는 감촉을 즐겼다…
@@ -201,15 +201,15 @@ ELSEIF CHECK_COM("유두핥기に変化")
 			ENDIF
 		ENDIF
 	ELSE
-		;유두舐め플래그
+		;유두핥으플래그
 		SETBIT TEQUIP:엉덩이애무, 10
 
 		PRINTFORM 가슴의 첨단의 
 		IF TALENT:모유체질 && RAND:3 == 0
 			IF CALCF("Ｂ발정")
-				PRINTFORM %TEXTR("ミルクを滲ませる돌기", "모유の染み出す유두")%
+				PRINTFORM %TEXTR("밀크가 번지는 돌기", "모유가 스며나오는 유두")%
 			ELSE
-				PRINTFORM %TEXTR("ミルクを滲ませる箇所", "모유の染み出す함몰상태の유두")%
+				PRINTFORM %TEXTR("밀크가 번지는 곳", "모유가 스며나오는 함몰상태의 유두")%
 			ENDIF
 		ELSE
 			PRINTFORM %TEXTS("유두：描写")%%TEXTR("유두", "돌기")%
@@ -237,9 +237,9 @@ ELSEIF CHECK_COM("유두핥기に変化")
 			ELSEIF RAND:3 == 0
 				PRINTFORMW \@ CALCF("Ｂ발정") ? 를 물고 # 에 입을 붙이고 \@, 츗츗 빨아 올렸다…
 			ELSEIF RAND:2
-				PRINTFORMW 를 마음껏 빨아 올려, 첨단을 혀로\@ CALCF("Ｂ발정") ? 転がし # 穿っ \@…
+				PRINTFORMW 를 마음껏 빨아 올려, 첨단을 혀로\@ CALCF("Ｂ발정") ? 굴렸다 # 쑤셨다 \@…
 			ELSE
-				PRINTFORMW 를 입에 포함하면서, 유륜의 주위를 초조하게 하도록(듯이) 빨았다…
+				PRINTFORMW 를 입에 포함하면서, 유륜의 주위를 간질거리며 빨았다…
 			ENDIF
 		ENDIF
 	ENDIF
@@ -312,13 +312,13 @@ ELSE
 	;直接
 	ELSEIF CHECK_CLO("가슴골노출") && TALENT:빈유 == 0 && RAND:2
 		IF EX:Ｂ절정 * 10000 + PALAM:쾌Ｂ >= 10000 && RAND:4 == 0
-			PRINTFORM %LOCALS%를 아래로부터 지탱하면서,
+			PRINTFORM %LOCALS%를 아래로 부터 지탱하면서,
 			IF COND("진성함몰유두")
-				PRINTFORMW 첨단에 향하여 매몰 했다유두를 짜내는것 같이 다뤘다…
+				PRINTFORMW 끝이 매몰 한 유두를 짜내는것 같이 다뤘다…
 			ELSEIF CALCF("Ｂ발정")
-				PRINTFORMW 찡 날카로워졌다유두에 향해 천천히 다뤘다…
+				PRINTFORMW 찡 날카로워진 유두에 향해 천천히 다뤘다…
 			ELSE
-				PRINTFORMW 부끄러움으로 얼굴을 숨기고 있다유두를 호된 훈련 내려고 조금 강하게 다뤘다…
+				PRINTFORMW 부끄러움으로 얼굴을 숨기고 있는 유두를 호되게 괴롭히려  조금 강하게 다뤘다…
 			ENDIF
 		ELSEIF RAND:3 == 0 && ABL:Ｂ감각 >= 3
 			PRINTFORMW %조사처리(LOCALS,"를")%, 모양이 바뀔 정도로 주물렀다…
@@ -330,7 +330,7 @@ ELSE
 				PRINTFORMW 부드럽고 탄력있는 감촉을 즐겼다…
 			ENDIF
 		ELSE
-			PRINTFORMW 유방에 부드럽게 손가락이 파고들어가는 감촉을 즐겼다…
+			PRINTFORMW 유방에 부드럽게 손가락이 파고 들어가는 감촉을 즐겼다…
 		ENDIF
 	ELSE
 		IF TALENT:빈유 == 0 && RAND:2
@@ -356,9 +356,9 @@ ELSE
 	ENDIF
 	IF TALENT:모유체질 && (CHOSECOM(SELECTCOM) == 0 || RAND:4 == 0)
 		IF TALENT:빈유 == 0 && RAND:2
-			PRINTFORMW %CALLNAME:PLAYER%의손하지만 유방에 침울해질 때, 첨단으로부터는 모유가 스며나온다…
+			PRINTFORMW %CALLNAME:PLAYER%의 손으로 유방이 잡아질 때, 끝에서는 모유가 스며나온다…
 		ELSE
-			PRINTFORMW %CALLNAME:PLAYER%의손에 의해가슴의 형태를 바꿀 수 있을 때, 첨단으로부터는 모유가 스며나온다…
+			PRINTFORMW %CALLNAME:PLAYER%의 손에 의해 가슴의 형태가 바꿔질 때, 끝에서는 모유가 스며나온다…
 		ENDIF
 	ENDIF
 ENDIF

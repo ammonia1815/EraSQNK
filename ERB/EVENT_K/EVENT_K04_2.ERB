@@ -254,7 +254,7 @@ ELSEIF GETBIT(CFLAG:201, 6) == 0 && TALENT:연모 && TALENT:임신 && COND("정�
 	SETBIT CFLAG:201, 6
 ;연모＋당신の子임신＋明일生まれる
 ELSEIF GETBIT(CFLAG:201, 7) == 0 && TALENT:연모 && TALENT:임신 == 3 && COND("정액의우세") == MASTER
-	PRINTFORMW 평소보다 조용한 조교 방에 들어가자, 침대 위에 몸을 말고 자고 있는 %CALLNAME:TARGET%를 발견했다
+	PRINTFORMW 평소보다 조용한 조교 방에 들어가자, 침대 위에 몸을 말고 자고 있는 %타겟을()% 발견했다
 	PRINTFORM 「음냐 음냐……%CNAME("二人称", "甘え")%……
 	CALL HEARTMARK_E
 	PRINTFORML 어려 보이며 천진난만하게 자는 얼굴, 둥글고 부드러운 사지, 요정의 상징 중에 하나인 무지개 빛으로 빛나는 날개
@@ -358,7 +358,7 @@ ELSEIF COND("ご無沙汰")
 		PRINTFORMW 「%CNAME("二人称", "～")%, 만나고 싶었어～! 」
 		PRINTFORMW 방에 들어가자 마자 날라온 %CALLNAME:TARGET%가 껴안겨, 달콤한 향이 나는 얇은 몸을 힘껏 비볐다
 		PRINTFORMW 「기분 좋은거 하고 싶은데 %CNAME("二人称")%가 전혀 오질 않아서, %CNAME("一人称")%버림 받은게 아닐까 라고……훌쩍」
-		PRINTFORML 훌쩍 거리는 %CALLNAME:TARGET%를 부드럽게 쓰다듬고, 뺨에 몇번이나 키스를 하자
+		PRINTFORML 훌쩍 거리는 %타겟을()% 부드럽게 쓰다듬고, 뺨에 몇번이나 키스를 하자
 		PRINTFORMW %CALLNAME:TARGET%의 표정은 점차 풀려 갔고, 잠시 후 평정심을 회복했다
 		PRINTFORM 「응……모처럼 왔으니 용서해 줄게. 대신, 지금 까지 기다리게 한 만큼 저언～부 기분 좋게 해줘야해
 		CALL HEARTMARK_E
@@ -414,7 +414,7 @@ ELSEIF TALENT:연모 && TALENT:임신 == 3
 ELSEIF TALENT:연모 && TALENT:임신 == 2
 	IF RAND:3 == 0
 		PRINTFORMW 「%CNAME("二人称")%는, %CNAME("一人称")%의 배가 커져도 흥분 할 수 있어？」
-		PRINTFORMW %CALLNAME:PLAYER%의 품 안에서 걱정 스럽게 올려다 보는 %CALLNAME:TARGET%를 살며시 안아준다
+		PRINTFORMW %CALLNAME:PLAYER%의 품 안에서 걱정 스럽게 올려다 보는 %타겟을()% 살며시 안아준다
 		PRINTFORM 「응……고마워, %CNAME("二人称")%
 		CALL HEARTMARK_E
 		PRINTFORM 「좋～아, 이런 변태씨 인%CNAME("二人称")%를 위해, %CNAME("一人称")%가 노력해서 기분 좋게 해줄께
@@ -7078,7 +7078,7 @@ IF SELECTCOM == 94
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 봉사보다 오히려%CALLNAME:PLAYER%(와)과의 거품 놀이에 열심히 되어 있다
 		ELSE
 			PRINTFORMW 「영차, 영차……이것 상당히 지친다―」
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%(와)과의 체격차이와 익숙해지지 않는다봉사에 악전고투 하고 있다……
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:PLAYER,"와")%의 체격차이와 익숙해지지 않는다봉사에 악전고투 하고 있다……
 		ENDIF
 	ENDIF
 	RETURN 1
@@ -7181,7 +7181,7 @@ IF SELECTCOM == 95 && PENIS(PLAYER)
 				PRINTFORM 파파의 자지는 마마의발그리고 곧바로 기분 좋아져 버리는 안돼 안돼 자지야～
 				CALL HEARTMARK_E
 				PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 발그래서%TEXTR("ぐりぐり", "ふにふに")%(와)과%CALLNAME:PLAYER%의 %조사처리(NAMES("페니스", PLAYER),"를")% 밟으면서
-				PRINTFORMW %CALLNAME:PLAYER%(와)과의 아이를 품어 부풀어 오른 배를 문질러, 상냥하게 말을 걸었다
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"와")%의 아이를 품어 부풀어 오른 배를 문질러, 상냥하게 말을 걸었다
 			;연모＋새드끼Lv3이상
 			ELSEIF TALENT:연모 && ABL:새드끼 >= 3
 				;거근이상＋ＶかＡに入りそう＋섹스慣れ 50%
@@ -8358,7 +8358,7 @@ ELSEIF SELECTCOM == 139 && TEQUIP:목욕탕플레이
 			IF COND("모친", ASSI) == TARGET && COND("부친", ASSI) == MASTER
 				PRINTFORM 「물론%CNAME("조수")%도 함께 말야
 				CALL HEARTMARK_E
-				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%(와)과%조사처리(CALLNAME:ASSI,"를")% 양손에 안으면서 떠들썩한 욕실을 즐겼다
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %타겟과()%%조사처리(CALLNAME:ASSI,"를")% 양손에 안으면서 떠들썩한 욕실을 즐겼다
 			ELSE
 				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %조사처리(CALLNAME:TARGET,"를")% 가슴원래에 안으면서 한가롭게 목욕통에 잠겼다
 			ENDIF
@@ -8368,7 +8368,7 @@ ELSEIF SELECTCOM == 139 && TEQUIP:목욕탕플레이
 			CALL HEARTMARK
 			PRINTFORM 이렇게 해 세 명으로 함께 들어오면, %CNAME("조수")%하지만 아직 어렸던 때를 생각해 내네요
 			CALL HEARTMARK_E
-			PRINTFORMW %조사처리(CALLNAME:ASSI,"를")% %CALLNAME:TARGET%(와)과의 사이에 끼우면서, 부모와 자식 세 명에서의 욕실을 즐겼다
+			PRINTFORMW %조사처리(CALLNAME:ASSI,"를")% %타겟과()%의 사이에 끼우면서, 부모와 자식 세 명에서의 욕실을 즐겼다
 		ELSEIF RAND:3 == 0
 			PRINTFORM 「에헤헤, 욕실 크고 헤엄치면～와
 			CALL HEARTMARK_E
@@ -13024,7 +13024,7 @@ CASE "添い寝"
 ;매각
 ;-------------------------------------------------
 CASE "매각した"
-	PRINTFORMW 어떻게 %CALLNAME:TARGET%를 판매하시겠습니까？
+	PRINTFORMW 어떻게 %타겟을()% 판매하시겠습니까？
 	DRAWLINE
 	PRINTFORML [0] 평소처럼 작별 인사와 함께
 	PRINTFORML [1] 부적과 봉인 상자를 이용하여 완벽하게
@@ -13065,7 +13065,7 @@ CASE "매각した"
 	ELSE
 		PRINTFORMW 요청을 받는, %CALLNAME:PLAYER%는 약물에 자고 있는 %CALLNAME:TARGET%의 옷을 벗기고, 온몸에 요정의 힘을 없애는 부적을 붙인뒤
 		PRINTFORMW 그 상태로 머리부터 발 끝까지 온몸을 천으로 감아 꼼짝 못하게 만들었다
-		PRINTFORMW 그리고 요정이 들어갈 정도의 크기의 나무 상자에 %CALLNAME:TARGET%를 넣은 뒤, 그 상자 위에도 부적을 붙여 봉한다
+		PRINTFORMW 그리고 요정이 들어갈 정도의 크기의 나무 상자에 %타겟을()% 넣은 뒤, 그 상자 위에도 부적을 붙여 봉한다
 		PRINTFORMW 그렇게 완성 된 상태를 보여주며 상인에게 조교의 성과를 예기하자, 상인은 만족한듯 고개를 끄덕이며 %CALLNAME:TARGET%가 들어간 상자를 화물칸에 실어 넣는다
 		PRINTFORMW 그 이후 %CALLNAME:TARGET%의 운명이었기에 %CALLNAME:PLAYER%에겐 더 이상 상관없었다……
 		;조교상대がLv25이상＋互いのLvに応じて랜덤
@@ -13403,14 +13403,14 @@ CASE "출산"
 				PRINTFORM 「꺄우～응
 				CALL HEARTMARK
 				PRINTFORMW %CNAME("二人称")%노빨강인가～원 있고～! 」
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%(와)과의 사랑의 결정에 몇번이나 뺨 비비기를 했다
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:PLAYER,"와")%의 사랑의 결정에 몇번이나 뺨 비비기를 했다
 			ELSEIF RAND:3 == 0
 				PRINTFORMW 「이봐요! 여기는%CNAME("二人称")%꼭 닮구나! 」
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 태어난 우리 아이를 %CALLNAME:PLAYER%에 보여 기쁜듯이 하고 있다
 			ELSEIF RAND:2 == 0
 				PRINTFORM 「앞으로도, 가득 가득 사랑해 준다
 				CALL HEARTMARK_E
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%(와)과의 사랑의 결정에키스(이)가 세례를 퍼부을 수 있었다
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:PLAYER,"와")%의 사랑의 결정에키스(이)가 세례를 퍼부을 수 있었다
 			ELSE
 				PRINTFORM 「크고～, 크고～
 				CALL HEARTMARK_E

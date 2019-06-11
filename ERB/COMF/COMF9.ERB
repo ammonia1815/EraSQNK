@@ -141,7 +141,7 @@ IF TEQUIP:Ｗ넘어뜨리기
 		;음란or욕정4LV이상なら追加
 		IF TALENT:음란 || PALAM:욕정 >= PALAMLV:4
 			SIF (SELECTCOM:1 == 65 || SELECTCOM:1 == 75) && ABL:레즈끼 >= 3 && RAND:2 == 0
-				PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:(TARGET:1)%(와)과 혀를 걸면서, 쾌감을 탐내고 있다…
+				PRINTFORMW %타겟은()% %조사처리(CALLNAME:(TARGET:1),"과")% 혀를 걸면서, 쾌감을 탐내고 있다…
 		ENDIF
 	ENDIF
 ;押し倒されているときは안면기승
@@ -209,7 +209,7 @@ ELSEIF TEQUIP:넘어뜨리기
 		ELSE
 			PRINT 슥슥
 		ENDIF
-		PRINTFORM 위로 돌리고의%CALLNAME:PLAYER%의 얼굴에허리를 접근하면, 
+		PRINTFORM 위를 향한 %CALLNAME:PLAYER%의 얼굴에 허리를 접근하고, 
 	;머메이드, で後は一応他の条件もつける…머메이드のアレは옷には見えないのだが一体なんだろう…
 	ELSEIF TALENT:머메이드
 		PRINT 뒤에 손을 짚고 
@@ -241,13 +241,13 @@ ELSEIF TEQUIP:넘어뜨리기
 		PRINTFORMW %CALLNAME:PLAYER%의 입가에 %TEXTS("애널")%애널을 내밀었다……
 	ENDIF
 ELSEIF PREVCOM == SELECTCOM && COND("前Ｔ조교자") == PLAYER
-	PRINTFORM %CALLNAME:PLAYER%하%CALLNAME:TARGET%노
+	PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의
 	IF RAND:2 || TEQUIP:식스나인 || COND("성벽：엉덩이", PLAYER)
-		PRINTFORM %TEXTS("엉덩이：감촉")%%TEXTR("に顔を埋めて", "を自らの顔で楽しみながら", "を満喫しながら")%,
+		PRINTFORM %TEXTS("엉덩이：감촉")%%TEXTR("에 얼굴을 파묻고", "를 자신의 얼굴로 즐기면서", "를 만끽하면서")%,
 	ELSEIF COND("손가락 사용", PLAYER)
-		PRINTFORM 엉덩이를펴넓혀,%TEXTR("丸見えになった", "剥き出しになった", "引き伸ばされた")%
+		PRINTFORM 엉덩이를 펴넓혀,%TEXTR("완전히 보이는", "노출된", "확대된")%
 	ENDIF
-	PRINTFORMW %TEXTR("アヌスを執拗に舐め", "尻の穴の粘膜を舌で味わい", "肛門の皺を舌でなぞり", "尻の穴の味を愉しみ")%계속했다…
+	PRINTFORMW %TEXTR("아누스를 집요하게 핥는것을 ", "엉덩이 구멍의 점막을 혀로 맛보길", "항문의 주름을 혀로 핥길", "엉덩이구멍의 맛을 즐기길")%계속했다…
 ;押し倒されていないときは後ろから…いや前からってのもあるか…
 ELSE
 	IF TEQUIP:식스나인
@@ -256,7 +256,7 @@ ELSE
 		IF !CHECK_CLO("Ａ노출") && CHECK_CLO("Ａ노출可")
 			CALL SETFLAG, "바텀을노출：텍스트有り", TARGET
 		ELSE
-			PRINTFORM 엉덩이살을 주욱벌리고 
+			PRINTFORM 엉덩이살을 주욱 벌리고 
 		ENDIF
 		PRINTFORM , %TEXTS("６９")%
 	ELSE

@@ -9,7 +9,7 @@ PRINTL 달콤한말
 CFLAG:268 += 1
 ;これを制限すると스투나での랄스君攻略が무리になってしまうのでそこだけ緩和. 
 IF CFLAG:268 >= 4 && NO:TARGET != 94
-	PRINTFORMW 그러나 %조사처리(CALLNAME:TARGET,"는")% 더 이상 이야기를 들을 기분이 아닌 것같다…
+	PRINTFORMW 그러나 %조사처리(CALLNAME:TARGET,"는")% 더 이상 이야기를 들을 기분이 아닌 것 같다…
 	RETURN 0
 ENDIF
 
@@ -179,12 +179,12 @@ PRINTFORM %CALLNAME:PLAYER%
 IF INSERT("합체中") && RANDIF(1, TEQUIP:키스)
 	PRINTFORM %조사만처리(CALLNAME:PLAYER,"는")% %TEXTS("합체中", PLAYER)%
 ELSEIF TEQUIP:키스
-	PRINTFORM 하%TEXTS("키스継続")%,
+	PRINTFORM %조사만처리(CALLNAME:PLAYER,"는")% %TEXTS("키스継続")%,
 	CALL SETFLAG, "추가키스플래그", TARGET
 ELSEIF PREVCOM == 91
-	PRINTFORM %조사만처리(CALLNAME:PLAYER,"는")% 입으로 페니스에 봉사하고있는 
+	PRINTFORM %조사만처리(CALLNAME:PLAYER,"는")% 입으로 페니스에 봉사하고 있는 
 ELSEIF PREVCOM == 98
-	PRINTFORM %조사만처리(CALLNAME:PLAYER,"는")% 가랑이에 얼굴을 묻고 봉사하고있는 
+	PRINTFORM %조사만처리(CALLNAME:PLAYER,"는")% 가랑이에 얼굴을 묻고 봉사하고 있는 
 ELSEIF ASSI && TALENT:ASSI:달콤한말 && TALENT:MASTER:달콤한말 && ASSIPLAY
 	PRINTFORM %조사만처리(CALLNAME:PLAYER,"와")%  %조사처리(CALLNAME:MASTER,"는")% 
 ELSEIF ASSI && TALENT:ASSI:달콤한말 && TALENT:MASTER:달콤한말 && ASSIPLAY == 0
@@ -285,12 +285,12 @@ ELSEIF TEQUIP:달콤한말
 				PRINTW 에게 안겨들었다! 
 			ENDIF
 		ELSE
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 말을 곱씹으며 얼굴을 이완시키고있다! 
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 말을 곱씹으며 얼굴을 이완시키고 있다! 
 		ENDIF
 	ELSEIF TALENT:부끄럼쟁이
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 얼굴을 빨강새빨갛게 물들이고 꼼지락꼼지락거리고있다! 
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 얼굴을 새빨갛게 물들이고 꼼지락꼼지락거리고 있다! 
 	ELSE
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 기뻐하고있다! 
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 기뻐하고 있다! 
 	ENDIF
 ;범용失敗
 ELSE
@@ -503,7 +503,7 @@ ELSE
 	CASE 8, 9, 32
 		PRINTFORMW 「놀린거네……」
 	CASE 16
-		PRINTFORMW 「%MONEY_C(LOCAL)%도 갖고있지 않으면서 이몸을 꼬신건가. 분수를 알아라!」
+		PRINTFORMW 「%MONEY_C(LOCAL)%도 갖고있지 않으면서 이 몸을 꼬신건가. 분수를 알아라!」
 	CASE 22
 		PRINTFORMW 「결국 그 정도인가……」
 	CASE 28
@@ -823,7 +823,7 @@ IF RESULT == 0 || NO:TARGET == 22
 	SELECTCASE NO:TARGET
 	CASE 13
 		PRINTFORMW 「후후…♪」
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 하고싶은대로 노래하기시작했다…
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 하고 싶은대로 노래하기 시작했다…
 		TFLAG:30 += 5
 	CASE 25
 		PRINTFORMW 「굉장해, 당신……잔뜩 느끼게 해줄게♪」
@@ -877,7 +877,7 @@ IF TEQUIP:달콤한말 == 0 || CFLAG:269 <= RAND:100 || MONEY < 50
 ENDIF
 
 PRINTFORMW 「응～～～～」
-PRINTFORMW 「저기, 그런거 보단 뭔가 달콤한것 좀 줘♪」
+PRINTFORMW 「저기, 그런거보단 뭔가 달콤한 것 좀 줘♪」
 SELECTCASE RAND:7
 CASE 6
 	LOCALS = 인어의 입맞춤

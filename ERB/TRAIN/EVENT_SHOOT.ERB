@@ -1389,7 +1389,7 @@ IF SHOOT("정액세례")
 			IF RAND:2 == 0
 				PRINTFORMW 요염한 머리카락에, 진한 정액이 뒤엉켜있다……
 			ELSE
-				PRINTFORMW 게다가 머리카락으로 페니스를 닦아 %TEXTS("匂い")%를 스며들게 해 간다…
+				PRINTFORMW 게다가 머리카락으로 페니스를 닦아 %조사처리(TEXTS("匂い"),"를")% 스며들게 해 간다…
 			ENDIF
 		ENDIF
 	ELSEIF SHOOT("얼굴")
@@ -2135,7 +2135,7 @@ ELSEIF SHOOT("손")
 		SIF ABL:정액중독 >= 3
 			PRINTFORM 황홀한 표정을 짓는 
 		SIF SELECTCOM == 90 && SELECTCOM:1 == SELECTCOM
-			PRINTFORM %CALLNAME:(TARGET:1)%(와)과
+			PRINTFORM %조사처리(CALLNAME:(TARGET:1),"과")%
 		IF CHECK_COM("파후파후손훑기")
 			LOCALS = %CALLNAME:TARGET%의 손
 		ELSEIF CHECK_COM("Ａ자극손훑기")

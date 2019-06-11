@@ -23,8 +23,8 @@ CALL CALC, "조교소스", LOCAL:0, LOCAL:1, LOCAL:2, LOCAL:3, LOCAL:4, LOCAL:5,
 
 
 @TRAIN_MESSAGE_COM267
-PRINTFORML %CALLNAME:TARGET%의 더이데 근육이완제를 주사합니까? 
-PRINTFORML (주의：극약이므로, 이 조교에서는 한곳만 투여할 수 있습니다)
+PRINTFORML %CALLNAME:TARGET%의 어느 곳에 근육이완제를 주사합니까? 
+PRINTFORML (주의：극약이므로, 한번의 조교에서는 한 곳만 투여할 수 있습니다)
 PRINTFORML  [ 0] 애널
 SIF TALENT:남자 == 0
 	PRINTFORML  [ 1] 요도주변
@@ -52,7 +52,7 @@ CASEELSE
 
 	SELECTCASE RESULT
 	CASE 0
-		PRINTFORMW 근육이완제를 엄밀하게 계량 해 사용해, %CALLNAME:TARGET%의 항문 주변의 근육의 야무짐을 느슨하게했습니다
+		PRINTFORMW 근육이완제를 엄밀하게 계량해서 사용해, %CALLNAME:TARGET%의 항문 주변의 근육의 야무짐을 느슨하게 했습니다
 		IF TALENT:약독내성 || TALENT:요정
 			ABL:Ａ확장 += 1
 			PRINTFORMW Ａ확장레벨＋１
@@ -63,9 +63,9 @@ CASEELSE
 		CALL GET_EXABL_A, TARGET
 		ABL:Ａ명기도 = ABL_A(TARGET)
 	CASE 1
-		PRINTFORMW 근육이완제를 엄밀하게 계량 해 사용해, %CALLNAME:TARGET%의 요도괄약근의 야무짐을 느슨하게했습니다
+		PRINTFORMW 근육이완제를 엄밀하게 계량해서 사용해, %CALLNAME:TARGET%의 요도괄약근의 야무짐을 느슨하게 했습니다
 	CASE 2
-		PRINTFORMW 근육이완제를 엄밀하게 계량 해 사용해, %CALLNAME:TARGET%의 질의 야무짐을 느슨하게했습니다
+		PRINTFORMW 근육이완제를 엄밀하게 계량해서 사용해, %CALLNAME:TARGET%의 질의 야무짐을 느슨하게 했습니다
 		IF TALENT:약독내성 || TALENT:요정
 			ABL:Ｖ확장 += 1
 			PRINTFORMW Ｖ확장레벨＋１
@@ -76,7 +76,7 @@ CASEELSE
 		CALL GET_EXABL_V, TARGET
 		ABL:Ｖ명기도 = ABL_V(TARGET)
 	CASE 3
-		PRINTFORMW 근육이완제를 엄밀하게 계량 해 사용해, %CALLNAME:TARGET%의 자궁구를 부드럽게 했습니다
+		PRINTFORMW 근육이완제를 엄밀하게 계량해서 사용해, %CALLNAME:TARGET%의 자궁구를 부드럽게 했습니다
 	ENDSELECT
 ENDSELECT
 

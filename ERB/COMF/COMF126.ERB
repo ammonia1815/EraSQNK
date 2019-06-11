@@ -71,7 +71,7 @@ IF TEQUIP:Ｗ넘어뜨리기
 			PRINTFORMW %CALLNAME:MASTER%의 양 구멍을 계속 범하고있다…! 
 		;조수が前回と同じ行動
 		ELSEIF SELECTCOM:1 == PREVCOM:1
-			PRINTFORM %CALLNAME:TARGET%(은)는 %CALLNAME:(TARGET:1)%에 범해지고 있다%CALLNAME:MASTER%의엉덩이를훨씬 나누어 열면,애널를
+			PRINTFORM %타겟은()% %CALLNAME:(TARGET:1)%에 범해지고 있는 %CALLNAME:MASTER%의 엉덩이를 활짝 열고, 애널을
 			;ペニバン
 			IF PENIS(TARGET) == 0
 				IF ABL:새드끼 >= 5
@@ -103,9 +103,9 @@ IF TEQUIP:Ｗ넘어뜨리기
 			PRINTFORMW 범하기시작했다…! 
 		;役割交換
 		ELSEIF PREVCOM:1 == 121 && SELECTCOM:1 == 120
-			PRINTFORMW %CALLNAME:TARGET%(와)과%CALLNAME:(TARGET:1)%는 범하는 구멍을 교환하거나 해,%CALLNAME:MASTER%그리고 즐기고 있다…！
+			PRINTFORMW %타겟과()% %조사처리(CALLNAME:(TARGET:1),"는")% 범하는 구멍을 교환하거나 하면서 %마스터로()% 즐기고 있다…！
 		ELSE
-			PRINTFORM %CALLNAME:TARGET%(와)과%CALLNAME:(TARGET:1)%하
+			PRINTFORM %타겟과()% %조사처리(CALLNAME:(TARGET:1),"는")%
 			IF RAND:2 == 0
 				PRINTFORM 경쟁하듯이 
 			ELSE
@@ -122,7 +122,7 @@ IF TEQUIP:Ｗ넘어뜨리기
 		IF SELECTCOM == PREVCOM
 			PRINTFORMW %CALLNAME:MASTER%의 항문을 마음대로 범하고있다…
 		ELSE
-			PRINTFORMW %CALLNAME:MASTER%의 애널을 범하기시작했다…
+			PRINTFORMW %CALLNAME:MASTER%의 애널을 범하기 시작했다…
 		ENDIF
 	ENDIF
 ELSEIF TEQUIP:넘어뜨리기
@@ -168,7 +168,7 @@ ELSEIF TEQUIP:넘어뜨리기
 		IF ABL:새드끼 >= 5 && RAND:2 == 0
 			PRINTFORMW 능욕했다…
 		ELSE
-			PRINTFORMW 범하기시작했다…
+			PRINTFORMW 범하기 시작했다…
 		ENDIF
 	ENDIF
 ;前回と今回の조교자が同じで, 前回の조교が후배위であり, 抜かない플래그がある場合
@@ -179,7 +179,7 @@ ELSEIF INSERT("Ａ후배위", PLAYER) && COND("前Ｔ조교자") == PLAYER
 		PRINTFORM 목덜미에 혀를 핥으면서 
 	;「TARGETが진성の새드か」「새드끼持ちか」で分岐
 	IF (TALENT:새드 || ABL:새드끼 >= 5) && RAND:3 == 0
-		PRINTFORMW 입체적으로 허리를 그라인드시켜, %CALLNAME:PLAYER%에게 허리를 흔들었다…
+		PRINTFORMW 입체적으로 허리를 그라인드시키며 %CALLNAME:PLAYER%에게 허리를 흔들었다…
 	ELSEIF ABL:새드끼 >= 3 && RAND:2 == 0
 		PRINTFORMW 짐승처럼 격렬하게 허리를 흔들었다…
 	ELSE
@@ -205,7 +205,7 @@ ELSE
 	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 유혹당하는대로, %CALLNAME:PLAYER%의 
 	SIF TALENT:연모
 		PRINT 얼굴을 바라보면서 
-	PRINTFORMW 직장에 %NAMES("페니스")%를 채우고 허리를 움직이기 시작했다…
+	PRINTFORMW 직장에 %조사처리(NAMES("페니스"),"를")% 채우고 허리를 움직이기 시작했다…
 ENDIF
 
 

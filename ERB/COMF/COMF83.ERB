@@ -225,23 +225,23 @@ ENDIF
 
 ;同時넘어뜨리기
 IF TEQUIP:Ｗ넘어뜨리기
-	PRINTFORM %CALLNAME:TARGET%하
+	PRINTFORM %타겟은()%
 	;조수が前回と同じ行動(違う行動の時は、ここでなく、EQUIP_COM32で記述)
 	IF SELECTCOM:1 == PREVCOM:1 && SELECTCOM:1 >= 0
 		PRINTFORM %TEXTS("Ｗ넘어뜨리기中")%
 	ELSEIF PREVCOM:1 == 65 || PREVCOM:1 == 66 || PREVCOM:1 == 67 || PREVCOM:1 == 75
-		PRINTFORM %CALLNAME:(TARGET:1)%의 아래의입로부터해방된지 얼마 안된
+		PRINTFORM %CALLNAME:(TARGET:1)%의 아래의 입로부터 해방된지 얼마 안된
 	ELSEIF PREVCOM:1 == 75 || PREVCOM:1 == 83
-		PRINTFORM %CALLNAME:(TARGET:1)%로부터해방된지 얼마 안된
+		PRINTFORM %CALLNAME:(TARGET:1)%로부터 해방된지 얼마 안된
 	ENDIF
 	IF INSERT("Ａ인서트")
-		PRINTFORMW %CALLNAME:MASTER%의페니스를 항문으로부터해방이, 이번은으로 단단히 조여 왔다…
+		PRINTFORMW %CALLNAME:MASTER%의 페니스를 항문으로부터 해방헤, 이번은 요도로 단단히 조여 왔다…
 	ELSEIF INSERT("Ｖ인서트")
-		PRINTFORMW %CALLNAME:MASTER%의페니스를 질로부터 뽑아, 이번은을 사용해 삼켜 왔다…
+		PRINTFORMW %CALLNAME:MASTER%의 페니스를 질로부터 뽑아, 이번은 요도를 사용해 삼켜 왔다…
 	ELSEIF INSERT("요도인서트")
-		PRINTFORMW %CALLNAME:MASTER%의페니스를, 요염하게 허리를 흔들면서 계속 맛보고 있다…
+		PRINTFORMW %CALLNAME:MASTER%의 페니스를, 요염하게 허리를 흔들면서 계속 맛보고 있다…
 	ELSE
-		PRINTFORMW %CALLNAME:MASTER%의페니스에 걸쳐, 천천히 작은으로 삼켜 왔다…
+		PRINTFORMW %CALLNAME:MASTER%의 페니스에 걸쳐, 천천히 작은 요도로 삼켜 왔다…
 	ENDIF
 	;アソコを노출させる
 	SIF CHECK_CLO("Ｖ노출") == 0
@@ -250,13 +250,13 @@ IF TEQUIP:Ｗ넘어뜨리기
 ELSEIF TEQUIP:넘어뜨리기 == 0 && CHECK_COM("連続実行")
 	PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 
 	IF TALENT:요도성감 == 0 && SIZE("페니스の直径", PLAYER) >  MIN_STR(CONDS("요도확장度") )
-		PRINTFORM 허리가 파했다%조사처리(CALLNAME:TARGET,"를")% 훨씬 끌어 들여, 
+		PRINTFORM 허리가 꺾인 %조사처리(CALLNAME:TARGET,"를")% 확 끌어 들여, 
 	ELSEIF CHECK("요도인서트") && RAND:2
-		PRINTFORM 여유의 표정으로허리를 움직인다%CALLNAME:TARGET%에 맞추어, 
+		PRINTFORM 여유있는 표정으로 허리를 움직이는 %CALLNAME:TARGET%에 맞추어, 
 	ELSE
 		IF PENIS(TARGET)
-			PRINTFORM %CALLNAME:TARGET%노\@ SIZE("페니스", TARGET) >= 3 ? 馬鹿でかい # \@페니스를 제대로 잡아,
-			CALLNAME_URETHRA = ソコ
+			PRINTFORM %CALLNAME:TARGET%의 \@ SIZE("페니스", TARGET) >= 3 ? 바보같이 큰 # \@페니스를 제대로 잡아,
+			CALLNAME_URETHRA = 속
 		ELSE
 			PRINTFORM %CALLNAME:TARGET%의 허리를 제대로 잡아,
 		ENDIF
@@ -264,15 +264,15 @@ ELSEIF TEQUIP:넘어뜨리기 == 0 && CHECK_COM("連続実行")
 	;요도내사정直後
 	IF PREVEX("요도内사정")
 		IF TALENT:요도성감 && RAND:2
-			PRINTFORM 한층 더정액를 짜내지 않으면 단단히 조여 온다%CALLNAME_URETHRA%를
+			PRINTFORM 한층 더 정액를 짜내지 않으면 단단히 조여 오는 %조사처리(CALLNAME_URETHRA,"를")%
 			SIF PENIS(TARGET) == 0
-				PRINTFORM \@ SIZE("페니스", PLAYER) >= 2 ? 太い # \@페니스그래서
+				PRINTFORM \@ SIZE("페니스", PLAYER) >= 2 ? 큰 # \@페니스로
 			PRINTFORMW 계속 굴착했다…
 		ELSE
 			IF CALLNAME_URETHRA == "요도"
-				PRINTFORMW 정액를 쏟은지 얼마 안된배설기관을 집요하게 계속 몰아세웠다…
+				PRINTFORMW 정액를 쏟은지 얼마 안된 배설기관을 집요하게 계속 몰아세웠다…
 			ELSE
-				PRINTFORMW 정액를 쏟은지 얼마 안된%CALLNAME_URETHRA%를 집요하게 계속 몰아세웠다…
+				PRINTFORMW 정액를 쏟은지 얼마 안된  %조사처리(CALLNAME_URETHRA,"를")% 집요하게 계속 몰아세웠다…
 			ENDIF
 		ENDIF
 	ELSE
@@ -281,11 +281,11 @@ ELSEIF TEQUIP:넘어뜨리기 == 0 && CHECK_COM("連続実行")
 			PRINT 섹스할 때와 같이
 
 		IF (TALENT:PLAYER:새드 || TALENT:요도성감) && RAND:3 == 0
-			PRINTFORMW 몹시 거칠고%CALLNAME_URETHRA%를 계속 범했다…
+			PRINTFORMW 몹시 거칠고 %조사처리(CALLNAME_URETHRA,"을")% 계속 범했다…
 		ELSEIF PENIS(TARGET) == 0 && TALENT:PLAYER:새드 || (TALENT:요도성감 && RAND:2 == 0)
-			PRINTFORMW 격렬하고페니스를 꽂았다…
+			PRINTFORMW 격렬하게 페니스를 꽂았다…
 		ELSE
-			PRINTFORMW 허리를 사용하면서\@ PENIS(TARGET) ? 海綿体 #  \@의 억압을 즐겼다…
+			PRINTFORMW 허리를 사용하면서\@ PENIS(TARGET) ? 해면체 # 요도 \@의 억압을 즐겼다…
 		ENDIF
 	ENDIF
 ELSEIF CHECK_COM("３Ｐ봉사")
@@ -308,24 +308,24 @@ ELSEIF INSERT("인서트") && COND("前Ｔ조교자") == PLAYER
 			CALL TEXT, "와일드스윙"
 		ELSEIF INSERT("요도인서트")
 			IF TEQUIP:키스
-				PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%를해방하지 않고,%TEXTS("키스継続")%다시 허리를 움직이기 시작했다…
+				PRINTFORMW %타겟은()% %조사처리(CALLNAME:PLAYER,"를")% 해방하지 않고,%TEXTS("키스継続")%다시 허리를 움직이기 시작했다…
 				CALL SETFLAG, "추가키스플래그", TARGET
 			ELSE
-				PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%를해방하지 않고, 섬세한 점막을 힘들게 잡은 채로 다시 허리를 움직이기 시작했다…
+				PRINTFORMW %타겟은()% %조사처리(CALLNAME:PLAYER,"를")% 해방하지 않고, 섬세한 점막을 힘들게 잡은 채로 다시 허리를 움직이기 시작했다…
 				CALL TEXT, "추가地の文：기승위"
 			ENDIF
 		ELSEIF INSERT("Ａ인서트")
-			PRINTFORM %CALLNAME:TARGET%는 허리를 띄워애널로부터%NAMES("페니스", PLAYER)%를\@ PENIS(PLAYER) ? 해방する # 抜く \@라고 장액 투성이가 된 그것을 이번은으로
+			PRINTFORM %타겟은()% 허리를 띄워 애널로부터 %조사처리(NAMES("페니스", PLAYER),"를")%\@ PENIS(PLAYER) ? 해방한 # 뽑은 \@ 장액 투성이가 된 그것을 이번은 요도로
 			IF RAND:2 && ABL:요도확장 >= SIZE("페니스", PLAYER)
-				PRINT 근원까지
+				PRINT 뿌리까지
 			ELSEIF ABL:요도확장 >= 1
 				PRINT 깊숙히
 			ENDIF
 			PRINTFORMW 물어 왔다…
 		ELSEIF INSERT("Ｖ인서트")
-			PRINTFORM %CALLNAME:TARGET%는 허리를 띄워 질로부터%NAMES("페니스", PLAYER)%를\@ PENIS(PLAYER) ? 해방する # 抜く \@라고 젖은 그것을 이번은으로
+			PRINTFORM %타겟은()% 허리를 띄워 질로부터 %조사처리(NAMES("페니스", PLAYER),"를")%\@ PENIS(PLAYER) ? 해방한 # 뽑은 \@ 젖은 그것을 이번은 요도로
 			IF RAND:2 && ABL:요도확장 >= SIZE("페니스", PLAYER)
-				PRINT 근원까지
+				PRINT 뿌리까지
 			ELSEIF ABL:요도확장 >= 1
 				PRINT 깊숙히
 			ENDIF
@@ -334,46 +334,46 @@ ELSEIF INSERT("인서트") && COND("前Ｔ조교자") == PLAYER
 	ELSEIF INSERT("요도인서트")
 		IF INSERT("정상위") || INSERT("굴곡위")
 			IF PENIS(PLAYER)
-				PRINTFORMW %CALLNAME:TARGET%노%CALLNAME_URETHRA%내부의 감촉을 맛보면서, 다시 허리를 움직이기 시작했다…
+				PRINTFORMW %CALLNAME:TARGET%의 %CALLNAME_URETHRA%내부의 감촉을 맛보면서, 다시 허리를 움직이기 시작했다…
 			ELSE
-				PRINTFORMW %CALLNAME:TARGET%노%CALLNAME_URETHRA%로부터 뽑지 않고, 다시 허리를 움직이기 시작했다…
+				PRINTFORMW %CALLNAME:TARGET%의 %CALLNAME_URETHRA%로부터 뽑지 않고, 다시 허리를 움직이기 시작했다…
 			ENDIF
 		ELSEIF INSERT("후배위")
-			PRINTFORMW 서로 연결된 채로%CALLNAME:TARGET%를 위로 향해 재워, 다시 허리를 움직이기 시작했다…
+			PRINTFORMW 서로 연결된 채로 %타겟을()% 위로 향해 재워, 다시 허리를 움직이기 시작했다…
 		ELSEIF INSERT("대면좌위")
-			PRINTFORMW 얼싸안은 채로%CALLNAME:TARGET%를 밀어 넘어뜨리도록(듯이) 재워, 다시 허리를 움직이기 시작했다…
+			PRINTFORMW 얼싸안은 채로 %타겟을()% 밀어 넘어뜨리도록(듯이) 재워, 다시 허리를 움직이기 시작했다…
 		ELSEIF INSERT("배면좌위")
-			PRINTFORMW 질안으로부터 앞지르는 일 없이%CALLNAME:TARGET%를 위로 향해 재워, 다시 허리를 움직이기 시작했다…
+			PRINTFORMW 질안으로부터 앞지르는 일 없이 %타겟을()% 위로 향해 재워, 다시 허리를 움직이기 시작했다…
 		ELSEIF INSERT("기승위")
-			PRINTFORMW %CALLNAME:TARGET%(와)과 몸을 바꿔 넣어 위로 향해넘어뜨리기, 다시 허리를 움직이기 시작했다…
+			PRINTFORMW %타겟과()% 몸을 바꿔 넣어 위로 향해넘어뜨리기, 다시 허리를 움직이기 시작했다…
 		ENDIF
 	ELSE
 		IF INSERT("정상위") || INSERT("대면좌위")
 			IF INSERT("Ｖ인서트")
 				PRINTFORM 페니스를 질로부터 뽑아 내,
 			ELSEIF INSERT("Ａ인서트")
-				PRINTFORM 페니스를애널로부터 뽑아 내,
+				PRINTFORM 페니스를 애널로부터 뽑아 내,
 			ENDIF
 			IF INSERT("대면좌위") && RAND:2
-				PRINTFORM %CALLNAME:TARGET%를 껴안은 채로, 이번은
+				PRINTFORM %타겟을()% 껴안은 채로, 이번은
 			ELSE
-				PRINTFORM 기세 그대로%CALLNAME:TARGET%\@ PENIS(TARGET) ? 自身 # の \@
+				PRINTFORM 기세 그대로%CALLNAME:TARGET%\@ PENIS(TARGET) ? 자신 # 의 \@
 			ENDIF
 		ELSEIF INSERT("굴곡위")
-			PRINTFORM 황새 걸음을 열게 한 부끄러운 몸의 자세인 채, 이번은%CALLNAME:TARGET%노%CALLNAME_URETHRA%
+			PRINTFORM 허벅지를 벌린 부끄러운 모습인 그대로, 이번은%CALLNAME:TARGET%의 %CALLNAME_URETHRA%
 		ELSE
-			PRINTFORM %CALLNAME:TARGET%를 위로 향해 재워,
+			PRINTFORM %타겟을()% 위로 향해 재워,
 			IF INSERT("Ｖ인서트")
-				PRINTFORM %TEXTR("膣", "女の穴")%%TEXTR("から引き抜いた", "を犯していた")%페니스그래서
+				PRINTFORM %TEXTR("질", "앞구멍")%%TEXTR("에서 뽑아낸 ", "을 범하고 있던")%페니스로
 			ELSEIF INSERT("Ａ인서트")
-				PRINTFORM %TEXTR("肛門", "애널")%%TEXTR("から引き抜いた", "を犯していた")%페니스그래서
+				PRINTFORM %TEXTR("항문", "애널")%%TEXTR("에서 뽑아낸 ", "을 범하고 있던")%페니스로
 			ENDIF
 		ENDIF
 		PRINTFORMW 를 범하기 시작했다…
 	ENDIF
 ;押し倒されているとき（기승위）
 ELSEIF TEQUIP:넘어뜨리기
-	PRINTFORM %CALLNAME:TARGET%하
+	PRINTFORM %타겟은()%
 	IF COND("前Ｔから대상のみ변경") && PREVCOM:1 >= 60 && PREVCOM:1 <= 79
 		CALL TEXT, "추가地の文：穴から穴へ"
 	;穴開きでない팬티をはいていて、ずらされていないなら、必ずずらす
@@ -383,9 +383,9 @@ ELSEIF TEQUIP:넘어뜨리기
 	IF PREVCOM == 1 || PREVCOM == 9 || (PREVCOM >= 90 && PREVCOM <= 119)
 		PRINTFORM %CALLNAME:PLAYER%의 위에 걸치면,
 	ELSEIF TALENT:호색 && RAND:2 == 0
-		PRINTFORM %CALLNAME:PLAYER%의페니스에%TEXTR("照準", "요도구")%를 맞추면,
+		PRINTFORM %CALLNAME:PLAYER%의 페니스에 %TEXTR("조준을", "요도구를")% 맞추면,
 	ELSE
-		PRINTFORM %CALLNAME:PLAYER%의페니스의 위치를 확인하면,
+		PRINTFORM %CALLNAME:PLAYER%의 페니스의 위치를 확인하면,
 	ENDIF
 
 	;스커트などをはいているなら
@@ -408,9 +408,9 @@ ELSEIF TEQUIP:넘어뜨리기
 		ELSEIF RAND:2 && PALAM:Ｖ윤 >= 10000 && PALAM:욕정 >= 10000
 			PRINTFORM 군침을 늘어뜨리는 구멍
 		ELSE
-			PRINTFORM %TEXTR("恥ずかしい所", "가랑이")%
+			PRINTFORM %TEXTR("부끄러운 곳", "둔덕")%
 		ENDIF
-		PRINTFORM 를%TEXTR("見せ付け", "見せびらかし")%(이)면서
+		PRINTFORM 을 %TEXTR("과시하", "내보이")%면서
 	ELSE
 		IF TALENT:호색 + TALENT:음란 + TALENT:연모 && COND("視力") && RAND:3 == 0
 			PRINT 얼굴을 응시하면서
@@ -446,20 +446,20 @@ ELSEIF TEQUIP:넘어뜨리기
 	ENDIF
 	IF ABL:요도확장 >= SIZE("페니스", PLAYER) && CHECK("요도인서트") && RAND:3
 		IF ABL:요도확장 > SIZE("페니스", PLAYER) && RAND:2
-			PRINTW , 근원까지 삼켜 왔다…
+			PRINTW , 뿌리까지 삼켜 왔다…
 		ELSE
-			PRINTW , 완전히 성기화한 구멍에서페니스를 삼켜 왔다…
+			PRINTW , 완전히 성기화한 구멍에서 페니스를 삼켜 왔다…
 		ENDIF
 	ELSEIF PENIS(TARGET)
-		PRINTFORMW 스스로의페니스그리고 물어 왔다…
+		PRINTFORMW 스스로의 페니스로 물어 왔다…
 	ELSE
 		PRINTW 왔다…
 	ENDIF
 ELSE
 	PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 
 	SIF PREVCOM == 13 && PENIS(TARGET) == 0
-		PRINT 보지를손가락그리고 펴넓히고 있다
-	PRINTFORM %CALLNAME:TARGET%노
+		PRINT 보지를 손가락으로 펴넓히고 있는
+	PRINTFORM %CALLNAME:TARGET%의 
 	;前回で사정された
 	IF PREVEX("요도内사정")
 		PRINTFORM 정액를 쏟아진지 얼마 안된
@@ -481,15 +481,15 @@ ELSE
 	;初めての페니스受け入れ
 	IF EXP:요도성교경험 == 0
 		IF PENIS(TARGET)
-			PRINTFORMW 페니스를 잡아입를 펴넓혀,오나홀에 그렇게 하는것 같이 스스로의페니스노삽입를 시도했다.
+			PRINTFORMW 페니스를 잡아 입을 펴넓혀, 오나홀에 하는 것 같이 스스로의 페니스의 삽입을 시도했다.
 		ELSE
-			PRINTFORMW 에페니스의 첨단을 강압해, 훨씬 힘을 집중해 허리를 내밀었다.
+			PRINTFORMW 에 페니스의 끝을 밀어넣어, 훨씬 힘을 집중해 허리를 내밀었다.
 		ENDIF
 	ELSE
 		IF PENIS(TARGET)
-			PRINTFORMW 페니스를,\@ CHOSECOM(SELECTCOM) ? 再び # \@스스로의 그래서\@ SIZE("페니스", PLAYER) >= 1 ? 深々と # \@관철했다.
+			PRINTFORMW 페니스를,\@ CHOSECOM(SELECTCOM) ? 다시 # \@스스로의 것으로\@ SIZE("페니스", PLAYER) >= 1 ? 깊게 # \@관철했다.
 		ELSE
-			PRINTFORMW 를,\@ CHOSECOM(SELECTCOM) ? 再び # \@페니스그리고 관철했다.
+			PRINTFORMW 를,\@ CHOSECOM(SELECTCOM) ? 다시 # \@페니스로 관철했다.
 		ENDIF
 	ENDIF
 ENDIF

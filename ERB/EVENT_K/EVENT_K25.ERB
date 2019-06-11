@@ -124,7 +124,7 @@ ELSEIF GETBIT(CFLAG:201, 25) == 0 && (COND("호접지몽") == MASTER || COND("�
 			PRINTFORMW 누가 자신을 이러한 의 것인지, 그것은 지금도 쑤시는, 목덜미에 남는 씹어 상처가 웅변에 이야기하고 있다…
 			PRINTFORMW 불찰을 취해 정신을 잃은 후, %CALLNAME:TARGET%에 전부 피를, 생명을 빼앗겼던 것이다…
 			PRINTFORMW 「…그렇게 흘겨없고 주십시오…지금부터 나와 영원의 각을 사니까, 거기에 적당한 신체에 해 드렸을 뿐인 것입니다로부터…」
-			PRINTFORMW 아니, 라고 게으름뱅이에 신체를 구부러지게 한다%CALLNAME:TARGET%를, %CALLNAME:MASTER%는 충혈된 눈으로 응시하고 있었다…
+			PRINTFORMW 아니, 라고 게으름뱅이에 신체를 구부러지게 한다%타겟을()%, %CALLNAME:MASTER%는 충혈된 눈으로 응시하고 있었다…
 			PRINTFORMW 정확하게는, %CALLNAME:TARGET%의 요염한 목덜미를…
 			PRINTFORMW 「후후, 이루어질 수 있는으로 말라 계시기 때문에 짊어져?, 그 마름을 나의 피로 달래 주십시오…♪」
 			PRINTFORMW 「한 번 맛보면, 이제 두 번 다시 떨어질 수 없게 됩니다 하지만……」
@@ -149,13 +149,13 @@ ELSEIF GETBIT(CFLAG:201, 25) == 0 && (COND("호접지몽") == MASTER || COND("�
 					ITEM:서약의반지 += 1
 					SETCOLOR DEF_COLOR("노랑")
 					PRINTL 
-					PRINTFORMW %CALLNAME:TARGET%(와)과상사상애(이)가 되었습니다！
+					PRINTFORMW %타겟과()%상사상애(이)가 되었습니다！
 					RESETCOLOR
 				ENDIF
 			;アーナータの旦那! 
 			ELSEIF RESULT == 1
-				PRINTFORMW 놀란다%CALLNAME:TARGET%를 거들떠보지도 않고,%CALLNAME:MASTER%는 가질 수 있는 힘을해방한다…
-				PRINTFORMW 신체로부터 떠올라올랐다눈이%CALLNAME:TARGET%를 쏘아 맞히고 움츠려, 실내의 어둠에 녹은 신체는 개에게, 박쥐에게, 독충으로 변해%CALLNAME:TARGET%에 덤벼 든다
+				PRINTFORMW 놀란다%타겟을()% 거들떠보지도 않고,%CALLNAME:MASTER%는 가질 수 있는 힘을해방한다…
+				PRINTFORMW 신체로부터 떠올라올랐다눈이%타겟을()% 쏘아 맞히고 움츠려, 실내의 어둠에 녹은 신체는 개에게, 박쥐에게, 독충으로 변해%CALLNAME:TARGET%에 덤벼 든다
 				PRINTFORMW 「조, 조, 조금！어째서권속에 갓 되어 얼마 안 된 당신이 그런 일 할 수 있는거야！」
 				PRINTFORMW %CALLNAME:TARGET%도 응전하지만, 피아의 실력차이는 압도적이었다…그다지저항할 수도 있지 않고, 지금은 침대에 억눌려지고 있다…
 				PRINTFORMW 「지, 지금부터 나를 어떻게 할 생각이에요…!」
@@ -542,7 +542,7 @@ IF SELECTCOM == 1
 				PRINTFORMW 부끄러워하면서%CALLNAME:TARGET%하컨닐링구스를 받아들였다.
 				PRINTFORMW 「새근~♪ 혀가…살살라고 비리라고 되는 것∼…∼♪」
 				PRINTFORMW 「,  별로, 좋아하지…아아앙…없기 때문에…아, %CALLNAME:PLAYER%일까…♪쥬쥬라고♪」
-				PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의 머리를 양손그리고 누름 쾌락을 향수하고 있다.
+				PRINTFORMW %타겟은()% %CALLNAME:PLAYER%의 머리를 양손그리고 누름 쾌락을 향수하고 있다.
 			;굴복각인Lv3
 			ELSEIF MARK:굴복각인 == 3
 				PRINTFORMW 「아무튼, 해 주십니다? 네,  물론…잘 부탁드려요…」
@@ -1226,7 +1226,7 @@ IF SELECTCOM == 60
 			ELSEIF TALENT:연모 && ABL:순종 >= 5
 				PRINTFORMW 「그렇게 기분 좋지 않아 이니까…♪이봐! 거기는…♪」
 				PRINTFORMW 「안된다니까…먹는다…아아앙♪,  혼자 좋아하게 되지 말아! 아우웃♪안돼다는 정말…」
-				PRINTFORMW 말과는 정반대로%CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의 목덜미에 송곳니를 서라연모의 정을 부딪치고 있다.
+				PRINTFORMW 말과는 정반대로%타겟은()% %CALLNAME:PLAYER%의 목덜미에 송곳니를 서라연모의 정을 부딪치고 있다.
 				PRINTFORMW (안돼, 안돼~…너무 기분 좋아…사랑하고 있어요…%CALLNAME:PLAYER%~! )
 			;それ以外
 			ELSE
@@ -1626,7 +1626,7 @@ IF SELECTCOM == 65
 				PRINTFORMW %CALLNAME:TARGET%는 특유의 교성을 주고 사냥감을 잡았는지와 같이 난폭하게 허리를 그라인드 시키고 있다….
 				PRINTFORMW 「좋은 것! 좋아요…엉망진창에…다, 당신의 피도 전부 나에게넘으면 좋아요 ♪아앙아우♪」
 				PRINTFORMW 「좋잖아? 빵빵의 보지로 기분 좋게 해 주어요…이봐좀더 딱딱하게 하지 않음♪」
-				PRINTFORMW %CALLNAME:TARGET%는 사람이 바뀌었는지와 같이%CALLNAME:PLAYER%를 탐내고 있는…그 눈동자에는%CALLNAME:PLAYER% 밖에 시 네라고 없다….
+				PRINTFORMW %CALLNAME:TARGET%는 사람이 바뀌었는지와 같이%조사처리(CALLNAME:PLAYER,"를")% 탐내고 있는…그 눈동자에는%CALLNAME:PLAYER% 밖에 시 네라고 없다….
 				PRINTFORMW 「사랑하고 있어요…이니까…이니까 ……꺄악♪」
 			;それ以外
 			ELSE
@@ -1676,7 +1676,7 @@ IF SELECTCOM == 65
 					PRINTFORMW 「나의 위로도 범해 주는…기뻐하세요야! ♪쪽∼~♪」
 					PRINTFORMW 깊고%CALLNAME:TARGET%의 송곳니를 꽂을 수 있는…목덜미에서는 열심히 피를 빨고 빨아 올리고 있다.
 					PRINTFORMW 「맛있다! 맛있어요 ♪ 자지도 피도…너무 좋아…정말 좋아하는 ♪ 츄츄…츄~~~♪」
-					PRINTFORMW 붉게 물든 입술로 연결된 채로%CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%에키스의 폭풍우를 내리게 했다.
+					PRINTFORMW 붉게 물든 입술로 연결된 채로%타겟은()% %CALLNAME:PLAYER%에키스의 폭풍우를 내리게 했다.
 				;それ以外
 				ELSE
 					PRINTFORMW 「아무튼, 또 춤추게 할 수 있으므로 무릎? 기뻐요」
@@ -2452,7 +2452,7 @@ IF SELECTCOM == 300
 		;연모
 		IF TALENT:연모
 			PRINTFORMW 「도 …말만이 아니고……그…군요♪」
-			PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%에 뜨겁다입청구서를 해 왔다…눈동자는 물기를 띠고 있다…
+			PRINTFORMW %타겟은()% %CALLNAME:PLAYER%에 뜨겁다입청구서를 해 왔다…눈동자는 물기를 띠고 있다…
 		;それ以外
 		ELSE
 			IF RAND:3
@@ -2668,7 +2668,7 @@ IF SELECTCOM == 63
 			PRINTFORMW 「벼, 별로 당신에 대한 것 좋아하지 않는 이니까 」
 			PRINTFORMW 「좋아하지 않는 것…아, 사랑하고 있어요…,  그래요, 귀족의 기 봐라…이니까 사랑한다」
 			PRINTFORMW 「은, 떼어 놓지 않으니까……」
-			PRINTFORMW %CALLNAME:PLAYER%를 망토로 가려, %CALLNAME:TARGET%는 목덜미에 가볍게 송곳니를 서라%CALLNAME:PLAYER%의 피를 빨아들이면서 허리를 흔들고 있다.
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"를")% 망토로 가려, %CALLNAME:TARGET%는 목덜미에 가볍게 송곳니를 서라%CALLNAME:PLAYER%의 피를 빨아들이면서 허리를 흔들고 있다.
 			PRINTFORMW 「쥬르…즌…하아 …맛있는…피도…다, 당신의 자지도 씩씩해서…」
 			PRINTFORMW %CALLNAME:TARGET%는 황홀과 애정의 들어가 섞인 얼굴로%CALLNAME:PLAYER%에 미소지어 걸친다…
 			PRINTFORMW 「흐응…츄프…하아 …,  나 사랑을…,  받으세요!」

@@ -148,7 +148,7 @@ ELSE
 	PRINTL [0] 와인글라스
 ENDIF
 SIF ITEM:정액저축량 >= 6 && CALCF("정액好き度") >= 4
-	PRINTL [1] 맥주 조끼
+	PRINTL [1] 맥주 보관함
 IF ITEM:정액저축량 >= 10 && CALCF("정액好き度") >= 8
 	PRINTL [2] PET병
 	CALL INPUT_SELECT, 3
@@ -164,7 +164,7 @@ IF RESULT == 0
 	ENDIF
 	TFLAG:16 = 3
 ELSEIF RESULT == 1
-	PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 커다란 조끼에 정액을 
+	PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 커다란 보관함에 정액을 
 	TFLAG:16 = 6
 ELSEIF RESULT == 2
 	PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% PET병에 정액을 

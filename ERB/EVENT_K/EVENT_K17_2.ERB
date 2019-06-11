@@ -56,7 +56,7 @@ IF GETBIT(CFLAG:201, 0) == 0
 	;마스터が남자
 	SIF TALENT:MASTER:남자
 		SETBIT CFLAG:201, 33
-	PRINTFORMW %CALLNAME:TARGET%를 소환한 방의 문을 열면, 거기에는 아무도 없었다…
+	PRINTFORMW %타겟을()% 소환한 방의 문을 열면, 거기에는 아무도 없었다…
 	PRINTFORMW 확실히 소환했을 것인데, 와 고개를 갸웃한%CALLNAME:MASTER%는, 방의 한가운데에 비단 모자가 떨어지고 있는데 깨달았다
 	PRINTFORMW 본 기억에도 없는 거기에 가까워지면, 비단 모자중에서 연기가 벌써 벌써솟아오르고 있다!
 	PRINTFORMW 「야는은--!」
@@ -85,7 +85,7 @@ IF GETBIT(CFLAG:201, 0) == 0
 		PRINTFORMW %CALLNAME:MASTER%는%CALLNAME:TARGET%의 당황해서 달래는 모습에, 간신히 침착성을 되찾았다
 	;마스터が무관심か감정결핍
 	ELSEIF TALENT:MASTER:무관심 || TALENT:MASTER:감정결핍
-		PRINTFORMW 그렇게 말하고 큰 웃음하는%CALLNAME:TARGET%를, %CALLNAME:MASTER%는 전혀 동요하지 않고 서늘하게 바라보고 있다
+		PRINTFORMW 그렇게 말하고 큰 웃음하는%타겟을()%, %CALLNAME:MASTER%는 전혀 동요하지 않고 서늘하게 바라보고 있다
 		PRINTFORMW 「…있잖아, 모처럼 이렇게 해서 화려하게 등장했으니까, 조금만 더 Re Action를 갖고 싶지만」
 		PRINTFORMW %CALLNAME:MASTER%의 차가운 반응에, %조사처리(CALLNAME:TARGET,"가")% 쌓이지 않는 듯이  투덜대고 있다
 	;その他
@@ -104,7 +104,7 @@ IF GETBIT(CFLAG:201, 0) == 0
 	;それ以外
 		PRINTFORMW 「으로, 이 나를 호출한 것은 당신인 것? 이 나에게 무엇을 바라는 거야? 금? 명성? 그렇지 않으면 세계 정복?」
 	ENDIF
-	PRINTFORMW %CALLNAME:MASTER%는, 지금부터%CALLNAME:TARGET%를 조교해, 팔아 치우려 하고 있는 것을 전했다
+	PRINTFORMW %CALLNAME:MASTER%는, 지금부터%타겟을()% 조교해, 팔아 치우려 하고 있는 것을 전했다
 	;마스터が겁쟁이
 	IF TALENT:MASTER:겁쟁이
 		PRINTFORMW 「네―…당신에게는 절대로 불가능하다고 생각해요…」
@@ -318,7 +318,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 			ENDIF
 			PRINTFORMW %CALLNAME:MASTER%는 상냥하게 미소지어 수긍하면, %CALLNAME:TARGET%는 양손을 뺨에 대어 숙여 버렸다
 			PRINTFORMW 「은, 이야기가 잘 지나쳐, 조금, 무섭다」
-			PRINTFORMW 희미하게 떨고 있는%CALLNAME:TARGET%를 꼭 껴안아 상냥하게 사랑을 속삭인…%CALLNAME:TARGET%는 뺨을 새빨갛게 물들여, %CALLNAME:MASTER%를 곧바로 응시하고 있다
+			PRINTFORMW 희미하게 떨고 있는%타겟을()% 꼭 껴안아 상냥하게 사랑을 속삭인…%CALLNAME:TARGET%는 뺨을 새빨갛게 물들여, %CALLNAME:MASTER%를 곧바로 응시하고 있다
 			PRINTFORMW 「이나,,  기쁘다…! 아, 그!, 보잘것없는 저입니다만, 잘 부탁드립니다…!」
 			TALENT:서약 = 0
 			TALENT:상사상애 = 1
@@ -426,7 +426,7 @@ ELSEIF NO:ASSI == 25 && CFLAG:ASSI:209 == 1
 			ELSE
 				PRINTFORMW 「,  관대하게 부탁할게요?」
 				PRINTFORMW 「하지만, 어떻게 해야 할까요? 」
-				PRINTFORMW 무서워하는%CALLNAME:TARGET%를 %CALLNAME:ASSI%가 만족하게 내려다 보고 있다
+				PRINTFORMW 무서워하는%타겟을()% %CALLNAME:ASSI%가 만족하게 내려다 보고 있다
 			ENDIF
 		;それ以外
 		ELSE
@@ -456,7 +456,7 @@ ELSEIF NO:ASSI == 25 && CFLAG:ASSI:209 == 1
 			ELSE
 				PRINTFORMW 「네, 예…,  착한아이로 했었어요?」
 				PRINTFORMW 「…사실일까? 」
-				PRINTFORMW 당황하는%CALLNAME:TARGET%를 %CALLNAME:ASSI%가 웃으면서 바라보고 있다
+				PRINTFORMW 당황하는%타겟을()% %CALLNAME:ASSI%가 웃으면서 바라보고 있다
 			ENDIF
 		;それ以外
 		ELSE
@@ -503,9 +503,9 @@ ELSEIF NO:ASSI == 21
 			ELSEIF RAND:3 == 0
 				PRINTFORMW 「%CNAMET(ASSI, "一人称")%과 %CNAMET(ASSI, "주인")%두 명에 걸려, 괴롭힘 뽑는다 라는 말하는 것은 어때? 」
 			ELSEIF RAND:2 == 0
-				PRINTFORMW 「마을에서%CALLNAME:TARGET%를 묶어 그대로 방치 플레이라고의는 어때? 」
+				PRINTFORMW 「마을에서%타겟을()% 묶어 그대로 방치 플레이라고의는 어때? 」
 			ELSE
-				PRINTFORMW 「%CALLNAME:TARGET%를 히벗겨, 목걸이를 입어 3명이 산책한다 라고 것은 어때? 」
+				PRINTFORMW 「%타겟을()% 히벗겨, 목걸이를 입어 3명이 산책한다 라고 것은 어때? 」
 			ENDIF
 			;엠푸사がＭ
 			IF TALENT:마조
@@ -1965,7 +1965,7 @@ IF SELECTCOM >= 60 && SELECTCOM <= 69 && FIRSTCOMS("Ｖ삽입") == 0
 			PRINTFORMW 「그, 괜찮겠습니까…」
 			PRINTFORMW %CALLNAME:TARGET%는 툭하고 중얼거려 이쪽을 봐서,  곧바로 눈을 돌리는
 			PRINTFORMW 「…아니요, 아무것도 아닙니다…,  인연을 묶읍시다…?」
-			PRINTFORMW 뜻을 결정된 것처럼%CALLNAME:TARGET%는%CALLNAME:PLAYER%를 가만히 응시했다
+			PRINTFORMW 뜻을 결정된 것처럼%CALLNAME:TARGET%는%조사처리(CALLNAME:PLAYER,"를")% 가만히 응시했다
 		;それ以外
 		ELSE
 			PRINTFORMW 「………」
@@ -3129,7 +3129,7 @@ IF SELECTCOM == 120 || SELECTCOM == 121
 		IF PLAYER == MASTER
 			;血を吸っていいと言われた
 			IF GETBIT(CFLAG:201, 30)
-				PRINTFORMW 충족감과 상실감이 없는 섞으가 된 표정으로, %CALLNAME:TARGET%는%CALLNAME:PLAYER%를 내려다 보고 있다…
+				PRINTFORMW 충족감과 상실감이 없는 섞으가 된 표정으로, %CALLNAME:TARGET%는%조사처리(CALLNAME:PLAYER,"를")% 내려다 보고 있다…
 				PRINTFORMW 「…심한 것을 말씀하시네요 …처녀를 지켰으면 좋겠다고 말했던 것은 나 자신이지만」
 				PRINTFORMW 「당신의 명령은 절대입니다. 거절하는 당연은 어디로도 없고…」
 			;ない
@@ -3375,7 +3375,7 @@ IF SELECTCOM == 132
 			;御주인様は새드
 			IF TALENT:PLAYER:새드
 				PRINTFORMW 겠지, 이 비들과 배의 바닥으로부터 솟구치는 매정한 욕망은…입의 끝이 찌그러지게 치켜 올라가는 것을 멈출 수 없다
-				PRINTFORMW %CALLNAME:PLAYER%는, %CALLNAME:TARGET%의 이야기에 %CALLNAME:TARGET%를 강요하는 모습을 상상해, 흥분을 느껴 버렸다
+				PRINTFORMW %CALLNAME:PLAYER%는, %CALLNAME:TARGET%의 이야기에 %타겟을()% 강요하는 모습을 상상해, 흥분을 느껴 버렸다
 				PRINTFORMW 「히…! …,  말하지 않으면 좋았다…」
 				PRINTFORMW %CALLNAME:TARGET%는 공포의 별로 시퍼렇게 되어 이야기를 한 것을 후회하고 있다
 			;いいえ마조です
@@ -3542,7 +3542,7 @@ IF SELECTCOM == 134 && TEQUIP:구속
 		ELSEIF ABL:마조끼 >= 3
 			IF RAND:2 == 0
 				PRINTFORMW 「그런데, "저기,  나, 지금부터 어떻게 되었습니까…?
-				PRINTFORMW 지금부터 행해지는 행위에 기대 하고 있는 것인가, %CALLNAME:TARGET%는 소리와 몸을 진동시키면서%CALLNAME:PLAYER%를 계속 응시하고 있다
+				PRINTFORMW 지금부터 행해지는 행위에 기대 하고 있는 것인가, %CALLNAME:TARGET%는 소리와 몸을 진동시키면서%조사처리(CALLNAME:PLAYER,"를")% 계속 응시하고 있다
 			ELSE
 				PRINTFORMW %CALLNAME:TARGET%의 몸에 극력 닿지 않고, 구속도구만을 손가락으로 위를 덧쓰는 것만으로, %CALLNAME:TARGET%는 기대에 몸을 진동시키고 있다
 				PRINTFORMW 「,  심술쟁이, 하지 말아 주세요…♪」
@@ -3566,7 +3566,7 @@ ELSEIF SELECTCOM == 134 && TEQUIP:구속 == 0
 			PRINTFORMW 갑자기 구속을 풀려, 안심했는지 어딘지 부족한 것인지, 당황한 표정을 보이고 있다
 		ELSE
 			PRINTFORMW 「흐응…다음은 무엇으로 하십니까…?」
-			PRINTFORMW %CALLNAME:TARGET%는 스스로의 몸에 남는 멍과 같은 자취에 흥분하면서%CALLNAME:PLAYER%를 보고 있다
+			PRINTFORMW %CALLNAME:TARGET%는 스스로의 몸에 남는 멍과 같은 자취에 흥분하면서%조사처리(CALLNAME:PLAYER,"를")% 보고 있다
 		ENDIF
 	;それ以外
 	ELSE
@@ -3719,7 +3719,7 @@ IF SELECTCOM == 140
 				PRINTFORMW 「,  콜록, 」
 				PRINTFORMW %CALLNAME:PLAYER%의 손의 움직여에 맞추어 격렬하게 머리를 계속해서 흔든다%CALLNAME:TARGET%의 입으로부터, 기세가 지나쳐서 페니스가 빠져 버린다
 				PRINTFORMW 「아우웃…,  후후…이봐요, 주인님…빨리」
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 크게 입을 열어 혀를 내밀어, %CALLNAME:PLAYER%를 권하고 있다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 크게 입을 열어 혀를 내밀어, %조사처리(CALLNAME:PLAYER,"를")% 권하고 있다…
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 「두, 두…」
 				PRINTFORMW %CALLNAME:PLAYER%의 페니스를 뿌리까지 삼킨%조사처리(CALLNAME:TARGET,"가")%, 기쁜듯이 쏘옥 하며 눈을 가늘게 떠
@@ -3741,7 +3741,7 @@ IF SELECTCOM == 140
 				PRINTFORMW %CALLNAME:TARGET%는 거역하지 않고, %CALLNAME:PLAYER%에의 봉사를 계속하고 있다
 			ELSE
 				PRINTFORMW %CALLNAME:TARGET%는 황홀로 한 표정으로 계속 봉사하고 있다…
-				PRINTFORMW 한 번%CALLNAME:TARGET%의 입으로부터 뽑으면, %CALLNAME:TARGET%는 무슨 일일까하고%CALLNAME:PLAYER%를 올려봐 왔다
+				PRINTFORMW 한 번%CALLNAME:TARGET%의 입으로부터 뽑으면, %CALLNAME:TARGET%는 무슨 일일까하고%조사처리(CALLNAME:PLAYER,"를")% 올려봐 왔다
 				PRINTFORMW 「무슨 일이신가요? 아직 만족스러운 떠나지 않을 것입니다…?」
 				PRINTFORMW 「 나의 입에…많이, 내 주세요…♪」
 				PRINTFORMW %CALLNAME:TARGET%와 혀를 내미는…%CALLNAME:PLAYER%는 다시%CALLNAME:TARGET%에 봉사를 계속하게 했다
@@ -4243,7 +4243,7 @@ IF SELECTCOM == 175
 			IF RAND:3 == 0
 				PRINTFORMW 「확실히 나는 하인이지만, 그쪽의 보살핌은 관할외」
 				PRINTFORMW 「오히려 골칫거리. 혼나는 것 싫다! 있겠지요! 심술궂은 메이드장이!」
-				PRINTFORMW 어떤 시추에이션을 바래 있는 것인가, 가끔%CALLNAME:TARGET%를 모르다
+				PRINTFORMW 어떤 시추에이션을 바래 있는 것인가, 가끔%타겟을()% 모르다
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 「바보를 밟아도 화내거나 고함치거나 하지 말아 주세요? 나, 제법 순진입니다」
 				PRINTFORMW 「 그렇지만 벌 되는 것은 싫지 않아서…흐응♪」
@@ -4732,7 +4732,7 @@ IF SELECTCOM == 281
 			PRINTFORMW 「그러면 사양말고, 심한 일을 해 버려요 …?」
 		ENDIF
 		IF RAND:3 == 0
-			PRINTFORMW %CALLNAME:TARGET%는 일부러 조롱하듯이%CALLNAME:PLAYER%를 힐책한다
+			PRINTFORMW %CALLNAME:TARGET%는 일부러 조롱하듯이%조사처리(CALLNAME:PLAYER,"를")% 힐책한다
 		ELSEIF RAND:2 == 0
 			PRINTFORMW %CALLNAME:TARGET%는 증조부와 속삭이고%CALLNAME:PLAYER%의 상태를 듣고 있다
 		ELSE

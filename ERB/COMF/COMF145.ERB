@@ -274,7 +274,7 @@ ELSEIF RESULT == 0 || RESULT == 1
 			IF RAND:2
 				PRINTFORMW 너무나 아름다운 광경이다
 			ELSE
-				PRINTFORMW 손대지않고는 견딜 수 없는 매력으로 넘쳐흘렀다
+				PRINTFORMW 손대지 않고는 견딜 수 없는 매력으로 넘쳐 흘렀다
 			ENDIF
 		ENDIF
 	ENDIF
@@ -284,7 +284,7 @@ ELSEIF RESULT == 2 && COND("음모") >= 6
 	CALL DEL_CEVENT_GROUP, "음모の명칭"
 
 	IF PENIS(TARGET)
-		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 음모의 형태를\@ABL:PLAYER:기교 >= 4 ? 깔끔하게 #  \@ 정돈했따…
+		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 음모의 형태를\@ABL:PLAYER:기교 >= 4 ? 깔끔하게 #  \@ 정돈했다…
 	ELSE
 		PRINTFORML 어떤 모양으로 합니까? 
 		PRINTFORML  [ 0] ▼ 역삼각형
@@ -323,7 +323,7 @@ ELSEIF RESULT == 2 && COND("음모") >= 6
 			CALL SET_CEVENT, LOCALS
 		ENDSELECT
 
-		PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 대음순을 가리는 털을 확실히 깎아 떨어뜨려, 치부를 장식한다음모의 형태를\@ STRLENS(CEVENTS("음모の명칭") ) ? %CEVENTS("음모の명칭")% # 예쁘다 \@に剃り整えた…
+	PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 대음순을 가리는 털을 확실히 깎아 치부를 장식하는 음모의 형태를\@ STRLENS(CEVENTS("음모の명칭") ) ? %CEVENTS("음모の명칭")% # 예쁜 모양 \@으로 깎았다 …
 	ENDIF
 ELSE
 	GOTO INPUT_LOOP
@@ -368,7 +368,7 @@ ENDIF
 ;縄
 IF TEQUIP:구속
 	LOCAL += 30
-	LOCALS = %LOCALS% + 구속中(30)
+	LOCALS = %LOCALS% + 구속중(30)
 ENDIF
 ;ビデオ촬영
 IF TEQUIP:비디오카메라

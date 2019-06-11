@@ -34,7 +34,7 @@ RETURN 1
 VARSET LOCAL, 1
 ;역바이브
 IF ARG == PLAYER
-	PRINTFORML 어느 바이브\@ TALENT:ARG:처녀 ? 로 처녀를 상실시킵니까 # 를 사용하게합니까 \@？
+	PRINTFORML 어느 바이브\@ TALENT:ARG:처녀 ? 로 처녀를 상실시킵니까 # 를 사용하게 합니까 \@？
 	;大きな바이브
 	SIF ABL:ARG:Ｖ확장 == 0 || (ABL:ARG:Ｖ확장 <= 1 && ABL:ARG:마조끼 < 3 && TALENT:새드 == 0)
 		LOCAL:1 = 0
@@ -235,7 +235,7 @@ ENDIF
 IF TALENT:작은몸집 && RAND:2 == 0
 	PRINT 아이같은 
 ELSEIF TALENT:음란 && ABL:Ｖ감각 >= 4 && RAND:3 == 0
-	PRINT 민감
+	PRINT 민감한
 ELSEIF TALENT:음란 && ABL:Ｖ감각 >= 4 && RAND:2 == 0
 	PRINT 냄새나는 
 ;Ｖ윤Lv2이상
@@ -346,16 +346,16 @@ IF CHECK("바이브") && RAND:3
 ELSEIF CHECK("바이브") == 0 && SIZE("바이브", TARGET) >= 2
 	PRINTFORM 흉폭한 바이브는 %CALLNAME:TARGET%의 
 	SIF SIZE("바이브", TARGET) >= 3 - TALENT:작은몸집
-		PRINT 치골을 비그덕거리게 만들며, 
+		PRINT 치골을 삐그덕거리게 만들며, 
 	SIF TALENT:작은몸집 && EXP:Ｖ경험 < 100 && ABL:Ｖ확장 <= 1
 		PRINT 어린 
 	SELECTCASE SIZE("바이브", TARGET) - ABL:Ｖ확장
 	CASE IS >= 3
-		PRINTW 질을 무참하게 찢어가르고있다…
+		PRINTW 질을 무참하게 찢어 가르고있다…
 	CASE 2
-		PRINTW 질을 부숴버릴 듯이 한가득 벌리고있다…
+		PRINTW 질을 부숴버릴 듯이 한가득 벌리고 있다…
 	CASEELSE
-		PRINTW 질을 팽팽하게 벌리고있다…
+		PRINTW 질을 팽팽하게 벌리고 있다…
 	ENDSELECT
 ELSEIF CHECK("바이브")
 	PRINTFORMW 진동하는 바이브가 가져오는 쾌감에, %조사처리(CALLNAME:TARGET,"는")% 달콤하고 안타까운 쾌락의 소리를 흘렸다…

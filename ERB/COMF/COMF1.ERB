@@ -165,7 +165,7 @@ IF TEQUIP:넘어뜨리기
 				ENDIF
 				PRINTFORM 허리를 움직여 범하
 			ELSEIF ABL:욕망 + ABL:자위중독 >= 5 && RAND:2
-				PRINTFORM 얼굴을 사용해, 격렬하다자위행위에 몰두해
+				PRINTFORM 얼굴을 사용해, 격렬한 자위행위에 몰두하
 			ELSE
 				PRINTFORM 얼굴에 가랑이를 눌렀다 떼었다하
 			ENDIF
@@ -183,7 +183,7 @@ IF TEQUIP:넘어뜨리기
 				PRINTFORM 얼굴을 가랑이에 눌러붙이
 			ENDIF
 		ENDIF
-		PRINTFORMW \@ PREVEX("방뇨") && ABL:새드끼 >= 3 ? はじめた # ている \@…
+		PRINTFORMW \@ PREVEX("방뇨") && ABL:새드끼 >= 3 ? 기 시작했다 # 고 있다 \@…
 	;다리が使えない人用
 	ELSEIF COND("다리 사용") == 0
 		IF (TEQUIP:안면기승 == 9 || PREVCOM == 9) && COND("前Ｔ조교자") == PLAYER
@@ -198,7 +198,7 @@ IF TEQUIP:넘어뜨리기
 			ELSEIF CHECK_CLO("ずらせる") && !RAND:(3 + !CHOSECOM(1)*3)
 				CALL SETFLAG, "바텀을１枚ずらす", TARGET
 			ELSEIF TALENT:부끄럼쟁이 && RAND:2
-				PRINTFORM 부끄러운듯이 
+				PRINTFORM 부끄러운 듯이 
 			;음란or부끄럼없음or호색or노출벽3이상
 			ELSEIF TALENT:부끄럼없음 || TALENT:호색 || TALENT:음란 || ABL:노출벽 >= 3
 				PRINTFORM 부끄러운 부분을 보기쉽게 잡아 벌리면서 
@@ -220,7 +220,7 @@ IF TEQUIP:넘어뜨리기
 			IF (ABL:새드끼 >= 3 || TALENT:음란) && RAND:3 == 0
 				PRINTFORMW %TEXTS("보지：감촉")%로 코와 입을 틀어막았다…
 			ELSEIF RAND:2
-				PRINTFORMW %TEXTS("보지：감촉")%\@ CHECK_CLO("Ｖ노출") ?  # 越しに보지 \@노%TEXTS("匂い")%를 맛보게 해 왔다…
+				PRINTFORMW %TEXTS("보지：감촉")%\@ CHECK_CLO("Ｖ노출") ?  # 너머의 보지 \@의%조사처리(TEXTS("匂い"),"를")% 맛보게 해 왔다…
 			ELSE
 				PRINTFORMW 쓱쓱 %TEXTS("보지：감촉")%로 얼굴을 닦았다…
 			ENDIF
@@ -301,7 +301,7 @@ IF TEQUIP:넘어뜨리기
 			IF (ABL:새드끼 >= 3 || TALENT:음란) && RAND:3 == 0
 				PRINTFORMW %조사처리(TEXTS("보지：감촉"),"로")% 코와 입을 틀어막듯이 주저앉았다…
 			ELSEIF RAND:2
-				PRINTFORMW %TEXTS("보지：감촉")%\@ CHECK_CLO("Ｖ노출") ?  # 越しに보지 \@노%TEXTS("匂い")%를 맛보게 해 왔다…
+				PRINTFORMW %TEXTS("보지：감촉")%\@ CHECK_CLO("Ｖ노출") ?  # 너머의 보지 \@의%조사처리(TEXTS("匂い"),"를")% 맛보게 해 왔다…
 			ELSE
 				PRINTFORMW 쓱쓱 %TEXTS("보지：감촉")%로 얼굴을 문질러닦았다…
 			ENDIF
@@ -319,18 +319,18 @@ IF TEQUIP:넘어뜨리기
 	;Ｗ넘어뜨리기で음란or욕정4LV이상なら追加
 	IF TEQUIP:Ｗ넘어뜨리기 && (TALENT:음란 || PALAM:욕정 >= PALAMLV:4)
 		SIF (SELECTCOM:1 == 65 || SELECTCOM:1 == 75) && ABL:레즈끼 >= 3 && RAND:2
-			PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:(TARGET:1)%(와)과 혀를 걸면서, 쾌감을 탐내고 있다…
+			PRINTFORMW %타겟은()% %조사처리(CALLNAME:(TARGET:1),"과")% 혀를 걸면서, 쾌감을 탐내고 있다…
 	ENDIF
 ELSEIF CHECK_COM("치구청소컨닐링구스")
-	PRINTFORM %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 저기를 펴넓혀,
-	PRINTFORM %TEXTR("陰唇に残る치구","질구にこびりついている치구", "白くドロリとした汚れ", "チーズの様な汚れ", "粘膜を彩る恥ずかしい汚れ")%
+	PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 그곳을 펴넓혀,
+	PRINTFORM %TEXTR("음순에 남은 치구","질구에 달라붙어있는 치구", "희고 질척한 오염", "치즈 같은 더러움", "점막에 붙어있는 부끄러운 오염")%
 	;においフェチ分岐
 	IF PLAYER == MASTER && COND("성벽：냄새페티시", PLAYER) && TALENT:마음에듬 + TALENT:상사상애 && RAND:3
-		PRINTFORM 노%TEXTS("匂い")%를 냄새 맡으면서,
+		PRINTFORM 의 %조사처리(TEXTS("匂い"),"를")% 냄새 맡으면서,
 	ELSE
 		PRINTFORM 를 
 	ENDIF
-	PRINTFORMW %TEXTR("舌", "尖らせた舌先")%그래서%TEXTR("隅々まで舐めとった", "きれいに掃除した", "徹底的に掃除した")%…
+	PRINTFORMW %TEXTR("혀", "뾰족한 혀끝으")%로%TEXTR("구석구석까지 핥았다", "깨끗이 청소했다", "철저하게 청소했다")%…
 
 ELSEIF PREVCOM == SELECTCOM && COND("前Ｔ조교자") == PLAYER
 	;팬티ずらしフラグ
@@ -373,7 +373,7 @@ ELSEIF PREVCOM == SELECTCOM && COND("前Ｔ조교자") == PLAYER
 			PRINTFORM 핥기쉽게 반들반들한 보지
 		ELSEIF CHECK_CLO("Ｖ노출") && TALENT:라비아피어스 && TEQUIP:바이브 == 0 && RAND:2
 			SIF PENIS(TARGET) == 0 && TALENT:클리피어스
-				PRINTFORM 수개의 
+				PRINTFORM 여러 
 			PRINTFORM 피어스로 장식된 보지
 		ELSE
 			PRINTFORM %TEXTS("보지：감촉")%
@@ -383,26 +383,26 @@ ELSEIF PREVCOM == SELECTCOM && COND("前Ｔ조교자") == PLAYER
 		PRINTFORM 를 
 		;とりあえず, むき出しのとき
 		IF CHECK_CLO("Ｖ노출") && TEQUIP:바이브 == 0 && (CHECK_COM("청소컨닐링구스") || RAND:3)
-			PRINTFORM 밀어서 잠금해제해서, 
+			PRINTFORM 밀어 넓혀, 
 			;においフェチ分岐
 			IF PLAYER == MASTER && COND("성벽：냄새페티시", PLAYER) && TALENT:마음에듬 + TALENT:상사상애
 				IF CHECK_STAIN(STAIN:Ｖ, "Ｖ치구") && RAND:4
 					IF RAND:3 == 0 || CHECK_COM("청소컨닐링구스")
-						PRINTFORM 치구노%TEXTS("匂い")%를 냄새 맡으면서
+						PRINTFORM 치구의 %조사처리(TEXTS("匂い"),"를")% 냄새 맡으면서
 					ELSEIF RAND:2
 						PRINTFORM 점막에 남는 부끄러운 때를
 					ELSE
-						PRINTFORM 질입에 달라붙었다치구를 넣은 혀로
+						PRINTFORM 질구에 달라붙은 치구를 넣은 혀로
 					ENDIF
 				ELSEIF PALAM:욕정 >= 3000 && RAND:2
-					PRINTFORM 뜸들었다%TEXTS("匂い")%를 즐기면서
+					PRINTFORM 열띈 %조사처리(TEXTS("匂い"),"를")% 즐기면서
 				ELSE
 					PRINTFORM 개성이 있는 음취를 들이 마시면서
 				ENDIF
 			ENDIF
 		ENDIF
 		IF CHECK_COM("청소컨닐링구스")
-			PRINTFORMW 정성스럽게청소했다…
+			PRINTFORMW 정성스럽게 청소했다…
 		ELSE
 			PRINTFORMW 마음껏 탐냈다…
 		ENDIF
@@ -524,26 +524,26 @@ ELSE
 			IF (PREVCOM == 15 || PREVCOM == 151) && RAND:3
 				PRINTFORM 괴롭힐 수 있었던 바로 직후로 물방울을 흘리는 작은 구멍을
 			ELSEIF PREVPLAY("질내욕뇨")
-				PRINTFORM %TEXTR("小便器として使われたばかりの", "強いアンモニアの臭いを漂わせている")%질을
+				PRINTFORM %TEXTR("소변기로 막 사용된 ", "강한 암모니아 냄새를 풍기고 있는 ")%질을
 			ELSE
 				PRINTFORM 배뇨 직후의 작은 구멍을
 			ENDIF
 		ELSEIF PREVPLAY("요도인서트")
 			IF RAND:3 == 0
-				PRINTFORM 정액를 짜냈던 바로 직후작은 구멍을
+				PRINTFORM 정액를 짜냈던 바로 직후의 작은 구멍을
 			ELSEIF RAND:2
 				PRINTFORM 페니스의 크기에 친숙해 져 느슨해질 기미의 오줌의 구멍을
 			ELSE
-				PRINTFORM 질내사정섹스직후에 뇨 섞인 흰 군침을 늘어뜨리는 작은 구멍을
+				PRINTFORM 질내사정섹스직후에 오줌 섞인 흰 군침을 늘어뜨리는 작은 구멍을
 			ENDIF
 		ELSE
 			PRINTFORM 질내사정섹스직후
 			IF TALENT:작은몸집 && ABL:Ｖ확장 == 0
-				PRINTFORM (이)가 작은 구멍을
+				PRINTFORM 의 작은 구멍을
 			ELSEIF AGE(TARGET) >= 3 && PALAM:욕정 >= 10000 && RAND:2
-				PRINTFORM 그리고 굉장한 냄새를 시키고 있는 저기를
+				PRINTFORM 의 굉장한 냄새가 나는 저기를
 			ELSE
-				PRINTFORM 노\@ (TALENT:음호 && PALAM:쾌Ｖ > 8000) ? ヒクヒク蠢く # \@질입를
+				PRINTFORM 의\@ (TALENT:음호 && PALAM:쾌Ｖ > 8000) ? 실룩실룩 꿈틀거리는 # \@질구를
 			ENDIF
 		ENDIF
 	;においフェチ分岐
@@ -555,24 +555,24 @@ ELSE
 		IF CHECK_STAIN(STAIN:Ｖ, "尿") && RAND:3 == 0
 			SIF PREVEX("방뇨") == 0
 				PRINTFORM 희미하게
-			PRINTFORM 오줌의 냄새가 난다
+			PRINTFORM 오줌의 냄새가 나는
 			SIF COND("음모") && COND("음모") <= 3
 				PRINTFORM 반들반들의
-			PRINTFORM 저기를
+			PRINTFORM 그곳을
 		;ナチュラル이상
 		ELSEIF COND("음모") >= 6 && RAND:3 == 0
 			PRINTFORM 음모에 휘감기는 음취를 냄새 맡으면서 음순을
 		ELSEIF PALAM:욕정 >= 3000 && RAND:2
-			PRINTFORM 뜸든 음부의%TEXTS("匂い")%를 즐기면서 저기를
+			PRINTFORM 열띈 음부의%조사처리(TEXTS("匂い"),"를")% 즐기면서 저기를
 		ELSE
-			PRINTFORMW 코를 울려컨닐링구스하면서, 어떤%TEXTS("匂い")%인가 속삭였다…
+			PRINTFORMW 코를 울려 컨닐링구스하면서, 어떤%TEXTS("匂い")%인가 속삭였다…
 			RETURN 1
 		ENDIF
 	ELSEIF RAND:4 == 0 && TALENT:PLAYER:새드
 		IF TEQUIP:카테터
 			PRINTFORM 카테터하지만 파묻히고 있는 오줌의 구멍을
 		ELSE
-			PRINTFORM \@ TALENT:오줌싸개버릇 ? 緩み気味な # \@오줌의 구멍을
+			PRINTFORM \@ TALENT:오줌싸개버릇 ? 느슨해진 기색의 # \@오줌의 구멍을
 		ENDIF
 	ELSEIF RAND:3 == 0 && PENIS(TARGET) == 0
 		IF CALCF("Ｃ발정") >= 3
@@ -585,15 +585,15 @@ ELSE
 			PRINTFORM 피어스마다
 	ELSEIF RAND:2
 		SIF COND("다리が無い") == 0
-			PRINTFORM %TEXTS("太股：描写")%넓적다리의 사이에 주장하고 있다
+			PRINTFORM %TEXTS("太股：描写")%넓적다리의 사이에 띈
 		IF TALENT:라비아피어스 && RAND:2
-			PRINTFORM %TEXTS("라비아피어스")%그리고 장식해졌다
+			PRINTFORM %TEXTS("라비아피어스")%으로 장식해진
 		ELSEIF TALENT:작은몸집
 			PRINTFORM 작은
 		ELSEIF EXP:Ｖ경험 >= 300 && PALAM:욕정 >= 30000 && CHECK_CLO("Ｖ노출")
-			PRINTFORM 통통 충혈했다
+			PRINTFORM 통통 충혈한
 		ELSEIF PALAM:욕정 >= 30000 && CHECK_CLO("Ｖ노출")
-			PRINTFORM 가볍게 붉은 빛을 띠었다
+			PRINTFORM 가볍게 붉은 빛을 띈
 		ENDIF
 		PRINTFORM 음순을
 	ELSE
@@ -604,7 +604,7 @@ ELSE
 		ELSE
 			SIF TALENT:음호 && PALAM:쾌Ｖ > 8000 && CHECK_CLO("Ｖ노출")
 				PRINTFORM 흠칫흠칫 꿈틀거린다
-			PRINTFORM 질입를
+			PRINTFORM 질구를
 		ENDIF
 	ENDIF
 	;穴の開いていない팬티をはいている
@@ -616,7 +616,7 @@ ELSE
 		PRINTFORM 혀끝에서
 	ENDIF
 	IF RAND:2 && CHECK_COM("청소컨닐링구스") == 0
-		PRINTFORM %TEXTR("荒々しく", "激しく", "休まず")%
+		PRINTFORM %TEXTR("거칠게", "격렬하게", "쉬지않고")%
 	ELSEIF RAND:2
 		PRINTFORM 상냥하고
 	ELSE

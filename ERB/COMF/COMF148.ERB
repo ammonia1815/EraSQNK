@@ -20,21 +20,21 @@ RETURN 1
 
 PRINTFORMW %CALLNAME:TARGET%의 몸을 피어스로 장식합니다. 
 IF ABL:마조끼 < 3 && FIRSTCOM(SELECTCOM) == 0
-	PRINTFORML 이 플레이는 아직 빠른 생각도 듭니다만……이번은 어떻게 섬인가？
+	PRINTFORML 이 플레이는 아직 빠른 생각도 듭니다만……이번은 어떻게 합니까？
 ELSE
 	PRINTFORML 그런데, 이번에는 어떻게 합니까？
 ENDIF
 
-PRINTFORML  [ 0] \@ PENIS(TARGET) ? 페니스 # 클리토리스 \@\@ TALENT:클리피어스 ? からピアスを外す # にピアスをつける \@
+PRINTFORML  [ 0] \@ PENIS(TARGET) ? 페니스 # 클리토리스 \@\@ TALENT:클리피어스 ? 에서 피어스를 뺀다 # 에 피어스를 단다 \@
 SIF TALENT:남자
 	SETCOLOR DEF_COLOR("회색")
-PRINTFORML  [ 1] 소음순\@ TALENT:라비아피어스 ? からピアスを外す # にピアスをつける \@
+PRINTFORML  [ 1] 소음순\@ TALENT:라비아피어스 ? 에서 피어스를 뺀다 # 에 피어스를 단다 \@
 RESETCOLOR
 SIF COND("진성함몰유두")
 	SETCOLOR DEF_COLOR("회색")
-PRINTFORML  [ 2] 유두\@ TALENT:니플피어스 ? からピアスを外す # にピアスをつける \@
+PRINTFORML  [ 2] 유두\@ TALENT:니플피어스 ? 에서 피어스를 뺀다 # 에 피어스를 단다 \@
 RESETCOLOR
-PRINTFORML  [ 3] 배꼽\@ TALENT:배꼽피어스 ? からピアスを外す # にピアスをつける \@
+PRINTFORML  [ 3] 배꼽\@ TALENT:배꼽피어스 ? 에서 피어스를 뺀다 # 에 피어스를 단다 \@
 PRINTFORML [100] 그만둔다
 
 $INPUT_LOOP
@@ -124,7 +124,7 @@ IF COND("피어스ＯＮ플래그")
 			PRINT 페니스에
 		ELSE
 			IF TALENT:음핵
-				PRINT 발기했다
+				PRINT 발기한
 			ELSEIF TALENT:Ｃ민감
 				PRINT 민감한
 			ELSEIF TALENT:작은몸집
@@ -134,27 +134,27 @@ IF COND("피어스ＯＮ플래그")
 		ENDIF
 	ELSEIF COND("라비아피어스플래그")
 		IF TALENT:음호
-			PRINT 추잡하게 실룩거린다
+			PRINT 추잡하게 실룩거리는
 		ELSEIF TALENT:Ｖ민감
 			PRINT 민감한 
 		ELSEIF TALENT:작은몸집 && TALENT:유치
-			PRINT 어리다
+			PRINT 어린
 		ELSEIF TALENT:작은몸집
 			PRINT 작은 
 		ENDIF
 		PRINT 소음순에
 	ELSEIF COND("니플피어스플래그")
 		IF COND("함몰유두")
-			PRINTFORM 매몰 하고 있다\@ COND("유두비대") ? 立派な # \@유두를노출시켜
+			PRINTFORM 매몰 된\@ COND("유두비대") ? 거대한 # \@유두를노출시켜
 		ELSE
 			IF COND("유두비대")
-				PRINT 비대했다
+				PRINT 비대한
 			ELSEIF TALENT:음유
-				PRINT 발기했다
+				PRINT 발기한
 			ELSEIF TALENT:Ｂ민감
 				PRINT 민감한
 			ELSEIF TALENT:작은몸집 && TALENT:유치
-				PRINT 어리다
+				PRINT 어린
 			ELSEIF TALENT:작은몸집
 				PRINT 작은
 			ENDIF
@@ -180,7 +180,7 @@ IF COND("피어스ＯＮ플래그")
 		PIERCES = 라비아피어스：%PIERCES%
 	ELSEIF COND("니플피어스플래그")
 		SIF COND("함몰유두")
-			PRINTFORMW %CALLNAME:TARGET%노유두는 통해진 피어스의 덕분에 돌아올 수 없게 되어, 상시노출하도록(듯이) 교정되어 버렸다…
+			PRINTFORMW %CALLNAME:TARGET%의 유두는 달아진 피어스의 덕분에 돌아올 수 없게 되어, 상시노출로 고정되어 버렸다…
 		PIERCES = 니플피어스：%PIERCES%
 	ELSEIF COND("배꼽피어스플래그")
 		PIERCES = 배꼽피어스：%PIERCES%
@@ -191,7 +191,7 @@ IF COND("피어스ＯＮ플래그")
 		CALL SET_CEVENT, PIERCES
 ;ピアスを外した
 ELSE
-	PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%노%PART_PIERCES%로부터 피어스를 제외했다
+	PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 %PART_PIERCES%로부터 피어스를 제외했다
 ENDIF
 
 ;つけたり外したり

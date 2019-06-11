@@ -77,12 +77,12 @@ ELSEIF TEQUIP:넘어뜨리기
 	;기승위出来るなら기승위ルート
 	CALL COM_ABLE65
 	IF RESULT && TALENT:호색*3 + TALENT:음란*3 + ABL:욕망 >= 3 && PENIS(PLAYER) && COND("베테랑：Ｖ섹스")
-		PRINTFORMW %CALLNAME:TARGET%를 %CALLNAME:PLAYER%의 페니스에미약를 늘어뜨려, 민감(이)가 된 그것을 물어허리를 거절하기 시작했다. 
+		PRINTFORMW %타겟을()% %CALLNAME:PLAYER%의 페니스에 미약를 늘어뜨려, 민감하게 된 그것을 물어 허리를 흔들기 시작했다. 
 		CALL SET_INSERT, TARGET, PLAYER, 65
 	ELSEIF CHECK_COM("키스")
-		PRINTFORMW %CALLNAME:TARGET%를 %CALLNAME:PLAYER%를 억누르고, 입옮기기로미약를 먹여 왔다. 
+		PRINTFORMW %타겟을()% %조사처리(CALLNAME:PLAYER,"를")% 억누르고, 입으로 미약를 먹여 왔다. 
 	ELSE
-		PRINTFORMW %CALLNAME:TARGET%를 준비된 약품중에서미약를 골라내, 동작이 잡히지 않는다%CALLNAME:PLAYER%에 먹여 왔다. 
+		PRINTFORMW %타겟을()% 준비된 약품중에서 미약를 골라내, 움직이지 않는 %CALLNAME:PLAYER%에 먹여 왔다. 
 	ENDIF
 ELSE
 	PRINTFORM %CALLNAME:TARGET%에게 
@@ -96,9 +96,9 @@ ELSE
 	PRINTFORML 미약을 마시게했다. 
 ENDIF
 IF TALENT:약독내성
-	PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 약물에대한 내성을 가지고있는 듯하지만 조금은 효과가 있는 모양으로, 희미하게 피부에 붉은 기운이 돌고있다…
+	PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 약물에 대한 내성을 가지고 있는 듯 하지만 조금은 효과가 있는 모양으로, 희미하게 피부에 붉은 기운이 돌고있다…
 ELSE
-	PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 거친 숨을 내쉬고있고 피부에는 홍조가 떠있다…
+	PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 거친 숨을 내쉬고 있고 피부에는 홍조가 떠있다…
 ENDIF
 SETCOLOR DEF_COLOR("노랑")
 PRINTFORMW ※미약의 부작용으로, 획득되는 구슬의 양이 감소합니다※

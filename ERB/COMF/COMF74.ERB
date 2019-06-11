@@ -95,7 +95,7 @@ ELSEIF INSERT("인서트") && COND("前Ｔ조교자") == PLAYER
 			PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%%TEXTS("키스継続助詞付き")%, 배후로부터 껴안으면서 다시 허리를 움직이기 시작했다…
 			CALL SETFLAG, "추가키스플래그", TARGET
 		ELSE
-			PRINTFORMW %CALLNAME:TARGET%를 배후로부터 껴안아, 다시%CALLNAME:TARGET%의 신체를 흔들기 시작했다…
+			PRINTFORMW %타겟을()% 배후로부터 껴안아, 다시%CALLNAME:TARGET%의 신체를 흔들기 시작했다…
 		ENDIF
 	ELSEIF INSERT("기승위")
 		PRINTFORMW 애널에서 뽑지 않고 %조사처리(CALLNAME:TARGET,"를")% 등뒤에서 껴안고, 가슴을 문지르면서 몸을 흔들기 시작했다…
@@ -104,14 +104,14 @@ ELSE
 	PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 
 	IF COND("前Ｔから대상のみ변경") && PREVCOM:1 >= 60 && PREVCOM:1 <= 79
 		CALL TEXT, "추가地の文：穴から穴へ"
-		PRINTFORM %CALLNAME:TARGET%에게 몸을 기대게하면서 %TEXTS("애널")%애널
+		PRINTFORM %CALLNAME:TARGET%에게 몸을 기대게 하면서 %TEXTS("애널")%애널
 	;穴開きでない팬티をはいていて, ずらされていないなら, 必ずずらす
 	ELSEIF !CHECK_CLO("Ａ노출") && CHECK_CLO("Ａ노출可")
 		PRINTFORM %CALLNAME:TARGET%의 
 		CALL SETFLAG, "바텀을노출：텍스트有り", TARGET
-		PRINTFORM , 몸을 기대게하면서 %TEXTS("애널")%애널
+		PRINTFORM , 몸을 기대게 하면서 %TEXTS("애널")%애널
 	ELSE
-		PRINTFORM %CALLNAME:TARGET%에게 몸을 기대게하면서 %TEXTS("애널")%애널
+		PRINTFORM %CALLNAME:TARGET%에게 몸을 기대게 하면서 %TEXTS("애널")%애널
 	ENDIF
 
 	IF TEQUIP:수치플레이
@@ -125,10 +125,10 @@ ELSE
 			PRINTFORMW 다리를 크게 벌어지게 했다…
 		ENDIF
 	ELSEIF TEQUIP:키스
-		PRINTFORMW 를 기다리고 있었다페니스그리고 천천히 관철해, 입술을 빼앗았다…
+		PRINTFORMW 를 기다리고 있던 페니스로 천천히 관철해, 입술을 빼앗았다…
 		CALL SETFLAG, "추가키스플래그", TARGET
 	ELSE
-		PRINTFORMW 을 준비완료상태인 페니스로 천천히 꿰뚫었다…
+		PRINTFORMW 을 준비완료 상태인 페니스로 천천히 꿰뚫었다…
 	ENDIF
 
 	SIF TALENT:임신 && RAND:2 == 0

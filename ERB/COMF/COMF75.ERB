@@ -127,16 +127,16 @@ IF TEQUIP:Ｗ넘어뜨리기
 	IF SELECTCOM:1 == PREVCOM:1 && SELECTCOM:1 >= 0
 		PRINTFORM %TEXTS("Ｗ넘어뜨리기 중")%
 	ELSEIF PREVCOM:1 == 65 || PREVCOM:1 == 66 || PREVCOM:1 == 67 || PREVCOM:1 == 75
-		PRINTFORM %CALLNAME:(TARGET:1)%의 아래의입로부터해방된지 얼마 안된
+		PRINTFORM %CALLNAME:(TARGET:1)%의 아래의 입로부터 해방된 지 얼마 안된
 	ELSEIF PREVCOM:1 == 75 || PREVCOM:1 == 83
-		PRINTFORM %CALLNAME:(TARGET:1)%로부터해방된지 얼마 안된
+		PRINTFORM %CALLNAME:(TARGET:1)%로부터 해방된 지 얼마 안된
 	ENDIF
 	IF INSERT("Ａ인서트")
 		PRINTFORMW %CALLNAME:MASTER%의 페니스를 애널로 단단히 조이면서, 격렬하게 허리를 움직이며 즐기고있다…
 	ELSEIF INSERT("Ｖ인서트")
 		PRINTFORMW %CALLNAME:MASTER%의 페니스를 질에서 뽑아, 이번에는 애널에 쑤셔넣었다…
 	ELSEIF INSERT("요도인서트")
-		PRINTFORMW %CALLNAME:MASTER%의페니스를로부터 뽑아, 이번은 질로 근원까지 삼켜 왔다…
+		PRINTFORMW %CALLNAME:MASTER%의 페니스를 요도로부터 뽑아, 이번은 질로 뿌리까지 삼켜 왔다…
 	ELSE
 		PRINTFORMW %CALLNAME:MASTER%의 페니스 위에 걸치고, 느긋하게 애널에 파묻었다…
 	ENDIF
@@ -161,19 +161,19 @@ ELSEIF TEQUIP:넘어뜨리기
 			ENDIF
 		ELSEIF INSERT("Ａ인서트")
 			IF TEQUIP:키스
-				PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%를해방하지 않고,%TEXTS("키스継続")%다시 허리를 움직이기 시작했다…
+				PRINTFORMW %타겟은()% %조사처리(CALLNAME:PLAYER,"를")% 해방하지 않고,%TEXTS("키스継続")%다시 허리를 움직이기 시작했다…
 				CALL SETFLAG, "추가키스플래그", TARGET
 			ELSE
-				PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%를해방하지 않고,페니스를 단단히 조인 채로 다시 허리를 움직이기 시작했다…
+				PRINTFORMW %타겟은()% %조사처리(CALLNAME:PLAYER,"를")% 해방하지 않고,페니스를 단단히 조인 채로 다시 허리를 움직이기 시작했다…
 				CALL TEXT, "추가地の文：기승위"
 			ENDIF
 		ELSEIF INSERT("요도인서트")
 			;조교자が남자か후타나리である
 			IF PENIS(PLAYER)
-				PRINTFORMW %CALLNAME:TARGET%는 허리를 띄워 이번은페니스를애널그리고 삼키면, 다시 허리를 움직이기 시작했다…
+				PRINTFORMW %CALLNAME:TARGET%는 허리를 띄워 이번은 페니스를 애널로 삼키고, 다시 허리를 움직이기 시작했다…
 			ELSE
 			;페니스밴드を使用している場合
-				PRINTFORMW %CALLNAME:TARGET%는 허리를 띄워 이번은애널그리고 삼키면, 다시 허리를 움직이기 시작했다…
+				PRINTFORMW %CALLNAME:TARGET%는 허리를 띄워 이번은 애널로 삼키고, 다시 허리를 움직이기 시작했다…
 			ENDIF
 		ENDIF
 	ELSE
@@ -201,7 +201,7 @@ ELSEIF INSERT("인서트") && COND("前Ｔ조교자") == PLAYER
 	ELSEIF INSERT("Ａ인서트")
 		PRINTFORMW 장내에서 뽑지않고 %조사처리(CALLNAME:TARGET,"를")% 안아올려, 아래에서 허리를 찔러올렸다…
 	ELSEIF INSERT("기승위")
-		PRINTFORM %CALLNAME:TARGET%는 허리를 띄워\@ PENIS(PLAYER) ? 페니스 # 張型\@를애널그리고 삼키면,
+		PRINTFORM %CALLNAME:TARGET%는 허리를 띄워\@ PENIS(PLAYER) ? 페니스 # 바이브\@를 애널로 삼키고,
 		IF TEQUIP:키스
 			PRINTFORMW %CALLNAME:PLAYER%%TEXTS("키스継続助詞付き")%허리를 움직이기 시작했다…
 			CALL SETFLAG, "추가키스플래그", TARGET

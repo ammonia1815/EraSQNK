@@ -84,17 +84,17 @@ ENDIF
 IF CHECK_COM("좌우니플퍽")
 	;同じ커맨드の組み合わせで連続実行
 	IF SELECTCOM:2 == PREVCOM:2 && SELECTCOM == PREVCOM
-		PRINTFORM %CALLNAME:PLAYER%(와)과%CALLNAME:(PLAYER:1)%하
+		PRINTFORM %조사처리(CALLNAME:PLAYER,"와")% %(CALLNAME:(PLAYER:1),"는")%
 		IF RAND:4 == 0
 			PRINTFORM 내부의 점막을 쓸어올리면서
 		ELSEIF RAND:3 == 0
-			PRINTFORM \@ RAND:2 ? 激しい # ゆっくりとした \@허리의 움직임으로
+			PRINTFORM \@ RAND:2 ? 격렬한 # 느린 \@허리의 움직임으로
 		ELSEIF RAND:2
 			PRINTFORM 긴 스트로크로
 		ELSE
-			PRINTFORM 타이밍을%TEXTR("合わせて", "ずらして")%
+			PRINTFORM 타이밍을 %TEXTR("맞춰서", "다르게")%
 		ENDIF
-		PRINTFORM %CALLNAME:TARGET%의 %TEXTR("左右", "両方")%노유방를
+		PRINTFORM %CALLNAME:TARGET%의 %TEXTR("양옆", "양쪽")%의 유방을
 		IF RAND:2
 			PRINTW 계속 범했다…
 		ELSE
@@ -104,13 +104,13 @@ IF CHECK_COM("좌우니플퍽")
 		IF RAND:2
 			PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 
 			IF RAND:2
-				PRINTFORM %CALLNAME:TARGET%의 유두를 사용하고 있다
+				PRINTFORM %CALLNAME:TARGET%의 유두를 사용하고 있는
 			ELSE
-				PRINTFORM 니플퍽를 즐기고 있다
+				PRINTFORM 니플퍽를 즐기고 있는
 			ENDIF
-			PRINTFORMW %CALLNAME:(PLAYER:1)%에 줄, %TEXTR("空いている", "余った方の")%유방를페니스그리고 범하기 시작했다…
+			PRINTFORMW %CALLNAME:(PLAYER:1)%에 줄, %TEXTR("비어있는", "남아 있는")% 유방을 페니스로 범하기 시작했다…
 		ELSE
-			PRINTFORMW %CALLNAME:PLAYER%(와)과%CALLNAME:(PLAYER:1)%하%CALLNAME:TARGET%의 양쪽 모두의가슴을범하기 시작했다…
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"와")% %조사처리(CALLNAME:(PLAYER:1),"는")% %CALLNAME:TARGET%의 가슴을 양쪽 모두 범하기 시작했다…
 		ENDIF
 	ENDIF
 	RETURN 1
@@ -123,7 +123,7 @@ ELSEIF TEQUIP:넘어뜨리기
 	ELSE
 		;各조교初回선택時は니플피어스をはずす
 		SIF TALENT:니플피어스 && CHOSECOM(SELECTCOM) == 0
-			PRINTFORM 니플피어스를 제외했다
+			PRINTFORM 니플피어싱을 뺀
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 페니스를 벌어진 유두에 밀어넣고, 오나홀을 쓰듯이 %TEXTR("격렬하게", "교묘하게 ", ", 완급을 조절해서")% 훑었다…
 	ENDIF
 	RETURN 1
@@ -140,7 +140,7 @@ PRINTFORM %조사처리(CALLNAME:PLAYER,"는")%
 IF PREVCOM == 92 && COND("前Ｔと同ペア")
 	;汚れてますか？악취둔감で無いならば, 실행치の10分の一の値とRAND:5を比べて判定
 	IF CHECK_STAIN(STAIN:PLAYER:Ｐ, "Ｖ", "Ａ") && TALENT:악취둔감 == 0 && RAND:6 > TCVAR:28/10
-		PRINTFORM %TEXTS("匂い")%에 미간을 대면서
+		PRINTFORM %TEXTS("匂い")%에 미간을 찌뿌리며
 	;연모or헌신的or봉사정신3이상or악취둔감
 	ELSEIF (TALENT:연모 || TALENT:헌신 || ABL:봉사정신 >= 3 || TALENT:악취둔감) && RAND:2 == 0
 		PRINT 기쁘게 
@@ -188,7 +188,7 @@ ELSE
 ENDIF
 ;各조교初回선택時は니플피어스をはずす
 IF TALENT:니플피어스 && CHOSECOM(SELECTCOM) == 0
-	PRINTFORM 유두를 관철하는 피어스를 제외해
+	PRINTFORM 유두를 관철하는 피어싱을 제외해
 ELSE
 	PRINTFORM %TEXTS("유두：描写")%유두에
 	;直前の조교と汚れで分岐
@@ -213,9 +213,9 @@ IF TALENT:거유 && CONFIG("３사이즈") && RAND:3 == 0
 ELSEIF RAND:2
 	IF TALENT:거유 >= 2 && RAND:2
 		IF RAND:2
-			PRINTFORM 압도적인크기의 유방은 
+			PRINTFORM 압도적인 크기의 유방은 
 		ELSE
-			PRINTFORM 풍만학 무거워보이는 유방은 
+			PRINTFORM 풍만하고 무거워보이는 유방은 
 		ENDIF
 	ELSE
 		IF RAND:2

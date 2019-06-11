@@ -812,7 +812,7 @@ CASEELSE
 		IF RAND:2 == 0
 			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 「별로 폐를 끼치지 않게」라고 말해 다짐을 받아 두었습니다…
 		ELSE
-			PRINTFORM 그러나%CALLNAME:TARGET%를 곧바로
+			PRINTFORM 그러나%타겟을()% 곧바로
 			IF RAND:3 == 0
 				PRINTFORM 「%CALLNAME:MASTER%(분)편이 좋다」
 			ELSEIF RAND:2
@@ -3714,7 +3714,7 @@ CASE 3
 		ELSE
 			OMIYAGE = %TEXTR("藍染めの기모노", "アヤメの머리카락飾り", "美肌泥パックセット", "ぽっくり下駄", "키아즈마風ティーセット")%
 		ENDIF
-		PRINTFORMW %CALLNAME:TARGET%를 『%OMIYAGE%』를 응시하고 있습니다…
+		PRINTFORMW %타겟을()% 『%OMIYAGE%』를 응시하고 있습니다…
 		PRINTFORML 가격표에는 %조사처리(MONEY_C(LOCAL),"라")%고 써있습니다. 
 		IF LOCAL >= 3000
 			PRINTFORM 조금 비싼 물건이지만
@@ -3724,7 +3724,7 @@ CASE 3
 	;ぼったくり？
 	ELSE
 		OMIYAGE = %TEXTR("竹とんぼ", "一本歯の高下駄", "ガラス細工の風鈴", "かざぐるま", "竹말", "ほっぺの落ちる온천饅頭セット", "できたて特製온천卵")%
-		PRINTFORMW %CALLNAME:TARGET%를 『%OMIYAGE%』를 응시하고 있습니다…
+		PRINTFORMW %타겟을()% 『%OMIYAGE%』를 응시하고 있습니다…
 		PRINTFORML 가격표에는 %조사처리(MONEY_C(LOCAL),"라")%고 써 있는 것 같습니다.
 		IF LOCAL >= 3000
 			PRINTFORM 바가지나 마찬가지라고 생각되는 가격이지만

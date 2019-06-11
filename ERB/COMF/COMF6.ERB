@@ -157,7 +157,7 @@ ELSEIF TEQUIP:넘어뜨리기
 	ELSE
 		PRINTFORM %CALLNAME:PLAYER%의 입술을 빼앗아, 
 		IF PREVPLAY("飲尿") && CHECK_STAIN(STAIN:Ｍ, "尿") && ABL:새드끼 >= 3
-			PRINTFORMW 조금 전의 답례라고 할듯이 뇨 섞인 타액을 흘려 넣어 왔다…
+			PRINTFORMW 조금 전의 답례라고 하듯이 오줌 섞인 타액을 흘려 넣어 왔다…
 		ELSEIF (PREVCOM == 91 || PREVCOM == 99 || PREVCOM == 140) && CHECK_STAIN(STAIN:Ｍ, "정액") && ABL:새드끼 >= 3
 			PRINTFORMW 혀를 섞으면서 입에 모은 정액을 입을 이용해서 먹여주었다…
 		ELSE
@@ -181,7 +181,7 @@ ELSEIF TEQUIP:키스 && COND("前Ｔ조교자") == PLAYER
 		ELSE
 			PRINTFORM %조사만처리(CALLNAME:TARGET,"를")% 껴안고, 
 			IF RAND:3 == 0
-				PRINT 서로의입안을 혀끝에서 핥아대면서
+				PRINT 서로의 입안을 혀끝에서 핥아대면서
 			ELSEIF RAND:2
 				PRINT 혀를 얽어 타액을 교환하듯이 
 			ELSE
@@ -199,18 +199,18 @@ ELSEIF INSERT("합체中")
 		PRINTFORMW 의 입술을 빼앗았다…
 	ENDIF
 ELSEIF TEQUIP:러브트랩
-	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 러브트랩으로 움직일 수 없게된 %CALLNAME:PLAYER%
+	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 러브트랩으로 움직일 수 없게 된 %CALLNAME:PLAYER%
 	;새드끼Lv3
 	IF ABL:새드끼 >= 3 && RAND:3 == 0
 		PRINTFORMW %조사만처리(CALLNAME:PLAYER,"과")%의 키스를 즐기고있다…
 	ELSEIF RAND:2 == 0
-		PRINTFORMW 의 혀를 소리가 나도록 빨고있다…
+		PRINTFORMW 의 혀를 소리가 나도록 빨고 있다…
 	ELSE
 		PRINTFORMW 의 입술을 마음껏 만끽했다…
 	ENDIF
 ELSE
 	IF PREVPLAY("飲尿")
-		PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 음뇨 플레이 직후의 오줌냄새나는 숨을 내쉬면서 호흡을 정돈했다
+		PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 오줌 플레이 직후 오줌냄새나는 숨을 내쉬면서 호흡을 정돈했다
 	ELSEIF COND("前回펠라")
 		PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 페니스를 빠는 것을 중단시키고, 
 	ELSEIF COND("前Ｔ조교자") == PLAYER && (PREVCOM == 98 || PREVCOM == 99)
@@ -242,18 +242,18 @@ ELSE
 ENDIF
 
 IF INSERT("인서트") && ABL:순종 >= 3 && ABL:욕망 >= 3 && ABL:Ｖ감각 >= 3 && PREVCOM >= 66 && PREVCOM <= 68
-	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 민감하 장소
+	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 민감한 장소
 	IF RAND:2 == 0
 		PRINTFORM 를 습격하는 쾌감에 콧김을 거칠게 하면서, 
 	ELSE
 		PRINTFORM 를 공격받을 때마다 달콤한 신음을 흘리면서, 
 	ENDIF
 	IF TEQUIP:넘어뜨리기 || RAND:3 == 0
-		PRINTFORMW 정열적으로 %조사처리(CALLNAME:PLAYER,"를")% 갈구하고있다…
+		PRINTFORMW 정열적으로 %조사처리(CALLNAME:PLAYER,"를")% 갈구하고 있다…
 	ELSEIF RAND:2
-		PRINTFORMW 혀를 얽어온다…
+		PRINTFORMW 혀를 얽혀온다…
 	ELSE
-		PRINTFORMW 키스에 응하고있다…
+		PRINTFORMW 키스에 응하고 있다…
 	ENDIF
 ELSEIF TEQUIP:넘어뜨리기 == 0 && ABL:순종 >= 2 && (ABL:순종 >= 3 || ABL:Ｍ감각 + ABL:PLAYER:혀놀림 >= 2)
 	;テンダー키스
@@ -265,11 +265,11 @@ ELSEIF TEQUIP:넘어뜨리기 == 0 && ABL:순종 >= 2 && (ABL:순종 >= 3 || ABL
 			PRINTFORM 작게 한숨을 흘리면서 
 		ENDIF
 		IF RAND:3 == 0
-			PRINTFORMW , %CALLNAME:PLAYER%에게 몸을 맡기고있다…
+			PRINTFORMW , %CALLNAME:PLAYER%에게 몸을 맡기고 있다…
 		ELSEIF RAND:2 == 0
-			PRINTFORMW , 뺨을 새빨갛게 물들이면서 %CALLNAME:PLAYER%에게 응해왔다…
+			PRINTFORMW , 뺨을 새빨갛게 물들이면서 %CALLNAME:PLAYER%에게 응해 왔다…
 		ELSE
-			PRINTFORMW 황홀해하고있다…
+			PRINTFORMW 황홀해하고 있다…
 		ENDIF
 	ELSEIF TALENT:작은몸집 && TALENT:PLAYER:장신 && INSERT("인서트") + INSERT("삽입中") == 0 && RAND:2
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 신장차를 부들부들 아슬아슬한 까치발로 극복하면서, %CALLNAME:PLAYER%에게 맞춰 적극적으로 혀를 엮어왔다…
@@ -292,7 +292,7 @@ RETURN 1
 SIF TEQUIP:키스 == 0
 	RETURN 0
 
-PRINTFORML ＜틈만 나면 키스中＞
+PRINTFORML ＜틈만 나면 키스중＞
 
 IF TEQUIP:넘어뜨리기
 	LOCAL = MIN(LIMIT(TEQUIP:키스 - 1, 0, ABL:혀놀림) + TALENT:음탕한입술, 4) / 2

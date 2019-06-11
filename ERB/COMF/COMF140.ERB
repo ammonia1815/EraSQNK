@@ -206,9 +206,9 @@ IF CHECK_COM("３Ｐ봉사")
 ELSEIF PREVCOM == SELECTCOM && COND("前Ｔ조교자") == PLAYER
 	PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 
 	;角がありますか？
-	PRINTFORM \@ COND("뿔ハンドル") ? 角を掴んで # 頭を押さえて \@, 
+	PRINTFORM \@ COND("뿔ハンドル") ? 뿔을 잡고 # 머리를 누르고 \@, 
 	IF SIZE("페니스", PLAYER) >= 2 && RANDIF(2, ABL:PLAYER:새드끼 >= 3)
-		PRINTFORM 길다페니스그래서
+		PRINTFORM 긴 페니스로
 	ELSEIF ABL:PLAYER:새드끼 >= 3 && RAND:2
 		PRINTFORM 휴식도 시키지 않을 기세로
 	ELSEIF ABL:마조끼 >= 3 && CHECK("喉姦")
@@ -231,7 +231,7 @@ ELSE
 	IF PREVCOM == 91 && COND("前Ｔ조교자") == PLAYER
 		;汚れてますか？악취둔감で無いならば, 실행치の10分の一の値とRAND:5を比べて判定
 		IF CHECK_STAIN(STAIN:PLAYER:Ｐ, "Ｖ", "Ａ") && TALENT:악취둔감 == 0 && RAND:6 > TCVAR:28/10
-			PRINTFORM %TEXTS("匂い")%에 미간을 대면서
+			PRINTFORM %TEXTS("匂い")%에 미간을 찌뿌리며
 		;연모or헌신的or봉사정신3이상or악취둔감
 		ELSEIF (TALENT:연모 || TALENT:헌신 || ABL:봉사정신 >= 3 || TALENT:악취둔감) && RAND:2 == 0
 			PRINT 맛있는 듯이 
@@ -254,13 +254,13 @@ ELSE
 		ENDIF
 		;前回청소펠라
 		IF PREVPLAY("청소펠라")
-			PRINTFORM 페니스를청소하고 있다%CALLNAME:TARGET%의 
+			PRINTFORM 페니스를 청소하고 있는 %CALLNAME:TARGET%의 
 		ELSE
-			PRINTFORM 봉사하고 있다%CALLNAME:TARGET%의 
+			PRINTFORM 봉사하고 있는 %CALLNAME:TARGET%의 
 		ENDIF
 	;딥스로트中
 	ELSEIF TEQUIP:딥스로트
-		PRINTFORM 뿌리까지 페니스를 물었다%CALLNAME:TARGET%의 
+		PRINTFORM 뿌리까지 페니스를 물었는 %CALLNAME:TARGET%의 
 	ELSE
 		IF BIND("ベッド", TEQUIP:구속) && RAND:2
 			PRINTFORM 위를 향하게 되어 목과 일직선이 되어있는 %CALLNAME:TARGET%의 입안에 

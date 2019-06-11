@@ -99,7 +99,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	PRINTFORMW %CALLNAME:MASTER%는 문을 여는 것과 동시에 입술을 채워졌다
 	PRINTFORMW 「응……쪽…쪽……」
 	PRINTFORMW %CALLNAME:TARGET%는 그대로%CALLNAME:MASTER%를 침대로 밀어 넘어뜨린다…
-	PRINTFORMW %CALLNAME:MASTER%는 갑작스러운 행위에 놀라, 무심코%CALLNAME:TARGET%를 갈라 놓았다
+	PRINTFORMW %CALLNAME:MASTER%는 갑작스러운 행위에 놀라, 무심코%타겟을()% 갈라 놓았다
 	PRINTFORMW 「역시, 구재불능인의…」
 	PRINTFORMW %CALLNAME:TARGET%의 푸른 눈동자로부터 눈물이 흘러넘친다…
 	PRINTFORMW 「어째서…어째서 나는…몽마겠지……」
@@ -109,12 +109,12 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	PRINTFORMW %CALLNAME:TARGET%는 드디어 목소리를 내고 울기 시작했다
 	PRINTFORMW 「히익…나는…%CALLNAME:MASTER%의…일…이렇게도…생각해 ……」
 	PRINTFORMW 「…인데, 어째서 ……어째서 엣!」
-	PRINTFORMW %CALLNAME:MASTER%는%CALLNAME:TARGET%를 상냥하게 꼭 껴안았다
+	PRINTFORMW %CALLNAME:MASTER%는%타겟을()% 상냥하게 꼭 껴안았다
 	PRINTFORMW %CALLNAME:TARGET%는 꼭 껴안을 수 있으면 안심했는지 조금 침착성을 되찾았다
 	PRINTFORMW 「앞으로도…쭉…함께 라고 주어…?」
 	PRINTFORMW %CALLNAME:MASTER%는 입다물고 수긍한다
 	PRINTFORMW 「나…몽마로 엣찌이지만…그런데도…?」
-	PRINTFORMW %CALLNAME:MASTER%는 상냥하게 입맞춤을 해, %CALLNAME:TARGET%를 밀어 넘어뜨렸다
+	PRINTFORMW %CALLNAME:MASTER%는 상냥하게 입맞춤을 해, %타겟을()% 밀어 넘어뜨렸다
 	PRINTFORMW 「…쭉, 쭉 함께야……」
 	SETBIT CFLAG:201, 4
 ;조수の有無を체크（いない場合は二回目以降へ飛ぶ）
@@ -464,7 +464,7 @@ ELSEIF TALENT:상사상애 && CFLAG:99
 			PRINTFORMW 「따뜻해서……행복……」
 			PRINTFORMW 결국, %조사처리(CALLNAME:TARGET,"가")% 자 버릴 때까지 두 명은 떨어지는 일은 없었다
 		ELSEIF RAND:2 == 0
-			PRINTFORM %CALLNAME:TARGET%(와)과의 행위를 끝마치려고 생각, 
+			PRINTFORM %타겟과()%의 행위를 끝마치려고 생각, 
 			;마스터に페니스がある
 			IF PENIS(MASTER)
 				PRINTFORMW 질로부터페니스를 뽑아 낸다
@@ -1667,7 +1667,7 @@ IF SELECTCOM == 60
 		ELSE
 			PRINTFORMW 「나의…안으로…기분 좋게……라고…」
 			PRINTFORMW %CALLNAME:TARGET%는 필사적으로 스스로 허리를 움직인다
-			PRINTFORMW 그런%CALLNAME:TARGET%를 사랑스러운구생각%CALLNAME:PLAYER%는 허리의 움직임을 더욱 가속한다
+			PRINTFORMW 그런%타겟을()% 사랑스러운구생각%CALLNAME:PLAYER%는 허리의 움직임을 더욱 가속한다
 			PRINTFORMW 「이나 …아아앙! 그것…너무 격렬해지고………아아!」
 		ENDIF
 		;굴복각인Lv3＋V감각Lv3이상
@@ -3919,7 +3919,7 @@ IF SELECTCOM == 64
 		ELSEIF TALENT:연모
 		IF RAND:2 == 0
 			PRINTFORMW 「이 모습……음란한……」
-			PRINTFORMW 별로 흥미가 아닌%CALLNAME:TARGET%를 %CALLNAME:PLAYER%는 격렬하게 몰아세웠다
+			PRINTFORMW 별로 흥미가 아닌%타겟을()% %CALLNAME:PLAYER%는 격렬하게 몰아세웠다
 			PRINTFORMW 「아아! 그런……아…이앙!」
 			PRINTFORMW 「음란한…지만……기분…좋다……」
 		ELSE
@@ -4979,7 +4979,7 @@ ELSEIF SHOOT("손")
 	;봉사정신Lv3
 	ELSEIF ABL:봉사정신 >= 3
 		PRINTFORML 「아…………!…으윽…」
-		PRINTFORMW %CALLNAME:TARGET%를 손에 붙은 정액을 빨아 얼굴을 찡그렸다
+		PRINTFORMW %타겟을()% 손에 붙은 정액을 빨아 얼굴을 찡그렸다
 	;それ以外
 	ELSE
 		PRINTFORML 「아………」
@@ -5010,7 +5010,7 @@ ELSEIF SHOOT("Ｖ내사정")
 			PRINTFORMW 「아……하아……」
 		ELSE
 			PRINTFORMW 「아아……하아……」
-			PRINTFORMW 절정 후, 축 늘어져 하고 있는%CALLNAME:TARGET%를 %CALLNAME:PLAYER%는 상냥하게 꼭 껴안았다
+			PRINTFORMW 절정 후, 축 늘어져 하고 있는%타겟을()% %CALLNAME:PLAYER%는 상냥하게 꼭 껴안았다
 			PRINTFORMW 「아………」
 			PRINTFORMW 머리를 어루만져 하면, %CALLNAME:TARGET%는 상쾌한 듯이 한숨을 붙었다
 			PRINTFORMW 「하아……그렇게 되는 것…좋아해……」
@@ -5714,7 +5714,7 @@ CASE "비디오送付"
 			ELSEIF VIDEO("촉수소환") || VIDEO("용간")
 				PRINTFORMW 사람이 아닌 물건과의 교제를 시작했다
 			ELSEIF VIDEO("섹스")
-				PRINTFORMW %CALLNAME:PLAYER%(와)과욕망대로 사귀기 시작했다
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"와")%욕망대로 사귀기 시작했다
 			ELSE	
 				PRINTFORMW 손대어진 것 뿐으로 몇번이나절정에 이끌리고 있는 일이 되었다
 			ENDIF
