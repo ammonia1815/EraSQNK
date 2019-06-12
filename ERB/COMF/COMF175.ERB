@@ -121,7 +121,7 @@ SIF COND("다리 사용")
 	PRINTFORML  [ 2] 보디슈츠, 원피스수영복 등
 	PRINTFORML  [ 3] 속옷, 세퍼레이트수영복 등
 SIF COND("다리 사용")
-	PRINTFORML  [ 4] 브루마, 스패츠, 팬티스타킹 등
+	PRINTFORML  [ 4] 블루머, 스패츠, 팬티스타킹 등
 SIF COND("다리 사용")
 	PRINTFORML  [ 5] 양말 등
 SIF COND("손가락 사용")
@@ -744,7 +744,7 @@ ELSEIF RESULT >= 0 && RESULT < 50 && LOCAL:RESULT
 	ELSEIF CHECK_SHIRT("메이드복")
 		PRINTFORMW 빳빳하게 풀을 먹인, 청결한 메이드복을 입도록 시켰습니다
 	ELSEIF CHECK_SHIRT("체조복")
-		PRINTFORMW \@ COND("다리 사용") ? 브루마에서 뻗어나온 다리가  # \@건강해보이는 체조복으로 갈아입게 시켰습니다
+		PRINTFORMW \@ COND("다리 사용") ? 블루머에서 뻗어나온 다리가  # \@건강해보이는 체조복으로 갈아입게 시켰습니다
 	ELSEIF CHECK_SHIRT("간호사복")
 		PRINTFORMW 백의의 천사가 되도록 시켰습니다
 	ELSEIF CHECK_SHIRT("차이나드레스")
@@ -1728,7 +1728,7 @@ ELSEIF RESULT >= 0 && RESULT <= 20 && LOCAL:RESULT
 			EQUIP:스커트 = SETFLAG_SKIRT("초미니", "에이프런", "프릴")
 		ENDSELECT
 	CASE "체조복"
-		PRINTFORMW \@ COND("다리 사용") ? 브루마에서 뻗어나온 다리가 # \@건강해보이는 체조복으로 갈아입게 시켰습니다
+		PRINTFORMW \@ COND("다리 사용") ? 블루머에서 뻗어나온 다리가 # \@건강해보이는 체조복으로 갈아입게 시켰습니다
 	CASE "간호사복"
 		PRINTFORMW 백의의 천사가 되도록 시켰습니다
 	CASE "차이나드레스"
@@ -1780,7 +1780,7 @@ ELSEIF RESULT >= 0 && RESULT <= 20 && LOCAL:RESULT
 			ELSE
 				PRINTFORMW %CALLNAME:TARGET%에게 기장이 약간 긴, %CALLNAME:MASTER%의 Ｙ셔츠로 갈아입게 시켰습니다
 				IF TALENT:부끄럼없음 || RAND:6 == 0
-					IF CHECK_CLO("브루마노출") || CHECK_CLO("스패츠노출")
+					IF CHECK_CLO("블루머노출") || CHECK_CLO("스패츠노출")
 						PRINTFORMW 밑단의 겹쳐지는 곳으로 힐끔힐끔 보이는 %조사선택(OUTER(TARGET, 1), "가")% %CALLNAME:MASTER%의 눈을 빼앗고 있습니다…
 					ELSEIF CHECK_CLO("팬티노출")
 						PRINTFORMW 밑단의 겹쳐지는 곳으로 힐끔힐끔 보이는 %조사선택(PANTIES(TARGET, 1), "가")% %CALLNAME:MASTER%의 눈을 빼앗고 있습니다…
@@ -1940,9 +1940,9 @@ IF RESULT == 100
 ELSEIF RESULT >= 0 && RESULT <= 49 && LOCAL:RESULT
 	CALL SET_OUTER, TARGET, RESULT+100
 	IF RESULT == 100
-		PRINTFORMW 각선미가 돋보이는 브루마를 입도록 시켰습니다
+		PRINTFORMW 각선미가 돋보이는 블루머를 입도록 시켰습니다
 	ELSEIF RESULT == 101
-		PRINTFORMW 먹혀든 가랑이와 엉덩이가 사랑스러운 하이레그 브루마를 입도록 시켰습니다
+		PRINTFORMW 먹혀든 가랑이와 엉덩이가 사랑스러운 하이레그 블루머를 입도록 시켰습니다
 	ELSEIF RESULT == 102
 		PRINTFORMW 허벅지와 허리사이를 절묘하게 조여주는 스패츠를 입도록 시켰습니다
 		IF CHECK_CLO("겉옷直穿き")
@@ -2575,8 +2575,8 @@ ELSEIF CHECK_CLO("팬티스타킹노출")
 		ENDIF
 		CALL SELF_KOJO, "自発脱ぎ"
 	ENDIF
-;브루마は脱ぎません
-ELSEIF CHECK_OUTER("브루마")
+;블루머は脱ぎません
+ELSEIF CHECK_OUTER("블루머")
 ELSEIF CHECK_CLO("겉옷노출")
 	IF CHECK_OUTER("파스너")
 		IF CHECK_OUTER("파스너閉") && LOCAL >= 20
