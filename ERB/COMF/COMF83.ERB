@@ -397,7 +397,7 @@ ELSEIF TEQUIP:넘어뜨리기
 			PRINTFORM %SKIRT(TARGET, 1)%를
 		ENDIF
 		IF COND("입의 사용") && RANDIF(2, COND("손가락 사용") )
-			PRINT 입그리고 물어
+			PRINT 입으로 물어
 		ELSEIF COND("손가락 사용") && RAND:2
 			PRINT 손가락으로 깎아
 		ELSE
@@ -410,31 +410,31 @@ ELSEIF TEQUIP:넘어뜨리기
 		ELSE
 			PRINTFORM %TEXTR("부끄러운 곳", "둔덕")%
 		ENDIF
-		PRINTFORM 을 %TEXTR("과시하", "내보이")%면서
+		PRINTFORM 을 %TEXTR("과시하", "내보이")%면서 
 	ELSE
 		IF TALENT:호색 + TALENT:음란 + TALENT:연모 && COND("視力") && RAND:3 == 0
-			PRINT 얼굴을 응시하면서
+			PRINT 얼굴을 응시하면서 
 		ELSEIF TEQUIP:넘어뜨리기 && ABL:새드끼 >= 2 && RAND:2
 			IF TALENT:교만 + TALENT:강기 && RANDIF(2, TALENT:건방짐 + TALENT:소악마)
-				PRINT 겁없는 미소를 띄우면서
+				PRINT 겁없는 미소를 띄우면서 
 			ELSEIF TALENT:건방짐 + TALENT:소악마 && RAND:2
-				PRINT 히죽히죽 하면서
+				PRINT 히죽히죽 하면서 
 			ELSE
-				PRINT 기학적인 기쁨을 배이게 하면서
+				PRINT 기학적인 기쁨을 배이게 하면서 
 			ENDIF
 		ELSEIF CHECK("요도인서트") && RAND:2
 			IF RAND:2
-				PRINT 달콤한 한숨을 흘리면서
+				PRINT 달콤한 한숨을 흘리면서 
 			ELSE
-				PRINT 기분 좋은 것 같은 얼굴을 보이면서
+				PRINT 기분 좋은 것 같은 얼굴을 보이면서 
 			ENDIF
 		ELSE
-			PRINT 열정적인 숨을 내쉬면서
+			PRINT 열정적인 숨을 내쉬면서 
 		ENDIF
 		IF ABL:요도확장 > SIZE("페니스", PLAYER) && ABL:새드끼 && RAND:2
-			PRINT 단번에
+			PRINT 단번에 
 		ELSE
-			PRINT 천천히
+			PRINT 천천히 
 		ENDIF
 	ENDIF
 	IF PENIS(TARGET) == 0
@@ -458,24 +458,24 @@ ELSEIF TEQUIP:넘어뜨리기
 ELSE
 	PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 
 	SIF PREVCOM == 13 && PENIS(TARGET) == 0
-		PRINT 보지를 손가락으로 펴넓히고 있는
+		PRINT 보지를 손가락으로 펴넓히고 있는 
 	PRINTFORM %CALLNAME:TARGET%의 
 	;前回で사정された
 	IF PREVEX("요도内사정")
-		PRINTFORM 정액를 쏟아진지 얼마 안된
+		PRINTFORM 정액를 쏟아진지 얼마 안된 
 	;前回방뇨
 	ELSEIF PREVPLAY("방뇨")
-		PRINTFORM 배뇨 한지 얼마 안된
+		PRINTFORM 배뇨 한지 얼마 안된 
 	ELSEIF PREVPLAY("방광内욕뇨")
-		PRINTFORM 수뇨직후의
+		PRINTFORM 수뇨직후의 
 	ELSEIF PENIS(TARGET) && PREVEX("사정")
-		PRINTFORM 사정했던 바로 직후로 민감한
+		PRINTFORM 사정했던 바로 직후로 민감한 
 	ELSEIF PREVCOM == 15
-		PRINTFORM 손가락으로 희롱해져 열 기미의
+		PRINTFORM 손가락으로 희롱해져 열 기미의 
 	ELSEIF PREVCOM == 149
-		PRINTFORM 카테터를 뽑아 내진 직후의
+		PRINTFORM 카테터를 뽑아 내진 직후의 
 	ELSEIF PREVCOM == 151
-		PRINTFORM 브지로 괴롭히고 뽑은 직후의
+		PRINTFORM 브지로 괴롭히고 뽑은 직후의 
 	ENDIF
 
 	;初めての페니스受け入れ
@@ -489,7 +489,7 @@ ELSE
 		IF PENIS(TARGET)
 			PRINTFORMW 페니스를,\@ CHOSECOM(SELECTCOM) ? 다시 # \@스스로의 것으로\@ SIZE("페니스", PLAYER) >= 1 ? 깊게 # \@관철했다.
 		ELSE
-			PRINTFORMW 를,\@ CHOSECOM(SELECTCOM) ? 다시 # \@페니스로 관철했다.
+			PRINTFORMW 요도를,\@ CHOSECOM(SELECTCOM) ? 다시 # \@페니스로 관철했다.
 		ENDIF
 	ENDIF
 ENDIF
