@@ -58,7 +58,7 @@ CASE "生理周期"
 	IF TALENT:ARG:임신 == 3
 		PRINTFORM (출산임박) 
 	ELSEIF TALENT:ARG:임신 == 2
-		PRINTFORM (산월) 
+		PRINTFORM (만삭) 
 	ELSEIF TALENT:ARG:임신
 		PRINTFORM (임신) 
 	;피임中
@@ -67,7 +67,7 @@ CASE "生理周期"
 	ELSEIF COND("발정기", ARG)
 		PRINTFORM (
 		SETCOLOR DEF_COLOR("하트핑크")
-		PRINTFORM 발정기
+		PRINTFORM 발정
 		RESETCOLOR
 		PRINTFORM ) 
 	;ELSEIF BASE:ARG:태아
@@ -134,13 +134,13 @@ CASE "추가地の文：穴から穴へ"
 	CASE 83
 		SELECTCASE RAND:2
 		CASE 1
-			LOCALS = オシッコの穴
+			LOCALS = 오줌구멍
 		CASEELSE
-			LOCALS = 
+			LOCALS = 요도
 		ENDSELECT
 
 		IF RAND:3 == 0
-			LOCALS:1 = アンモニア臭い
+			LOCALS:1 = 암모니아 냄새가 나는
 		ELSEIF RAND:3 == 0
 			LOCALS:1 = %LOCALS%에서 뽑아낸 
 		ELSEIF TALENT:ASSI:요도성감 && RAND:3 == 0
@@ -171,7 +171,7 @@ CASE "추가地の文：穴から穴へ"
 				ENDIF
 			ELSE
 				IF RAND:2
-					PRINTFORM 엉덩이구멍 안을 문질러올려져
+					PRINTFORM 엉덩이구멍 안을 문질러 올려져
 				ELSE
 					PRINTFORM %LOCALS%에서 갓 뽑혀진 
 				ENDIF
@@ -190,7 +190,7 @@ CASE "추가地の文：穴から穴へ"
 				PRINTFORM 애액으로 
 			PRINTFORM 더럽혀진 
 		ELSEIF PREVCOM == 82
-			PRINTFORM 니플로부터 뽑아 낸지 얼마 안된
+			PRINTFORM 유두로부터 뽑아 낸지 얼마 안된
 		ELSEIF PREVCOM == 83
 			PRINTFORM 요도로부터 뽑아 낸지 얼마 안된
 		ENDIF
@@ -236,26 +236,26 @@ CASE "추가地の文：Ｖ삽입後"
 	IF PLAYER == MASTER && ( (CALCF("Ｖ이력：Ｐ何日ぶり") >= 3 && RAND:5 == 0) || CALCF("Ｖ이력：Ｐ何日ぶり") >= 10)
 		SELECTCASE CALCF("Ｖ이력：Ｐ何日ぶり")
 		CASE IS >= 30
-			LOCALS:1 = 実に一月이상もおあずけされた%CALLNAME:PLAYER%の
+			LOCALS:1 = 실로 한달 이상 참은 %CALLNAME:PLAYER%의 
 		CASE IS >= 21
-			LOCALS:1 = 三週間ぶりの%CALLNAME:PLAYER%の
+			LOCALS:1 = 3주만의 %CALLNAME:PLAYER%의 
 		CASE IS >= 14
-			LOCALS:1 = 二週間ぶりの%CALLNAME:PLAYER%の
+			LOCALS:1 = 이주만의 %CALLNAME:PLAYER%의 
 		CASE IS >= 10
-			LOCALS:1 = 実に{CALCF("Ｖ이력：Ｐ何日ぶり")}日ぶりとなる%CALLNAME:PLAYER%の
+			LOCALS:1 = {CALCF("Ｖ이력：Ｐ何日ぶり")}일 동안 참은 %CALLNAME:PLAYER%의 
 		CASEELSE
-			LOCALS:1 = {CALCF("Ｖ이력：Ｐ何日ぶり")}日ぶりの%CALLNAME:PLAYER%の
+			LOCALS:1 = {CALCF("Ｖ이력：Ｐ何日ぶり")}일 만의 %CALLNAME:PLAYER%의 
 		ENDSELECT
 	ELSEIF SIZE("페니스", PLAYER) >= 2 && (CHOSECOM(232) || CHOSECOM(242) || RAND:2)
-		LOCALS:1 = %CALLNAME:PLAYER%の%TEXTR("野太い", "凶悪な", "大きな", "長大な")%
+		LOCALS:1 = %CALLNAME:PLAYER%의 %TEXTR("굵은 ", "흉악한 ", "큰 ", "자란 ")%
 		IF CHOSECOM(232) || CHOSECOM(242) || RAND:2
 			IF SIZE("페니스", PLAYER) >= SIZE("한손피스트", TARGET)
-				LOCALS:1 = 自分の腕\@ SIZE("페니스", PLAYER) > SIZE("한손피스트", TARGET) ? よりも大きな # 程もある \@
+				LOCALS:1 = 자신의 팔\@ SIZE("페니스", PLAYER) > SIZE("한손피스트", TARGET) ? 보다 큰  # 만한 \@
 			ELSEIF SIZE("페니스", PLAYER) >= 2 && ABL:Ｖ확장 >= 2
 				IF TALENT:작은몸집 || SIZE("페니스", PLAYER) >= 3
-					LOCALS:1 = お臍の上まで侵入してくる
+					LOCALS:1 = 배꼽 위까지 들어오는
 				ELSE
-					LOCALS:1 = 臍下まで到達する
+					LOCALS:1 = 배꼽 아래까지 닿는
 				ENDIF
 			ENDIF
 		ENDIF
@@ -406,9 +406,9 @@ CASE "추가地の文：Ｖ삽입後"
 					ENDIF
 					PRINTFORM 음란한 
 				ELSEIF RAND:3 == 0
-					PRINTFORM 젖고 물기를 띠었다
+					PRINTFORM 푹 젖은
 				ELSEIF RAND:2
-					PRINTFORM 애액을 배이게 한다
+					PRINTFORM 애액을 밴
 				ELSE
 					PRINTFORM 끈적끈적해진 
 				ENDIF
@@ -631,26 +631,26 @@ CASE "추가地の文：Ａ삽입後"
 	IF PLAYER == MASTER && ( (CALCF("Ａ이력：Ｐ何日ぶり") >= 3 && RAND:5 == 0) || CALCF("Ａ이력：Ｐ何日ぶり") >= 10)
 		SELECTCASE CALCF("Ａ이력：Ｐ何日ぶり")
 		CASE IS >= 30
-			LOCALS:1 = 実に一月이상もおあずけされた%CALLNAME:PLAYER%の
+			LOCALS:1 = 실로 한달 이상 참은 %CALLNAME:PLAYER%의 
 		CASE IS >= 21
-			LOCALS:1 = 三週間ぶりの%CALLNAME:PLAYER%の
+			LOCALS:1 = 3주만의 %CALLNAME:PLAYER%의 
 		CASE IS >= 14
-			LOCALS:1 = 二週間ぶりの%CALLNAME:PLAYER%の
+			LOCALS:1 = 이주만의 %CALLNAME:PLAYER%의 
 		CASE IS >= 10
-			LOCALS:1 = 実に{CALCF("Ｖ이력：Ｐ何日ぶり")}日ぶりとなる%CALLNAME:PLAYER%の
+			LOCALS:1 = {CALCF("Ｖ이력：Ｐ何日ぶり")}일 동안 참은 %CALLNAME:PLAYER%의 
 		CASEELSE
-			LOCALS:1 = {CALCF("Ｖ이력：Ｐ何日ぶり")}日ぶりの%CALLNAME:PLAYER%の
+			LOCALS:1 = {CALCF("Ｖ이력：Ｐ何日ぶり")}일 만의 %CALLNAME:PLAYER%의 
 		ENDSELECT
 	ELSEIF SIZE("페니스", PLAYER) >= 2 && (CHOSECOM(232) || CHOSECOM(242) || RAND:2)
-		LOCALS:1 = %CALLNAME:PLAYER%の%TEXTR("野太い", "凶悪な", "大きな", "長大な")%
+		LOCALS:1 = %CALLNAME:PLAYER%의 %TEXTR("굵은 ", "흉악한 ", "큰 ", "자란 ")%
 		IF CHOSECOM(232) || CHOSECOM(242) || RAND:2
 			IF SIZE("페니스", PLAYER) >= SIZE("한손피스트", TARGET)
-				LOCALS:1 = 自分の腕\@ SIZE("페니스", PLAYER) > SIZE("한손피스트", TARGET) ? よりも大きな # 程もある \@
+				LOCALS:1 = 자신의 팔\@ SIZE("페니스", PLAYER) > SIZE("한손피스트", TARGET) ? 보다 큰  # 정도 크기의 \@
 			ELSEIF SIZE("페니스", PLAYER) >= 2 && ABL:Ａ확장 >= 2
 				IF TALENT:작은몸집 || SIZE("페니스", PLAYER) >= 3
-					LOCALS:1 = 信じられないほど奥まで侵入してくる
+					LOCALS:1 = 믿을 수 없을 정도로 안까지 들어오는
 				ELSE
-					LOCALS:1 = 直腸の奥深くまで満たしてくる
+					LOCALS:1 = 직장 깊숙이까지 채워오는
 				ENDIF
 			ENDIF
 		ENDIF
@@ -667,7 +667,7 @@ CASE "추가地の文：Ａ삽입後"
 	ELSEIF SELECTCOM == 75 || TEQUIP:넘어뜨리기
 		LOCALS:1 = %CALLNAME:PLAYER%의 \@ RAND:2 ? 성난 # 발기한 \@ 
 	ELSEIF ABL:PLAYER:새드끼 && SIZE("페니스", PLAYER) && RAND:3 == 0
-		LOCALS:1 = 直腸へと突き込まれる
+		LOCALS:1 = 직장으로 파고드는
 	ELSEIF RAND:4 == 0
 		LOCALS:1 = 천천히 들어오는 
 	ELSEIF RAND:3 == 0
@@ -1005,7 +1005,7 @@ CASE "추가地の文：요도삽입後"
 		IF PENIS(TARGET)
 			;拡張十分
 			IF MIN_STR(CONDS("요도확장度") ) > SIZE("페니스の直径", PLAYER)
-				PRINTFORMW %CALLNAME:TARGET%의 \@ EXP:요도경험 >= 50 ? 경험풍부한 # \@페니스안에, 내밀어지는 대로 %CALLNAME:PLAYER%자신을 근원까지 받아들여 간다…
+				PRINTFORMW %CALLNAME:TARGET%의 \@ EXP:요도경험 >= 50 ? 경험풍부한 # \@페니스안에, 내밀어지는 대로 %CALLNAME:PLAYER%자신을 뿌리까지 받아들여 간다…
 			ELSE
 				PRINTFORMW %CALLNAME:TARGET%의 페니스는 힘껏 침입해 오는 육봉에 계속 참지 못하고, 찢어질 것 같을 정도에 길게 늘어져 비명을 올리고 있다…
 			ENDIF
@@ -1026,19 +1026,19 @@ CASE "추가地の文：요도삽입後"
 					IF RAND:2
 						PRINTFORMW 스스로의 페니스를 쾌감을 얻는 장소로서 받아들여 버린 %타겟은()%, 해면체를 펴넓힐 수 있는 기쁨에 달콤한 한숨을 흘리고 있다…
 					ELSE
-						PRINTFORMW 완전히 이 이상한 행위에 익숙해진 %타겟은()%, 여유의 표정으로 허리를 내밀어 탐욕에 %CALLNAME:PLAYER%자신을 요구하고 있다…
+						PRINTFORMW 완전히 이 이상한 행위에 익숙해진 %타겟은()%, 여유의 표정으로 허리를 내밀어 탐욕스럽게 %CALLNAME:PLAYER% 자신을 요구하고 있다…
 					ENDIF
 				ELSE
 					IF RAND:2
-						PRINTFORMW %타겟은()% 흥분으로 터질 것 같을 정도에 페니스를 발기시켜,%CALLNAME:PLAYER%의 고조됨을 민감한 점막으로 즐기고 있다…
+						PRINTFORMW %타겟은()% 흥분으로 터질 것 같을 정도에 페니스를 발기시켜, %CALLNAME:PLAYER%의 고조됨을 민감한 점막으로 즐기고 있다…
 					ELSE
-						PRINTFORMW %타겟은()% 무의식 중에 허리를 전후 시켜, 더욱 깊은 장소에서의 자극을 요구하고 있다…
+						PRINTFORMW %타겟은()% 무의식 중에 허리를 앞 뒤로 해, 더욱 깊은 장소에서의 자극을 요구하고 있다…
 					ENDIF
 				ENDIF
 			;許容できるプレイだが慣れていない
 			ELSEIF CHECK("요도플레이")
 				IF CHOSECOM(SELECTCOM) == 0
-					PRINTFORMW 아픔자체는 그만큼은 아닌 것 같지만, %타겟은()% 익숙해지지 않는 행위에 몹시 놀라면서 허리를 움직이고 있다…
+					PRINTFORMW 아픔 자체는 심하지 않은 것 같지만, %타겟은()% 익숙해지지 않는 행위에 몹시 놀라면서 허리를 움직이고 있다…
 				ELSE
 					PRINTFORMW %타겟은()% 해면체를 펴넓히면서 출입시키는 감각에, 아직도 불안한 모습이다…
 				ENDIF
@@ -1054,26 +1054,26 @@ CASE "추가地の文：요도삽입後"
 			IF TALENT:요도성감 && EXP:요도성교경험 >= 20 && CHECK("요도인서트")
 				IF CHOSECOM(SELECTCOM) == 0
 					IF RAND:2
-						PRINTFORMW 스스로 요도를 성기로서 인식해 버린 %타겟은()%,페니스를 근원까지 받아들이는 기쁨에 달콤한 한숨을 흘리고 있다…
+						PRINTFORMW 스스로 요도를 성기로서 인식해 버린 %타겟은()%,페니스를 뿌리까지 받아들이는 기쁨에 달콤한 한숨을 흘리고 있다…
 					ELSE
 						PRINTFORMW 완전히 이 이상한 행위에 익숙해진 %타겟은()%, 여유의 표정으로 허리를 곤두세워 탐욕에 %CALLNAME:PLAYER%의 페니스를 요구하고 있다…
 					ENDIF
 				ELSE
 					IF RAND:2
-						PRINTFORMW %타겟은()% 흥분으로 신체를 달아오르게 하면서, %CALLNAME:PLAYER%의 공격을 정진정명[正眞正銘]의 배설기관의 점막으로 즐기고 있다…
+						PRINTFORMW %타겟은()% 흥분으로 신체를 달아오르게 하면서, %CALLNAME:PLAYER%의 공격을 실제 배설기관의 점막으로 즐기고 있다…
 					ELSE
 						PRINTFORMW %타겟은()% 무의식 중에 허리를 그라인드 시켜, 더욱 깊은 장소에서의 자극을 요구하고 있다…
 					ENDIF
 				ENDIF
 			ELSEIF CHECK("요도플레이")
 				IF CHOSECOM(SELECTCOM) == 0
-					PRINTFORMW 아픔자체는 그만큼은 아닌 것 같지만, %타겟은()% 익숙해지지 않는 방광으로의 삽입행위에 때때로 얼굴을 찡그리고 있다…
+					PRINTFORMW 아픔 자체는 심하지 않은 것 같지만, %타겟은()% 익숙해지지 않는 방광으로의 삽입행위에 때때로 얼굴을 찡그리고 있다…
 				ELSE
 					PRINTFORMW %타겟은()% 다른 어느 구멍보다 섬세한을 사용해 남성기를 잡아당기는 감각에, 불안을 숨길 수 없는 것 같다…
 				ENDIF
 			ELSE
 				IF RAND:2
-					PRINTFORMW %타겟은()% 익숙해지지 않는 아픔를 미묘한 표정을 띄워 씹어 참으면서, 성행위를 계속하고 있다…
+					PRINTFORMW %타겟은()% 익숙해지지 않는 아픔를 미묘한 표정을 띄워 참으면서, 성행위를 계속하고 있다…
 				ELSE
 					PRINTFORMW %타겟은()% 행위 자체에는 익숙해져 버린 것 같지만, 어딘지 모르게 불안한 모습이 표정에 떠올라 있다…
 				ENDIF
@@ -1085,25 +1085,25 @@ CASE "추가地の文：요도삽입後"
 			IF TALENT:요도성감 && EXP:요도성교경험 >= 20 && CHECK("요도인서트")
 				IF CHOSECOM(SELECTCOM) == 0
 					IF RAND:3 == 0
-						PRINTFORMW %타겟은()% 본래액체밖에 통하지 않는 관을 탄력이 있어서 밀어 헤치고 침입되는 감각의 포로인 것 같다…
+						PRINTFORMW %타겟은()% 본래 액체밖에 통하지 않는 관을 탄력이 있는 것으로 밀려 파고들어지는 감각의 포로인 것 같다…
 					ELSEIF RAND:2
 						PRINTFORMW 스스로의 페니스를 범해지는 장소로서 받아들여 버린 %타겟은()%, 해면체를 펴넓힐 수 있는 기쁨에 달콤한 한숨을 흘리고 있다…
 					ELSE
-						PRINTFORMW 완전히 이 이상한 행위에 익숙해진 %타겟은()%, 여유의 표정으로 허리를 내밀어 탐욕에 %CALLNAME:PLAYER%의 고문을 요구하고 있다…
+						PRINTFORMW 완전히 이 이상한 행위에 익숙해진 %타겟은()%, 여유의 표정으로 허리를 내밀어 탐욕스럽게 %CALLNAME:PLAYER%의 고문을 요구하고 있다…
 					ENDIF
 				ELSE
 					IF RAND:2
-						PRINTFORMW %타겟은()% 흥분으로 터질 것 같을 정도에페니스를 발기시켜,%CALLNAME:PLAYER%의 공격을 민감한 점막으로 즐기고 있다…
+						PRINTFORMW %타겟은()% 흥분으로 터질 것 같은 페니스를 발기시켜,%CALLNAME:PLAYER%의 공격을 민감한 점막으로 즐기고 있다…
 					ELSE
-						PRINTFORMW %타겟은()% 무의식 중에 허리를 전후 시켜, 더욱 깊은 장소에서의 자극을 요구하고 있다…
+						PRINTFORMW %타겟은()% 무의식 중에 허리를 앞 뒤로 해, 더욱 깊은 장소에서의 자극을 요구하고 있다…
 					ENDIF
 				ENDIF
 			;許容できるプレイだが慣れていない
 			ELSEIF CHECK("요도플레이")
 				IF CHOSECOM(SELECTCOM) == 0
-					PRINTFORMW 아픔자체는 그만큼은 아닌 것 같지만,%타겟은()% 익숙해지지 않는 행위에 몹시 놀라고 있다…
+					PRINTFORMW 아픔 자체는 심하지 않은 것 같지만,%타겟은()% 익숙해지지 않는 행위에 몹시 놀라고 있다…
 				ELSEIF RAND:2
-					PRINTFORMW %타겟은()% %CALLNAME:PLAYER%의 제정신의 정도를 측정하기 어려워 하는지, 뭐라고도 말할 수 없는 표정이다…
+					PRINTFORMW %타겟은()% %CALLNAME:PLAYER%의 제 정신의 정도를 측정하기 어려워 하는지, 뭐라고도 말할 수 없는 표정이다…
 				ELSE
 					PRINTFORMW %타겟은()% 해면체를 펴넓히면서 출입되는 감각에, 불안을 숨길 수 없는 것 같다…
 				ENDIF
@@ -1129,30 +1129,30 @@ CASE "추가地の文：요도삽입後"
 			IF TALENT:요도성감 && EXP:요도성교경험 >= 20 && CHECK("요도인서트")
 				IF CHOSECOM(SELECTCOM) == 0
 					IF RAND:3 == 0
-						PRINTFORMW %타겟은()% 본래액체밖에 통하지 않는 관을 탄력이 있어서 밀어 헤치고 침입되는 감각의 포로인 것 같다…
+						PRINTFORMW %타겟은()% 본래 액체밖에 통하지 않는 관을 탄력이 있는 것으로 밀어 헤치고 침입되는 감각의 포로인 것 같다…
 					ELSEIF RAND:2
-						PRINTFORMW 스스로의를 범해지는 장소로서 받아들여 버린 %타겟은()%,페니스를 근원까지 받아들이는 기쁨에 달콤한 한숨을 흘리고 있다…
+						PRINTFORMW 스스로 요도를 범해지는 장소로서 받아들여 버린 %타겟은()%,페니스를 뿌리까지 받아들이는 기쁨에 달콤한 한숨을 흘리고 있다…
 					ELSE
-						PRINTFORMW 완전히 이 이상한 행위에 익숙해진 %타겟은()%, 여유의 표정으로 허리를 내밀어 탐욕에 %CALLNAME:PLAYER%의 고문을 요구하고 있다…
+						PRINTFORMW 완전히 이 이상한 행위에 익숙해진 %타겟은()%, 여유의 표정으로 허리를 내밀어 탐욕스럽게 %CALLNAME:PLAYER%의 고문을 요구하고 있다…
 					ENDIF
 				ELSE
 					IF RAND:2
-						PRINTFORMW %타겟은()% 흥분으로 신체를 달아오르게 하면서, %CALLNAME:PLAYER%의 공격을 정진정명[正眞正銘]의배설기관의 점막으로 즐기고 있다…
+						PRINTFORMW %타겟은()% 흥분으로 신체를 달아오르게 하면서, %CALLNAME:PLAYER%의 공격을 실제 배설기관의 점막으로 즐기고 있다…
 					ELSE
-						PRINTFORMW %타겟은()% 무의식 중에 허리를 전후 시켜, 더욱 깊은 장소에서의 자극을 요구하고 있다…
+						PRINTFORMW %타겟은()% 무의식 중에 허리를 앞 뒤로 해, 더욱 깊은 장소에서의 자극을 요구하고 있다…
 					ENDIF
 				ENDIF
 			ELSEIF CHECK("요도플레이")
 				IF CHOSECOM(SELECTCOM) == 0
 					IF RAND:2
-						PRINTFORMW %타겟은()% 두꺼운 이물이 저항를 무시해 깊숙히 침입해 오는데 참기 힘든지 눈을 힘겹게 닫고 있다…
+						PRINTFORMW %타겟은()% 두꺼운 이물이 저항를 무시해 깊숙히 침입해 오는데 참기 힘든지 눈을 힘겹게 감고 있다…
 					ELSE
-						PRINTFORMW 아픔자체는 그만큼은 아닌 것 같지만, %타겟은()%\@ EXP:요도성교경험 >= 20 ? 一向に # \@익숙해지지 않는 방광으로의 삽입행위에 몹시 놀라고 있다…
+						PRINTFORMW 아픔 자체는 심하지 않은 것 같지만, %타겟은()%\@ EXP:요도성교경험 >= 20 ? 전혀 # \@익숙해지지 않는 방광으로의 삽입행위에 몹시 놀라고 있다…
 					ENDIF
 				ELSEIF RAND:2
-					PRINTFORMW %타겟은()% %CALLNAME:PLAYER%의 제정신의 정도를 측정하기 어려워 하는지, 뭐라고도 말할 수 없는 표정이다…
+					PRINTFORMW %타겟은()% %CALLNAME:PLAYER%의 제 정신의 정도를 측정하기 어려워 하는지, 뭐라고도 말할 수 없는 표정이다…
 				ELSE
-					PRINTFORMW %타겟은()% 다른 어느 구멍보다 섬세한을 출입되는 감각에, 불안을 숨길 수 없는 것 같다…
+					PRINTFORMW %타겟은()% 다른 어느 구멍보다 섬세한 요도에 출입되는 감각에, 불안을 숨길 수 없는 것 같다…
 				ENDIF
 			;大分慣れてきた
 			ELSEIF EXP:요도성교경험 >= 20
@@ -1161,12 +1161,12 @@ CASE "추가地の文：요도삽입後"
 				ELSEIF RAND:2
 					PRINTFORMW %타겟은()% 몇번도 경험한 습관 없는 행위를, 뭐라고도 미묘한 표정으로 받아들이고 있다…
 				ELSE
-					PRINTFORMW %타겟은()% 행위 자체에는 익숙해져 버린 것 같지만, 어느 쪽인가 하면 불쾌한 모습으로 마지못해 가랑이를 열고 있다…
+					PRINTFORMW %타겟은()% 행위 자체에는 익숙해져 버린 것 같지만, 불쾌한 모습으로 마지못해 가랑이를 열고 있다…
 				ENDIF
 			;厳しい
 			ELSE
 				IF RAND:2
-					PRINTFORMW %타겟은()% 무의식 중에 허리를 당기면서,%CALLNAME:PLAYER%의 모습을 살피고 있다…
+					PRINTFORMW %타겟은()% 무의식 중에 허리를 끌면서, %CALLNAME:PLAYER%의 모습을 살피고 있다…
 				ELSE
 					PRINTFORMW %타겟은()% 민감한 장소를 덮치는 용서 없는 고문에 미동조차 할 수 없는 것 같다…
 				ENDIF
@@ -1250,7 +1250,7 @@ CASE "추가地の文：기승위"
 				PRINTFORM 애널을 과시하면서, 
 			ELSEIF INSERT("요도인서트") || SELECTCOM == 83
 				IF PENIS(PLAYER) && TALENT:요도광 && RAND:2
-					PRINTFORM 페니스에 낙지의 입과 같이 달라붙고 있다
+					PRINTFORM 페니스에 낙지의 입과 같이 달라붙고 있는
 				ELSE
 					PRINTFORM 완전히 밀려서 벌려져있는 
 				ENDIF
@@ -1353,11 +1353,11 @@ CASE "와일드스윙"
 	ENDIF
 	IF RAND:4 == 0
 		IF INSERT("Ｖ인서트")
-			PRINTFORMW 거품을 내는 질액을 흘리면서 음란하게 허리를 놀리기 시작했다…!
+			PRINTFORMW 거품을 내는 애액을 흘리면서 음란하게 허리를 놀리기 시작했다…!
 		ELSEIF INSERT("Ａ인서트")
-			PRINTFORMW 직장의 점막으로 페니스를 집요하게 문질러올렸다…!
+			PRINTFORMW 직장의 점막으로 페니스를 집요하게 문질러 올렸다…!
 		ELSEIF INSERT("요도인서트")
-			PRINTFORMW 너무 민감한 점막으로페니스를 집요하게 쓸어올려 왔다…！
+			PRINTFORMW 초민감한 점막으로 페니스를 집요하게 쓸어올려 왔다…！
 		ENDIF
 	ELSEIF RAND:3 == 0
 		IF RAND:2
@@ -1449,7 +1449,7 @@ CASE "追加地の文：Ｗ넘어뜨리기 중の사정"
 	CASE 91
 		PRINTFORM 에게 펠라치오당하
 	CASE 92
-		PRINTFORM 에%TEXTS("おっぱい", TARGET:1)%를 잡아당겨지고
+		PRINTFORM 에 %,조사처리(TEXTS("おっぱい", TARGET:1),"를")% 잡아당겨지고
 	CASE 95
 		PRINTFORM 에게 발로 훑어지
 	CASE 98
@@ -1497,19 +1497,19 @@ CASE "모유마시기"
 		ENDSELECT
 		;모유を飲む
 		IF TEQUIP:넘어뜨리기
-			PRINTFORM %CALLNAME:TARGET%의 입에 강압해 왔다
+			PRINTFORM %CALLNAME:TARGET%의 입에 눌러 온
 			IF CALCF("Ｂ발정")
 				SIF COND("유두비대")
-					PRINTFORM %TEXTR("大きな", "膨れ上がった", "大きく勃ちあがった", "肥大した")%
+					PRINTFORM %TEXTR("큰 ", "부풀어 오른", "크게 발기한 ", "비대한 ")%
 			;함몰유두
 			ELSE
 				PRINTFORM 함몰
 			ENDIF
-			PRINTFORM 유두를 반 무의식 중에 들이마셔 입가득 달콤한 모유가 흘러넘쳐,%CALLNAME:PLAYER%의
+			PRINTFORM 유두를 반 무의식 중에 들이마시자 입 가득 달콤한 모유가 흘러넘쳐, %CALLNAME:PLAYER%의
 			IF RAND:3 && PENIS(PLAYER)
 				PRINTW 페니스가 순식간에 활력을 되찾아 간다…
 			ELSE
-				PRINTW 사고는 안개가 걸린 것처럼 둔하게 되어 간다…
+				PRINTW 사고는 안개 낀 것처럼 멍하게 되어 간다…
 			ENDIF
 		ELSE
 			IF CHECK_COM("파후파후손훑기")
@@ -1517,19 +1517,19 @@ CASE "모유마시기"
 			ELSE
 				PRINT 부드럽게 형태를 바꾸면서
 			ENDIF
-			PRINTFORM 모유를 스며나오게 하고 있다%CALLNAME:TARGET%노
+			PRINTFORM 모유가 스며나오는 %CALLNAME:TARGET%의
 			IF COND("거유륜") && RAND:3 == 0
-				PRINTFORM 유두를 큰 유륜마다 들이마셔
+				PRINTFORM 유두를 큰 유륜부터 들이마시자
 			ELSEIF CALCF("Ｂ발정")
 				IF COND("유두비대")
 					PRINTFORM %TEXTR("큰", "부풀어오른", "크게 발기한", "비대한")%
 				ELSE
 					PRINTFORM %TEXTR("부푼", "발기한", "")%
 				ENDIF
-				PRINTFORM 유두를 %TEXTR("입에 물고", "물고", "잘근잘근 물고")% 들이마셔
+				PRINTFORM 유두를 %TEXTR("입에 물고", "물고", "잘근잘근 물고")% 들이마시자
 			;함몰유두
 			ELSE
-				PRINTFORM %TEXTR("함몰된", "반쯤 숨은", "파묻힌")% 유두를 강하게 들이마셔
+				PRINTFORM %TEXTR("함몰된", "반쯤 숨은", "파묻힌")% 유두를 강하게 들이마시자
 			ENDIF
 			PRINTFORMW 희미하게 달콤한 맛과 함께 활력이 흘러넘쳐 온다…
 		ENDIF
@@ -1550,19 +1550,19 @@ CASE "탐색능력"
 	ENDSELECT
 
 	SIF COND("탐색：遭遇回避", ARG)
-		CALL PRINT_STR, "BUTTON_遭遇回避_ "
+		CALL PRINT_STR, "BUTTON_조우회피_ "
 	SIF COND("탐색：遭遇증가", ARG)
-		CALL PRINT_STR, "파랑_BUTTON_遭遇増加_ "
+		CALL PRINT_STR, "파랑_BUTTON_조우증가_ "
 	SIF COND("탐색：罠解除", ARG)
-		CALL PRINT_STR, "BUTTON_罠解除_ "
+		CALL PRINT_STR, "BUTTON_함정해제_ "
 	SIF COND("탐색：罠誘発", ARG)
-		CALL PRINT_STR, "파랑_BUTTON_罠誘発_ "
+		CALL PRINT_STR, "파랑_BUTTON_함정유발_ "
 	SIF COND("탐색：財宝発見", ARG)
-		CALL PRINT_STR, "BUTTON_財宝発見_ "
+		CALL PRINT_STR, "BUTTON_보물발견_ "
 	SIF COND("탐색：財宝見逃し", ARG)
-		CALL PRINT_STR, "파랑_BUTTON_財宝見逃し_ "
+		CALL PRINT_STR, "파랑_BUTTON_보물기피_ "
 	SIF COND("탐색：階段発見", ARG)
-		CALL PRINT_STR, "BUTTON_階段発見_ "
+		CALL PRINT_STR, "BUTTON_계단발견_ "
 	SIF COND("탐색：회복", ARG)
 		CALL PRINT_STR, "BUTTON_회복_ "
 	IF ARG != MASTER && ARG != PLAYER && PALAM_EXPLORER("조수공격력", ARG) + PALAM_EXPLORER("아르카나補助", ARG)
@@ -1572,7 +1572,7 @@ CASE "탐색능력"
 		RESETCOLOR
 	ENDIF
 	SIF COND("탐색：상태異常無効", ARG)
-		CALL PRINT_STR, "BUTTON_状態異常無効_ "
+		CALL PRINT_STR, "BUTTON_상태이상무효_ "
 	RESETCOLOR
 	PRINTFORML 
 CASE "탐색능력페어"
@@ -1589,23 +1589,23 @@ CASE "탐색능력페어"
 	PRINT  
 
 	SIF COND("탐색：遭遇回避", MASTER) || COND("탐색：遭遇回避", ASSI)
-		CALL PRINT_STR, "BUTTON_遭遇回避_ "
+		CALL PRINT_STR, "BUTTON_조우증가_ "
 	SIF COND("탐색：遭遇증가", MASTER) || COND("탐색：遭遇증가", ASSI)
-		CALL PRINT_STR, "파랑_BUTTON_遭遇増加_ "
+		CALL PRINT_STR, "파랑_BUTTON_조우회피_ "
 	SIF COND("탐색：罠解除", MASTER) || COND("탐색：罠解除", ASSI)
-		CALL PRINT_STR, "BUTTON_罠解除_ "
+		CALL PRINT_STR, "BUTTON_함정해제_ "
 	SIF COND("탐색：罠誘発", MASTER) || COND("탐색：罠誘発", ASSI)
-		CALL PRINT_STR, "파랑_BUTTON_罠誘発_ "
+		CALL PRINT_STR, "파랑_BUTTON_함정유발_ "
 	SIF COND("탐색：財宝発見", MASTER) || COND("탐색：財宝発見", ASSI)
-		CALL PRINT_STR, "BUTTON_財宝発見_ "
+		CALL PRINT_STR, "BUTTON_보물발견_ "
 	SIF COND("탐색：財宝見逃し", MASTER) || COND("탐색：財宝見逃し", ASSI)
-		CALL PRINT_STR, "파랑_BUTTON_財宝見逃し_ "
+		CALL PRINT_STR, "파랑_BUTTON_보물기피_ "
 	SIF COND("탐색：階段発見", MASTER) || COND("탐색：階段発見", ASSI)
-		CALL PRINT_STR, "BUTTON_階段発見_ "
+		CALL PRINT_STR, "BUTTON_계단발견_ "
 	SIF COND("탐색：회복", MASTER) || COND("탐색：회복", ASSI)
 		CALL PRINT_STR, "BUTTON_회복_ "
 	SIF COND("탐색：상태異常無効", MASTER) || COND("탐색：상태異常無効", ASSI)
-		CALL PRINT_STR, "BUTTON_状態異常無効_ "
+		CALL PRINT_STR, "BUTTON_상태이상무효_ "
 	RESETCOLOR
 	PRINTFORML 
 ENDSELECT
@@ -1664,11 +1664,11 @@ CASE "下着の色"
 	CASE 1p54+1p58
 		LOCALS = ピンク
 	CASE 1p57+1p59
-		LOCALS = 紺色
+		LOCALS = 감색
 	CASE 1p54+1p56
-		LOCALS = 橙色
+		LOCALS = 주황
 	CASE 1p54+1p57
-		LOCALS = 紫色
+		LOCALS = 보라
 	CASE 1p54+1p55+1p56+1p57
 		LOCALS = 검정
 	ENDSELECT
@@ -1772,16 +1772,16 @@ CASE "보지：視覚", "보지：감촉"
 	TCVAR:26 = 0
 	IF CHECK_CLO("겉옷노출")
 		IF CHECK_STAIN(STAIN:겉옷, "尿")
-			LOCALS = %TEXTR("オシッコ臭い", "オシッコの染みた")%
+			LOCALS = %TEXTR("오줌 냄새나는", "오줌이 밴")%
 		ELSEIF ARGS == "보지：감촉" && PALAM:Ｖ윤 >= 3000 && TALENT:오줌싸개버릇 && !RAND:5
-			LOCALS = 희매하게 오줌냄새나는 
+			LOCALS = 희미하게 오줌냄새나는 
 		ELSEIF ARGS == "보지：감촉" && PALAM:Ｖ윤 < 100 && !RAND:4
 			LOCALS = 보송보송한 
 		ELSEIF CHECK_OUTER("染み") && !RAND:3
 			IF ARGS == "보지：감촉"
 				LOCALS = 뜨겁고 축축한 
 			ELSE
-				LOCALS = 둥글고 색이 독특한 
+				LOCALS = 둥그렇게 색이 변하고 있는
 			ENDIF
 		ELSEIF CHECK_OUTER("蒸れ") && RAND:2
 			IF RAND:2
@@ -1797,9 +1797,9 @@ CASE "보지：視覚", "보지：감촉"
 		ENDIF
 	ELSEIF CHECK_CLO("보디슈츠노출")
 		IF CHECK_STAIN(STAIN:보디슈츠바텀, "尿")
-			LOCALS = %TEXTR("オシッコ臭い", "オシッコの染みた")%
+			LOCALS = %TEXTR("오줌 냄새나는", "오줌이 밴")%
 		ELSEIF ARGS == "보지：감촉" && PALAM:Ｖ윤 >= 1000 && TALENT:오줌싸개버릇 && !RAND:5
-			LOCALS = 희매하게 오줌냄새나는 
+			LOCALS = 희미하게 오줌냄새나는 
 		ELSEIF CHECK_BODYS("食い込み") && PALAM:욕정 >= 1000 && !RAND:4
 			LOCALS = 먹혀든 느낌의 
 		ELSEIF CHECK_BODYS("染み") && !RAND:3
@@ -1819,9 +1819,9 @@ CASE "보지：視覚", "보지：감촉"
 	;팬티스타킹+破ってない
 	ELSEIF CHECK_CLO("팬티스타킹노출")
 		IF CHECK_STAIN(STAIN:겉옷, "尿")
-			LOCALS = %TEXTR("オシッコ臭い", "オシッコの染みた")%
+			LOCALS = %TEXTR("오줌 냄새나는", "오줌이 밴")%
 		ELSEIF ARGS == "보지：감촉" && PALAM:Ｖ윤 >= 3000 && TALENT:오줌싸개버릇 && !RAND:5
-			LOCALS = 희매하게 오줌냄새나는 
+			LOCALS = 희미하게 오줌냄새나는 
 		ELSEIF ARGS == "보지：감촉" && PALAM:Ｖ윤 < 100 && !RAND:4
 			LOCALS = 보송보송한 
 		ELSEIF CHECK_OUTER("染み") && !RAND:3
@@ -1845,14 +1845,14 @@ CASE "보지：視覚", "보지：감촉"
 	;팬티+팬티をずらしていない+팬티を脱いでない+가랑이が노출していない
 	ELSEIF CHECK_CLO("팬티노출")
 		IF CHECK_STAIN(STAIN:팬티, "尿")
-			LOCALS = %TEXTR("オシッコ臭い", "オシッコの染みた")%
+			LOCALS = %TEXTR("오줌 냄새나는", "오줌이 밴")%
 		;하이레그
 		ELSEIF ARGS == "보지：視覚" && CHECK_PANTIES("하이레그") && RAND:2
 			IF COND("음모") >= 6 && !RAND:3
 				LOCALS = 음모가 
 				SIF COND("음모") == 7
-					LOCALS = %LOCALS%완전히 
-				LOCALS = %LOCALS%비져나와있는 
+					LOCALS = %LOCALS% 수북한 
+				LOCALS = %LOCALS% 비져나와있는 
 			ELSEIF RAND:2
 				IF TALENT:작은몸집 + TALENT:유치 == 0
 					IF TALENT:호색 && RAND:2
@@ -1886,7 +1886,7 @@ CASE "보지：視覚", "보지：감촉"
 				LOCALS = 사타구니의 부푼곳을 강조하는 
 			ENDIF
 		ELSEIF ARGS == "보지：감촉" && PALAM:Ｖ윤 >= 1000 && TALENT:오줌싸개버릇 && !RAND:4
-			LOCALS = 희매하게 오줌냄새나는 
+			LOCALS = 희미하게 오줌냄새나는 
 		ELSEIF CHECK_PANTIES("染み") && !RAND:3
 			IF ARGS == "보지：감촉"
 				LOCALS = 열을 띈 
@@ -1909,9 +1909,9 @@ CASE "보지：視覚", "보지：감촉"
 	ELSEIF ARGS == "보지：감촉"
 		IF PREVPLAY("질내욕뇨")
 			IF RAND:2
-				LOCALS = 小便器として使われたばかりの
+				LOCALS = 소변기로 막 사용된
 			ELSE
-				LOCALS = 小便を流し込まれたばかりの
+				LOCALS = 오줌을 막 싼
 			ENDIF
 		;前回オシッコ
 		ELSEIF PREVEX("방뇨") + PREVEX("절정실금") && RANDIF(1, PREVEX("Ｖ내사정"), TALENT:오줌싸개버릇)
@@ -1967,7 +1967,7 @@ CASE "보지：視覚", "보지：감촉"
 				LOCALS = 척척한 
 			ELSE
 				IF RAND:2
-					LOCALS = 맨발정한 
+					LOCALS = 발정한 
 				ELSE
 					LOCALS = 뜨거운 
 				ENDIF
@@ -2015,11 +2015,11 @@ CASE "보지：視覚", "보지：감촉"
 		ELSEIF COND("음모") && (!RAND:3 || PREVCOM == 145)
 		ELSEIF TALENT:클리피어스 + TALENT:라비아피어스 && RANDIF(1, CALCF("Ｖ발정"), CHECK_STAIN(STAIN:Ｖ, "정액"), EX:Ｖ절정 > 3)
 			IF RAND:2
-				LOCALS = 피어스가 빛나는 
+				LOCALS = 피어싱이 빛나는 
 			ELSE
 				SIF TALENT:클리피어스 && TALENT:라비아피어스 && RAND:2
 					LOCALS = 수많은 
-				LOCALS = %LOCALS%피어스로 장식된 
+				LOCALS = %LOCALS%피어싱으로 장식된 
 			ENDIF
 		ELSEIF EX:Ｖ절정 > 3 && RANDIF(1, CALCF("Ｖ발정"), CHECK_STAIN(STAIN:Ｖ, "정액"))
 			LOCALS = 마구 가버린 
@@ -2041,7 +2041,7 @@ CASE "보지：視覚", "보지：감촉"
 					LOCALS = 애액에 젖어서 빛나는 
 				ENDIF
 			ELSE
-				LOCALS = 맨발정한 
+				LOCALS = 발정한 
 			ENDIF
 		ENDIF
 		;特に描写なしなら음모描写
@@ -2071,7 +2071,7 @@ CASE "보지：視覚", "보지：감촉"
 				;無精髭状態
 				IF CONDS("음모") == "無精髭"
 					IF RAND:2
-						LOCALS = 음모가 まばらに生えて無精髭状態の
+						LOCALS = 음모가 거뭇거뭇한
 					ELSE
 						LOCALS = 까칠까칠한 
 					ENDIF
@@ -2132,7 +2132,7 @@ CASE "보지：視覚", "보지：감촉"
 			ENDSELECT
 		ENDIF
 		SIF TALENT:작은몸집 && TALENT:유치 && !RAND:3
-			LOCALS = %LOCALS%어린 
+			LOCALS = %LOCALS% 어린 
 		IF PALAM:욕정 < PALAM_LV(6 - ABL:Ｖ확장) && ABL:Ｖ확장 <= 4
 			LOCALS = %LOCALS%균열
 		ELSE
@@ -2143,19 +2143,19 @@ CASE "보지：視覚", "보지：감촉"
 CASE "클리피어스"
 	LOCALS = 피어스
 	SIF RAND:2 && CEVENTS("클리피어스") != ""
-		LOCALS = %CEVENTS("클리피어스")%의 피어스
+		LOCALS = %CEVENTS("클리피어스")%의 피어싱
 CASE "라비아피어스"
 	LOCALS = 피어스
 	SIF RAND:2 && CEVENTS("라비아피어스") != ""
-		LOCALS = %CEVENTS("라비아피어스")%의 피어스
+		LOCALS = %CEVENTS("라비아피어스")%의 피어싱
 CASE "니플피어스"
 	LOCALS = 피어스
 	SIF RAND:2 && CEVENTS("니플피어스") != ""
-		LOCALS = %CEVENTS("니플피어스")%의 피어스
+		LOCALS = %CEVENTS("니플피어스")%의 피어싱
 CASE "배꼽피어스"
 	LOCALS = 피어스
 	SIF RAND:2 && CEVENTS("배꼽피어스") != ""
-		LOCALS = %CEVENTS("배꼽피어스")%의 피어스
+		LOCALS = %CEVENTS("배꼽피어스")%의 피어싱
 CASE "匂い"
 	SELECTCASE CONFIG("匂いの표기변경")
 	CASE 1
@@ -2208,7 +2208,7 @@ CASE "겨드랑이：視覚"
 				IF RAND:2
 					LOCALS = 희미하게 털이 자란
 				ELSE
-					LOCALS = 産毛のような細く柔らかな毛で彩られた
+					LOCALS = 솜털처럼 부드러운 털로 가득한
 				ENDIF
 			ENDIF
 		;いっぱい
@@ -2254,15 +2254,15 @@ CASE "엉덩이：감촉"
 			IF COND("큰엉덩이", ARG) >= 3 && RAND:4
 				LOCALS = %TEXTR("순산형의 골반을 한", "압도적인 크기를 자랑하는", "터질 듯한")% 엉덩이
 				SIF COND("スリム", ARG) && RAND:3 == 0
-					LOCALS = 細い腰つきからは想像できない程のデカ尻
+					LOCALS = 가는 허리에서는 상상할 수 없을 정도의 큰 엉덩이
 			ELSEIF COND("큰엉덩이", ARG) >= 2
 				LOCALS = %TEXTR("중량감 넘치는", "살이 듬뿍 찐 ")%%TEXTR("엉덩이", "엉덩고기", "언덕")%
 				SIF COND("スリム", ARG) && RAND:3 == 0
-					LOCALS = 腰のくびれと相まって芸術的ですらある大きな엉덩이
+					LOCALS = 골반과 어울려 예술적이기까지 한 큰 엉덩이
 			ELSE
 				LOCALS = %TEXTR("큰", "살집 붙은", "볼륨감 넘치는 ")%%TEXTR("엉덩이", "엉덩고기")%
 				SIF COND("スリム", ARG) && RAND:3 == 0
-					LOCALS = 腰の細さによって強調された大きな엉덩이
+					LOCALS = 얇은 허리와 대비되는 거대한 엉덩이
 			ENDIF
 		ELSEIF TALENT:ARG:장사
 			SIF COND("작은엉덩이", ARG) == 0
@@ -2282,15 +2282,15 @@ CASE "엉덩이：視覚"
 		IF COND("큰엉덩이", ARG) >= 3 && RAND:4
 			LOCALS = %TEXTR("순산형의 골반을 한", "압도적인 크기를 자랑하는", "터질 듯한")% 엉덩이
 			SIF COND("スリム", ARG) && RAND:3 == 0
-				LOCALS = 細い腰つきからは想像できない程のデカ尻
+				LOCALS = 가는 허리에서는 상상할 수 없을 정도의 큰 엉덩이
 		ELSEIF COND("큰엉덩이", ARG) >= 2
 			LOCALS = %TEXTR("중량감 넘치는", "살이 듬뿍 찐 ")%%TEXTR("엉덩이", "엉덩고기", "언덕")%
 			SIF COND("スリム", ARG) && RAND:3 == 0
-				LOCALS = 腰のくびれと相まって芸術的ですらある大きな엉덩이
+				LOCALS = 골반과 어울려 예술적이기까지 한 큰 엉덩이
 		ELSE
 			LOCALS = %TEXTR("큰", "살집 붙은", "볼륨감 넘치는 ","무거워 보이는 ")%%TEXTR("엉덩이", "엉덩고기")%
 			SIF COND("スリム", ARG) && RAND:3 == 0
-				LOCALS = 腰の細さによって強調された大きな엉덩이
+				LOCALS = 얇은 허리와 대비되는 거대한 엉덩이
 		ENDIF
 	ELSEIF TALENT:ARG:장사
 		SIF COND("작은엉덩이", ARG) == 0
@@ -2538,7 +2538,7 @@ CASE "유두：描写"
 		IF RAND:3 == 0
 			LOCALS = 단단하게 응어리진 
 		ELSEIF RAND:2
-			LOCALS = 맨발기하기 시작한 
+			LOCALS = 발기하기 시작한 
 		ELSE
 			LOCALS = 충혈되고 있는 
 		ENDIF
@@ -2556,13 +2556,13 @@ CASE "유두：描写"
 		ENDIF
 	CASEELSE
 		IF RAND:3 == 0 && COND("진성함몰유두", ARG)
-			LOCALS = 埋没している
+			LOCALS = 매몰된
 		ELSEIF RAND:3 == 0
-			LOCALS = 埋もれている
+			LOCALS = 파묻힌
 		ELSEIF RAND:2
-			LOCALS = 陥没した
+			LOCALS = 함몰된
 		ELSE
-			LOCALS = 陥没状態の
+			LOCALS = 함몰상태의
 		ENDIF
 	ENDSELECT
 
@@ -2693,7 +2693,7 @@ CASE "Ｖ삽입前"
 			ELSEIF PALAM:Ｖ윤 >= 500
 				LOCALS = 축축한 
 			ELSE
-				LOCALS = 준비가 부족한
+				LOCALS = 준비가 부족한 
 			ENDIF
 		ENDSELECT
 	ENDIF
@@ -2701,7 +2701,7 @@ CASE "Ｖ삽입前"
 		IF TALENT:작은몸집 && TALENT:유치
 			LOCALS = %LOCALS%어린 균열
 		ELSE
-			LOCALS = %LOCALS%비렬
+			LOCALS = %LOCALS%비밀스런 틈
 		ENDIF
 	ELSE
 		LOCALS = %LOCALS%질
@@ -2763,7 +2763,7 @@ CASE "합체中"
 					LOCALS = 엉덩이를 내밀고 격렬하게 찔러들어오는 물건을 환영보면서, 
 				CASE "기승위"
 					IF ABL:새드끼 >= 3 && RAND:2
-						LOCALS = 기승위で犯しながら, 
+						LOCALS = 기승위로 범하면서, 
 					ELSE
 						LOCALS = 자신의 페이스로 허리를 \@ RAND:2 ? 상하로 움직이 # 꿈틀대 \@면서, 
 					ENDIF
@@ -2876,7 +2876,7 @@ CASE "６９"
 						LOCALS = 음핵에 가해지는 쾌감
 					ENDIF
 				ELSE
-					LOCALS = 질에 연결된 혀
+					LOCALS = 질에 붙은 혀
 				ENDIF
 			CASE "애널애무"
 				IF RAND:3 == 0
@@ -2898,7 +2898,7 @@ CASE "６９"
 				ENDIF
 			CASE "요도손가락넣기"
 				IF RAND:3 == 0
-					LOCALS = \@ PENIS(TARGET) ? 페니스에 근원까지 # 무턱대고 방광에까지 \@침입해 오는 손가락
+					LOCALS = \@ PENIS(TARGET) ? 페니스에 뿌리까지 # 무턱대고 방광에까지 \@침입해 오는 손가락
 				ELSEIF RAND:2
 					LOCALS = 민감한 점막을 자극하는 감각
 				ELSE
@@ -3006,7 +3006,7 @@ CASE "Ｗ넘어뜨리기 중"
 		ELSE
 			LOCALS:1 = 보지
 		ENDIF
-		LOCALS = %CALLNAME:(TARGET:1)%に발で%LOCALS:1%を
+		LOCALS = %CALLNAME:(TARGET:1)%의 발로 %조사처리(LOCALS:1,"을")% 
 		IF RAND:3 == 0
 			LOCALS = %LOCALS%괴롭혀지고
 		ELSEIF RAND:2
@@ -3085,7 +3085,7 @@ CASE "사정箇所の표시"
 	CASE 40
 		LOCALS = 여유가 있으면 선택
 	CASE 90
-		LOCALS = 보온병에 정액을 보존한다
+		LOCALS = 보온병에 정액을 모음
 	ENDSELECT
 CASE "날짜표시"
 	;-------------------------------------------------
@@ -3285,11 +3285,11 @@ CASE "제복"
 	IF GETBIT(FLAG:401, 10)
 		LOCALS = %LOCALS%미니스커트,
 	ELSEIF GETBIT(FLAG:401, 11)
-		LOCALS = %LOCALS%ロング,
+		LOCALS = %LOCALS%롱스커트,
 	ENDIF
 
 	SIF GETBIT(FLAG:401, 20)
-		LOCALS = %LOCALS%ファスナー,
+		LOCALS = %LOCALS%파스너,
 	SIF GETBIT(FLAG:401, 30)
 		LOCALS = %LOCALS%캣가터,
 
@@ -3587,9 +3587,9 @@ CASE "속성"
 	CASE 42
 		SELECTCASE GETFONT()
 		CASE "しねきゃぷしょん"
-			LOCALS = [脇]
+			LOCALS = [겨드랑이]
 		CASEELSE
-			LOCALS = [腋]
+			LOCALS = [겨드랑이]
 		ENDSELECT
 	CASE 43
 		LOCALS = [엉덩이]

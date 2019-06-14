@@ -76,12 +76,12 @@ PRINTL
 
 IF CONFIG("음모")
 	IF COND("음모", ARG) >= 2
-		PRINTFORM  [ 0] %TEXT_RJ("음모の상태", 20)%：
+		PRINTFORM  [ 0] %TEXT_RJ("음모 상태", 20)%：
 		SETCOLOR DEF_COLOR("暗황색")
 		MEMO:0 = 0
 	ELSE
 		SETCOLOR DEF_COLOR("회색")
-		PRINTFORM  [×] %TEXT_RJ("음모の상태", 20)%：
+		PRINTFORM  [×] %TEXT_RJ("음모 상태", 20)%：
 	ENDIF
 	SELECTCASE COND("身嗜み：음모", ARG)
 	CASE 0
@@ -122,12 +122,12 @@ ENDIF
 
 IF TALENT:ARG:남자 == 0
 	IF ABL:ARG:Ｖ확장 >= 1
-		PRINTFORM  [ 2] %TEXT_RJ("常時Ｖ바이브삽입", 20)%：
+		PRINTFORM  [ 2] %TEXT_RJ("상시Ｖ바이브삽입", 20)%：
 		SETCOLOR DEF_COLOR("暗황색")
 		MEMO:2 = 2
 	ELSE
 		SETCOLOR DEF_COLOR("회색")
-		PRINTFORM  [×] %TEXT_RJ("常時Ｖ바이브삽입", 20)%：
+		PRINTFORM  [×] %TEXT_RJ("상시Ｖ바이브삽입", 20)%：
 	ENDIF
 	SELECTCASE COND("身嗜み：Ｖ확장", ARG)
 	CASE 0
@@ -147,12 +147,12 @@ IF TALENT:ARG:남자 == 0
 ENDIF
 
 IF ABL:ARG:Ａ확장 >= 1
-	PRINTFORM  [ 3] %TEXT_RJ("상시Ａ플러그삽입", 20)%：
+	PRINTFORM  [ 3] %TEXT_RJ("항상Ａ플러그삽입", 20)%：
 	SETCOLOR DEF_COLOR("暗황색")
 	MEMO:3 = 3
 ELSE
 	SETCOLOR DEF_COLOR("회색")
-	PRINTFORM  [×] %TEXT_RJ("상시Ａ플러그삽입", 20)%：
+	PRINTFORM  [×] %TEXT_RJ("항상Ａ플러그삽입", 20)%：
 ENDIF
 SELECTCASE COND("身嗜み：Ａ확장", ARG)
 CASE 0
@@ -171,12 +171,12 @@ ENDSELECT
 RESETCOLOR
 
 IF ABL:ARG:Ａ확장 >= 1 && (EXP:ARG:관장경험 || EXP:ARG:Ａ경험 >= 100 || EXP:ARG:Ａ성교경험 >= 20)
-	PRINTFORM  [ 4] %TEXT_RJ("애널プレイ의 준비", 20)%：
+	PRINTFORM  [ 4] %TEXT_RJ("애널플레이의 준비", 20)%：
 	SETCOLOR DEF_COLOR("暗황색")
 	MEMO:4 = 4
 ELSE
 	SETCOLOR DEF_COLOR("회색")
-	PRINTFORM  [×] %TEXT_RJ("애널プレイ의 준비", 20)%：
+	PRINTFORM  [×] %TEXT_RJ("애널플레이의 준비", 20)%：
 ENDIF
 SELECTCASE COND("身嗜み：Ａ準備", ARG)
 CASE 0
@@ -194,12 +194,12 @@ RESETCOLOR
 
 IF PENIS(ARG)
 	IF COND("진성포경", ARG) == 0
-		PRINTFORM  [ 5] %TEXT_RJ("페니스の상태", 20)%：
+		PRINTFORM  [ 5] %TEXT_RJ("페니스 상태", 20)%：
 		SETCOLOR DEF_COLOR("暗황색")
 		MEMO:5 = 5
 	ELSE
 		SETCOLOR DEF_COLOR("회색")
-		PRINTFORM  [×] %TEXT_RJ("페니스の상태", 20)%：
+		PRINTFORM  [×] %TEXT_RJ("페니스 상태", 20)%：
 	ENDIF
 
 	SELECTCASE COND("身嗜み：Ｐ準備", ARG)
@@ -214,7 +214,7 @@ IF PENIS(ARG)
 ENDIF
 
 IF TALENT:ARG:남자 == 0
-	PRINTFORM  [ 6] %TEXT_RJ("보지の상태", 20)%：
+	PRINTFORM  [ 6] %TEXT_RJ("보지 상태", 20)%：
 	SETCOLOR DEF_COLOR("暗황색")
 	MEMO:6 = 6
 
@@ -248,12 +248,12 @@ ENDIF
 
 ;の拡張が進んでいるなら自分にもやらせる事が가능
 IF ABL:ARG:요도확장 >= 0 && EXP:ARG:요도경험 >= 5 && (EXP:ARG:요도경험 >= 20 || EXP:ARG:요도확장경험 >= 5 || ABL:ARG:요도확장 >= 1)
-	PRINTFORM  [ 8] %TEXT_RJ("常時요도확장기삽입", 20)%：
+	PRINTFORM  [ 8] %TEXT_RJ("항상요도확장기삽입", 20)%：
 	SETCOLOR DEF_COLOR("暗황색")
 	MEMO:8 = 8
 ELSE
 	SETCOLOR DEF_COLOR("회색")
-	PRINTFORM  [×] %TEXT_RJ("常時요도확장기삽입", 20)%：
+	PRINTFORM  [×] %TEXT_RJ("항상요도확장기삽입", 20)%：
 ENDIF
 
 SELECTCASE COND("身嗜み：요도확장", ARG)
@@ -269,12 +269,12 @@ RESETCOLOR
 ;性交の制限をさせる
 IF ARG != MASTER
 	IF ABL:ARG:순종 >= 3 || TALENT:ARG:연모 || MARK:ARG:굴복각인 >= 2
-		PRINTFORM  [ 9] %TEXT_RJ("성행위の제한", 20)%：
+		PRINTFORM  [ 9] %TEXT_RJ("성행위 제한", 20)%：
 		SETCOLOR DEF_COLOR("暗황색")
 		MEMO:9 = 9
 	ELSE
 		SETCOLOR DEF_COLOR("회색")
-		PRINTFORM  [ 9] %TEXT_RJ("성행위の제한", 20)%：
+		PRINTFORM  [ 9] %TEXT_RJ("성행위 제한", 20)%：
 	ENDIF
 
 	SELECTCASE COND("身嗜み：성행위の제한", ARG)
@@ -301,7 +301,7 @@ IF ARG != MASTER
 		LOCALS = %LOCALS%\@ COND("身嗜み：입독점", ARG) ? 입으로 봉사와 # \@
 		LOCALS = %LOCALS%\@ COND("身嗜み：키스독점", ARG) ? 키스와 # \@
 		LOCALS = %LOCALS%\@ COND("身嗜み：Ｐ독점", ARG) ? 육봉과 # \@
-		PRINTFORML %SUBSTRING(LOCALS, 0, STRLENS(LOCALS) - 2)%를 이용한 행위를 금지
+		PRINTFORML %조사처리(SUBSTRING(LOCALS, 0, STRLENS(LOCALS) - 2),"를")% 이용한 행위를 금지
 	ENDSELECT
 	RESETCOLOR
 ENDIF
@@ -570,8 +570,8 @@ CASE "身嗜み：Ａ準備"
 		PRINTFORML （사전에 깨끗하게 해두면 배설등에서의 볼품없음의 완화작용 있음）
 	ENDIF
 	PRINTFORML  [ 0] \@ COND(ARGS, ARG) == 0 ? ○ # － \@ \@ ARG == MASTER ? 하지 않는다 # 지시없음 \@
-	PRINTFORML  [ 1] \@ COND(ARGS, ARG) == 1 ? ○ # － \@ \@ ARG == MASTER ? 前もって綺麗にする # 前もって綺麗にさせる \@
-	PRINTFORML  [ 2] \@ COND(ARGS, ARG) == 2 ? ○ # － \@ \@ ARG == MASTER ? 前もって로션を塗りこんでおく # 前もって로션を塗りこませる \@
+	PRINTFORML  [ 1] \@ COND(ARGS, ARG) == 1 ? ○ # － \@ \@ ARG == MASTER ? 미리 깨끗이 한다 # 미리 깨끗이 하게 한다 \@
+	PRINTFORML  [ 2] \@ COND(ARGS, ARG) == 2 ? ○ # － \@ \@ ARG == MASTER ? 미리 로션을 바른다 # 미리 로션을 바르게 한다 \@
 	PRINTFORML  [ 3] \@ COND(ARGS, ARG) == 3 ? ○ # － \@ 사전 준비＆로션
 	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 변경하지 않음 # 이것으로 결정 \@
 
@@ -609,8 +609,8 @@ CASE "身嗜み：Ｐ準備"
 	IF ARG != MASTER
 		PRINTFORML 페니스로 플레이를 쾌적하게 실시하기 위해 조교 전 준비를 지시합니다
 	ENDIF
-	PRINTFORML  [ 0] \@ COND(ARGS, ARG) == 0 ? ○ # － \@ \@ ARG == MASTER ? 특별히 신경쓰지 않는다 # 지시없음 \@（기본적으로는불결상태는 피합니다）
-	PRINTFORML  [ 1] \@ COND(ARGS, ARG) == 1 ? ○ # － \@ \@ ARG == MASTER ? 더러움을 의도적으로 그대로 두다 # 汚れをそのままにさせる \@
+	PRINTFORML  [ 0] \@ COND(ARGS, ARG) == 0 ? ○ # － \@ \@ ARG == MASTER ? 특별히 신경쓰지 않는다 # 지시없음 \@（기본적으로 불결상태는 피합니다）
+	PRINTFORML  [ 1] \@ COND(ARGS, ARG) == 1 ? ○ # － \@ \@ ARG == MASTER ? 더러움을 그대로 둔다 # 더러움을 그대로 두게 한다 \@
 	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 변경하지 않음 # 이것으로 결정 \@
 
 	CALL INPUT_SELECT, 3, 100
@@ -750,14 +750,15 @@ CASE "身嗜み：요도확장"
 
 CASE "身嗜み：성행위の제한"
 	PRINTFORML %CALLNAME:MASTER%의 이외와의 성행위에서의 금지항목를 지시합니다
-	PRINTFORML （애무나 도구를 이용한 플레이는 눈감아줍니다）
+	PRINTFORML （애무나 도구를 이용한 플레이는 상관하지 않습니다）
 
 	PRINTFORML  [ 0] \@ COND(ARGS, ARG) == 0  ? ○ # － \@ 지시 없음
 	PRINTFORML  [ 1] \@ COND("身嗜み：Ｖ독점", ARG)  ? ○ # － \@ 앞의 구멍을 사용한 성행위 금지
 	PRINTFORML  [ 2] \@ COND("身嗜み：Ａ독점", ARG)  ? ○ # － \@ 애널을 사용한 성행위 금지
 	PRINTFORML  [ 3] \@ COND("身嗜み：입독점", ARG)  ? ○ # － \@ 입을 사용한 봉사 금지
 	PRINTFORML  [ 4] \@ COND("身嗜み：키스독점", ARG)  ? ○ # － \@ %CALLNAME:MASTER%말고는 키스금지
-	PRINTFORML  [ 5] \@ COND("身嗜み：Ｐ독점", ARG)  ? ○ # － \@ 페니스를 사용한 성행위 금지
+	SIF PENIS(ARG) == 1
+		PRINTFORML  [ 5] \@ COND("身嗜み：Ｐ독점", ARG)  ? ○ # － \@ 페니스를 사용한 성행위 금지
 	PRINTFORML [100] \@ COND(ARGS, ARG) == ARG:1 ? 변경하지 않음 # 이것으로 결정 \@
 
 	CALL INPUT_SELECT, 6, 100
@@ -772,6 +773,9 @@ CASE "身嗜み：성행위の제한"
 		RETURN 0
 	CASE 0
 		CFLAG:ARG:368 = CLEARBITS(CFLAG:ARG:368, 41, 45)
+	CASE 5
+		SIF PENIS(ARG) == 1
+			INVERTBIT CFLAG:ARG:368, RESULT + 40
 	CASEELSE
 		INVERTBIT CFLAG:ARG:368, RESULT + 40
 	ENDSELECT
@@ -794,7 +798,7 @@ CASE "身嗜み：성행위の제한"
 		CASE 100
 			LOCALS = %CALLNAME:ARG%에게 %CALLNAME:MASTER% 전용이 되라고 부탁했습니다
 		CASEELSE
-			LOCALS = %CALLNAME:ARG%에게 %CALLNAME:MASTER%가 독점하고 싶은 행위를 세세히 부탁했습니다
+			LOCALS = %CALLNAME:ARG%에게 %조사처리(CALLNAME:MASTER,"이")% 독점하고 싶은 행위를 세세히 부탁했습니다
 		ENDSELECT
 	ENDIF
 

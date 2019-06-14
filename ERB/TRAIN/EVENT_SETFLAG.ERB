@@ -1410,7 +1410,7 @@ CASE "바텀을脱がす", "下半身を脱がす"
 
 CASE "바텀을１枚ずらす"
 	SWAP TARGET, ARG
-	;보디슈츠, ずらしていないかファスナー開けてない
+	;보디슈츠, ずらしていないか파스너開けてない
 	IF EQUIP:보디슈츠 && CHECK_CLO("보디슈츠노출")
 		IF CHECK_BODYS("파스너閉")
 			PRINTFORM %BODYS(TARGET, 1)% 다리사이의 지퍼를 내리고 
@@ -1439,7 +1439,7 @@ CASE "바텀을１枚ずらす"
 	ELSEIF EQUIP:겉옷 && CHECK_CLO("팬티스타킹노출")
 		PRINTFORM %조사처리(OUTER(TARGET, 1),"를")% 찢고 
 		CALL CALC, "겉옷플래그추가", SETFLAG_OUTER("破いた")
-	;팬티, ずらしていないかファスナー開けてない
+	;팬티, ずらしていないか파스너開けてない
 	ELSEIF EQUIP:팬티 && CHECK_CLO("팬티노출")
 		IF CHECK_PANTIES("파스너閉")
 			PRINTFORM %PANTIES(TARGET, 1)%의 지퍼를 내리고 
