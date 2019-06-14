@@ -82,7 +82,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 		PRINTFORMW 외를 보면 나무의 에 올라 하늘을 바라보고 있다···
 		PRINTFORMW  %CALLNAME:PLAYER%하지만 말을 걸면 음미로운 웃는 얼굴로손를 털었다･･･.
 	ENDIF
-	PRINTFORMW %CALLNAME:TARGET%하【망신】를얻었다
+	PRINTFORMW %타겟은()% 【망신】를얻었다
 	TALENT:망신 = 1
 	SETBIT CFLAG:201, 4
 	RETURN 1
@@ -131,7 +131,7 @@ ENDIF
 ;반발각인Lv3
 IF MARK:반발각인 == 3
 	DRAWLINE
-	PRINTFORML %CALLNAME:TARGET%하옷를 벗어 던져, 던지기나에 침대에 앉으면
+	PRINTFORML %타겟은()% 옷를 벗어 던져, 던지기나에 침대에 앉으면
 	PRINTFORMW %조사처리(CALLNAME:PLAYER,"를")% 노려봐,입원래에만 미소를 띄웠다…
 	CALL SETFLAG, "衣装全脱ぎ", TARGET
 	RETURN 1
@@ -334,7 +334,7 @@ IF SELECTCOM == 0
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
 			PRINTFORMW 「……구…놓아…라고…」
-			PRINTFORMW %CALLNAME:TARGET%하저항를 보이지만%CALLNAME:PLAYER%는 돌려보내면서 더욱애무를 계속했다
+			PRINTFORMW %타겟은()% 저항를 보이지만%CALLNAME:PLAYER%는 돌려보내면서 더욱애무를 계속했다
 		;굴복각인Lv2이상
 		ELSEIF MARK:굴복각인 >= 2
 			PRINTFORMW 「……………좀더…」
@@ -349,7 +349,7 @@ IF SELECTCOM == 0
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
 			PRINTFORMW 「……구…놓아…라고…」
-			PRINTFORMW %CALLNAME:TARGET%하저항를 보이지만%CALLNAME:PLAYER%는 돌려보내면서 더욱애무를 계속했다
+			PRINTFORMW %타겟은()% 저항를 보이지만%CALLNAME:PLAYER%는 돌려보내면서 더욱애무를 계속했다
 		;연모+굴복각인Lv3
 		ELSEIF TALENT:연모
 			IF RAND:3 == 0
@@ -399,7 +399,7 @@ IF SELECTCOM == 1
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
 			PRINTFORMW 「……구…놓아…라고…」
-			PRINTFORMW %CALLNAME:TARGET%하저항를 보이지만%CALLNAME:PLAYER%는 돌려보내면서 더욱애무를 계속했다
+			PRINTFORMW %타겟은()% 저항를 보이지만%CALLNAME:PLAYER%는 돌려보내면서 더욱애무를 계속했다
 		;굴복각인Lv2이상
 		ELSEIF MARK:굴복각인 >= 2
 			IF RAND:2 == 0
@@ -422,7 +422,7 @@ IF SELECTCOM == 1
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
 			PRINTFORMW 「……구…놓아…라고…」
-			PRINTFORMW %CALLNAME:TARGET%하저항를 보이지만%CALLNAME:PLAYER%는 돌려보내면서 더욱애무를 계속했다
+			PRINTFORMW %타겟은()% 저항를 보이지만%CALLNAME:PLAYER%는 돌려보내면서 더욱애무를 계속했다
 		;연모
 		ELSEIF TALENT:연모
 			IF RAND:3 == 0
@@ -494,7 +494,7 @@ IF SELECTCOM == 2
 			;연모
 			ELSEIF TALENT:연모
 				PRINTFORML 「…아얏! 아아! 아직 안돼!……좀더 적시고 나서…네?」
-				PRINTFORML 아파하고 있지만,애널를 괴롭혀 주는 것이,%CALLNAME:TARGET%에 있어서는 가장손취해 빠른 방법인 것으로
+				PRINTFORML 아파하고 있지만,애널을 괴롭혀 주는 것이,%CALLNAME:TARGET%에 있어서는 가장손취해 빠른 방법인 것으로
 				PRINTFORMW 상관하지 않고%CALLNAME:PLAYER%하애무를 계속했다.
 			;A感覚Lv3이상+プレイ受け入れ가능
 			ELSEIF ABL:Ａ감각 >= 3 && CHECK("Ａ손가락넣기")

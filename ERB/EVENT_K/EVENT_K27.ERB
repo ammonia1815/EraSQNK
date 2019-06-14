@@ -46,7 +46,7 @@ DRAWLINE
 ;初조교時 CFLAG201
 ;-------------------------------------------------
 IF GETBIT(CFLAG:201, 0) == 0
-	PRINTFORMW %CALLNAME:TARGET%하,%CALLNAME:MASTER%하지만 오자마자 수정공을 들여다 봐 고했다.
+	PRINTFORMW %타겟은()% ,%CALLNAME:MASTER%하지만 오자마자 수정공을 들여다 봐 고했다.
 	PRINTFORMW 「그래, 나를조교할 생각인 거네？말하지 않아도 알고 있어요」
 	PRINTFORMW 「좋아요, 할 수 있는 것이라면 해 보세요」
 	PRINTFORMW 「그렇지만, 예언해 두어 주어요.당신에는무리……킥킥」
@@ -104,7 +104,7 @@ ELSEIF GETBIT(CFLAG:201, 30) == 0 && TALENT:후타나리 == 2
 		PRINTFORMW 「%CNAME("一人称")%에 난 이것에 어떤 식으로 사랑해 주어？」
 		PRINTFORMW 「그렇지 않으면 이것으로 어떤 식으로 사랑해 해 주었으면 한다？」
 		PRINTFORMW 「물론%CNAME("一人称")%는 대답을 알고 있지만…」
-		PRINTFORMW %CALLNAME:TARGET%하손를 늘려,%CALLNAME:PLAYER%의 입술와 훑는다
+		PRINTFORMW %타겟은()% 손를 늘려,%CALLNAME:PLAYER%의 입술와 훑는다
 		PRINTFORMW 「그렇지만,당신노입로부터 (듣)묻게 해？」
 		PRINTFORMW 「어떤 일이라도 받아들여 주기 때문에♪」
 	ELSEIF MARK:굴복각인 >= 2
@@ -450,7 +450,7 @@ IF SELECTCOM == 1
 			;연모+미약
 			ELSEIF TALENT:연모 && TEQUIP:미약
 				PRINTFORMW 「히…～～～읏！？」
-				PRINTFORMW %CALLNAME:TARGET%하클리토리스에 혀를 기원 다투어지는 것만으로절정에 이르렀는지, 삐걱삐걱 신체를 뛰게 했다.
+				PRINTFORMW %타겟은()% 클리토리스에 혀를 기원 다투어지는 것만으로절정에 이르렀는지, 삐걱삐걱 신체를 뛰게 했다.
 			;미약+C感覚Lv3이상
 			ELSEIF TEQUIP:미약 && ABL:Ｃ감각 >= 3
 				PRINTFORMW 「아, 안돼에♪민감하게 되어 있는데♪」
@@ -499,13 +499,13 @@ IF SELECTCOM == 1
 					PRINTFORMW 덜컥덜컥 신체를 진동시킨다%타겟을()%,%CALLNAME:PLAYER%는 미소조차 띄우면서 계속 몰아세웠다.
 				ELSE
 					PRINTFORMW 「끈히, , 부서지고♪」
-					PRINTFORMW %CALLNAME:TARGET%하클리토리스를 덮치는 쾌감에 견딜 수 없는 것인지, 야무지지 못하게 혀를 내밀어 쾌감에 빠지고 있다……
+					PRINTFORMW %타겟은()% 클리토리스를 덮치는 쾌감에 견딜 수 없는 것인지, 야무지지 못하게 혀를 내밀어 쾌감에 빠지고 있다……
 				ENDIF
 			;연모+미약かつ連続実行
 			ELSEIF TALENT:연모 && TEQUIP:미약 && PREVCOM == SELECTCOM
 				IF RAND:2 == 0
 					PRINTFORMW 「이, 이제(벌써) 날름날름놈들♪ 앙돼에, 앙돼엣♪」
-					PRINTFORMW %CALLNAME:TARGET%하입그럼 그렇게 말하고 있지만,손는 한층 더 쾌감을 추구하는것 같이%CALLNAME:PLAYER%의 머리를 강압하고 있다.
+					PRINTFORMW %타겟은()% 입그럼 그렇게 말하고 있지만,손는 한층 더 쾌감을 추구하는것 같이%CALLNAME:PLAYER%의 머리를 강압하고 있다.
 				ELSE
 					PRINTFORMW 「～읏,～읏♪」
 					PRINTFORMW 츄우츄우%CALLNAME:TARGET%노클리토리스를 빨아 올려 주면,%CALLNAME:TARGET%는 쾌락에 번민 미쳤다.
@@ -514,7 +514,7 @@ IF SELECTCOM == 1
 			ELSEIF TALENT:연모 && TEQUIP:미약
 				IF RAND:2 == 0
 					PRINTFORMW 「히아앗！？」
-					PRINTFORMW %CALLNAME:TARGET%하클리토리스를 빨아 올려지면, 순간에절정에 이르러, 삐걱삐걱 신체를 진동시켰다.
+					PRINTFORMW %타겟은()% 클리토리스를 빨아 올려지면, 순간에절정에 이르러, 삐걱삐걱 신체를 진동시켰다.
 				ELSE
 					PRINTFORMW 「예, 예언, 할 수 있을 수는, 아히이이～읏♪」
 					PRINTFORMW %CALLNAME:TARGET%노클리토리스를 입에 포함한 채로 「예언할 수 있었다？」라고 (들)물어 주면,%CALLNAME:TARGET%는 그입의 움직임으로부터 오는 자극에 신체를 뛰게 했다.
@@ -534,7 +534,7 @@ IF SELECTCOM == 1
 				IF RAND:2 == 0
 					PRINTFORMW 「개, 개응, 굉장한 것, 앙돼엣！」
 					PRINTFORMW 「내가, 히가 없어져서는～읏！」
-					PRINTFORMW 덜컥덜컥 신체를 뛰게 해,%CALLNAME:TARGET%하공포를 표정의 구석에 띄우면서절정에 이르렀다.
+					PRINTFORMW 덜컥덜컥 신체를 뛰게 해,%타겟은()% 공포를 표정의 구석에 띄우면서절정에 이르렀다.
 				ELSE
 					PRINTFORMW 「히아, 아히 만난다！」
 					PRINTFORMW 「아, 안돼에！나, 사라져 아！」
@@ -560,7 +560,7 @@ IF SELECTCOM == 1
 			ELSEIF TALENT:연모 && ABL:Ｃ감각 >= 3
 				IF RAND:2 == 0
 					PRINTFORMW 「읏하, 아훗, 굉장햇, 굉장해엣♪」
-					PRINTFORMW %CALLNAME:TARGET%하클리토리스를 혀로 자극되어 끝 없게 달콤한 허덕이는 소리를 계속 올리고 있다.
+					PRINTFORMW %타겟은()% 클리토리스를 혀로 자극되어 끝 없게 달콤한 허덕이는 소리를 계속 올리고 있다.
 				ELSE
 					PRINTFORMW 「앗, 거기, 거기♪거기뿐, 안돼엣♪」
 					PRINTFORMW %CALLNAME:TARGET%의 제일 약하다고 생각되는 장소를 끈질기게 몰아세워 주면,%CALLNAME:TARGET%는 삐걱삐걱 신체를 진동시켰다.
@@ -3688,7 +3688,7 @@ ELSEIF SELECTCOM == 301 && TEQUIP:손대중 == 0
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 얼굴를 홍조 시키면서풍만바스트를 스스로 주무르고 있다…
 			ELSE
 				PRINTFORML %CALLNAME:TARGET%의 등에 껴안음, 중량감이 있다바스트에손를 돌려 반죽하는 것처럼 주물렀다…
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 한층 더 쾌감을 추구해, 스스로의애널를정신없이 만지작거리고 있다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 한층 더 쾌감을 추구해, 스스로의애널을정신없이 만지작거리고 있다…
 			ENDIF
 		ENDIF
 	;Ｃ절정
@@ -4101,7 +4101,7 @@ CASE "Ｖ절정20회이상"
 		ELSEIF TALENT:연모
 			IF RAND:2 == 0
 				PRINTFORMW 「잇♪이의 것에♪」
-				PRINTFORMW 애널를 덮치는 너무 강렬한 쾌감에, %조사처리(CALLNAME:TARGET,"는")% 순식간에절정에 이르러, 흔들흔들 무력하고허리를 흔든다. 
+				PRINTFORMW 애널을 덮치는 너무 강렬한 쾌감에, %조사처리(CALLNAME:TARGET,"는")% 순식간에절정에 이르러, 흔들흔들 무력하고허리를 흔든다. 
 				PRINTFORMW 그 형태가 좋은 엉덩이살에, %조사처리(CALLNAME:PLAYER,"는")% 왠지 모르게 불끈불끈 해, 일순간 느슨하게한 고문을 한층 더 격렬하게 했다. 
 				PRINTFORMW 「아～읏♪」
 				PRINTFORMW 　
@@ -4109,7 +4109,7 @@ CASE "Ｖ절정20회이상"
 				PRINTFORMW 그리고, %조사처리(CALLNAME:PLAYER,"가")% 깨달았을 때에는, %조사처리(CALLNAME:TARGET,"는")% 세워 계속된다애널에의절정에 숨도 끊어질듯 끊어질듯이 되어 있었다. 
 			ELSE
 				PRINTFORMW 「아♪아하아앗♪」
-				PRINTFORMW 끈질기고애널를 몰아세워 주면, %조사처리(CALLNAME:TARGET,"는")% 신체를 진동시켜 지금까지와는 전혀 다르다, 깊다절정에 떨린다. 
+				PRINTFORMW 끈질기고애널을 몰아세워 주면, %조사처리(CALLNAME:TARGET,"는")% 신체를 진동시켜 지금까지와는 전혀 다르다, 깊다절정에 떨린다. 
 				PRINTFORMW 그 표정에는, 애널에의 자극에 대한 혐오감 따위는 미진도 떠오르지 않았었다. 
 			ENDIF
 		;それ以外
@@ -4155,7 +4155,7 @@ CASE "Ａ절정20회이상"
 		ELSEIF TALENT:연모
 			IF RAND:2 == 0
 				PRINTFORMW 「잇♪이의 것에♪」
-				PRINTFORMW 애널를 덮치는 너무 강렬한 쾌감에, %조사처리(CALLNAME:TARGET,"는")% 순식간에절정에 이르러, 흔들흔들 무력하고허리를 흔든다. 
+				PRINTFORMW 애널을 덮치는 너무 강렬한 쾌감에, %조사처리(CALLNAME:TARGET,"는")% 순식간에절정에 이르러, 흔들흔들 무력하고허리를 흔든다. 
 				PRINTFORMW 그 형태가 좋은 엉덩이살에, %조사처리(CALLNAME:PLAYER,"는")% 왠지 모르게 불끈불끈 해, 일순간 느슨하게한 고문을 한층 더 격렬하게 했다. 
 				PRINTFORMW 「아～읏♪」
 				PRINTFORMW 　
@@ -4163,7 +4163,7 @@ CASE "Ａ절정20회이상"
 				PRINTFORMW 그리고, %조사처리(CALLNAME:PLAYER,"가")% 깨달았을 때에는, %조사처리(CALLNAME:TARGET,"는")% 세워 계속된다애널에의절정에 숨도 끊어질듯 끊어질듯이 되어 있었다. 
 			ELSE
 				PRINTFORMW 「아♪아하아앗♪」
-				PRINTFORMW 끈질기고애널를 몰아세워 주면, %조사처리(CALLNAME:TARGET,"는")% 신체를 진동시켜 지금까지와는 전혀 다르다, 깊다절정에 떨린다. 
+				PRINTFORMW 끈질기고애널을 몰아세워 주면, %조사처리(CALLNAME:TARGET,"는")% 신체를 진동시켜 지금까지와는 전혀 다르다, 깊다절정에 떨린다. 
 				PRINTFORMW 그 표정에는, 애널에의 자극에 대한 혐오감 따위는 미진도 떠오르지 않았었다. 
 			ENDIF
 		;それ以外
@@ -4456,7 +4456,7 @@ ELSEIF SHOOT("조교자가여자")
 			ELSE
 				PRINTFORMW 「후후, 그런 얼굴 해…정말로 기분 좋았던 것이군요…？」
 				PRINTFORMW 「%CNAME("一人称")%까지…가지고 싶어져 버렸다…저기, 나에게도, 시라고？」
-				PRINTFORMW %CALLNAME:TARGET%하발를 넓혀, 자신의 비밀스런 장소를 손가락 나오고 츗 만지작거린다.
+				PRINTFORMW %타겟은()% 발를 넓혀, 자신의 비밀스런 장소를 손가락 나오고 츗 만지작거린다.
 			ENDIF
 		;恋のない強절정
 		ELSE

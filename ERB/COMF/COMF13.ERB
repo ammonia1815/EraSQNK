@@ -125,7 +125,7 @@ IF PREVCOM == 14 && CHECK_COM("両穴くぱぁ")
 	ENDIF
 ;前回Ａくぱぁ
 ELSEIF PREVCOM == 14
-	PRINTFORM %CALLNAME:TARGET%하애널를 과시하고 있는 몸의 자세인 채, 이번은
+	PRINTFORM %타겟은()% 애널을 과시하고 있는 몸의 자세인 채, 이번은
 ELSE
 	;다리구속
 	IF GETBIT(TEQUIP:구속, 21)
@@ -142,60 +142,60 @@ ELSE
 		PRINTFORM 범해지고 있던 몸의 자세인 채로
 		LOCAL = 2
 	ELSEIF PREVCOM == 65 && ABL:새드끼 >= 3 && TCVAR:28 > 20 && COND("다리 사용") && RAND:2
-		PRINTFORM 엎드려 누운 %CALLNAME:PLAYER%의 얼굴을 넘고 나서
+		PRINTFORM 엎드려 누운 %CALLNAME:PLAYER%의 얼굴을 넘고 나서 
 		LOCAL = 2
 	;表情、雰囲気描写
 	ELSEIF TCVAR:28 <= 20
 		;부끄럼쟁이
 		IF TALENT:부끄럼쟁이
 			IF RAND:5 == 0
-				PRINTFORM 단단하게 눈감아
+				PRINTFORM 단단하게 눈감아 
 			ELSEIF RAND:4 == 0
-				PRINTFORM 눈을 숙여
+				PRINTFORM 눈을 숙여 
 			ELSEIF RAND:3 == 0
-				PRINTFORM 부끄러운 듯이 눈을 감아
+				PRINTFORM 부끄러운 듯이 눈을 감아 
 			ELSEIF RAND:2 == 0
-				PRINTFORM 수치로 얼굴을 새빨갛게 해
+				PRINTFORM 수치로 얼굴을 새빨갛게 해 
 			ELSE
-				PRINTFORM 부끄러운 듯이 뺨을 물들여
+				PRINTFORM 부끄러운 듯이 뺨을 물들여 
 			ENDIF
 			LOCAL = 1
 		;반항적
 		ELSEIF TALENT:반항적
-			PRINTFORM 싫을 것 같은 얼굴을 하면서
+			PRINTFORM 싫은 듯한 얼굴을 하면서 
 			LOCAL = 1
 		ENDIF
 	ELSEIF TALENT:연모 == 0
 		;부끄럼쟁이
 		IF TALENT:부끄럼쟁이
 			IF RAND:4 == 0
-				PRINTFORM 수치에 뺨을 물들여
+				PRINTFORM 수치에 뺨을 물들여 
 			ELSEIF RAND:3 == 0
-				PRINTFORM 얼굴을 달아오르게 해
+				PRINTFORM 얼굴을 달아오르게 해 
 			ELSEIF RAND:2 == 0
-				PRINTFORM 조금 뺨을 물들여
+				PRINTFORM 조금 뺨을 물들여 
 			ELSE
-				PRINTFORM 희미하게 뺨을 물들여
+				PRINTFORM 희미하게 뺨을 물들여 
 			ENDIF
 			LOCAL = 1
 		ENDIF
 	ELSEIF TALENT:연모
 		;부끄럼쟁이
 		IF TALENT:부끄럼쟁이 && RAND:2 == 0
-			PRINTFORM 수치에 뺨을 물들이면서
+			PRINTFORM 수치에 뺨을 물들이면서 
 		ELSEIF TEQUIP:식스나인 == 0 && RAND:3 == 0
-			PRINTFORM 눈을 치켜 뜨고 봄으로 모습을 살피면서
+			PRINTFORM 눈을 치켜 뜨고 눈치를 살피면서 
 		ELSEIF RAND:2 == 0
-			PRINTFORM 희미하게 뺨을 물들이면서
+			PRINTFORM 희미하게 뺨을 물들이면서 
 		ELSE
-			PRINTFORM 얼굴을 달아오르게 하면서
+			PRINTFORM 얼굴을 달아오르게 하면서 
 		ENDIF
 		LOCAL = 1
 	ENDIF
 	IF TEQUIP:식스나인
 		PRINTFORM %CALLNAME:PLAYER%의 얼굴로부터 허리를 띄워
 		IF TCVAR:28 > 20 && COND("다리 사용") && RAND:2
-			PRINT 서 가랑이를 한층 더 열고,
+			PRINT 서 가랑이를 한층 더 열고, 
 		ELSE
 			PRINT 와
 		ENDIF
@@ -207,38 +207,38 @@ ELSE
 		;腰つきだし
 		IF TCVAR:28 > 50 && RAND:3 == 0
 			IF PREVCOM == 65 && LOCAL == 2
-				PRINTFORM 앉으면,
+				PRINTFORM 앉고, 
 			ELSEIF !INSERT("인서트") && TALENT:음란 && RAND:3 == 0
-				PRINTFORM 양다리로 %CALLNAME:PLAYER%의 머리를 끌어 들이고,
+				PRINTFORM 양다리로 %CALLNAME:PLAYER%의 머리를 끌어 들이고, 
 			ELSEIF RAND:2 == 0
-				PRINTFORM %NAMES("両腕")%으로 허벅지를 끌어당기듯이 크게 가랑이를 열고,
+				PRINTFORM %NAMES("両腕")%으로 허벅지를 끌어당기듯이 크게 가랑이를 열고, 
 			ELSEIF TEQUIP:비디오카메라
-				PRINTFORM 잘 보이도록 허리를 내밀고,
+				PRINTFORM 잘 보이도록 허리를 내밀고, 
 			ELSE
-				PRINTFORM %CALLNAME:PLAYER%에 잘 보이도록 허리를 내밀고,
+				PRINTFORM %CALLNAME:PLAYER%에 잘 보이도록 허리를 내밀고, 
 			ENDIF
 		;大開다리
 		ELSEIF TCVAR:28 > 20 && RAND:2 == 0
 			IF RAND:2 == 0 || INSERT("인서트") || (PREVCOM >= 60 && PREVCOM <= 69)
 				IF PREVCOM == 65 && LOCAL == 2
-					PRINTFORM 다리를 안짱다리에 넓히고
+					PRINTFORM 다리를 안짱다리에 넓히고 
 				ELSEIF (INSERT("배면좌위") && TEQUIP:수치플레이) || TEQUIP:비디오카메라
-					PRINTFORM 다리를 크게 넓히고
+					PRINTFORM 다리를 크게 넓히고 
 				ELSE
-					PRINTFORM %CALLNAME:PLAYER%쪽으로 다리를 넓히고
+					PRINTFORM %CALLNAME:PLAYER%쪽으로 다리를 넓히고 
 				ENDIF
 			ELSEIF TEQUIP:목욕탕플레이
-				PRINTFORM 욕조의 가장자리에 앉아 양다리를 크게 넓히고
+				PRINTFORM 욕조의 가장자리에 앉아 양다리를 크게 넓히고 
 			ELSEIF TEQUIP:관내노출플레이 || TEQUIP:야외플레이
-				PRINTFORM 앉아 양다리를 크게 넓히고
+				PRINTFORM 앉아 양다리를 크게 넓히고 
 			ELSE
-				PRINTFORM 침대 위에서 양다리를 크게 넓히고
+				PRINTFORM 침대 위에서 양다리를 크게 넓히고 
 			ENDIF
 			IF ABL:노출벽 >= 3 && CHOSECOM(SELECTCOM) == 0 && RAND:2
 				IF RAND:2
-					PRINTFORM 라고 시선을 사타구니에 유도하고,
+					PRINTFORM 라고 시선을 사타구니에 유도하고, 
 				ELSE
-					PRINTFORM 라고 시선이 사타구니에 꽂히는 것을 즐기면서,
+					PRINTFORM 라고 시선이 사타구니에 꽂히는 것을 즐기면서, 
 				ENDIF
 			ELSE
 				PRINTFORM 와
@@ -246,15 +246,15 @@ ELSE
 		;開다리
 		ELSE
 			IF PREVCOM == 65 && LOCAL == 2
-				PRINTFORM 다리를 어깨 폭보다 넓게 열고,
+				PRINTFORM 다리를 어깨 폭보다 넓게 열고, 
 			ELSEIF TALENT:부끄럼없음 && TCVAR:28 > 20 && RAND:2 == 0
-				PRINTFORM 주저함 없고 양다리를 열고,
+				PRINTFORM 주저함 없고 양다리를 열고, 
 			ELSEIF (TALENT:겁쟁이 || TALENT:솔직 || TALENT:부끄럼쟁이) && RAND:2 == 0
-				PRINTFORM 흠칫흠칫 다리를 좌우에 넓히고,
+				PRINTFORM 흠칫흠칫 다리를 좌우에 넓히고, 
 			ELSEIF RAND:2 == 0
-				PRINTFORM 순종에 다리를 열고,
+				PRINTFORM 순종에 다리를 열고, 
 			ELSE
-				PRINTFORM 다리를 소극적으로 넓히고,
+				PRINTFORM 다리를 소극적으로 넓히고, 
 			ENDIF
 		ENDIF
 	ELSEIF LOCAL
@@ -339,7 +339,7 @@ ELSEIF TCVAR:28 > 20 && RAND:2 == 0
 ELSE
 	IF PREVCOM >= 60 && PREVCOM <= 69 && LOCAL != 2
 		IF PENIS(PLAYER) && RAND:2
-			PRINTFORM 페니스가 뽑힌지 얼마 안된
+			PRINTFORM 페니스가 뽑힌지 얼마 안된 
 		ELSE
 			PRINTFORM 방금전까지 범해지던 
 		ENDIF
@@ -349,58 +349,58 @@ ELSE
 	ELSEIF COND("음모") && RAND:2
 		SELECTCASE COND("음모")
 		CASE 7
-			PRINTFORM 진한 음모에 덮인
+			PRINTFORM 진한 음모에 덮인 
 			SIF AGE(TARGET) >= 4
-				PRINTFORM 어른의
+				PRINTFORM 어른의 
 		CASE 6
-			PRINTFORM 평상시는 음모에 숨어 있는
+			PRINTFORM 평상시는 음모에 숨어 있는 
 		CASE 5
 			IF AGE(TARGET) >= 3 && RAND:2
-				PRINTFORM 정성들여 손질되고 있는 성숙한
+				PRINTFORM 정성들여 손질되고 있는 성숙한 
 			ELSE
-				PRINTFORM 가장자리를 정리한 음모의
+				PRINTFORM 가장자리를 정리한 음모의 
 			ENDIF
 		CASE 4
 			;無精髭状態
 			IF CONDS("음모") == "無精髭"
-				PRINTFORM 음모가 드문드문하게 난
+				PRINTFORM 음모가 드문드문하게 난 
 			;剃り跡
 			ELSEIF CONDS("음모") == "剃り跡"
-				PRINTFORM 면도 자국이 눈에 띄는
+				PRINTFORM 면도 자국이 눈에 띄는 
 			;生えかけ(小柄or유치)
 			ELSEIF TALENT:작은몸집 + TALENT:유치
 				IF RAND:2
-					PRINTFORM 솜털이 난
+					PRINTFORM 솜털이 난 
 				ELSE
-					PRINTFORM 아이 같음이 남은
+					PRINTFORM 아이 같음이 남은 
 				ENDIF
 			;生えかけ（大人）
 			ELSE
 				IF RAND:2 && BASE:음모%100 >= 5
-					PRINTFORM 털이 나고 갖추어진
+					PRINTFORM 털이 나고 갖추어진 
 				ELSE
-					PRINTFORM 음모가 얇은
+					PRINTFORM 음모가 얇은 
 				ENDIF
 			ENDIF
 		CASE IS <= 3
 			IF COND("음모") == 3 && RAND:2
 				IF RAND:2
-					PRINTFORM 제모된
+					PRINTFORM 제모된 
 				ELSE
-					PRINTFORM 반들반들에 깎인
+					PRINTFORM 반들반들에 깎인 
 				ENDIF
 				SIF AGE(TARGET) >= 4
-					PRINTFORM 어른의
+					PRINTFORM 어른의 
 			ELSE
-				PRINTFORM 반들반들의
+				PRINTFORM 반들반들의 
 			ENDIF
 			SIF AGE(TARGET) == 1
-				PRINTFORM 어린
+				PRINTFORM 어린 
 		ENDSELECT
 	ELSEIF PALAM:Ｖ윤 >= 3000 || PALAM:욕정 >= 10000
-		PRINTFORM %TEXTR("トロトロの", "いやらしく匂い立つ")%
+		PRINTFORM %TEXTR("눅눅한", "야한 냄새를 풍기는")% 
 	ELSEIF PALAM:Ｖ윤 >= 500 && PALAM:욕정 >= 3000
-		PRINTFORM %TEXTR("しっとりと湿った", "汗と愛液で蒸れた")%
+		PRINTFORM %TEXTR("촉촉히 젖은", "땀과 애액으로 뒤덮인")% 
 	ELSEIF PALAM:Ｖ윤 <= 500 || PALAM:욕정 <= 500
 		SIF AGE(TARGET) == 1
 			PRINTFORM 꽉 다문 
@@ -421,7 +421,7 @@ ELSE
 ENDIF
 
 IF TCVAR:28 > 20 && RAND:2
-	PRINTFORM 꾸욱
+	PRINTFORM 꾸욱 
 ELSEIF RAND:2
 	PRINTFORM 천천히 
 ELSE

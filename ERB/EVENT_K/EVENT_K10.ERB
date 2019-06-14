@@ -91,7 +91,7 @@ ELSEIF GETBIT(CFLAG:201, 26) == 0 && COND("권속", MASTER) == TARGET
 		;에키드나
 		IF CFLAG:8 == 4
 			PRINTFORMW 「후후, 사랑스럽다…%CNAME("一人称")%(와)과를 빼닮은 그 모습, 정말로%CNAME("一人称")%의 아이같다…매우 사랑스러워요…♪」
-			PRINTFORMW 괴물들의 어머니라는 이름을 가진다%CALLNAME:TARGET%하, 그 이름에 적당한 자애가 깃들인 시선으로 같은 사람외가 된 이쪽의 신체를 응시하고 있다
+			PRINTFORMW 괴물들의 어머니라는 이름을 가진다%타겟은()% , 그 이름에 적당한 자애가 깃들인 시선으로 같은 사람외가 된 이쪽의 신체를 응시하고 있다
 		ENDIF
 		PRINTFORMW 「여기에 오는 것도 큰 일이었던 것 같구나？그렇지만 괜찮아, 곧바로 익숙해져요」
 		PRINTFORMW 「%CNAME("一人称")%하지만 쭉 붙어 있음으로,손잡기꼬리취해 가르쳐 주기 때문에♪」
@@ -532,7 +532,7 @@ IF SELECTCOM == 0
 		;굴복각인Lv2이상
 		IF MARK:굴복각인 >= 2
 			PRINTFORMW 「하무……응, 후우…읏, 아, 좀 더……」 
-			PRINTFORMW %CALLNAME:TARGET%하순종에%CALLNAME:PLAYER%의애무를 받아들였다
+			PRINTFORMW %타겟은()% 순종에%CALLNAME:PLAYER%의애무를 받아들였다
 		;それ以外
 		ELSE
 			PRINTFORMW 「……앙♪」
@@ -886,7 +886,7 @@ IF SELECTCOM == 5
 					PRINTFORMW  %CALLNAME:PLAYER%하지만 제 정신이 되어 기계에서의 착유를 재개한 것은%CALLNAME:TARGET%의 유방에
 					PRINTFORMW 갓난아이와 같이 달라붙어서 놓지 않기 시작하고 나서 대여섯 시간이 경과한 뒤였다…
 				ELSE
-					PRINTFORMW 바야흐로 인간세상 밖의 마물이라고 말할 수 있는 거대한가슴을흔들면서%CALLNAME:TARGET%하
+					PRINTFORMW 바야흐로 인간세상 밖의 마물이라고 말할 수 있는 거대한가슴을흔들면서%타겟은()% 
 					PRINTFORMW %조사처리(CALLNAME:PLAYER,"를")% 도발하고 있다…
 					PRINTFORMW 「젖가슴♪어머니의 젖가슴♪츄우♪츄우♪해엣…♪」
 					PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 도발을 무시해 강하고가슴을비비어 잡았다…
@@ -978,7 +978,7 @@ IF SELECTCOM == 5
 		ELSEIF TALENT:연모
 			IF ABL:Ｂ감각 >= 5 && RAND:2
 				IF CHECK_COM("유두弄り") && RAND:3 == 0
-					PRINTFORMW %CALLNAME:TARGET%하유두에의애무에 상하의입를 야무지지 못하고 폐개 시키고 있다
+					PRINTFORMW %타겟은()% 유두에의애무에 상하의입를 야무지지 못하고 폐개 시키고 있다
 					PRINTFORMW 「젖꼭지…이, 앙돼에……♪」
 				ELSEIF RAND:2 == 0
 					PRINTFORMW 「너무 느껴 버려……무섭다아……아, 후아아아읏！」
@@ -2364,13 +2364,13 @@ IF SELECTCOM == 90
 					PRINTFORMW %타겟은()% %조사처리(CALLNAME:PLAYER,"를")% 얽어맴에 잡아
 					PRINTFORMW 귀두로부터 끝 없게 흘러넘치는 앞달리기를 손가락으로 떠올려서는, 소리를 내 맛보고 있다
 					PRINTFORMW 「가고 싶은거야……？후후……어떻게 하지……♪」
-					PRINTFORMW 칼리목을 간질간질애무되어 반죽임의%CALLNAME:PLAYER%에%CALLNAME:TARGET%하심술쟁이구 미소지었다
+					PRINTFORMW 칼리목을 간질간질애무되어 반죽임의%CALLNAME:PLAYER%에%타겟은()% 심술쟁이구 미소지었다
 				ELSEIF RAND:2 == 0
 					PRINTFORMW 「사랑스러운입……보전은 끝내요♪」
 					PRINTFORMW %CALLNAME:TARGET%는 생각보다는 가차 없이, 령입에 새끼 손가락을 주어, 공격해대어 왔다
 					PRINTFORMW 「우후후, 쫑긋쫑긋은 좋아해 버려……다음은, 약지로……♪」
 				ELSE
-					PRINTFORMW 절정의 전조가 오면, 재빠르게%CALLNAME:TARGET%하애무를 멈추어, 꽈악 잡아 물보라를 거두어 버린다
+					PRINTFORMW 절정의 전조가 오면, 재빠르게%타겟은()% 애무를 멈추어, 꽈악 잡아 물보라를 거두어 버린다
 					PRINTFORMW 「안돼……좀 더 헐떡거림소리, 듣고 싶은거야……하무, 츄파……♪」
 					PRINTFORMW 반눈물고인 눈의%CALLNAME:PLAYER%에,%CALLNAME:TARGET%는 살짝 깨물기 하면서 코가 걸린 소리를 흘렸다
 				ENDIF
@@ -2915,7 +2915,7 @@ IF SELECTCOM == 132
 				PRINTFORMW 「…………나무하！！」
 			ELSE
 				PRINTFORMW 「오 아！기히, 기, 아 아」
-				PRINTFORMW 쾌락과고통의 틈에서,%CALLNAME:TARGET%하광기같아 보인 외침을 질렀다
+				PRINTFORMW 쾌락과고통의 틈에서,%타겟은()% 광기같아 보인 외침을 질렀다
 			ENDIF
 		;마조끼Lv3
 		ELSEIF ABL:마조끼 >= 3
@@ -3847,7 +3847,7 @@ ELSEIF SELECTCOM == 301 && TEQUIP:손대중 == 0
 				PRINTFORMW %CALLNAME:TARGET%는 얼굴을 홍조 시키면서 풍만한바스트를 스스로 주무르고 있다…
 			ELSE
 				PRINTFORML %CALLNAME:TARGET%의 등에 껴안아, 중량감이 있다바스트에손를 돌려 반죽하는 것처럼 주물렀다…
-				PRINTFORMW %CALLNAME:TARGET%는 한층 더 쾌감을 추구해, 스스로의애널를 열중해 만지작거리고 있다…
+				PRINTFORMW %CALLNAME:TARGET%는 한층 더 쾌감을 추구해, 스스로의애널을 열중해 만지작거리고 있다…
 			ENDIF
 		ENDIF
 	;Ｃ절정
@@ -3960,7 +3960,7 @@ IF SELECTCOM == 304 && TEQUIP:넘어뜨리기 == 0
 					PRINTFORMW 「에…？…조금…싫어요…이키나리라니무리에 정해져 있다…」
 					PRINTFORMW 「오지마, 오지말란 말야！ 드래곤의는 들어갈 이유 없을 것입니다！ %CNAME("一人称")%의 보지가 찢어지면 어떻게 하는거야！？」
 					PRINTFORMW 「%CNAME("二人称")%,%CNAME("二人称")%아…읏！그만두게 해……살려테에……읏」
-					PRINTFORMW %CALLNAME:TARGET%하공포(와)과 절망에 떨려, 눈에 눈물을 배이게 하면서%CALLNAME:MASTER%에 도움을 요구하고 있다…
+					PRINTFORMW %타겟은()% 공포(와)과 절망에 떨려, 눈에 눈물을 배이게 하면서%CALLNAME:MASTER%에 도움을 요구하고 있다…
 					PRINTFORMW 「아″,…아프다！……싫어어, 싫어요, 아니……읏, 아앗！」
 				ENDIF
 			;二回目以降
@@ -4620,7 +4620,7 @@ IF SELECTCOM == 305 && TEQUIP:넘어뜨리기 == 0
 					PRINTFORMW 「에…？…조금…싫어요…이키나리라니무리에 정해져 있어요…」
 					PRINTFORMW 「오지마, 오지말란 말야！ 드래곤의는 들어갈 이유 없을 것입니다！ %CNAME("一人称")%노엉덩이하지만이 찢어지면 어떻게 하는거야！？」
 					PRINTFORMW 「%CNAME("二人称")%,%CNAME("二人称")%아…읏！그만두게 해……살려테에……읏」
-					PRINTFORMW %CALLNAME:TARGET%하공포(와)과 절망에 떨려, 눈에 눈물을 배이게 하면서%CALLNAME:MASTER%에 도움을 요구하고 있다…
+					PRINTFORMW %타겟은()% 공포(와)과 절망에 떨려, 눈에 눈물을 배이게 하면서%CALLNAME:MASTER%에 도움을 요구하고 있다…
 					PRINTFORMW 「아″,…아프다！……싫어어, 싫어요, 아니……읏, 아앗！」
 				ENDIF
 			;二回目以降
@@ -5140,7 +5140,7 @@ IF SELECTCOM == 305 && TEQUIP:넘어뜨리기 == 0
 					PRINTFORMW 「%CNAME("二人称")%에 개발다 되었다엉덩이그래서%CNAME("一人称")%하지만 마음껏 기분 좋게 해 주어요♪맛보세요♪」
 					PRINTFORMW 드래곤는 뱀의 형상을 누르고 붙이고 격렬하게 허리를 쳐박기 시작했다. 허리와 허리가 부딪치는 소리가 방에 울린다….
 					PRINTFORMW 「응아앗♪…그렇게 의욕에 넘쳐 버려♪ %CNAME("一人称")%는 너의 암컷이 아니야♪그런 울컥하게 되셔도 말야♪…뭐여기라면 얼마든지 사용해도 좋아요♪……즐겨♪♪」
-					PRINTFORMW %CALLNAME:TARGET%하드래곤를 도발해 거대한 육봉에 격렬하게 범하게 하면서 피학의 항열에 허덕이고 있다…
+					PRINTFORMW %타겟은()% 드래곤를 도발해 거대한 육봉에 격렬하게 범하게 하면서 피학의 항열에 허덕이고 있다…
 				;연모
 				ELSEIF TALENT:연모
 					PRINTFORMW 「쿠하아！！무리여어！망가진다아！부수어져 버린다！뽑아！뽑아…♪」
@@ -5248,7 +5248,7 @@ IF SELECTCOM == 300
 				PRINTFORMW 「쭉 함께 있고 싶다는…기쁘다♪」
 				IF PALAM:욕정 >= 10000
 					PRINTFORMW 「후후……바래 대로 해 준다♪」
-					PRINTFORMW %CALLNAME:TARGET%하넘어뜨리기라고 왔다…
+					PRINTFORMW %타겟은()% 넘어뜨리기라고 왔다…
 					TEQUIP:넘어뜨리기 = 1
 				ENDIF
 			ELSE
@@ -5558,7 +5558,7 @@ IF SELECTCOM == 173 && TEQUIP:새댁플레이
 		;연모
 		IF TALENT:연모
 			PRINTFORMW 「♪～후후훗♪」
-			PRINTFORMW %CALLNAME:TARGET%하기분자주(잘)에이프런를 몸에 대고 있다
+			PRINTFORMW %타겟은()% 기분자주(잘)에이프런를 몸에 대고 있다
 			PRINTFORMW 「자, 시작합시다♪부부의 일을♪」
 		;それ以外
 		ELSE
@@ -5637,7 +5637,7 @@ IF SELECTCOM == 144
 		IF TALENT:연모 && TALENT:오줌싸개버릇 && TEQUIP:야외플레이
 			PRINTFORMW （……생각해 보면, 이것은 들숀이나 마찬가지……젊었을 무렵의 동경에도 닮은 것이야）
 			PRINTFORMW （그렇지만, 그렇지만……역시, 부끄럽다……우……）
-			PRINTFORMW 미간을 감춘다%CALLNAME:TARGET%하, 그런데도 오줌을 멈추지 못하고, 더욱 더 빨간 얼굴 해 갔다
+			PRINTFORMW 미간을 감춘다%타겟은()% , 그런데도 오줌을 멈추지 못하고, 더욱 더 빨간 얼굴 해 갔다
 		;연모+오줌싸개버릇
 		ELSEIF TALENT:연모 && TALENT:오줌싸개버릇
 			PRINTFORMW 「아,%CNAME("二人称")%하지만, 대한 것이니까, 군요？」
@@ -7154,7 +7154,7 @@ CASE "용간寝取られ：日常Ｖ夢中"
 	ELSE
 		PRINTFORMW %CALLNAME:TARGET%는 거체아래에서 두드려 잡아질 것 같은 격렬한 삽입질을 받고 있는 것에도 불구하고, 환희의 소리를 높이고 있다…
 		PRINTFORMW 「옷♪안쪽까지…읏♪…♪후벼파고 있다아…읏♪좀더 좀더 나를♪자지로 찔러엇♪」
-		PRINTFORMW 그 뿐만 아니라, 이미 한마리의음란빈룡에 떨어져 버렸다%CALLNAME:TARGET%하, 보다 깊고, 탐욕에 쾌락을 탐내려고 해 자신으로부터 뱀의 형상을 휘감고 있다…
+		PRINTFORMW 그 뿐만 아니라, 이미 한마리의음란빈룡에 떨어져 버렸다%타겟은()% , 보다 깊고, 탐욕에 쾌락을 탐내려고 해 자신으로부터 뱀의 형상을 휘감고 있다…
 		PRINTFORMW 「♪빨리 자식을♪건강한 정자로 임신하게 해…♪나의자궁우♪-너의정액그리고 빠지게 해엣♪」
 		PRINTFORMW 드래곤는 그 모습에 만발그렇게 신음소리를 내면, 이 암컷은 스스로의 소유물이라고 주장하도록(듯이)%CALLNAME:TARGET%의 안쪽 깊게백탁국물을 부어 넣었다…！
 	ENDIF
