@@ -163,7 +163,7 @@ SELECTCASE ARGS
 CASE "서류작업：도움"
 	;キャラ番号で分岐
 	SELECTCASE NO:ARG
-	;서큐버스、라미아、아프사라스、알케니、베르나도트、에스트、흑사피
+	;서큐버스、라미아、압사라、아라크네、베르나도트、에스트、흑사피
 	CASE 1, 10, 14, 18, 47, 48, 57
 		IF RAND:4 == 0
 			PRINTFORMW 조금 지쳤다%CALLNAME:MASTER%하,%CALLNAME:ARG%에 무릎 베개를 부탁해 보았습니다
@@ -322,7 +322,7 @@ CASE "서류작업：도움"
 			PRINTL 
 			PRINTFORMW 온화한 교환으로 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
 		ENDIF
-	;村娘、스큘라、드라군、마샤
+	;村娘、스킬라、드라군、마샤
 	CASE 8, 9, 15, 24, 26, 32, 44, 55
 		IF RAND:3 == 0
 			PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에서류작업노도움를 부탁해 보았습니다
@@ -455,7 +455,7 @@ CASE "서류작업：무시"
 	IF CEVENT("서류작업：무시", ARG) == 0
 		;キャラ番号で分岐
 		SELECTCASE NO:ARG
-		;서큐버스、라미아、아프사라스、알케니、베르나도트、에스트、흑사피
+		;서큐버스、라미아、압사라、아라크네、베르나도트、에스트、흑사피
 		CASE 1, 10, 14, 18, 47, 48, 57
 			PRINTFORMW %CALLNAME:MASTER%는 묵묵히 책상에 향하고 있다…
 			PRINTL 
@@ -501,7 +501,7 @@ CASE "서류작업：무시"
 			ELSE
 				PRINTFORMW %CALLNAME:ARG%는 뒤로부터 껴안아,%CALLNAME:MASTER%의가슴을더듬으면서 응석부려 왔다…
 			ENDIF
-		;村娘、스큘라、드라군、마샤
+		;村娘、스킬라、드라군、마샤
 		CASE 8, 9, 15, 24, 26, 32, 44, 55
 			PRINTFORMW %CALLNAME:MASTER%는 묵묵히 책상에 향하고 있다…
 			PRINTL 
@@ -569,7 +569,7 @@ CASE "서류작업：무시"
 	;無視してしまった…
 	ELSE
 		SELECTCASE NO:ARG
-		;서큐버스、라미아、아프사라스、알케니、에스트、흑사피
+		;서큐버스、라미아、압사라、아라크네、에스트、흑사피
 		CASE 1, 10, 14, 18, 48, 57
 			PRINTFORML 「……방해 했군요. -응이다」
 			PRINTFORMW %CALLNAME:ARG%는 흐트러진 착의인 채, 즈카즈카！(와)과발소리를 내 방으로부터 나갔습니다……
@@ -602,7 +602,7 @@ CASE "서류작업：무시"
 			CALL HEARTMARK_E
 			PRINTFORMW %CALLNAME:ARG%하%CALLNAME:MASTER%에 껴안은 채로, 즐거운 듯이 콧노래를 노래하고 불리는 것을 기다리고 있다…
 			CALL SET_CEVENT, "서류작업：무시できない", ARG
-		;村娘、스큘라、살로메、드라군、마샤、린、소녀
+		;村娘、스킬라、살로메、드라군、마샤、린、소녀
 		CASE 8, 9, 15, 24, 26, 32, 44, 55
 			PRINTFORMW 「방해 해……미안해요」
 			PRINTFORMW %CALLNAME:ARG%는 아래를 향해 터벅터벅 방을 나갔습니다…

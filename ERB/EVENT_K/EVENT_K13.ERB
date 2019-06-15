@@ -343,11 +343,11 @@ ELSEIF ASSI <= 0
 ;조수との掛け合い(YYを조수の캐릭터번호に置換, ＸＸを조수の캐릭터번호に対応した종족名, X1を캐릭터번호に変更する) 
 ;掛け合いをするキャラを増やす場合は, コピー＆ペーストをして増やす
 ;-------------------------------------------------
-;조수が短編스큘라
+;조수が短編스킬라
 ELSEIF NO:ASSI == 15  && CFLAG:ASSI:209 == 2
 	;初めて
-	IF CEVENT("조수会話：短編스큘라") == 0
-		;短編스큘라조교時に머메이드を조수にした事がある
+	IF CEVENT("조수会話：短編스킬라") == 0
+		;短編스킬라조교時に머메이드を조수にした事がある
 		IF CEVENT("조수会話：머메이드", ASSI)
 			PRINTFORMW 「얏호-인어의 언니님 ,  촉수있고의 요리 배달에 왔어요―」
 			PRINTFORMW ……평상시부터노래가 울리고 있는 이 방의 ,  분위기를 박살 내는 한마디였다
@@ -361,7 +361,7 @@ ELSEIF NO:ASSI == 15  && CFLAG:ASSI:209 == 2
 			PRINTFORMW 「텐타크루랏슈 밖에 재주가 없었다 그 무렵의 나하고는 다르니까요」
 			PRINTFORMW 「∼%CALLNAME:TARGET%언니님. 나에게  빠지게 한 틀려∼」
 		ENDIF
-		CALL SET_CEVENT, "조수会話：短編스큘라"
+		CALL SET_CEVENT, "조수会話：短編스킬라"
 	;二回目以降
 	ELSE
 		;연모
@@ -1320,7 +1320,7 @@ IF SELECTCOM == 3 && TEQUIP:샤워 == 0
 			PRINTFORMW 「………」
 		;연모＋자위중독Lv3이상
 		ELSEIF TALENT:연모 && ABL:자위중독 >= 3
-			;스큘라もできそう
+			;스킬라もできそう
 			IF RAND:3 == 0
 				PRINTFORML %CALLNAME:TARGET%는 자위를 계속하면서도 ,  뜨겁고 화끈해진다 신체로부터 하염없이 흘러넘치는 애액을 손가락에 걸고
 				PRINTFORMW 그것을 ,  신체에 발라 붐비도록(듯이) 해 열중해 자위를 계속하고 있다
@@ -8192,14 +8192,14 @@ CASE "요바이기승위"
 	;V감각Lv5이상
 	IF ABL:Ｖ감각 >= 5
 		IF RAND:4 == 0
-			GUEST = FIND_COND("Ｃ아프사라스", "연모")
+			GUEST = FIND_COND("Ｃ압사라", "연모")
 			SIF GUEST && (TALENT:GUEST:처녀 || TALENT:GUEST:남자 || TALENT:GUEST:임신)
 				GUEST = 0
 		ELSE
 			GUEST = 0
 		ENDIF
 		IF GUEST
-			;아프사라스とお風呂でえっち. 일常구상とセット. 
+			;압사라とお風呂でえっち. 일常구상とセット. 
 			IF NO:GUEST == 14
 				;遭遇編. ラブコメなら必須. 多分
 				IF RAND:2 == 0

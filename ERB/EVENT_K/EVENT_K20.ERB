@@ -258,11 +258,11 @@ ELSEIF ASSI <= 0
 ;조수との掛け合い(YYを조수の캐릭터번호に置換, ＸＸを조수の캐릭터번호に対応した종족名, X1を캐릭터번호に変更する) 
 ;掛け合いをするキャラを増やす場合は, コピー＆ペーストをして増やす
 ;-------------------------------------------------
-;조수が短編스큘라
+;조수が短編스킬라
 ELSEIF NO:ASSI == 15  && CFLAG:ASSI:209 == 2
 	;初めて
-	IF CEVENT("조수会話：短編스큘라") == 0
-		;短編스큘라조교時に엔젤を조수にした事がある
+	IF CEVENT("조수会話：短編스킬라") == 0
+		;短編스킬라조교時に엔젤を조수にした事がある
 		IF CEVENT("조수会話：엔젤", ASSI)
 			PRINTFORMW 「천사의 언니님, 얏호∼」
 			PRINTFORMW 「%CALLNAME:ASSI%상……이라고 하는 것은, 오늘은 내가 범해진다군요 ♪」
@@ -275,14 +275,14 @@ ELSEIF NO:ASSI == 15  && CFLAG:ASSI:209 == 2
 			PRINTFORMW 「안돼요 %CNAME("二人称")%,  악마와 계약하다는!」
 			PRINTFORMW …………
 			PRINTFORMW 오해가 풀 수 있던%CALLNAME:TARGET%는 사죄 했지만, %CALLNAME:ASSI%로부터는 「괴롭힘 뽑자」라고 하는 결의가 보였다
-			;조수스큘라の새드끼が2未満なら
+			;조수스킬라の새드끼が2未満なら
 			IF ABL:ASSI:새드끼 < 2
 				PRINTFORML 
 				PRINTFORMW %CALLNAME:ASSI%의 %ABLNAME:15%노레벨하지만2(이)가 되었습니다
 				ABL:ASSI:새드끼 = 2
 			ENDIF
 		ENDIF
-		CALL SET_CEVENT, "조수会話：短編스큘라"
+		CALL SET_CEVENT, "조수会話：短編스킬라"
 	;二回目以降
 	ELSE
 		;연모

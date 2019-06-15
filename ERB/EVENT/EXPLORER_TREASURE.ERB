@@ -137,12 +137,12 @@ PRINTFORM 보물상자를 발견했다.
 IF (ASSI <= 0 && RAND:5 == 0) || (ASSI && RAND:(5 + COND("탐색：罠解除", ASSI) - COND("탐색：罠誘発", ASSI) ) == 0)
 	PRINT 트랩
 	IF RAND:5 == 0
-		PRINTFORML ? 랴난시의 함정이다!…%CALLNAME:PLAYER%에게 행운이 내려왔다! 
+		PRINTFORML ? 리난시의 함정이다!…%CALLNAME:PLAYER%에게 행운이 내려왔다! 
 		CALL SET_PALAM_EXPLORER, "幸運", RAND:3 + 2
 		CALL SET_PALAM_EXPLORER, "아이템発見率", 50
 		CALL SET_PALAM_EXPLORER, "아이템레벨", 3
 	ELSEIF PALAM_EXPLORER("아이템레벨") >= 5 && RAND:6 == 0
-		PRINTFORML ! 리리스의 함정이다! %조사처리(CALLNAME:PLAYER,"는")% ……굉장히 기분좋았다. 
+		PRINTFORML ! 릴리스의 함정이다! %조사처리(CALLNAME:PLAYER,"는")% ……굉장히 기분좋았다. 
 		BASE:PLAYER:정력 -= RAND:6 + 5
 	ELSEIF PALAM_EXPLORER("아이템레벨") >= 3 && RAND:5 == 0
 		PRINTFORML ! 이스케이프의 함정이다! %조사처리(CALLNAME:PLAYER,"는")% 조금 먼 곳으로 날아가버렸다! 
@@ -242,7 +242,7 @@ CASE 1
 	;특수な악세사리
 	IF ARG > 0
 		SELECTCASE CALLNAME:ARG
-		CASE "뷔브르"
+		CASE "뷔이브"
 			CALL PRINT_COLORTEXT, "아련한보석", DEF_COLOR("황색")
 			I:325 += 1
 			PRINTFORML 이 들어있었다. 

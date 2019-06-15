@@ -86,9 +86,9 @@ IF TALENT:연모 && FIND_COND("Ｃ빌리져", "연모")
 	DEVENT:15 = 1
 	GUEST:15 = FIND_COND("Ｃ빌리져", "연모")
 ENDIF
-IF TALENT:연모 && FIND_COND("Ｃ아프사라스", "연모")
+IF TALENT:연모 && FIND_COND("Ｃ압사라", "연모")
 	DEVENT:16 = 1
-	GUEST:16 = FIND_COND("Ｃ아프사라스", "연모")
+	GUEST:16 = FIND_COND("Ｃ압사라", "연모")
 ENDIF
 
 ;起きうる이벤트から、等확률でのランダム선택開始
@@ -1434,7 +1434,7 @@ ELSEIF EVENT_NUM && (RAND:3 == 0 || CEVENT(LOCALS:EVENT_NUM) == 0)
 				PRINTFORMW %CALLNAME:TARGET%(이)든지의 농담이라고는 해도, %CALLNAME:GUEST%는 울 것 같게 되어 버렸습니다……
 			ENDIF
 		ENDIF
-	;아프사라스
+	;압사라
 	CASE 16
 		;相性○이상だと가능性
 		IF RAND:3 == 0 && COND("상성○", GUEST)
@@ -1466,7 +1466,7 @@ ELSEIF EVENT_NUM && (RAND:3 == 0 || CEVENT(LOCALS:EVENT_NUM) == 0)
 			PRINTFORMW 이야기를 들으면, 욕실에 들어가 있는 동안에옷를 교환되어지고 있던 것 같다
 			PRINTFORMW 「우─…이런 것은 익숙해지지 않다고 말하는데……」
 			PRINTFORMW %CALLNAME:TARGET%는 사타구니의 근처를 신경쓴 모습으로 달려갔습니다……
-			;デフォだと아프사라스は노팬티→팬티は残されていないはず
+			;デフォだと압사라は노팬티→팬티は残されていないはず
 		ENDIF
 	ENDSELECT
 	;ゲストと仲良くなる

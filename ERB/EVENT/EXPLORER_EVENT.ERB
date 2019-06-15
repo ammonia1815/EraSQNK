@@ -316,11 +316,11 @@ SELECTCASE ARGS
 CASE "초원"
 	PRINTFORML %"～초원～", 25, LEFT%
 CASE "에르툼삼림"
-	PRINTFORML %"～에르툼삼림～", 25, LEFT% %"BOSS：스코그스라", 25, LEFT% 유니크：티타니아
+	PRINTFORML %"～에르툼삼림～", 25, LEFT% %"BOSS：스코그슬로", 25, LEFT% 유니크：티타니아
 CASE "류두흐동굴"
-	PRINTFORML %"～류두흐동굴～", 25, LEFT% %"BOSS：스투나＆멜로나", 25, LEFT% 유니크：뷔브르
+	PRINTFORML %"～류두흐동굴～", 25, LEFT% %"BOSS：스투나＆멜로나", 25, LEFT% 유니크：뷔이브
 CASE "안쇼스海"
-	PRINTFORML %"～안쇼스海～", 25, LEFT% %"BOSS：레비아탄", 25, LEFT% 유니크：카류브디스
+	PRINTFORML %"～안쇼스海～", 25, LEFT% %"BOSS：레비아탄", 25, LEFT% 유니크：카리브디스
 CASE "베르나도트의대미궁"
 	PRINTFORML %"～베르나도트의 대미궁～", 25, LEFT% %"BOSS：베르나도트", 25, LEFT%
 CASE "고즈번 사막"
@@ -379,7 +379,7 @@ CASE "류두흐동굴"
 	CALL SET_PALAM_EXPLORER, "플로어", 1
 	CALL SET_PALAM_EXPLORER, "最深플로어", 8
 	CALL SET_PALAM_EXPLORER, "敵の強さ", 3
-	;라미아, 리저드맨, 하피. 뷔브르, ストメロは後で追加. 
+	;라미아, 리저드맨, 하피. 뷔이브, ストメロは後で追加. 
 	CALL SET_PALAM_EXPLORER, "몽마", 10, 2
 	CALL SET_PALAM_EXPLORER, "몽마", 11, 2
 	CALL SET_PALAM_EXPLORER, "몽마", 12, 2
@@ -393,7 +393,7 @@ CASE "안쇼스海"
 	CALL SET_PALAM_EXPLORER, "플로어", 1
 	CALL SET_PALAM_EXPLORER, "最深플로어", 10
 	CALL SET_PALAM_EXPLORER, "敵の強さ", 4
-	;머메이드、아프사라스、스큘라。레비아탄はあとで追加。
+	;머메이드、압사라、스킬라。레비아탄はあとで追加。
 	CALL SET_PALAM_EXPLORER, "몽마", 105, 2
 	CALL SET_PALAM_EXPLORER, "몽마", 13, 1
 	CALL SET_PALAM_EXPLORER, "몽마", 213, 1
@@ -411,7 +411,7 @@ CASE "베르나도트의대미궁"
 	CALL SET_PALAM_EXPLORER, "플로어", 1
 	CALL SET_PALAM_EXPLORER, "最深플로어", 3
 	CALL SET_PALAM_EXPLORER, "敵の強さ", 5
-	;캣시, 랴난시, 다키니, 알라우네, ハイＬＶ실프, 윗치
+	;캣시, 리난시, 다키니, 알라우네, ハイＬＶ실프, 윗치
 	CALL SET_PALAM_EXPLORER, "몽마", 203, 2
 	CALL SET_PALAM_EXPLORER, "몽마", 204, 2
 	CALL SET_PALAM_EXPLORER, "몽마", 305, 2
@@ -429,7 +429,7 @@ CASE "고즈번 사막"
 	CALL SET_PALAM_EXPLORER, "플로어", 1
 	CALL SET_PALAM_EXPLORER, "最深플로어", 6
 	CALL SET_PALAM_EXPLORER, "敵の強さ", 6
-	;アルプ、メリジューヌ、하피、알케니、スフィンクス
+	;アルプ、メリジューヌ、하피、아라크네、スフィンクス
 	CALL SET_PALAM_EXPLORER, "몽마", 202, 2
 	CALL SET_PALAM_EXPLORER, "몽마", 210, 1
 	CALL SET_PALAM_EXPLORER, "몽마", 11, 3
@@ -602,7 +602,7 @@ FOR COUNT:99, 0, 30
 		IF PALAM_EXPLORER("幸運") == 0
 			CALL SET_PALAM_EXPLORER, "아이템発見率", -50
 			CALL SET_PALAM_EXPLORER, "아이템레벨", -3
-			PRINTFORML 랴난시의 함정? 의 효과가 끝났다. 
+			PRINTFORML 리난시의 함정? 의 효과가 끝났다. 
 		ENDIF
 	ENDIF
 	IF PALAM_EXPLORER("クラムジ")
@@ -731,13 +731,13 @@ IF RAND:100 < PALAM_EXPLORER("계단발견率") && PALAM_EXPLORER("플로어") <
 		;티타니아出現
 		CASE 3
 			CALL SET_PALAM_EXPLORER, "몽마", 304, 1
-		;스코그스라出現
+		;스코그슬로出現
 		CASE 8
 			CALL SET_PALAM_EXPLORER, "몽마", 303, 5
 		ENDSELECT
 	CASE "류두흐동굴"
 		SELECTCASE PALAM_EXPLORER("플로어")
-		;뷔브르出現
+		;뷔이브出現
 		CASE 3
 			CALL SET_PALAM_EXPLORER, "몽마", 412, 1
 		;멜로나出現
@@ -751,7 +751,7 @@ IF RAND:100 < PALAM_EXPLORER("계단발견率") && PALAM_EXPLORER("플로어") <
 		ENDSELECT
 	CASE "안쇼스海"
 		SELECTCASE PALAM_EXPLORER("플로어")
-		;카류브디스増量
+		;카리브디스増量
 		CASE 3
 			CALL SET_PALAM_EXPLORER, "몽마", 215, 1
 		;레비아탄出現

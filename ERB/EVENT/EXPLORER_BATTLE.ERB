@@ -52,7 +52,7 @@ ENDIF
 
 CALL SET_NEWNAME
 
-;스큘라短編だったり長編だったり
+;스킬라短編だったり長編だったり
 IF NO:TARGET == 15
 	IF RAND:2
 		CFLAG:209 = 2
@@ -144,7 +144,7 @@ CASE "류두흐동굴"
 	;스투나は멜로나が倒されていないなら멜로나を伴って現れる
 	IF NO:TARGET == 34 && PALAM_EXPLORER("中보스격파") == 0 && (CONFIG("탐색ボス") || GETCHARA(35) < 0)
 		CALL ADD_CHARACTER_EXPLORER, 35
-	;뷔브르, 멜로나, 上位種でないなら複数かも
+	;뷔이브, 멜로나, 上位種でないなら複数かも
 	ELSEIF NO:TARGET == 34 || NO:TARGET == 35 || (NO:TARGET == 12 && CFLAG:8 == 4)
 	ELSEIF PALAM_EXPLORER("敵の強さ") + PALAM_EXPLORER("ハーレム")*2 > RAND:20 && CFLAG:8 == 0
 		CALL WANDERING_MONSTER

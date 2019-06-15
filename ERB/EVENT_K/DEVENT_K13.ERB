@@ -6,7 +6,7 @@
 ;この머메이드일常구상も, 何人もの方々からの손가락摘, 손가락導, 修正を受けながら製作されています. 関係者の方々にはこの場をお借りしてお礼の言葉を言わせて下さい. 
 ;
 ;血迷ってやった. 後悔はしてるが反省はしてない. 
-;いまさらだけど, 머메이드と絡ませるんだったら스큘라が一番自然だった. 長編と短編で입調がかなり違うが, いつかどうにかしたい. 海鮮丼
+;いまさらだけど, 머메이드と絡ませるんだったら스킬라が一番自然だった. 長編と短編で입調がかなり違うが, いつかどうにかしたい. 海鮮丼
 ;빌리져일常구상をある程度書いたら, こっちの加筆にも本허리를 入れたい. 
 ;久々にちまっと
 ;ちまちまっと加筆
@@ -29,21 +29,21 @@ VARSET GUEST
 
 SIF TALENT:연모
 	DEVENT:1 = 1
-IF TALENT:연모 && TIME == 1 && FIND_COND("Ｃ아프사라스", "연모")
+IF TALENT:연모 && TIME == 1 && FIND_COND("Ｃ압사라", "연모")
 	DEVENT:2 = 1
-	GUEST:2 = FIND_COND("Ｃ아프사라스", "연모")
+	GUEST:2 = FIND_COND("Ｃ압사라", "연모")
 ENDIF
 IF TALENT:연모 && FIND_COND("Ｃ엔젤", "연모")
 	DEVENT:3 = 1
 	GUEST:3 = FIND_COND("Ｃ엔젤", "연모")
 ENDIF
-IF TALENT:연모 && FIND_COND("Ｃ아프사라스", "연모")
+IF TALENT:연모 && FIND_COND("Ｃ압사라", "연모")
 	DEVENT:4 = 1
-	GUEST:4 = FIND_COND("Ｃ아프사라스", "연모")
+	GUEST:4 = FIND_COND("Ｃ압사라", "연모")
 ENDIF
-IF TALENT:연모 && CHARA_NUM("조교경험あり") > 4 && FIND_COND("Ｃ아프사라스", "연모")
+IF TALENT:연모 && CHARA_NUM("조교경험あり") > 4 && FIND_COND("Ｃ압사라", "연모")
 	DEVENT:5 = 1
-	GUEST:5 = FIND_COND("Ｃ아프사라스", "연모")
+	GUEST:5 = FIND_COND("Ｃ압사라", "연모")
 ENDIF
 IF TALENT:연모 && FIND_COND("Ｃ쿠즈노하", "연모")
 	DEVENT:6 = 1
@@ -109,7 +109,7 @@ ELSEIF EVENT_NUM && (RAND:3 == 0 || CEVENT(LOCALS:EVENT_NUM) == 0)
 			PRINTFORMW %CALLNAME:TARGET%의 가성에 무심코 들어 버린다
 			PRINTFORMW 지금밤는 기분 좋게 잘 수 있을 것 같다……
 		ENDIF
-	;아프사라스といっしょにお風呂. 通常구상での요바이とセット. 
+	;압사라といっしょにお風呂. 通常구상での요바이とセット. 
 	CASE 2
 		PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 목욕탕에 들어가려고탈의곳의 문을 열면, 목욕탕으로부터 즐거운 듯한 목소리가 들려 왔다. 
 		PRINTFORMW 아무래도%타겟과()%%CALLNAME:GUEST%(와)과 같다. 
@@ -133,7 +133,7 @@ ELSEIF EVENT_NUM && (RAND:3 == 0 || CEVENT(LOCALS:EVENT_NUM) == 0)
 		PRINTFORMW 살그머니 안을 들여다 보면, 거기에는 기분 좋은 것 같이 노래한다%타겟과()%, 그 노래에 귀를 기울인다%CALLNAME:GUEST%의 모습이 있었다
 		PRINTFORMW 투명한 것 같은%CALLNAME:TARGET%의 가성에%CALLNAME:GUEST%는 릴렉스 하고 있다……
 		PRINTFORMW 하지만, 그 가사에“연인”야“입붙어라”그렇다고 하는 말이 섞이기 시작하면, %CALLNAME:GUEST%노얼굴는 서서히빨강구 되었다
-	;아프사라스と歌. 관객付き
+	;압사라と歌. 관객付き
 	CASE 5
 		PRINTFORMW 리빙에서는%조사처리(CALLNAME:TARGET,"가")% 정열적인 노래를 부르고 있다…
 		PRINTFORMW 그 소란을 우연히 들어 관안의 거주자가 모이기 시작하면……갑자기, %CALLNAME:GUEST%하지만 노래에 맞추어 춤추기 시작했다! 

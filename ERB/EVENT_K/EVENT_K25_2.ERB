@@ -623,10 +623,10 @@ ELSEIF NO:ASSI == 13
 			PRINTFORMW 두 명의 사이에 긴박한 공기가 퍼집니다……
 		ENDIF
 	ENDIF
-;조수が長編스큘라
+;조수が長編스킬라
 ELSEIF NO:ASSI == 15 && CFLAG:ASSI:209 == 1
 	;初めて
-	IF CEVENT("조수会話：長編스큘라") == 0
+	IF CEVENT("조수会話：長編스킬라") == 0
 		;연모＋연모時初구상（陥落이벤트）が発生済みかつ조수が연모
 		IF TALENT:연모 && GETBIT(CFLAG:201, 4) && TALENT:ASSI:연모 
 			PRINTFORMW 「어머나…생각했어요예쁜 아가씨」
@@ -653,7 +653,7 @@ ELSEIF NO:ASSI == 15 && CFLAG:ASSI:209 == 1
 			PRINTFORMW 「어머나, 잘 우는 피 들이마셔 벌레입니다 일」
 			PRINTFORMW 방의 공기가 자꾸자꾸 긴장되어 갑니다………
 		ENDIF
-		CALL SET_CEVENT, "조수会話：長編스큘라"
+		CALL SET_CEVENT, "조수会話：長編스킬라"
 	;二回目以降
 	ELSE
 		;대상と조수が연모
@@ -688,10 +688,10 @@ ELSEIF NO:ASSI == 15 && CFLAG:ASSI:209 == 1
 			PRINTFORMW 입에는 하고 있지 않습니다만, 네%조사처리(CALLNAME:TARGET,"는")% 촉수에 익숙하지 않는 것 같습니다……
 		ENDIF
 	ENDIF
-;조수が短編스큘라
+;조수が短編스킬라
 ELSEIF NO:ASSI == 15 && CFLAG:ASSI:209 == 2
 	;初めて
-	IF CEVENT("조수会話：短編스큘라") == 0
+	IF CEVENT("조수会話：短編스킬라") == 0
 		;연모＋연모時初구상（陥落이벤트）が発生済みかつ조수が연모
 		IF TALENT:연모 && GETBIT(CFLAG:201, 4) && TALENT:ASSI:연모 
 			PRINTFORMW 「그럼…너무 촉수에 익숙하지 않기 때문에……상냥하게 해?」
@@ -736,7 +736,7 @@ ELSEIF NO:ASSI == 15 && CFLAG:ASSI:209 == 2
 			PRINTFORMW 『읏훗후～, 아무리 강한척 해도 누님은%CNAMET(ASSI, "一人称")%노촉수로부터 도망칠 수 없는 것이닷♪』
 			PRINTFORMW %CALLNAME:ASSI%의 촉수하%CALLNAME:TARGET%의 몸을 더듬고 있습니다…
 		ENDIF
-		CALL SET_CEVENT, "조수会話：短編스큘라"
+		CALL SET_CEVENT, "조수会話：短編스킬라"
 	;二回目以降
 	ELSE
 		;대상と조수が연모
@@ -2262,10 +2262,10 @@ ELSEIF NO:ASSI == 40
 			PRINTFORMW %CALLNAME:ASSI%하공포마음을 숨기면서, 어떻게든%TEXTS("조수の명칭")%의 일을 완수하려고 하고 있습니다……
 		ENDIF
 	ENDIF
-;조수が아프사라스
+;조수が압사라
 ELSEIF NO:ASSI == 14
 	;初めて
-	IF CEVENT("조수会話：아프사라스") == 0
+	IF CEVENT("조수会話：압사라") == 0
 		;연모＋연모時初구상（陥落이벤트）が発生済みかつ조수が연모
 		IF TALENT:연모 && GETBIT(CFLAG:201, 4) && TALENT:ASSI:연모 
 			PRINTFORML 『이제(벌써)%CALLNAME:TARGET%도손포함해로 하고 있는 것, 새로운 시련에는 되지 않을 듯 하네요？』
@@ -2280,7 +2280,7 @@ ELSEIF NO:ASSI == 14
 			PRINTFORMW 『흡혈귀조차조교하자니, 그렇게 자신을 시험하고 싶은 것？』
 			PRINTFORMW %CALLNAME:ASSI%하%CALLNAME:MASTER%를 이상한 것 같게 보고 있습니다……
 		ENDIF
-		CALL SET_CEVENT, "조수会話：아프사라스"
+		CALL SET_CEVENT, "조수会話：압사라"
 	;二回目以降
 	ELSE
 		;대상と조수が연모
@@ -4080,11 +4080,11 @@ ELSEIF TEQUIP:야외플레이 && GETBIT(CFLAG:201, 30) == 0
 					ELSEIF NO:ASSI == 13
 						PRINTFORMW 『저기, 다음은……%CNAMET(ASSI, "一人称")%(와)과 데이트 해 주네요……？』
 						PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:ASSI%에 데이트의 졸라댐을 되었습니다……
-					;조수が長編스큘라
+					;조수が長編스킬라
 					ELSEIF NO:ASSI == 15  && CFLAG:ASSI:209 == 1
 						PRINTFORMW 『이번이 그녀의 차례라면……다음은 당연%CNAMET(ASSI, "一人称")%의 차례네요？』
 						PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:ASSI%에 데이트의 졸라댐을 되었습니다……
-					;조수が短編스큘라
+					;조수が短編스킬라
 					ELSEIF NO:ASSI == 15  && CFLAG:ASSI:209 == 2
 						PRINTFORM 『다음은%CNAMET(ASSI, "一人称")%(와)과 데이트 하기 때문에!  %CNAMET(ASSI, "二人称")%♪』
 						PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:ASSI%에 데이트의 졸라댐을 되었습니다……
@@ -4176,7 +4176,7 @@ ELSEIF TEQUIP:야외플레이 && GETBIT(CFLAG:201, 30) == 0
 					ELSEIF NO:ASSI == 40
 						PRINTFORMW 『데이트 좋구나～. 이번은%NICKNAME:ASSI%(와)과도 데이트 하자～』
 						PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:ASSI%에 데이트의 졸라댐을 되었습니다……
-					;조수が아프사라스
+					;조수が압사라
 					ELSEIF NO:ASSI == 14
 						PRINTFORMW 『그녀만 데이트라는 것은, 좋지 않는 것이 아닐까？』
 						PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:ASSI%에 데이트의 졸라댐을 되었습니다……
@@ -4235,11 +4235,11 @@ ELSEIF TEQUIP:야외플레이 && GETBIT(CFLAG:201, 30) == 0
 					ELSEIF NO:ASSI == 13
 						PRINTFORMW 『저기, 다음은……%CNAMET(ASSI, "一人称")%(와)과 데이트 해 주네요……？』
 						PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:ASSI%에 데이트의 졸라댐을 되었습니다……
-					;조수が長編스큘라
+					;조수が長編스킬라
 					ELSEIF NO:ASSI == 15  && CFLAG:ASSI:209 == 1
 						PRINTFORMW 『이번이 그녀의 차례라면……다음은 당연%CNAMET(ASSI, "一人称")%의 차례네요？』
 						PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:ASSI%에 데이트의 졸라댐을 되었습니다……
-					;조수が短編스큘라
+					;조수が短編스킬라
 					ELSEIF NO:ASSI == 15  && CFLAG:ASSI:209 == 2
 						PRINTFORM 『다음은%CNAMET(ASSI, "一人称")%(와)과 데이트 하기 때문에!  %CNAMET(ASSI, "二人称")%♪』
 						PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:ASSI%에 데이트의 졸라댐을 되었습니다……
@@ -4331,7 +4331,7 @@ ELSEIF TEQUIP:야외플레이 && GETBIT(CFLAG:201, 30) == 0
 					ELSEIF NO:ASSI == 40
 						PRINTFORMW 『데이트 좋구나～. 이번은%NICKNAME:ASSI%(와)과도 데이트 하자～』
 						PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:ASSI%에 데이트의 졸라댐을 되었습니다……
-					;조수が아프사라스
+					;조수が압사라
 					ELSEIF NO:ASSI == 14
 						PRINTFORMW 『그녀만 데이트라는 것은, 좋지 않는 것이 아닐까？』
 						PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:ASSI%에 데이트의 졸라댐을 되었습니다……

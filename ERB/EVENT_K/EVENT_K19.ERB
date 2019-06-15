@@ -235,11 +235,11 @@ ELSEIF ASSI <= 0
 ;조수との掛け合い(YYを조수の캐릭터번호に置換, ＸＸを조수の캐릭터번호に対応した종족名, X1を캐릭터번호に変更する) 
 ;掛け合いをするキャラを増やす場合は, コピー＆ペーストをして増やす
 ;-------------------------------------------------
-;조수が短編스큘라
+;조수が短編스킬라
 ELSEIF NO:ASSI == 15  && CFLAG:ASSI:209 == 2
 	;初めて
-	IF CEVENT("조수会話：短編스큘라") == 0
-		;短編스큘라조교時に윗치を조수にした事がある
+	IF CEVENT("조수会話：短編스킬라") == 0
+		;短編스킬라조교時に윗치を조수にした事がある
 		IF CEVENT("조수会話：윗치", ASSI)
 			PRINTFORMW 「어머, 오늘은 %조사처리(CALLNAME:ASSI,"를")% 데리고왔네」
 			PRINTFORMW 『흐흐-응, 쾌락의 소용돌이에서 몸부림치게해줄게♪』
@@ -251,17 +251,17 @@ ELSEIF NO:ASSI == 15  && CFLAG:ASSI:209 == 2
 			PRINTFORMW 『그거야 마녀도 여러가지 사람이 있다는 건 알고있지만말야……』
 			PRINTFORMW 『뭐랄까, 선조님의 기억인걸까아…… 약 냄새가 왠지 싫어』
 			PRINTFORMW 언제까지나 그러고 있어도 어쩔 수가 없어서 %조사처리(CALLNAME:ASSI,"를")% 재촉해 방에 들어갔다
-			PRINTFORMW 「어서와…… 어머, 스큘라네. 실험재료？」
+			PRINTFORMW 「어서와…… 어머, 스킬라네. 실험재료？」
 			PRINTFORMW …………. 
 			PRINTFORMW %조사처리(CALLNAME:ASSI,"는")% 평소의 웃는 얼굴이었지만 그 안에는 「괴롭혀버리자」라는 결의가 숨어있다
-			;조수스큘라の새드끼が2未満なら
+			;조수스킬라の새드끼が2未満なら
 			IF ABL:ASSI:새드끼 < 2
 				PRINTFORML 
 				PRINTFORMW %CALLNAME:ASSI%의 %ABLNAME:15%의 레벨이 2가 되었습니다
 				ABL:ASSI:새드끼 = 2
 			ENDIF
 		ENDIF
-		CALL SET_CEVENT, "조수会話：短編스큘라"
+		CALL SET_CEVENT, "조수会話：短編스킬라"
 	;二回目以降
 	ELSE
 		;연모
