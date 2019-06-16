@@ -4754,10 +4754,10 @@ ENDIF
 
 ;弟子の時
 IF GETBIT(CFLAG:201, 30) && TALENT:연모 == 0 && MARK:굴복각인 < 3 && ABNORMAL_PLAY()
-	IF CALCF("반발각인獲得", TARGET) || CALCF("고통각인획득", TARGET)
+	IF CALCF("반발각인획득", TARGET) || CALCF("고통각인획득", TARGET)
 		PRINTFORMW 「하아？나에게 무엇을 하고 싶다고？」
 		PRINTFORMW 「뭐 바보 같은 일 말하고 있는 것인가……」
-		PRINTFORMW %CALLNAME:TARGET%는 보기에도 내켜하는 마음은 아니다……종형제 계약을 맺고 있다이상,무리강한은 유리한 계책은 아닐 것이다
+		PRINTFORMW %CALLNAME:TARGET%는 보기에도 내켜하는 마음은 아니다……종형제 계약을 맺고 있는 이상, 강한 무리는 유리한 계책은 아닐 것이다
 		TFLAG:14 = 1
 		RETURN 1
 	ENDIF
