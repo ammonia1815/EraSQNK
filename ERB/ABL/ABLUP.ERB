@@ -36,7 +36,7 @@ CASE "ＬＶ"
 		LOCAL:1 = 1
 	ENDIF
 	IF TALENT:몽마 && TALENT:상위몽마 == 0
-		PRINTFORM  [ 2] - 상위몽마가된다：경험치
+		PRINTFORM  [ 2] - 상위몽마가 된다：경험치
 		SIF EXP:경험치 < A:2
 			SETCOLOR DEF_COLOR("회색")
 		PRINTFORM {EXP:경험치}
@@ -55,7 +55,7 @@ CASE "ＬＶ"
 		LOCAL:3 = 1
 
 	IF COND("성장기")
-		PRINTFORM  [\@ EXP:경험치 >= 1000? {4,2} # × \@] - %CALLNAME:TARGET% 를 성장시킨다：경험치
+		PRINTFORM  [\@ EXP:경험치 >= 1000? {4,2} # × \@] - %타겟을()% 성장시킨다：경험치
 		SIF EXP:경험치 < 1000
 			SETCOLOR DEF_COLOR("회색")
 		PRINTFORM {EXP:경험치}
@@ -88,7 +88,7 @@ CASE "ＬＶ"
 		PRINTFORMW %NAME:TARGET%의 레벨이 {ABL:ARGS}\@ABL:ARGS == NUM("최대레벨", 90) ? (MAX!) # \@가 되었습니다.
 	ELSEIF RESULT == 2
 		EXP:경험치 -= A:2
-		PRINTFORMW %CALLNAME:TARGET%는 상위몽마가 되었습니다
+		PRINTFORMW %타겟은()% 상위몽마가 되었습니다
 		TALENT:몽마 = 0
 		TALENT:상위몽마 = 1
 	ELSEIF RESULT == 3
@@ -117,18 +117,18 @@ CASE "Ｖ확장", "Ａ확장"
 			RETURN 0
 		ENDIF
 
-		PRINTFORML %CALLNAME:TARGET%의 현재%ARGS% 레벨은{ABL:ARGS}이고 Ｖ명기도는{ABL_V(TARGET, "절대치")}입니다
+		PRINTFORML %CALLNAME:TARGET%의 현재 %ARGS% 레벨은{ABL:ARGS}이고 Ｖ명기도는{ABL_V(TARGET, "절대치")}입니다
 		PRINTFORML %ARGS%레벨을 상승 시키겠습니까？（주의：상대적 명기도는 줄어들게 됩니다）
 		PRINTFORML 
 		;ＬＶＵＰ가능
 		IF CALCF("Ｖ확장の상한", TARGET) > ABL:Ｖ확장
 			ABL:ARGS += 1
-			PRINTFORML  [ 0] - %ARGS%레벨을 {ABL:ARGS}에 올리기（레벨을 올린 이후 Ｖ명기도는 {ABL_V(TARGET, "절대치")}입니다.）
+			PRINTFORML  [ 0] - %ARGS%레벨을 {ABL:ARGS}에 올린다（레벨을 올린 이후 Ｖ명기도는 {ABL_V(TARGET, "절대치")}입니다.）
 			ABL:ARGS -= 1
 			LOCAL:0 = 1
 		ELSE
 			SETCOLOR DEF_COLOR("회색")
-			PRINTFORML  [×] - %ARGS%레벨을 {ABL:ARGS + 1}로 올린다 ……Ｖ확장 경험과 소질이 부족한것 같습니다
+			PRINTFORML  [×] - %ARGS%레벨을 {ABL:ARGS + 1}로 올린다 ……Ｖ확장 경험과 소질이 부족한 것 같습니다
 			RESETCOLOR
 		ENDIF
 	CASE "Ａ확장"
@@ -137,13 +137,13 @@ CASE "Ｖ확장", "Ａ확장"
 			RETURN 0
 		ENDIF
 
-		PRINTFORML %CALLNAME:TARGET%의 현재%ARGS% 레벨을{ABL:ARGS}이고 Ａ명기도는{ABL_A(TARGET, "절대치")}입니다
+		PRINTFORML %CALLNAME:TARGET%의 현재 %ARGS% 레벨을{ABL:ARGS}이고 Ａ명기도는{ABL_A(TARGET, "절대치")}입니다
 		PRINTFORML %ARGS%레벨을 상승 시키겠습니까?？（주의：상대적 명기도는 줄어들게 됩니다）
 		PRINTFORML 
 		;ＬＶＵＰ가능
 		IF CALCF("Ａ확장の상한", TARGET) > ABL:Ａ확장
 			ABL:ARGS += 1
-			PRINTFORML  [ 0] - %ARGS%레벨를{ABL:ARGS}에 올리기（레벨을 올린 이후 Ａ명기도는{ABL_A(TARGET, "절대치")}입니다.）
+			PRINTFORML  [ 0] - %ARGS%레벨을 {ABL:ARGS}에 올린다（레벨을 올린 이후 Ａ명기도는{ABL_A(TARGET, "절대치")}입니다.）
 			ABL:ARGS -= 1
 			LOCAL:0 = 1
 		ELSE
@@ -167,9 +167,9 @@ CASE "Ｖ확장", "Ａ확장"
 
 		SELECTCASE ARGS
 		CASE "Ｖ확장"
-			PRINTFORMW %NAME:TARGET%의 %ARGS%레벨은{ABL:ARGS}, 명기도는{ABL_V(TARGET, "절대치")}이 되었습니다. 
+			PRINTFORMW %NAME:TARGET%의 %ARGS%레벨은 {ABL:ARGS}, 명기도는{ABL_V(TARGET, "절대치")}이 되었습니다. 
 		CASE "Ａ확장"
-			PRINTFORMW %NAME:TARGET%의 %ARGS%레벨은{ABL:ARGS}, 명기도는{ABL_A(TARGET, "절대치")}이 되었습니다. 
+			PRINTFORMW %NAME:TARGET%의 %ARGS%레벨은 {ABL:ARGS}, 명기도는{ABL_A(TARGET, "절대치")}이 되었습니다. 
 		ENDSELECT
 	ENDIF
 
@@ -191,55 +191,55 @@ CASE "음핵", "음호", "애널광", "음유", "음탕한입술", "새드", "�
 	SELECTCASE ARGS
 	CASE "음핵"
 		IF TALENT:연모 || TALENT:음란
-			PRINTFORM %CALLNAME:TARGET%는 행위가 끝났음에도 불구하고, %CALLNAME:MASTER%에게 
+			PRINTFORM %타겟은()% 행위가 끝났음에도 불구하고, %CALLNAME:MASTER%에게 
 			PRINTFORMW \@ PENIS(TARGET) ? 페니스 # 클리토리스 \@의 저림을 진정시켜달라고 졸라왔다…
 		ELSE
-			PRINTFORM %CALLNAME:TARGET%는 %CALLNAME:MASTER% 쪽을 가만히 쳐다보면서, 손으로 자신의 
-			PRINTFORMW \@ PENIS(TARGET) ? 음경 # 콩 \@을 주물렀다…
+			PRINTFORM %타겟은()% %CALLNAME:MASTER% 쪽을 가만히 쳐다보면서, 손으로 자신의 
+			PRINTFORMW \@ PENIS(TARGET) ? 음경 # 콩알 \@을 주물렀다…
 		ENDIF
 	CASE "요도광"
 		IF TALENT:연모 || TALENT:음란
-			PRINTFORMW %타겟은()% 조교하지만 끝난 뒤에도 불구하고,%CALLNAME:MASTER%에 오줌의 구멍을 괴롭혔으면 좋겠다고 간원 해 왔다…
+			PRINTFORMW %타겟은()% 조교하지만 끝난 뒤에도 불구하고,%CALLNAME:MASTER%에 오줌 구멍을 괴롭혔으면 좋겠다고 간원 해 왔다…
 		ELSE
-			PRINTFORMW %CALLNAME:TARGET%는 스스로의를 위로하면서%CALLNAME:MASTER%에 갖고 싶어하는 듯한 시선을 보내고 있다…
+			PRINTFORMW %타겟은()% 스스로를 위로하면서 %CALLNAME:MASTER%에 갖고 싶어하는 듯한 시선을 보내고 있다…
 		ENDIF
 	CASE "음호"
 		IF TALENT:연모 || PENIS(MASTER) == 0
-			PRINTFORMW %CALLNAME:TARGET%는 행위가 끝났음에도 불구하고, %CALLNAME:MASTER%에게 자궁의 갈증을 풀어달라고 매달려왔다…
+			PRINTFORMW %타겟은()% 행위가 끝났음에도 불구하고, %CALLNAME:MASTER%에게 자궁의 갈증을 풀어달라고 매달려왔다…
 		ELSE
 			PRINTFORMW %CALLNAME:TARGET%의 꿀단지는 개발이 끝나, 완전히 %CALLNAME:MASTER%의 물건에 적응해버린 것같다…
 		ENDIF
 	CASE "애널광"
 		IF TALENT:연모 || TALENT:음란
-			PRINTFORMW %CALLNAME:TARGET%는 조교가 끝났음이도 불구하고, %CALLNAME:MASTER%에게 엉덩이를 괴롭혀달라고 애원했다…
+			PRINTFORMW %타겟은()% 조교가 끝났음에도 불구하고, %CALLNAME:MASTER%에게 엉덩이를 괴롭혀달라고 애원했다…
 		ELSE
-			PRINTFORMW %CALLNAME:TARGET%는 자신의 엉덩이를 위로하면서 %CALLNAME:MASTER%에게 원하는 듯한 시선을 보내왔다…
+			PRINTFORMW %타겟은()% 자신의 엉덩이를 위로하면서 %CALLNAME:MASTER%에게 원하는 듯한 시선을 보내왔다…
 		ENDIF
 	CASE "음유"
 		IF CONFIG("니플퍽") && TALENT:거유 && TALENT:슬라임 == 0
-			PRINTFORMW %CALLNAME:TARGET%는 완전히 음란하게 개화한 유두에 손가락을 푹푹찌르며, 가벼운 자위행위를 보여주고있습니다…
+			PRINTFORMW %타겟은()% 완전히 음란하게 개화한 유두에 손가락을 푹푹 찌르며, 가벼운 자위행위를 보여주고있습니다…
 			PRINTFORMW …이렇다면 가슴을 이용해 더욱 하드한 플레이도 가능할 것입니다! 
-			CALL PRINT_STR, "하트핑크_※니플퍽を行う事ができるようになりました※_W"
+			CALL PRINT_STR, "하트핑크_※니플퍽을 할 수 있게 되었습니다※_W"
 		ELSEIF TALENT:연모 || TALENT:음란
-			PRINTFORMW %CALLNAME:TARGET%는 행위가 끝났음에도 불구하고, %CALLNAME:MASTER%에게 가슴을 주물러달라고 졸라왔다…
+			PRINTFORMW %타겟은()% 행위가 끝났음에도 불구하고, %CALLNAME:MASTER%에게 가슴을 주물러 달라고 졸라왔다…
 		ELSE
 			PRINTFORMW %CALLNAME:TARGET%의 가슴은 %CALLNAME:MASTER%에 의해 개발되어, 민감하게 되어버린 것같다…
 		ENDIF
 	CASE "음탕한입술"
-		PRINTFORMW %CALLNAME:TARGET%는 행위가 끝나 떠나려고 하는 %CALLNAME:MASTER%을 끌어안고, 몇번이고 입맞춤을 계속하고있다…
+		PRINTFORMW %타겟은()% 행위가 끝나 떠나려고 하는 %마스터를()% 끌어안고, 몇번이고 입맞춤을 계속하고있다…
 	CASE "도착적"
-		PRINTFORMW %CALLNAME:TARGET%는 평범하지 않은 행위에 의한 흥분을 몸에 익힌 것같다…
+		PRINTFORMW %타겟은()% 평범하지 않은 행위에 의한 흥분을 몸에 익힌 것같다…
 	CASE "새드"
-		PRINTFORMW %CALLNAME:TARGET%는 행위가 끝났음에도 불구하고, 가학적인 미소를 지으며 %CALLNAME:MASTER%을 쓰러뜨리려 했다…
+		PRINTFORMW %타겟은()% 행위가 끝났음에도 불구하고, 가학적인 미소를 지으며 %마스터를()% 쓰러뜨리려 했다…
 	CASE "마조"
 		IF TALENT:연모 || TALENT:음란
-			PRINTFORMW %CALLNAME:TARGET%는 행위가 끝났음에도 불구하고, %CALLNAME:MASTER%에게 더욱 격렬하게 괴롭혀달라고 졸라왔다…
+			PRINTFORMW %타겟은()% 행위가 끝났음에도 불구하고, %CALLNAME:MASTER%에게 더욱 격렬하게 괴롭혀달라고 졸라왔다…
 		ELSE
 			PRINTFORMW %CALLNAME:TARGET%의 몸은 %CALLNAME:MASTER%에게 고통받는 것에 쾌감을 얻게 된 것같다…
 		ENDIF
 	ENDSELECT
 	SETCOLOR DEF_COLOR("하트핑크")
-	PRINTFORMW %CALLNAME:TARGET%는 【%ARGS%】를 얻었다
+	PRINTFORMW %타겟은()% 【%ARGS%】를 얻었다
 	RESETCOLOR
 	RETURN 0
 ENDSELECT
@@ -358,7 +358,7 @@ CASE "봉사정신"
 	IF ABL:ARGS < 5
 		SELECTCASE EXP:봉사쾌락경험
 		CASE IS >= EXP_LV(ABL:봉사정신 + 3)
-			PRINTFORML （봉사쾌락경험이 현저히 많으므로, 요구되는 구슬이 50％ 감소합니다）
+			PRINTFORML （봉사쾌락경험이 상당히 많으므로, 요구되는 구슬이 50％ 감소합니다）
 		CASE IS >= EXP_LV(ABL:봉사정신 + 2)
 			PRINTFORML （봉사쾌락경험이 많으므로, 요구되는 구슬이 20％ 감소합니다）
 		ENDSELECT
@@ -606,18 +606,18 @@ CASE "순종", "욕망", "굴복각인"
 CASE "Ｖ감각"
 	;자궁성감
 	IF TALENT:자궁성감 == 0 && ABL:Ｖ감각 + TALENT:Ｖ민감*2 >= 5
-		PRINTFORM %CALLNAME:TARGET%는 
+		PRINTFORM %타겟은()% 
 		CALL PRINT_COLORTEXT, "[자궁성감]", DEF_COLOR("황색")
-		PRINTFORML 를 얻었다
+		PRINTFORML 을 얻었다
 		TALENT:자궁성감 = 1
 		FORCEWAIT
 	ENDIF
 CASE "Ｍ감각"
 	;인후성감
 	IF TALENT:인후성감 == 0 && ABL:Ｍ감각 + TALENT:Ｍ민감*2 >= 5
-		PRINTFORM %CALLNAME:TARGET%는 
+		PRINTFORM %타겟은()% 
 		CALL PRINT_COLORTEXT, "[인후성감]", DEF_COLOR("황색")
-		PRINTFORML 를 얻었다
+		PRINTFORML 을 얻었다
 		TALENT:인후성감 = 1
 		FORCEWAIT
 	ENDIF
@@ -627,8 +627,8 @@ CASE "정액중독"
 		CALL CALC, "정액에약함", TARGET
 		;소질を得た
 		IF TALENT:정액에약함 && EXP:조교횟수
-			PRINTFORMW %CALLNAME:TARGET%는 정액을 수없이 받아들이는 사이에, 정액으로 쾌락을 얻는 몸이 되어버린 모양이다…
-			PRINTFORM %CALLNAME:TARGET%는 
+			PRINTFORMW %타겟은()% 정액을 수 없이 받아 들이는 사이에, 정액으로 쾌락을 얻는 몸이 되어버린 모양이다…
+			PRINTFORM %타겟은()% 
 			LOCALS = [%TALENT_NAME(49, TALENT:정액에약함)%]
 			CALL PRINT_COLORTEXT, LOCALS, DEF_COLOR("황색")
 			PRINTFORMW 을 얻었다

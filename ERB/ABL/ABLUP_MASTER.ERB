@@ -20,7 +20,7 @@ IF EXP:MASTER:Ｖ경험 >= 500 && TALENT:MASTER:음호 == 0
 	PRINTFORMW 몸의 상태가 이상하다…
 	PRINTFORML 자궁 부근이 뜨겁고, 욱신거려서 어쩔 수가 없다.
 	PRINTFORMW 아무래도 조교에의해 %CALLNAME:MASTER% 자신도 쾌락에 눈을 떠버린 것 같다
-	PRINTFORMW %CALLNAME:MASTER%은 【음호】를 얻고말았다
+	PRINTFORMW %CALLNAME:MASTER%은 【음호】를 얻고 말았다
 	TALENT:MASTER:음호 = 1
 ENDIF
 
@@ -265,7 +265,7 @@ CASE "주말"
 	ELSEIF LOCAL:RESULT
 		CLEARBIT CHOICE, RESULT + 1 - (RESULT%2)*2
 		IF GETBIT(CHOICE, RESULT) == 0 && NUM_BIT(CHOICE) == 2
-			PRINTW 선택가능한 것은 두개까지 입니다. 무언가 한개를 줄여주세요
+			PRINTW 선택 가능한 것은 두 개까지 입니다. 무언가 하나를 줄여주세요
 		ELSE
 			INVERTBIT CHOICE, RESULT
 		ENDIF
@@ -329,14 +329,14 @@ REDRAW 0
 ;ARGはHARDの時専用
 PRINTL 
 IF CONFIG("ＨＡＲＤ") && ARG > 0
-	PRINTFORML {ABL:ＬＶ/5*5}LV\@ ABL:ＬＶ == ABL:ＬＶ/5*5 ? 이 되었기 # 을 넘었기 \@때문에, %CALLNAME:TARGET%는 소질을 앞으로 {ARG}개 획득할 수 있게 되었습니다
+	PRINTFORML {ABL:ＬＶ/5*5}LV\@ ABL:ＬＶ == ABL:ＬＶ/5*5 ? 이 되었기 # 을 넘었기 \@때문에, %타겟은()% 소질을 앞으로 {ARG}개 획득할 수 있게 되었습니다
 	PRINTFORML 변화를 좋아하지 않는다면 [999] 돌아간다 를 선택해주세요
 ELSE
-	PRINTFORM 경험치を
+	PRINTFORM 경험치를
 	SETCOLOR DEF_COLOR("황색")
 	PRINTFORM {NUM("경험치：소질획득")}Ｐ
 	RESETCOLOR
-	PRINTFORML 사용하는 것으로, 몇개의소질를 획득하거나 잃거나 할 수 있습니다
+	PRINTFORML 사용해서 몇 개의 소질을 획득하거나 잃을 수 있습니다
 	;PRINTFORML （ただし、ここで소질を変化させる度に、필요な경험치は200Ｐづつ増えていきます）
 	PRINTFORML 앞으로 {EXP:경험치}Ｐ의 경험치가 있습니다
 ENDIF
@@ -362,7 +362,7 @@ IF TALENT:장액분비체질 == 0
 		PRINTFORML [ 48] [장액분비체질] 를 얻는다
 		LOCAL:48 = 1
 	ELSE
-		CALL PRINT_STR, "暗회색_[ ×] [장액분비체질] を得る（요정：Ａ경험100）_L"
+		CALL PRINT_STR, "暗회색_[ ×] [장액분비체질] 를 얻는다（요정：Ａ경험100）_L"
 	ENDIF
 ENDIF
 
@@ -371,7 +371,7 @@ IF TALENT:구토반사내성 == 0
 		PRINTFORML [ 52] [구토반사내성] 를 얻는다
 		LOCAL:52 = 1
 	ELSE
-		CALL PRINT_STR, "暗회색_[ ×] [구토반사내성] を得る（요정：펠라경험300）_L"
+		CALL PRINT_STR, "暗회색_[ ×] [구토반사내성] 를 얻는다（요정：펠라경험300）_L"
 	ENDIF
 ENDIF
 
@@ -380,7 +380,7 @@ IF TALENT:조합지식 == 0
 		PRINTFORML [ 55] [조합지식] 를 얻는다
 		LOCAL:55 = 1
 	ELSE
-		CALL PRINT_STR, "暗회색_[ ×] [조합지식] を得る（요정：[현명함]）_L"
+		CALL PRINT_STR, "暗회색_[ ×] [조합지식] 를 얻는다（요정：[현명함]）_L"
 	ENDIF
 ENDIF
 IF TALENT:확장적정 == 0
@@ -388,7 +388,7 @@ IF TALENT:확장적정 == 0
 		PRINTFORML [ 59] [확장적정] 를 얻는다
 		LOCAL:59 = 1
 	ELSE
-		CALL PRINT_STR, "暗회색_[ ×] [확장적정] を得る（요정：Ｖ확장경험20 or Ａ확장경험20 or 요도확장경험20）_L"
+		CALL PRINT_STR, "暗회색_[ ×] [확장적정] 를 얻는다（요정：Ｖ확장경험20 or Ａ확장경험20 or 요도확장경험20）_L"
 	ENDIF
 ENDIF
 
@@ -408,11 +408,11 @@ ENDIF
 IF TALENT:요정 || COND("子孫") || COND("몽마") == 0
 ELSE
 	IF TALENT:작은몸집 == 0 && TALENT:오토코노코 == 0
-		PRINTFORML [ 99] \@ TALENT:장신 ? 背を低くする（[장신]を失う） # 背を高くする（[장신]） \@
+		PRINTFORML [ 99] \@ TALENT:장신 ? 키를 줄인다（[장신]을 잃음） # 키를 높인다 [장신]） \@
 		LOCAL:99 = 1
 	ENDIF
 	IF TALENT:장신 == 0
-		PRINTFORML [100] \@ TALENT:작은몸집 ? 普通の신장に成長する（[작은몸집]を失う） # 背を低くする（[작은몸집]） \@
+		PRINTFORML [100] \@ TALENT:작은몸집 ? 보통의 키로 큰다（[작은몸집]을 잃음） # 키를 줄인다（[작은몸집]） \@
 		LOCAL:100 = 1
 	ENDIF
 ENDIF
@@ -455,17 +455,17 @@ ENDIF
 IF TALENT:남자 || COND("子孫") || COND("몽마") == 0
 ELSE
 	IF TALENT:거유 == 0
-		PRINTFORML [109] \@ TALENT:빈유 ? 가슴을大きくする（빈유とは言わせない！） # 가슴을小さくする（[빈유]） \@
+		PRINTFORML [109] \@ TALENT:빈유 ? 가슴을 크게 한다（빈유라고 할수 없어！） # 가슴을 작게한다（[빈유]） \@
 		LOCAL:109 = 1
 	ENDIF
 	IF TALENT:빈유 == 0
 		PRINTFORM [110] 
 		IF TALENT:거유 >= 2
-			PRINTFORML 가슴을작게 한다（\@ TALENT:거유 >= 3 ? [초유]→[폭유] # [폭유]→[거유] \@）
+			PRINTFORML 가슴을 작게 한다（\@ TALENT:거유 >= 3 ? [초유]→[폭유] # [폭유]→[거유] \@）
 		ELSEIF TALENT:거유
 			PRINTFORML 가슴을 더 크게 만들거나, 작게만든다
 		ELSE
-			PRINTFORML 가슴을크게 한다（[거유]）
+			PRINTFORML 가슴을 크게 한다（[거유]）
 		ENDIF
 		LOCAL:110 = 1
 	ENDIF
@@ -484,61 +484,61 @@ IF TALENT:치료 == 0
 		PRINTFORML [117] [치료] 를 얻는다
 		LOCAL:117 = 1
 	ELSE
-		CALL PRINT_STR, "暗회색_[ ×] [치료] を得る（요정：기교3LV or 봉사정신5LV）_L"
+		CALL PRINT_STR, "暗회색_[ ×] [치료] 를 얻는다（요정：기교3LV or 봉사정신5LV）_L"
 	ENDIF
 ENDIF
 IF TALENT:금단의지식 == 0
 	IF TALENT:현명함 && TALENT:조합지식 && TALENT:마법사 && ABL:기교 >= 5
-		PRINTFORML [125] [금단의지식] 를 얻는다
+		PRINTFORML [125] [금단의지식] 을 얻는다
 		LOCAL:125 = 1
 	ELSE
-		CALL PRINT_STR, "暗회색_[ ×] [금단의지식] を得る（요정：[현명함][조합지식][마법사]기교5LV）_L"
+		CALL PRINT_STR, "暗회색_[ ×] [금단의지식] 을 얻는다（요정：[현명함][조합지식][마법사]기교5LV）_L"
 	ENDIF
 ENDIF
 IF TALENT:구현 == 0
 	IF TALENT:금단의지식
-		PRINTFORML [127] [구현] 를 얻는다
+		PRINTFORML [127] [구현] 을 얻는다
 		LOCAL:127 = 1
 	ELSE
-		CALL PRINT_STR, "暗회색_[ ×] [구현] を得る（요정：[금단의지식]）_L"
+		CALL PRINT_STR, "暗회색_[ ×] [구현] 을 얻는다（요정：[금단의지식]）_L"
 	ENDIF
 ENDIF
 IF TALENT:남자 || COND("子孫") || COND("몽마") == 0
 ELSEIF TALENT:모유체질 == 0
 	IF ABL:Ｂ감각 >= 5 || TALENT:거유
-		PRINTFORML [130] [모유체질] 를 얻는다
+		PRINTFORML [130] [모유체질] 을 얻는다
 		LOCAL:130 = 1
 	ELSE
-		CALL PRINT_STR, "暗회색_[ ×] [모유체질] を得る（요정：[거유] or Ｂ감각5LV）_L"
+		CALL PRINT_STR, "暗회색_[ ×] [모유체질] 을 얻는다（요정：[거유] or Ｂ감각5LV）_L"
 	ENDIF
 ENDIF
 IF TALENT:인후성감 == 0
 	IF ABL:Ｍ감각 >= 3
-		PRINTFORML [140] [인후성감] 를 얻는다
+		PRINTFORML [140] [인후성감] 을 얻는다
 		LOCAL:140 = 1
 	ELSE
-		CALL PRINT_STR, "暗회색_[ ×] [인후성감] を得る（요정：Ｍ감각3LV）_L"
+		CALL PRINT_STR, "暗회색_[ ×] [인후성감] 을 얻는다（요정：Ｍ감각3LV）_L"
 	ENDIF
 ENDIF
 IF TALENT:자궁성감 == 0 && TALENT:남자 == 0
 	IF ABL:Ｖ감각 >= 3
-		PRINTFORML [141] [자궁성감] 를 얻는다
+		PRINTFORML [141] [자궁성감] 을 얻는다
 		LOCAL:141 = 1
 	ELSE
-		CALL PRINT_STR, "暗회색_[ ×] [자궁성감] を得る（요정：Ｖ감각3LV）_L"
+		CALL PRINT_STR, "暗회색_[ ×] [자궁성감] 을 얻는다（요정：Ｖ감각3LV）_L"
 	ENDIF
 ENDIF
 IF TALENT:요도성감 == 0
 	IF ABL:Ｃ감각 >= 3
-		PRINTFORML [142] [요도성감] 를 얻는다
+		PRINTFORML [142] [요도성감] 을 얻는다
 		LOCAL:142 = 1
 	ELSE
-		CALL PRINT_STR, "暗회색_[ ×] [요도성감] を得る（요정：Ｃ감각3LV）_L"
+		CALL PRINT_STR, "暗회색_[ ×] [요도성감] 을 얻는다（요정：Ｃ감각3LV）_L"
 	ENDIF
 ENDIF
 
 IF TALENT:냄새민감 == 0
-	PRINTFORML [144] [냄새민감] 를 얻는다\@ TALENT:악취둔감 ? （同時に[악취둔감]を失います）# \@
+	PRINTFORML [144] [냄새민감] 을 얻는다\@ TALENT:악취둔감 ? （동시에 [악취둔감]을 잃음）# \@
 	LOCAL:144 = 1
 ENDIF
 
@@ -547,16 +547,16 @@ IF TALENT:마법사 == 0
 		PRINTFORML [151] [마법사] 를 얻는다
 		LOCAL:151 = 1
 	ELSE
-		CALL PRINT_STR, "暗회색_[ ×] [마법사] を得る（요정：[현명함]기교5LV）_L"
+		CALL PRINT_STR, "暗회색_[ ×] [마법사] 를 얻는다（요정：[현명함]기교5LV）_L"
 	ENDIF
 ENDIF
 
 IF TALENT:미련함 == 0
-	PRINTFORML [185] [조교지식] 를\@ TALENT:조교지식 ? 変更する # 得る \@
+	PRINTFORML [185] [조교지식] 을\@ TALENT:조교지식 ? 변경한다 # 얻는다 \@
 	LOCAL:185 = 1
 ENDIF
 IF TALENT:비젼 == 0 && BASE:종족사고 == 22
-	PRINTFORML [243] [분신] 를 체득한다
+	PRINTFORML [243] [분신] 을 체득한다
 	LOCAL:243 = 1
 ENDIF
 
@@ -595,7 +595,7 @@ CASE 8
 		CLEARBIT TALENT:유두, 2
 		SETBIT TALENT:유두, 3
 	ENDSELECT
-	PRINTFORMW [유두비대\@ COND("유두비대") >= 2 ? LV{COND("유두비대")} # \@]を獲得しました
+	PRINTFORMW [유두비대\@ COND("유두비대") >= 2 ? LV{COND("유두비대")} # \@]를 획득했습니다
 CASE 185
 	LOCAL = TALENT:조교지식
 	CALL SETFLAG, "조교지식선택", TARGET
@@ -648,8 +648,8 @@ CASE 109
 	ENDIF
 CASE 110
 	IF TALENT:거유 == 1
-		PRINTL [ 0] 폭유가된다
-		PRINTL [ 1] 가슴을 작게만든다（거유를 잃는다）
+		PRINTL [ 0] 폭유가 된다
+		PRINTL [ 1] 가슴을 작게 만든다（거유를 잃음）
 		PRINTL [ 2] 돌아간다
 		CALL INPUT_SELECT, 3
 		IF RESULT == 0
@@ -672,9 +672,9 @@ CASE 144
 	TALENT:RESULT = 1
 	IF TALENT:악취둔감
 		TALENT:악취둔감 = 0
-		PRINTFORM [악취둔감]를 잃어,
+		PRINTFORM [악취둔감]을 잃어,
 	ENDIF
-	PRINTFORMW [%TALENTNAME:RESULT%]를 획득했습니다
+	PRINTFORMW [%TALENTNAME:RESULT%]%조사만처리(TALENTNAME:RESULT,"를")% 획득했습니다
 ENDSELECT
 
 IF CONFIG("ＨＡＲＤ") && ARG > 0

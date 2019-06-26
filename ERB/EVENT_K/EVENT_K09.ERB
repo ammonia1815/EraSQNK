@@ -33,7 +33,7 @@ ENDIF
 ;-------------------------------------------------
 IF GETBIT(CFLAG:201, 0) == 0
 	DRAWLINE
-	PRINTFORMW %CALLNAME:MASTER%가 방에 들어가면, %CALLNAME:TARGET%는 웅크리고 있던 침대 위에서 움찍 신체를 진동시켰다.
+	PRINTFORMW %CALLNAME:MASTER%가 방에 들어가면, %타겟은()% 웅크리고 있던 침대 위에서 움찍 신체를 진동시켰다.
 	PRINTFORMW 「누구……? "저기,  나에게 무엇을 할 생각이야……?」
 	PRINTFORMW 무서워하고를 포함한 소리에, %CALLNAME:MASTER%는 우선 설명을 시작했다.
 	PRINTFORMW 「,  조교……?」
@@ -56,21 +56,21 @@ ELSEIF MARK:반발각인 == 3
 ELSEIF GETBIT(CFLAG:201, 1) == 0 && MARK:굴복각인 == 1
 	DRAWLINE
 	PRINTFORMW 「이나, 싫엇…」
-	PRINTFORMW %CALLNAME:TARGET%는 허약하고저항하고 있다.
+	PRINTFORMW %타겟은()% 허약하고저항하고 있다.
 	SETBIT CFLAG:201, 1
 	RETURN 1
 ;굴복각인Lv2
 ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2
 	DRAWLINE
 	PRINTFORMW 「뭐,  또 하는 거야…?」
-	PRINTFORMW %CALLNAME:TARGET%는 희미하게 신체를 움츠리게 하고 있지만, 이전과 비교하면저항를 하지 않게 되어 왔다.
+	PRINTFORMW %타겟은()% 희미하게 신체를 움츠리게 하고 있지만, 이전과 비교하면저항를 하지 않게 되어 왔다.
 	SETBIT CFLAG:201, 2
 	RETURN 1
 ;굴복각인Lv3
 ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 	DRAWLINE
 	PRINTFORMW 「또, 해주는 거야…?」
-	PRINTFORMW %CALLNAME:TARGET%는%CALLNAME:MASTER%가 느긋하게 가까워지면, 기대 하도록 표정을 상기 시키고 있다….
+	PRINTFORMW %타겟은()%%CALLNAME:MASTER%가 느긋하게 가까워지면, 기대 하도록 표정을 상기 시키고 있다….
 	SETBIT CFLAG:201, 3
 	RETURN 1
 ;굴복각인Lv3+연모
@@ -80,7 +80,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	PRINTFORMW %CALLNAME:MASTER%가 조교를 시작하려고 하면, %조사처리(CALLNAME:TARGET,"가")% 흠칫흠칫 말을 걸어 온다.
 	PRINTFORMW 그런%CALLNAME:TARGET%에 고개를 갸웃하면서%CALLNAME:MASTER%하지만 이야기를 듣는 태도를 취해 주면,%타겟은()% 입를 열었다.
 	PRINTFORMW 「원, 나, 그럼, 그…꺅!」
-	PRINTFORMW 그러나, 얼굴을 새빨갛게 해입깃들이고 있다%타겟을()% %CALLNAME:MASTER%하지만 허를 찔러 껴안아 주면,%CALLNAME:TARGET%는 흠칫, 라고 신체를 뛰게 했다.
+	PRINTFORMW 그러나, 얼굴을 새빨갛게 해입깃들이고 있다%타겟을()% %CALLNAME:MASTER%하지만 허를 찔러 껴안아 주면,%타겟은()% 흠칫, 라고 신체를 뛰게 했다.
 	PRINTFORMW 「은, 는 …」
 	PRINTFORMW 그러나 그런데도 얼굴을 붉게 한 채로%CALLNAME:MASTER%의가슴에 얼굴을 묻는다%타겟을()% 봐,%CALLNAME:MASTER%는 미소지으면서 한층 더%타겟을()% 강하게 껴안았다.
 	PRINTFORMW 「(원, 나…이제, 이 사람 없음은 살 수 없다…」
@@ -104,25 +104,25 @@ ENDIF
 IF MARK:반발각인 == 3
 	DRAWLINE
 	PRINTFORMW 「히……!」
-	PRINTFORMW 문이 열린 순간, %CALLNAME:TARGET%는 달가닥달가닥 떨려 눈물을 흘리기 시작했다. 최초의 무렵의 서들 해 좌파, 풀이 죽어 버려 어디에도 남지 않았다…….
+	PRINTFORMW 문이 열린 순간, %타겟은()% 달가닥달가닥 떨려 눈물을 흘리기 시작했다. 최초의 무렵의 서들 해 좌파, 풀이 죽어 버려 어디에도 남지 않았다…….
 	RETURN 1
 ;굴복각인Lv0
 ELSEIF MARK:굴복각인 == 0
 	DRAWLINE
 	PRINTFORMW 「오늘도……하는 거야?」
-	PRINTFORMW %CALLNAME:TARGET%는 무서워하고가 남는 눈으로 %CALLNAME:MASTER%를 올려보고 있다…….
+	PRINTFORMW %타겟은()% 무서워하고가 남는 눈으로 %CALLNAME:MASTER%를 올려보고 있다…….
 	RETURN 1
 ;굴복각인Lv1
 ELSEIF MARK:굴복각인 == 1
 	DRAWLINE
 	PRINTFORMW 「……오늘도, 하는 거야?」
-	PRINTFORMW %CALLNAME:TARGET%는 흠칫흠칫%CALLNAME:MASTER%를 올려보고 있다…….
+	PRINTFORMW %타겟은()% 흠칫흠칫%CALLNAME:MASTER%를 올려보고 있다…….
 	RETURN 1
 ;굴복각인Lv2+반발각인なし
 ELSEIF MARK:굴복각인 == 2 && MARK:반발각인 == 0
 	DRAWLINE
-	PRINTFORMW %CALLNAME:MASTER%가 방에 들어가면, %CALLNAME:TARGET%는 조용히 숨소리를 내고 있었다. 그 잠자는 얼굴은 조용해, 그리고 맑고 깨끗했다. 아무래도, 무방비에 잘 수 있으려면  이 생활에 익숙한 것 같다.
-	PRINTFORMW 와%CALLNAME:TARGET%는 몸화로 의치라고 눈을 희미하게 열었다. 그녀는 토론으로 한 눈으로 몇 초%CALLNAME:MASTER%를 응시해 그로부터 얼굴을 새빨갛게 해 벌떡 몸을 일으켰다.
+	PRINTFORMW %CALLNAME:MASTER%가 방에 들어가면, %타겟은()% 조용히 숨소리를 내고 있었다. 그 잠자는 얼굴은 조용해, 그리고 맑고 깨끗했다. 아무래도, 무방비에 잘 수 있으려면  이 생활에 익숙한 것 같다.
+	PRINTFORMW 와%타겟은()% 몸화로 의치라고 눈을 희미하게 열었다. 그녀는 토론으로 한 눈으로 몇 초%CALLNAME:MASTER%를 응시해 그로부터 얼굴을 새빨갛게 해 벌떡 몸을 일으켰다.
 	PRINTFORMW 「이나, 싫어……잠자는 얼굴 보여졌다……」
 	RETURN 1
 ;굴복각인Lv3＋연모無し+반발각인なし
@@ -138,7 +138,7 @@ ELSEIF TALENT:연모
 	DRAWLINE
 	;ランダムで구상が変化する（使わない場合はすべて同じにすればよい）
 	IF RAND:3 == 0
-		PRINTFORMW %CALLNAME:MASTER%가 방에 들어가면, %CALLNAME:TARGET%는 꽃과 같은 미소를 띄워 달려 왔다.
+		PRINTFORMW %CALLNAME:MASTER%가 방에 들어가면, %타겟은()% 꽃과 같은 미소를 띄워 달려 왔다.
 		PRINTFORMW 「겨우 와 주었다……기다리고 있던 것이야. 쭉당신(뿐)만 생각하고 있었다」
 		PRINTFORMW %타겟은()% %CALLNAME:MASTER%의가슴에 얼굴을 묻어, 가득 냄새를 들이마시면서 넋을 잃고눈을 감았다…….
 	ELSEIF RAND:2 == 0
@@ -186,13 +186,13 @@ IF STATE("撃沈", MASTER)
 ;반발각인Lv3
 ELSEIF MARK:반발각인 == 3
 	DRAWLINE
-	PRINTFORMW %CALLNAME:TARGET%는, 열지 않는 창의 저 편에 단지 얼빠진 시선을 향하여 있다…….
+	PRINTFORMW %타겟은()%, 열지 않는 창의 저 편에 단지 얼빠진 시선을 향하여 있다…….
 	RETURN 1
 ;굴복각인Lv1이하
 ELSEIF MARK:굴복각인 <= 1
 	DRAWLINE
 	PRINTFORMW 「그럼, 그렇다면은……?」
-	PRINTFORMW %CALLNAME:TARGET%는%CALLNAME:MASTER%과 별로 시선을 맞추지 않고, 작은 소리로 이별을 고하고 있다. 그 뺨은 희미하게와 연분홍색에 물들고 있다…….
+	PRINTFORMW %타겟은()%%CALLNAME:MASTER%과 별로 시선을 맞추지 않고, 작은 소리로 이별을 고하고 있다. 그 뺨은 희미하게와 연분홍색에 물들고 있다…….
 	RETURN 1
 ;굴복각인Lv2
 ELSEIF MARK:굴복각인 == 2
@@ -211,7 +211,7 @@ ELSEIF MARK:굴복각인 == 3 && TALENT:연모 == 0
 ELSEIF TALENT:연모 && CFLAG:99
 	IF RAND:3 == 0
 		DRAWLINE
-		PRINTFORMW %CALLNAME:TARGET%는, 조교가 끝나는 것과 동시에 구 충분하고와%CALLNAME:MASTER%에 기대고 걸려, 그대로 잠들어 버렸다.
+		PRINTFORMW %타겟은()%, 조교가 끝나는 것과 동시에 구 충분하고와%CALLNAME:MASTER%에 기대고 걸려, 그대로 잠들어 버렸다.
 		PRINTFORMW 소녀의 신체로부터는, 방에 틀어박힌 여러가지 체액의 냄새에도 더럽혀지지 않은, 청류의 꽃과 같은 달콤하고 상쾌한 향기가 감돌고 있어,%CALLNAME:MASTER%의 피로를 상냥하게 감싸 온다.
 		PRINTFORMW 조금 흐트러진 작은 고동이, 쪼로록기분 좋고%CALLNAME:MASTER%의 등뒤를 두드려 온다…….
 		RETURN 1
@@ -219,12 +219,12 @@ ELSEIF TALENT:연모 && CFLAG:99
 		PRINTFORMW 「마지막……이야?」
 		PRINTFORMW 간신히 끝난 달콤한 쾌감의 폭풍우에 안심 긴장을 늦춘 순간,%CALLNAME:TARGET%노입로부터 사랑스러운 하품이 흘러넘쳤다.
 		PRINTFORMW 「……이나……」
-		PRINTFORMW 하품을 보여지면,%CALLNAME:TARGET%는 근처에 있던 옷옷그리고 얼굴을 눈매까지 숨겨 버렸다…….
+		PRINTFORMW 하품을 보여지면,%타겟은()% 근처에 있던 옷옷그리고 얼굴을 눈매까지 숨겨 버렸다…….
 	ELSE
 		PRINTFORMW 「…………마지막……?」
-		PRINTFORMW %CALLNAME:TARGET%는 신체를 일으키려고, 구 충분하고와 푹 엎드렸다.
+		PRINTFORMW %타겟은()% 신체를 일으키려고, 구 충분하고와 푹 엎드렸다.
 		PRINTFORMW 「……아우……안돼, 기분 좋게 너무 되어 버려서 허리가……」
-		PRINTFORMW 조금의 사이 힘없이 발버둥 치고 나서, 문득%CALLNAME:TARGET%는%CALLNAME:MASTER%를 눈을 치켜 뜨고 봄에 보았다.
+		PRINTFORMW 조금의 사이 힘없이 발버둥 치고 나서, 문득%타겟은()%%CALLNAME:MASTER%를 눈을 치켜 뜨고 봄에 보았다.
 		PRINTFORMW 「……히히힛……저기,? ……제대로 잘 수 있듯이, 자세 고치기를 원한다……그, 공주님같이 안아 올려……?」
 	ENDIF
 ;연모
@@ -232,20 +232,20 @@ ELSEIF TALENT:연모
 	DRAWLINE
 	IF RAND:3 == 0
 		DRAWLINE
-		PRINTFORMW %CALLNAME:MASTER%의 이웃에 푹 상태 잘 안정되어, %CALLNAME:TARGET%는 무엇이 이상한 것인지 언제나 쿡쿡 웃고 있다.
+		PRINTFORMW %CALLNAME:MASTER%의 이웃에 푹 상태 잘 안정되어, %타겟은()% 무엇이 이상한 것인지 언제나 쿡쿡 웃고 있다.
 		PRINTFORMW 「후후……후후훗……쿡쿡 ♪」
 		PRINTFORMW 무엇이 그렇게 이상한 것인지 물어 보면,%타겟은()% %CALLNAME:MASTER%의가슴에 얼굴을 갖다대 왔다.
 		PRINTFORMW 「아하하 ……너무 행복해 멈추지 않는거야……♪」
 		RETURN 1
 	ELSEIF RAND:2 == 0
 		PRINTFORMW 「오늘은 함께 있어주는 것이네요……"저기,  들으면 좋은 일, 가득 있어. 나에 대한 것이라든지, 여기에 오고 나서 있던 여러 가지 일이라든지……」
-		PRINTFORMW %CALLNAME:MASTER%에 동행해 자면서, %CALLNAME:TARGET%는 살그머니 말을 걸어 온다.
+		PRINTFORMW %CALLNAME:MASTER%에 동행해 자면서, %타겟은()% 살그머니 말을 걸어 온다.
 		PRINTFORMW 알면 좋은 자신에 대해나, 방으로부터 보인 새나 꽃 에 대해. 그 밖에 아무도 없는데 비밀 이야기와 같이 소곤소곤이라고 이야기하면서, 어느덧 그녀는 자연스럽게 잠에 떨어져 갔다…….
 	ELSE
-		PRINTFORMW %CALLNAME:TARGET%는, %CALLNAME:MASTER%의 팔을 베개로 해 빈둥빈둥 응석부리고 있다.
+		PRINTFORMW %타겟은()%, %CALLNAME:MASTER%의 팔을 베개로 해 빈둥빈둥 응석부리고 있다.
 		PRINTFORMW 「"저기,  내일 일어나도 곧바로 돌아가면 싫어요? 나, 아침 밥 만들기 때문에……먹어 라고,?」
 		PRINTFORMW 「히히힛……이렇게 함께 기분 좋게 되는 것 외에도, 굉장히~ 애인다운 금년이라고 보고 싶은거야. 좋잖아?」
-		PRINTFORMW 와 표정을 갑작스럽게 불안로 해%CALLNAME:TARGET%는%CALLNAME:MASTER%를 올려봐 왔다.
+		PRINTFORMW 와 표정을 갑작스럽게 불안로 해%타겟은()%%CALLNAME:MASTER%를 올려봐 왔다.
 		PRINTFORMW 「그럼……그, 조금 혼자서는 너무 사가 ……?」
 		PRINTFORMW 그 머리카락을 꾸깃꾸깃(쭈글쭈글)하고 어루만져 하면, 그녀는 꽉%CALLNAME:MASTER%에 달려들어 안겼다…….
 	ENDIF
@@ -274,25 +274,25 @@ IF SELECTCOM == 0
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
 			PRINTFORMW 「소, 손대지 맛……손를 넣지 마！」
-			PRINTFORMW %CALLNAME:TARGET%는 힘없이 날뛰고 있다.
+			PRINTFORMW %타겟은()% 힘없이 날뛰고 있다.
 			PRINTFORMW 「이런 것 싫어……내가 해 보고 싶었던 것은 이런 것이 아니야!」
 		;연모+미약
 		ELSEIF TALENT:연모 && TEQUIP:미약
 			PRINTFORMW 「, 는 무우!」
-			PRINTFORMW %CALLNAME:TARGET%는 신체에 달리는 쾌감을 견디려고인가, 격렬하게%CALLNAME:PLAYER%의 입술을 탐내 왔다.
+			PRINTFORMW %타겟은()% 신체에 달리는 쾌감을 견디려고인가, 격렬하게%CALLNAME:PLAYER%의 입술을 탐내 왔다.
 			PRINTFORMW 「개, 개의, 처음으로……♪」
 		;미약
 		ELSEIF TEQUIP:미약
 			PRINTFORMW 「후아,  큐으윽!」
-			PRINTFORMW %CALLNAME:TARGET%는 민감하게 된 신체에 접할 수 있어 당황하는 것 같은 소리를 질렀다.
+			PRINTFORMW %타겟은()% 민감하게 된 신체에 접할 수 있어 당황하는 것 같은 소리를 질렀다.
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「응……♪ 후우……♪」
-			PRINTFORMW %CALLNAME:TARGET%는 기쁜 듯한 미소를 띄우면서%CALLNAME:PLAYER%의입청구서를 받고 있다.
+			PRINTFORMW %타겟은()% 기쁜 듯한 미소를 띄우면서%CALLNAME:PLAYER%의입청구서를 받고 있다.
 		;굴복각인Lv2이상
 		ELSEIF MARK:굴복각인 >= 2
 			PRINTFORMW 「……아……」
-			PRINTFORMW %CALLNAME:TARGET%는 움찔움찔 민감하게 몸을 진동시켜 옷옷의 아래에 기어들어 꿈틀거리고 있다손를 멍하니 응시하고 있다…….
+			PRINTFORMW %타겟은()% 움찔움찔 민감하게 몸을 진동시켜 옷옷의 아래에 기어들어 꿈틀거리고 있다손를 멍하니 응시하고 있다…….
 		;それ以外
 		ELSE
 			PRINTFORMW 「그……부탁, 상냥하게……」
@@ -305,30 +305,30 @@ IF SELECTCOM == 0
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
 			PRINTFORMW 「도와……어머니 ……아버지 ……」
-			PRINTFORMW %CALLNAME:TARGET%는 떨굴어 흐느껴 우면서 절망에 몸을 맡기고 있다…….
+			PRINTFORMW %타겟은()% 떨굴어 흐느껴 우면서 절망에 몸을 맡기고 있다…….
 		;연모+미약
 		ELSEIF TALENT:연모 && TEQUIP:미약
 			;連続実行
 			IF PREVCOM == SELECTCOM
 				IF RAND:2 == 0
 					PRINTFORMW 「아아앗! 응~♪」
-					PRINTFORMW 아무래도%CALLNAME:PLAYER%의 손가락이유두야클리토리스를 탈 때에%CALLNAME:TARGET%는 가볍다절정에 이르고 있는 것 같다.
+					PRINTFORMW 아무래도%CALLNAME:PLAYER%의 손가락이유두야클리토리스를 탈 때에%타겟은()% 가볍다절정에 이르고 있는 것 같다.
 					PRINTFORMW 「이나, 든지! 짚 해, 망가지면, 으윽~!」
-					PRINTFORMW 동글동글유두(와)과클리토리스를 만지작거려 주면,%CALLNAME:TARGET%는 목을 붕붕 옆에 흔들지만, 그 표정은 쾌락에 녹고 자르고 있었다.
+					PRINTFORMW 동글동글유두(와)과클리토리스를 만지작거려 주면,%타겟은()% 목을 붕붕 옆에 흔들지만, 그 표정은 쾌락에 녹고 자르고 있었다.
 				ELSE
 					PRINTFORMW 「! 응~♪ 응~♪」
-					PRINTFORMW %CALLNAME:TARGET%의 성감대를 모조리 만지작거려 넘어뜨려 주면,%CALLNAME:TARGET%는 연달아절정에 이르고 있는지, 신체를 움찔움찔 뛰게 한다.
+					PRINTFORMW %CALLNAME:TARGET%의 성감대를 모조리 만지작거려 넘어뜨려 주면,%타겟은()% 연달아절정에 이르고 있는지, 신체를 움찔움찔 뛰게 한다.
 					PRINTFORMW 그런%타겟을()%, %CALLNAME:PLAYER%는 기쁜 듯한 미소조차 띄우면서 계속 꾸짖었다.
 					PRINTFORMW (돌아올 수 없게 되어버린다! 이런 기분이 좋은 것 알아 버렸다들, 나, 돌아올 수 없고히야 으윽♪)
 				ENDIF
 			ELSE
 				IF RAND:2 == 0
 					PRINTFORMW 「,  쪽♪」
-					PRINTFORMW 입청구서를 하면서%CALLNAME:TARGET%의 신체를 %CALLNAME:PLAYER%하지만 더듬어 주면,%CALLNAME:TARGET%는 마치 경련했는지와 같이 신체를 뛰게 했다.
+					PRINTFORMW 입청구서를 하면서%CALLNAME:TARGET%의 신체를 %CALLNAME:PLAYER%하지만 더듬어 주면,%타겟은()% 마치 경련했는지와 같이 신체를 뛰게 했다.
 					PRINTFORMW 「거기,  좀더……대단한 것 ♪」
 				ELSE
 					PRINTFORMW 「아아,  후아아아아♪」
-					PRINTFORMW %CALLNAME:TARGET%는%CALLNAME:TARGET%의 손가락이 신체를 기는 것만으로, 벌벌하고 신체를 뛰게 하고 있다…….
+					PRINTFORMW %타겟은()%%CALLNAME:TARGET%의 손가락이 신체를 기는 것만으로, 벌벌하고 신체를 뛰게 하고 있다…….
 					PRINTFORMW (이, 이렇게 되어 버렸다들, 나, 망가져버리는 ♪)
 					PRINTFORMW 그러나, 목을 붕붕 옆에 흔들면서도%CALLNAME:TARGET%노손하%CALLNAME:TARGET%노손를 허약하게 성감대에 억누르고 있다.
 				ENDIF
@@ -339,18 +339,18 @@ IF SELECTCOM == 0
 			IF PREVCOM == SELECTCOM
 				IF RAND:2 == 0
 					PRINTFORMW 「! 하아……」
-					PRINTFORMW %CALLNAME:PLAYER%의 손가락이 신체를 기어 돌 때, %CALLNAME:TARGET%는 토론, 로 한 표정으로 신체를 진동시키고 있다.
+					PRINTFORMW %CALLNAME:PLAYER%의 손가락이 신체를 기어 돌 때, %타겟은()% 토론, 로 한 표정으로 신체를 진동시키고 있다.
 					PRINTFORMW 「기분이 좋다……♪」
 				ELSE
 					PRINTFORMW 「,!」
-					PRINTFORMW 자기 주장하고 있다유두를 집어올려, 사타구니를 동글동글 비비어 주면,%CALLNAME:TARGET%는 신체를 뛰게 한다.
+					PRINTFORMW 자기 주장하고 있다유두를 집어올려, 사타구니를 동글동글 비비어 주면,%타겟은()% 신체를 뛰게 한다.
 					PRINTFORMW 필사적으로 목소리가 새지 않게 스스로의 손가락을 깨물어서 있지만, 그 표정은 쾌감에 녹고 있었다.
 					PRINTFORMW (이, 이런 것,,  자위보다 대단해요 ……! )
 				ENDIF
 			ELSE
 				IF RAND:3 == 0
 					PRINTFORMW 「하후우……」
-					PRINTFORMW %CALLNAME:TARGET%는 넋을 잃고%CALLNAME:PLAYER%의손에 몸을 맡기고 있다…….
+					PRINTFORMW %타겟은()% 넋을 잃고%CALLNAME:PLAYER%의손에 몸을 맡기고 있다…….
 					PRINTFORMW 「는……거기, 넋을 잃고 한다……♪」
 				ELSEIF RAND:2 == 0
 					PRINTFORMW 옷옷다섯 손가락에 가볍게 사타구니를 어루만지고올린다라고 이미 아가씨의 꿀이 옷감을 촉촉히 적시기 시작했다.
@@ -359,7 +359,7 @@ IF SELECTCOM == 0
 					PRINTFORMW (나,,  자위때 생각해 내……,  곧 민감하게 되어버리는 ……! )
 				ELSE
 					PRINTFORMW 「응……♪」
-					PRINTFORMW 쪼아먹도록(듯이)키스를 해, 방향을 바꿀 때마다 팔을 얽히게 할 수 있어 껴안아, 때때로 못된 장난에 등골을 훑어 인상……%CALLNAME:TARGET%는 적극적으로애무에 응해 오고 있었다.
+					PRINTFORMW 쪼아먹도록(듯이)키스를 해, 방향을 바꿀 때마다 팔을 얽히게 할 수 있어 껴안아, 때때로 못된 장난에 등골을 훑어 인상……%타겟은()% 적극적으로애무에 응해 오고 있었다.
 					PRINTFORMW 「츗……우후훗,당신노손굉장히 뜨거워……♪」
 				ENDIF
 			ENDIF
@@ -370,19 +370,19 @@ IF SELECTCOM == 0
 				IF RAND:2 == 0
 					PRINTFORMW 「아,  으웃!」
 					PRINTFORMW 목소리가 새지 않게 스스로의 손가락을 깨물어서, 쾌락을 견디고 있는 %CALLNAME:TARGET%.
-					PRINTFORMW 그런%CALLNAME:TARGET%노유두(와)과 사타구니를 동글동글 켜 세우면,%CALLNAME:TARGET%는 무심코 등골을 뒤로 젖힐 수 있었다.
+					PRINTFORMW 그런%CALLNAME:TARGET%노유두(와)과 사타구니를 동글동글 켜 세우면,%타겟은()% 무심코 등골을 뒤로 젖힐 수 있었다.
 					PRINTFORMW (이, 이런 것 되어 버렸다들, 나, 안되게 갈 것 같아요……! )
 				ELSE
 					PRINTFORMW 「,  거기뿐 되면, 히!」
-					PRINTFORMW 꽉 조금 조금 강하게유두(와)과클리토리스를 집어올려 주면,%CALLNAME:TARGET%는 비명을 올렸다.
+					PRINTFORMW 꽉 조금 조금 강하게유두(와)과클리토리스를 집어올려 주면,%타겟은()% 비명을 올렸다.
 					PRINTFORMW ……아무래도 너무 민감한 신체에는 조금 자극이 너무 강한 것 같다.
 				ENDIF
 			ELSE
 				IF RAND:2 == 0 
 					PRINTFORMW 「,  거기, 후아,  꺄악!」
-					PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 제일 반응하는 장소를 끈질기고%조사처리(CALLNAME:TARGET,"가")% 쓰다듬어준다와%CALLNAME:TARGET%는 쾌락에 떨린다.
+					PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 제일 반응하는 장소를 끈질기고%조사처리(CALLNAME:TARGET,"가")% 쓰다듬어준다와%타겟은()% 쾌락에 떨린다.
 					PRINTFORMW 「어, 어째서, 어째서 ……?」
-					PRINTFORMW 이상한까지 민감하게 되어 있는 신체에 고개를 갸웃하면서, %CALLNAME:TARGET%는 쾌락에 빠지기 시작했다…….
+					PRINTFORMW 이상한까지 민감하게 되어 있는 신체에 고개를 갸웃하면서, %타겟은()% 쾌락에 빠지기 시작했다…….
 				ELSE
 					PRINTFORMW 「,  …!」
 					PRINTFORMW 떨린다%CALLNAME:TARGET%의 입술을 쪼아먹도록(듯이)키스하면서, %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 신체를 상냥하게 더듬는다.
@@ -396,11 +396,11 @@ IF SELECTCOM == 0
 			IF PREVCOM == SELECTCOM
 				IF RAND:2 == 0
 					PRINTFORMW 「……큐으윽」
-					PRINTFORMW %CALLNAME:TARGET%는 신체를 기어 도는%CALLNAME:PLAYER%의 손가락에, 신체를 내리는 거절하면 진동시키고 있다.
+					PRINTFORMW %타겟은()% 신체를 기어 도는%CALLNAME:PLAYER%의 손가락에, 신체를 내리는 거절하면 진동시키고 있다.
 					PRINTFORMW (와, 기분이 좋다……♪)
 				ELSE
 					PRINTFORMW 「후아……하후우」
-					PRINTFORMW %CALLNAME:PLAYER%의손하지만 신체를 기어다니면,%CALLNAME:TARGET%는 흠칫 흠칫 그때마다 반응한다.
+					PRINTFORMW %CALLNAME:PLAYER%의손하지만 신체를 기어다니면,%타겟은()% 흠칫 흠칫 그때마다 반응한다.
 					PRINTFORMW 「원, 나……도, 안돼……」
 				ENDIF
 			ELSE
@@ -410,7 +410,7 @@ IF SELECTCOM == 0
 					PRINTFORMW (와, 기분 좋아지고 와 버렸다……)
 				ELSE
 					PRINTFORMW 「,  손대어지는 것만으로 최근 기분 좋게 되어버린다의……」
-					PRINTFORMW %CALLNAME:PLAYER%의손하지만 기어다니는 것만으로 신체를 가볍게 뛰게 해%CALLNAME:TARGET%는 헛소리와 같이 중얼거리고 있다…….
+					PRINTFORMW %CALLNAME:PLAYER%의손하지만 기어다니는 것만으로 신체를 가볍게 뛰게 해%타겟은()% 헛소리와 같이 중얼거리고 있다…….
 					PRINTFORMW 「응……나, 어디까지 가버리는 것일까……?」
 					PRINTFORMW %CALLNAME:PLAYER%로 향해진 눈동자는, 쾌감에 젖고 시작하고 있었다…….
 				ENDIF
@@ -421,7 +421,7 @@ IF SELECTCOM == 0
 			IF PREVCOM == SELECTCOM
 				IF RAND:2 == 0
 					PRINTFORMW 「후아……」
-					PRINTFORMW 느긋하게%CALLNAME:TARGET%의 신체를 계속 어루만지면, %CALLNAME:TARGET%는 쫑긋쫑긋하고 신체를 반응시켰다.
+					PRINTFORMW 느긋하게%CALLNAME:TARGET%의 신체를 계속 어루만지면, %타겟은()% 쫑긋쫑긋하고 신체를 반응시켰다.
 					PRINTFORMW (왠지, 넋을 잃고 한다……)
 				ELSE
 					PRINTFORMW 「식……꺄후우」
@@ -430,11 +430,11 @@ IF SELECTCOM == 0
 			ELSE
 				IF RAND:2 == 0
 					PRINTFORMW 「쪽……후아……」
-					PRINTFORMW 느긋하게%CALLNAME:TARGET%의 신체를 어루만져 하면, %CALLNAME:TARGET%는 안심한 것 같은 한숨을 토했다.
+					PRINTFORMW 느긋하게%CALLNAME:TARGET%의 신체를 어루만져 하면, %타겟은()% 안심한 것 같은 한숨을 토했다.
 					PRINTFORMW (도, 좀더해 주었으면 해지고 와 버렸다……)
 				ELSE
 					PRINTFORMW 「아앙……후우, 쪽……」
-					PRINTFORMW 직접적인 비부[秘部] 접촉의 색이 약간 얇기 때문인가,애무에는 다른 행위보다 약간 적극적으로 %CALLNAME:TARGET%는 응해 온다.
+					PRINTFORMW 직접적인 비부[秘部] 접촉의 색이 약간 얇기 때문인가,애무에는 다른 행위보다 약간 적극적으로 %타겟은()% 응해 온다.
 					PRINTFORMW 원래 스킨십도 좋아하고 같아서, 꼭 껴안아 주면 호흡이 편하게 되는 것 같다…….
 				ENDIF
 			ENDIF
@@ -444,11 +444,11 @@ IF SELECTCOM == 0
 			IF PREVCOM == SELECTCOM
 				IF RAND:2 == 0
 					PRINTFORMW 「응……」
-					PRINTFORMW 산들산들하고 신체를 손대어져%CALLNAME:TARGET%는 희미하게 몸을 비비 꼬았다.
+					PRINTFORMW 산들산들하고 신체를 손대어져%타겟은()% 희미하게 몸을 비비 꼬았다.
 					PRINTFORMW (……)
 				ELSE
 					PRINTFORMW 「……무우」
-					PRINTFORMW 산들산들%CALLNAME:PLAYER%의손하지만 신체를 기어다니면,%CALLNAME:TARGET%는 희미하게 신체를 진동시키고 있다…….
+					PRINTFORMW 산들산들%CALLNAME:PLAYER%의손하지만 신체를 기어다니면,%타겟은()% 희미하게 신체를 진동시키고 있다…….
 				ENDIF
 			ELSE
 				IF RAND:2 == 0
@@ -475,35 +475,35 @@ IF SELECTCOM == 1
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
 			PRINTFORMW 「이나, 싫어 아아!」
-			PRINTFORMW %CALLNAME:TARGET%는 바동바동날뛰고 있다. 아무래도%CALLNAME:PLAYER%에 균열을 볼 수 있다고 하는 것이 계속 참을 수 없을 정도고통답다.
+			PRINTFORMW %타겟은()% 바동바동날뛰고 있다. 아무래도%CALLNAME:PLAYER%에 균열을 볼 수 있다고 하는 것이 계속 참을 수 없을 정도고통답다.
 		;연모+미약+C感覚Lv3이상
 		ELSEIF TALENT:연모 && TEQUIP:미약 && ABL:Ｃ감각 >= 3
 			PRINTFORMW 「이나,,  응~♪」
-			PRINTFORMW %CALLNAME:TARGET%는 시선을 받은 것 뿐으로 신체를 뛰게 하고 있다. 아무래도 시선만으로절정에 이르러 버릴 것 같게 되어 있는 것 같다.
+			PRINTFORMW %타겟은()% 시선을 받은 것 뿐으로 신체를 뛰게 하고 있다. 아무래도 시선만으로절정에 이르러 버릴 것 같게 되어 있는 것 같다.
 		;연모+미약
 		ELSEIF TALENT:연모 && TEQUIP:미약
 			PRINTFORMW 「히……♪ 하웅……」
-			PRINTFORMW %CALLNAME:TARGET%는 내리는 거절하면 신체를 비비 꼬고 애태울 수 있다. 아무래도 보여지는만으로 쾌감을 느끼고 있는 것 같다.
+			PRINTFORMW %타겟은()% 내리는 거절하면 신체를 비비 꼬고 애태울 수 있다. 아무래도 보여지는만으로 쾌감을 느끼고 있는 것 같다.
 		;연모+C感覚Lv3이상
 		ELSEIF TALENT:연모 && ABL:Ｃ감각 >= 3
 			PRINTFORMW 「……」
-			PRINTFORMW %CALLNAME:TARGET%는 얼굴을 새빨갛게 하고 있지만, 그 눈에는 기대의 색이 확실히 있었다.
+			PRINTFORMW %타겟은()% 얼굴을 새빨갛게 하고 있지만, 그 눈에는 기대의 색이 확실히 있었다.
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「~……」
-			PRINTFORMW %CALLNAME:TARGET%는 얼굴을 새빨갛게 해부끄럼쟁이(이)면서, 스스로발를 열어 왔다.
+			PRINTFORMW %타겟은()% 얼굴을 새빨갛게 해부끄럼쟁이(이)면서, 스스로발를 열어 왔다.
 		;미약+C感覚Lv3이상
 		ELSEIF TEQUIP:미약 && ABL:Ｃ감각 >= 3
 			PRINTFORMW 「는……하후우……」
-			PRINTFORMW 가만히%CALLNAME:PLAYER%가%CALLNAME:TARGET%의 균열을 응시하고 있으면, %CALLNAME:TARGET%는 신체를 비비 꼬고 애태울 수 있었다.
+			PRINTFORMW 가만히%CALLNAME:PLAYER%가%CALLNAME:TARGET%의 균열을 응시하고 있으면, %타겟은()% 신체를 비비 꼬고 애태울 수 있었다.
 		;미약
 		ELSEIF TEQUIP:미약
 			PRINTFORMW 「이나, 싫엇……」
-			PRINTFORMW %CALLNAME:TARGET%는 얼굴을 새빨갛게 하고 있지만, 그 균열은 손대지 않은에도 관계없이 애액으로 젖고 빛나고 있었다.
+			PRINTFORMW %타겟은()% 얼굴을 새빨갛게 하고 있지만, 그 균열은 손대지 않은에도 관계없이 애액으로 젖고 빛나고 있었다.
 		;굴복각인Lv2이상
 		ELSEIF MARK:굴복각인 >= 2
 			PRINTFORMW 「이나, 싫엇……」
-			PRINTFORMW %CALLNAME:TARGET%는 얼굴을 새빨갛게 하고 있지만, 그렇게저항는 보이지 않았다…….
+			PRINTFORMW %타겟은()% 얼굴을 새빨갛게 하고 있지만, 그렇게저항는 보이지 않았다…….
 		;C感覚Lv3이상
 		ELSEIF ABL:Ｃ감각 >= 3
 			PRINTFORMW 「,  으윽……!」
@@ -511,7 +511,7 @@ IF SELECTCOM == 1
 		;それ以外
 		ELSE
 			PRINTFORMW 「이나, 보지 말아……」
-			PRINTFORMW %타겟은()% 발를 열리지 않아야지라든가 싶고 뭐저항하고 있다. 조금씩 풀면서 간신히발를 열기 시작하면,%CALLNAME:TARGET%는 새빨간 얼굴을손그리고 가렸다…….
+			PRINTFORMW %타겟은()% 발를 열리지 않아야지라든가 싶고 뭐저항하고 있다. 조금씩 풀면서 간신히발를 열기 시작하면,%타겟은()% 새빨간 얼굴을손그리고 가렸다…….
 		ENDIF
 		CFLAG:222 = 1
 		RETURN 1
@@ -527,7 +527,7 @@ IF SELECTCOM == 1
 			IF PREVCOM == SELECTCOM
 				IF RAND:3 == 0
 					PRINTFORMW 「,  히♪ 히히야아아 아아아아!」
-					PRINTFORMW 움찔움찔 신체를 뛰게 해,%CALLNAME:TARGET%는 연달아절정에 이른다.
+					PRINTFORMW 움찔움찔 신체를 뛰게 해,%타겟은()% 연달아절정에 이른다.
 					PRINTFORMW 민감하게 되어 잘랐다%CALLNAME:TARGET%의 신체에는, 이미 신체에 해당되는 공기의 감촉조차애무(이)가 되어 버리고 있는 것 같다…….
 				ELSEIF RAND:2 == 0
 					PRINTFORMW 「히, 는……,, 히……♪」
@@ -536,22 +536,22 @@ IF SELECTCOM == 1
 					PRINTFORMW 그러나, 이미 신체를 뛰게 한다체력조차 남지 않았다%CALLNAME:TARGET%노클리토리스를,%CALLNAME:PLAYER%는 계속 빨았다.
 				ELSE
 					PRINTFORMW 「히아아 아아아아! 안돼,  안돼~♪」
-					PRINTFORMW %CALLNAME:PLAYER%의 혀가클리토리스를 만지작거려 주면,%CALLNAME:TARGET%는 순식간에절정에 이른다.
-					PRINTFORMW 그런%CALLNAME:TARGET%의 클리토리스를 이빨과 혀로 괴롭혀져 하면, %CALLNAME:TARGET%는 수치심도 어떤 것이라도 쾌감에 날려 버려졌는지와 같이 날카로운 소리로 계속 허덕였다.
+					PRINTFORMW %CALLNAME:PLAYER%의 혀가클리토리스를 만지작거려 주면,%타겟은()% 순식간에절정에 이른다.
+					PRINTFORMW 그런%CALLNAME:TARGET%의 클리토리스를 이빨과 혀로 괴롭혀져 하면, %타겟은()% 수치심도 어떤 것이라도 쾌감에 날려 버려졌는지와 같이 날카로운 소리로 계속 허덕였다.
 					PRINTFORMW 「우아아아~♪ 꺄히!」
 				ENDIF
 			ELSE
 				IF RAND:3 == 0
 					PRINTFORMW 「~,! ! ♪」
-					PRINTFORMW 할아버지, 라고%CALLNAME:PLAYER%의 시선이 신체를 빨 때, %CALLNAME:TARGET%는 벌벌하고 신체를 뛰게 한다.
+					PRINTFORMW 할아버지, 라고%CALLNAME:PLAYER%의 시선이 신체를 빨 때, %타겟은()% 벌벌하고 신체를 뛰게 한다.
 					PRINTFORMW 아무래도 민감하게 되어 잘랐다%CALLNAME:TARGET%의 신체는, 시선만으로 몇번이고절정에 이를 정도로 개발되고 있는 것 같다…….
 				ELSEIF RAND:2 == 0
 					PRINTFORMW 「꺄악! 후아……♪」
-					PRINTFORMW %CALLNAME:PLAYER%가 보고 있는 것만으로, %CALLNAME:TARGET%는 신체를 내리는 거절하면 진동시켜, 녹은 표정을 띄우고 있다.
+					PRINTFORMW %CALLNAME:PLAYER%가 보고 있는 것만으로, %타겟은()% 신체를 내리는 거절하면 진동시켜, 녹은 표정을 띄우고 있다.
 					PRINTFORMW (보고, 보여져만일 수 있는인데, 만일 수 있는인데 ♪)
 				ELSE
 					PRINTFORMW 「아, 아우우……♪」
-					PRINTFORMW %CALLNAME:TARGET%는 속속 등골을 진동시켜%CALLNAME:PLAYER%로 보여지는 쾌감에 잠겨 있다.
+					PRINTFORMW %타겟은()% 속속 등골을 진동시켜%CALLNAME:PLAYER%로 보여지는 쾌감에 잠겨 있다.
 					PRINTFORMW 그 균열로부터는 똑똑과 애액이 솟아 오르기 시작해, %CALLNAME:TARGET%의 넓적다리에 기근의 자국을 남기고 있다…….
 				ENDIF
 			ENDIF
@@ -561,19 +561,19 @@ IF SELECTCOM == 1
 			IF PREVCOM == SELECTCOM
 				IF RAND:3 == 0
 					PRINTFORMW 「아아♪ 하아! 히♪」
-					PRINTFORMW 날름날름균열과 클리토리스를 빨 수 있는 계속해%CALLNAME:TARGET%는 벌벌하고 신체를 뛰게 한다.
+					PRINTFORMW 날름날름균열과 클리토리스를 빨 수 있는 계속해%타겟은()% 벌벌하고 신체를 뛰게 한다.
 					PRINTFORMW (이, 이런 소리, 가득 들려 버린다♪)
 					PRINTFORMW 「,, 히야 아아! 하후우♪」
-					PRINTFORMW 허덕이는 소리를 들리는 것이 부끄러운 것인지,%CALLNAME:TARGET%는 필사적으로입를 누르려고 하지만,
-					PRINTFORMW 가볍게%CALLNAME:PLAYER%가%CALLNAME:TARGET%의 클리토리스에 이빨을 세우면, 그것만으로 %CALLNAME:TARGET%는 달콤한 목소리를 질렀다.
+					PRINTFORMW 허덕이는 소리를 들리는 것이 부끄러운 것인지,%타겟은()% 필사적으로입를 누르려고 하지만,
+					PRINTFORMW 가볍게%CALLNAME:PLAYER%가%CALLNAME:TARGET%의 클리토리스에 이빨을 세우면, 그것만으로 %타겟은()% 달콤한 목소리를 질렀다.
 				ELSEIF RAND:2 == 0
 					PRINTFORMW 「아, 아하♪」
 					PRINTFORMW 츗, 라고 가볍고%CALLNAME:TARGET%노클리토리스를 들이마셔올린다라고 그것만으로 %타겟은()% 절정에 이른다.
 					PRINTFORMW (개, 개의, 나, 안되게 갈 것 같아요……♪)
-					PRINTFORMW %CALLNAME:TARGET%는 목은 붕붕 옆에 흔들고 있지만, 그손는 필사적으로 %CALLNAME:PLAYER%의 머리를 균열에 강압해, 한층 더 쾌감을 바라고 있다.
+					PRINTFORMW %타겟은()% 목은 붕붕 옆에 흔들고 있지만, 그손는 필사적으로 %CALLNAME:PLAYER%의 머리를 균열에 강압해, 한층 더 쾌감을 바라고 있다.
 				ELSE
 					PRINTFORMW 「히……! , ~!」
-					PRINTFORMW %CALLNAME:PLAYER%하지만%CALLNAME:TARGET%의 균열을 천천히 빨면,%CALLNAME:TARGET%는 비명 같아 보인 허덕이는 소리를올린다.
+					PRINTFORMW %CALLNAME:PLAYER%하지만%CALLNAME:TARGET%의 균열을 천천히 빨면,%타겟은()% 비명 같아 보인 허덕이는 소리를올린다.
 					PRINTFORMW 아무래도 아직도 경험이 적은%CALLNAME:TARGET%에 있어, 이 쾌감은 자극이 너무 강한 같다.
 				ENDIF
 			ELSE
@@ -581,7 +581,7 @@ IF SELECTCOM == 1
 					PRINTFORMW 「……」
 					PRINTFORMW 얼굴을 새빨갛게 한다%CALLNAME:TARGET%노발를 천천히 열어,%CALLNAME:PLAYER%는 차분히 그 흠뻑 젖은 균열을 시간[視姦] 한다.
 					PRINTFORMW 「네, 나, 거짓말! ……응~!」
-					PRINTFORMW 하면, %CALLNAME:TARGET%는 당황하면서 갑자기 신체진조생, 구군과 신체를 뛰게 했다.
+					PRINTFORMW 하면, %타겟은()% 당황하면서 갑자기 신체진조생, 구군과 신체를 뛰게 했다.
 					PRINTFORMW (보고, 보여졌다만으로, 가버렸다야 ……♪)
 				ELSE
 					PRINTFORMW 「~……」
@@ -600,7 +600,7 @@ IF SELECTCOM == 1
 					PRINTFORMW (들이마셔지는 것, 대단한, 굉장해♪)
 				ELSE
 					PRINTFORMW 「우아아아♪ 큐으윽!」
-					PRINTFORMW 민감하게 되어 자른%CALLNAME:TARGET%의 클리토리스를 계속 만지작거리면, %CALLNAME:TARGET%는 흔들흔들하고 신체를 진동시켰다.
+					PRINTFORMW 민감하게 되어 자른%CALLNAME:TARGET%의 클리토리스를 계속 만지작거리면, %타겟은()% 흔들흔들하고 신체를 진동시켰다.
 				ENDIF
 			ELSE
 				IF RAND:2 == 0
@@ -609,7 +609,7 @@ IF SELECTCOM == 1
 					PRINTFORMW (시, 신체가 뜨거워서……,  그치지 않지 야 ……♪)
 				ELSE
 					PRINTFORMW 「보고, 보면 안, 돼……♪」
-					PRINTFORMW %CALLNAME:PLAYER%가 가만히%CALLNAME:TARGET%의 균열을 응시하면, %CALLNAME:TARGET%는 얼굴을 새빨갛게 해 싫어한다.
+					PRINTFORMW %CALLNAME:PLAYER%가 가만히%CALLNAME:TARGET%의 균열을 응시하면, %타겟은()% 얼굴을 새빨갛게 해 싫어한다.
 					PRINTFORMW 그러나, 그 균열은 앞으로의 고문을 기대하는것 같이 실룩실룩꿈틀거리며 있었다…….
 				ENDIF
 			ENDIF
@@ -619,10 +619,10 @@ IF SELECTCOM == 1
 			IF PREVCOM == SELECTCOM
 				IF RAND:2 == 0
 					PRINTFORMW 「응, 응~♪」
-					PRINTFORMW 멈춤곳 없게 넘쳐 나오고 해 오는 꿀을%CALLNAME:PLAYER%가 빨고 취해 가면, %CALLNAME:TARGET%는 무의식중에 거기를 꽉 눌러 왔다.
+					PRINTFORMW 멈춤곳 없게 넘쳐 나오고 해 오는 꿀을%CALLNAME:PLAYER%가 빨고 취해 가면, %타겟은()% 무의식중에 거기를 꽉 눌러 왔다.
 				ELSE
 					PRINTFORMW 「아아,  아아~!」
-					PRINTFORMW 보여진 클리토리스에 혀를 저원 되어, %CALLNAME:TARGET%는 흔들흔들하고 신체를 진동시키면서 쾌감에 빠졌다.
+					PRINTFORMW 보여진 클리토리스에 혀를 저원 되어, %타겟은()% 흔들흔들하고 신체를 진동시키면서 쾌감에 빠졌다.
 					PRINTFORMW (철썩철썩 해, 굉장히 느껴버린다♪)
 				ENDIF
 			ELSE
@@ -632,7 +632,7 @@ IF SELECTCOM == 1
 					PRINTFORMW (보고, 보여져만일 수 있는인데 ……,  그치지 않지 야 ♪)
 				ELSE
 					PRINTFORMW 「이나, 싫엇……하아!」
-					PRINTFORMW 허약하고%타겟은()% 저항하지만,%CALLNAME:PLAYER%의 혀가%CALLNAME:TARGET%노클리토리스에 접한 순간,%CALLNAME:TARGET%는 신체를 뛰게 했다.
+					PRINTFORMW 허약하고%타겟은()% 저항하지만,%CALLNAME:PLAYER%의 혀가%CALLNAME:TARGET%노클리토리스에 접한 순간,%타겟은()% 신체를 뛰게 했다.
 				ENDIF
 			ENDIF
 		;연모
@@ -641,27 +641,27 @@ IF SELECTCOM == 1
 			IF ABL:Ｃ감각 >= 3
 				IF RAND:2 == 0
 					PRINTFORMW 「……하으흑……♪」
-					PRINTFORMW 가만히%CALLNAME:PLAYER%에 균열을 볼 수 있어%CALLNAME:TARGET%는 얼굴을 새빨갛게 하고 있다.
+					PRINTFORMW 가만히%CALLNAME:PLAYER%에 균열을 볼 수 있어%타겟은()% 얼굴을 새빨갛게 하고 있다.
 					PRINTFORMW (……지, 지금부터, 해 준다……♪)
 				ELSE
 					PRINTFORMW 「이, 이런,  엣찌한의 ……♪」
-					PRINTFORMW %CALLNAME:TARGET%는 신체를 희미하게 내리는 거절하는 진동시키면서, %조사처리(CALLNAME:PLAYER,"를")% 새빨갛게 되면서 응시하고 있다.
+					PRINTFORMW %타겟은()% 신체를 희미하게 내리는 거절하는 진동시키면서, %조사처리(CALLNAME:PLAYER,"를")% 새빨갛게 되면서 응시하고 있다.
 					PRINTFORMW 그러나, 그 눈동자에는, 확실히 기대의 색이 섞이고 있었다.
 				ENDIF
 			ELSE
 				IF RAND:3 == 0
 					PRINTFORMW 「……」
-					PRINTFORMW %CALLNAME:TARGET%는 새빨간 얼굴을 돌리면서도, 스스로스커트를 입에 물어발를 천천히 넓혔다.
+					PRINTFORMW %타겟은()% 새빨간 얼굴을 돌리면서도, 스스로스커트를 입에 물어발를 천천히 넓혔다.
 					PRINTFORMW %CALLNAME:PLAYER%가 신선한 넓적다리의 사이를 응시하면, 그것만으로 딱이라고 닫고 있던 균열이나들과 와 꿀이 넘쳐 나왔다…….
 					PRINTFORMW 「글자, 가만히 보지 말고……나♪」
 				ELSEIF RAND:2 == 0
 					PRINTFORMW %CALLNAME:PLAYER%하지만 떨리는 양발를 살그머니 열면, 속옷은 이제(벌써) 애밀[愛蜜]에 젖어 투성이, 비쳐 보여져 버려 비밀스런 장소를 숨기는 책임을 다하지 않았었다. 반투명의 박막의 저 편에서, 분홍색의 작은 꽃봉오리가 흠칫흠칫 갖고 싶어하는 듯이 개폐하고 있다…….
 					PRINTFORMW 「싫어, 이렇게 엣찌한……」
-					PRINTFORMW %CALLNAME:TARGET%는, 스스로의 혼란을 봐 말이 막혀.
+					PRINTFORMW %타겟은()%, 스스로의 혼란을 봐 말이 막혀.
 					PRINTFORMW 「이런 것, 직접 보여지는보다 부끄러워요……,  벗는군……?」
 					PRINTFORMW 스스로 속옷을 내리려고 하는 그손의 움직임을 멈춘 것인가 멈추지 않고 한 것인가,%CALLNAME:PLAYER%는 조금 헤매었지만…….
 				ELSE
-					PRINTFORMW 팬티를 스르르 하고 내려지고 시작, %CALLNAME:TARGET%는 가볍게 아니아니를 했다.
+					PRINTFORMW 팬티를 스르르 하고 내려지고 시작, %타겟은()% 가볍게 아니아니를 했다.
 					PRINTFORMW (싫어,  벌써 실 당기고 있다……! 아아, 보여지고 있다, 이렇게 차분히……! )
 				ENDIF
 			ENDIF
@@ -669,10 +669,10 @@ IF SELECTCOM == 1
 		ELSEIF MARK:굴복각인 == 3
 			IF RAND:2 == 0
 				PRINTFORMW 「……이나 ……」
-				PRINTFORMW %CALLNAME:TARGET%는 얼굴을 새빨갛게 하고 있다. 그러나저항는 전혀 하려고 하지 않았다.
+				PRINTFORMW %타겟은()% 얼굴을 새빨갛게 하고 있다. 그러나저항는 전혀 하려고 하지 않았다.
 				PRINTFORMW (는, 부끄럽다……. 하지만,이나는, 없다……. 어째서? )
 			ELSE
-				PRINTFORMW 발에 걸쳐졌다손에 명색뿐인저항를 나타내,%CALLNAME:TARGET%는 순조롭게발를 열었다.
+				PRINTFORMW 발에 걸쳐졌다손에 명색뿐인저항를 나타내,%타겟은()% 순조롭게발를 열었다.
 				PRINTFORMW 「빠, 빨리 끝내……말끄러미 보여져, 굉장히 부끄럽기 때문에」
 			ENDIF
 		;それ以外
@@ -681,11 +681,11 @@ IF SELECTCOM == 1
 			IF ABL:Ｃ감각 >= 3
 				IF RAND:2 == 0
 					PRINTFORMW 「이나, 나……」
-					PRINTFORMW %CALLNAME:TARGET%는 목을 옆에 윙윙 흔든다. 그러나, 그 눈동자에는 진짜 희미하게 기대의 색이 있었다.
+					PRINTFORMW %타겟은()% 목을 옆에 윙윙 흔든다. 그러나, 그 눈동자에는 진짜 희미하게 기대의 색이 있었다.
 					PRINTFORMW (나, 싫어……거기가, 기대 해버려요……♪)
 				ELSE
 					PRINTFORMW 「이나, 나!」
-					PRINTFORMW %CALLNAME:TARGET%는 싫어하고 있다. 그러나, 이전과 비교하면저항는 분명하게 약해져 와 있다…….
+					PRINTFORMW %타겟은()% 싫어하고 있다. 그러나, 이전과 비교하면저항는 분명하게 약해져 와 있다…….
 				ENDIF
 			ELSE
 				IF RAND:2 == 0
@@ -694,7 +694,7 @@ IF SELECTCOM == 1
 					PRINTFORMW (는, 부끄러워요 ……)
 				ELSE
 					PRINTFORMW 「싫어,  거기는……안돼」
-					PRINTFORMW 아직 부끄러움이 사라지지 않는 것 같고,%CALLNAME:TARGET%는 이번도발를 딱 닫고 있다…….
+					PRINTFORMW 아직 부끄러움이 사라지지 않는 것 같고,%타겟은()% 이번도발를 딱 닫고 있다…….
 				ENDIF
 			ENDIF
 		ENDIF
@@ -720,17 +720,17 @@ IF SELECTCOM == 2
 		;미약
 		ELSEIF TEQUIP:미약
 			PRINTFORMW 「큐으윽!」
-			PRINTFORMW 미경험의 어널을 상냥하게 자극해 주면, %CALLNAME:TARGET%는 신체를 뛰게 했다.
+			PRINTFORMW 미경험의 어널을 상냥하게 자극해 주면, %타겟은()% 신체를 뛰게 했다.
 			PRINTFORMW (거짓말……엉덩이인데, 기분이 좋다……! )
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「,  엉덩이, 하는 거야……?」
-			PRINTFORMW %CALLNAME:TARGET%는 불안한 듯한 표정을 띄우고 있다.
+			PRINTFORMW %타겟은()% 불안한 듯한 표정을 띄우고 있다.
 			PRINTFORMW 그런%CALLNAME:TARGET%의 머리를 안심시키도록(듯이) 어루만지면,%CALLNAME:PLAYER%하애널에손를 늘렸다.
 		;それ以外
 		ELSE
 			PRINTFORMW 「이나, 나…!」
-			PRINTFORMW %CALLNAME:TARGET%는 내리는 거절하면 목을 흔들어 싫어하고 있다.
+			PRINTFORMW %타겟은()% 내리는 거절하면 목을 흔들어 싫어하고 있다.
 		ENDIF
 		CFLAG:223 = 1
 		RETURN 1
@@ -739,43 +739,43 @@ IF SELECTCOM == 2
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
 			PRINTFORMW 「도, 엉덩이는 싫엇!」
-			PRINTFORMW %CALLNAME:TARGET%는 필사적으로저항하고 있다……
+			PRINTFORMW %타겟은()% 필사적으로저항하고 있다……
 		;연모+미약使用中かつ連続実行
 		ELSEIF TALENT:연모 && TEQUIP:미약 && PREVCOM == SELECTCOM
 			IF RAND:2 == 0
 				PRINTFORMW 「후아아아아♪ 아하!」
-				PRINTFORMW %CALLNAME:TARGET%는 흔들흔들하고 신체를 뛰게 해, 어널로부터 덮쳐 오는 쾌감에 잠겨 있다.
+				PRINTFORMW %타겟은()% 흔들흔들하고 신체를 뛰게 해, 어널로부터 덮쳐 오는 쾌감에 잠겨 있다.
 				PRINTFORMW (기분이 좋은, 엉덩이인데, 굉장해♪)
 			ELSE
 				PRINTFORMW 「가, 엉덩이가♪」
-				PRINTFORMW %CALLNAME:TARGET%는 어널을 손가락으로 후비어져, 벌벌하고 신체를 뛰게 하고 있다.
+				PRINTFORMW %타겟은()% 어널을 손가락으로 후비어져, 벌벌하고 신체를 뛰게 하고 있다.
 			ENDIF
 		;연모+미약
 		ELSEIF TALENT:연모 && TEQUIP:미약
 			IF RAND:2 == 0
 				PRINTFORMW 「아히이이!」
-				PRINTFORMW %CALLNAME:TARGET%의 어널에 손가락을 쑤시면, %CALLNAME:TARGET%는 깜짝, 라고 신체를 뛰게 했다.
+				PRINTFORMW %CALLNAME:TARGET%의 어널에 손가락을 쑤시면, %타겟은()% 깜짝, 라고 신체를 뛰게 했다.
 				PRINTFORMW (……거짓말……엉덩이인데……손가락 넣을 수 있던 것만으로 가버렸다야 ……♪)
 			ELSE
 				PRINTFORMW 「큐으윽♪」
-				PRINTFORMW %CALLNAME:TARGET%는 덮쳐 오는 쾌감에 신체를 흔들흔들하고 진동시키고 있다.
+				PRINTFORMW %타겟은()% 덮쳐 오는 쾌감에 신체를 흔들흔들하고 진동시키고 있다.
 			ENDIF
 		;미약使用中かつ連続実行
 		ELSEIF TEQUIP:미약 && PREVCOM == SELECTCOM
 			IF RAND:2 == 0
 				PRINTFORMW 「! 히에 좋다!」
-				PRINTFORMW %CALLNAME:TARGET%는 어널을 덮치는 쾌감 씁쓸하고 학도 신체를 뛰게 하고 있다.
+				PRINTFORMW %타겟은()% 어널을 덮치는 쾌감 씁쓸하고 학도 신체를 뛰게 하고 있다.
 				PRINTFORMW (와, 너무 기분 좋아, 엉덩이인데, 이상해질 것 같아……♪)
 			ELSE
 				PRINTFORMW 「후아 아아! 꺄악♪」
-				PRINTFORMW %CALLNAME:TARGET%는 어널을 만지작거려져, 흔들흔들하고 신체를 쾌감에 진동시키고 있다.
+				PRINTFORMW %타겟은()% 어널을 만지작거려져, 흔들흔들하고 신체를 쾌감에 진동시키고 있다.
 				PRINTFORMW 그 표정으로부터,아픔(이)나 혐오감은 미진이라도 읽어낼 수 없었다.
 			ENDIF
 		;미약
 		ELSEIF TEQUIP:미약
 			IF RAND:2 == 0 
 				PRINTFORMW 「후아아아아!」
-				PRINTFORMW %CALLNAME:TARGET%의 어널을 손가락으로 만지작거리면, %CALLNAME:TARGET%는 엉뚱한 소리를 질렀다.
+				PRINTFORMW %CALLNAME:TARGET%의 어널을 손가락으로 만지작거리면, %타겟은()% 엉뚱한 소리를 질렀다.
 				PRINTFORMW (어, 어째서……? 엉덩이인데, 클리토리스 정도 기분이 좋아 ……♪)
 			ELSE
 				PRINTFORMW 「히……! 열리는!」
@@ -787,10 +787,10 @@ IF SELECTCOM == 2
 			IF TALENT:연모 && CHECK("Ａ손가락넣기")
 				IF RAND:2 == 0
 					PRINTFORMW 「후우,  큐으윽……」
-					PRINTFORMW %CALLNAME:TARGET%는 희미한 헐떡이는 소리를 올리면서, 신체를 계속 진동시키고 있다……
+					PRINTFORMW %타겟은()% 희미한 헐떡이는 소리를 올리면서, 신체를 계속 진동시키고 있다……
 				ELSE
 					PRINTFORMW 「아후우……후와」
-					PRINTFORMW 벌벌하고 신체를 뛰게 한이면서, %CALLNAME:TARGET%는 쾌락의 색이 섞인 한숨을 토했다.
+					PRINTFORMW 벌벌하고 신체를 뛰게 한이면서, %타겟은()% 쾌락의 색이 섞인 한숨을 토했다.
 					PRINTFORMW (,  엉덩이인데, 기분이 좋다…♪)
 				ENDIF
 			;연모
@@ -807,10 +807,10 @@ IF SELECTCOM == 2
 			ELSEIF ABL:Ａ감각 >= 3 && CHECK("Ａ손가락넣기")
 				IF RAND:2 == 0
 					PRINTFORMW 「꺄히!, 가!」
-					PRINTFORMW 어널에 달리는 쾌감에, %CALLNAME:TARGET%는 교성을 올려 신체를 뛰게 했다.
+					PRINTFORMW 어널에 달리는 쾌감에, %타겟은()% 교성을 올려 신체를 뛰게 했다.
 				ELSE
 					PRINTFORMW 「! 는!」
-					PRINTFORMW %CALLNAME:TARGET%는 어널을 만지작거려져, 헐떡이는 소리를 올리면서 신체를 뛰게 하고 있다.
+					PRINTFORMW %타겟은()% 어널을 만지작거려져, 헐떡이는 소리를 올리면서 신체를 뛰게 하고 있다.
 					PRINTFORMW (,  엉덩이인데, 기분 좋게 되어 버린다 ……)
 				ENDIF
 			;それ以外
@@ -821,7 +821,7 @@ IF SELECTCOM == 2
 					PRINTFORMW (왜, 이런 더러운 곳……)
 				ELSE
 					PRINTFORMW 「,  거기는 안돼……」
-					PRINTFORMW %CALLNAME:TARGET%는 내리는 거절하면 거절하고 있다.
+					PRINTFORMW %타겟은()% 내리는 거절하면 거절하고 있다.
 					PRINTFORMW ……아무래도 아직 어널에의 자극에 익숙하지 않는 것 같다.
 				ENDIF
 			ENDIF
@@ -844,12 +844,12 @@ IF SELECTCOM == 3 && TEQUIP:샤워 == 0
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「아, 아우……」
-			PRINTFORMW %CALLNAME:PLAYER%하지만자위를 명하면,%CALLNAME:TARGET%는 얼굴을 새빨갛게 한다.
-			PRINTFORMW 그러나,%CALLNAME:TARGET%는 얼굴을 새빨갛게 한 채로스커트를 싶게 해올린다라고 비밀스런 장소에 스스로의 손가락을 기게 했다. 
+			PRINTFORMW %CALLNAME:PLAYER%하지만자위를 명하면,%타겟은()% 얼굴을 새빨갛게 한다.
+			PRINTFORMW 그러나,%타겟은()% 얼굴을 새빨갛게 한 채로스커트를 싶게 해올린다라고 비밀스런 장소에 스스로의 손가락을 기게 했다. 
 		;それ以外
 		ELSE
 			PRINTFORMW 「~!」
-			PRINTFORMW %CALLNAME:TARGET%는 얼굴을 재미있을 수록 새빨갛게 해 당황했다…….
+			PRINTFORMW %타겟은()% 얼굴을 재미있을 수록 새빨갛게 해 당황했다…….
 		ENDIF
 		CFLAG:224 = 1
 		RETURN 1
@@ -861,23 +861,23 @@ IF SELECTCOM == 3 && TEQUIP:샤워 == 0
 		;연모＋자위중독Lv3이상
 		ELSEIF TALENT:연모 && ABL:자위중독 >= 3
 			PRINTFORMW 「하후우♪ 아아!」
-			PRINTFORMW %CALLNAME:TARGET%는 가랑이를 크게 넓히면서%CALLNAME:PLAYER%에 과시하듯이 해 비밀장소를 만지작거리고 있다.
+			PRINTFORMW %타겟은()% 가랑이를 크게 넓히면서%CALLNAME:PLAYER%에 과시하듯이 해 비밀장소를 만지작거리고 있다.
 			PRINTFORMW 그 표정에,부끄럼쟁이등은 전혀 안보였다…….
 			PRINTFORMW (보고, 보여져 굉장해♪ 1명이 하는 것보다, 쭉 기분이 좋아 ♪)
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「아우……는♪」
-			PRINTFORMW %CALLNAME:TARGET%는 얼굴을 새빨갛게 하면서 비밀장소를 만지작거리고 있다.
+			PRINTFORMW %타겟은()% 얼굴을 새빨갛게 하면서 비밀장소를 만지작거리고 있다.
 			PRINTFORMW (왜, 왜? 보여지고 있는데도, 평소보다 기분이 좋아 ……)
 		;자위중독Lv3이상
 		ELSEIF ABL:자위중독 >= 3
 			PRINTFORMW 「,  하, 히아아!」
-			PRINTFORMW %CALLNAME:TARGET%는 스스로의 비밀장소를 만지작거리면서 쾌감에 잠겨 있다.
+			PRINTFORMW %타겟은()% 스스로의 비밀장소를 만지작거리면서 쾌감에 잠겨 있다.
 			PRINTFORMW (보여지고 있는데도……부끄러운데……지야! )
 		;それ以外
 		ELSE
 			PRINTFORMW 「……, 는 ……」
-			PRINTFORMW %CALLNAME:TARGET%는 얼굴을 새빨갛게 해 비밀장소를 만지작거리고 있다.
+			PRINTFORMW %타겟은()% 얼굴을 새빨갛게 해 비밀장소를 만지작거리고 있다.
 			PRINTFORMW (안돼……이런 것, 너무 부끄러워 ……)
 		ENDIF
 		RETURN 1
@@ -892,7 +892,7 @@ ELSEIF SELECTCOM == 3 && TEQUIP:샤워
 		;それ以外
 		ELSE
 			PRINTFORMW 「네……꺄아아!」
-			PRINTFORMW %CALLNAME:TARGET%의 사타구니에샤워의 수류를 맞혀 주면,%CALLNAME:TARGET%는 비명을 올렸다.
+			PRINTFORMW %CALLNAME:TARGET%의 사타구니에샤워의 수류를 맞혀 주면,%타겟은()% 비명을 올렸다.
 		ENDIF
 		CFLAG:312 = 1
 		RETURN 1
@@ -904,22 +904,22 @@ ELSEIF SELECTCOM == 3 && TEQUIP:샤워
 		;연모＋자위중독Lv3이상
 		ELSEIF TALENT:연모 && ABL:자위중독 >= 3
 			PRINTFORMW 「더운 물이♪ 더운 물이, 히아아아아!」
-			PRINTFORMW %CALLNAME:TARGET%는 균열을 두드린다샤워의 수류에, 움찔움찔 신체를 뛰게 해 몸부림치고 있다.
+			PRINTFORMW %타겟은()% 균열을 두드린다샤워의 수류에, 움찔움찔 신체를 뛰게 해 몸부림치고 있다.
 			PRINTFORMW (흔들리고, 흔들리고 ♪ 나, 더운 물로 이라고 루우♪)
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「……,  후아……」
-			PRINTFORMW %CALLNAME:TARGET%는 벌벌하고 떨리면서 쾌감에 잠겨 있다.
+			PRINTFORMW %타겟은()% 벌벌하고 떨리면서 쾌감에 잠겨 있다.
 			PRINTFORMW (더운 물,  기분이 좋다……좀더, 좀더 가득 엣찌한 나, 봐줘♪)
 		;자위중독Lv3이상
 		ELSEIF ABL:자위중독 >= 3
 			PRINTFORMW 「꺄아아♪ 꺄악♪」
-			PRINTFORMW %CALLNAME:TARGET%는 소리를 억제하는 일조차 잊어 쾌락에 잠겨 있다.
+			PRINTFORMW %타겟은()% 소리를 억제하는 일조차 잊어 쾌락에 잠겨 있다.
 			PRINTFORMW (와, 너무 기분 좋아, 아무것도 생각할 수 없어 ♪)
 		;それ以外
 		ELSE
 			PRINTFORMW 「……히……나……」
-			PRINTFORMW %CALLNAME:TARGET%는 얼굴을 새빨갛게 하고 있다.
+			PRINTFORMW %타겟은()% 얼굴을 새빨갛게 하고 있다.
 			PRINTFORMW (는, 부끄러워요 ……)
 		ENDIF
 		RETURN 1
@@ -942,7 +942,7 @@ IF SELECTCOM == 4
 		;それ以外
 		ELSE
 			PRINTFORMW 「~!」
-			PRINTFORMW %CALLNAME:TARGET%의 다리 사이에 %CALLNAME:PLAYER%가 얼굴을 묻으면, %CALLNAME:TARGET%는 얼굴을 새빨갛게 했다.
+			PRINTFORMW %CALLNAME:TARGET%의 다리 사이에 %CALLNAME:PLAYER%가 얼굴을 묻으면, %타겟은()% 얼굴을 새빨갛게 했다.
 		ENDIF
 		CFLAG:225 = 1
 		RETURN 1
@@ -959,11 +959,11 @@ IF SELECTCOM == 4
 		;굴복각인Lv3
 		ELSEIF MARK:굴복각인 == 3
 			PRINTFORMW 「……하아아♪」
-			PRINTFORMW %CALLNAME:TARGET%는 싫어하는 기색도 보이지 않고, 쾌락에 빠지고 있다.
+			PRINTFORMW %타겟은()% 싫어하는 기색도 보이지 않고, 쾌락에 빠지고 있다.
 		;それ以外
 		ELSE
 			PRINTFORMW 「이나, 나∼…………」
-			PRINTFORMW %CALLNAME:TARGET%는 얼굴을 새빨갛게 해저항해 온다…….
+			PRINTFORMW %타겟은()% 얼굴을 새빨갛게 해저항해 온다…….
 		ENDIF
 		RETURN 1
 	ENDIF
@@ -981,13 +981,13 @@ IF SELECTCOM == 5
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「꺄악!」
-			PRINTFORMW %CALLNAME:TARGET%노옷의 틈새로부터손를 넣으면, 그것만으로 %CALLNAME:TARGET%는 흠칫, 라고 신체를 뛰게 한다.
-			PRINTFORMW 그대로%CALLNAME:PLAYER%하지만 정확히손에 푹 들어가는 크기의가슴을말랑말랑 자극하면,%CALLNAME:TARGET%는 얼굴을 새빨갛게 했다.
+			PRINTFORMW %CALLNAME:TARGET%노옷의 틈새로부터손를 넣으면, 그것만으로 %타겟은()% 흠칫, 라고 신체를 뛰게 한다.
+			PRINTFORMW 그대로%CALLNAME:PLAYER%하지만 정확히손에 푹 들어가는 크기의가슴을말랑말랑 자극하면,%타겟은()% 얼굴을 새빨갛게 했다.
 			PRINTFORMW 「,  부탁, 상냥하게 해……?」
 		;それ以外
 		ELSE
 			PRINTFORMW 「꺅……!」
-			PRINTFORMW %CALLNAME:TARGET%노옷의 틈새로부터%CALLNAME:PLAYER%하지만손를 넣으면,%CALLNAME:TARGET%는 무서워한 것처럼 몸을 움츠리게 했다.
+			PRINTFORMW %CALLNAME:TARGET%노옷의 틈새로부터%CALLNAME:PLAYER%하지만손를 넣으면,%타겟은()% 무서워한 것처럼 몸을 움츠리게 했다.
 		ENDIF
 		CFLAG:226 = 1
 		RETURN 1
@@ -1007,7 +1007,7 @@ IF SELECTCOM == 5
 				PRINTFORMW 「이다, 안돼, 아아!」
 				PRINTFORMW 끈질기고%CALLNAME:TARGET%노가슴을계속 비비어 주면, 쫑긋쫑긋%CALLNAME:TARGET%의 신체가 경련을 시작한다.
 				PRINTFORMW 「히……으윽~!」
-				PRINTFORMW 그리고, 가볍다절정에 이르렀는지,%CALLNAME:TARGET%는 신체를 뛰게 했다.
+				PRINTFORMW 그리고, 가볍다절정에 이르렀는지,%타겟은()% 신체를 뛰게 했다.
 			ENDIF
 		;연모+미약
 		ELSEIF TALENT:연모 && TEQUIP:미약
@@ -1015,7 +1015,7 @@ IF SELECTCOM == 5
 				PRINTFORMW 「아후아,  는!」
 				PRINTFORMW %CALLNAME:TARGET%희, 희미하게%CALLNAME:TARGET%의 손가락이가슴의 위를 움직이는 것만으로 흔들흔들 신체를 진동시키고 있다.
 				PRINTFORMW （자, 손대어지는 것만으로 이렇게 기분 괜찮았으면,유두괴롭혀지면……！）
-				PRINTFORMW 무의식 가운데인가,%CALLNAME:TARGET%는 재촉 하도록(듯이)가슴을%CALLNAME:PLAYER%에 내밀고 있다.
+				PRINTFORMW 무의식 가운데인가,%타겟은()% 재촉 하도록(듯이)가슴을%CALLNAME:PLAYER%에 내밀고 있다.
 			ELSE
 				PRINTFORMW 「아하! !」
 				PRINTFORMW %타겟은()% , 말랑말랑 가볍고%CALLNAME:PLAYER%하지만가슴을자극한 것 뿐으로 격렬한 교성을 올렸다.
@@ -1024,7 +1024,7 @@ IF SELECTCOM == 5
 		ELSEIF TEQUIP:미약 && PREVCOM == SELECTCOM
 			IF RAND:2 == 0
 				PRINTFORMW 「히에!」
-				PRINTFORMW %CALLNAME:TARGET%노가슴을심하게 주물렀다%CALLNAME:PLAYER%의 손가락이유두를 타면,%CALLNAME:TARGET%는 비명을올린다.
+				PRINTFORMW %CALLNAME:TARGET%노가슴을심하게 주물렀다%CALLNAME:PLAYER%의 손가락이유두를 타면,%타겟은()% 비명을올린다.
 				PRINTFORMW (이, 이런 것, 너무 기분 좋아 ♪)
 			ELSE
 				PRINTFORMW 「! 히야아아!」
@@ -1034,21 +1034,21 @@ IF SELECTCOM == 5
 		ELSEIF TEQUIP:미약
 			IF RAND:2 == 0 
 				PRINTFORMW 「히으윽,  꺄히!」
-				PRINTFORMW 말랑말랑가슴을주물러져%CALLNAME:TARGET%는 저리는 것 같은 쾌감에 신체를 오슬오슬 진동시킨다.
+				PRINTFORMW 말랑말랑가슴을주물러져%타겟은()% 저리는 것 같은 쾌감에 신체를 오슬오슬 진동시킨다.
 				PRINTFORMW (어, 어째서,  어째서 이렇게 느끼는 것 ♪)
 			ELSE
 				PRINTFORMW 「아후우,  후아!」
-				PRINTFORMW %CALLNAME:PLAYER%의손하지만가슴의 형태를 가볍게 바꿀 때,%CALLNAME:TARGET%는 쾌감에 몸부림쳤다.
+				PRINTFORMW %CALLNAME:PLAYER%의손하지만가슴의 형태를 가볍게 바꿀 때,%타겟은()% 쾌감에 몸부림쳤다.
 			ENDIF
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「,  하후우……」
-			PRINTFORMW 말랑말랑 가볍고%CALLNAME:TARGET%노가슴을비비면,%CALLNAME:TARGET%는 희미하게 신체를 진동시키면서 소리를올린다.
+			PRINTFORMW 말랑말랑 가볍고%CALLNAME:TARGET%노가슴을비비면,%타겟은()% 희미하게 신체를 진동시키면서 소리를올린다.
 			PRINTFORMW 그런%타겟을()%, %CALLNAME:PLAYER%는 상냥하게 계속 꾸짖었다.
 		;B感覚Lv3이상
 		ELSEIF ABL:Ｂ감각 >= 3
 			PRINTFORMW 「아……는 아아!」
-			PRINTFORMW 넌더리나와%CALLNAME:PLAYER%의 손가락이%CALLNAME:TARGET%노유두를 굴리면,%CALLNAME:TARGET%는 흠칫, 라고 신체를 뛰게 했다.
+			PRINTFORMW 넌더리나와%CALLNAME:PLAYER%의 손가락이%CALLNAME:TARGET%노유두를 굴리면,%타겟은()% 흠칫, 라고 신체를 뛰게 했다.
 			PRINTFORMW (와, 기분이 좋아 ……♪)
 		;それ以外
 		ELSE
@@ -1070,7 +1070,7 @@ IF SELECTCOM == 6
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「…………♪」
-			PRINTFORMW %CALLNAME:TARGET%에 입술을 거듭하면, %CALLNAME:TARGET%는 당장 기쁜 울음 할 것 같을 수록 표정을 꾸깃꾸깃하게 했다.
+			PRINTFORMW %CALLNAME:TARGET%에 입술을 거듭하면, %타겟은()% 당장 기쁜 울음 할 것 같을 수록 표정을 꾸깃꾸깃하게 했다.
 			PRINTFORMW （겨우, 겨우키스해 주었어……♪）
 		;それ以外
 		ELSE
@@ -1089,28 +1089,28 @@ IF SELECTCOM == 6
 		ELSEIF TALENT:연모 && TEQUIP:미약 && PREVCOM == 6
 			IF RAND:2 == 0
 				PRINTFORMW 「아무,, 후아……♪」
-				PRINTFORMW %CALLNAME:PLAYER%가%CALLNAME:TARGET%에 혀를 걸면, %CALLNAME:TARGET%는 토론, 라고 표정을 녹게 한다.
-				PRINTFORMW 내리는 거절하면 조금씩 떨리면서, %CALLNAME:TARGET%는 자신으로부터 혀를 걸어 한층 더 쾌감을 추구하고 있다.
+				PRINTFORMW %CALLNAME:PLAYER%가%CALLNAME:TARGET%에 혀를 걸면, %타겟은()% 토론, 라고 표정을 녹게 한다.
+				PRINTFORMW 내리는 거절하면 조금씩 떨리면서, %타겟은()% 자신으로부터 혀를 걸어 한층 더 쾌감을 추구하고 있다.
 			ELSE
 				PRINTFORMW 「! 에, 흐응……!」
-				PRINTFORMW 끈질기고%CALLNAME:TARGET%노입안을 유린하면,%CALLNAME:TARGET%는 등골을 젖혀지게 해 삐걱삐걱 신체를 뛰게 했다.
+				PRINTFORMW 끈질기고%CALLNAME:TARGET%노입안을 유린하면,%타겟은()% 등골을 젖혀지게 해 삐걱삐걱 신체를 뛰게 했다.
 				PRINTFORMW （우……거짓말……키스그래서, 나……♪）
 			ENDIF
 		;연모+미약
 		ELSEIF TALENT:연모 && TEQUIP:미약
 			IF RAND:2 == 0
 				PRINTFORMW 「,  쪽,  쪽♪」
-				PRINTFORMW %CALLNAME:PLAYER%하지만 입술을 거듭하면,%CALLNAME:TARGET%는 기쁜 듯한 표정을 띄워키스에 몰두하고 있다.
+				PRINTFORMW %CALLNAME:PLAYER%하지만 입술을 거듭하면,%타겟은()% 기쁜 듯한 표정을 띄워키스에 몰두하고 있다.
 			ELSE
 				PRINTFORMW 「흐응,, ……」
-				PRINTFORMW %CALLNAME:TARGET%에 혀를 걸면, %CALLNAME:TARGET%는 스스로도 혀를 걸고 돌려주어 왔다.
+				PRINTFORMW %CALLNAME:TARGET%에 혀를 걸면, %타겟은()% 스스로도 혀를 걸고 돌려주어 왔다.
 				PRINTFORMW （키,키스, 기분이 좋아……♪）
 			ENDIF
 		;미약使用中かつ連続実行
 		ELSEIF TEQUIP:미약 && PREVCOM == 6
 			IF RAND:2 == 0
 				PRINTFORMW 「쪽! 무우!」
-				PRINTFORMW %CALLNAME:TARGET%노입안을 혀로 휘저어 주면,%CALLNAME:TARGET%는 움찔움찔 신체를 뛰게 했다.
+				PRINTFORMW %CALLNAME:TARGET%노입안을 혀로 휘저어 주면,%타겟은()% 움찔움찔 신체를 뛰게 했다.
 			ELSE
 				PRINTFORMW 「,  흐음!」
 				PRINTFORMW %타겟은()% ,입안을 혀로 유린되어, 혐오감과 쾌락이 뒤섞인 것 같은 표정을 띄우고 있다.
@@ -1120,10 +1120,10 @@ IF SELECTCOM == 6
 		ELSEIF TEQUIP:미약
 			IF RAND:2 == 0 
 				PRINTFORMW 「! 흐응!」
-				PRINTFORMW %CALLNAME:TARGET%에키스를 하면,%CALLNAME:TARGET%는 일순간만 싫을 것 같은 표정을 하지만, 곧바로 그것은 쾌락에 흐르게 되었다.
+				PRINTFORMW %CALLNAME:TARGET%에키스를 하면,%타겟은()% 일순간만 싫을 것 같은 표정을 하지만, 곧바로 그것은 쾌락에 흐르게 되었다.
 			ELSE
 				PRINTFORMW 「! 는, 응~!」
-				PRINTFORMW 조금 난폭하게%CALLNAME:TARGET%의 입술을 빼앗으면, %CALLNAME:TARGET%는 등골을 소름이 끼치게 한이면서 눈물이 되었다.
+				PRINTFORMW 조금 난폭하게%CALLNAME:TARGET%의 입술을 빼앗으면, %타겟은()% 등골을 소름이 끼치게 한이면서 눈물이 되었다.
 				PRINTFORMW (나, 나……! ……그렇지만, 왜 오싹오싹 하는 거야……? )
 			ENDIF
 		;연모
@@ -1133,7 +1133,7 @@ IF SELECTCOM == 6
 		;순종Lv2이상
 		ELSEIF ABL:순종 >=2
 			PRINTFORMW 「응……쪽,  ……」
-			PRINTFORMW %CALLNAME:TARGET%는 싫을 것 같은 표정을 띄우면서도%CALLNAME:PLAYER%과 입술을 맞추고 있다.
+			PRINTFORMW %타겟은()% 싫을 것 같은 표정을 띄우면서도%CALLNAME:PLAYER%과 입술을 맞추고 있다.
 			PRINTFORMW (어, 어째서, 이 사람에게 반항할 수 없겠지……)
 		;それ以外
 		ELSE
@@ -1155,12 +1155,12 @@ IF SELECTCOM == 139
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「……네? …………」
-			PRINTFORMW %CALLNAME:TARGET%는 아무것도 해 오지 않는다%조사처리(CALLNAME:PLAYER,"를")% 봐, 갑자기 물건발리나 금기 싶다 표정이 되었다.
+			PRINTFORMW %타겟은()% 아무것도 해 오지 않는다%조사처리(CALLNAME:PLAYER,"를")% 봐, 갑자기 물건발리나 금기 싶다 표정이 되었다.
 			PRINTFORMW (어, 어째서……아무것도 해 주지 않는거야……? )
 		;それ以外
 		ELSE
 			PRINTFORMW 「…………?」
-			PRINTFORMW %CALLNAME:TARGET%는 갑자기 고문의손를 멈추었다%조사처리(CALLNAME:PLAYER,"를")% 봐 고개를 갸웃했다.
+			PRINTFORMW %타겟은()% 갑자기 고문의손를 멈추었다%조사처리(CALLNAME:PLAYER,"를")% 봐 고개를 갸웃했다.
 		ENDIF
 		CFLAG:228 = 1
 		RETURN 1
@@ -1172,16 +1172,16 @@ IF SELECTCOM == 139
 		;연모＋욕정Lv3이상
 		ELSEIF TALENT:연모 && PALAM:욕정 >= PALAMLV:3
 			PRINTFORMW 「,  부탁……,  해서,  갖고 싶은거야……」
-			PRINTFORMW %CALLNAME:TARGET%는 그렇게 말하면, 새빨갛게 되어 균열을 스스로 열어 보여 왔다.
+			PRINTFORMW %타겟은()% 그렇게 말하면, 새빨갛게 되어 균열을 스스로 열어 보여 왔다.
 			PRINTFORMW %CALLNAME:TARGET%의 균열은 실룩실룩떨려 꿀이 눅진눅진과 흐르기 시작하고 있다…….
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「~……」
-			PRINTFORMW %CALLNAME:TARGET%는 매달리는 것 같은 눈으로 %CALLNAME:PLAYER%의옷의 옷자락을 타 왔다.
+			PRINTFORMW %타겟은()% 매달리는 것 같은 눈으로 %CALLNAME:PLAYER%의옷의 옷자락을 타 왔다.
 		;욕정Lv3이상
 		ELSEIF PALAM:욕정 >= PALAMLV:3
 			PRINTFORMW (시, 신체, 두껍게……)
-			PRINTFORMW %CALLNAME:TARGET%는 내리는 거절하면 신체를 진동시키고 있다.
+			PRINTFORMW %타겟은()% 내리는 거절하면 신체를 진동시키고 있다.
 		;それ以外
 		ELSE
 			PRINTFORMW 「……하후우」
@@ -1210,7 +1210,7 @@ IF SELECTCOM == 30
 		;미약
 		ELSEIF TEQUIP:미약
 			PRINTFORMW 「후아! 히으윽!」
-			PRINTFORMW 민감하게 되어 있다%CALLNAME:TARGET%노클리토리스를로터그리고 꾸짖으면,%CALLNAME:TARGET%는 교성을 올렸다.
+			PRINTFORMW 민감하게 되어 있다%CALLNAME:TARGET%노클리토리스를로터그리고 꾸짖으면,%타겟은()% 교성을 올렸다.
 		;굴복각인Lv3+연모
 		ELSEIF MARK:굴복각인 == 3 && TALENT:연모
 			PRINTFORMW 「그, 그래서……해주는 거야……?」
@@ -1232,22 +1232,22 @@ IF SELECTCOM == 30
 		ELSEIF TALENT:연모 && TEQUIP:미약 && PREVCOM == SELECTCOM
 			IF RAND:2 == 0
 				PRINTFORMW 「히야아아 아아 아아 아아!」
-				PRINTFORMW 민감한 콩을 끈질기고로터그리고 꾸짖고 넘어뜨려 주면,%CALLNAME:TARGET%는 삐걱삐걱 신체를 뛰게 했다.
+				PRINTFORMW 민감한 콩을 끈질기고로터그리고 꾸짖고 넘어뜨려 주면,%타겟은()% 삐걱삐걱 신체를 뛰게 했다.
 				PRINTFORMW (기분이 좋다, 도, 안돼~,  안돼~♪)
 			ELSE
 				PRINTFORMW 「히……! 후아아아 아아아아아!」
-				PRINTFORMW 필사적으로 입술을 눌러%CALLNAME:TARGET%는 소리를 견디려고 하지만, 곧바로 계속 참을 수 없게 되어, 교성을올린다.
+				PRINTFORMW 필사적으로 입술을 눌러%타겟은()% 소리를 견디려고 하지만, 곧바로 계속 참을 수 없게 되어, 교성을올린다.
 				PRINTFORMW 그런%CALLNAME:TARGET%의 클리토리스를, %CALLNAME:PLAYER%는 한층 더 끈질기게 몰아세웠다.
 			ENDIF
 		;연모+미약
 		ELSEIF TALENT:연모 && TEQUIP:미약
 			IF RAND:2 == 0
 				PRINTFORMW 「히 아아아아아!」
-				PRINTFORMW 미약그리고 민감하게 되어 자르고 있다클리토리스에로터를 맞힐 수 있으면,%CALLNAME:TARGET%는 삐걱삐걱 신체를 진동시켰다.
+				PRINTFORMW 미약그리고 민감하게 되어 자르고 있다클리토리스에로터를 맞힐 수 있으면,%타겟은()% 삐걱삐걱 신체를 진동시켰다.
 				PRINTFORMW (종류, 수호,  수호해 야 ……♪)
 			ELSE
 				PRINTFORMW 「히……,  응~!」
-				PRINTFORMW %CALLNAME:TARGET%는 스스로의 허덕이는 소리가 부끄러운 것인지, 필사적으로손그래서입를 눌러 소리를 견디려고 하고 있다…….
+				PRINTFORMW %타겟은()% 스스로의 허덕이는 소리가 부끄러운 것인지, 필사적으로손그래서입를 눌러 소리를 견디려고 하고 있다…….
 			ENDIF
 		;미약使用中かつ連続実行
 		ELSEIF TEQUIP:미약 && PREVCOM == SELECTCOM
@@ -1257,33 +1257,33 @@ IF SELECTCOM == 30
 				PRINTFORMW (와, 기분이 좋다! 기분이 좋다♪)
 			ELSE
 				PRINTFORMW 「큐으윽! 이것, 이것♪」
-				PRINTFORMW %CALLNAME:TARGET%노클리토리스에 끈질기고로터를 강압해 주면%CALLNAME:TARGET%는 쾌감에 신체를 뛰게 한다.
+				PRINTFORMW %CALLNAME:TARGET%노클리토리스에 끈질기고로터를 강압해 주면%타겟은()% 쾌감에 신체를 뛰게 한다.
 				PRINTFORMW 그런%타겟을()%, %CALLNAME:PLAYER%는 미소조차 띄우면서 계속 몰아세웠다.
 			ENDIF
 		;미약
 		ELSEIF TEQUIP:미약
 			IF RAND:2 == 0 
 				PRINTFORMW 「후아아아아!」
-				PRINTFORMW 클리토리스에로터를 맞혀 주면,%CALLNAME:TARGET%는 흠칫, 라고 신체를 뛰게 했다.
+				PRINTFORMW 클리토리스에로터를 맞혀 주면,%타겟은()% 흠칫, 라고 신체를 뛰게 했다.
 				PRINTFORMW (어, 어째서! 옛날 스스로 했을 때보다 기분이 좋다……♪)
 			ELSE
 				PRINTFORMW 「꺄악! 나, 나, 히아앗!」
-				PRINTFORMW 클리토리스를 덮치는 쾌감에, %CALLNAME:TARGET%는 싫어하는 일조차 잘 되지 않았다.
+				PRINTFORMW 클리토리스를 덮치는 쾌감에, %타겟은()% 싫어하는 일조차 잘 되지 않았다.
 			ENDIF
 		;연모＋굴복각인Lv3
 		ELSEIF TALENT:연모
 			PRINTFORMW 「후아♪ 좀더, 좀더 ……♪」
-			PRINTFORMW %CALLNAME:TARGET%는 수치에 쾌감이 이겼는지, 한층 더 쾌감을 졸라 왔다.
+			PRINTFORMW %타겟은()% 수치에 쾌감이 이겼는지, 한층 더 쾌감을 졸라 왔다.
 			PRINTFORMW (종류, 수기인 사람으로 되면, 이렇게 기분이 좋다……♪)
 		;굴복각인Lv3
 		ELSEIF MARK:굴복각인 == 3
 			PRINTFORMW 「으윽~!」
-			PRINTFORMW %CALLNAME:TARGET%노클리토리스를로터그리고 꾸짖어 주면,%CALLNAME:TARGET%는 입술을 누르면서 흔들흔들 떨렸다.
+			PRINTFORMW %CALLNAME:TARGET%노클리토리스를로터그리고 꾸짖어 주면,%타겟은()% 입술을 누르면서 흔들흔들 떨렸다.
 			PRINTFORMW (와, 기분이 좋다……왜 ……? )
 		;それ以外
 		ELSE
 			PRINTFORMW 「히……, 나……!」
-			PRINTFORMW %CALLNAME:TARGET%는 쾌감에 습격당하면서도 목을 아니아니를 하도록옆에 흔들고 있는.
+			PRINTFORMW %타겟은()% 쾌감에 습격당하면서도 목을 아니아니를 하도록옆에 흔들고 있는.
 		ENDIF
 		RETURN 1
 	ENDIF
@@ -1305,8 +1305,8 @@ IF SELECTCOM == 31 && TEQUIP:바이브
 			;目標:思わず後悔してリセットorロードしたくなるような구상
 			ELSEIF TALENT:연모 && ABL:순종 >= 5
 				PRINTFORMW 「네……?」
-				PRINTFORMW %CALLNAME:TARGET%는%CALLNAME:PLAYER%가 그렇게 고하면 표정을 굳어지게 한다.
-				PRINTFORMW 그러나, 조금씩 신체를 진동시키면서도, %CALLNAME:TARGET%는 미소를 띄웠다.
+				PRINTFORMW %타겟은()%%CALLNAME:PLAYER%가 그렇게 고하면 표정을 굳어지게 한다.
+				PRINTFORMW 그러나, 조금씩 신체를 진동시키면서도, %타겟은()% 미소를 띄웠다.
 				PRINTFORMW 「우……응……. 조, 좋아……그것이,당신하지만 바라는 일이라면……」
 				PRINTFORMW 그 눈동자의 구석에서 빛나는 것이 있는 일에, %CALLNAME:PLAYER%는 깨닫지 않았다……
 			;それ以外
@@ -1324,8 +1324,8 @@ IF SELECTCOM == 31 && TEQUIP:바이브
 			ELSEIF TALENT:연모 && TEQUIP:미약
 				PRINTFORMW 「당신의가, 좋은데……」
 				PRINTFORMW 「……! 아, ……」
-				PRINTFORMW 바이브를 보여져%CALLNAME:TARGET%는 무심코 그렇게 중얼거린다.
-				PRINTFORMW 그러나, 다음의 순간 자신이 무엇을 말한 것인지를 알아차려, %CALLNAME:TARGET%는 얼굴을 새빨갛게 했다.
+				PRINTFORMW 바이브를 보여져%타겟은()% 무심코 그렇게 중얼거린다.
+				PRINTFORMW 그러나, 다음의 순간 자신이 무엇을 말한 것인지를 알아차려, %타겟은()% 얼굴을 새빨갛게 했다.
 			;미약
 			ELSEIF TEQUIP:미약
 				PRINTFORMW 「……그, 그런 것, 나……」
@@ -1334,11 +1334,11 @@ IF SELECTCOM == 31 && TEQUIP:바이브
 			ELSEIF TALENT:연모
 				PRINTFORMW 「이번은, 그래서 하는 거야……?」
 				PRINTFORMW 「할 수 있으면당신의가 좋았다……」
-				PRINTFORMW %CALLNAME:TARGET%는 결코 싫어하지는 않지만, 유감스러운 표정을 띄우고 있다……
+				PRINTFORMW %타겟은()% 결코 싫어하지는 않지만, 유감스러운 표정을 띄우고 있다……
 			;それ以外
 			ELSE
 				PRINTFORMW 「이나……」
-				PRINTFORMW 이미처녀는 아니라고는 해도, 역시 비밀스런 장소에 뭔가를삽입그러자 하는 것이 익숙해지지 않는 것인지,%CALLNAME:TARGET%는 허약하고저항하고 있다.
+				PRINTFORMW 이미처녀는 아니라고는 해도, 역시 비밀스런 장소에 뭔가를삽입그러자 하는 것이 익숙해지지 않는 것인지,%타겟은()% 허약하고저항하고 있다.
 			ENDIF
 		ENDIF
 		CFLAG:230 = 1
@@ -1352,18 +1352,18 @@ IF SELECTCOM == 31 && TEQUIP:바이브
 		ELSEIF TALENT:연모 && TEQUIP:미약
 			IF RAND:2 == 0
 				PRINTFORMW 「히아아 아아아아아♪」
-				PRINTFORMW 바이브하지만 균열안으로 가라앉아 간 순간,%CALLNAME:TARGET%는 날카로운 교성을 질렀다.
+				PRINTFORMW 바이브하지만 균열안으로 가라앉아 간 순간,%타겟은()% 날카로운 교성을 질렀다.
 				PRINTFORMW (종류, 수호……넣을 수 있던 것만으로, 가버렸다야 ……♪)
 			ELSE
 				PRINTFORMW 「꺄아아! , 는 히……♪」
-				PRINTFORMW 바이브를 찔러 넣어진 것 뿐으로,%CALLNAME:TARGET%는 등골을 뒤로 젖힐 수 있어 움찔움찔 신체를 뛰게 한다.
+				PRINTFORMW 바이브를 찔러 넣어진 것 뿐으로,%타겟은()% 등골을 뒤로 젖힐 수 있어 움찔움찔 신체를 뛰게 한다.
 				PRINTFORMW 아무래도바이브를 넣어진 것 뿐으로절정에 이르러 버린 것 같다…….
 			ENDIF
 		;미약
 		ELSEIF TEQUIP:미약
 			IF RAND:2 == 0
 				PRINTFORMW 「우우~!」
-				PRINTFORMW %CALLNAME:TARGET%는 강렬한 자극에 몹시 놀라고 있다.
+				PRINTFORMW %타겟은()% 강렬한 자극에 몹시 놀라고 있다.
 				PRINTFORMW (거, 거짓말…이런 것, 곧바로 안되게 갈 것 같아요…)
 			ELSE
 				PRINTFORMW 「히아아! 개, 감색 야옹♪」
@@ -1374,7 +1374,7 @@ IF SELECTCOM == 31 && TEQUIP:바이브
 		ELSEIF TALENT:연모
 			IF RAND:2 == 0
 				PRINTFORMW 「후아 아아…!」
-				PRINTFORMW 바이브를 돌진해 주면,%CALLNAME:TARGET%는 교성을올린다.
+				PRINTFORMW 바이브를 돌진해 주면,%타겟은()% 교성을올린다.
 				PRINTFORMW 그러나, 그 표정은, 어딘가 유감임도 뒤섞이고 글자라고 있었다.
 				PRINTFORMW (……기분이 좋지만, 나……)
 			ELSE
@@ -1386,23 +1386,23 @@ IF SELECTCOM == 31 && TEQUIP:바이브
 		ELSEIF ABL:Ｖ감각 >= 3
 			IF RAND:2 == 0
 				PRINTFORMW 「는, 히……!」
-				PRINTFORMW %CALLNAME:TARGET%의 균열에바이브를 묻으면,%CALLNAME:TARGET%는 흠칫, 라고 신체를 뛰게 했다.
+				PRINTFORMW %CALLNAME:TARGET%의 균열에바이브를 묻으면,%타겟은()% 흠칫, 라고 신체를 뛰게 했다.
 				PRINTFORMW (어, 어째서……? 기분 좋게, 되어 버린다……♪)
 				PRINTFORMW 그 표정에고통의 색은 없고, 쾌락의 색 밖에 비치지 않았었다.
 			ELSE
 				PRINTFORMW 「아아!」
-				PRINTFORMW 바이브의 진동에,%CALLNAME:TARGET%는 재미있게 반응을 보인다.
+				PRINTFORMW 바이브의 진동에,%타겟은()% 재미있게 반응을 보인다.
 				PRINTFORMW 아무래도, %CALLNAME:TARGET%의 비밀장소는 벌써 무엇을 삽입되는 감각에 익숙한 것 같다……
 			ENDIF
 		;それ以外
 		ELSE
 			IF RAND:2 == 0
 				PRINTFORMW 「이나, 나……!」
-				PRINTFORMW %CALLNAME:TARGET%는 목을 옆에 힘없이 흔들고 있는.
+				PRINTFORMW %타겟은()% 목을 옆에 힘없이 흔들고 있는.
 				PRINTFORMW (도, 도, 아픈 것, 싫어……)
 			ELSE
 				PRINTFORMW 「히……!」
-				PRINTFORMW 바이브를 본 순간%CALLNAME:TARGET%는 신체를 굳어지게 한다.
+				PRINTFORMW 바이브를 본 순간%타겟은()% 신체를 굳어지게 한다.
 				PRINTFORMW 아무래도, 아직 비밀장소에 무엇을 삽입되는 감각에 익숙하지 않은 것 같다…….
 			ENDIF
 		ENDIF
@@ -1421,8 +1421,8 @@ ELSEIF SELECTCOM == 31 && TEQUIP:바이브 == 0
 			PRINTFORMW (,  뽑아진 것만으로, 개에 ……♪)
 		ELSE
 			PRINTFORMW 「~! ! ♪」
-			PRINTFORMW 질안의바이브를 동글동글 움직여 주면,%CALLNAME:TARGET%는 소리가 되지 않는 교성을 올려절정에 이른다.
-			PRINTFORMW 그리고,%CALLNAME:PLAYER%하지만바이브를 뽑아 내 주면,%CALLNAME:TARGET%는 풀썩, 라고 신체를 뛰게 했다.
+			PRINTFORMW 질안의바이브를 동글동글 움직여 주면,%타겟은()% 소리가 되지 않는 교성을 올려절정에 이른다.
+			PRINTFORMW 그리고,%CALLNAME:PLAYER%하지만바이브를 뽑아 내 주면,%타겟은()% 풀썩, 라고 신체를 뛰게 했다.
 		ENDIF
 	;미약
 	ELSEIF TEQUIP:미약
@@ -1452,7 +1452,7 @@ ELSEIF SELECTCOM == 31 && TEQUIP:바이브 == 0
 	ELSE
 		IF RAND:2 == 0
 			PRINTFORMW 「,  으윽!」
-			PRINTFORMW 바이브하지만 뽑아 내지면,%CALLNAME:TARGET%는 어딘가 안심한 것 같은 표정을 띄웠다.
+			PRINTFORMW 바이브하지만 뽑아 내지면,%타겟은()% 어딘가 안심한 것 같은 표정을 띄웠다.
 			PRINTFORMW (,  끝나 주었다……)
 		ELSE
 			PRINTFORMW 「아우우!」
@@ -1476,23 +1476,23 @@ IF SELECTCOM == 32
 		;연모+미약
 		ELSEIF TALENT:연모 && TEQUIP:미약
 			PRINTFORMW 「히아아♪ 우아아아~♪」
-			PRINTFORMW 격렬하게 진동하는 맛서쟈를 %CALLNAME:TARGET%에 맞혀 주면, %CALLNAME:TARGET%는 흔들흔들하고 신체를 뛰게 한다.
+			PRINTFORMW 격렬하게 진동하는 맛서쟈를 %CALLNAME:TARGET%에 맞혀 주면, %타겟은()% 흔들흔들하고 신체를 뛰게 한다.
 			PRINTFORMW 그리고, 순식간에연속절정에 희롱해졌다.
 			PRINTFORMW (도, 안돼~♪ 이 너무 와, 언덕 낮은 히야♪)
 		;미약
 		ELSEIF TEQUIP:미약
 			PRINTFORMW 「……히! 아, 아아~!」
-			PRINTFORMW 격렬하게 진동하는 맛서쟈를 과시하듯이%CALLNAME:TARGET%의 클리토리스에 대어 주면, %CALLNAME:TARGET%는 흔들흔들하고 신체를 뛰게 했다.
+			PRINTFORMW 격렬하게 진동하는 맛서쟈를 과시하듯이%CALLNAME:TARGET%의 클리토리스에 대어 주면, %타겟은()% 흔들흔들하고 신체를 뛰게 했다.
 			PRINTFORMW (개, 개의, 개의 ♪)
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「히, 아아~!」
-			PRINTFORMW 맛서쟈를 꽉 눌리는 쾌감에, %CALLNAME:TARGET%는 흔들흔들하고 신체를 뛰게 한이면서 비명을 질렀다.
+			PRINTFORMW 맛서쟈를 꽉 눌리는 쾌감에, %타겟은()% 흔들흔들하고 신체를 뛰게 한이면서 비명을 질렀다.
 			PRINTFORMW (거, 거짓말♪ 이것, 굉장해! )
 		;それ以外
 		ELSE
 			PRINTFORMW 「으윽!」
-			PRINTFORMW 맛서쟈를 꽉 눌려%CALLNAME:TARGET%는 깜짝, 라고 신체를 진동시켰다.
+			PRINTFORMW 맛서쟈를 꽉 눌려%타겟은()% 깜짝, 라고 신체를 진동시켰다.
 			PRINTFORMW (이것, 너무 강해 ♪)
 		ENDIF
 		CFLAG:231 = 1
@@ -1506,31 +1506,31 @@ IF SELECTCOM == 32
 		ELSEIF TALENT:연모 && TEQUIP:미약 && PREVCOM == SELECTCOM
 			IF RAND:2 == 0
 				PRINTFORMW 「들, 안돼,  안돼~~♪」
-				PRINTFORMW %CALLNAME:TARGET%는 민감하게 되어 잘랐다클리토리스에 맛서쟈를 맞힐 수 있어 연달아절정에 이르면서 계속 몸부림쳤다.
+				PRINTFORMW %타겟은()% 민감하게 되어 잘랐다클리토리스에 맛서쟈를 맞힐 수 있어 연달아절정에 이르면서 계속 몸부림쳤다.
 				PRINTFORMW (,  이 나무 주의라고, 히글자~♪)
 			ELSE
 				PRINTFORMW 「히아우우,  우아아아~♪」
-				PRINTFORMW %CALLNAME:TARGET%는 수치심도 모두 쾌감의 전에 물리쳤는지, 단정치 못한 목소리를 내고 번민 계속하고 있다.
+				PRINTFORMW %타겟은()% 수치심도 모두 쾌감의 전에 물리쳤는지, 단정치 못한 목소리를 내고 번민 계속하고 있다.
 			ENDIF
 		;연모+미약
 		ELSEIF TALENT:연모 && TEQUIP:미약
 			IF RAND:2 == 0
 				PRINTFORMW 「이나, 나! 그것, 후아아아아♪」
-				PRINTFORMW 흔들흔들 희미하게 목을 옆에 흔든다%CALLNAME:TARGET%노클리토리스에 맛서쟈를 맞혀 주면,%CALLNAME:TARGET%는 금새절정에 쫓아 버려져 등골을 뒤로 젖힐 수 있었다.
+				PRINTFORMW 흔들흔들 희미하게 목을 옆에 흔든다%CALLNAME:TARGET%노클리토리스에 맛서쟈를 맞혀 주면,%타겟은()% 금새절정에 쫓아 버려져 등골을 뒤로 젖힐 수 있었다.
 				PRINTFORMW (도, 도, 이런 기분이 좋은 것, 안돼~♪)
 			ELSE
 				PRINTFORMW 「우아아앗! ! 큐으윽!」
-				PRINTFORMW %CALLNAME:TARGET%는 클리토리스를 덮치는 강렬한 쾌감에, 벌벌하고 신체를 뛰게 한이면서 번민 계속했다.
+				PRINTFORMW %타겟은()% 클리토리스를 덮치는 강렬한 쾌감에, 벌벌하고 신체를 뛰게 한이면서 번민 계속했다.
 			ENDIF
 		;미약使用中かつ連続実行
 		ELSEIF TEQUIP:미약 && PREVCOM == SELECTCOM
 			IF RAND:2 == 0
 				PRINTFORMW 「히아아~♪ 으윽!」
-				PRINTFORMW %CALLNAME:TARGET%는 너무 강렬한 쾌감에 연속으로절정에 이르고 있다.
+				PRINTFORMW %타겟은()% 너무 강렬한 쾌감에 연속으로절정에 이르고 있다.
 				PRINTFORMW (들, 째, 나, 도, 안돼~……♪)
 			ELSE
 				PRINTFORMW 「히아우웃! 큐으윽~♪」
-				PRINTFORMW %CALLNAME:TARGET%는 허덕이는 소리가 새지 않도록입를 누르고 있지만, 그 신체가절정에 계속 이르고 있는 일을 여실에 나타내고 있었다.
+				PRINTFORMW %타겟은()% 허덕이는 소리가 새지 않도록입를 누르고 있지만, 그 신체가절정에 계속 이르고 있는 일을 여실에 나타내고 있었다.
 			ENDIF
 		;미약
 		ELSEIF TEQUIP:미약
@@ -1540,39 +1540,39 @@ IF SELECTCOM == 32
 				PRINTFORMW (부서지고, 기분 너무 좋아, 나, 부서지고 ♪)
 			ELSE
 				PRINTFORMW 「으윽!」
-				PRINTFORMW %CALLNAME:TARGET%는 필사적으로 소리를 견디면서, 쾌락에 쳐올려져 있다.
+				PRINTFORMW %타겟은()% 필사적으로 소리를 견디면서, 쾌락에 쳐올려져 있다.
 			ENDIF
 		;연모
 		ELSEIF TALENT:연모
 			IF RAND:2 == 0
 				PRINTFORMW 「히아아♪ 우아아아~♪」
-				PRINTFORMW %CALLNAME:TARGET%는 삐걱삐걱 신체를 진동시키면서절정를 반복하고 있다.
+				PRINTFORMW %타겟은()% 삐걱삐걱 신체를 진동시키면서절정를 반복하고 있다.
 				PRINTFORMW (와, 기분,  너무 좋아 ♪)
 			ELSE
 				PRINTFORMW 「도, 용서해 ……! ! !」
-				PRINTFORMW 흔들흔들하고 신체를 진동시키면서%CALLNAME:TARGET%는 그렇게 간절히 원하는.
-				PRINTFORMW 그러나, 그것을 무시해%CALLNAME:PLAYER%가 맛서쟈를 클리토리스에 꽉 누르면, %CALLNAME:TARGET%는 조수를 분출했다.
+				PRINTFORMW 흔들흔들하고 신체를 진동시키면서%타겟은()% 그렇게 간절히 원하는.
+				PRINTFORMW 그러나, 그것을 무시해%CALLNAME:PLAYER%가 맛서쟈를 클리토리스에 꽉 누르면, %타겟은()% 조수를 분출했다.
 			ENDIF
 		;굴복각인Lv3
 		ELSEIF MARK:굴복각인 == 3
 			IF RAND:2 == 0
 				PRINTFORMW 「히 아아! 야옹!」
-				PRINTFORMW %CALLNAME:TARGET%는 클리토리스를 덮치는 진동에, 벌벌하고 신체를 계속 진동시키고 있다.
+				PRINTFORMW %타겟은()% 클리토리스를 덮치는 진동에, 벌벌하고 신체를 계속 진동시키고 있다.
 				PRINTFORMW (부서지고 히야웃! 너무 강해, 부서지고 히야 우웃! )
 			ELSE
 				PRINTFORMW 「~♪ ~!」
-				PRINTFORMW %CALLNAME:TARGET%는 필사적으로입를 누르면서 쾌감을 견디고 있다.
+				PRINTFORMW %타겟은()% 필사적으로입를 누르면서 쾌감을 견디고 있다.
 				PRINTFORMW 그러나, 그 표정은 분명하게  녹고 자른 쓸모 있게 되고 있었다.
 			ENDIF
 		;それ以外
 		ELSE
 			IF RAND:2 == 0
 				PRINTFORMW 「꺄히♪ 히,  으윽~!」
-				PRINTFORMW %CALLNAME:TARGET%는 흔들흔들하고 떨리면서 맛서쟈의 진동에 참고 있다.
+				PRINTFORMW %타겟은()% 흔들흔들하고 떨리면서 맛서쟈의 진동에 참고 있다.
 				PRINTFORMW （로,로터보다, 부들부들 하고 있다……♪）
 			ELSE
 				PRINTFORMW 「이나, 싫엇……후아 아아!」
-				PRINTFORMW %CALLNAME:TARGET%는 내리는 거절하면 거절하고 있지만, 곧바로 쾌감에 삼켜지기의 것인지, 큰 교성을 질렀다.
+				PRINTFORMW %타겟은()% 내리는 거절하면 거절하고 있지만, 곧바로 쾌감에 삼켜지기의 것인지, 큰 교성을 질렀다.
 			ENDIF
 		ENDIF
 		RETURN 1
@@ -1795,18 +1795,18 @@ IF SELECTCOM == 60
 			;반발각인Lv3
 			IF MARK:반발각인 == 3
 				PRINTFORMW 「싫어, 싫어, 너무 싫어!」
-				PRINTFORMW %CALLNAME:TARGET%는 필사적으로 피하려고 날뛰고 있다….
+				PRINTFORMW %타겟은()% 필사적으로 피하려고 날뛰고 있다….
 			;연모＋순종Lv5
 			ELSEIF TALENT:연모 && ABL:순종 >= 5
 				PRINTFORMW 「…………」
-				PRINTFORMW 그래%CALLNAME:PLAYER%로부터 전해들으면,%CALLNAME:TARGET%는 개, 라고 일순간으로 얼굴을 새빨갛게 마음에 끌려라올린다.
+				PRINTFORMW 그래%CALLNAME:PLAYER%로부터 전해들으면,%타겟은()% 개, 라고 일순간으로 얼굴을 새빨갛게 마음에 끌려라올린다.
 				PRINTFORMW 그리고, 그 얼굴을 꾸깃꾸깃하게 해 큐, 라고%CALLNAME:PLAYER%에 달라붙어 왔다.
 				PRINTFORMW 「좋아……당신, 그러면……」
 				PRINTFORMW 그래, 다소공포그리고 떨리면서 고해 온다%타겟을()%,%CALLNAME:PLAYER%는 제대로 껴안아, 천천히삽입를 시작했다.
 			;それ以外
 			ELSE
 				PRINTFORMW 「이나, 나!」
-				PRINTFORMW %CALLNAME:TARGET%는 내리는 거절하면 거절해, 전력으로 싫어하고 있다.
+				PRINTFORMW %타겟은()% 내리는 거절하면 거절해, 전력으로 싫어하고 있다.
 				PRINTFORMW 「안된! 처음으로는, 좋아하는 사람과 라고, 결정했었는데 ……」
 			ENDIF
 		ENDIF
@@ -1817,7 +1817,7 @@ IF SELECTCOM == 60
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
 			PRINTFORMW 「~~~…!」
-			PRINTFORMW %CALLNAME:TARGET%는 눈의 구석에서 눈물을 띄우면서%조사처리(CALLNAME:PLAYER,"를")% 흘겨 보고 붙여 왔다.
+			PRINTFORMW %타겟은()% 눈의 구석에서 눈물을 띄우면서%조사처리(CALLNAME:PLAYER,"를")% 흘겨 보고 붙여 왔다.
 		;연모+미약使用中かつ連続実行
 		ELSEIF TALENT:연모 && TEQUIP:미약 && PREVCOM == SELECTCOM
 			IF RAND:2 == 0
@@ -2023,7 +2023,7 @@ IF SELECTCOM == 90
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
 			PRINTFORMW 「이나,  그런 것 꽉 누르지 마……!」
-			PRINTFORMW %CALLNAME:TARGET%는 눈앞에 강요했다페니스로부터 얼굴을 돌렸다. 억누르지 않으면 잡게 했다페니스로부터손를 떼어 놓아 버릴 것 같다…….
+			PRINTFORMW %타겟은()% 눈앞에 강요했다페니스로부터 얼굴을 돌렸다. 억누르지 않으면 잡게 했다페니스로부터손를 떼어 놓아 버릴 것 같다…….
 		;봉사정신Lv3이상
 		ELSEIF ABL:봉사정신 >= 3
 			PRINTFORMW 「히익? 움찔이라고……」
@@ -2032,9 +2032,9 @@ IF SELECTCOM == 90
 		;それ以外
 		ELSE
 			PRINTFORMW 「원…………」
-			PRINTFORMW %CALLNAME:TARGET%는 내밀어졌다페니스에 슬슬손를 늘려, 조금 접한 순간 흠칫손를 움츠렸다.
+			PRINTFORMW %타겟은()% 내밀어졌다페니스에 슬슬손를 늘려, 조금 접한 순간 흠칫손를 움츠렸다.
 			PRINTFORMW 「이, 이렇게 뜨거운거야……?」
-			PRINTFORMW 페니스에 고정되고 있던 시선을손의 히등에 초롱초롱 향해, 그리고%CALLNAME:TARGET%는 한번 더손를 천천히 늘리기 시작했다…….
+			PRINTFORMW 페니스에 고정되고 있던 시선을손의 히등에 초롱초롱 향해, 그리고%타겟은()% 한번 더손를 천천히 늘리기 시작했다…….
 		ENDIF
 		CFLAG:241 = 1
 		RETURN 1
@@ -2300,7 +2300,7 @@ IF SELECTCOM == 131
 		;それ以外
 		ELSE
 			PRINTFORMW 「아욱! 꺄앗!……아파, 그만두어 엣!」
-			PRINTFORMW %CALLNAME:TARGET%는 양팔로 얼굴을 감싸면서, %CALLNAME:PLAYER%에 애원 하고 있다.
+			PRINTFORMW %타겟은()% 양팔로 얼굴을 감싸면서, %CALLNAME:PLAYER%에 애원 하고 있다.
 		ENDIF
 		CFLAG:247 = 1
 		RETURN 1
@@ -2318,7 +2318,7 @@ IF SELECTCOM == 131
 		;それ以外
 		ELSE
 			PRINTFORMW 「얏,채찍하……이제 피부에 자국 붙이지 마앗！」
-			PRINTFORMW %CALLNAME:TARGET%는 좁은 실내를 필사적으로 도망치고 돌아, 방패가 될 것 같은 것을 찾아 그 그늘에 계속 숨었다 …….
+			PRINTFORMW %타겟은()% 좁은 실내를 필사적으로 도망치고 돌아, 방패가 될 것 같은 것을 찾아 그 그늘에 계속 숨었다 …….
 		ENDIF
 		RETURN 1
 	ENDIF
@@ -2338,9 +2338,9 @@ IF SELECTCOM == 132
 			PRINTFORMW 
 		;それ以外
 		ELSE
-		    PRINTFORMW %CALLNAME:PLAYER%하지만손로 하고 있는 것을 봐,%CALLNAME:TARGET%는 무서워한 표정으로 뒤로 물러나기 시작했다.
+		    PRINTFORMW %CALLNAME:PLAYER%하지만손로 하고 있는 것을 봐,%타겟은()% 무서워한 표정으로 뒤로 물러나기 시작했다.
 			PRINTFORMW 「이나, 싫어, 그런 것으로 뭐 하는 거야……? 너무 싫어, 가까워지지 말고, 여기 오지 않고, 나~!」
-			PRINTFORMW 벽에 키가 맞아, 이제 도망갈 장소가 없는 것을 깨달아%CALLNAME:TARGET%는 힘없이 거절했다…….
+			PRINTFORMW 벽에 키가 맞아, 이제 도망갈 장소가 없는 것을 깨달아%타겟은()% 힘없이 거절했다…….
 		ENDIF
 		CFLAG:248 = 1
 		RETURN 1
@@ -3572,7 +3572,7 @@ CASE "Ｃ절정"
 		;それ以外
 		ELSE
 			PRINTFORMW 「히,  응~!」
-			PRINTFORMW %CALLNAME:TARGET%는 클리토리스가 자극되면, 벌벌하고 신체를 뛰게 한다.
+			PRINTFORMW %타겟은()% 클리토리스가 자극되면, 벌벌하고 신체를 뛰게 한다.
 			PRINTFORMW 그 균열이나들 사와 꿀이 단속적으로 분출하고 있었다.
 		ENDIF
 	ENDIF
@@ -3587,7 +3587,7 @@ CASE "Ｖ절정"
 		;それ以外
 		ELSE
 			PRINTFORMW 「원,,  히……!」
-			PRINTFORMW 눅진눅진에 녹고 자른 소리를 필사적으로 억제하면서, %CALLNAME:TARGET%는 신체를 뛰게 한다.
+			PRINTFORMW 눅진눅진에 녹고 자른 소리를 필사적으로 억제하면서, %타겟은()% 신체를 뛰게 한다.
 			PRINTFORMW 그리고, 등골을 뒤로 젖힐 수 있으면, 처음질안에서 맛본다절정에 쳐 떨렸다.
 		ENDIF
 	ENDIF
@@ -3713,17 +3713,17 @@ CASE "처녀상실"
 			PRINTFORMW 
 		;花園プレイ中かつ好感度800이상(연모フラグ)
 		ELSEIF CFLAG:2 >= 800 && COND("화원")
-			PRINTFORMW 꽃나카에 누운%CALLNAME:TARGET%는, 세세하게 떨리면서%조사처리(CALLNAME:PLAYER,"를")% 올려보았다.
+			PRINTFORMW 꽃나카에 누운%타겟은()%, 세세하게 떨리면서%조사처리(CALLNAME:PLAYER,"를")% 올려보았다.
 			PRINTFORMW 「처음은 이런 장소에서, 멋진 사람과 라고 쭉 생각했어……. 이루어져 버렸다……일까」
-			PRINTFORMW %CALLNAME:TARGET%는 편손그리고 새빨간 얼굴을 가리면서, 이제(벌써) 편손그리고 슬슬다리를 열기 시작했다.
+			PRINTFORMW %타겟은()% 편손그리고 새빨간 얼굴을 가리면서, 이제(벌써) 편손그리고 슬슬다리를 열기 시작했다.
 			PRINTFORMW 「부탁……상냥하게 해……」
 			PRINTFORMW 달각달각 떨려 열지 못한다다리에손를 맞혀 밀어 열면,%CALLNAME:PLAYER%는 아직 유린된 적이 없는 균열에페니스를 꽉 눌렀다.%CALLNAME:TARGET%의 얼굴을 외면할 수 있어 눈이 꽉 감아졌다.
 			PRINTFORMW 「히……!…………아아……!」
 			PRINTFORMW 조금씩 비집고 들어가면, 균열안은 매우처녀라고는 생각되지 않는 대량의 꿀로 넘쳐나, 탐욕에 실룩거려 쭉쭉 안쪽에 삼켜 온다. 이윽고,페니스의 첨단에 딱 뭔가가 맞았다.
 			PRINTFORMW 「아, 아아……맞아 버린다……」
-			PRINTFORMW %CALLNAME:TARGET%는 눈을 크게 열어, 양손그리고 얼굴을 가렸다.%CALLNAME:PLAYER%세, 세심의 주의를 표하면서 허리를 훨씬 밀어넣었다.
+			PRINTFORMW %타겟은()% 눈을 크게 열어, 양손그리고 얼굴을 가렸다.%CALLNAME:PLAYER%세, 세심의 주의를 표하면서 허리를 훨씬 밀어넣었다.
 			PRINTFORMW 「아얏……아! …………는, 들어갔다……의?」
-			PRINTFORMW %CALLNAME:TARGET%는 양손의 사이부터 살그머니 들여다 봐 파과[破瓜]의 증거를 확인하면, 뚝뚝자꾸자꾸 눈물을 흘리기 시작했다.
+			PRINTFORMW %타겟은()% 양손의 사이부터 살그머니 들여다 봐 파과[破瓜]의 증거를 확인하면, 뚝뚝자꾸자꾸 눈물을 흘리기 시작했다.
 			PRINTFORMW 「 나, 드디어 주어버렸어……., 흑……후흑,,  기뻐요 ……」
 			;연모条件이벤트をこなすたびに연모フラグを立てていく
 			;[연모フラグ] += 1
@@ -3955,7 +3955,7 @@ IF BASE:PLAYER:절정 >= MAXBASE:PLAYER:절정 && INSERT("Ｖ인서트")
 	IF TALENT:연모 && EXP:질내정액경험 == 0
 		PRINTFORML 
 		PRINTFORMW 「이나, 뭉게뭉게 라고……혹, 혹시……낼 것 같은의?」
-		PRINTFORMW %CALLNAME:TARGET%는 뺨을 붉혔다.
+		PRINTFORMW %타겟은()% 뺨을 붉혔다.
 		PRINTFORMW 「……이대로 내면, 아기 생겨버려요……정말로 내버린다의……?」
 		PRINTL [0] 중에 낸다
 		PRINTL [1] 외에 낸다
@@ -3994,7 +3994,7 @@ IF BASE:PLAYER:절정 >= MAXBASE:PLAYER:절정 && INSERT("Ｖ인서트")
 	ELSEIF EXP:질내정액경험 == 0
 		PRINTFORML 
 		PRINTFORMW 「아니…이런 것으로 아기는 싫어……!」
-		PRINTFORMW %CALLNAME:TARGET%는 내리는 거절하면 머리를 흔들고 있는.
+		PRINTFORMW %타겟은()% 내리는 거절하면 머리를 흔들고 있는.
 		PRINTL [0] 중에 낸다
 		PRINTL [1] 외에 낸다
 		CALL INPUT_SELECT, 2
@@ -4008,7 +4008,7 @@ IF BASE:PLAYER:절정 >= MAXBASE:PLAYER:절정 && INSERT("Ｖ인서트")
 		IF COND("위험일")
 			PRINTFORML 
 			PRINTFORMW 「아, 그 ……오늘, 위험한 날이니까, 그……!」
-			PRINTFORMW 그것만 말하면, %CALLNAME:TARGET%는 얼굴을 남김없이 새빨갛게 해 목을 윙윙 흔들었다.
+			PRINTFORMW 그것만 말하면, %타겟은()% 얼굴을 남김없이 새빨갛게 해 목을 윙윙 흔들었다.
 			PRINTL [0] 중에 낸다
 			PRINTL [1] 외에 낸다
 			CALL INPUT_SELECT, 2
@@ -4044,20 +4044,20 @@ IF SHOOT("정액세례")
 		;연모+初めて
 		IF TALENT:연모
 			PRINTFORMW 「아……뜨겁다……」
-			PRINTFORMW %CALLNAME:TARGET%는, 뿌옇게 한 표정으로 %CALLNAME:PLAYER%의 정액을 신체중에 받고 있다.
+			PRINTFORMW %타겟은()%, 뿌옇게 한 표정으로 %CALLNAME:PLAYER%의 정액을 신체중에 받고 있다.
 			PRINTFORMW 「안……내지 않았다…」
-			PRINTFORMW 어딘가 유감스럽게 중얼거리면서도, %CALLNAME:TARGET%는 반 무의식 중에 몸의 정액을 건져 올려 끝까지 녹은 표정와 빨고 취하고 있었다.
+			PRINTFORMW 어딘가 유감스럽게 중얼거리면서도, %타겟은()% 반 무의식 중에 몸의 정액을 건져 올려 끝까지 녹은 표정와 빨고 취하고 있었다.
 		;굴복각인Lv3+初めて
 		ELSEIF MARK:굴복각인 == 3
 			PRINTFORMW 「꺄악!」
-			PRINTFORMW 눈을 꽉 닫아 정액을 받으면서, %CALLNAME:TARGET%는 떨고 있다.
+			PRINTFORMW 눈을 꽉 닫아 정액을 받으면서, %타겟은()% 떨고 있다.
 			PRINTFORMW 「아……중에 출없고 주었어?」
-			PRINTFORMW %CALLNAME:TARGET%는 둥실둥실 한 눈으로 %조사처리(CALLNAME:PLAYER,"를")% 응시하고 있다.
+			PRINTFORMW %타겟은()% 둥실둥실 한 눈으로 %조사처리(CALLNAME:PLAYER,"를")% 응시하고 있다.
 			PRINTFORMW (……의외로 상냥한 것인지……)
 		;それ以外+初めて
 		ELSE
 			PRINTFORMW 「아, 아아……」
-			PRINTFORMW %CALLNAME:TARGET%는, 쏟아지는 정액을 축 늘어져 받아들여.
+			PRINTFORMW %타겟은()%, 쏟아지는 정액을 축 늘어져 받아들여.
 			PRINTFORMW 「좋았던……밖에서 내 주었다……」
 		ENDIF
 	ENDIF
@@ -4107,16 +4107,16 @@ ELSEIF SHOOT("Ｖ내사정")
 		PRINTFORMW 「이나! 그만두어, 안에는 내지 말고! 나아아!」
 		PRINTFORMW 필사적으로 날뛰어도 허약하다%CALLNAME:TARGET%노저항를 아랑곳하지 않고,%CALLNAME:PLAYER%는 질의 안쪽까지페니스를 쳐박으면백탁를 사양말고 풀었다.
 		PRINTFORMW 「아아……싫어, 싫어요……아기 생겨버려……」
-		PRINTFORMW %CALLNAME:TARGET%는 절망의 눈물을 흘리고 있다…….
+		PRINTFORMW %타겟은()% 절망의 눈물을 흘리고 있다…….
 		PRINTFORMW 「……이런 것 싫어요……후흑, 집에 돌아가……」
 	;初めて
 	ELSEIF FIRST_EV("절정：Ｖ내사정") == 0
 		;연모
 		IF TALENT:연모
 			PRINTFORMW 「응……! 아, 뜨거운……이렇게 ……♪」
-			PRINTFORMW 처음이라면 말하는데, %CALLNAME:TARGET%는 정액으로 안쪽을 얻어맞을 때마다 신체를 뛰게 하고 느끼고 있었다.
+			PRINTFORMW 처음이라면 말하는데, %타겟은()% 정액으로 안쪽을 얻어맞을 때마다 신체를 뛰게 하고 느끼고 있었다.
 			PRINTFORMW 「아, 안……내 버린 것이다…….……당신의 아기의 아래, 나의 배안에……」
-			PRINTFORMW %CALLNAME:TARGET%는 넋을 잃고 하복부를 어루만지고 문지르고 있다.
+			PRINTFORMW %타겟은()% 넋을 잃고 하복부를 어루만지고 문지르고 있다.
 		;굴복각인Lv3+初めて
 		ELSEIF MARK:굴복각인 == 3 
 			PRINTFORMW 「히!, 히……안돼, 인데 ……뽑아, ……」
@@ -4124,7 +4124,7 @@ ELSEIF SHOOT("Ｖ내사정")
 			PRINTFORMW (아아, 왜 ……갇혀, 억지로 질로 나와 버린다 것에……나……)
 		;それ以外+初めて
 		ELSE
-			PRINTFORMW 비밀의 틈으로부터 피와 정액이 섞인 분홍색와 흘려 보내면서, %CALLNAME:TARGET%는 힘 없게 가로놓여 있다.
+			PRINTFORMW 비밀의 틈으로부터 피와 정액이 섞인 분홍색와 흘려 보내면서, %타겟은()% 힘 없게 가로놓여 있다.
 			PRINTFORMW 「나오고……. 모르는 사람에게, 나와 버렸다……」
 			PRINTFORMW 눈물이 사람관계, 그 뺨을 타 떨어졌다.
 		ENDIF

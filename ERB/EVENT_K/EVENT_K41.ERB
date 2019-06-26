@@ -215,7 +215,7 @@ ELSEIF NO:ASSI == 43
 					;바이브を持ってなくてもなぜか바이브が손元に
 					PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 바이브를 꺼내면%CALLNAME:TARGET%의 아래의 입에 입에 물게 했다, 터무니없게 삽입질 했다
 				ENDIF
-				PRINTFORMW 『와아～, 역시 범해지고 있을 때의%CALLNAME:TARGET%는 사랑스럽다～♪』
+				PRINTFORMW 『와아～, 역시 범해지고 있을 때의%타겟은()% 사랑스럽다～♪』
 				PRINTFORMW %조사처리(CALLNAME:ASSI,"는")% 빨도록(듯이), %CALLNAME:TARGET%의 \@ TALENT:빈유 ? 控えめに # たぷたぷと \@흔들린다가슴에 들러 붙었다
 				PRINTFORMW 「쿳…, 아…, 하, 너무 격렬하고…읏」
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 아랫 입술을 악물고, 쾌감에 참는 것만으로 힘껏의 같다
@@ -585,7 +585,7 @@ IF SELECTCOM == 1
 					PRINTFORMW 「벼, 별로, 이런 일 해 주지 않아도 괜찮아……」
 					PRINTFORM 「아니, 물론 기쁘지만 말야……
 					CALL HEARTMARK_E
-					PRINTFORMW %CALLNAME:TARGET%는 뭐라고도 말할 수 없다……그러나 기쁜 듯한 모습으로, 소근소근 중얼거렸다
+					PRINTFORMW %타겟은()% 뭐라고도 말할 수 없다……그러나 기쁜 듯한 모습으로, 소근소근 중얼거렸다
 				ELSEIF CHOSECOM(SELECTCOM) == 0 && CHECK_CLO("Ｖ노출") && RAND:2
 					IF RAND:2 && CHECK_STAIN(STAIN:Ｖ, "Ｐ", "정액", "Ａ", "破瓜の血") == 0
 						IF RAND:2
@@ -1602,7 +1602,7 @@ IF SELECTCOM == 31 && TEQUIP:바이브
 			IF CHECK("바이브") && RAND:2
 				PRINTFORML 「응……아～……♪……학！」
 				PRINTFORMW 「바, 바보, 따로 열중한 적 따위 없다고！」
-				PRINTFORMW %CALLNAME:TARGET%는 늘어질 것 같게 되었다입원래의 군침을 팔로 자연스럽게 닦았다
+				PRINTFORMW %타겟은()% 늘어질 것 같게 되었다입원래의 군침을 팔로 자연스럽게 닦았다
 			ELSE
 				PRINTFORMW 「응…빨리 괴롭혀…♪」
 			ENDIF
@@ -6115,7 +6115,7 @@ IF SHOOT("정액세례") || SHOOT("입") || SHOOT("가슴") || SHOOT("스마타"
 		PRINTFORMW 「기분 좋은 것 같은얼굴해 버려……킥킥」
 	ELSEIF SHOOT("입淫") && SHOOT("顔")
 		PRINTFORMW 「읏……♪ 무엇이다, 먹여 주지 않는거야？」
-		PRINTFORMW %CALLNAME:TARGET%는 얼굴에 부착했다정액를, 집게 손가락으로 닦아 낼름 1빨고 했다
+		PRINTFORMW %타겟은()% 얼굴에 부착했다정액를, 집게 손가락으로 닦아 낼름 1빨고 했다
 	ELSE
 		PRINTFORMW 「아하하핫, 가 버렸다아？」
 		PRINTFORMW 「그렇지만 먹고발리나 있어라……아직도! ｣
@@ -6560,7 +6560,7 @@ CASE "아침파이즈리"
 		PRINTFORML 「안녕」
 		PRINTFORMW 「이봐, 나의 저반발베개의 상태는 어땠다？」
 		PRINTFORMW 「…………뭐야 이상한 얼굴 해. 뭐 어쩔 수 없는가―, 자고 일어나기이고」
-		PRINTFORMW %CALLNAME:TARGET%는 부드러운가슴그래서,%CALLNAME:MASTER%의 귀두물컹 조금 강하게 자극해 왔다.
+		PRINTFORMW %타겟은()% 부드러운가슴그래서,%CALLNAME:MASTER%의 귀두물컹 조금 강하게 자극해 왔다.
 		PRINTFORMW 「이봐요, 깨끗이 해도 좋아」
 	;ENDIF
 	RETURN 1
@@ -6930,7 +6930,7 @@ CASE "피임의부적"
 	;初めて
 	IF FIRST_EV(ARGS) == 0
 		PRINTFORMW 「헤에. 편리한 것이 있는 것이구나」
-		PRINTFORMW %CALLNAME:TARGET%는 흥미와 감심이 뒤섞인 얼굴로, 부적에 대한 해설에 귀를 기울이고 있다
+		PRINTFORMW %타겟은()% 흥미와 감심이 뒤섞인 얼굴로, 부적에 대한 해설에 귀를 기울이고 있다
 	ELSEIF TALENT:연모
 		;装着
 		IF TALENT:피임의부적
@@ -6938,7 +6938,7 @@ CASE "피임의부적"
 		;取り外し
 		ELSE
 			PRINTFORMW 「이것이란 말야.……그런 일이지요？」
-			PRINTFORMW %CALLNAME:TARGET%는 뺨을 붉혀,%CALLNAME:MASTER%를 곧바로 응시해 왔다
+			PRINTFORMW %타겟은()% 뺨을 붉혀,%CALLNAME:MASTER%를 곧바로 응시해 왔다
 		ENDIF
 	ELSE
 		IF TALENT:피임의부적
