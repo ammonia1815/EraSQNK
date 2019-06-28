@@ -4,7 +4,7 @@
 ;FLAG:50の各bitで各種フラグを記録する(基本的にはボス遭遇と보스격파)
 ; 0- 4	에르툼삼림
 ; 5- 9	류두흐동굴
-;10-14	안쇼스海
+;10-14	안쇼스 해
 ;15-19	베르나도트의대미궁
 ;20-24	고즈번 사막
 ;25-29	키아즈마의유곽
@@ -319,8 +319,8 @@ CASE "에르툼삼림"
 	PRINTFORML %"～에르툼삼림～", 25, LEFT% %"BOSS：스코그슬로", 25, LEFT% 유니크：티타니아
 CASE "류두흐동굴"
 	PRINTFORML %"～류두흐동굴～", 25, LEFT% %"BOSS：스투나＆멜로나", 25, LEFT% 유니크：뷔이브
-CASE "안쇼스海"
-	PRINTFORML %"～안쇼스海～", 25, LEFT% %"BOSS：레비아탄", 25, LEFT% 유니크：카리브디스
+CASE "안쇼스 해"
+	PRINTFORML %"～안쇼스 해～", 25, LEFT% %"BOSS：레비아탄", 25, LEFT% 유니크：카리브디스
 CASE "베르나도트의대미궁"
 	PRINTFORML %"～베르나도트의 대미궁～", 25, LEFT% %"BOSS：베르나도트", 25, LEFT%
 CASE "고즈번 사막"
@@ -385,7 +385,7 @@ CASE "류두흐동굴"
 	CALL SET_PALAM_EXPLORER, "몽마", 12, 2
 	CALL SET_PALAM_EXPLORER, "基本の敵キャラ", 6
 
-CASE "안쇼스海"
+CASE "안쇼스 해"
 	CALL SET_PALAM_EXPLORER, "遭遇率", 30
 	CALL SET_PALAM_EXPLORER, "아이템発見率", 35
 	CALL SET_PALAM_EXPLORER, "아이템레벨", 3
@@ -474,8 +474,8 @@ CASE "에르툼삼림"
 CASE "류두흐동굴"
 	SIF PALAM_EXPLORER("류두흐동굴：보스격파")
 		CALL SET_PALAM_EXPLORER, "계단발견率", 20
-CASE "안쇼스海"
-	SIF PALAM_EXPLORER("안쇼스海：보스격파")
+CASE "안쇼스 해"
+	SIF PALAM_EXPLORER("안쇼스 해：보스격파")
 		CALL SET_PALAM_EXPLORER, "계단발견率", 20
 CASE "베르나도트의대미궁"
 	SIF PALAM_EXPLORER("베르나도트의대미궁：보스격파")
@@ -749,7 +749,7 @@ IF RAND:100 < PALAM_EXPLORER("계단발견率") && PALAM_EXPLORER("플로어") <
 			SIF CONFIG("탐색ボス") || GETCHARA(34) < 0
 				CALL SET_PALAM_EXPLORER, "몽마", 34, 5
 		ENDSELECT
-	CASE "안쇼스海"
+	CASE "안쇼스 해"
 		SELECTCASE PALAM_EXPLORER("플로어")
 		;카리브디스増量
 		CASE 3
@@ -895,8 +895,8 @@ CASE "류두흐동굴：中보스격파"
 	SETBIT FLAG:50, 5
 CASE "류두흐동굴：보스격파"
 	SETBIT FLAG:50, 6
-;10-14	안쇼스海
-CASE "안쇼스海：보스격파"
+;10-14	안쇼스 해
+CASE "안쇼스 해：보스격파"
 	SETBIT FLAG:50, 10
 ;15-19	베르나도트의대미궁
 CASE "베르나도트의대미궁：보스격파"
@@ -1087,8 +1087,8 @@ CASE "류두흐동굴：中보스격파"
 	RETURNF GETBIT(FLAG:50, 5)
 CASE "류두흐동굴：보스격파"
 	RETURNF GETBIT(FLAG:50, 6)
-;10-14	안쇼스海
-CASE "안쇼스海：보스격파"
+;10-14	안쇼스 해
+CASE "안쇼스 해：보스격파"
 	RETURNF GETBIT(FLAG:50, 10)
 ;15-19	베르나도트의대미궁
 CASE "베르나도트의대미궁：보스격파"
