@@ -2759,12 +2759,12 @@ CASE "휴식"
 	ENDIF
 
 CASE "査察"
-	PRINTFORMW 몽마들이 잘 일하고 있는지 궁금해졌다 %CALLNAME:MASTER%는 , 변장하고 사찰 해보기로했습니다
+	PRINTFORMW 몽마들이 잘 일하고 있는지 궁금해졌다 %마스터는()% , 변장하고 사찰 해보기로했습니다
 	PRINTFORMW ……………
 	PRINTFORMW ………
 	PRINTFORMW …
 	IF ABL:MASTER:기교 - ABL:기교/2 - RAND:10 >= 0
-		PRINTFORMW 솜씨좋게 변장해%CALLNAME:MASTER%는 입점시 누구에게도 들키지 않고 몰래 매장의 모습을 들었습니다
+		PRINTFORMW 솜씨좋게 변장해%마스터는()% 입점시 누구에게도 들키지 않고 몰래 매장의 모습을 들었습니다
 		IF RAND:2 && (FIND_COND("출연가능な점원", "강기") || TALENT:상사상애)
 			PRINTFORMW 그러자,%CALLNAME:TARGET%의 폐인 손님 이 따라다녀 성희롱 비슷한 행위를 받고 있습니다！
 			IF FIND_COND("출연가능な점원", "강기") && RANDIF(1, TALENT:상사상애)
@@ -2784,12 +2784,12 @@ CASE "査察"
 		PRINTFORMW 하지만%CALLNAME:TARGET%의 목소리에, 모두 일하러 돌아갔습니다
 		PRINTFORMW %타겟은()% 상당한 발언권이 있는 것 같습니다
 	ELSE
-		PRINTFORMW 변장 한%CALLNAME:MASTER%는 , 몰래 가게를 관찰하고있었습니다 만……
+		PRINTFORMW 변장 한%마스터는()% , 몰래 가게를 관찰하고있었습니다 만……
 		PRINTFORMW 가까이 다가온%CALLNAME:TARGET%가 갑자기%CALLNAME:MASTER%의가랑이에 접근해 왔습니다.
 		WAITRESS = FIND_COND("출연가능な점원")
 		SETBIT CFLAG:WAITRESS:95, 1
 		PRINTFORMW %CALLNAME:TARGET%가 조용이 웃고 멀어지면서 이번에는%CALLNAME:WAITRESS%가 마찬가지로 다가오고 있습니다
-		PRINTFORMW ……%CALLNAME:MASTER%는 전부 들켜버려서, 몽마들의 장난감이 되어버렸습니다
+		PRINTFORMW ……%마스터는()% 전부 들켜버려서, 몽마들의 장난감이 되어버렸습니다
 		PRINTFORMW 너무 당당히 점원들이 끈적 끈적하고 있었으므로, 점내의 손님에게 \@ TALENT:MASTER:남자 ? 질투 # 好奇 \@보여져 버렸습니다.
 	ENDIF
 
@@ -3972,7 +3972,7 @@ CASE 4
 	ENDIF
 CASE 5
 	PRINTFORMW %CALLNAME:MASTER%이 폐점 후의 탈의실을 방문하자, %CALLNAME:TARGET%가 녹초가 되어 소파에 앉아있습니다…
-	PRINTFORMW 그 모습을 보다못한 %CALLNAME:MASTER%는, 지친 다리를 맛사지해 주기로 했습니다. 
+	PRINTFORMW 그 모습을 보다못한 %마스터는()%, 지친 다리를 맛사지해 주기로 했습니다. 
 	PRINTFORM %타겟은()% 
 	;솔직
 	IF TALENT:솔직 && RANDIF(1, TALENT:양기, TALENT:부끄럼쟁이, TALENT:소악마, TALENT:호색, TALENT:교만, TALENT:강기)

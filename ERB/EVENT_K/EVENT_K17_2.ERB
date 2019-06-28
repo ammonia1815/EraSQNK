@@ -57,7 +57,7 @@ IF GETBIT(CFLAG:201, 0) == 0
 	SIF TALENT:MASTER:남자
 		SETBIT CFLAG:201, 33
 	PRINTFORMW %타겟을()% 소환한 방의 문을 열면, 거기에는 아무도 없었다…
-	PRINTFORMW 확실히 소환했을 것인데, 와 고개를 갸웃한%CALLNAME:MASTER%는, 방의 한가운데에 비단 모자가 떨어지고 있는데 깨달았다
+	PRINTFORMW 확실히 소환했을 것인데, 와 고개를 갸웃한%마스터는()%, 방의 한가운데에 비단 모자가 떨어지고 있는데 깨달았다
 	PRINTFORMW 본 기억에도 없는 거기에 가까워지면, 비단 모자중에서 연기가 벌써 벌써솟아오르고 있다!
 	PRINTFORMW 「야는은--!」
 	PRINTFORMW 돌연, 비단 모자로부터 비둘기든지 화려한 종이 테이프든지와 함께, %조사처리(CALLNAME:TARGET,"가")% 튀어 나왔다!
@@ -66,31 +66,31 @@ IF GETBIT(CFLAG:201, 0) == 0
 	PRINTFORMW 「당신 같은 것에 이 나의 상대가 감당해내면 생각일까?」
 	;마스터が호기심
 	IF TALENT:MASTER:호기심
-		PRINTFORMW %CALLNAME:TARGET%의 드 화려한 등장에, %CALLNAME:MASTER%는 손을 두드려 기꺼이 있다
+		PRINTFORMW %CALLNAME:TARGET%의 드 화려한 등장에, %마스터는()% 손을 두드려 기꺼이 있다
 		PRINTFORMW 「…아, 그런에 눈을 빛낼 수 있어 주면 나도 수줍지 말아줘, 히히힛」
 		PRINTFORMW %CALLNAME:MASTER%가 매우 기뻐하는 모습에, %타겟은()% 조금 수줍어하고 있는 것 같다
 	;마스터が겁쟁이
 	ELSEIF TALENT:MASTER:겁쟁이
 		;조수いない
 		IF ASSI <= 0
-			PRINTFORMW 그러나%CALLNAME:MASTER%는 돌연 울린 작렬음에, %CALLNAME:TARGET%의 연극전의 설명도 듣지 않고 방의 구석에서 떨고 있었다
+			PRINTFORMW 그러나%마스터는()% 돌연 울린 작렬음에, %CALLNAME:TARGET%의 연극전의 설명도 듣지 않고 방의 구석에서 떨고 있었다
 		;조수も겁쟁이
 		ELSEIF TALENT:ASSI:겁쟁이
-			PRINTFORMW 그러나 돌연 울린 작렬음에, %CALLNAME:MASTER%는%CALLNAME:TARGET%의 연극전의 설명도 듣지 않고%CALLNAME:ASSI%과 얼싸안아 방의 구석에서 떨고 있었다
+			PRINTFORMW 그러나 돌연 울린 작렬음에, %마스터는()%%CALLNAME:TARGET%의 연극전의 설명도 듣지 않고%CALLNAME:ASSI%과 얼싸안아 방의 구석에서 떨고 있었다
 		;조수は平気
 		ELSE
-			PRINTFORMW 그러나 돌연 울린 작렬음에, %CALLNAME:MASTER%는%CALLNAME:TARGET%의 연극전의 설명도 듣지 않고%CALLNAME:ASSI%의 등뒤에 숨어 떨고 있었다
+			PRINTFORMW 그러나 돌연 울린 작렬음에, %마스터는()%%CALLNAME:TARGET%의 연극전의 설명도 듣지 않고%CALLNAME:ASSI%의 등뒤에 숨어 떨고 있었다
 		ENDIF
 		PRINTFORMW 「…자, 잠깐 너무 무서워해요 …소환자가 그렇게 무서워해 어떻게 할 거야?」
-		PRINTFORMW %CALLNAME:MASTER%는%CALLNAME:TARGET%의 당황해서 달래는 모습에, 간신히 침착성을 되찾았다
+		PRINTFORMW %마스터는()%%CALLNAME:TARGET%의 당황해서 달래는 모습에, 간신히 침착성을 되찾았다
 	;마스터が무관심か감정결핍
 	ELSEIF TALENT:MASTER:무관심 || TALENT:MASTER:감정결핍
-		PRINTFORMW 그렇게 말하고 큰 웃음하는%타겟을()%, %CALLNAME:MASTER%는 전혀 동요하지 않고 서늘하게 바라보고 있다
+		PRINTFORMW 그렇게 말하고 큰 웃음하는%타겟을()%, %마스터는()% 전혀 동요하지 않고 서늘하게 바라보고 있다
 		PRINTFORMW 「…있잖아, 모처럼 이렇게 해서 화려하게 등장했으니까, 조금만 더 Re Action를 갖고 싶지만」
 		PRINTFORMW %CALLNAME:MASTER%의 차가운 반응에, %조사처리(CALLNAME:TARGET,"가")% 쌓이지 않는 듯이  투덜대고 있다
 	;その他
 	ELSE
-		PRINTFORMW 그렇게 말하고 큰 웃음하는%CALLNAME:TARGET%에, %CALLNAME:MASTER%는 간신히 상황을 삼킬 수 있어 왔다
+		PRINTFORMW 그렇게 말하고 큰 웃음하는%CALLNAME:TARGET%에, %마스터는()% 간신히 상황을 삼킬 수 있어 왔다
 		PRINTFORMW 「후후훗, 놀랐어? 뭐 이런 것은 시험이지만!」
 		PRINTFORMW %타겟은()% 그렇게 말하고 가슴을 편다
 	ENDIF
@@ -104,7 +104,7 @@ IF GETBIT(CFLAG:201, 0) == 0
 	;それ以外
 		PRINTFORMW 「으로, 이 나를 호출한 것은 당신인 것? 이 나에게 무엇을 바라는 거야? 금? 명성? 그렇지 않으면 세계 정복?」
 	ENDIF
-	PRINTFORMW %CALLNAME:MASTER%는, 지금부터%타겟을()% 조교해, 팔아 치우려 하고 있는 것을 전했다
+	PRINTFORMW %마스터는()%, 지금부터%타겟을()% 조교해, 팔아 치우려 하고 있는 것을 전했다
 	;마스터が겁쟁이
 	IF TALENT:MASTER:겁쟁이
 		PRINTFORMW 「네―…당신에게는 절대로 불가능하다고 생각해요…」
@@ -215,7 +215,7 @@ ELSEIF GETBIT(CFLAG:201, 1) == 0 && MARK:굴복각인 == 1
 	PRINTFORMW 「으응~…」
 	PRINTFORMW %타겟은()% 생각에 빠지고 있는 것 같다
 	PRINTFORMW 「아, 왔어?」
-	PRINTFORMW %CALLNAME:MASTER%는%조사처리(CALLNAME:TARGET,"가")% 멍하니 하고 있던 이유를 물어 보았다
+	PRINTFORMW %마스터는()%%조사처리(CALLNAME:TARGET,"가")% 멍하니 하고 있던 이유를 물어 보았다
 	PRINTFORMW 「생각한것 보다 당신의 팔이 좋기 때문에…방심할 수 없네요, 라고」
 	PRINTFORMW 「뭐, 이 나라고 하는 소재 그 자체의 매력도 있던 일이니까, 무리도 없을까」
 	SETBIT CFLAG:201, 1
@@ -249,7 +249,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 		PRINTFORMW 「…아♪」
 		PRINTFORMW %CALLNAME:MASTER%가 방에 들어간 순간, %타겟은()% 기쁜듯이 얼굴을 피기 시작하게 한다
 		PRINTFORMW 「흐응후후…"저기,  조금 괜찮은 이야기가 있는데. 들어주었으면 하는데∼」
-		PRINTFORMW 기도하는 것 같은 웃는 방법과 명백하게 이상한 이야기 방편에, %CALLNAME:MASTER%는 노골적으로 의아스러운 얼굴을 해 보인다
+		PRINTFORMW 기도하는 것 같은 웃는 방법과 명백하게 이상한 이야기 방편에, %마스터는()% 노골적으로 의아스러운 얼굴을 해 보인다
 		PRINTFORMW 「괘, 괜찮아요! 피흡원인생 행로라든지 영혼을 넘겨라라든지, 그러한 이야기가 아니니까!」
 		PRINTFORMW 「당신의 손해에는 절대로 안 돼요! 수명이 줄어든다든가 그러한 부록도 없음!」
 		PRINTFORMW 「야! 이것! 이 계약서!」
@@ -316,7 +316,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 			ELSE
 				PRINTFORMW 「하, 하지만,  당신은, 그, 여자아이로…인데, 내가 신부로, 그…정말로, 좋은거야?」
 			ENDIF
-			PRINTFORMW %CALLNAME:MASTER%는 상냥하게 미소지어 수긍하면, %타겟은()% 양손을 뺨에 대어 숙여 버렸다
+			PRINTFORMW %마스터는()% 상냥하게 미소지어 수긍하면, %타겟은()% 양손을 뺨에 대어 숙여 버렸다
 			PRINTFORMW 「은, 이야기가 잘 지나쳐, 조금, 무섭다」
 			PRINTFORMW 희미하게 떨고 있는%타겟을()% 꼭 껴안아 상냥하게 사랑을 속삭인…%타겟은()% 뺨을 새빨갛게 물들여, %CALLNAME:MASTER%를 곧바로 응시하고 있다
 			PRINTFORMW 「이나,,  기쁘다…! 아, 그!, 보잘것없는 저입니다만, 잘 부탁드립니다…!」
@@ -365,7 +365,7 @@ ELSEIF GETBIT(CFLAG:201, 3) && TALENT:연모 && GETBIT(CFLAG:201, 30) == 0 && GE
 		ELSE
 			PRINTFORMW 행위 자체는 진짜10초 정도로 별로 들이마셔진 느끼기도 하지 않았지만, %타겟은()% 만족할 것 같은 미소를 띄워 입을 닦고 있다
 			PRINTFORMW 「아아, 맛있었다…♪ 앞으로도 조금으로 좋기 때문에, 가끔 들이마시게 해 주세요 ♪」
-			PRINTFORMW …과연 「조금」으로 끝나는 것일까? %CALLNAME:MASTER%는 조금할 경황은 아닌 불안감을 느꼈다…
+			PRINTFORMW …과연 「조금」으로 끝나는 것일까? %마스터는()% 조금할 경황은 아닌 불안감을 느꼈다…
 		ENDIF
 		SETBIT CFLAG:201, 30
 	;いいえ
@@ -478,7 +478,7 @@ ELSEIF NO:ASSI == 21
 			PRINTFORMW 「,  어쩌지…그 대천사가 연적이라니, 아수라장도 참 좋을 때가 아닙니까!」
 			PRINTFORMW 「연적? 흐응…너,  %CNAMET(ASSI, "주인")%에 대해서 노리고 있어? 」
 			PRINTFORMW 「아니요 아니요! 적수이라니 터무니없다! 나는 당신의 야해 하인입니다!」
-			PRINTFORMW 필요이상으로에 개에 비비는%CALLNAME:TARGET%에, %CALLNAME:MASTER%는 어깨를 움츠려 보인다
+			PRINTFORMW 필요이상으로에 개에 비비는%CALLNAME:TARGET%에, %마스터는()% 어깨를 움츠려 보인다
 			PRINTFORMW 「실마리, 어쩔수가 없잖아…저쪽의 세계는 힘 있는 것은 절대이니까…」
 		;それ以外
 		ELSE
@@ -747,7 +747,7 @@ IF STATE("撃沈", MASTER)
 		PRINTFORMW 「아하,  그렇게 안타까운 것 같은 얼굴을 해 …좋아요, 좀더 좀더 잘 해 주네요 ♪」
 		PRINTFORMW 다르다, 라고 말하려고 한%CALLNAME:MASTER%의 입술에, 욕정해 버린%CALLNAME:TARGET%의 입술이 겹쳐, 혀를 침입시켜 온다
 		PRINTFORMW 「흐응, 흐응후후…괜찮아요, 때문인지 가 될 때까지, 깨끗하게 밥있기 때문에…잘 먹겠습니다♪」
-		PRINTFORMW %CALLNAME:TARGET%의 꾸짖어에 저항할 수도 있지 않고, %CALLNAME:MASTER%는 쾌락의 후치로 쫓아 버려져 갔다…
+		PRINTFORMW %CALLNAME:TARGET%의 꾸짖어에 저항할 수도 있지 않고, %마스터는()% 쾌락의 후치로 쫓아 버려져 갔다…
 	;その他
 	ELSE
 		PRINTFORMW 「어머머, 한심하네요?」
@@ -6086,7 +6086,7 @@ CASE "매각した"
 		PRINTFORMW 한 바탕 분노를 폭발시킨 후, %타겟은()% 아주 어쩐지 나른한 듯이  말을 계속한다
 		PRINTFORMW 「……어쩔 수 없네요. 원래  당신은 그러한 직업이고」
 		PRINTFORMW 「예, 이번은 단념합시다. 얌전히 물러나면 합시다」
-		PRINTFORMW 함축이 있는%CALLNAME:TARGET%의 대사에, %CALLNAME:MASTER%는 조금만 표정을 단단하게 한다
+		PRINTFORMW 함축이 있는%CALLNAME:TARGET%의 대사에, %마스터는()% 조금만 표정을 단단하게 한다
 		PRINTFORMW 「당연합니다와도, 이렇게 멋진 당신을 단념해라이라니, 무리를 말씀하시기에도 정도가 있습니다」
 		PRINTFORMW 「그러니까, 뒤로 합니다. 빠른 늦은은 있는 것으로 해도, 당신이 이 세상에 존재하고 있는 동안에, 절대로 맞이하러 오르는」
 		PRINTFORMW 「나에 대한 것은 빨리 잊어 주세요. 싸움에 진 개의 원 짖고와 일소에 붙여, 부디 기억으로부터 싹둑 말소해 주세요」

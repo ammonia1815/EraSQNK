@@ -86,7 +86,7 @@ ELSEIF GETBIT(CFLAG:201, 0) == 0 && BASE:몇번째 == 3
 	PRINTFORMW %타겟은()% 기대 가득%CALLNAME:MASTER%로 얽혀 붙는다
 	PRINTFORMW 「%CNAME("二人称")%는 내 것인데…언니들도 참 쓸데없는 노력을 좋아하는 것 같다♪」
 	PRINTFORMW 작은 악마의 미소로 자들을 업신여긴다
-	PRINTFORMW %CALLNAME:MASTER%는 가볍게%CALLNAME:TARGET%의 머리를 찔렀다
+	PRINTFORMW %마스터는()% 가볍게%CALLNAME:TARGET%의 머리를 찔렀다
 	PRINTFORMW 「아얏☆무우~뭐 해∼？」
 	PRINTFORMW 「…네? 언니들에 그런 것을 말하면 안돼? ………안녕(예)~」
 	PRINTFORMW 기본적으로 %CALLNAME:MASTER%이외로 흥미가 없는 것 같다
@@ -99,7 +99,7 @@ ELSEIF GETBIT(CFLAG:201, 0) == 0 && (BASE:몇번째 > 3 || BASE:세대 >= 2)
 	PRINTFORMW 「응…처음이니까……부탁해 %CNAME("二人称")%♪」
 	PRINTFORMW 아마 자신은 최저의 부류의 인간이다…
 	PRINTFORMW 그러나 금단의 단 꿀에 붙잡혀 버린 자신에게는 이 쾌락에 저항한다방법은…없다
-	PRINTFORMW %CALLNAME:MASTER%는 익숙해진 손놀림으로 %타겟을()% 껴안는다
+	PRINTFORMW %마스터는()% 익숙해진 손놀림으로 %타겟을()% 껴안는다
 	PRINTFORMW 「꺅☆」
 	PRINTFORMW %타겟은()%%CALLNAME:MASTER%의 팔에 절대의 안심감을 기억
 	PRINTFORMW 쾌락으로……몸을 맡겼다
@@ -119,12 +119,12 @@ ELSEIF GETBIT(CFLAG:201, 1) == 0 && MARK:굴복각인 == 1 && BASE:몇번째 == 
 	PRINTFORMW 받아들일 각오도……필요할 것이다.
 	PRINTFORMW 아직……다른 가정과 같이 살고 싶다
 	PRINTFORMW 그런 생각이 자신중에 있는 것 같다.
-	PRINTFORMW %CALLNAME:MASTER%는%CALLNAME:TARGET%의 머리를 상냥하게 어루만졌다…
+	PRINTFORMW %마스터는()%%CALLNAME:TARGET%의 머리를 상냥하게 어루만졌다…
 	SETBIT CFLAG:201, 1
 ;굴복각인Lv2
 ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2 && BASE:몇번째 == 1
 	PRINTFORMW %CALLNAME:TARGET%의 방으로부터 달콤한 목소리가 들린다….
-	PRINTFORMW %CALLNAME:MASTER%는 살그머니 방을 보았다
+	PRINTFORMW %마스터는()% 살그머니 방을 보았다
 	PRINTFORMW 「응……♪……%CNAME("二人称")%,  %CNAME("二人称")%~♪」
 	PRINTFORML 　
 	PRINTFORMW 방 안에서%타겟은()% 자위를 하고 있다…
@@ -144,7 +144,7 @@ ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2 && BASE:몇번째 == 
 ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0 && BASE:몇번째 == 1
 	PRINTFORMW 「%CNAME("二人称")%……와 주었었다……」
 	PRINTFORMW 목소리가 허약한…무슨 일인가 있었던 것일까?
-	PRINTFORMW %CALLNAME:MASTER%는 살그머니%CALLNAME:TARGET%의 근처에 앉았다
+	PRINTFORMW %마스터는()% 살그머니%CALLNAME:TARGET%의 근처에 앉았다
 	PRINTFORMW 「………"저기,  키스……해 주었으면 한다」
 	PRINTFORMW 작은 소리
 	PRINTFORMW 무심코 들어 놓치고 하지 않는다 그렇게일 정도
@@ -168,7 +168,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모 && BASE:몇번째 == 1
 	PRINTFORMW 종종하며옆까지 들러 온다…
 	PRINTFORMW ( 나…이 고백이 성공하면 %CNAME("二人称")%에 가득 귀여운이 라고 받는다♪)
 	PRINTFORMW 방에 들어가기 전…아마 보물 상자의 내용의 정리를 하고 있었을 것이다…
-	PRINTFORMW 스커트의 구석이 보물 상자에 협 기다리고 있는 일에 %CALLNAME:MASTER%는 깨닫았다
+	PRINTFORMW 스커트의 구석이 보물 상자에 협 기다리고 있는 일에 %마스터는()% 깨닫았다
 	PRINTFORMW ―――스톱!…그렇게 말하고 싶었지만 얘기하는 일보직전으로 참사는 일어났다
 	PRINTFORMW 드탄! 찌릿!
 	PRINTFORMW 성대한 소리를 지르고 마루로 눕는 %CALLNAME:TARGET%
@@ -289,7 +289,7 @@ IF BASE:몇번째 == 1
 	ELSEIF MARK:굴복각인 == 3
 		IF RAND:3 == 0
 			PRINTFORMW 방에 들어가면 거기에 %CALLNAME:TARGET%의 모습은 없고 평소의 보물 상자가 방의 중앙에 놓여져 있었다
-			PRINTFORMW 결심하고%CALLNAME:MASTER%는 보물 상자를 열려고 했다
+			PRINTFORMW 결심하고%마스터는()% 보물 상자를 열려고 했다
 			PRINTFORMW 「어? %CNAME("二人称")%? ………뭐 하는 거야?」
 			PRINTFORMW 이 아이와는 언제나 사이가 맞지 않는 생각이 든다….
 		ELSEIF RAND:2 == 0
@@ -331,7 +331,7 @@ IF BASE:몇번째 == 1
 				PRINTFORMW 「%CNAME("二人称")%는………」
 				PRINTFORMW 「싫다! 싫다!………매우 싫다!」
 				PRINTFORMW 「 벌써 모르는 걸!………흥」
-				PRINTFORMW 첫날밤에 실패한%CALLNAME:MASTER%는, 단지 사과할 것 밖에 할 수 없었다…
+				PRINTFORMW 첫날밤에 실패한%마스터는()%, 단지 사과할 것 밖에 할 수 없었다…
 			;처녀상실したか
 			ELSE
 				PRINTFORMW 「그런데, 응……이것으로 나…」
@@ -547,7 +547,7 @@ IF SELECTCOM == 0
 				ENDIF 
 			ELSEIF BASE:몇번째 == 3
 				PRINTFORMW 「"저기,  쪽…좀더 쪽 하고 싶다∼☆」
-				PRINTFORMW 모친을 닮았는지%CALLNAME:MASTER%는 입술을 억지로 빼앗겼다
+				PRINTFORMW 모친을 닮았는지%마스터는()% 입술을 억지로 빼앗겼다
 			ELSE
 				PRINTFORMW 「%CNAME("二人称")%………기분이 좋아…」
 				PRINTFORMW 눈이 맞아 활짝 하며 미소지어 걸칠 수 있다…
@@ -1520,7 +1520,7 @@ IF SELECTCOM == 60
 					PRINTFORML 거기까지 말하면 팔을%CALLNAME:MASTER%의 목의 뒤로 돌려
 					PRINTFORMW 눈을 감고%CALLNAME:MASTER%의 고문에 몸을 맡겼다……
 					CALL KOJO_AEGI_97_33_1
-					PRINTFORMW 러브 트랩이 풀 수  없는%CALLNAME:MASTER%는 가차 없이%CALLNAME:TARGET%의 안쪽에 안쪽으로 페니스를 찔러 넣었다……
+					PRINTFORMW 러브 트랩이 풀 수  없는%마스터는()% 가차 없이%CALLNAME:TARGET%의 안쪽에 안쪽으로 페니스를 찔러 넣었다……
 				ENDIF
 			;それ以外
 			ELSE
@@ -1551,7 +1551,7 @@ IF SELECTCOM == 60
 						PRINTFORMW 「이제 와서 보통으로 하다는………후훗」
 						PRINTFORMW 「우리들……별일이네요?」
 						PRINTFORMW 「역시 이상한 관계이니까일까?」
-						PRINTFORMW %CALLNAME:MASTER%는 대답하지 않는다…
+						PRINTFORMW %마스터는()% 대답하지 않는다…
 						PRINTFORMW 「 나……%CNAME("二人称")%이기 때문에라면 기꺼이 저속해져 가는…」
 						PRINTFORMW 「비유하고 그것이……지옥이라고 해도……♪」
 					;初밤で抜かずに정상위実行

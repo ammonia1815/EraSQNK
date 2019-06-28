@@ -155,7 +155,7 @@ ELSEIF GETBIT(CFLAG:201, 7) == 0 && GETBIT(CFLAG:201, 6) && TALENT:연모 && TAL
 	ENDIF
 	PRINTFORMW 「그…처음의 일이니까 매우 매우 불안해………무섭습니다」
 	PRINTFORMW 「%CNAME("二人称")%가 %CNAME("一人称")%들을 두어 없어져 버릴 것 같아…」
-	PRINTFORMW %CALLNAME:MASTER%는 「없어지거나 하지 않아」라고 말해%타겟을()% 강하게 껴안고, 넘어뜨리기
+	PRINTFORMW %마스터는()% 「없어지거나 하지 않아」라고 말해%타겟을()% 강하게 껴안고, 넘어뜨리기
 	PRINTFORMW 「엣？와, 이런 때도 합니까？ ……이제(벌써), 곤란한 사람
 	CALL HEARTMARK_E
 	SETBIT CFLAG:201, 7
@@ -577,7 +577,7 @@ ELSEIF GETBIT(CFLAG:201, 6) || GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「아…저, %CNAME("二人称")%…」
 			PRINTFORMW 지금일하%CALLNAME:TARGET%의 상태가 어쩐지 이상하다…
 			PRINTFORMW 얼굴하지만빨강쿠, 마음 탓인지 떨고 있는 것 같은…
-			PRINTFORMW %CALLNAME:MASTER%는 %CALLNAME:TARGET%에 가까워 짐, 열을 보려고 한다
+			PRINTFORMW %마스터는()% %CALLNAME:TARGET%에 가까워 짐, 열을 보려고 한다
 			PRINTFORMW 그러나 한층 더빨강구 되었다%CALLNAME:TARGET%에 밀어 넘어뜨려져 버렸다…
 			PRINTFORMW 「%CNAME("二人称")%읏…지금일하…그…위험하다일그래서…」
 			PRINTFORMW 「%CNAME("二人称")%노빨강를 갖고 싶습니다…그러니까…」
@@ -862,7 +862,7 @@ ELSEIF GETBIT(CFLAG:201, 6) || GETBIT(CFLAG:201, 30)
 			ELSE
 				PRINTFORMW 「저기, %CNAME("二人称")%………」
 				PRINTFORMW 「좀 더 이대로………」
-				PRINTFORMW %CALLNAME:MASTER%는 %타겟을()% 강하게 껴안아 주었다…
+				PRINTFORMW %마스터는()% %타겟을()% 강하게 껴안아 주었다…
 			ENDIF
 		ELSE
 			PRINTFORMW 「이제(벌써) 마지막이야？」
@@ -6336,7 +6336,7 @@ IF SELECTCOM == 171 && COND("마을")
 			;연모
 			ELSEIF TALENT:연모
 				PRINTFORMW 「할 수 있으면조교(이)가 아니고 데이트로 오고 싶었던 것입니다…」
-				PRINTFORMW 애석해 한다%타겟을()% 따라, %CALLNAME:MASTER%는 가까이의마을로 왔다…
+				PRINTFORMW 애석해 한다%타겟을()% 따라, %마스터는()% 가까이의마을로 왔다…
 			;それ以外
 			ELSE
 				PRINTFORMW 「그만두어………」
@@ -8895,7 +8895,7 @@ CASE "아침の새댁플레이"
 				PRINTFORMW 갖추어졌다가슴을주물렀다
 			ENDIF
 			PRINTFORMW 「꺗…(이)다, 안돼…지금 요리중이니까…」
-			PRINTFORM 무저항인 것을 구실로, %CALLNAME:MASTER%는 한층 더%CALLNAME:TARGET%의 
+			PRINTFORM 무저항인 것을 구실로, %마스터는()% 한층 더%CALLNAME:TARGET%의 
 			IF TALENT:큰엉덩이
 				PRINTFORM 통째로 해 거대한
 			ELSEIF TALENT:작은엉덩이
@@ -8903,7 +8903,7 @@ CASE "아침の새댁플레이"
 			ENDIF
 			PRINTFORMW 엉덩이를더듬는다…
 			PRINTFORMW 「앗♪…얏♪…(이)다, 안된다고 말하고 있는데……아읏♪」
-			PRINTFORMW %CALLNAME:MASTER%는 마음껏%CALLNAME:TARGET%의 반응을 즐겼다
+			PRINTFORMW %마스터는()% 마음껏%CALLNAME:TARGET%의 반응을 즐겼다
 		ELSEIF RAND:2 == 0
 			PRINTFORM 「아라%CNAME("二人称")%안녕……꺗
 			CALL HEARTMARK_E
@@ -9056,7 +9056,7 @@ CASE "添い寝"
 			PRINTFORMW %타겟을()% 행복하게 미소짓고 있다…
 		ELSEIF RAND:2 == 0
 			PRINTFORMW 「잘 수 없어서…함께 자 주지 않겠습니까？ %CNAME("二人称")%의 온기가 있으면 안심할 수 있습니다…」
-			PRINTFORMW %CALLNAME:MASTER%는 손그리고 불러%타겟을()% 침대안에 넣게 했다…
+			PRINTFORMW %마스터는()% 손그리고 불러%타겟을()% 침대안에 넣게 했다…
 		ELSE
 			PRINTFORM 「%CNAME("二人称")%의 신체…굉장히 따뜻합니다…
 			CALL HEARTMARK_E
@@ -9398,7 +9398,7 @@ CASE "비디오送付"
 			ENDIF
 		ENDIF
 		PRINTFORMW 「아, 축하에 와 주지 않아도 괜찮아요…그 대신, 앞으로도 비디오는 보내네요♪」
-		PRINTFORMW %CALLNAME:MASTER%는 결혼 보고라는 이름의 정교의 모습을 거둔 테이프를 더빙 해 로즈닐로 보냈다…
+		PRINTFORMW %마스터는()% 결혼 보고라는 이름의 정교의 모습을 거둔 테이프를 더빙 해 로즈닐로 보냈다…
 		SETBIT CFLAG:201, 35
 	;ビデオレター이벤트終了後
 	ELSE
@@ -9575,14 +9575,14 @@ CASE "서약의반지"
 	PRINTFORMW ―――이 장소에서 열어 줘, 라고 부탁해 선물을 열게 한다
 	PRINTFORMW 「도대체 무엇이 들어가 있겠지요♪………엣…조금 기다려, 이것은………」
 	PRINTFORMW 상자 중(안)에서 반짝인다반지를 봐%타겟을()% 소리를 잃고 있었다
-	PRINTFORMW %CALLNAME:MASTER%는 상자안에서반지를 꺼내 고하양했다―――
+	PRINTFORMW %마스터는()% 상자안에서반지를 꺼내 고하양했다―――
 	;他にも상사상애のキャラがいる
 	IF CHARA_NUM("상사상애") >= 2
 		LOCAL = FIND_COND("상사상애")
 		PRINTFORMW ―――일생 걸어 계속 사랑합니다, 그러니까 결혼해 주세요
 		PRINTFORMW 「…엣, 그래서, 그렇지만…%CNAME("二人称")%에는%CALLNAME:LOCAL%씨라든지가 있어…」
 		PRINTFORMW ―――그런데도당신를 갖고 싶다, 지금의 관계인 채는 싫다
-		PRINTFORMW %CALLNAME:MASTER%는 %CALLNAME:TARGET%에 껴안음, 더없는 마음 모든 것을 부딪친다
+		PRINTFORMW %마스터는()% %CALLNAME:TARGET%에 껴안음, 더없는 마음 모든 것을 부딪친다
 		PRINTFORMW ………
 		PRINTFORMW ……
 		PRINTFORMW …
@@ -9592,7 +9592,7 @@ CASE "서약의반지"
 		PRINTFORMW ―――당신하지만 제일 좋아합니다, 결혼해 주세요
 		PRINTFORMW 「…엣, 그래서, 그렇지만…%CNAME("一人称")%(와)과%CNAME("二人称")%는 여성같은 종류로…」
 		PRINTFORMW ―――일생이라면당신(와)과 함께 있고 싶다
-		PRINTFORMW %CALLNAME:MASTER%는 다그치도록(듯이)%CALLNAME:TARGET%에 사랑의 말을 걸었다
+		PRINTFORMW %마스터는()% 다그치도록(듯이)%CALLNAME:TARGET%에 사랑의 말을 걸었다
 		PRINTFORMW ………
 		PRINTFORMW ……
 		PRINTFORMW …
@@ -9601,7 +9601,7 @@ CASE "서약의반지"
 		PRINTFORMW ―――당신하지만 제일 좋아합니다, 결혼해 주세요
 		PRINTFORMW 「…엣, 그래서, 그렇지만…그……저………」
 		PRINTFORMW ―――일생이라면당신(와)과 함께 있고 싶다
-		PRINTFORMW %CALLNAME:MASTER%는 다그치도록(듯이)%CALLNAME:TARGET%에 사랑의 말을 걸었다
+		PRINTFORMW %마스터는()% 다그치도록(듯이)%CALLNAME:TARGET%에 사랑의 말을 걸었다
 		PRINTFORMW ………
 		PRINTFORMW ……
 		PRINTFORMW …
@@ -9609,7 +9609,7 @@ CASE "서약의반지"
 	ENDIF
 	PRINTFORMW %CALLNAME:TARGET%의 눈으로부터는 굵은 눈물이 넘쳐 흐름 시작한다…아, 저것…역시 안되었던가…？
 	PRINTFORMW 「흐흑…우웃……기쁜데……어째서…흐흑…눈물이, 멈추지 않는거야……! ! 」
-	PRINTFORMW %CALLNAME:MASTER%는 %CALLNAME:TARGET%가 울음을 그칠 때까지 껴안아 주었다…
+	PRINTFORMW %마스터는()% %CALLNAME:TARGET%가 울음을 그칠 때까지 껴안아 주었다…
 	PRINTFORMW ………
 	PRINTFORMW ……
 	PRINTFORMW …
@@ -9621,7 +9621,7 @@ CASE "서약의반지"
 	PRINTFORMW 「정말로…%CNAME("一人称")%그리고 좋습니까？다른 사람에 가랑이를 열게 되는 것 같은 경솔에서도…」
 	PRINTFORMW ―――그런 일 관계없다%CALLNAME:TARGET%가 좋다, 라고 말하면 굵은 눈물이 1개 흐름, 
 	PRINTFORMW 「…기뻐…입니닷%CNAME("一人称")%도%CNAME("二人称")%를 사랑하고 있습니닷, 쭉 함께 있고 싶습니닷」
-	PRINTFORMW %CALLNAME:MASTER%는 수긍하면, 반지를 약손가락에 꼈다………
+	PRINTFORMW %마스터는()% 수긍하면, 반지를 약손가락에 꼈다………
 	RETURN 1
 CASE "정액각인"
 	;굴복각인の具合によって異なる反応
