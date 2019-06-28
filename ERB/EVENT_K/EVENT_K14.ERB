@@ -65,7 +65,7 @@ ELSEIF GETBIT(CFLAG:201, 26) == 0 && COND("권속", MASTER) == TARGET
 		PRINTFORML 몽마의 마력에 완전히 무방비 상태로 더욱 더 %CALLNAME:TARGET%에 고문당하며 뽑혀져 버렸다…
 		PRINTFORMW 신체에 이상함을 느끼긴 했지만…그래도, %CALLNAME:TARGET%에게 당하는 쾌락에 몸부림 치지도 못했다…
 		PRINTFORML 「그래도, %CNAME("一人称")%의 시련에 지고 %CNAME("一人称")%와 똑같은 권속으로 변해버리다니, 놀랬어」
-		PRINTFORMW 「알아 채고 있는걸까…%CNAME("二人称")%은, 이미 %CNAME("一人称")%와 같은 유혹자, %CALLNAME:TARGET%가 되어 버렸어」
+		PRINTFORMW 「알아 채고 있는걸까…%CNAME("二人称")%은, 이미 %CNAME("一人称")%와 같은 유혹자, %타겟이()% 되어 버렸어」
 		PRINTFORML 「%CALLNAME:TARGET%…그래, %CNAME("一人称")%처럼 유혹의 시련을 주는 사람인거지」
 		PRINTFORMW 「이봐, 지금의 %CNAME("二人称")%의 모습을 보면, 잘 알 수 있을거야」
 		PRINTFORMW %타겟은()% 말 한 직후, %CALLNAME:PLAYER%의 신체를 잡고는 그 몸을 요염한 손놀림으로 쓰다듬기 시작했다
@@ -208,13 +208,13 @@ ELSEIF GETBIT(CFLAG:201, 5) == 0 && MARK:굴복각인 >= 0 && TALENT:서약
 	ENDIF
 	PRINTFORMW %CALLNAME:MASTER%은 정색을 하며 조교의 준비를 한다
 	PRINTFORMW 「에 뭐야, %CNAME("二人称")% 화내고 있는거야? 후훗, 귀여워」
-	PRINTFORMW 그리곤 %CALLNAME:TARGET%가 기습 키스를 했다.
+	PRINTFORMW 그리곤 %타겟이()% 기습 키스를 했다.
 	PRINTFORMW 「쪽, 후훗」
 	PRINTFORMW 「고마워」
 	SETBIT CFLAG:201, 5
 ;상사상애 상태가 되었다
 ELSEIF GETBIT(CFLAG:201, 6) == 0 && TALENT:상사상애
-	PRINTFORMW %CALLNAME:MASTER%이 방에 들어가자, 침대에 누워 반지를 착용한 손을 보고있는 %CALLNAME:TARGET%가 눈에 뜨인다.
+	PRINTFORMW %CALLNAME:MASTER%이 방에 들어가자, 침대에 누워 반지를 착용한 손을 보고있는 %타겟이()% 눈에 뜨인다.
 	PRINTFORMW 「아, 왔구나 %CNAME("二人称")% 기다리고 있었어」
 	PRINTFORMW 「%CNAME("二人称")%, 이젠 다 컷는걸 누님에게 그렇게 진지한 고백을 다 하다니 말이야」
 	PRINTFORMW %타겟은()% 반지를 받을때의 이야기를 하기 시작하며 당신을 놀리는것 같다
@@ -222,7 +222,7 @@ ELSEIF GETBIT(CFLAG:201, 6) == 0 && TALENT:상사상애
 	PRINTFORMW 「그런데 그렇게 진지한 눈빛으로 %CNAME("一人称")%에게 반지를 주다니 말이야」
 	PRINTFORMW 「그때 그 표정이라던가, 말하는 거라던가 정말 나를 놀라게 할 정도였지」
 	PRINTFORMW 「그러니까……달링?」
-	PRINTFORMW %CALLNAME:TARGET%가 당신을 천천히 밀어 넘어뜨린다
+	PRINTFORMW %타겟이()% 당신을 천천히 밀어 넘어뜨린다
 	PRINTFORMW 「오늘의 시작은 내가 확실히 해주겠어…」
 	PRINTFORMW %타겟은()% 당신을 끌어 안자, 엄청난 양의 색기와 향이 당신을 뒤덮는다
 	TEQUIP:넘어뜨리기 = 1
@@ -301,26 +301,26 @@ IF STATE("撃沈", MASTER)
 		PRINTFORMW 「후우……너무 빼내 버리고 말았네. 미안해. 어딘가 아픈 곳 없어?」
 		PRINTFORMW 「……에잇」
 		IF PENIS(MASTER) && RAND:2
-			PRINTFORMW %CALLNAME:TARGET%가 걱정하는 얼굴을 하고있구나 라고 생각하고 있을 때, 갑자기 %CALLNAME:MASTER%의 페니스를 강하게 훑어 내려 왔다.
+			PRINTFORMW %타겟이()% 걱정하는 얼굴을 하고있구나 라고 생각하고 있을 때, 갑자기 %CALLNAME:MASTER%의 페니스를 강하게 훑어 내려 왔다.
 			PRINTFORMW 그러자 요도에 남아 있던 정액이 약한 박동과 함께 뛰쳐나온다.
 			PRINTFORMW 「다행이네, 피는 나오지 않아. 후후훗」
 		ELSEIF PENIS(MASTER) == 0 && RAND:2
 			;MASTERが빈유の場合
 			IF TALENT:MASTER:빈유
-				PRINTFORMW %CALLNAME:TARGET%가 걱정하는 얼굴을 하고있구나 라고 생각하고 있을 때, 갑자기 %CALLNAME:MASTER%의 민감한 유두를 손가락으로 튕겼다.
+				PRINTFORMW %타겟이()% 걱정하는 얼굴을 하고있구나 라고 생각하고 있을 때, 갑자기 %CALLNAME:MASTER%의 민감한 유두를 손가락으로 튕겼다.
 				PRINTFORMW 탈진해 버린 몸에, 갑작스레 전기가 흐른 것 같은 충격을%CALLNAME:MASTER%은 받아 무심코 귀여운 목소리의 신음을 흘려 버렸다.
 			;MASTERが거유の場合
 			ELSEIF TALENT:MASTER:거유
-				PRINTFORMW %CALLNAME:TARGET%가 걱정하는 얼굴을 하고있구나 라고 생각하고 있을 때, 갑자기 %CALLNAME:MASTER%의 가슴의 전체를 잡아 끌어 당겼다.
+				PRINTFORMW %타겟이()% 걱정하는 얼굴을 하고있구나 라고 생각하고 있을 때, 갑자기 %CALLNAME:MASTER%의 가슴의 전체를 잡아 끌어 당겼다.
 				PRINTFORMW 탈진해 버린 몸에, 갑작스레 전기가 흐른 것 같은 충격을%CALLNAME:MASTER%은 받아 무심코 야한 목소리의 교성을 올려 버렸다.
 			;それ以外
 			ELSE
-				PRINTFORMW %CALLNAME:TARGET%가 걱정하는 얼굴을 하고있구나 라고 생각하고 있을 때, 갑자기 %CALLNAME:MASTER%의 민감한 클리토리스를 집어 올렸다.
+				PRINTFORMW %타겟이()% 걱정하는 얼굴을 하고있구나 라고 생각하고 있을 때, 갑자기 %CALLNAME:MASTER%의 민감한 클리토리스를 집어 올렸다.
 				PRINTFORMW 탈진해 버린 몸에 갑작스레 전기가 흐른 것 같은 충격을 %CALLNAME:MASTER%은 받아 작은 비명을 올려 버렸다.
 			ENDIF
 			PRINTFORMW 「다행이네, 야한 몸에는 변함이 없는 것 같구나. 후후훗」
 		ELSE
-			PRINTFORMW %CALLNAME:TARGET%가 걱정하는 얼굴을 하고있구나 라고 생각하고 있을 때, 갑자기%CALLNAME:MASTER%의 입술에 맹렬한 키스를 했다.
+			PRINTFORMW %타겟이()% 걱정하는 얼굴을 하고있구나 라고 생각하고 있을 때, 갑자기%CALLNAME:MASTER%의 입술에 맹렬한 키스를 했다.
 			PRINTFORMW 적극적이면서 상냥한 혀 사용에, %CALLNAME:MASTER%은 완전히 의식을 녹게 만들어 버린 뒤에 입을 뗐다.
 			PRINTFORMW 「우후후, 조금은 건강하게 찜질이 되었나 몰라? 다음도 기대하고 있겠어,  %CNAME("二人称")%♪」
 		ENDIF
@@ -1996,7 +1996,7 @@ ELSEIF SELECTCOM == 67
 				PRINTFORMW 「으아읏…안돼, 이런 건 %CNAME("一人称")%…죽어버릴꺼야 으아앗! 우우우 우우 우웃!」
 			ELSEIF NOWEX:Ｖ절정 == 1
 				PRINTFORMW 「아으앗, 좋아아 %CNAME("二人称")%의 자지 좋아아!」
-				PRINTFORMW 정액을 짜 내버리려고 하는 %CALLNAME:TARGET%가 주는 자궁의 쾌락을 견뎌 당신은 한층 더 안쪽까지 페니스를 찔러 넣는다.
+				PRINTFORMW 정액을 짜 내버리려고 하는 %타겟이()% 주는 자궁의 쾌락을 견뎌 당신은 한층 더 안쪽까지 페니스를 찔러 넣는다.
 				PRINTFORMW 「후아아! 나, 가버려…%CNAME("二人称")%에 안쪽까지 범해져서 %CNAME("一人称")%…간다 우우 우우!」
 			ELSE
 				PRINTFORMW 「…%CNAME("二人称")%의 굵은 거 안쪽까지 들어오고 있어」
@@ -2299,7 +2299,7 @@ IF SELECTCOM == 92
 			;それ以外
 			ELSE
 				PRINTFORMW 「알고 있어 %CNAME("二人称")%. 파이즈리해 주길 원하지?」
-				PRINTFORMW %CALLNAME:PLAYER%이 말도 하기 전에 %CALLNAME:TARGET%가 먼져 말했다…
+				PRINTFORMW %CALLNAME:PLAYER%이 말도 하기 전에 %타겟이()% 먼져 말했다…
 				PRINTFORMW 「왜 알았냐고? %CNAME("一人称")%의 젖가슴을 보더니 자지가 빵빵하게 발기 하고 있으면 누구라도 알게 될껄?」
 			ENDIF
 			CFLAG:243 = 1

@@ -79,7 +79,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	SETBIT CFLAG:201, 4
 ;굴복각인Lv3+연모+임신
 ELSEIF GETBIT(CFLAG:201, 6) == 0 && TALENT:연모 && TALENT:임신 && COND("정액의우세") == MASTER
-	PRINTFORMW %CALLNAME:TARGET%가 임신을 했다
+	PRINTFORMW %타겟이()% 임신을 했다
 	PRINTFORMW ……위험한것이 아닐까?
 	PRINTFORMW %CALLNAME:TARGET%의 몸이 너무 나도 극상품이었기에, 무심코 너무 해버렸을지도 모른다.
 	PRINTFORMW ……화 나 있을까?
@@ -235,7 +235,7 @@ ELSEIF MARK:굴복각인 == 1
 ;굴복각인Lv2
 ELSEIF MARK:굴복각인 == 2
 	PRINTFORMW 「음∼,  쪽♪ 」
-	PRINTFORMW 방의 문을 열자, 기다리고 있었던 %CALLNAME:TARGET%가 %CALLNAME:PLAYER%의 뺨에 키스 했다.
+	PRINTFORMW 방의 문을 열자, 기다리고 있었던 %타겟이()% %CALLNAME:PLAYER%의 뺨에 키스 했다.
 	PRINTFORMW 「자, 오늘은 어떤 것 해 줄꺼야? 함께 가득 녹아 버리자∼♪ 」
 ;연모無し
 ELSEIF MARK:굴복각인 == 3 && TALENT:연모 == 0
@@ -263,7 +263,7 @@ ELSEIF TALENT:연모
 		PRINTFORMW 달려들어 오는 %CALLNAME:TARGET%의 얼굴이 대단히 홍조해 있다. 준비는 벌써 OK 인것인가……
 	ELSEIF RAND:2 == 0
 		PRINTFORMW 조교실에 들어와 보니, 아무도 없었다.
-		PRINTFORMW 갑자기 뒤에서 퍽 하며 등을 맞아 %CALLNAME:PLAYER%은 몹시 놀라 뒤돌아 보니, %CALLNAME:TARGET%가 밝은 웃음소리를 내며 안아 왔다.
+		PRINTFORMW 갑자기 뒤에서 퍽 하며 등을 맞아 %CALLNAME:PLAYER%은 몹시 놀라 뒤돌아 보니, %타겟이()% 밝은 웃음소리를 내며 안아 왔다.
 		PRINTFORMW 「아핫, 엄청나게 놀랐어?」
 		PRINTFORML 아이처럼 들떠 떠드는 소리와 등 뒤에서 꽉 눌려오는 성숙한 느낌의 몸이 매우 언밸런스하여, 왠지 매우 흐뭇한 느낌이 든다.
 		PRINTFORMW %CALLNAME:PLAYER%의 얼굴을 들여다 보곤, %타겟은()% 고개를 갸웃했다.
@@ -413,7 +413,7 @@ ELSEIF TALENT:연모 && CFLAG:99
 			PRINTFORMW 질로부터 진득한 정액과 애액의 덩어리가 나올때마다 가볍게 몸을 떨며, %타겟은()% 여운에 잠겨있다……
 		ELSE
 			PRINTFORMW 「후후……불보다 뜨거워서, 매우 멋져∼……」
-			PRINTFORMW %CALLNAME:PLAYER%과 연결된 채로, %CALLNAME:TARGET%가 팔을 감아 왔다. %CALLNAME:PLAYER%의 뺨을 가까이 하여 조금 숨을 붙자, 그 몸의 힘이 빠진것 같았다.
+			PRINTFORMW %CALLNAME:PLAYER%과 연결된 채로, %타겟이()% 팔을 감아 왔다. %CALLNAME:PLAYER%의 뺨을 가까이 하여 조금 숨을 붙자, 그 몸의 힘이 빠진것 같았다.
 			PRINTFORMW 「미안해……먼저 잘께……. 이제, 몽롱해 와서……너무 행복해서 참을수가 없어……후암~」
 			PRINTFORMW 질내에 있는 물건에서, 톡톡 거리며 박동이 느껴진다. 그리고 %CALLNAME:PLAYER%에게도, 기분 좋은 졸음이 밀어닥쳐 왔다……
 		ENDIF
@@ -421,12 +421,12 @@ ELSEIF TALENT:연모 && CFLAG:99
 		PRINTFORMW 「읏, 흐읏, 흐으읏∼…」
 		PRINTFORMW %타겟은()% 몇번이나 절정에 이른 여운이 남아 있는지, 때때로 움찔 움찔 경련하면서 축 늘어져 있다…
 		PRINTFORMW 「이앙…할아버지보다 건강해∼…」
-		PRINTFORMW %CALLNAME:TARGET%가 중얼거린 「할아버지」라는 말에 신경이 쓰였지만, %CALLNAME:PLAYER%이 물어보려고 했을 때 %타겟은()% %CALLNAME:PLAYER%에 달라붙어 자고 있었다.
+		PRINTFORMW %타겟이()% 중얼거린 「할아버지」라는 말에 신경이 쓰였지만, %CALLNAME:PLAYER%이 물어보려고 했을 때 %타겟은()% %CALLNAME:PLAYER%에 달라붙어 자고 있었다.
 	ENDIF
 ;연모
 ELSEIF TALENT:연모
 	PRINTFORMW 「몰랐어……정말로 좋아하게 되면, 이렇게 기분이 좋아 진다니 말이야」
-	PRINTFORMW %CALLNAME:TARGET%가 %CALLNAME:PLAYER%에게 몸을 기대었다. 달콤한 향기와 따뜻한 피부가, 피로감에 싸인 %CALLNAME:PLAYER%을 살짝 졸리게 만든다……
+	PRINTFORMW %타겟이()% %CALLNAME:PLAYER%에게 몸을 기대었다. 달콤한 향기와 따뜻한 피부가, 피로감에 싸인 %CALLNAME:PLAYER%을 살짝 졸리게 만든다……
 ENDIF
 RETURN 1
 
@@ -497,7 +497,7 @@ IF SELECTCOM == 0
 			ELSEIF TALENT:연모
 				IF RAND:4 == 0
 					PRINTFORMW 「히야아아앗……♪ 」
-					PRINTFORMW %CALLNAME:PLAYER%이 신체를 만져주자, %CALLNAME:TARGET%가 움찔 움찔 신체를 진동시키고 고양이와 같은 소리를 질렀다.
+					PRINTFORMW %CALLNAME:PLAYER%이 신체를 만져주자, %타겟이()% 움찔 움찔 신체를 진동시키고 고양이와 같은 소리를 질렀다.
 				ELSEIF RAND:3 == 0
 					PRINTFORMW 「후아……♪ 거기, 약해에, 상냥하게 해줘♪ 」
 				ELSEIF RAND:2 == 0
@@ -991,11 +991,11 @@ IF SELECTCOM == 5
 				PRINTFORMW 「%CNAME("一人称")%의 가슴♪ 짜줘～♪ 부탁할게에～♪ 」
 				PRINTFORMW 「모유로 팡팡한 가슴～♪ 마음껏 꾸욱♪ 꾸욱♪ 짜줘어～♪ 」
 				IF TALENT:임신
-					PRINTFORMW %CALLNAME:PLAYER%은 %CALLNAME:TARGET%가 원하는대로 자식에게 먹일 모유가 가득한 음란한 유방을 한계까지 주물러 짜기 시작했다…
+					PRINTFORMW %CALLNAME:PLAYER%은 %타겟이()% 원하는대로 자식에게 먹일 모유가 가득한 음란한 유방을 한계까지 주물러 짜기 시작했다…
 					PRINTFORMW 「히으으읏～♪ 가슴 찌부러지고 있어어♪ 꾸욱~♪ … 하고있어♪ 짜여지고 있어어～♪ 」
 					PRINTFORMW 「짜이고♪ 짜여서어♪ 아기의 우유가♪ 전부 짜여저 버려어어어어♪ ♪ 」
 				ELSE
-					PRINTFORMW %CALLNAME:PLAYER%은 %CALLNAME:TARGET%가 원하는대로 모유가 가득한 음란한 유방을 한계까지 주물러 짜기 시작했다…
+					PRINTFORMW %CALLNAME:PLAYER%은 %타겟이()% 원하는대로 모유가 가득한 음란한 유방을 한계까지 주물러 짜기 시작했다…
 					PRINTFORMW 「그거어♪ 너무 좋아♪ 마음껏♪ 마음꺼엇♪ 꾸욱～♪ 꾸욱～♪ 」
 					PRINTFORMW 「꾸우우우웃～♪ 해줘엇♪ 부서질 정도로…♪ 짜버려 주길 원해에에에에엣♪ ♪ 」
 				ENDIF
@@ -1057,11 +1057,11 @@ IF SELECTCOM == 5
 				PRINTFORMW 「%CNAME("一人称")%의 가슴♪ 전혀 내보낸적 없었으니까～♪ 부탁할께～♪ 」
 				PRINTFORMW 「모유로 팡팡한 가슴～♪ 마음껏 꾸욱♪ 꾸욱♪ 짜줘어～♪ 」
 				IF TALENT:임신
-					PRINTFORMW %CALLNAME:PLAYER%은 %CALLNAME:TARGET%가 원하는대로 자식에게 먹일 모유가 가득한 음란한 유방을 한계까지 주물러 짜기 시작했다…
+					PRINTFORMW %CALLNAME:PLAYER%은 %타겟이()% 원하는대로 자식에게 먹일 모유가 가득한 음란한 유방을 한계까지 주물러 짜기 시작했다…
 					PRINTFORMW 「좋아아아앗～♪ 히이잇～♪ 가슴 찌릿하고 있어엇♪  짜여버려엇～♪ 」
 					PRINTFORMW 「짜버려줘어♪ 아기의 몫까지～♪ 저어언부 짜버려 줘어어엇～♪ 」
 				ELSE
-					PRINTFORMW %CALLNAME:PLAYER%은 %CALLNAME:TARGET%가 원하는대로 모유가 가득한 음란한 유방을 한계까지 주물러 짜기 시작했다…
+					PRINTFORMW %CALLNAME:PLAYER%은 %타겟이()% 원하는대로 모유가 가득한 음란한 유방을 한계까지 주물러 짜기 시작했다…
 					PRINTFORMW 「그렇게♪ 좋아아♪ 마음껏♪ 꾸우욱～♪ 꾸우우욱～♪ 하게～…♪ 」
 					PRINTFORMW 「꾸우욱～♪ 하게～♪ 부서질 정도로…♪ 짜주기를 원해에엣～♪ 」
 				ENDIF
@@ -1133,7 +1133,7 @@ IF SELECTCOM == 5
 			ELSEIF EXP_GAIN(12) + EXP_GAIN(13) == 0 && PALAM:Ｖ윤 >= 3000 && RAND:3 == 0
 				PRINTFORMW 「후냥……%CNAME("二人称")%라고 능숙하네요～」
 				PRINTFORMW 「%CNAME("一人称")%, …참을 수 없게 되어 버렸어♪ 」
-				PRINTFORMW %CALLNAME:TARGET%가 땀이 난 허벅지를 뭉그적 뭉그적 비비자 신체에서 야한 좋은 냄새가 피어오르고 있다…
+				PRINTFORMW %타겟이()% 땀이 난 허벅지를 뭉그적 뭉그적 비비자 신체에서 야한 좋은 냄새가 피어오르고 있다…
 			ELSEIF RAND:2
 				PRINTFORMW 「응―, 잠깐 조금 진지하잖아∼？ %CNAME("一人称")%의 얼굴 보면서 해주면 좋겠어♪ 」
 				PRINTFORMW %타겟은()% %CALLNAME:PLAYER%에게 신체를 밀착시켜, 밝은 미소로 볼을 대고 비볐다
@@ -1233,7 +1233,7 @@ IF SELECTCOM == 6
 				PRINTFORMW 이번에는 떼어 놓지 않고, 보상과 같은 느낌으로 천천히 계속해서 키스했다……
 			ELSE
 				PRINTFORMW 「……에잇♪ 」
-				PRINTFORMW %CALLNAME:TARGET%가 못된 장난 같은 키스 할 때마다, 몸이 점점 뜨거워져, 달콤한 쑤심이 가슴을 간질였다.
+				PRINTFORMW %타겟이()% 못된 장난 같은 키스 할 때마다, 몸이 점점 뜨거워져, 달콤한 쑤심이 가슴을 간질였다.
 				PRINTFORMW 「어떻게,  %CNAME("一人称")%의 멜티 키스? 우후훗, 굉장히 뜨거워 지고 있지∼？」
 				PRINTFORMW 보통 키스에서는 맛볼 수 없는 감각에, %CALLNAME:PLAYER%은 농락 되는 느낌이었다……
 			ENDIF

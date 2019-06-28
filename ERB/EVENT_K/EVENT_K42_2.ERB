@@ -60,7 +60,7 @@ ELSEIF MARK:반발각인 == 3
 ;굴복각인Lv1
 ELSEIF GETBIT(CFLAG:201, 1) == 0 && MARK:굴복각인 == 1
 	PRINTFORMW 「……조교는 ,  순조로워…?」
-	PRINTFORMW 방에 들어가면(자)%CALLNAME:TARGET%가 소리라고 왔다
+	PRINTFORMW 방에 들어가면(자)%타겟이()% 소리라고 왔다
 	PRINTFORMW 「……그렇구나…그렇다면은 오늘도 ,  노력하며…」
 	PRINTFORMW 표정은 변함 없이이지만%CALLNAME:TARGET%도 조금은 이 환경에 익숙해 왔을지도 모른다
 	SETBIT CFLAG:201, 1
@@ -87,7 +87,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	PRINTFORMW %타겟은()% 무엇인가 말하고 싶었는지 힐끔힐끔하고 이쪽을 듣고 있다
 	PRINTFORMW 그러나 ,  시선이 마주치자마자 시선을 딴 데로 돌려 버린다…
 	PRINTFORMW 「…………그……(들)물으며…」
-	PRINTFORMW 어떻게 된 것일까라고 생각하고 있으면(자)%CALLNAME:TARGET%가 입을 열었다
+	PRINTFORMW 어떻게 된 것일까라고 생각하고 있으면(자)%타겟이()% 입을 열었다
 	PRINTFORMW 「……%CNAME("一人称")%……%CNAME("二人称")%에 대해……좋아해…에 ,  된 것 같다…」
 	PRINTFORML 「…그……그 만큼…이야…」
 	PRINTFORMW 「…………해…」
@@ -160,7 +160,7 @@ ELSEIF NO:ASSI == 43
 		ELSE
 			PRINTFORMW 「~해♪조교의 시작이다∼♪」
 			PRINTFORMW 「…"응"……힘내…%CNAME("조수")%…」
-			PRINTFORMW 가슴을 펴 조교의 개시를 선언하고 있는%CALLNAME:ASSI%의 근처에서는%CALLNAME:TARGET%가 자신으로부터 옷을 벗어 침대에 가로놓여 있었다…
+			PRINTFORMW 가슴을 펴 조교의 개시를 선언하고 있는%CALLNAME:ASSI%의 근처에서는%타겟이()% 자신으로부터 옷을 벗어 침대에 가로놓여 있었다…
 		ENDIF
 		RETURN 1
 	ENDIF
@@ -268,7 +268,7 @@ IF STATE("撃沈", MASTER)
 	;その他
 	ELSE
 		PRINTFORMW 「……이래서야 ,  재미없는…」
-		PRINTFORMW 의식이 멀어져 가는 가운데%CALLNAME:TARGET%가 중얼거리는 목소리가 들렸다
+		PRINTFORMW 의식이 멀어져 가는 가운데%타겟이()% 중얼거리는 목소리가 들렸다
 	ENDIF
 ;반발각인Lv3
 ELSEIF MARK:반발각인 == 3
@@ -324,7 +324,7 @@ ELSEIF MARK:굴복각인 == 2
 		PRINTFORMW 조교의 마지막을 고하면(자)%타겟은()% 가라앉힌 표정인 채 끄덕끄덕  수긍했다
 	ELSE
 		PRINTFORMW 「……또 ,  왔으면 좋겠다…」
-		PRINTFORMW 방을 나오려고 하면 ,  침대에 가로놓여 있는%CALLNAME:TARGET%가 살그머니 속삭이고 왔다
+		PRINTFORMW 방을 나오려고 하면 ,  침대에 가로놓여 있는%타겟이()% 살그머니 속삭이고 왔다
 	ENDIF
 ;굴복각인Lv3
 ELSEIF MARK:굴복각인 == 3
@@ -5170,7 +5170,7 @@ IF SELECTCOM == 173 && TEQUIP:새댁플레이
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「…어서 오세요 ,  %CNAME("二人称")%」
-			PRINTFORMW 사랑스러운 에이프런을 댄%CALLNAME:TARGET%가 기쁜듯이 안아 따라 온다
+			PRINTFORMW 사랑스러운 에이프런을 댄%타겟이()% 기쁜듯이 안아 따라 온다
 			IF RAND:2 == 0
 				PRINTFORMW 「…,  ……얼싸안는 것만으로도…행복해요…」
 			ELSE
@@ -5848,7 +5848,7 @@ CASE "Ｖ윤LV3돌파"
 			;로션を使った場合
 			IF SELECTCOM == 260
 				PRINTFORML 「…이것으로 ,  어떻게 할거야…」
-				PRINTFORMW 로션 투성이의%CALLNAME:TARGET%가 가만히 이쪽을 응시하고 있다
+				PRINTFORMW 로션 투성이의%타겟이()% 가만히 이쪽을 응시하고 있다
 			;それ以外
 			ELSE
 				PRINTFORML 「………하아…」
@@ -6107,7 +6107,7 @@ CASE "처녀상실"
 				PRINTFORMW 「…,  …%CNAME("一人称")%는…괜찮아 ，그러니까…기분 좋아지며…」
 			ELSE
 				PRINTFORMW 「………,  새근………%CNAME("二人称")%…」
-				PRINTFORMW %CALLNAME:TARGET%가 희미하게 이름을 부른 것 같았다…
+				PRINTFORMW %타겟이()% 희미하게 이름을 부른 것 같았다…
 				PRINTFORMW 「……하아…하아……그래요, …%CNAME("二人称")%를 하고 싶었다로부터…괜찮(좋)아요, ……」
 			ENDIF
 		;それ以外
@@ -7509,7 +7509,7 @@ CASE "하룻밤개방スキンシップ"
 		ELSE
 			PRINTFORMW %타겟은()% 침대 위에 걸터앉고 있는 뒤로부터 안겨 붙여서머리카락에 얼굴을 묻었다
 			PRINTFORMW 「……움직이지 말고……좀 더…이대로가 좋은, 의…,  …」
-			PRINTFORMW %CALLNAME:TARGET%가 만족한 다음에 ,  이번은 이쪽이 같은 것을 해 주었다…
+			PRINTFORMW %타겟이()% 만족한 다음에 ,  이번은 이쪽이 같은 것을 해 주었다…
 			PRINTFORMW 「…,  …이제(벌써) ,  좋아…? …부끄러운, …」
 			PRINTFORMW 좀 더 이대로가 좋은 것이라 말해%CALLNAME:TARGET%의 좋은 향기를 즐겼다
 		ENDIF
@@ -7770,7 +7770,7 @@ RETURN 1
 PRINTFORMW 가에 나간 돌아가는 길 , %CALLNAME:TARGET%과 함께 저택으로 걸어간다…
 PRINTFORMW 「………」
 PRINTFORMW 「…………%CNAME("一人称")%로…좋았다, 의…」
-PRINTFORMW %CALLNAME:TARGET%가 작은 소리로 무엇을 말한다
+PRINTFORMW %타겟이()% 작은 소리로 무엇을 말한다
 PRINTFORMW 「………그…아무것도 아니야, …」
 PRINTFORMW 무엇인가 말하고 싶었는지 하고 있던%CALLNAME:TARGET%의 손을 잡아 이쪽으로 껴안는다
 PRINTFORMW 「…,  ………이것…걷기가 힘들다…야…」

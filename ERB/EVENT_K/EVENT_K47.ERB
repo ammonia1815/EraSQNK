@@ -112,7 +112,7 @@ ELSEIF MARK:반발각인 == 3
 	CALL K47_KOJO2_1
 ;굴복각인Lv1
 ELSEIF GETBIT(CFLAG:201, 1) == 0 && MARK:굴복각인 == 1 && COND("身嗜み：자위금지") == 0
-	PRINTFORML %CALLNAME:MASTER%이 문을 찰칵 하고 열자, 등만 보이는 상태의 의자에 앉아 있던 %CALLNAME:TARGET%가 움찔! 하며 몸을 움직이더니, 다급한 목소리를 냈다.
+	PRINTFORML %CALLNAME:MASTER%이 문을 찰칵 하고 열자, 등만 보이는 상태의 의자에 앉아 있던 %타겟이()% 움찔! 하며 몸을 움직이더니, 다급한 목소리를 냈다.
 	PRINTFORMW 「잠깐, 잠깐이라고! 들어 오기전 노크 정도는 하란 말이야!」
 	PRINTFORMW 빠르게 자세를 바꾼 %CALLNAME:TARGET%이었지만……아무래도 혼자 한창 즐기고 있던 모양이다
 	PRINTFORMW 그 증거로 얼굴이 희미하게 불게 되어있고, 오른손을 등 뒤로 숨겨 보이지 않도록 만들고 있는것이 중요 부위를 만지고 있던것 같다…
@@ -128,7 +128,7 @@ ELSEIF GETBIT(CFLAG:201, 1) == 0 && MARK:굴복각인 == 1 && COND("身嗜み：
 ;굴복각인Lv2
 ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2
 	PRINTFORML 「후～무, 여기와 여기와……오, 눈초리도 개선을 볼 수 있네요…」
-	PRINTFORMW 노크하고 3초 정도 기다린 후 %CALLNAME:MASTER%이 방에 들어오니, %CALLNAME:TARGET%가 화장대에 가까이 앉아 자신의 얼굴을 확인하고 있는 것을 발견했다. 
+	PRINTFORMW 노크하고 3초 정도 기다린 후 %CALLNAME:MASTER%이 방에 들어오니, %타겟이()% 화장대에 가까이 앉아 자신의 얼굴을 확인하고 있는 것을 발견했다. 
 	PRINTFORMW 「아아, 잠깐만 기다려 줘…읏차. 이야아, 니 녀석, 대단하네～」
 	PRINTFORMW 무슨 말인지는 모르겠지만, %타겟은()% 한번 보기도 어려운 싱글벙글한 미소를 계속 하고 있다. 
 	PRINTFORMW 「이 정도로 피부와 건강에 좋은 상대는 희소하다고, 정말이야. 자, 한번 만져 보라고, 매끈 매끈 하지!」
@@ -181,7 +181,7 @@ ENDSELECT
 ;마법伝授이벤트
 IF GETBIT(CFLAG:201, 30) && CFLAG:461 >= 3 + CFLAG:462*5 && COND("아르카나획득가능", MASTER)
 	PRINTFORMW 「오, 마침 잘 왔네. 몽마들을 상대 하는건 잘 되고있어？」
-	PRINTFORMW 방에 들어가자, 큰소리와 함께 책상을 돌리고 있던 %CALLNAME:TARGET%가 %CALLNAME:MASTER%을 잡았다. 
+	PRINTFORMW 방에 들어가자, 큰소리와 함께 책상을 돌리고 있던 %타겟이()% %CALLNAME:MASTER%을 잡았다. 
 	PRINTFORMW 「잠깐만 기다려 줘.  …뭐, 오늘은 너의 노력에 상을 주고자, 뭔가 가르쳐 줘야겠다 생각했어」
 	PRINTFORMW %타겟은()% 필요 했던 책을 발견 하고, 먼지를 털어 내며 책상위에 쌓았다. 
 	SIF CFLAG:462 == 0
@@ -200,7 +200,7 @@ IF GETBIT(CFLAG:201, 30) && CFLAG:461 >= 3 + CFLAG:462*5 && COND("아르카나�
 	ENDSELECT
 
 	PRINTFORMW 「흠…괜찮은 것을 선택 했잖아♪ …자, 해보자고!」
-	PRINTFORMW %CALLNAME:TARGET%가 행동과 함께 강하게 말하자, %CALLNAME:MASTER%의 몸에서 마력이 넘친다! 
+	PRINTFORMW %타겟이()% 행동과 함께 강하게 말하자, %CALLNAME:MASTER%의 몸에서 마력이 넘친다! 
 	PRINTL 
 	PRINTFORMW ☆★☆%NAME:MASTER%는 %TALENTNAME:RESULT%을 습득 했습니다☆★☆
 	PRINTL 

@@ -181,14 +181,14 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	PRINTFORMW 「%CNAME("二人称")%…부탁이 있습니다」
 	PRINTFORMW 「그 ,  무서워하면서…근처에 앉아도 ,  좋습니까?」
-	PRINTFORMW %CALLNAME:TARGET%가 주종 관계를 존중하고 있는 것은 알고 있지만
+	PRINTFORMW %타겟이()% 주종 관계를 존중하고 있는 것은 알고 있지만
 	PRINTFORMW 원래 ,  근처에 앉으려면  동공 말할 생각 등 없다
 	PRINTFORMW 「감사합니다,  %CNAME("二人称")%…실례하겠습니다」
 	PRINTFORMW 단지 근처에 앉는 ,  그것만의 일인데%타겟은()% 뺨을 붉게 물들인다
 	PRINTFORMW 그 기쁜 듯해 있어 조금만 부끄러움의 들어가 섞인 것 같은 얼굴은 ,  매우 사랑스럽게 보여 버린다
 	PRINTFORMW 정면에서 그런 것을 말하면 , %타겟은()% 어떤 반응을 할까…
 	PRINTFORMW ………
-	PRINTFORMW 그런 것을 생각하고 있으면(자) ,  조금 곤란한 것 같은 표정으로 %CALLNAME:TARGET%가 이쪽을 응시하고 있었다
+	PRINTFORMW 그런 것을 생각하고 있으면(자) ,  조금 곤란한 것 같은 표정으로 %타겟이()% 이쪽을 응시하고 있었다
 	PRINTFORMW 「………그…물(들)어주세요 인가?」
 	PRINTFORMW 「……%CNAME("二人称")%…%CNAME("一人称")%는 ,  자신의 발키리로서의 역할을 찾아내지 못하고 있습니다…」
 	PRINTFORMW 몇번이나 신체를 거듭해 왔음이 분명한%CALLNAME:TARGET%의 시작해 보이는 얼굴…
@@ -249,7 +249,7 @@ ELSEIF GETBIT(CFLAG:201, 6) == 0 && TALENT:임신 && TALENT:연모 && COND("정�
 	PRINTFORMW 그것뿐만 아니라 ,  둘뿐인 때 밖에 보이지 않는 응석부린 모습(상태)로 소매치기 모여 오고 있다
 	PRINTFORMW 이쪽의 안도한 표정에도 웃는 얼굴로 승낙네라고 주고 있는 상태를 보면 걱정은 불필요했던 것 같다…
 	PRINTFORMW 「%CNAME("二人称")%…그……당신도 아시는 바대로 ,  %CNAME("一人称")%는 당신의 아이를 내려 주셨습니다…」
-	PRINTFORMW 이제(벌써) 그만한 교제가 된다 ,  가만히 이쪽을 응시하는 눈동자를 보면%CALLNAME:TARGET%가 무엇인가 말하고 싶어 하는 것 같은 의 것은 곧바로 안다
+	PRINTFORMW 이제(벌써) 그만한 교제가 된다 ,  가만히 이쪽을 응시하는 눈동자를 보면%타겟이()% 무엇인가 말하고 싶어 하는 것 같은 의 것은 곧바로 안다
 	PRINTFORMW 「과연,  %CNAME("二人称")%…그 ,  당신을 의심하고 있는 것은 없습니다만 ,  이것은 형식적인 것인 것입니다」
 	PRINTFORMW 「%CNAME("二人称")%…당신은 바랬던것 주십니까…?」
 	PRINTFORML 자신의 배에 상냥하게 손을 더해%CALLNAME:TARGET%젓가락빌리고와 이쪽을 확인한다
@@ -301,7 +301,7 @@ ELSEIF GETBIT(CFLAG:201, 8) == 0 && GETBIT(CFLAG:201, 6) && TALENT:임신 == 0 &
 	PRINTFORMW 「…어떻게 하실까는 ,  %CNAME("二人称")%에 맡겨요…」
 	PRINTFORMW 분명히 ,  그녀의 말하는 대로 이 아이는 몽마의 아이다…생각해 두지 않으면 안 될 것이다
 	PRINTFORMW 「%CNAME("二人称")%,  아직 시간은 있습니다 초조해 하지 않고 결정해 주세요…그래서,  %CNAME("二人称")%…,  미안해요,  %CNAME("一人称")%슬슬…」
-	PRINTFORML 그런 것을 생각하고 있으면(자) ,  뺨을 상기 시킨%CALLNAME:TARGET%가 기대고 걸려 왔다
+	PRINTFORML 그런 것을 생각하고 있으면(자) ,  뺨을 상기 시킨%타겟이()% 기대고 걸려 왔다
 	PRINTFORMW 역시 ,  평상시의 자신을 잊어 눈가득 응석부릴 수 있는 이 시간을 손꼽아 기다리고 있었을 것이다…
 	PRINTFORMW 모친이 되어도 변함없는 그 모습이 참을 수 없게 사랑스러운구든지 ,  그 신체를 침대에 밀어 넘어뜨렸다…
 	PRINTFORMW 「이 아이를 낳아도,  %CNAME("一人称")%의 신체는 %CNAME("二人称")%의 것…그것은 ,  바뀌지 않아요」
@@ -500,7 +500,7 @@ IF MARK:반발각인 == 3
 ;연모
 ELSEIF TALENT:연모
 	IF RAND:7 == 0
-		PRINTFORMW 방에 들어가면(자) ,  훈련을 끝냈던 바로 직후일 것이다 ,  갑옷을 벗은%CALLNAME:TARGET%가 땀의 배이는 피부를 쬐고 있었다
+		PRINTFORMW 방에 들어가면(자) ,  훈련을 끝냈던 바로 직후일 것이다 ,  갑옷을 벗은%타겟이()% 땀의 배이는 피부를 쬐고 있었다
 		PRINTFORMW 촉촉히 하게 습기를 띤 머리카락이 피부에 펴 첨부구님이 ,  뭐라고 말할 수 있지 않아 섹시한…
 		PRINTFORMW 「…%CNAME("二人称")%,  죄송합니다…어 보기 흉한 곳을 보여드려 버렸습니다」
 		PRINTFORMW 「조금 단련을 할 생각이 무심코 열중해 버려…아직 ,  준비를 정돈되고 있지 않습니다」

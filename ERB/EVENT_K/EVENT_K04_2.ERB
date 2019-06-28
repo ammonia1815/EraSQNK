@@ -356,7 +356,7 @@ ELSEIF COND("ご無沙汰")
 	;연모
 	ELSEIF TALENT:연모
 		PRINTFORMW 「%CNAME("二人称", "～")%, 만나고 싶었어～! 」
-		PRINTFORMW 방에 들어가자 마자 날라온 %CALLNAME:TARGET%가 껴안겨, 달콤한 향이 나는 얇은 몸을 힘껏 비볐다
+		PRINTFORMW 방에 들어가자 마자 날라온 %타겟이()% 껴안겨, 달콤한 향이 나는 얇은 몸을 힘껏 비볐다
 		PRINTFORMW 「기분 좋은거 하고 싶은데 %CNAME("二人称")%가 전혀 오질 않아서, %CNAME("一人称")%버림 받은게 아닐까 라고……훌쩍」
 		PRINTFORML 훌쩍 거리는 %타겟을()% 부드럽게 쓰다듬고, 뺨에 몇번이나 키스를 하자
 		PRINTFORMW %CALLNAME:TARGET%의 표정은 점차 풀려 갔고, 잠시 후 평정심을 회복했다
@@ -383,7 +383,7 @@ ELSEIF COND("ご無沙汰")
 ELSEIF TALENT:연모 && TALENT:임신 == 3
 	;밤限定
 	IF TIME == 1
-		PRINTFORMW 방 앞에 오자 %CALLNAME:TARGET%가 괴롭게 신음 하는 소리가 들려왔다
+		PRINTFORMW 방 앞에 오자 %타겟이()% 괴롭게 신음 하는 소리가 들려왔다
 		PRINTFORMW 황급히 달려 들어가 배를 문질러 주니 잠시 후 통증이 사라진 것 같아 보였다
 		PRINTFORMW 「하아아……하아……괜찮아, 아직 태어나려고 하는것 아닌 것 같아……」
 		PRINTFORM 「저기, 내일은 힘낼테니까……금방이니까, 그 전에 가득 가득 %CNAME("一人称")%를 사랑해줘……
@@ -422,7 +422,7 @@ ELSEIF TALENT:연모 && TALENT:임신 == 2
 	ELSEIF RAND:2 == 0
 		PRINTFORM 「아, %CNAME("二人称")%! 지금, 배속의 아기에게 이야기를 들려주고 있었어
 		CALL HEARTMARK_E
-		PRINTFORMW %CALLNAME:TARGET%가 크게 늘어난 배를 안고 앉아있는 침대 위에는 여러가지 그림책들이 흩어져 있다
+		PRINTFORMW %타겟이()% 크게 늘어난 배를 안고 앉아있는 침대 위에는 여러가지 그림책들이 흩어져 있다
 		;몽마
 		IF COND("몽마")
 			PRINTFORM 「후훗, 반드시 음란한 아이로 성장할꺼야～
@@ -589,14 +589,14 @@ ELSEIF MARK:굴복각인 == 2
 	IF RAND:2 == 0
 		PRINTFORM 「우후후……쪼옥
 		CALL HEARTMARK_E
-		PRINTFORMW 투명한 모습으로 어둠속에 기다리고 있던 %CALLNAME:TARGET%가, 뺨에 키스를 했다
+		PRINTFORMW 투명한 모습으로 어둠속에 기다리고 있던 %타겟이()%, 뺨에 키스를 했다
 		PRINTFORM 「싫어, 잡혀 버렸어～
 		CALL HEARTMARK
 		PRINTFORM 오늘도 잔뜩 조교 되어 버려～
 		CALL HEARTMARK_E
 	ELSE
 		PRINTFORMW 「와아, %CNAME("二人称")%다～! 」
-		PRINTFORMW 방의 문을 열자마자, %CALLNAME:TARGET%가 가슴으로 들어왔다
+		PRINTFORMW 방의 문을 열자마자, %타겟이()% 가슴으로 들어왔다
 		PRINTFORM 「이 저택의 생활도 좋지만, %CNAME("二人称")%가 있지 않으면 너무 지루하다구. 어서 조교하자, 빨리
 		CALL HEARTMARK_E
 	ENDIF
@@ -13066,13 +13066,13 @@ CASE "매각した"
 		PRINTFORMW 요청을 받는, %CALLNAME:PLAYER%는 약물에 자고 있는 %CALLNAME:TARGET%의 옷을 벗기고, 온몸에 요정의 힘을 없애는 부적을 붙인뒤
 		PRINTFORMW 그 상태로 머리부터 발 끝까지 온몸을 천으로 감아 꼼짝 못하게 만들었다
 		PRINTFORMW 그리고 요정이 들어갈 정도의 크기의 나무 상자에 %타겟을()% 넣은 뒤, 그 상자 위에도 부적을 붙여 봉한다
-		PRINTFORMW 그렇게 완성 된 상태를 보여주며 상인에게 조교의 성과를 예기하자, 상인은 만족한듯 고개를 끄덕이며 %CALLNAME:TARGET%가 들어간 상자를 화물칸에 실어 넣는다
+		PRINTFORMW 그렇게 완성 된 상태를 보여주며 상인에게 조교의 성과를 예기하자, 상인은 만족한듯 고개를 끄덕이며 %타겟이()% 들어간 상자를 화물칸에 실어 넣는다
 		PRINTFORMW 그 이후 %CALLNAME:TARGET%의 운명이었기에 %CALLNAME:PLAYER%에겐 더 이상 상관없었다……
 		;조교상대がLv25이상＋互いのLvに応じて랜덤
 		IF ABL:ＬＶ >= 25 && (ABL:ＬＶ - ABL:PLAYER:ＬＶ) >= RAND:100
 			PRINTFORMW ……라고 생각한 순간, 마차에서 엄청난 폭발이 일어난 뒤, 화물칸의 봉인 상자가 튀어 올랐다! 
 			PRINTFORMW 마차의 주요 부품은 주위로 날리고, %CALLNAME:PLAYER%은 날라 온 마차 바퀴에 맞아 바닥에 웅크렸다
-			PRINTFORMW 휘몰아 치는 흙먼지가 가라앉고 겨우 없어지자, 폭심지의 가운데 봉인되어 있어야할 %CALLNAME:TARGET%가 봉인과 구속을 날려 버리고 공중에 떠 있었다
+			PRINTFORMW 휘몰아 치는 흙먼지가 가라앉고 겨우 없어지자, 폭심지의 가운데 봉인되어 있어야할 %타겟이()% 봉인과 구속을 날려 버리고 공중에 떠 있었다
 			;반발각인Lv3
 			IF MARK:반발각인 == 3
 				PRINTFORMW 「지금까지 멋대로 %CNAME("一人称")%를 괴롭히곤…… 이런 식이라니…… 도저히 용서 할 수 없어! 」
