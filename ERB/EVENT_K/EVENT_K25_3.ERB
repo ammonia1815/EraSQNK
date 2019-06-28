@@ -106,7 +106,7 @@ IF GETBIT(CFLAG:201, 0) == 0
 	PRINTL 
 	IF  TALENT:MASTER:외견연령 <= 1
 		PRINTFORMW 「그누누……아이의 분수로 그런 일을 위해서(때문에)%CNAME("一人称")%를 호출한다고는……！」
-		PRINTFORMW 「하, 하지만！%CNAME("一人称")%에도흡혈귀로서의 자랑이 있는,%CNAME("二人称")%(와)과 같은 마세 녀석에게 거뜬히조교되지는 않아！」
+		PRINTFORMW 「하, 하지만！%CNAME("一人称")%에도흡혈귀로서의 자랑이 있는,%조사처리(CNAME("二人称"),"과")% 같은 마세 녀석에게 거뜬히조교되지는 않아！」
 	ELSE
 		PRINTFORMW 「그누누……그런 일을 위해서(때문에)%CNAME("一人称")%를 호출한다고는 무례한 녀석……！」
 		PRINTFORMW 「하, 하지만！%CNAME("一人称")%에도흡혈귀로서의 자랑이 있는,%CNAME("二人称")%어째서에 거뜬히조교되지는 않아！」
@@ -3186,7 +3186,7 @@ IF SELECTCOM >= 60 && SELECTCOM <= 69 && (TALENT:처녀 || TALENT:PLAYER:동정)
 				PRINTFORMW 자신의페니스는 유감스럽지만 작은 편이지만, 그런데도 처음이라면 아플까……
 			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 걱정인 것처럼%CALLNAME:TARGET%에 말을 걸었다. 
 			PRINTFORMW 「(이)다, 괜찮다, 걱정하지 말아 줘……」
-			PRINTFORMW 「이아픔도, %CNAME("二人称")%(와)과 처음으로 연결될 수가 있던 증거라고 생각하면……」
+			PRINTFORMW 「이아픔도, %조사처리(CNAME("二人称"),"과")% 처음으로 연결될 수가 있던 증거라고 생각하면……」
 			PRINTFORMW 「후훅, 무엇인가, 사랑스럽게 생각되어 오는구나……」
 			PRINTL
 			PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 천천히허리를 움직이기 시작하면, %조사처리(CALLNAME:TARGET,"는")% 눈물을 흘리면서 달콤한 소리를 높이기 시작한다……
@@ -5245,7 +5245,7 @@ IF SELECTCOM == 90
 					ENDIF
 				;☆剥けている
 				ELSE
-					PRINTFORMW 「흥, 이 고귀한%CNAME("一人称")%가 , %CNAME("二人称")%(와)과 같은 하찮은 사람의 자지를 다뤄 준다, 고맙게 생각한다! 」
+					PRINTFORMW 「흥, 이 고귀한%CNAME("一人称")%가 , %조사처리(CNAME("二人称"),"과")% 같은 하찮은 사람의 자지를 다뤄 준다, 고맙게 생각한다! 」
 					;☆왜소
 					SIF SIZE("페니스", PLAYER) == 0
 						PRINTFORMW 「므우……그렇다 치더라도, 작고 하기 어렵다……손그리고 잡는 것보다, 손가락그리고 타는 편이 하기 쉬운 것 같다……」
@@ -5359,7 +5359,7 @@ IF SELECTCOM == 105
 			ELSE
 				;☆PLAYERが동정
 				IF TALENT:PLAYER:동정
-					PRINTFORMW 「후훈, %CNAME("二人称")%(와)과 같은동정에는, 이 위조품의 보지로 충분할 것이다？」
+					PRINTFORMW 「후훈, %조사처리(CNAME("二人称"),"과")% 같은동정에는, 이 위조품의 보지로 충분할 것이다？」
 					PRINTFORMW 「이봐요 이봐요, 가지고 있어 주기 때문에허리를 털어 봐라, 쿠쿡♪」
 					PRINTL
 					PRINTFORMW %CALLNAME:TARGET%의 조롱하는 것 같은 시선을 받으면서, %조사처리(CALLNAME:PLAYER,"는")% 말해지는 대로허리를 털어 버린다……
@@ -5395,7 +5395,7 @@ IF SELECTCOM == 105
 			ELSE
 				;☆PLAYERが동정
 				IF TALENT:PLAYER:동정
-					PRINTFORMW 「후훈, %CNAME("二人称")%(와)과 같은동정에는, 이 위조품의 보지로 충분할 것이다？」
+					PRINTFORMW 「후훈, %조사처리(CNAME("二人称"),"과")% 같은동정에는, 이 위조품의 보지로 충분할 것이다？」
 					PRINTFORMW 「이봐요 이봐요, 가지고 있어 주기 때문에허리를 털어 봐라, 쿠쿡♪」
 					PRINTL
 					PRINTFORMW %CALLNAME:TARGET%의 조롱하는 것 같은 시선을 받으면서, %조사처리(CALLNAME:PLAYER,"는")% 말해지는 대로허리를 털어 버린다……
@@ -6937,7 +6937,7 @@ IF SELECTCOM == 93
 					ENDIF
 				ELSE
 					IF TALENT:PLAYER:동정
-						PRINTFORMW 「쿠쿡,%CNAME("一人称")%의 보지는%CNAME("二人称")%(와)과 같은동정에는 너무 사치스러울거니까……확실히 이 정도로 충분하구나？」
+						PRINTFORMW 「쿠쿡,%CNAME("一人称")%의 보지는%조사처리(CNAME("二人称"),"과")% 같은동정에는 너무 사치스러울거니까……확실히 이 정도로 충분하구나？」
 					ELSE
 						PRINTFORMW 
 					ENDIF
@@ -9572,7 +9572,7 @@ IF SELECTCOM == 504
 					PRINTL
 					PRINTFORMW 아무것도 그런 울컥하게 안 돼도……
 				ELSE
-					PRINTFORMW 「뭐든지%CNAME("二人称")%(와)과 같은 가죽 덮어 쓰는 것자지는, 털이 가죽에 말려 들어가 아픈 생각을 하는 일이 있는 것 같구나？」
+					PRINTFORMW 「뭐든지%조사처리(CNAME("二人称"),"과")% 같은 가죽 덮어 쓰는 것자지는, 털이 가죽에 말려 들어가 아픈 생각을 하는 일이 있는 것 같구나？」
 					PRINTFORMW 「후훈, 이것으로 당분간 그런 일은 없을 것이다……%CNAME("一人称")%의 자비 깊이에 감사하는구나！후하하하하！」
 					PRINTL
 					PRINTFORMW ……음모의 처리를 한 것 뿐으로 여기까지 말할 수 있는 것은 굉장해.
@@ -10024,7 +10024,7 @@ IF SELECTCOM == 172 && TEQUIP:목욕탕플레이
 				PRINTFORMW 「수소리……여기는, 목욕탕……인가？도, 어째서 이런 상태로 목욕탕에……」
 				PRINTFORMW 「보고, 안보이는 것을 구실로 목욕통에 가라앉히거나 하지 않을 것이다……! ？｣
 			ELSE
-				PRINTFORMW 「좋아하는 목욕도, %CNAME("二人称")%(와)과 함께에서는 고행이고 밖에 없구나……」
+				PRINTFORMW 「좋아하는 목욕도, %조사처리(CNAME("二人称"),"과")% 함께에서는 고행이고 밖에 없구나……」
 			ENDIF
 		;연모
 		ELSEIF TALENT:연모 && PLAYER == MASTER
@@ -10033,7 +10033,7 @@ IF SELECTCOM == 172 && TEQUIP:목욕탕플레이
 				PRINTFORML 「……%CNAME("二人称")%도 곤란한 녀석이다……이런상태노%조사처리(CNAME("一人称"),"를")% 목욕탕에 데리고 들어간다고는……」
 				PRINTFORMW 「뭐 좋다, %조사처리(CNAME("一人称"),"가")% 미끄러지거나 하지 않도록, 확실히 에스코트 해 주어라？」
 			ELSE
-				PRINTFORMW 「%CNAME("二人称")%(와)과 욕실……후훅♪」
+				PRINTFORMW 「%조사처리(CNAME("二人称"),"과")% 욕실……후훅♪」
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 기쁜 듯하다……
 			ENDIF
 		;それ以外
@@ -10092,7 +10092,7 @@ ELSEIF SELECTCOM == 172
 				PRINTFORMW 「아아, 응……%조사처리(CNAME("二人称"),"가")% 신체를 닦아 주는 것은 기쁘지만……」
 			ELSE
 				PRINTFORMW 「후우……이번 목욕은 각별했구나」
-				PRINTFORMW 「왜일까라면？후훅, 정해져 있을 것이다……%CNAME("二人称")%(와)과 함께였기 때문에야♪」
+				PRINTFORMW 「왜일까라면？후훅, 정해져 있을 것이다……%조사처리(CNAME("二人称"),"과")% 함께였기 때문에야♪」
 			ENDIF
 		;それ以外
 		ELSE
@@ -10115,7 +10115,7 @@ ELSEIF SELECTCOM == 172
 		;연모
 		ELSEIF TALENT:연모 && PLAYER == MASTER
 			IF TEQUIP:아이마스크
-				PRINTFORMW （……시야가 막히고 있으면%CNAME("二人称")%(와)과 함께 들어간 것 같지 않는구나……）
+				PRINTFORMW （……시야가 막히고 있으면%조사처리(CNAME("二人称"),"과")% 함께 들어간 것 같지 않는구나……）
 			ELSE
 				PRINTFORMW 「후후, 이 뒤는 어떻게 한다？이제(벌써) 1땀을 흘릴까？」
 			ENDIF
@@ -11109,7 +11109,7 @@ IF SELECTCOM == 304 && TEQUIP:넘어뜨리기 == 0
 			;확장十分
 			ELSEIF CHECK("용간")
 				PRINTFORMW 「와, 이봐, 좀 더……가감(상태)를 하지 않는가……읏! 」
-				PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% , %CNAME("二人称")%(와)과 같이……읏, 튼튼하게는 되어 있지 않는 것이다……읏! 」
+				PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% , %조사처리(CNAME("二人称"),"과")% 같이……읏, 튼튼하게는 되어 있지 않는 것이다……읏! 」
 			;それ以外
 			ELSE
 			PRINTFORMW 「우에에에엥……! 도, 이제 싫다……망가져 버린다……! 」
@@ -11265,7 +11265,7 @@ IF SELECTCOM == 305 && TEQUIP:넘어뜨리기 == 0
 			;확장十分
 			ELSEIF CHECK("용간")
 				PRINTFORMW 「와, 이봐, 좀 더……가감(상태)를 하지 않는가……읏! 」
-				PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% , %CNAME("二人称")%(와)과 같이……읏, 튼튼하게는 되어 있지 않는 것이다……읏! 」
+				PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% , %조사처리(CNAME("二人称"),"과")% 같이……읏, 튼튼하게는 되어 있지 않는 것이다……읏! 」
 			;それ以外
 			ELSE
 				PRINTFORMW 「우에에에엥……! 도, 이제 싫다……망가져 버린다……! 」

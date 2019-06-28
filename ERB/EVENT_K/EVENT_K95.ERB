@@ -190,7 +190,7 @@ ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2
 		PRINTFORMW 「같은 성별의 사람과 서로 사랑해서는 안된다는 것은 책에 써 있었다! 」
 	ENDIF
 	PRINTFORMW 「………그렇지만, 책에 써 있는 것은 올바른 것인지…」
-	PRINTFORMW 「%CNAME("二人称")%(와)과의 에로기분 좋았고…」
+	PRINTFORMW 「%조사처리(CNAME("二人称"),"과")%의 에로기분 좋았고…」
 	PRINTFORMW 문의 틈새로부터%타겟은()% 들여다 보고 있었다%마스터는()% , 조교의 성과가 나와 있는 일에 빙긋 웃었다…
 	SETBIT CFLAG:201, 2
 ;굴복각인Lv3
@@ -392,7 +392,7 @@ IF STATE("撃沈", MASTER)
 		ELSE
 			PRINTFORMW 「그런가―, %CNAME("二人称")%가 한계라면 어쩔 수 없다…」
 			PRINTFORMW %CALLNAME:MASTER%의 의식이 점점 가라앉아 간다…
-			PRINTFORMW 「그러면%CNAME("二人称")%(와)과 함께 자 준다」
+			PRINTFORMW 「그러면%조사처리(CNAME("二人称"),"과")% 함께 자 준다」
 		ENDIF
 	;굴복각인Lv3+연모無し
 	ELSEIF MARK:굴복각인 == 3 && TALENT:연모 == 0
@@ -695,7 +695,7 @@ IF SELECTCOM == 2
 							PRINTFORMW 바이브하지만장벽을 휘저어, 진동이 항문을 자극한다
 							PRINTFORM 「아아…신체의 안쪽이 휘저어지고 있는 것 같다…」
 						ELSEIF INSERT("Ａ인서트", PLAYER, TARGET)
-							PRINTFORMW 「후후, %CNAME("二人称")%(와)과엉덩이의 만지작거려 사이군요♪」
+							PRINTFORMW 「후후, %조사처리(CNAME("二人称"),"과")%엉덩이의 만지작거려 사이군요♪」
 						ELSE
 							PRINTFORMW 「(이)나♪ 엉덩이쑤컹쑤컹 되는 것 기분이 좋아♪」
 							PRINTFORM 「좀 더엉덩이만지작거려, %CNAME("二人称")%
@@ -1209,7 +1209,7 @@ IF SELECTCOM == 6
 			PRINTFORMW %타겟은()% 눈을 떼면서 졸라댔다
 		;それ以外
 		ELSE
-			PRINTFORMW 「%CNAME("二人称")%(와)과키스라고…」
+			PRINTFORMW 「%조사처리(CNAME("二人称"),"과")%키스라고…」
 			PRINTFORMW 「뭔가 이상한 기분이야…」
 		ENDIF
 	ENDIF
@@ -4755,7 +4755,7 @@ IF SELECTCOM == 94
 		;연모
 		ELSEIF TALENT:연모 || MARK:굴복각인 == 3
 			IF TALENT:오토코노코
-				PRINTFORMW 「%CNAME("二人称")%(와)과, 씻어 와♪-해, -해♪」
+				PRINTFORMW 「%조사처리(CNAME("二人称"),"과")%, 씻어 와♪-해, -해♪」
 				PRINTFORMW %타겟은()% 이플레이를 즐기고 있다
 				PRINTFORMW 「%CNAME("二人称")%의 몸을 번쩍번쩍 닦아 준다♪」
 			ELSE
@@ -6144,7 +6144,7 @@ IF SELECTCOM == 121
 				PRINTFORMW 「안돼엣…떼어 놓아, %CNAME("二人称")%…」
 				PRINTFORMW %CALLNAME:PLAYER%는 %타겟은()% 어떻게 해서든지 떼어 놓지 않으리떻게든 되어무리모습으로 억누르고 있다…
 			ELSE
-				PRINTFORMW 「역시%CNAME("二人称")%(와)과얼굴맞추는 것 부끄럽다…」
+				PRINTFORMW 「역시%조사처리(CNAME("二人称"),"과")%얼굴맞추는 것 부끄럽다…」
 				PRINTFORMW %CALLNAME:TARGET%의 요정망에 맞추어, 후배위그리고 하기로 했다…
 			ENDIF
 		ENDIF
@@ -8117,7 +8117,7 @@ IF SELECTCOM == 170 && TEQUIP:비디오카메라
 					ENDIF
 					PRINTFORMW 카메라의 앞에 과시했다…
 					PRINTFORMW 「유감♪이봐요, 보지도 없다…정진정명[正眞正銘], 오토코노코(이)야♪」
-					PRINTFORMW 「지금부터%CNAME("二人称")%(와)과 엣치해 버리네요─♪」
+					PRINTFORMW 「지금부터%조사처리(CNAME("二人称"),"과")% 엣치해 버리네요─♪」
 				ELSEIF TALENT:애널광 && RAND:2 == 0
 					PRINTFORMW 「어때？ %CNAME("一人称")%의 엉덩이 보지…♪」
 					PRINTFORMW 「%CNAME("二人称")%에 가득조교되어 성기가 되어 버렸다♪」
@@ -8127,7 +8127,7 @@ IF SELECTCOM == 170 && TEQUIP:비디오카메라
 				ENDIF
 			ELSE
 				IF TALENT:MASTER:남자 == 0
-					PRINTFORMW 「지금부터%CNAME("二人称")%(와)과 엣치해 버립니다♪」
+					PRINTFORMW 「지금부터%조사처리(CNAME("二人称"),"과")% 엣치해 버립니다♪」
 				ELSEIF ABL:Ａ감각 >= 3
 					PRINTFORMW 「지금부터%CNAME("二人称")%에엉덩이부비부비 되어 버립니다♪」
 				ELSE
@@ -8353,7 +8353,7 @@ ELSEIF SELECTCOM == 172
 			IF TALENT:연모
 				PRINTFORMW 「또 함께 들어가자, %CNAME("二人称")%♪」
 			ELSEIF MARK:굴복각인 > 0
-				PRINTFORMW 「%CNAME("二人称")%(와)과 놀아…엣치해……즐거웠어요♪」
+				PRINTFORMW 「%조사처리(CNAME("二人称"),"과")% 놀아…엣치해……즐거웠어요♪」
 			ELSE
 				PRINTFORMW 「욕실에서도 엣치한 일 된다고는 생각하지 않았지만……즐거웠다! ! 」
 			ENDIF

@@ -812,7 +812,7 @@ ELSEIF MARK:굴복각인 >= 0
 	IF RAND:2 == 0
 		PRINTFORMW 「저것？벌써 끝나야？조교라는거 의외로 굉장한 일 없네」
 	ELSE
-		PRINTFORMW 「벌써 끝나 버려～？좀 더%CNAME("二人称")%(와)과 가득 놀고 싶은데～」
+		PRINTFORMW 「벌써 끝나 버려～？좀 더%조사처리(CNAME("二人称"),"과")% 가득 놀고 싶은데～」
 	ENDIF
 ENDIF
 RETURN 1
@@ -1856,7 +1856,7 @@ IF SELECTCOM == 6
 					CALL HEARTMARK_E
 					PRINTFORM 「하후우……
 					CALL HEARTMARK
-					PRINTFORM 이대로 쭉, %CNAME("二人称")%(와)과키스만 하고 있고 싶은거야……
+					PRINTFORM 이대로 쭉, %조사처리(CNAME("二人称"),"과")%키스만 하고 있고 싶은거야……
 					CALL HEARTMARK_E
 				ELSE
 					PRINTFORM 「아므……츄우……츗……츄루, 무, 츄우……
@@ -3659,10 +3659,10 @@ IF SELECTCOM >= 60 && SELECTCOM <= 69 && FIRSTCOMS("Ｖ삽입") == 0 && TALENT:�
 		CALL HEARTMARK_E
 	;연모
 	ELSEIF TALENT:연모
-		PRINTFORMW 「%CNAME("二人称")%(와)과, 정말로 1개가 될 수 있다……」
+		PRINTFORMW 「%조사처리(CNAME("二人称"),"과")%, 정말로 1개가 될 수 있다……」
 		;미니멈かかり中
 		SIF STATE("미니멈", PLAYER)
-			PRINTFORMW 「%CNAME("一人称")%, 사실은%CNAME("二人称")%(와)과는 1개가 될 수 없는 것이 아닌가 하고, 쭉 생각하고 있었어……」
+			PRINTFORMW 「%CNAME("一人称")%, 사실은%조사처리(CNAME("二人称"),"과")%는 1개가 될 수 없는 것이 아닌가 하고, 쭉 생각하고 있었어……」
 		PRINTFORMW 「%CNAME("一人称")%의 처음……받아 주세요」
 	;당신が요정
 	ELSEIF TALENT:PLAYER:요정
@@ -4012,7 +4012,7 @@ IF SELECTCOM == 60
 			ELSEIF TALENT:PLAYER:요정 == 0 && RAND:2 == 0
 				PRINTFORM 「읏, 아앙
 				CALL HEARTMARK
-				PRINTFORM %CNAME("二人称")%(와)과에로하는 것 즐겁닷
+				PRINTFORM %조사처리(CNAME("二人称"),"과")%에로하는 것 즐겁닷
 				CALL HEARTMARK_E
 				PRINTFORMW 체격차이에도 익숙해져 왔는가, %CALLNAME:TARGET%도적극적으로 허리를 움직이게 되었다
 			ELSE
@@ -4756,7 +4756,7 @@ IF SELECTCOM == 64
 					PRINTFORM 「%CNAME("二人称")%의 자지로
 					;당신の子
 					SIF COND("정액의우세") == MASTER
-						PRINTFORM %CNAME("二人称")%(와)과
+						PRINTFORM %조사처리(CNAME("二人称"),"과")%
 					PRINTFORM %CNAME("一人称")%노빨강에 가득한으로 어루만지고 해 주어
 					CALL HEARTMARK_E
 					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%에신체를 유지되면서 탐욕에허리를 움직여, 충혈해 부드러워졌다질그래서%조사처리(NAMES("페니스", PLAYER),"를")% 큥큥 단단히 조인다……
@@ -6936,7 +6936,7 @@ IF SELECTCOM == 93
 				CALL HEARTMARK_E
 				PRINTFORM 「아아, 응후……후훗
 				CALL HEARTMARK
-				PRINTFORM 이렇게 하고 있으면, 정말로%CNAME("二人称")%(와)과%TEXTR("繋が", "一つにな")%라고 있는 것 같다……
+				PRINTFORM 이렇게 하고 있으면, 정말로%조사처리(CNAME("二人称"),"과")%%TEXTR("繋が", "一つにな")%라고 있는 것 같다……
 				CALL HEARTMARK_E
 			;[お腹ズリ]봉사정신Lv3이상＋보통이상 50%
 			ELSEIF TALENT:임신 && ABL:봉사정신 >= 3 && SIZE("페니스", PLAYER) >= 1 && RAND:2 == 0
@@ -8932,7 +8932,7 @@ IF SELECTCOM == 148
 					CALL HEARTMARK_E
 					PRINTFORM 「매우 추잡해서……멋져
 					CALL HEARTMARK_E
-					PRINTFORM 「왜냐하면[だって], 언제라도%CNAME("二人称")%(와)과 엣치하는 일 밖에 생각할 수 없게 되어 버리는 것……
+					PRINTFORM 「왜냐하면[だって], 언제라도%조사처리(CNAME("二人称"),"과")% 엣치하는 일 밖에 생각할 수 없게 되어 버리는 것……
 					CALL HEARTMARK_E
 				;라비아피어스装着
 				ELSEIF COND("라비아피어스플래그")
@@ -9026,7 +9026,7 @@ IF SELECTCOM == 148
 				ELSEIF COND("배꼽피어스플래그")
 					PRINTFORM 「이것 사랑스럽다
 					CALL HEARTMARK
-					PRINTFORM 무엇인가%CNAME("二人称")%(와)과 함께 원을 이루어 춤추고 싶어져 버린다
+					PRINTFORM 무엇인가%조사처리(CNAME("二人称"),"과")% 함께 원을 이루어 춤추고 싶어져 버린다
 					CALL HEARTMARK_E
 					;임신
 					IF TALENT:임신
@@ -9709,7 +9709,7 @@ IF SELECTCOM == 175
 				PRINTFORM 이 안에
 				;당신の子
 				SIF COND("정액의우세") == MASTER
-					PRINTFORM %CNAME("二人称")%(와)과
+					PRINTFORM %조사처리(CNAME("二人称"),"과")%
 				PRINTFORM %CNAME("一人称")%노빨강(군)양이 들어가 있는거야～
 				CALL HEARTMARK_E
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 노출한 큰 배를 어루만지면서 미소지었다
@@ -10382,12 +10382,12 @@ IF SELECTCOM == 264
 			PRINTFORMW 
 		;연모＋Ｖ섹스まだ
 		ELSEIF TALENT:연모 && EXP:Ｖ성교경험 == 0
-			PRINTFORMW 「빨강할 수 있는 약……라는 일은, %CNAME("二人称")%(와)과 엣치할 수 있어？정말？」
+			PRINTFORMW 「빨강할 수 있는 약……라는 일은, %조사처리(CNAME("二人称"),"과")% 엣치할 수 있어？정말？」
 		;상사상애
 		ELSEIF TALENT:상사상애
 			PRINTFORM 「에헤헤
 			CALL HEARTMARK
-			PRINTFORM 이제(벌써)%CNAME("二人称")%(와)과는 두～웃 함께인 것이니까, 약 같은거 사용해 서두르는 일 없는데
+			PRINTFORM 이제(벌써)%조사처리(CNAME("二人称"),"과")%는 두～웃 함께인 것이니까, 약 같은거 사용해 서두르는 일 없는데
 			CALL HEARTMARK_E
 			PRINTFORM 「그렇지만, %조사처리(CNAME("二人称"),"가")% 좋으면……함께요정의 나라를 만들 정도로 낳고 싶구나
 			CALL HEARTMARK_E
@@ -10446,7 +10446,7 @@ IF SELECTCOM == 264
 				CALL HEARTMARK_E
 				PRINTFORM 「자
 				CALL HEARTMARK
-				PRINTFORM %CNAME("二人称")%(와)과%조사처리(CNAME("一人称"),"가")% 서로 사랑한 증거, 무엇보다～웃 작
+				PRINTFORM %조사처리(CNAME("二人称"),"과")%%조사처리(CNAME("一人称"),"가")% 서로 사랑한 증거, 무엇보다～웃 작
 				CALL HEARTMARK_E
 			ELSEIF RAND:2 == 0
 				PRINTFORM 「에헤헤
@@ -12963,7 +12963,7 @@ CASE "요바이Ａ기승위"
 CASE "요바이키스"
 	;당신の子を임신
 	IF TALENT:임신 && COND("정액의우세") == MASTER
-		PRINTFORMW 「배의빨강, 건강하게 자라고 있다. %CNAME("二人称")%(와)과%CNAME("一人称")%노빨강……」
+		PRINTFORMW 「배의빨강, 건강하게 자라고 있다. %조사처리(CNAME("二人称"),"과")%%CNAME("一人称")%노빨강……」
 		;人間の당신と몽마の요정
 		SIF COND("인외度", PLAYER) == 0 && COND("몽마", PLAYER) == 0 && COND("몽마")
 			PRINTFORMW 「인간이라든지, 요정라든지, 몽마라든지……관계없는거야. 세계에서 제일 좋아하는 사람과, 서로 사랑해 할 수 있었다빨강」
@@ -12995,12 +12995,12 @@ CASE "添い寝"
 			ELSE
 				PRINTFORMW %CALLNAME:TARGET%의 팔 중(안)에서는, 아직 그저빨강응방의 우리 아이가 새근새근 숨소리를 내고 있다……
 			ENDIF
-			PRINTFORM 「사랑스럽다……%CNAME("二人称")%(와)과%CNAME("一人称")%노빨강……
+			PRINTFORM 「사랑스럽다……%조사처리(CNAME("二人称"),"과")%%CNAME("一人称")%노빨강……
 			CALL HEARTMARK_E
 		ELSEIF RAND:2 == 0
 			PRINTFORMW 「밤하지만 쭉 계속되면 좋은데―」
-			PRINTFORMW 「그러면%CNAME("二人称")%(와)과 쭉 들러붙어 있을 수 있는데」
-			PRINTFORM 「라도 좋은거야. 지금 만……밤하지만 끝날 때까지라도 좋은거야, %CNAME("二人称")%(와)과 함께라면……
+			PRINTFORMW 「그러면%조사처리(CNAME("二人称"),"과")% 쭉 들러붙어 있을 수 있는데」
+			PRINTFORM 「라도 좋은거야. 지금 만……밤하지만 끝날 때까지라도 좋은거야, %조사처리(CNAME("二人称"),"과")% 함께라면……
 			CALL HEARTMARK_E
 		ELSE
 			PRINTFORM 「%CNAME("二人称")%의 냄새……%CNAME("二人称")%의 온기……행복……
@@ -13013,7 +13013,7 @@ CASE "添い寝"
 			PRINTFORM 「지금일는 함께 잘 뿐. 들러붙고 있는 것만으로 좋은거야. ……고마워요
 			CALL HEARTMARK_E
 		ELSE
-			PRINTFORM 「무엇으로일까……%CNAME("二人称")%(와)과 함께 있으면, 뭔가 마음이 침착해……
+			PRINTFORM 「무엇으로일까……%조사처리(CNAME("二人称"),"과")% 함께 있으면, 뭔가 마음이 침착해……
 			CALL HEARTMARK_E
 			PRINTFORMW 「……저기, 좀 더 들러붙어도 좋다？」
 		ENDIF
@@ -13473,13 +13473,13 @@ CASE "子離れ"
 		ELSEIF TALENT:MASTER:남자
 			PRINTFORM 「지금부터는 이 아이에게도 함께에로일 가르쳐 줘
 			CALL HEARTMARK_E
-			PRINTFORM 「%CNAME("二人称")%(와)과%CNAME("一人称")%노아이인걸, 조금 정도라면 바람피어도 허락해 준다
+			PRINTFORM 「%조사처리(CNAME("二人称"),"과")%%CNAME("一人称")%노아이인걸, 조금 정도라면 바람피어도 허락해 준다
 			CALL HEARTMARK_E
 		;女당신＋아들
 		ELSEIF COND("육아중：아들")
 			PRINTFORM 「지금부터는 둘이서 함께 이 아이에게에로일 가르쳐 주자
 			CALL HEARTMARK_E
-			PRINTFORM 「%CNAME("二人称")%(와)과%CNAME("一人称")%, 어느 쪽을 먼저 좋아하게 될까 경쟁이야
+			PRINTFORM 「%조사처리(CNAME("二人称"),"과")%%CNAME("一人称")%, 어느 쪽을 먼저 좋아하게 될까 경쟁이야
 			CALL HEARTMARK_E
 		;女당신＋딸
 		ELSE
