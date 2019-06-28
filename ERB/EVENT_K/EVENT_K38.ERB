@@ -4895,7 +4895,7 @@ CASE "조수で성처리：事後"
 ;-------------------------------------------------
 CASE "서류작업：도움"
 	IF RANDCHK(2, CFLAG:ARG:71, 0, 1)
-		PRINTFORMW 피로가 쌓였다%CALLNAME:MASTER%하,%CALLNAME:ARG%에 맛사지를 부탁해 보았습니다
+		PRINTFORMW 피로가 쌓였다%조사처리(CALLNAME:MASTER,"는")%,%CALLNAME:ARG%에 맛사지를 부탁해 보았습니다
 		PRINTL 
 		;三姉妹勢ぞろい
 		IF GETCHARA(39) > MASTER && GETCHARA(40) > MASTER
@@ -4910,7 +4910,7 @@ CASE "서류작업：도움"
 		ELSE
 			PRINTFORMW 「이제(벌써), 사치스러운 부탁을 해 주어요」
 			PRINTFORMW 「라도 좋아요. 월등히의 맛사지를 해 아겔♪」
-			PRINTFORMW %CALLNAME:ARG%하%CALLNAME:MASTER%의 뒤로 서면, 요령 있게도 날개로 어깨를 비비어 주고 있습니다
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")%%CALLNAME:MASTER%의 뒤로 서면, 요령 있게도 날개로 어깨를 비비어 주고 있습니다
 			PRINTFORML ………
 			PRINTFORML ……
 			PRINTFORMW …
@@ -4920,7 +4920,7 @@ CASE "서류작업：도움"
 
 		SETBIT CFLAG:ARG:71, 1
 	ELSE
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
 		PRINTL 
 		PRINTFORMW 「후후후, 나에게 공물이라니 센스가 있지 않아」
 		PRINTFORML 「그러면 이것을 술안주에 향후의 이야기라도 할까！」

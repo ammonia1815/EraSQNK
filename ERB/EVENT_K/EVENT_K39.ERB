@@ -1243,12 +1243,12 @@ IF SELECTCOM == 6
 				PRINTFORML 「키스라고, 서로 사랑하고 있다는 느낌이지요…♪너는 좋아해？나는 말야……」
 				PRINTFORMW %NAME:TARGET%는 살그머니 입술을 겹침이네, 계속합니다…
 				PRINTFORML 「츄…좋아해♪저기, 좀 더 하고 싶구나…♪」
-				PRINTFORMW 기쁜듯이 눈을가늘음%NAME:TARGET%하, 수줍어하고 있는 것을 숨기도록(듯이)키스를 재개했다
+				PRINTFORMW 기쁜듯이 눈을가늘음%조사처리(NAME:TARGET,"는")%, 수줍어하고 있는 것을 숨기도록(듯이)키스를 재개했다
 			ELSEIF FIRSTCOM_EX("연모", SELECTCOM) == 0
 				PRINTFORML 「응…읏」
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 한 번 입술을 떼어 놓아, %조사처리(CALLNAME:PLAYER,"를")% 응시하고 있다
 				PRINTFORML 「후후…읏♪이제(벌써) 몇번이나 하고 있을 것인데…왠지 부끄러워…♪」
-				PRINTFORMW 기쁜듯이 눈을가늘음%NAME:TARGET%하, 수줍어하고 있는 것을 숨기도록(듯이)키스를 재개했다
+				PRINTFORMW 기쁜듯이 눈을가늘음%조사처리(NAME:TARGET,"는")%, 수줍어하고 있는 것을 숨기도록(듯이)키스를 재개했다
 			ELSEIF PREVCOM == -1
 				PRINTFORMW %CALLNAME:TARGET%에 가볍고입짓고 하면, 몽롱 한 눈동자로%조사처리(CALLNAME:PLAYER,"를")% 응시해 왔다
 			ELSEIF RAND:5 == 0
@@ -6012,7 +6012,7 @@ CASE "탐색：帰還"
 ;-------------------------------------------------
 CASE "서류작업：도움"
 	IF RANDCHK(3, CFLAG:ARG:71, 0, 2)
-		PRINTFORMW 피로가 쌓였다%CALLNAME:MASTER%하,%CALLNAME:ARG%에 맛사지를 부탁해 보았습니다
+		PRINTFORMW 피로가 쌓였다%조사처리(CALLNAME:MASTER,"는")%,%CALLNAME:ARG%에 맛사지를 부탁해 보았습니다
 		PRINTL 
 		PRINTFORMW 「그런 일？ 그러면 적당한 마법으로……」
 		PRINTFORMW 「라고 생각했지만 멈추었어요. 가끔 씩은 나의 테크닉을 보여 줄까」
@@ -6026,7 +6026,7 @@ CASE "서류작업：도움"
 
 		SETBIT CFLAG:ARG:71, 2
 	ELSEIF RANDCHK(2, CFLAG:ARG:71, 0, 2)
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에서류작업노도움를 부탁해 보았습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에서류작업노도움를 부탁해 보았습니다
 		PRINTL 
 		PRINTFORMW 「응？ 뭐야, 나에게 도와 받지 않으면 끝나지 않는 것 같아～？」
 		PRINTFORMW 「킥킥……너는, 상당히,발리나 있고 원이군요♪」
@@ -6040,13 +6040,13 @@ CASE "서류작업：도움"
 
 		SETBIT CFLAG:ARG:71, 1
 	ELSE
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
 		PRINTL 
 		PRINTFORMW 「어쩔 수 없네요……네, 아～응」
 		PRINTFORMW 「？ 무슨 일이야？ ……너가 먹는 것을 도왔으면 좋지요？」
 		PRINTFORMW 그렇게 왔는지…(와)과 의표를 찔러지면서도, 이것은 이것대로 즐겁다시간(이었)였습니다…
 		PRINTL 
-		PRINTFORMW 온화한 교환으로 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+		PRINTFORMW 온화한 교환으로 리프레쉬 했다%조사처리(CALLNAME:MASTER,"는")%서류작업에 돌아왔습니다.
 
 		SETBIT CFLAG:ARG:71, 0
 	ENDIF

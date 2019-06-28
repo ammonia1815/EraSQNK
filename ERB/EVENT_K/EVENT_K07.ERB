@@ -43,7 +43,7 @@ ELSEIF GETBIT(CFLAG:201, 1) == 0 && MARK:굴복각인 == 1
 	DRAWLINE
 	PRINTFORMW %CALLNAME:PLAYER%하지만 문을 열면 방의 한가운데에서%타겟은()% 개의 장난감을 갉아 먹고 있다
 	PRINTFORMW %CALLNAME:PLAYER%하지만 가까워져도%타겟은()% 베어무는 것을 그만두지 않는다
-	PRINTFORMW 어쩔 수 없기 때문에%CALLNAME:PLAYER%하%타겟을()% 배트 위까지 옮겨 들였다.
+	PRINTFORMW 어쩔 수 없기 때문에%조사처리(CALLNAME:PLAYER,"는")%%타겟을()% 배트 위까지 옮겨 들였다.
 	SETBIT CFLAG:201, 1
 	RETURN 1
 ;굴복각인Lv2
@@ -70,7 +70,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	PRINTFORMW %CALLNAME:PLAYER%하지만 방에 들어가면 그것까지 자고 있었을 것이다%CALLNAME:TARGET%의 달려들어 왔다
 	PRINTFORMW 「와읏！와읏！와읏！」
 	PRINTFORMW %타겟은()% %CALLNAME:PLAYER%의가슴에 얼굴을 비벼대고 있다.
-	PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 머리를 어루만지면, 침대에 옮겨 들였다.
+	PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 머리를 어루만지면, 침대에 옮겨 들였다.
 	SETBIT CFLAG:201, 4
 	RETURN 1
 ;조수の有無を체크（いない場合は二回目以降へ飛ぶ）
@@ -131,7 +131,7 @@ ELSEIF TALENT:연모
 	ELSEIF RAND:2 == 0
 		PRINTFORMW 「쿠우～응, 왕･･･와읏」
 		PRINTFORMW %CALLNAME:PLAYER%하지만%CALLNAME:TARGET%에 가까워지면%타겟은()% 흠뻑 젖은 저기를 열어 과시하고 있다
-		PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%에입청구서를 하면, 그대로넘어뜨리기.
+		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%에입청구서를 하면, 그대로넘어뜨리기.
 	ELSE
 		PRINTFORMW 「하, 핫, 핫･･･응, 왕와읏！」
 		PRINTFORMW %CALLNAME:TARGET%의 얼굴이 홍조 하고 있는, 흥분하고 있는 것 같다.
@@ -195,7 +195,7 @@ ELSEIF MARK:굴복각인 == 3 && TALENT:연모 == 0
 ;연모＋만족
 ELSEIF TALENT:연모 && CFLAG:99
 	DRAWLINE
-	PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 잔 것을 봐 방을 나가려고 했다
+	PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 잔 것을 봐 방을 나가려고 했다
 	PRINTFORMW 하지만,%CALLNAME:PLAYER%의 팔에는%CALLNAME:TARGET%의 팔이 확실히 감기고 있다
 	PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 단념해 그대로 자기로 했다.
 	RETURN 1
@@ -344,7 +344,7 @@ IF SELECTCOM == 1
 				PRINTFORMW %CALLNAME:TARGET%의 눈동자가 물기를 띠고 있다, 아무래도 확실히 느끼고 있는 것 같다.
 			;それ以外
 			ELSE
-				PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 저기에 혀를 기게 하고 있다
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 저기에 혀를 기게 하고 있다
 				PRINTFORMW 「가우･･･그르르룩」
 				PRINTFORMW 조금씩이지만 느끼고 있다･･･같다.
 			ENDIF
@@ -521,7 +521,7 @@ IF SELECTCOM == 4
 				PRINTFORMW %타겟은()% 미지의 쾌감에 노출되어, 움찔움찔 떨고 있다
 			;それ以外
 			ELSE
-				PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의페니스를 혀끝에서 졸졸 빨고 있다
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의페니스를 혀끝에서 졸졸 빨고 있다
 				PRINTFORMW %타겟은()% 서투른 자극에 삐걱삐걱 떨고 있다
 			ENDIF
 			CFLAG:225 = 1
@@ -560,12 +560,12 @@ IF SELECTCOM == 5
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 바늘이 있다바스트를 잡으면 격렬하게 비비기 시작했다.
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 바늘이 있다바스트를 잡으면 격렬하게 비비기 시작했다.
 			PRINTFORMW 「！･･････우･･･응」
 			PRINTFORMW %타겟은()% 호흡 곤란과 같은 상태가 되어 있다.
 		;それ以外
 		ELSE
-			PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의바스트를 비비기 시작했다.
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의바스트를 비비기 시작했다.
 			PRINTFORMW 「가욱･･･가르르룩」
 			PRINTFORMW %타겟은()% 그다지 기분 좋지는 않은 것 같다.
 		ENDIF
@@ -1128,11 +1128,11 @@ IF SELECTCOM == 61
 			;연모
 			ELSEIF TALENT:연모
 				PRINTFORMW %타겟은()% 이쪽에엉덩이를향해라꼬리를 털고 있다.
-				PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의엉덩이를잡으면 안쪽까지 단번에삽입했다.
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의엉덩이를잡으면 안쪽까지 단번에삽입했다.
 				PRINTFORMW 「아오오오오온！」
 			;それ以外
 			ELSE
-				PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 뒤로 돌아 들어가 엉덩이를 잡아 도망칠 수 없도록 하면, 안쪽까지 단번에삽입했다.
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 뒤로 돌아 들어가 엉덩이를 잡아 도망칠 수 없도록 하면, 안쪽까지 단번에삽입했다.
 				PRINTFORMW 「아오오오오옥？！」
 				PRINTFORMW %타겟은()% 돌연의 자극에 놀라고 있는 것 같다.
 			ENDIF
@@ -1181,13 +1181,13 @@ IF SELECTCOM >= 70 && SELECTCOM <= 79 && SELECTCOM != 75
 		ELSEIF TALENT:연모
 			PRINTFORMW %타겟은()% 이쪽에엉덩이를향해라애널을 넓히고 있다.
 			PRINTFORMW 애널에삽입해라, 라고 하는 일인 것 같다.
-			PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의요정망에 응해애널에삽입해 주었다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의요정망에 응해애널에삽입해 주었다
 			PRINTFORMW 「와웃･･･아오오오오온♪」
 			PRINTFORMW %타겟은()% 애널에의삽입에 꽤 기뻐하고 있는 것 같다.
 		;それ以外
 		ELSE
 			SIF SELECTCOM == 71
-				PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 뒤로 돌아 들어가, 그엉덩이를단단히 잡았다.
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 뒤로 돌아 들어가, 그엉덩이를단단히 잡았다.
 			PRINTFORMW 애널에페니스를 주면%타겟은()% 도망치려고 바동바동 하고 있다.
 			PRINTFORMW 하지만,%조사처리(CALLNAME:PLAYER,"는")% 그대로%CALLNAME:TARGET%의애널에삽입했다.
 		ENDIF
@@ -1202,7 +1202,7 @@ IF SELECTCOM >= 70 && SELECTCOM <= 79 && SELECTCOM != 75
 		ELSEIF TALENT:연모 && ABL:Ａ감각 >= 3
 			PRINTFORMW %타겟은()% 애널에의삽입를 기뻐하고 있다.
 			PRINTFORMW %CALLNAME:PLAYER%하지만 허리를 흔들면, 거기에 맞추어%CALLNAME:TARGET%의애널하지만 단단히 조여 온다.
-			PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 엉덩이를 비비면서애널에의 피스톤을 즐겼다.
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 엉덩이를 비비면서애널에의 피스톤을 즐겼다.
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 아직 조금%CALLNAME:TARGET%의애널는 힘들고, 너무 움직이면 간단하게 찢어져 버릴 것 같다
@@ -1454,7 +1454,7 @@ IF SELECTCOM == 93
 			PRINTFORMW 비비어지는 쾌감에, 불옷그랬다%CALLNAME:TARGET%도 허덕이는 소리를 지르고 있다.
 		;それ以外
 		ELSE
-			PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 저기에, 스스로의페니스를 문지르기 시작했다.
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 저기에, 스스로의페니스를 문지르기 시작했다.
 			PRINTFORMW %타겟은()% 삽입되지 않는 것에 불만인듯한 얼굴을 하고 있다.
 		ENDIF
 		CFLAG:244 = 1
@@ -1534,7 +1534,7 @@ IF SELECTCOM == 65
 					PRINTFORMW %CALLNAME:PLAYER%하지만 허리를 찔러올린다(와)과%CALLNAME:TARGET%도 맞추어 움직이고 있다.
 				;それ以外
 				ELSE
-					PRINTFORMW %CALLNAME:PLAYER%하%타겟을()% 자신에게 자랑하게 하면 그대로삽입했다･･･.
+					PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%타겟을()% 자신에게 자랑하게 하면 그대로삽입했다･･･.
 				ENDIF
 			ENDIF
 			CFLAG:245 = 1
@@ -2551,12 +2551,12 @@ IF SELECTCOM == 63
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW %CALLNAME:PLAYER%하%타겟을()% 안아올린다라고 그대로삽입했다.
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%타겟을()% 안아올린다라고 그대로삽입했다.
 			PRINTFORMW 「와우･･･아오오오♪」
 			PRINTFORMW %타겟은()% %CALLNAME:PLAYER%의페니스가삽입된 것을, 멀리서 짖음을 주고 기뻐했다.
 		;それ以外
 		ELSE
-			PRINTFORMW %CALLNAME:PLAYER%하%타겟을()% 껴안으면, 그대로삽입했다.
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%타겟을()% 껴안으면, 그대로삽입했다.
 			PRINTFORMW 「가욱！가욱！･･･그르르룰」
 			PRINTFORMW %타겟은()% 조금저항했지만, 그러던 중%CALLNAME:PLAYER%의페니스를 받아들였다.
 		ENDIF
@@ -2600,12 +2600,12 @@ IF SELECTCOM == 64
 			PRINTFORMW 
 		;연모
 		ELSEIF MARK:굴복각인 == 3
-			PRINTFORMW %CALLNAME:PLAYER%하%타겟을()% 안아 올리고 키를 이쪽에 향한 채로삽입했다.
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%타겟을()% 안아 올리고 키를 이쪽에 향한 채로삽입했다.
 			PRINTFORMW 「와우！？와읏, 와웃！」
 			PRINTFORMW %타겟은()% 돌연의삽입에 놀란 얼굴을 하고 있지만, 그 중은%CALLNAME:PLAYER%의페니스를 키트크 단단히 조이고 있다.
 		;それ以外
 		ELSE
-			PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 키로 돌아, 전신을애무하면서삽입했다.
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 키로 돌아, 전신을애무하면서삽입했다.
 			PRINTFORMW 「가욱！？가욱！가르르룩」
 			PRINTFORMW %타겟은()% 애무하면서의삽입에 당황해 버리고 있다.
 		ENDIF

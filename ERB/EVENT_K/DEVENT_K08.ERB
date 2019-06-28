@@ -387,7 +387,7 @@ ELSEIF EVENT_NUM && (RAND:2 || CEVENT(LOCALS:EVENT_NUM) == 0)
 			ELSE
 				PRINTFORMW 「……신체에 상처를 입혀서는 안돼……우리들은, 그 사람의 것인걸……」
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 손에손가락를 얽히게 해라, 입술로 입술을 차지해. 상냥하다애무를 거듭한다. 
-				PRINTFORMW %CALLNAME:GUEST%하저항를 봉쇄되고, 거미의 실에 붙잡힌 나비와 같이, 하는 대로 되어……
+				PRINTFORMW %조사처리(CALLNAME:GUEST,"는")%저항를 봉쇄되고, 거미의 실에 붙잡힌 나비와 같이, 하는 대로 되어……
 				PRINTFORMW 『그렇지만……상처를 붙이지 않으면……떨어뜨려 버려도……』사각에서, 입술만이 진심을 고한다. 
 			ENDIF
 			PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 각오를 결정 방에 들어가면. 두 명은 자석과 같이 현격하고, 입를 다물었다. 
@@ -404,7 +404,7 @@ ELSEIF EVENT_NUM && (RAND:2 || CEVENT(LOCALS:EVENT_NUM) == 0)
 					PRINTFORMW 야외플레이에저항(이)가 없는 두 명은 의기 투합해, 기쁜듯이 이야기를 주고받고 있습니다…
 				;실프の노출벽３이상
 				ELSEIF ABL:GUEST:노출벽 >= 3
-					PRINTFORMW 야외플레이에 익숙하지 않았다%CALLNAME:TARGET%에, %CALLNAME:GUEST%하야외플레이노매력를 말하고 있습니다…
+					PRINTFORMW 야외플레이에 익숙하지 않았다%CALLNAME:TARGET%에, %조사처리(CALLNAME:GUEST,"는")%야외플레이노매력를 말하고 있습니다…
 				;빌리져の노출벽３이상
 				ELSEIF ABL:노출벽 >= 3
 					PRINTFORMW 야외플레이하지만 기분 좋았다고입로 했다%조사처리(CALLNAME:TARGET,"를")% , %CALLNAME:GUEST%는 조롱하고 있습니다…
@@ -715,7 +715,7 @@ ELSEIF EVENT_NUM && RAND:3 == 0
 							PRINTFORMW 를손에 통과해 갔습니다
 						ENDIF
 					ENDIF
-					PRINTFORMW ―라고 생각했는데, %CALLNAME:MASTER%를 알아차렸다%CALLNAME:GUEST%하, 그것을 건네주어 떠나 갔습니다……
+					PRINTFORMW ―라고 생각했는데, %CALLNAME:MASTER%를 알아차렸다%조사처리(CALLNAME:GUEST,"는")%, 그것을 건네주어 떠나 갔습니다……
 					PRINTFORMW 도대체 어떻게 한 것인가…(와)과%조사처리(CALLNAME:MASTER,"가")% 고민하고 있으면
 					PRINTFORMW 「그래, 그것 나의 것이야…보지 마아, 후에에～응」
 					IF RAND:3 == 0 

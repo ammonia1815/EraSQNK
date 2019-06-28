@@ -427,7 +427,7 @@ ELSEIF NO:ASSI == 33
 				PRINTFORMW 보물상자중에서%조사처리(CALLNAME:ASSI,"가")% 모습을 나타냈다
 				PRINTFORMW 『너무도 멋진 상자의 전에 무심코 말이 나오지 않았다 녹이자 이유라면 허락해 주지만』
 				PRINTFORMW 「당신……이름은？」
-				PRINTFORMW 『응？%CNAMET(ASSI, "一人称")%하%CALLNAME:ASSI%(이)야☆』
+				PRINTFORMW 『응？%조사처리(CNAMET(ASSI, "一人称"),"는")%%CALLNAME:ASSI%(이)야☆』
 				PRINTFORMW 「그래, %CNAME("조수")%……조금 전은 미안해요」
 				PRINTFORMW 「무심코, 놀라 버려…」
 				PRINTFORMW 『응☆좋아, 언니는 오빠의 친구같기 때문에 허락해 준다☆』
@@ -699,11 +699,11 @@ ELSEIF MARK:굴복각인 == 0
 ;굴복각인Lv1
 ELSEIF MARK:굴복각인 == 1
 	IF MARK:정액각인 >= 4 && RAND:3 == 0
-		PRINTFORMW 「%CNAME("一人称", "どもり")%하%CALLNAME:PLAYER%의 물건에 따위 안 된닷! 」
+		PRINTFORMW 「%조사처리(CNAME("一人称", "どもり"),"는")%%CALLNAME:PLAYER%의 물건에 따위 안 된닷! 」
 		PRINTFORMW 강기태도를 취하고 있지만 그 떨린 소리로부터 동요는 분명하다
 		PRINTFORMW 배에 새겨졌다정액각인를 상냥하게 어루만지면, 「햣」라고 사랑스러운 교성을 주었다
 	ELSEIF MARK:정액각인 >= 2 && RAND:2 == 0
-		PRINTFORMW 「, 또 왔어…읏？ %CNAME("一人称", "どもり")%하%CALLNAME:PLAYER%의 물건은 되지 않는다고 말하고 있다…그렇겠지! 」
+		PRINTFORMW 「, 또 왔어…읏？ %조사처리(CNAME("一人称", "どもり"),"는")%%CALLNAME:PLAYER%의 물건은 되지 않는다고 말하고 있다…그렇겠지! 」
 		PRINTFORMW 강기태도를 취하고 있을 생각과 같지만 동요가 소리에 나타나고 있다
 		PRINTFORMW 배에 새겨졌다정액각인를 살그머니 어루만지면 흠칫 반응을 나타냈다
 	ELSE

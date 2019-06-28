@@ -8140,7 +8140,7 @@ CASE "난교개시"
 ;-------------------------------------------------
 CASE "서류작업：도움"
 	IF RANDCHK(3, CFLAG:ARG:71, 0, 2)
-		PRINTFORM %CALLNAME:MASTER%하%CALLNAME:ARG%에,
+		PRINTFORM %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에,
 		PRINTFORMW 계속 앉아 있는 채로엉덩이하지만 아파져 왔기 때문에 의자가 되어 주지 않겠는가？(와)과 농담을 말해 보았습니다
 		PRINTL 
 		PRINTFORMW 「에？의자？그러면, 여기 와아♪」
@@ -8149,22 +8149,22 @@ CASE "서류작업：도움"
 		PRINTFORMW 「하아이, 1분 저런～이♪」
 		PRINTFORMW 흐르게 되는 대로%CALLNAME:MASTER%하지만 허리를 내리면,%CALLNAME:ARG%에 제대로 껴안겨졌다！
 		PRINTFORMW 「……훗. 후후…………여기간질간질………」
-		PRINTFORMW 이미 일의 할 수 있는 상황이 아니게 되었다%CALLNAME:MASTER%하,%CALLNAME:ARG%의 달콤한 장난에 몸을 맡겼습니다……
+		PRINTFORMW 이미 일의 할 수 있는 상황이 아니게 되었다%조사처리(CALLNAME:MASTER,"는")%,%CALLNAME:ARG%의 달콤한 장난에 몸을 맡겼습니다……
 
 		SETBIT CFLAG:ARG:71, 2
 	ELSEIF RANDCHK(2, CFLAG:ARG:71, 0, 2)
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에 차를 끓여 받기로 했습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에 차를 끓여 받기로 했습니다
 		PRINTL 
 		PRINTFORM 「응후후♪ 좋아～
 		CALL HEARTMARK_E
 		PRINTFORMW 「……아, 그렇지만…일전에%CNAMET(ARG, "二人称")%에 끓여 받은 것, 처～있고 맛있었네요！」
 		PRINTFORMW 「그 차, 또 마셔 보고 싶은 것이지만……안 되는가？」
 		PRINTL 
-		PRINTFORMW 조금 좋은 기분으로 차를 끓였다%CALLNAME:MASTER%하,%CALLNAME:ARG%에 맛있는 과연～♪라고 칭찬되어지면서 다회를 즐겼습니다…
+		PRINTFORMW 조금 좋은 기분으로 차를 끓였다%조사처리(CALLNAME:MASTER,"는")%,%CALLNAME:ARG%에 맛있는 과연～♪라고 칭찬되어지면서 다회를 즐겼습니다…
 
 		SETBIT CFLAG:ARG:71, 1
 	ELSE
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
 		PRINTL 
 		PRINTFORML 「좋아요～♪ 그 대신……나의 부탁도 들어 주지 않을까？」
 		PRINTFORMW %CALLNAME:ARG%는 뒤손에 가지고 있던 큰손들고를 책상에 톤으로 두었다
@@ -8173,7 +8173,7 @@ CASE "서류작업：도움"
 		CALL HEARTMARK_E
 		PRINTFORMW %CALLNAME:ARG%의 케이크는……달콤하고, 부드러워서, 채 붉고 선명했습니다.
 		PRINTL 
-		PRINTFORMW 온화한 교환으로 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+		PRINTFORMW 온화한 교환으로 리프레쉬 했다%조사처리(CALLNAME:MASTER,"는")%서류작업에 돌아왔습니다.
 
 		SETBIT CFLAG:ARG:71, 0
 	ENDIF

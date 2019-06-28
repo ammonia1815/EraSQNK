@@ -97,7 +97,7 @@ ELSEIF NO:ASSI == 8 && CFLAG:ASSI:209 == 2
 	IF CEVENT("조수会話：밴시") == 0
 		;연모＋연모時初구상（陥落이벤트）が発生済み
 		IF TALENT:연모 && GETBIT(CFLAG:201, 4)
-			PRINTFORML %CALLNAME:MASTER%하%CALLNAME:TARGET%에,%TEXTS("조수の명칭")%를 데려 온 일을 고했다.
+			PRINTFORML %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:TARGET%에,%TEXTS("조수の명칭")%를 데려 온 일을 고했다.
 			PRINTFORML 「단 둘, 다른 것인가……뭐, 좋다. 그래서,%TEXTS("조수の명칭")%, 어디？」
 			PRINTFORML %CALLNAME:TARGET%에게 물을 수 있다, %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:ASSI%하지만 없는 것을 알아차렸다. 
 			PRINTFORML 확실히, 함께 방까지 왔을 것이지만……. 

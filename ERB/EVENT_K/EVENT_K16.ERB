@@ -6085,7 +6085,7 @@ IF SELECTCOM == 37
 			ELSEIF RAND:3 == 0
 				PRINTFORMW 「새근,  이러한……아, ♪ 얽혀 무심코, 라고…♪」
 			ELSEIF RAND:2 == 0
-				PRINTFORMW 「하아! %CNAME("二人称")%하…언제나 이와 같은 느낌인가?」
+				PRINTFORMW 「하아! %조사처리(CNAME("二人称"),"는")%…언제나 이와 같은 느낌인가?」
 			ELSE
 				PRINTFORMW 「이와 같은 완구로……아아,  후아아!」
 			ENDIF
@@ -17536,7 +17536,7 @@ CASE "Ｂ절정20회이상"
 					PRINTFORMW 「하, 하인이…읏！빨리, 저의 유방인가, 들…그 추접스러운 것을…눗, 케에…읏！」
 					;조수がいる状況でマスターが니플퍽中＋조수のＢ삽입경험が20이상＋조수のＢ삽입경험が1이상＋マスターか조수のどちらかが새드끼持ち
 					IF ASSI > 0 && PLAYER == MASTER && EXP:ASSI:Ｂ삽입경험 >= 20 && EXP:ASSI:허리사용경험 > 0 && (ABL:MASTER:새드끼 || ABL:ASSI:새드끼) && RAND:2 > 0
-						PRINTFORML 니플퍽쾌락의 여운을 씹어 죽여, 더욱은%CALLNAME:MASTER%에 향해 갖은 험담을 토하는 노예의반항적태도를 보았다\@ABL:MASTER:새드끼 ? %CALLNAME:MASTER%하조수에 지시를 내렸다 # 조수하지만 당신의 혼자의 생각으로 움직였다\@
+						PRINTFORML 니플퍽쾌락의 여운을 씹어 죽여, 더욱은%CALLNAME:MASTER%에 향해 갖은 험담을 토하는 노예의반항적태도를 보았다\@ABL:MASTER:새드끼 ? %조사처리(CALLNAME:MASTER,"는")%조수에 지시를 내렸다 # 조수하지만 당신의 혼자의 생각으로 움직였다\@
 						PRINTFORM %CALLNAME:ASSI%하지만,%CALLNAME:TARGET%(이)가 비었다
 						IF TALENT:거유 >= 2 && RAND:2
 							IF RAND:2
@@ -17569,7 +17569,7 @@ CASE "Ｂ절정20회이상"
 					PRINTFORMW 「저, 저는 가지 않았다…유방을 자지로 범해져라고…절정에 달하는 것…도…있지 않아, 와…」
 					;조수が니플퍽中＋マスターのＢ삽입경험が20이상＋マスターのＢ삽입경험が1이상＋マスターが새드끼持ち
 					IF ASSI > 0 && ASSIPLAY && EXP:MASTER:Ｂ삽입경험 >= 20 && EXP:MASTER:허리사용경험 > 0 && ABL:MASTER:새드끼 && RAND:2 > 0
-						PRINTFORML 가슴을범해져도 더꿋꿋함%CALLNAME:TARGET%의 유방에%CALLNAME:MASTER%하손를 두면,
+						PRINTFORML 가슴을범해져도 더꿋꿋함%CALLNAME:TARGET%의 유방에%조사처리(CALLNAME:MASTER,"는")%손를 두면,
 						PRINTFORML 사용하지 않은 쪽의유두에페니스를삽입해,%CALLNAME:ASSI%(와)과 두 명 줄서니플퍽를 개시했다…
 						IF RAND:3 == 0
 							PRINTFORMW 「…읏！야아…그만두고, 양의가슴에…범하는구나…읏！이…가 섬, 휴우우…읏！？」
@@ -22007,13 +22007,13 @@ CASE "조수で성처리：事後"
 ;서류작업이벤트
 ;-------------------------------------------------
 CASE "서류작업：도움"
-	PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+	PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
 	PRINTL 
 	PRINTFORMW 「호호우……%CNAMET(ARG, "二人称")%으로서는 멋부리고가 효과가 있는 것이 아닌가」
 	PRINTFORMW 「좋아, 불려 주자♪」
-	PRINTFORMW 묘한 권유 불평이 공을 세웠는지,%CALLNAME:ARG%하%CALLNAME:MASTER%(와)과 단 둘에서의 다회에 기쁜 듯합니다…
+	PRINTFORMW 묘한 권유 불평이 공을 세웠는지,%조사처리(CALLNAME:ARG,"는")%%CALLNAME:MASTER%(와)과 단 둘에서의 다회에 기쁜 듯합니다…
 	PRINTL 
-	PRINTFORMW 온화한 교환으로 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+	PRINTFORMW 온화한 교환으로 리프레쉬 했다%조사처리(CALLNAME:MASTER,"는")%서류작업에 돌아왔습니다.
 	SETBIT CFLAG:ARG:71, 0
 CASE "서류작업：키스"
 
@@ -22216,7 +22216,7 @@ ELSEIF TALENT:작은몸집
 		ELSE
 			PRINTFORMW 「버섯만 모아 어떻게 할거야는과? 후후, 정해져 있지 아니겠는가♪」
 		ENDIF
-		PRINTFORMW 앞에서 한말 철회, 성욕의 권화화한%CALLNAME:TARGET%에 방심하고 있던%CALLNAME:MASTER%하앗 떠나 밀어 넘어뜨려져 버린다…!
+		PRINTFORMW 앞에서 한말 철회, 성욕의 권화화한%CALLNAME:TARGET%에 방심하고 있던%조사처리(CALLNAME:MASTER,"는")%앗 떠나 밀어 넘어뜨려져 버린다…!
 		PRINTFORMW 「야해-일도 하는 것이 「어른」의 데이트라는 것이다♪ 거기에 운동의 가을과 구더기? 듬뿍 땀을 흘려 돌아가지 아니겠는가♪」
 		PRINTFORMW 그것 전혀 능숙한 일 말하지 않으니까!
 		PRINTFORMW 「어머 어머, 이러쿵저러쿵 말하지 않고 먹이가 되지 않는인가♪」

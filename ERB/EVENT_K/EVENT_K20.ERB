@@ -67,7 +67,7 @@ IF GETBIT(CFLAG:201, 0) == 0
 	PRINTFORMW 「이런 곳에 가두어,  %CNAME("一人称")%에 무슨 용무입니까?」
 	PRINTFORMW 「엣, 조교! 음란하게 해 팔아 버린다?」
 	PRINTFORMW 「그런 것 안됩니다. 신사마도 반드시 허락하가 되지 않을 것입니다아」
-	PRINTFORMW 「……므우, 알았습니다.%CNAME("二人称")%하성욕하지만 너무 모이고 있기 때문에, 악행에손를 물들이고 있습니다아」
+	PRINTFORMW 「……므우, 알았습니다.%조사처리(CNAME("二人称"),"는")%성욕하지만 너무 모이고 있기 때문에, 악행에손를 물들이고 있습니다아」
 	PRINTFORMW 「이 %조사처리(CNAME("一人称"),"가")% %조사처리(CNAME("二人称"),"를")% 깨끗이 시켜, 갱생함키있습니다 ♪」
 	SETBIT CFLAG:201, 0
 	RETURN 1
@@ -5719,7 +5719,7 @@ IF SELECTCOM == 173 && TEQUIP:새댁플레이
 			PRINTFORMW %타겟은()% 왠지 하이텐션이다…
 		;それ以外
 		ELSE
-			PRINTFORMW 「 벌써, 정말로 야해군요, %CNAME("二人称")%하♪」
+			PRINTFORMW 「 벌써, 정말로 야해군요, %조사처리(CNAME("二人称"),"는")%♪」
 		ENDIF
 		RETURN 1
 	ENDIF
@@ -7945,7 +7945,7 @@ CASE "一言이벤트"
 	ELSEIF RANDF(3, 1) == 0
 		IF RANDF(3) == 0 && TALENT:ARG:냄새민감 && TALENT:ARG:연모
 			PRINTFORML 「%CNAMET(ARG, "주인", "・", "～")%♪ 후아아……%CNAMET(ARG, "주인")%의 냄새……침착합니다아…」
-			PRINTFORML %CALLNAME:ARG%하%CALLNAME:MASTER%에 껴안아, 넋을 잃고 있다…
+			PRINTFORML %조사처리(CALLNAME:ARG,"는")%%CALLNAME:MASTER%에 껴안아, 넋을 잃고 있다…
 		ELSEIF RANDF(2) && CONFIG("성희롱許可") && COND("身嗜み：노팬티", ARG) == 0
 			IF EQUIP:ARG:팬티
 				PRINTFORML 「예지금 입고 있다팬티의 색, 입니까？！우, 우우～～……%TEXTS("下着の色", EQUIP:ARG:팬티)%……입니다아」
@@ -8020,7 +8020,7 @@ CASE "조수で성처리：事後"
 
 CASE "탐색：탐색개시"
 	IF GETBIT(CFLAG:201, 30) && RAND:3 == 0
-		PRINTFORMW 「맡겨 주세요,%CNAMET(ARG, "주인")%하%CNAMET(ARG, "一人称")%하지만 수호 해 줍니다아！」
+		PRINTFORMW 「맡겨 주세요,%조사처리(CNAMET(ARG, "주인"),"는")%%CNAMET(ARG, "一人称")%하지만 수호 해 줍니다아！」
 	ELSEIF RAND:3 == 0
 		PRINTFORMW 「노력해요,%CNAMET(ARG, "주인")%읏♪」
 	ELSEIF RAND:2
@@ -8033,7 +8033,7 @@ CASE "탐색：ご休憩"
 	IF BASE:PLAYER:정력 <= MAXBASE:PLAYER:정력 * 3 /10 && RAND:5 == 0
 		PRINTFORMW 「아라, 혹시 지치게 되었습니까？ 손강한 상대였습니다인 거네요～」
 		PRINTFORMW 「……땀투성이로 미안하지만, 조금 실례합니다아♪」
-		PRINTFORMW %CALLNAME:ARG%하%CALLNAME:MASTER%에 등측으로부터 껴안아, 신에 기원을 바치기 시작했다……
+		PRINTFORMW %조사처리(CALLNAME:ARG,"는")%%CALLNAME:MASTER%에 등측으로부터 껴안아, 신에 기원을 바치기 시작했다……
 		PRINTL 
 		BASE:PLAYER:정력 = MIN(BASE:PLAYER:정력 + 10, MAXBASE:PLAYER:정력)
 		PRINTFORMW %CALLNAME:MASTER%의정력하지만10회복했다！
@@ -8057,7 +8057,7 @@ CASE "탐색：ご休憩"
 	ELSE
 		PRINTFORMW 「%CNAMET(ARG, "주인", "～")%, 차가 들어갔어요」
 		PRINTFORMW 「조금이지만, 과자도 가져온 것입니다……키득♪」
-		PRINTFORMW %CALLNAME:ARG%하%CALLNAME:MASTER%(와)과 단 둘에서의 순간의 휴식을 싱글벙글 얼굴로 만끽하고 있다
+		PRINTFORMW %조사처리(CALLNAME:ARG,"는")%%CALLNAME:MASTER%(와)과 단 둘에서의 순간의 휴식을 싱글벙글 얼굴로 만끽하고 있다
 	ENDIF
 CASE "탐색：帰還"
 	IF RAND:3 == 0
@@ -8071,14 +8071,14 @@ CASE "탐색：帰還"
 ;서류작업이벤트
 ;-------------------------------------------------
 CASE "서류작업：도움"
-	PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+	PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
 	PRINTL 
 	PRINTFORMW 「좋지만……과식하지 않도록 해요」
 	PRINTFORMW 「%CNAMET(ARG, "二人称")%(와)과 함께라고, 즐겁고 너무 뭐든지 해 버립니다만……」
 	PRINTFORMW 「폭식은 안됩니다？♪」
 	PRINTFORMW 언제나 대로 설교 냄새가 난다%CALLNAME:ARG%하지만,%CALLNAME:MASTER%에 차에 이끌린 일에 보기에도 위기분입니다…
 	PRINTL 
-	PRINTFORMW 온화한 교환으로 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+	PRINTFORMW 온화한 교환으로 리프레쉬 했다%조사처리(CALLNAME:MASTER,"는")%서류작업에 돌아왔습니다.
 
 	SETBIT CFLAG:ARG:71, 0
 CASE "서류작업：키스"

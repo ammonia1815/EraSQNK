@@ -8775,7 +8775,7 @@ CASE "一言이벤트"
 		IF RANDF(3) == 0 && TALENT:ARG:연모
 			CALL PRINT_STR, "「おはよう。今日もよろしくね_H_」_L"
 			IF RANDF(2)
-				PRINTFORM %CALLNAME:ARG%하%CALLNAME:MASTER%의 사타구니에손를 늘려,
+				PRINTFORM %조사처리(CALLNAME:ARG,"는")%%CALLNAME:MASTER%의 사타구니에손를 늘려,
 				IF TALENT:MASTER:여자
 					PRINTFORML %TEXTR("보지를優しく撫で", "음핵を探り当てて押してき")%
 				ELSEIF TALENT:MASTER:남자
@@ -8784,7 +8784,7 @@ CASE "一言이벤트"
 					PRINTFORML %TEXTR("페니스を撫でさすってき", "보지를優しく撫で")%
 				ENDIF
 			ELSE
-				PRINTFORML %CALLNAME:ARG%하%CALLNAME:MASTER%의 전에 무릎 꿇어, 사타구니에 안녕의키스를 해 왔다
+				PRINTFORML %조사처리(CALLNAME:ARG,"는")%%CALLNAME:MASTER%의 전에 무릎 꿇어, 사타구니에 안녕의키스를 해 왔다
 			ENDIF
 		ELSEIF RANDF(2)
 			PRINTFORML 「……벌써 일어나 버려？ 킥킥……조금만 더, 꿈 속에서 즐깁시다♪」
@@ -8903,15 +8903,15 @@ CASE "탐색：ご休憩"
 ;-------------------------------------------------
 CASE "서류작업：도움"
 	IF RANDCHK(4, CFLAG:ARG:71, 0, 3)
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
 		PRINTL 
 		PRINTFORMW 「풋,…킥킥……아하하♪ 재미있는 일 말해요……좋아요, 도와 준다♪」
-		PRINTFORMW 묘한 권유 불평이 공을 세웠는지,%CALLNAME:ARG%하%CALLNAME:MASTER%(와)과 단 둘에서의 다회에 기쁜 듯합니다…
+		PRINTFORMW 묘한 권유 불평이 공을 세웠는지,%조사처리(CALLNAME:ARG,"는")%%CALLNAME:MASTER%(와)과 단 둘에서의 다회에 기쁜 듯합니다…
 		PRINTL 
-		PRINTFORMW 온화한 교환으로 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+		PRINTFORMW 온화한 교환으로 리프레쉬 했다%조사처리(CALLNAME:MASTER,"는")%서류작업에 돌아왔습니다.
 		SETBIT CFLAG:ARG:71, 3
 	ELSEIF RANDCHK(3, CFLAG:ARG:71, 0, 3)
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에서류작업노도움를 부탁해 보았습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에서류작업노도움를 부탁해 보았습니다
 		PRINTL 
 		PRINTFORMW 「이것을 정리하면 좋은거네？ 좋아요, 맡기세요」
 		PRINTFORMW %CALLNAME:ARG%는 눈앞의 서류를 적당하게 잡아, 그것들에 대충 훑어보기 시작했습니다……
@@ -8923,7 +8923,7 @@ CASE "서류작업：도움"
 		PRINTFORMW 「시시한 것은 빨리 끝내, 좀 더 즐거운 것 합시다♪」
 		SETBIT CFLAG:ARG:71, 2
 	ELSEIF RANDCHK(2, CFLAG:ARG:71, 0, 3)
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에 차를 끓여 받기로 했습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에 차를 끓여 받기로 했습니다
 		PRINTL 
 		PRINTFORMW 「아라. 뭔가 드문 일 부탁받아 버렸어요……, 그렇지만 그렇구나, 좋아요♪」
 		PRINTFORML ………
@@ -8936,7 +8936,7 @@ CASE "서류작업：도움"
 		PRINTFORMW %CALLNAME:MASTER%하지만 또 대접해 주고라고 말하면,%CALLNAME:ARG%는 웃는 얼굴로 수긍했습니다.
 		SETBIT CFLAG:ARG:71, 1
 	ELSE
-		PRINTFORMW 조금 지쳤다%CALLNAME:MASTER%하,%CALLNAME:ARG%에 무릎 베개를 부탁해 보았습니다
+		PRINTFORMW 조금 지쳤다%조사처리(CALLNAME:MASTER,"는")%,%CALLNAME:ARG%에 무릎 베개를 부탁해 보았습니다
 		PRINTL 
 		PRINTFORMW 「후후후 응석꾸러기씨……좋아요, 여기에 오세요」
 		PRINTFORMW %CALLNAME:ARG%는 무릎에 실었다%CALLNAME:MASTER%의 머리를 어루만지면서, 조용하게 노래를 부르기 시작했습니다……
@@ -8944,24 +8944,24 @@ CASE "서류작업：도움"
 		PRINTFORML ………
 		PRINTFORML ……
 		PRINTFORMW …
-		PRINTFORMW 충분히 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+		PRINTFORMW 충분히 리프레쉬 했다%조사처리(CALLNAME:MASTER,"는")%서류작업에 돌아왔습니다.
 		SETBIT CFLAG:ARG:71, 0
 	ENDIF
 CASE "서류작업：키스"
 	IF COND("ご無沙汰", ARG)
-		PRINTFORMW %CALLNAME:MASTER%하……뭔가 말하고 싶다고 하는%CALLNAME:ARG%의 턱에손를 더해 입술을 빼앗았습니다！
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%……뭔가 말하고 싶다고 하는%CALLNAME:ARG%의 턱에손를 더해 입술을 빼앗았습니다！
 		PRINTL 
 		PRINTFORML 「꺗♪ 이, 이제(벌써)………응후훗♪」
 		PRINTFORMW 돌연의 일에 당황하는 %CALLNAME:ARG%(이었)였지만, 그렇지만도 않다……는 커녕 굉장한 기쁜 듯합니다
 		PRINTL 
-		PRINTFORMW 완전히기분를 자주(잘) 했다%CALLNAME:ARG%에 조망되면서,%CALLNAME:MASTER%하서류작업를 계속했습니다.
+		PRINTFORMW 완전히기분를 자주(잘) 했다%CALLNAME:ARG%에 조망되면서,%조사처리(CALLNAME:MASTER,"는")%서류작업를 계속했습니다.
 	ELSE
 		PRINTFORMW %마스터는()% 어깨 너머에 들여다 봐 왔다%CALLNAME:ARG%의 입술을 빼앗았습니다！
 		PRINTL 
 		PRINTFORML 「꺗♪ 이, 이제(벌써)………잘도 무단으로 빼앗았군요…돌려주세요…♪」
 		PRINTFORMW 돌연의 일에 당황하는 %CALLNAME:ARG%(이었)였지만, 그렇지만도 않다……는 커녕 굉장한 기쁜 듯합니다
 		PRINTL 
-		PRINTFORMW 서로 쪼아먹는 것 같은입짓고를 몇번인가 주고 받았다%CALLNAME:MASTER%하, 싱글벙글 위기분%CALLNAME:ARG%라고 잡담하면서 일을 계속했습니다.
+		PRINTFORMW 서로 쪼아먹는 것 같은입짓고를 몇번인가 주고 받았다%조사처리(CALLNAME:MASTER,"는")%, 싱글벙글 위기분%CALLNAME:ARG%라고 잡담하면서 일을 계속했습니다.
 	ENDIF
 	SETBIT CFLAG:ARG:71, 20
 CASE "서류작업：성희롱"
@@ -8973,13 +8973,13 @@ CASE "서류작업：무시"
 		PRINTL 
 		IF RANDCHK(2, CFLAG:ARG:71, 40, 41)
 			PRINTFORMW 「후우……이 방, 조금 덥지 않을까」
-			PRINTFORMW %CALLNAME:ARG%하가슴원을 느슨한, 골짜기를 과시하면서 탁탁 부치고 있습니다…
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")%가슴원을 느슨한, 골짜기를 과시하면서 탁탁 부치고 있습니다…
 			SETBIT CFLAG:ARG:71, 41
 			CALL SET_CEVENT, "서류작업：着衣の乱れ", ARG
 		ELSE
 			PRINTFORMW 「저기…일뿐 하지 않고？ %CNAMET(ARG, "一人称")%(와)과…놉시다……♪」
 			IF TALENT:음란 && RAND:2
-				PRINTFORMW %CALLNAME:ARG%하%CALLNAME:MASTER%의 사타구니에손를 늘려, 상냥하게 더듬어 왔다…
+				PRINTFORMW %조사처리(CALLNAME:ARG,"는")%%CALLNAME:MASTER%의 사타구니에손를 늘려, 상냥하게 더듬어 왔다…
 			ELSE
 				PRINTFORMW %CALLNAME:ARG%는 뒤로부터 껴안아 귓전으로달콤한말를 속삭이면서,%CALLNAME:MASTER%의가슴을더듬어 왔다…
 			ENDIF
@@ -8993,7 +8993,7 @@ CASE "서류작업：무시"
 		IF CEVENT("서류작업：着衣の乱れ", ARG)
 			PRINTFORMW %CALLNAME:ARG%는 흐트러진 착의인 채, 즈카즈카！(와)과발소리를 내 방으로부터 나갔습니다……
 		ELSE
-			PRINTFORMW 기분을 해친 모습의%CALLNAME:ARG%하, 즈카즈카！(와)과발소리를 내 방으로부터 나갔습니다……
+			PRINTFORMW 기분을 해친 모습의%조사처리(CALLNAME:ARG,"는")%, 즈카즈카！(와)과발소리를 내 방으로부터 나갔습니다……
 		ENDIF
 		SETBIT CFLAG:ARG:71, 50
 	ENDIF

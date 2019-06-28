@@ -5801,7 +5801,7 @@ CASE "절정방뇨"
 			PRINTFORMW 
 		;저항なし
 		ELSEIF CHECK_COM("강제방뇨") == 0
-			PRINTFORM 「와, 완전히…. 용서가 없구나,%CNAME("二人称")%하……
+			PRINTFORM 「와, 완전히…. 용서가 없구나,%조사처리(CNAME("二人称"),"는")%……
 			CALL HEARTMARK_E
 		;それ以外
 		ELSE
@@ -6989,7 +6989,7 @@ CASE "탐색：ご休憩"
 	IF RAND:3 == 0
 		PRINTFORMW 「어이……라는건 무엇이다, 소변인가. 종종걸음으로 사라졌기 때문에 무엇이 일어났는지와 걱정한이 아닌가」
 		PRINTFORMW 「……흠. 뭐, 좋을 기회다. 차분히 보게 해 받는다고 하자」
-		PRINTFORMW %CALLNAME:ARG%하%CALLNAME:MASTER%의 옆에 앞두어, 흥미로운 것 같게 바라보고 있다…
+		PRINTFORMW %조사처리(CALLNAME:ARG,"는")%%CALLNAME:MASTER%의 옆에 앞두어, 흥미로운 것 같게 바라보고 있다…
 	ELSEIF RAND:2
 		PRINTFORMW 「훗……시시하다. 자, 진행되겠어」
 		PRINTFORMW 「……어떻게 한, 가지 않는 것인지？」
@@ -7013,17 +7013,17 @@ CASE "탐색：帰還"
 ;-------------------------------------------------
 CASE "서류작업：도움"
 	IF RANDCHK(5, CFLAG:ARG:71, 0, 4)
-		PRINTFORMW 조금 지쳤다%CALLNAME:MASTER%하,%CALLNAME:ARG%에 무릎 베개를 부탁해 보았습니다
+		PRINTFORMW 조금 지쳤다%조사처리(CALLNAME:MASTER,"는")%,%CALLNAME:ARG%에 무릎 베개를 부탁해 보았습니다
 		PRINTL 
 		PRINTFORMW 「하아？ 아이인가, 너는？」
 		PRINTFORMW 「……기다려, 그런 얼굴을 하지마. 하지 않아라고는 말하지 않았다……다름아닌 너의 부탁이고」
 		PRINTFORMW 입조치고솔직에 무릎 베개에 응했다%CALLNAME:ARG%휴, 휴식하는 %CALLNAME:MASTER%의 머리를 때때로 어루만지고 있습니다…
 		PRINTL 
-		PRINTFORMW 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+		PRINTFORMW 리프레쉬 했다%조사처리(CALLNAME:MASTER,"는")%서류작업에 돌아왔습니다.
 
 		SETBIT CFLAG:ARG:71, 4
 	ELSEIF RANDCHK(4, CFLAG:ARG:71, 0, 4)
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에서류작업노도움를 부탁해 보았습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에서류작업노도움를 부탁해 보았습니다
 		PRINTL 
 		PRINTFORML 「흠, 좋을 것이다.%CNAMET(ARG, "二人称")%의 옆에 있다면, 이런 일에도 익숙해져 두지 않으면」
 		PRINTFORMW 「붓……는 없는가. 뭐도구등 사소한 일이다, 그것을 빌리겠어」
@@ -7034,7 +7034,7 @@ CASE "서류작업：도움"
 
 		SETBIT CFLAG:ARG:71, 3
 	ELSEIF RANDCHK(3, CFLAG:ARG:71, 0, 4)
-		PRINTFORM %CALLNAME:MASTER%하%CALLNAME:ARG%에,
+		PRINTFORM %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에,
 		PRINTFORMW 계속 앉아 있는 채로엉덩이하지만 아파져 왔기 때문에 의자가 되어 주지 않겠는가？(와)과 농담을 말해 보았습니다
 		PRINTL 
 		PRINTFORMW 「%CNAMET(ARG, "一人称")%의 일을 전망한 발언이라고 생각하지만……미안」
@@ -7044,7 +7044,7 @@ CASE "서류작업：도움"
 
 		SETBIT CFLAG:ARG:71, 2
 	ELSEIF RANDCHK(2, CFLAG:ARG:71, 0, 4)
-		PRINTFORMW 피로가 쌓였다%CALLNAME:MASTER%하,%CALLNAME:ARG%에 맛사지를 부탁해 보았습니다
+		PRINTFORMW 피로가 쌓였다%조사처리(CALLNAME:MASTER,"는")%,%CALLNAME:ARG%에 맛사지를 부탁해 보았습니다
 		PRINTL 
 		PRINTFORMW 「…후. 좋을 것이다. 나 마을 비전의, 굉장한 녀석을 해주지 않겠는가」
 		PRINTFORMW 겁없게 웃는다%CALLNAME:ARG%의 소매입로부터 꺼내지는, 실과 같이 가늘다바늘의 다발에 경솔한 자신을 저주하는 %CALLNAME:MASTER%(이었)였지만 소 잃고 외양간 고치는 격과 같다…
@@ -7052,16 +7052,16 @@ CASE "서류작업：도움"
 		PRINTFORML ……
 		PRINTFORMW …
 		PRINTFORMW 30분후……거기에는 심신 모두 잘못보도록(듯이) 건강하게 되었다%CALLNAME:MASTER%의 모습이！
-		PRINTFORMW %CALLNAME:ARG%를 의심한 것을 부끄러워하면서, 심기 일전해%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+		PRINTFORMW %CALLNAME:ARG%를 의심한 것을 부끄러워하면서, 심기 일전해%조사처리(CALLNAME:MASTER,"는")%서류작업에 돌아왔습니다.
 
 		SETBIT CFLAG:ARG:71, 1
 	ELSE
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
 		PRINTL 
 		PRINTFORMW 「흠, 좋을 것이다……그런데 키아즈마의 것은 있을까？ 이 나라의 물건은 아무래도 기름기가 많고」
 		PRINTFORMW 생각외 내켜하는 마음인 모습의%CALLNAME:ARG%(와)과 다회를 즐겼습니다…
 		PRINTL 
-		PRINTFORMW 온화한 교환으로 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+		PRINTFORMW 온화한 교환으로 리프레쉬 했다%조사처리(CALLNAME:MASTER,"는")%서류작업에 돌아왔습니다.
 
 		SETBIT CFLAG:ARG:71, 0
 	ENDIF

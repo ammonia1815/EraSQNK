@@ -8344,12 +8344,12 @@ CASE "탐색：탐색개시"
 		IF CEVENT("탐색：水着用意없음") == 0
 			PRINTFORMW 「아앙？수영복？입었으면 좋겠다라면 너가 준비해 둬」
 			PRINTFORMW 「……우선, 이번은 이것으로 참고 두어라」
-			PRINTFORMW %CALLNAME:ARG%하옷를 가방에 챙겨, 속옷 모습이 되었다！
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")%옷를 가방에 챙겨, 속옷 모습이 되었다！
 			PRINTFORMW 「이봐요, 가겠어！빤히 보고 있는 것이 아니야！」
 			CALL SET_CEVENT, "탐색：水着用意없음"
 			RETURN 1
 		ELSE
-			PRINTFORMW %CALLNAME:ARG%하%TEXTR("군청색の원피스수영복", "黒い비키니", "赤いマイクロ비키니")%그리고 준비만단인 것 같다
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")%%TEXTR("군청색の원피스수영복", "黒い비키니", "赤いマイクロ비키니")%그리고 준비만단인 것 같다
 		ENDIF
 	CASE "베르나도트의대미궁"
 	CASE "고즈번 사막"
@@ -8370,12 +8370,12 @@ CASE "탐색：ご休憩"
 		PRINTFORMW 「뭔가 먹자구. 이봐요, 내가 늘어놓아 주기 때문에 차라도 끓여 주어라」
 	ELSEIF RAND:5 == 0 && PALAM_EXPLORER("エンカウント回数") >= 10
 		PRINTFORMW 「연전 계속이니까……조금 거기서 몸 씻어 가자구」
-		PRINTFORMW %CALLNAME:MASTER%의 냄새를 맡았다%CALLNAME:ARG%하,손를 당겨 물소리가 하는 (분)편으로 이끌었다
+		PRINTFORMW %CALLNAME:MASTER%의 냄새를 맡았다%조사처리(CALLNAME:ARG,"는")%,손를 당겨 물소리가 하는 (분)편으로 이끌었다
 		PRINTFORMW （칫……이 녀석이 나 이외의 냄새가 나 키라는 것, 생각했던 것보다 싫은 것이다）
 	ELSEIF RAND:4 == 0 && PALAM_EXPLORER("エンカウント回数") >= 10
 		PRINTFORMW 「집중시켜라……웃, 오이, 여기 와라」
 		PRINTFORMW 「……어때？슬슬 지쳐 왔지 않은가？」
-		PRINTFORMW %CALLNAME:ARG%하%CALLNAME:MASTER%에 무릎 베개를 품질, 조금 상냥한 음색으로 상태를 (들)물어 왔다.
+		PRINTFORMW %조사처리(CALLNAME:ARG,"는")%%CALLNAME:MASTER%에 무릎 베개를 품질, 조금 상냥한 음색으로 상태를 (들)물어 왔다.
 		PRINTFORMW 썰렁한 허벅지와 머리카락을 빗어 오는 손가락의 감촉에, 조금의 수마[睡魔]가 굽은 목을 쳐들어 온다……
 	ELSEIF RAND:3 == 0
 		PRINTFORMW 「낙승(이었)였구나…라는 오이오이, 뭐야 그것……♪」
@@ -8413,7 +8413,7 @@ CASE "서류작업：도움"
 		PRINTFORMW 침대 위에 뒹굴었다%CALLNAME:ARG%라고 수다를 하며 보냈습니다……
 		SETBIT CFLAG:ARG:71, 4
 	ELSEIF RANDCHK(4, CFLAG:ARG:71, 0, 4)
-		PRINTFORMW 조금 지쳤다%CALLNAME:MASTER%하,%CALLNAME:ARG%에 무릎 베개를 부탁해 보았습니다
+		PRINTFORMW 조금 지쳤다%조사처리(CALLNAME:MASTER,"는")%,%CALLNAME:ARG%에 무릎 베개를 부탁해 보았습니다
 		PRINTL 
 		PRINTFORMW 「뭐야 그런 것으로 좋은 것인지……？ 오라, 머리 넘겨라」
 		PRINTFORMW %CALLNAME:ARG%는 약간 억지로%CALLNAME:MASTER%의 머리를 무릎 위에 실었습니다.
@@ -8422,11 +8422,11 @@ CASE "서류작업：도움"
 		PRINTFORMW %CALLNAME:MASTER%하지만 눈을 감으면, 잠시 해%CALLNAME:ARG%의 손가락이 상냥하게 머리카락에 닿아 옵니다……
 		PRINTFORMW 「…………후후………바, 기다려！ 나의 얼굴은 보지 않지！」
 		PRINTL 
-		PRINTFORMW 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+		PRINTFORMW 리프레쉬 했다%조사처리(CALLNAME:MASTER,"는")%서류작업에 돌아왔습니다.
 
 		SETBIT CFLAG:ARG:71, 3
 	ELSEIF RANDCHK(3, CFLAG:ARG:71, 0, 4)
-		PRINTFORM %CALLNAME:MASTER%하%CALLNAME:ARG%에,
+		PRINTFORM %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에,
 		PRINTFORMW 계속 앉아 있는 채로엉덩이하지만 아파져 왔기 때문에 의자가 되어 주지 않겠는가？(와)과 농담을 말해 보았습니다
 		PRINTL 
 		PRINTFORMW 「뭐야, 나에게 앉고 싶은 것인지？ %CNAMET(ARG, "二人称")%, 이따금 꼬마같은 일 말하기 시작하는구나」
@@ -8443,14 +8443,14 @@ CASE "서류작업：도움"
 
 		SETBIT CFLAG:ARG:71, 2
 	ELSEIF RANDCHK(2, CFLAG:ARG:71, 0, 4)
-		PRINTFORMW 피로가 쌓였다%CALLNAME:MASTER%하,%CALLNAME:ARG%에 맛사지를 부탁해 보았습니다
+		PRINTFORMW 피로가 쌓였다%조사처리(CALLNAME:MASTER,"는")%,%CALLNAME:ARG%에 맛사지를 부탁해 보았습니다
 		PRINTL 
 		PRINTFORMW 「아─……나쁘지만 나, 그러한 것은 근심손뭐구나」
 		;멜로나が居る？なんかここだけ凄い長文に…
 		IF GETCHARA(35) > MASTER && RAND:2
 			PRINTFORMW 「%CALLNAME:GETCHARA(35)%의 녀석이라면 아마, 그러한 것 자신있는 것이지만 말야……좋아」
 			PRINTFORMW 「조금 기다려라……불러 와 주기 때문！」
-			PRINTFORMW %CALLNAME:ARG%하%CALLNAME:MASTER%하지만 멈추는 사이도 없게 방으로부터 뛰쳐나와 버렸다！
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")%%CALLNAME:MASTER%하지만 멈추는 사이도 없게 방으로부터 뛰쳐나와 버렸다！
 			PRINTFORML ………
 			PRINTFORML ……
 			PRINTFORMW …
@@ -8481,12 +8481,12 @@ CASE "서류작업：도움"
 			PRINTFORMW 「아프게 해 버릴지도 모르지만, 그런데도 좋다는 것이라면 해주겠어？」
 			PRINTFORMW %CALLNAME:ARG%는 주먹을 고릿고릭이라고 울려지고 있다…
 			PRINTL 
-			PRINTFORMW 신변의 위험을 느꼈다%CALLNAME:MASTER%하, 오손책이라고 하는 일로 반대로%CALLNAME:ARG%의 어깨를 비비는 것으로 적당히 얼버무렸습니다.
+			PRINTFORMW 신변의 위험을 느꼈다%조사처리(CALLNAME:MASTER,"는")%, 오손책이라고 하는 일로 반대로%CALLNAME:ARG%의 어깨를 비비는 것으로 적당히 얼버무렸습니다.
 		ENDIF
 
 		SETBIT CFLAG:ARG:71, 1
 	ELSE
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
 		PRINTL 
 		IF RAND:2
 			PRINTFORMW 「뭐야, 센스가 있지 않은가. 그러면, 그렇다…이 녀석이라도 받는지, 는！ 너！！」
@@ -8498,7 +8498,7 @@ CASE "서류작업：도움"
 			PRINTFORMW %CALLNAME:ARG%는 불평하면서도 시종 위기분(이었)였습니다……
 		ENDIF
 		PRINTL 
-		PRINTFORMW 온화한 교환으로 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+		PRINTFORMW 온화한 교환으로 리프레쉬 했다%조사처리(CALLNAME:MASTER,"는")%서류작업에 돌아왔습니다.
 
 		SETBIT CFLAG:ARG:71, 0
 	ENDIF

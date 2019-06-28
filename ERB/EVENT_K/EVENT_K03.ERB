@@ -814,7 +814,7 @@ IF SELECTCOM == 5
 				IF CALCF("Ｂ발정")
 					PRINTFORMW （…기분이 좋지만…부족하다…유두하지만…）
 					PRINTFORMW 「응아아…유두를 만지작거려 주세요…들이마셔 주세요…」
-					PRINTFORML %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 강하게 떠났다유두에손를 늘린다
+					PRINTFORML %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 강하게 떠났다유두에손를 늘린다
 				ENDIF
 				PRINTFORMW 「으응…기분 좋아! 가슴 기분 좋아!」
 			ENDIF
@@ -5133,7 +5133,7 @@ CASE "난교개시"
 ;서류작업이벤트
 ;-------------------------------------------------
 CASE "서류작업：도움"
-	PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에 차를 끓여 받기로 했습니다
+	PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에 차를 끓여 받기로 했습니다
 	PRINTL 
 	PRINTFORMW 「차…입니까？ 네, 물론 좋아요……맡겨 주세요」
 	PRINTFORML ………

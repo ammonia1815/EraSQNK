@@ -62,7 +62,7 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 	PRINTFORMW 「……나에게…저것……하세요」
 	PRINTFORMW 「…그, 그건 말하면 저것이야！」
 	PRINTFORMW 「……이제(벌써) 바봇！빨리 가게 해 주세요라고 말하고 있는거야！」
-	PRINTFORMW %CALLNAME:PLAYER%하%타겟을()% 초조하게 하면서, 침대의 (분)편에발를 진행시켰다.
+	PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%타겟을()% 초조하게 하면서, 침대의 (분)편에발를 진행시켰다.
 	SETBIT CFLAG:201, 3
 	RETURN 1
 
@@ -215,7 +215,7 @@ IF STATE("撃沈", MASTER)
 			PRINTFORML ………
 			PRINTFORML ……
 			PRINTFORMW …
-			PRINTFORMW 격렬한 귀싸대기로%CALLNAME:PLAYER%하무리시리현실에 되돌려진다…
+			PRINTFORMW 격렬한 귀싸대기로%조사처리(CALLNAME:PLAYER,"는")%무리시리현실에 되돌려진다…
 			PRINTFORMW 「겨우 일어났다…」
 			PRINTFORMW 「빨리 돌아가요！」
 		;お風呂場
@@ -312,11 +312,11 @@ IF SELECTCOM == 0
 		;굴복각인Lv2이상
 		ELSEIF MARK:굴복각인 >= 2
 			PRINTFORMW 「응아･･････」
-			PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%에무리해입청구서를 했다.
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%에무리해입청구서를 했다.
 		;それ以外
 		ELSE
 			PRINTFORMW 「응므우･･････！」
-			PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%에무리해입청구서를 했다.
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%에무리해입청구서를 했다.
 			PRINTFORMW 「…떼어 놓으, 세요」
 		ENDIF
 			CFLAG:221 = 1
@@ -970,7 +970,7 @@ IF SELECTCOM == 33 && TEQUIP:애널바이브
 		;それ以外
 		ELSE
 			PRINTFORMW 「그런 것 아픈 것뿐이니까！그만두세요！」
-			PRINTFORMW %CALLNAME:PLAYER%하저항하는 %타겟을()% 억눌러애널바이브를삽입했다.
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%저항하는 %타겟을()% 억눌러애널바이브를삽입했다.
 		ENDIF
 			RETURN 1
 	ENDIF
@@ -1130,7 +1130,7 @@ IF SELECTCOM == 60
 			;연모
 			IF TALENT:연모
 				PRINTFORMW 「뭐, 뭐야 넣을 생각이야？」
-				PRINTFORMW %CALLNAME:PLAYER%하%타겟을()%넘어뜨리기, 천천히 질입에페니스를 맞대고 비빈다.
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%타겟을()%넘어뜨리기, 천천히 질입에페니스를 맞대고 비빈다.
 				PRINTFORMW 「그런 일 하면서 얼굴, 보지 마……수치않고인가, 해 있고…응, 아아아읏」
 				PRINTFORMW 「……이제(벌써), 바보오」
 			;それ以外
@@ -1257,7 +1257,7 @@ IF SELECTCOM >= 70 && SELECTCOM <= 79 && SELECTCOM != 75
 			PRINTFORMW %타겟은()% 이쪽에 항문을 내미면서 말하고 있다.
 		;それ以外
 		ELSE
-			PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의\@ SELECTCOM == 71 ? 後ろに回りこんで페니스を肛門に # 肛門に페니스を \@접붙였다.
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의\@ SELECTCOM == 71 ? 後ろに回りこんで페니스を肛門に # 肛門に페니스を \@접붙였다.
 			PRINTFORMW 「뭐？혹시 들어갈 수 있는 장소를 모르는거야？」
 			PRINTFORMW 천천히페니스를 항문에 꽉 누르면 조금씩 장내에 박혀 간다….
 			PRINTFORMW 「바봇！잘못되어 있닷, 잘못되어 있어요！거기는――아아아！！！」
@@ -1363,7 +1363,7 @@ IF SELECTCOM == 91
 		;それ以外
 		ELSE
 			PRINTFORMW 「누가 너 따위에 명령되어…무리에 하면 물어 주기 때문에」
-			PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 턱을 눌러 빨게 했다.
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 턱을 눌러 빨게 했다.
 		ENDIF
 			CFLAG:242 = 1
 			RETURN 1
@@ -2193,7 +2193,7 @@ IF SELECTCOM == 125 || SELECTCOM == 126
 					PRINTFORMW 
 				;それ以外
 				ELSE
-					PRINTFORMW %CALLNAME:PLAYER%하페니스밴드를 %CALLNAME:TARGET%에손건네주면 그것으로 자신을 범하도록(듯이) 명했다…
+					PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%페니스밴드를 %CALLNAME:TARGET%에손건네주면 그것으로 자신을 범하도록(듯이) 명했다…
 					PRINTFORMW 「하아？무슨 말하고 있는거야…마침내 이상해졌어…？」
 				ENDIF
 				CFLAG:266 = 1
@@ -2792,7 +2792,7 @@ ELSEIF SELECTCOM == 67
 	ELSEIF PREVCOM == 61
 		;연모
 		IF TALENT:연모
-			PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 양손를 뒤로 물러나, 몸을 딴 데로 돌릴 수 있도록(듯이)해페니스를 보다 깊게 꽂는다…
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 양손를 뒤로 물러나, 몸을 딴 데로 돌릴 수 있도록(듯이)해페니스를 보다 깊게 꽂는다…
 			PRINTFORMW 「아아읏！기, 깊다앗！」
 			IF TEQUIP:수치플레이
 				PRINTFORMW 갑자기%CALLNAME:TARGET%의 마지못해서를 하도록(듯이) 목을 흩뜨리기 시작했다…
@@ -4275,7 +4275,7 @@ CASE "아침ＳＭ"
 			PRINTFORMW 「아라, 안녕」
 			PRINTFORMW 「응？이것은 어떤 상황인가는？굉장한 일이 아니에요」
 			PRINTFORMW 「오늘은 너가 정말로 하고 싶은 것을 해 줄까 하고 생각한 것 뿐이야」
-			PRINTFORMW 정말로 하고 싶은 것？ %CALLNAME:PLAYER%하%CALLNAME:TARGET%에게 묻고 돌려준다…
+			PRINTFORMW 정말로 하고 싶은 것？ %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%에게 묻고 돌려준다…
 			PRINTFORMW 「너 언제나조교이라고 말하고 있지만 말야, 언제나 나에게 탓하게 하고 있을 뿐으로…」
 			PRINTFORMW 「사실은 너, 자신이조교되고 싶지요？」
 			PRINTL [0] 네
@@ -4382,7 +4382,7 @@ CASE "一言이벤트"
 	;その他
 	ELSEIF TALENT:ARG:연모 && RANDF(3) == 0
 		PRINTFORML 「저기, 오늘의 예정은 어떤 느낌이야？벼, 별로 어떻든지 좋지만」
-		PRINTFORML %CALLNAME:ARG%하꼬리를 자신의다리에 피삿피산과 가볍게 쳐박으면서%CALLNAME:MASTER%를 응시하고 있다…
+		PRINTFORML %조사처리(CALLNAME:ARG,"는")%꼬리를 자신의다리에 피삿피산과 가볍게 쳐박으면서%CALLNAME:MASTER%를 응시하고 있다…
 	ELSEIF MARK:ARG:굴복각인 >= 2 && RANDF(2)
 		PRINTFORML 「…뭐？우연히 행선지향이 같다야」
 		PRINTFORML 무정한 태도의%CALLNAME:ARG%하지만, 그 보조는%CALLNAME:MASTER%에 꼭 합쳐지고 있다
@@ -4436,7 +4436,7 @@ CASE "난교개시"
 ;서류작업이벤트
 ;-------------------------------------------------
 CASE "서류작업：도움"
-	PRINTFORM %CALLNAME:MASTER%하%CALLNAME:ARG%에,
+	PRINTFORM %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에,
 	PRINTFORMW 계속 앉아 있는 채로엉덩이하지만 아파져 왔기 때문에 의자가 되어 주지 않겠는가？(와)과 농담을 말해 보았습니다
 	PRINTL 
 	PRINTFORMW 「……그것, 진심으로 말하고 있어？」

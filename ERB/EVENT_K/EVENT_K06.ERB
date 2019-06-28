@@ -9000,7 +9000,7 @@ CASE "난교개시"
 CASE "서류작업：도움"
 	IF RANDCHK(2, CFLAG:ARG:71, 0, 1)
 ;OriginalString : %CALLNAME:MASTER%は%CALLNAME:ARG%にお茶を淹れてもらうことにしました
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에 차를 끓여 받기로 했습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에 차를 끓여 받기로 했습니다
 ;OriginalString : 
 		PRINTL 
 ;OriginalString : 「自分でやらずに指図するとは良い御身分ですにゃ～。 …まぁ、期待しないで待ってて欲しいニャ」
@@ -9022,7 +9022,7 @@ CASE "서류작업：도움"
 		SETBIT CFLAG:ARG:71, 1
 	ELSE
 ;OriginalString : %CALLNAME:MASTER%は%CALLNAME:ARG%に손招きして、お茶菓子を食べるのを手伝ってと誘いました
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
 ;OriginalString : 
 		PRINTL 
 ;OriginalString : 「にゅ？ ふ～む、ボク好みのはあんまなさそうだ……にゃ！」
@@ -9052,7 +9052,7 @@ CASE "서류작업：무시"
 		PRINTFORML 「……내가 이런 일 해도, 일 계속될까 냐？♪」
 		IF RAND:2
 ;OriginalString : %CALLNAME:ARG%は、ぎゅっと抱きついて\@ TALENT:ARG:거유 ? 가슴の谷間で腕を挟んで # \@きた…
-			PRINTFORMW %CALLNAME:ARG%하, 꽉 껴안아\@ TALENT:ARG:거유 ? 가슴の谷間で腕を挟んで # \@왔다…
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")%, 꽉 껴안아\@ TALENT:ARG:거유 ? 가슴の谷間で腕を挟んで # \@왔다…
 		ELSE
 ;OriginalString : %CALLNAME:ARG%は後ろから抱き付いて、%CALLNAME:MASTER%に身体をすり寄せながら甘えてきた…
 			PRINTFORMW %CALLNAME:ARG%는 뒤로부터 껴안아,%CALLNAME:MASTER%에 신체를 갖다대면서 응석부려 왔다…

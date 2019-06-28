@@ -7033,7 +7033,7 @@ CASE "一言이벤트"
 	;범용
 	ELSEIF RANDF(3) == 0 && CHECK_BODYS("레오타드", ARG)
 		PRINTFORML 「조금 전부터 빤히……나의 코코, 신경이 쓰인다면 손대어 볼까？」
-		PRINTFORML %CALLNAME:ARG%하손를 허리의 뒤로 짜, 레오타드가 먹혀드는 사타구니를 가볍게 내밀어 왔다
+		PRINTFORML %조사처리(CALLNAME:ARG,"는")%손를 허리의 뒤로 짜, 레오타드가 먹혀드는 사타구니를 가볍게 내밀어 왔다
 	ELSEIF RANDF(2)
 		PRINTFORML 「너는 머리카락 내리고 있는 여자 쪽을 좋아하는가？」
 		PRINTFORML 「……뭐야, (들)물어 본 것 뿐이야」
@@ -7079,7 +7079,7 @@ CASE "조수で성처리：事後"
 CASE "탐색：탐색개시"
 	SELECTCASE TEXTS("탐색先")
 	CASE "안쇼스海"
-		PRINTFORMW %CALLNAME:ARG%하옷를 벗어 던져, 수영복 모습이 되었다！
+		PRINTFORMW %조사처리(CALLNAME:ARG,"는")%옷를 벗어 던져, 수영복 모습이 되었다！
 		PRINTFORMW 평상시의 모습도 자극적이지만, 이것은……과연 면적이 작아서 밖에서 몸에 익히기에는 너무 아슬아슬하다！
 		PRINTFORMW 「응？뭐야, 어차피옷입어도 주륵주륵이 되는 것이고 수영복이 좋을 것이다？」
 		PRINTFORMW 「그렇지 않으면…나의 모습의 탓으로 지기 쉬워진다든가 말하기 시작하는 것인가？앗하하하♪」
@@ -7099,7 +7099,7 @@ CASE "탐색：탐색개시"
 
 CASE "서류작업：도움"
 	IF RANDCHK(2, CFLAG:ARG:71, 0, 1)
-		PRINTFORMW 피로가 쌓였다%CALLNAME:MASTER%하,%CALLNAME:ARG%에 맛사지를 부탁해 보았습니다
+		PRINTFORMW 피로가 쌓였다%조사처리(CALLNAME:MASTER,"는")%,%CALLNAME:ARG%에 맛사지를 부탁해 보았습니다
 		PRINTL 
 		PRINTFORMW 「응─？ 무엇이다, 너 어깨개라는 거야？」
 		PRINTFORMW 「어쩔 수 없구나, 나의 힘으로 파팍과 풀어 준다♪」
@@ -7112,7 +7112,7 @@ CASE "서류작업：도움"
 
 		SETBIT CFLAG:ARG:71, 1
 	ELSE
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
 		PRINTL 
 		PRINTFORMW 「……무슨 말하고 있는 거야？ 그런 일로 돕는 것도 아무것도 없을 것이다……이봐요, 거기 앉기 때문에 조금 어긋나요」
 		PRINTL 

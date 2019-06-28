@@ -91,7 +91,7 @@ ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2
 	PRINTFORMW 「처음으로 만나뵈었을 때, 나,당신노조교를 어린애 장난이라고 말했습니다만………」
 	PRINTFORMW 「정정해요. 상당한 유희예요」
 	PRINTFORMW 라고 아직도 여유의 미소를 띄운다%CALLNAME:TARGET%.
-	PRINTFORMW %CALLNAME:MASTER%하, 그러면 다음은 완전하게 갔다고 말하게 해 보이자, 라고 기합을 넣었다.
+	PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%, 그러면 다음은 완전하게 갔다고 말하게 해 보이자, 라고 기합을 넣었다.
 	SETBIT CFLAG:201, 2
 	RETURN 1
 ;굴복각인Lv3
@@ -362,7 +362,7 @@ ELSEIF MARK:굴복각인 == 2 && BASE:체력 > 500
 		PRINTFORMW %CALLNAME:TARGET%저, 정리를 하고 있다%CALLNAME:MASTER%(와)과조교도구를 교대로 본 후, 뒷정리를 심부름 냈다.
 		PRINTFORMW %CALLNAME:MASTER%하지만 조금 놀란 얼굴을 하면,
 		PRINTFORMW 「가끔 씩은 나도 돕도록 해 받아요. 그렇지 않으면 설마, 내가 정리의 할 수 없는 여자라고 생각해 오셨어？」
-		PRINTFORMW 후자는 부정하면서,솔직에 예를 말해,%CALLNAME:MASTER%하%타겟과()% 함께 뒷정리를 했다.
+		PRINTFORMW 후자는 부정하면서,솔직에 예를 말해,%조사처리(CALLNAME:MASTER,"는")%%타겟과()% 함께 뒷정리를 했다.
 	ENDIF
 	RETURN 1
 ;굴복각인Lv2（お疲れ모드）
@@ -398,11 +398,11 @@ ELSEIF TALENT:연모
 	PRINTFORMW 「아무튼……」
 	PRINTFORMW 그러자%타겟은()% 조용하게는 되었지만 왜일까 넋을 잃고 있다.
 	IF RAND:3 == 0
-		PRINTFORMW %CALLNAME:MASTER%하 「……신경쓰지 말고 두자」라고 생각했다.
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 「……신경쓰지 말고 두자」라고 생각했다.
 	ELSEIF RAND:2 == 0
-		PRINTFORMW %CALLNAME:MASTER%하 「……조교의 방법 잘못했는지도 모른다」라고 생각했다.
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 「……조교의 방법 잘못했는지도 모른다」라고 생각했다.
 	ELSE
-		PRINTFORMW %CALLNAME:MASTER%하 「……그녀, 매물로 할 수 있을까나」라고 생각했다.
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 「……그녀, 매물로 할 수 있을까나」라고 생각했다.
 	ENDIF
 	RETURN 1
 ENDIF
@@ -550,7 +550,7 @@ IF SELECTCOM == 2
 		;それ以外
 		ELSE
 			PRINTFORMW 엉덩이대신해다운 2 개의 굵다촉수를 나누면 목적의 구멍이 발견되었다.
-			PRINTFORMW %CALLNAME:PLAYER%하, 역시 있구나, 라고 감탄하면서애무를 시작한다.
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%, 역시 있구나, 라고 감탄하면서애무를 시작한다.
 			PRINTFORMW 「아히읏！어디에 손가락을 넣고 있어요！！」
 			PRINTFORMW %타겟은()% 보통보다 과잉인 반응을 돌려주어 왔다. 아무래도 아누스에의 접촉 경험이 거의 없는 것 같다.
 			PRINTFORMW 조교의 일환으로, 경험을 뜯으면 쾌감도 얻을 수 있다고 설명한다.
@@ -948,14 +948,14 @@ IF SELECTCOM == 30
 			PRINTFORMW 「…무엇입니다, 그 조건부의 공은？」
 			PRINTFORMW 「에,클리토리스에 맞혀요？알았어요. 자, 하세요……」
 			PRINTFORMW %타겟은()% 촉수를 넓혀, 비부[秘部]를 드러낸다.
-			PRINTFORMW %CALLNAME:PLAYER%하로터를 주면 스윗치를 넣었다.
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%로터를 주면 스윗치를 넣었다.
 			PRINTFORMW 「아아읏！……후후, 과연. 그렇지만, 나로서는당신의 손가락이나 혀가 상태가 좋아요」
 		;それ以外
 		ELSE
 			PRINTFORMW 「…무엇입니다, 그 조건부의 공은？」
 			PRINTFORMW 「에,클리토리스에 맞혀요？」
 			PRINTFORMW %타겟은()% 불안에촉수를 넓혀, 비부[秘部]를 드러낸다.
-			PRINTFORMW %CALLNAME:PLAYER%하로터를 주면 스윗치를 넣었다.
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%로터를 주면 스윗치를 넣었다.
 			PRINTFORMW 「하아읏！……후후, 과연. 기분이 좋은 공이에요」
 		ENDIF
 		CFLAG:229 = 1
@@ -1246,7 +1246,7 @@ ELSEIF SELECTCOM == 35 && TEQUIP:니플캡 == 0
 		PRINTFORMW 
 	;연모
 	ELSEIF TALENT:연모
-		PRINTFORMW %CALLNAME:PLAYER%하니플캡를 이끌어 보았다.
+		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%니플캡를 이끌어 보았다.
 		PRINTFORMW 「아읏！！」
 		PRINTFORMW 그 모습에 기학심을 간지러워졌다%조사처리(CALLNAME:PLAYER,"는")% 힘껏 이끌었다.
 		PRINTFORMW 「아앗, 아, 아앗！！」
@@ -4209,7 +4209,7 @@ CASE "아침펠라"
 	;それ以外
 	ELSE
 		PRINTFORMW 「벌써 눈을 떠 버렸어요？」
-		PRINTFORMW %CALLNAME:MASTER%하,%CALLNAME:TARGET%에 무엇을 하고 있는지 (들)물으면
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%,%CALLNAME:TARGET%에 무엇을 하고 있는지 (들)물으면
 		PRINTFORMW 「아라, 보면 알겠지요？」
 		PRINTFORMW %타겟은()% 육봉을입가득 가득 넣었다.
 		PRINTFORMW 「읏！읏！쥬룻！응즛！쥬루루루루룻！！」
@@ -4301,14 +4301,14 @@ CASE "Ｖ바이브추가구상"
 						PRINTFORMW 「자, 이것으로 좋네요. 그런 무기질인 것은 방치해, 이것 나오세요. 물론, 이촉수만은당신(이)가 말하는 대로 움직여요？」
 						PRINTFORMW 그리고%타겟은()% 촉수를손건네주어 왔다. 그녀가 말하는 대로, 꾸불꾸불 꿈틀거리고 있는 다른촉수(와)과 달라, 이것만은 미동조차 하고 있지 않다.
 						PRINTFORMW %타겟을()% 보면, 어쩐지 기대를 담은 눈으로 이쪽을 보고 있다.
-						PRINTFORMW %CALLNAME:PLAYER%하 「뭐, 좋은가」라고 반 포기한 것처럼%CALLNAME:TARGET%의 사타구니에 주었다.
+						PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 「뭐, 좋은가」라고 반 포기한 것처럼%CALLNAME:TARGET%의 사타구니에 주었다.
 					ELSE
 						PRINTFORMW 「그것, 이예요. 알았어요」
 						PRINTFORMW %타겟은()% 그렇게 말하면, 자신의촉수를 한 판 꺼내 왔다. 그촉수는 다른 것보다 가늘었다.
 						PRINTFORMW 자주(잘) 보면 그 첨단은, 지금 정말로%CALLNAME:PLAYER%하지만 선택했다바이브그것의 형태를 하고 있다.
 						PRINTFORMW 「자, 이것으로 좋네요. 그런 무기질인 것은 방치해, 이것 나오세요. 물론, 이촉수만은당신(이)가 말하는 대로 움직여요？」
 						PRINTFORMW 그리고%타겟은()% 촉수를손건네주어 왔다. 그녀가 말하는 대로, 꾸불꾸불 꿈틀거리고 있는 다른촉수(와)과 달라, 이것만은 미동조차 하고 있지 않다.
-						PRINTFORMW %CALLNAME:PLAYER%하 「우선 사용해 볼까」라고 기분을 고쳤다.
+						PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 「우선 사용해 볼까」라고 기분을 고쳤다.
 					ENDIF
 					CFLAG:461 = 1
 				;연모
@@ -4362,14 +4362,14 @@ CASE "Ｖ바이브추가구상"
 						PRINTFORMW 「자, 이것으로 좋네요. 그런 무기질인 것은 방치해, 이것 나오세요. 물론, 이촉수만은당신(이)가 말하는 대로 움직여요？」
 						PRINTFORMW 그리고%타겟은()% 촉수를손건네주어 왔다. 그녀가 말하는 대로, 꾸불꾸불 꿈틀거리고 있는 다른촉수(와)과 달라, 이것만은 미동조차 하고 있지 않다.
 						PRINTFORMW %타겟을()% 보면, 어쩐지 기대를 담은 눈으로 이쪽을 보고 있다.
-						PRINTFORMW %CALLNAME:PLAYER%하 「어디선가 본 일 있는 형태다」라고 생각하면서도%CALLNAME:TARGET%의 사타구니에 주었다.
+						PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 「어디선가 본 일 있는 형태다」라고 생각하면서도%CALLNAME:TARGET%의 사타구니에 주었다.
 					ELSE
 						PRINTFORMW 「그것, 이예요. 알았어요」
 						PRINTFORMW %타겟은()% 그렇게 말하면, 자신의촉수를 한 판 꺼내 왔다.
 						PRINTFORMW 자주(잘) 보면 그 첨단은, 지금 정말로%CALLNAME:PLAYER%하지만 선택했다바이브그것의 형태를 하고 있다.
 						PRINTFORMW 「자, 이것으로 좋네요. 그런 무기질인 것은 방치해, 이것 나오세요. 물론, 이촉수만은당신(이)가 말하는 대로 움직여요？」
 						PRINTFORMW 그리고%타겟은()% 촉수를손건네주어 왔다. 그녀가 말하는 대로, 꾸불꾸불 꿈틀거리고 있는 다른촉수(와)과 달라, 이것만은 미동조차 하고 있지 않다.
-						PRINTFORMW %CALLNAME:PLAYER%하 「우선 사용해 볼까」라고 기분을 고쳤다.
+						PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 「우선 사용해 볼까」라고 기분을 고쳤다.
 					ENDIF
 					CFLAG:461 = 1
 				;연모
@@ -4417,14 +4417,14 @@ CASE "Ｖ바이브추가구상"
 						PRINTFORMW 「자, 이것으로 좋네요. 그런 무기질인 것은 방치해, 이것 나오세요. 물론, 이촉수만은당신(이)가 말하는 대로 움직여요？」
 						PRINTFORMW 그리고%타겟은()% 촉수를손건네주어 왔다. 그녀가 말하는 대로, 꾸불꾸불 꿈틀거리고 있는 다른촉수(와)과 달라, 이것만은 미동조차 하고 있지 않다.
 						PRINTFORMW %타겟을()% 보면, 어쩐지 기대를 담은 눈으로 이쪽을 보고 있다.
-						PRINTFORMW %CALLNAME:PLAYER%하 「어디선가 본 일 있는 형태다」라고 생각하면서도%CALLNAME:TARGET%의 사타구니에 주었다.
+						PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 「어디선가 본 일 있는 형태다」라고 생각하면서도%CALLNAME:TARGET%의 사타구니에 주었다.
 					ELSE
 						PRINTFORMW 「그것, 이예요. 알았어요」
 						PRINTFORMW %타겟은()% 그렇게 말하면, 자신의촉수를 한 판 꺼내 왔다. 수많은촉수중(안)에서도 그것은 한층 더 굵었다.
 						PRINTFORMW 자주(잘) 보면 그 첨단은, 지금 정말로%CALLNAME:PLAYER%하지만 선택했다바이브그것의 형태를 하고 있다.
 						PRINTFORMW 「자, 이것으로 좋네요. 그런 무기질인 것은 방치해, 이것 나오세요. 물론, 이촉수만은당신(이)가 말하는 대로 움직여요？」
 						PRINTFORMW 그리고%타겟은()% 촉수를손건네주어 왔다. 그녀가 말하는 대로, 꾸불꾸불 꿈틀거리고 있는 다른촉수(와)과 달라, 이것만은 미동조차 하고 있지 않다.
-						PRINTFORMW %CALLNAME:PLAYER%하 「우선 사용해 볼까」라고 기분을 고쳤다.
+						PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 「우선 사용해 볼까」라고 기분을 고쳤다.
 					ENDIF
 					CFLAG:461 = 1
 				;연모

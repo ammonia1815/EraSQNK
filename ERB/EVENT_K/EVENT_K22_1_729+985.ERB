@@ -113,7 +113,7 @@ ELSEIF TALENT:연모
 		PRINTFORMW 「아, 주…하아…」
 		PRINTFORMW %타겟은()% %CALLNAME:MASTER%의 모습을 보자마자, 껴안아 왔다.
 		PRINTFORMW 「죄송합니다, 버릇없는 것은 알고 있습니다…주…아아, 따뜻하다…」
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:TARGET%의 신체를 한층 더 힘들게 껴안아, 입술을 맞추었다.
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:TARGET%의 신체를 한층 더 힘들게 껴안아, 입술을 맞추었다.
 		PRINTFORMW 「응읏…츗, 츄웃」
 		PRINTFORMW %타겟은()% 넋을 잃은 표정으로,%CALLNAME:MASTER%(와)과 혀를 서로 걸었다.
 	ELSEIF RAND:2 == 0
@@ -250,7 +250,7 @@ IF SELECTCOM == 0
 			PRINTFORMW %타겟은()% %CALLNAME:MASTER%를 식은 눈으로 응시하고 있다.
 		;연모+굴복각인Lv3
 		ELSEIF TALENT:연모
-			PRINTFORMW %CALLNAME:MASTER%하키스를 하면서%CALLNAME:TARGET%의 신체를 만지작거린다.
+			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%키스를 하면서%CALLNAME:TARGET%의 신체를 만지작거린다.
 			PRINTFORMW 「응읏…주…기분이 좋습니다…」
 		;굴복각인Lv3
 		ELSEIF MARK:굴복각인 == 3
@@ -437,7 +437,7 @@ IF SELECTCOM == 3 && TEQUIP:샤워 == 0
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
 			PRINTFORMW 「후읏」
-			PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:TARGET%로부터 살기가 발해지고 있는 것 같은 생각이 들었다.
+			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:TARGET%로부터 살기가 발해지고 있는 것 같은 생각이 들었다.
 		;연모＋자위중독Lv3이상
 		ELSEIF TALENT:연모 && ABL:자위중독 >= 3
 			PRINTFORMW 「하우…아앙…주로 이런 치태를 보여지고 있다고 하는데…손가락이…멈추지 않는다…아후우…」
@@ -566,11 +566,11 @@ IF SELECTCOM == 5
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
 			PRINTFORMW 「훗」
-			PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:TARGET%에 바보 취급 당한 것 같았다.
+			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:TARGET%에 바보 취급 당한 것 같았다.
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「후아…아앙…주…좀 더가슴을, 만져…」
-			PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:TARGET%의가슴을주무르면서유두를 꼬집었다.
+			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:TARGET%의가슴을주무르면서유두를 꼬집었다.
 			PRINTFORMW 「아, 아아아앗！ 유두읏！ 유두좋습니닷！」
 		;굴복각인Lv3
 		ELSEIF MARK:굴복각인 == 3
@@ -714,12 +714,12 @@ IF SELECTCOM == 31 && TEQUIP:바이브
 				PRINTFORMW 「읏！？부탁입니다 주！그것만은, 그것만은 허락해 주세요！」
 				PRINTFORMW %타겟은()% 필사적으로 %CALLNAME:MASTER%에 달라붙어 간원 해 왔다.
 				PRINTFORMW 「부탁입니다…적어도, 적어도 처음은, 주의 일물로…부탁합니다…」
-				PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:TARGET%의 비밀의 틈[秘裂]에바이브를 마음껏 밀어넣었다.
+				PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:TARGET%의 비밀의 틈[秘裂]에바이브를 마음껏 밀어넣었다.
 				PRINTFORMW 「우구아아아앗！！ …우우…주…심합니다…」
 			;それ以外
 			ELSE
 				PRINTFORMW 「읏！？그만두어라！그것만은 그만두어 줘…너의 물건에서도 참는다. 하지만, 그런 기구 따위에…″！！」
-				PRINTFORMW %CALLNAME:MASTER%하바이브를 %CALLNAME:TARGET%의 비밀의 틈[秘裂]에 밀어넣었다.
+				PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%바이브를 %CALLNAME:TARGET%의 비밀의 틈[秘裂]에 밀어넣었다.
 			ENDIF
 		;非처녀
 		ELSE
@@ -1650,7 +1650,7 @@ IF SELECTCOM == 133 && TEQUIP:아이마스크
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
 			PRINTFORMW 「………」
-			PRINTFORMW 확실히 눈가리개를 했을 것인데,%CALLNAME:MASTER%하%CALLNAME:TARGET%의 차가운 시선을 느끼는 것 같은 생각이 든다.
+			PRINTFORMW 확실히 눈가리개를 했을 것인데,%조사처리(CALLNAME:MASTER,"는")%%CALLNAME:TARGET%의 차가운 시선을 느끼는 것 같은 생각이 든다.
 		;それ以外
 		ELSE
 			PRINTFORMW 「눈가리개인가…익숙해져 있다고 하면 익숙해져 있지만…왜 이런 일을？」
@@ -1662,7 +1662,7 @@ IF SELECTCOM == 133 && TEQUIP:아이마스크
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
 			PRINTFORMW 「………」
-			PRINTFORMW 확실히 눈가리개를 했을 것인데,%CALLNAME:MASTER%하%CALLNAME:TARGET%의 차가운 시선을 느끼는 것 같은 생각이 든다.
+			PRINTFORMW 확실히 눈가리개를 했을 것인데,%조사처리(CALLNAME:MASTER,"는")%%CALLNAME:TARGET%의 차가운 시선을 느끼는 것 같은 생각이 든다.
 		;연모＋마조끼Lv3
 		ELSEIF TALENT:연모 && ABL:마조끼 >= 3
 			PRINTFORMW 「아아, 시야를 빼앗기고…지금부터 주로 어떤 일을 되어 버리는지 생각하면…」
@@ -3465,7 +3465,7 @@ CASE "매각した"
 		PRINTFORMW %CALLNAME:TARGET%의 눈으로부터는 눈물이 흘러넘치고 있었다.
 		PRINTFORMW %마스터는()% 아무것도 대답하지 않는다.
 		PRINTFORMW 「주…나는…주인의 것이지요…？」
-		PRINTFORMW %CALLNAME:MASTER%하…아무것도 대답하지 않는다.
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%…아무것도 대답하지 않는다.
 		PRINTFORMW 「주인…우웃, 훌쩍…주인님…」
 		PRINTFORMW 몇초…몇분의 침묵이 있었을까.
 		PRINTFORMW %타겟은()% 눈물을 닦아, 얼굴을 들었다.

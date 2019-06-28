@@ -62,7 +62,7 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 	PRINTFORMW 「항복이야…이제(벌써)저항하는 것은 그만두어요」
 	PRINTFORML %타겟은()% %CALLNAME:MASTER%하지만 방에 들어가든지 곧바로 말을 걸어 왔다
 	PRINTFORMW 「너의 목적은 달성되었어요, 이것이상조교하지 않고 빨리 나를 팔면？」
-	PRINTFORMW 팔다니 터무니 없는,%CALLNAME:MASTER%하%타겟을()% 침대에넘어뜨리기
+	PRINTFORMW 팔다니 터무니 없는,%조사처리(CALLNAME:MASTER,"는")%%타겟을()% 침대에넘어뜨리기
 	PRINTFORMW 「너…나를 자신용의 노예로 하자고 하는거야？」
 	PRINTFORMW 「흥, 바보같구나…승손로 하세요」
 	SETBIT CFLAG:201, 3
@@ -137,7 +137,7 @@ ELSEIF MARK:굴복각인 == 2
 	ELSEIF RAND:1 == 0
 		PRINTFORML 「어차피 벗겨진다면 자신으로부터 벗어 주어요…！」
 		PRINTFORMW %타겟은()% %CALLNAME:MASTER%하지만 방에 들어 온 것을 보면 스스로옷를 벗기 시작했다…
-		PRINTFORMW %CALLNAME:MASTER%하옷를 벗지 않고%CALLNAME:TARGET%의탈의를 바라보았다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%옷를 벗지 않고%CALLNAME:TARGET%의탈의를 바라보았다
 		PRINTFORMW 「…빤히 보고 있는 것이 아니에요！바봇！」
 		PRINTFORMW %타겟은()% 다시옷를 입어 버렸다…
 	ENDIF
@@ -292,7 +292,7 @@ IF SELECTCOM == 0
 	ELSE
 		;연모+굴복각인Lv3
 		IF TALENT:연모
-			PRINTFORMW %CALLNAME:PLAYER%하%타겟을()% 위로 향해 재워, 전신을애무하기 시작했다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%타겟을()% 위로 향해 재워, 전신을애무하기 시작했다
 			PRINTFORMW %타겟은()% 얇게 눈을 감음%CALLNAME:PLAYER%의애무에 몸을 바치고 있다…
 			PRINTFORMW 「아앙…하아……응응…아읏…」
 			PRINTFORMW 아주 조용해진 방에%CALLNAME:TARGET%의 허덕이는 소리만이 울리고 있다…
@@ -637,7 +637,7 @@ IF SELECTCOM == 6
 		;それ以外
 		ELSE
 			PRINTFORMW %타겟은()% 이야이야를 하도록(듯이) 고개를 젓고 있다…
-			PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 머리를 억제해, 억지로 입술을 거듭해 맞추었다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 머리를 억제해, 억지로 입술을 거듭해 맞추었다
 		ENDIF
 			RETURN 1
 	ENDIF
@@ -669,7 +669,7 @@ IF SELECTCOM == 30
 			PRINTFORMW %CALLNAME:PLAYER%하지만로터를 꺼내면%타겟은()% 노골적으로 불만인듯한 얼굴을 했다
 			PRINTFORML 「기계로 꾸짖을 수 있는 것은 좋아하지 않아요…, 누가 사용해도 함께인 걸」
 			PRINTFORMW 「…너의 손가락 쪽이……읏, 꺄앗！」
-			PRINTFORMW %CALLNAME:PLAYER%하키스를 하면서%타겟을()%넘어뜨리기,로터를클리토리스에 강압하면서애무하기 시작했다…
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%키스를 하면서%타겟을()%넘어뜨리기,로터를클리토리스에 강압하면서애무하기 시작했다…
 		;굴복각인Lv3
 		ELSEIF MARK:굴복각인 == 3
 			PRINTFORMW 「아…우…너는…이런 것 사용하고 있어 즐거운거야…？」
@@ -1010,16 +1010,16 @@ IF SELECTCOM == 60
 				PRINTFORMW %CALLNAME:TARGET%의질안은 매우 뜨겁고,페니스를 안쪽에 안쪽으로 권하도록(듯이) 꿈틀거리고 있다…
 				PRINTFORMW 「응응우………하…들어갔다…읏！…이봐요 너도 움직이세요！」
 				PRINTFORML 페니스가 최안쪽에 도달하면,%타겟은()% %CALLNAME:PLAYER%에손발를 관련되어 신체를 흔들기 시작했다
-				PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%에 재촉해지면서 삽입질을 개시했다…
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%에 재촉해지면서 삽입질을 개시했다…
 				IF COND("절정", PLAYER)
 					PRINTFORMW 「핫…핫…아아읏！…앗！하아…！」
 					PRINTFORML 페니스가%CALLNAME:TARGET%의 안쪽 깊은 오돌오돌한 부분을 찌르면%CALLNAME:TARGET%의 일성 높게 교성을 올렸다
-					PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 급소를 후벼파도록(듯이) 각도를 붙여, 격렬하고 삽입질하기 시작했다…
+					PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 급소를 후벼파도록(듯이) 각도를 붙여, 격렬하고 삽입질하기 시작했다…
 					PRINTFORML 「아″…거기…굉장하닷！…좋은거야…응아아앗！」
 					PRINTFORMW 페니스를 찔러 넣을 때에 애액이 분출해, 벽이페니스에 휘감겨 희롱해져사정감이 급격하게 높아져 간다…
 					PRINTFORML 「안됏…우우…좋앗……오오오온닷！…와 버린닷！……응아아″아″아″！」
 					PRINTFORMW 질안이 격렬하고 파도페니스가 근원으로부터 첨단까지 잡아당겨 세울 수 있다
-					PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의질안에정액를 공격해 발했다…
+					PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의질안에정액를 공격해 발했다…
 					CALL BOUHATSU
 				ENDIF
 			ELSE
@@ -1027,17 +1027,17 @@ IF SELECTCOM == 60
 				PRINTFORML 「조금…얏！…아 아″！」
 				PRINTFORMW %CALLNAME:TARGET%의질안은 수축을 반복해페니스를 힘들게 단단히 조여 온다
 				PRINTFORML 「하앗…하앗…하앗…, 이제(벌써)…좀 더 상냥하고…꺗！아앗…」
-				PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 이야기를 끝내는 것을 기다리지 않고 격렬하게 삽입질을 시작했다…
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 이야기를 끝내는 것을 기다리지 않고 격렬하게 삽입질을 시작했다…
 				PRINTFORML 「앗…하아읏…, 너 따위…읏…빨리 가 버리세요！」
 				PRINTFORMW %타겟은()% 일방적으로 찔리면서도 질의 억압을 의식적으로 조절해, 교묘하게 허리를 꾸불꾸불하게 해페니스를 꾸짖어 왔다…
 					IF COND("절정", PLAYER)
 						PRINTFORMW %CALLNAME:PLAYER%들어간 침착하려고페니스를 질로부터 뽑아 내려고 했지만,%타겟은()% 다리를 허리에 관련되게 해 질입를 힘들게 졸라페니스를 떼어 놓지 않는다
 						PRINTFORML 「후흥…이제(벌써) 갈 것 같은 것일까？이봐요 이봐요 벌써 가 버리세요！」
 						PRINTFORML %타겟은()% 쭉쭉 격렬하게 허리를 흔들어 왔다…
-						PRINTFORMW %CALLNAME:PLAYER%하정액하지만페니스에 복받쳐 오는 것을 느껴 격렬한 삽입질을 재개했다
+						PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%정액하지만페니스에 복받쳐 오는 것을 느껴 격렬한 삽입질을 재개했다
 						PRINTFORML 꾸짖고 있는 동안 억제 당하고 있던 쾌감이%타겟을()% 덮쳐,%타겟을()% 자꾸자꾸 높은 곳으로 쫓아 버려 간다…
 						PRINTFORMW 「격렬해져…！…아웃…나까지……쿳…간다…！가 버린다앗！」
-						PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 위에 쓰러져,%타겟을()% 껴안으면서사정했다…
+						PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 위에 쓰러져,%타겟을()% 껴안으면서사정했다…
 						CALL BOUHATSU
 					ENDIF
 			ENDIF
@@ -1114,7 +1114,7 @@ IF SELECTCOM == 61
 						PRINTFORML %CALLNAME:TARGET%의 팔꿈치가 삐걱삐걱 떨고 있는, 기세를 붙여 허리를 내던지면%타겟은()% 팔을 세워 있을 수 있지 않고 침대에 붕괴되었다
 						PRINTFORMW 「후웃…우웃…읏！…쿳…이…간닷…쿠우우우………！」
 						PRINTFORML 끊임없이 질벽을 후벼파지고 계속해,%CALLNAME:TARGET%의 크게 떨리면서절정를 맞이했다…
-						PRINTFORMW 갑자기페니스가 힘들게 억압정액하지만 포함올린다,%CALLNAME:PLAYER%하페니스를 깊게 밀어넣어 질 안쪽으로사정했다…
+						PRINTFORMW 갑자기페니스가 힘들게 억압정액하지만 포함올린다,%조사처리(CALLNAME:PLAYER,"는")%페니스를 깊게 밀어넣어 질 안쪽으로사정했다…
 						CALL BOUHATSU
 					ENDIF
 			ELSE
@@ -1125,10 +1125,10 @@ IF SELECTCOM == 61
 				PRINTFORML %타겟은()% 페니스이외로%CALLNAME:PLAYER%의 신체와 접촉이 없는 것에 침착하지 않다 같다
 				PRINTFORML 피스톤을 계속하고 있으면 점점%CALLNAME:TARGET%의 피부가 붉은 빛을 늘려 가 어렴풋이 땀이 배여 왔다…
 				PRINTFORMW 「어딘가…손대세요…아아읏！…저기 읏！」
-				PRINTFORMW %타겟은()% 인내심의 한계를 느껴 자신으로부터 부탁을 해 온,%CALLNAME:PLAYER%하%CALLNAME:TARGET%의 허리를 잡아페니스를 깊게 밀어넣어,자궁입를 톡톡 찌르기 시작했다…
+				PRINTFORMW %타겟은()% 인내심의 한계를 느껴 자신으로부터 부탁을 해 온,%조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 허리를 잡아페니스를 깊게 밀어넣어,자궁입를 톡톡 찌르기 시작했다…
 					IF COND("절정", PLAYER)
 						PRINTFORML 자궁입를 쿡쿡 찌를 때에질내가 굽이돌아, 고깃주름이페니스에 휘감겨 온다…
-						PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 위에 덮어씌워,가슴을비비면서 격렬하게 허리를 흔들기 시작했다
+						PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 위에 덮어씌워,가슴을비비면서 격렬하게 허리를 흔들기 시작했다
 						PRINTFORML 「아아…따뜻하다…읏！…비비어지는 것 좋다！앗…우웃！이제 안돼…간닷！」
 						PRINTFORMW %타겟은()% 허리를 강압해,정액를 요구해페니스를 요주어 왔다…
 						PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 귀두를자궁입에 칠해지면서사정했다
@@ -1142,11 +1142,11 @@ IF SELECTCOM == 61
 			PRINTFORMW %CALLNAME:TARGET%의 머리카락이 흔들릴 때에 희미하게 좋은 향기가 나,%CALLNAME:PLAYER%의 흥분을 일으킬 수 있다
 		;굴복각인Lv3
 		ELSEIF MARK:굴복각인 == 3
-			PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%에 그다지 부담을 주지 않게 느긋한 삽입질을 계속하고 있다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%에 그다지 부담을 주지 않게 느긋한 삽입질을 계속하고 있다
 			PRINTFORMW 「아…너가 신경을 써 어떻게 하는거야！…나는 좋으니까 자신의 페이스로 움직이세요！」
 		;それ以外
 		ELSE
-			PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 허리를 잡아, 허리를 내던지도록(듯이) 피스톤 하고 있다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 허리를 잡아, 허리를 내던지도록(듯이) 피스톤 하고 있다
 			PRINTFORMW 「그렇게 혼자서 기분 좋아지고 있으면 좋은거야！바보！」
 		ENDIF
 		RETURN 1
@@ -1412,7 +1412,7 @@ IF SELECTCOM == 91
 						PRINTFORMW %CALLNAME:PLAYER%의 숨이 난폭해져, 신체가 굳어져 가는것을 눈치채면
 						PRINTFORMW %타겟은()% 길고 깊은 스트로크로입그리고 잡아당기기 시작했다…,
 						PRINTFORMW 「즈읏…즈풋……쥬푸웃！……응우웃！」
-						PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 머리를 잡으면서 목 안에 향하여사정했다…
+						PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 머리를 잡으면서 목 안에 향하여사정했다…
 						CALL BOUHATSU
 					ENDIF
 				ELSE
@@ -1513,7 +1513,7 @@ IF SELECTCOM == 92
 						PRINTFORMW 「하앗…하앗…아아！…이제(벌써)…갈 것 같겠지？…쿳…훗…가슴의 사이에 움찔움찔은…」
 						PRINTFORMW 「나…도…이제 한계이니까…앗…앗…함께…！」
 						PRINTFORML %타겟은()% 절정에 이르는 순간페니스를 격렬하게 잡아당겨,가슴을강하게 비비면서페니스를 꽉 감쌌다…
-						PRINTFORMW %CALLNAME:PLAYER%하페니스가 뜨거운 유육[柔肉]에 휩싸여진 것을 느끼면서 기세 좋게사정했다
+						PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%페니스가 뜨거운 유육[柔肉]에 휩싸여진 것을 느끼면서 기세 좋게사정했다
 						CALL BOUHATSU
 					ENDIF
 				ELSE
@@ -1529,11 +1529,11 @@ IF SELECTCOM == 92
 						PRINTFORMW %CALLNAME:PLAYER%하지만 손가락을가슴로부터 떼어 놓으면%타겟은()% 파이즈리를 하면서 스스로의가슴을주무르기 시작했다…
 						PRINTFORMW 「훗…훗…가고 싶어지면…우우읏…분명하게 말하세요……！」
 						PRINTFORMW 그렇게 말하면서도%타겟은()% 스스로의 쾌감을 얻는 일에 열중해 간다…
-						PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의가슴을잡아 스스로 허리를 흔들기 시작했다…
+						PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의가슴을잡아 스스로 허리를 흔들기 시작했다…
 						PRINTFORMW 「앗…꺗…, 이제(벌써)…난폭해요！꺄읏…응응웃…」
 						PRINTFORMW %타겟은()% %CALLNAME:PLAYER%의 허리의 움직임에 맞추어페니스를 혀로애무하기 시작했다…
 						PRINTFORMW 깊게 허리를 내밀면, 골짜기로부터 튀어나온 귀두를 %CALLNAME:TARGET%의 물었다…
-						PRINTFORMW 부드러운 입술의 감촉을 느낀 순간%CALLNAME:PLAYER%하절정에 이르렀다
+						PRINTFORMW 부드러운 입술의 감촉을 느낀 순간%조사처리(CALLNAME:PLAYER,"는")%절정에 이르렀다
 						CALL BOUHATSU
 					ENDIF
 				ENDIF
@@ -1719,7 +1719,7 @@ IF SELECTCOM == 65
 					PRINTFORMW 「너…나에게 자신으로부터 움직여라고 말해…？」
 					PRINTFORMW 「최악이야…믿을 수 없다…」
 					PRINTFORMW %타겟은()% 스스로%CALLNAME:PLAYER%의페니스를 넣을 때까지는 했지만 전혀 움직이려고 하지 않는다
-					PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 허리를 잡아 아래로부터 밀어올리기 시작했다…
+					PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 허리를 잡아 아래로부터 밀어올리기 시작했다…
 				ENDIF
 			ENDIF
 				CFLAG:245 = 1
@@ -1737,24 +1737,24 @@ IF SELECTCOM == 65
 					PRINTFORMW 「꺄읏！…하앗…응웃！…이제(벌써) 갈 것 같겠지？빨리 가세요！」
 					PRINTFORML %타겟은()% 허리의 움직임을 빨리 해, 허리를 내던지도록(듯이) 피스톤 해 왔다…
 						IF COND("절정", PLAYER)
-							PRINTFORMW %CALLNAME:TARGET%에 한층 더 강하게 허리를 강압할 수 있어%CALLNAME:PLAYER%하절정에 이르렀다
+							PRINTFORMW %CALLNAME:TARGET%에 한층 더 강하게 허리를 강압할 수 있어%조사처리(CALLNAME:PLAYER,"는")%절정에 이르렀다
 							CALL BOUHATSU
-							PRINTFORML %CALLNAME:PLAYER%하%CALLNAME:TARGET%의자궁에정액를 쏟으면서도가슴을계속 비볐다…
+							PRINTFORML %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의자궁에정액를 쏟으면서도가슴을계속 비볐다…
 							PRINTFORMW 「야앗…안됏…나도 가 버린닷…쿠…후우우우우웃！…」
 							PRINTFORMW %타겟은()% 움찔움찔 경련하면서절정를 맞이했다…
 						ENDIF
 				ELSE
 					PRINTFORMW %타겟은()% %CALLNAME:PLAYER%에 걸쳐 춤추도록(듯이) 허리를 흔들고 있다
-					PRINTFORML %CALLNAME:PLAYER%하%CALLNAME:TARGET%의클리토리스에 목적을 정해,애무를 시작했다…
+					PRINTFORML %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의클리토리스에 목적을 정해,애무를 시작했다…
 					PRINTFORMW 클리토리스를 비빌 때에%CALLNAME:TARGET%의 질이 꼬옥꼬옥 꼭 죄인다
 					PRINTFORML 「힛…아아앗！이제(벌써)…아앗…이…가 버린다…」
-					PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 엉덩이를 잡아, 격렬한 밀어올림을 반복했다…
+					PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 엉덩이를 잡아, 격렬한 밀어올림을 반복했다…
 						IF COND("절정", PLAYER)
 							PRINTFORMW %타겟은()% %CALLNAME:PLAYER%의 움직임에 맞추어 허리를 구불거리게 해라페니스를 희롱하고 있다…
 							PRINTFORMW %CALLNAME:TARGET%의 움직임이 서서히 격렬해져사정감이 복받쳐 왔다
 							PRINTFORML 「아앗…응아앗！…너도…가 버리세요！」
 							PRINTFORMW %CALLNAME:TARGET%의절정의 순간 크게 허리를 흔들어 왔다
-							PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%에 이끌리는 대로절정를 맞이했다…
+							PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%에 이끌리는 대로절정를 맞이했다…
 							CALL BOUHATSU
 						ENDIF
 				ENDIF
@@ -2400,7 +2400,7 @@ IF SELECTCOM == 63
 		IF TALENT:연모
 			PRINTFORMW 「(이)다…괜찮아？무겁지 않다…？」
 			PRINTFORMW 「그다지 무리 하지 말아요…」
-			PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 걱정일 것 같은 시선을 받으면서 피스톤을 시작했다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 걱정일 것 같은 시선을 받으면서 피스톤을 시작했다
 		;それ以外
 		ELSE
 			PRINTFORMW 「우…그렇게 빤히 보는 것이 아니에요！」
@@ -2419,13 +2419,13 @@ IF SELECTCOM == 63
 				PRINTFORMW 그렇게 말하면서도%타겟은()% 허리의 움직임을 느슨하게하지 않고,질안의 민감한 장소를 찾아서는 스스로%CALLNAME:PLAYER%의페니스에 문질러, 보다 강한 쾌감을 얻으려고 하고 있다
 					IF COND("절정", PLAYER)
 						PRINTFORMW 잠시 후에%타겟은()% 질안을 휘젓는 것 같은 움직임을 멈추어, 일점을 쭉쭉페니스에 문지르기 시작했다
-						PRINTFORML %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 움직임에 맞추어 밀어올림을 시작했다…
+						PRINTFORML %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 움직임에 맞추어 밀어올림을 시작했다…
 						PRINTFORMW 「아″！…거기저의 있고거야！좀 더 격렬하게 햇！」
 						PRINTFORMW 찌르기올린다번에%타겟은()% 흠칫 신체를 진동시켜페니스를 강하게 단단히 조인 채로 잡아당겨 세워 온다…
 						PRINTFORMW 「이제(벌써)…간닷…가 버리기 때문에…앗…너도 가 버려랏！」
 						PRINTFORML %타겟은()% 허리를 튀게 하면서절정를 맞이했다
 						CALL BOUHATSU
-						PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%에 촉구받는 대로절정에 떨린다질안에정액를 토해냈다…
+						PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%에 촉구받는 대로절정에 떨린다질안에정액를 토해냈다…
 					ENDIF
 			ELSE
 				PRINTFORMW %타겟은()% 물기를 띤 눈동자로%조사처리(CALLNAME:PLAYER,"를")% 응시해 밀어올림에 맞추어 허리를 구불거리게 되어지고 있다…
@@ -2436,9 +2436,9 @@ IF SELECTCOM == 63
 						PRINTFORMW %CALLNAME:PLAYER%하지만 밀어올림을 가속시키면, 거기에 응하도록(듯이)%CALLNAME:TARGET%도 격렬하게 허리를 구불거리게 되어져 왔다
 						PRINTFORML %CALLNAME:PLAYER%에 관련된다손발에 힘이 깃들여,%CALLNAME:TARGET%의 신체가 불규칙하게 경련하기 시작했다…
 						PRINTFORMW 「힛…응아앗！…나 이제(벌써)…이…가…,……함께…와…」
-						PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%에 입술을 거듭해 사납게 허리를 밀어올려 간다
+						PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%에 입술을 거듭해 사납게 허리를 밀어올려 간다
 						PRINTFORMW %타겟은()% 절정의 순간%CALLNAME:PLAYER%의 머리를 잡아 강하게 입술을 강압해, 격렬하게 허리를 진동시켰다
-						PRINTFORMW %CALLNAME:PLAYER%하%타겟과()% 함께절정에 이르렀다…
+						PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%타겟과()% 함께절정에 이르렀다…
 						CALL BOUHATSU
 					ENDIF
 			ENDIF
@@ -2495,7 +2495,7 @@ IF SELECTCOM == 64
 				PRINTFORMW 절정에 의한 강한 억압이 약해져 온 것을 가늠해,%조사처리(CALLNAME:PLAYER,"는")% 격렬한 피스톤을 재개했다
 				PRINTFORML 「히아우！…조금！아타시이뿐이니까…상냥하고…꺄읏」
 				PRINTFORMW 절정직후의 민감한질안에페니스를 찔러 넣으면, 그때마다%CALLNAME:TARGET%의 허리가 튀어페니스가 강하게 잡아당겨진다
-				PRINTFORMW %CALLNAME:PLAYER%하페니스를 질 안쪽에 밀어넣으면서절정를 맞이했다…
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%페니스를 질 안쪽에 밀어넣으면서절정를 맞이했다…
 				CALL BOUHATSU
 				PRINTFORMW 페니스로부터 토해내졌다정액하질안을 채워,자궁로 흘러들어 간다…
 				PRINTFORMW 「아…아아…뜨거운 것이…퍼지고 있다아…」
@@ -3432,7 +3432,7 @@ ELSEIF SHOOT("입")
 			PRINTFORML %CALLNAME:PLAYER%의 숨이 난폭해져, 신체가 굳어져 가는것을 눈치채면
 			PRINTFORMW %타겟은()% 길고 깊은 스트로크로입그리고 잡아당기기 시작했다…,
 			PRINTFORML 「즈읏…즈풋……쥬푸웃！……응우웃！」
-			PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 머리를 잡으면서 목 안에 향하여사정했다…
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 머리를 잡으면서 목 안에 향하여사정했다…
 			PRINTFORMW %타겟은()% 토해내졌다정액를 한 방울도 남기지 않고 다 마셔 간다……
 			PRINTFORMW 「후읏…이것으로 만발그럴까？」
 		ELSE
@@ -3470,17 +3470,17 @@ ELSEIF SHOOT("가슴")
 			PRINTFORMW 「하앗…하앗…아아！…이제(벌써)…갈 것 같겠지？…쿳…훗…가슴의 사이에 움찔움찔은…」
 			PRINTFORMW 「나…도…이제 한계이니까…앗…앗…함께…！」
 			PRINTFORML %타겟은()% 절정에 이르는 순간페니스를 격렬하게 잡아당겨,가슴을강하게 비비면서페니스를 꽉 감쌌다…
-			PRINTFORMW %CALLNAME:PLAYER%하페니스가 뜨거운 유육[柔肉]에 휩싸여진 것을 느끼면서 기세 좋게사정했다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%페니스가 뜨거운 유육[柔肉]에 휩싸여진 것을 느끼면서 기세 좋게사정했다
 			PRINTFORML 「아아…굉장해…뷰뷰 쳐박아 오고 있다…」
 			PRINTFORMW 가슴의 골짜기로부터 불거져 나왔다정액는 황홀로 하고 있다%CALLNAME:TARGET%의 얼굴을, 머리카락을 더럽혀 갔다…
 		ELSE
 			PRINTFORML 「훗…훗…가고 싶어지면…우우읏…분명하게 말하세요……！」
 			PRINTFORML 그렇게 말하면서도%타겟은()% 스스로의 쾌감을 얻는 일에 열중해 간다…
-			PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의가슴을잡아 스스로 허리를 흔들기 시작했다…
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의가슴을잡아 스스로 허리를 흔들기 시작했다…
 			PRINTFORML 「앗…꺗…, 이제(벌써)…난폭해요！꺄읏…응응웃…」
 			PRINTFORML %타겟은()% %CALLNAME:PLAYER%의 허리의 움직임에 맞추어페니스를 혀로애무하기 시작했다…
 			PRINTFORMW 깊게 허리를 내밀면, 골짜기로부터 튀어나온 귀두를 %CALLNAME:TARGET%의 물었다…
-			PRINTFORML 부드러운 입술의 감촉을 느낀 순간%CALLNAME:PLAYER%하절정에 이르렀다
+			PRINTFORML 부드러운 입술의 감촉을 느낀 순간%조사처리(CALLNAME:PLAYER,"는")%절정에 이르렀다
 			PRINTFORML 페니스로부터 날아오른다정액하지만%타겟을()% 희게 물들여 간다…
 			PRINTFORMW 「아아…이제(벌써), 안중 끈적끈적이 되어 버렸지 않아…」
 		ENDIF
@@ -3511,7 +3511,7 @@ ELSEIF SHOOT("손")
 		ELSE
 			PRINTFORML 「이제(벌써) 갈 것 같아？그러면 이대로 가게 해 주어요！」
 			PRINTFORML %타겟은()% 편손그래서페니스를 잡아당기면서, 비었다손의 히등을 령입에 문지르기 시작했다…
-			PRINTFORMW %CALLNAME:PLAYER%하페니스를 %CALLNAME:TARGET%의손에 휩싸여지면서사정했다…
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%페니스를 %CALLNAME:TARGET%의손에 휩싸여지면서사정했다…
 			PRINTFORML %타겟은()% 천천히페니스를 잡아당겨 마지막 한 방울까지 발휘하게 했다
 			PRINTFORMW 「이렇게 가득……그렇지만, 아직 끝이 아니네요…！」
 		ENDIF
@@ -3800,13 +3800,13 @@ CASE "요바이기승위"
 		PRINTFORMW 뜨거운 애액이 하복부를 적셔, 허리가 떨어질 때마다 추잡하게 물소리를 세운다
 		PRINTFORMW 가슴에 놓여졌다손에 힘이 깃들여,%CALLNAME:MASTER%의 이름을 중얼거리는 소리가 점점 발등에 불이 떨어진 것이 되어 간다
 		PRINTFORMW 한층 더 높게 교성을 올려,%CALLNAME:TARGET%의%CALLNAME:MASTER%의가슴에 쓰러져 왔다
-		PRINTFORMW 정액를 요구해질내가 굽이돌아,페니스가 잡아당기는,%CALLNAME:MASTER%하%타겟과()% 함께절정에 이르렀다
+		PRINTFORMW 정액를 요구해질내가 굽이돌아,페니스가 잡아당기는,%조사처리(CALLNAME:MASTER,"는")%%타겟과()% 함께절정에 이르렀다
 		PRINTFORMW %타겟은()% 얼굴을가슴에 소용돌이째,정액하지만질안을 채워 가는 감각을 맛보고 있다
 		PRINTFORMW %CALLNAME:TARGET%의 신체는 아직도 열을 띠고 있어%CALLNAME:MASTER%의 신체를 뜨겁게 시켜 갔다
 		PRINTFORMW 「하앗…하아…,…아직발리나 금기 싶다…」
 		PRINTFORMW 「너도 아직 갈 수 있네요…？…꺗」
 		PRINTFORMW %마스터는()% 횡전해, 위를 타고 있었다%타겟을()% 반대로 덮어눌렀다
-		PRINTFORMW 체내의 뜨거움에 의식이 몽롱해져 가는 것을 느끼면서,%CALLNAME:MASTER%하%CALLNAME:TARGET%에 허리를 쳐박기 시작했다…
+		PRINTFORMW 체내의 뜨거움에 의식이 몽롱해져 가는 것을 느끼면서,%조사처리(CALLNAME:MASTER,"는")%%CALLNAME:TARGET%에 허리를 쳐박기 시작했다…
 	;それ以外
 	ELSE
 		RETURN 0

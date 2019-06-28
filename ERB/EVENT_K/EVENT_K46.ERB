@@ -5627,7 +5627,7 @@ IF CFLAG:465 == 3
 ELSEIF SHOOT("정액세례")
 	;팬티コキ
 	IF SELECTCOM == 97
-		PRINTFORMW 「후후…어땠습니까？ %CNAME("一人称")%의%CLO("가랑이")%하…♪」
+		PRINTFORMW 「후후…어땠습니까？ %CNAME("一人称")%의%조사처리(CLO("가랑이"),"는")%…♪」
 	ELSEIF SHOOT("머리카락")
 		PRINTFORML 「안됩니다, 머리카락에 걸면.  …좀처럼 잡히지 않아요」
 		PRINTFORMW 클라라는 불평하면서도, 눌 붙는다페니스에얼굴을 갖다대고 있다…
@@ -6382,18 +6382,18 @@ CASE "조수で성처리：事後"
 ;-------------------------------------------------
 CASE "서류작업：도움"
 	IF RANDCHK(3, CFLAG:ARG:71, 0, 2)
-		PRINTFORM %CALLNAME:MASTER%하%CALLNAME:ARG%에,
+		PRINTFORM %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에,
 		PRINTFORMW 계속 앉아 있는 채로엉덩이하지만 아파져 왔기 때문에 의자가 되어 주지 않겠는가？(와)과 농담을 말해 보았습니다
 		PRINTL 
 		PRINTFORML 「…？ 헛들음입니까.%CNAMET(ARG, "二人称")%…한번 더, 말씀하셔 받을 수 있습니까？」
-		PRINTFORMW %CALLNAME:ARG%하……언제에도 더욱 더 무표정하다.
+		PRINTFORMW %조사처리(CALLNAME:ARG,"는")%……언제에도 더욱 더 무표정하다.
 		PRINTFORMW 「…피로가 모이고 계시는 것 같네요. 뭔가 달콤한 것이라도 가져옵니다」
 		PRINTL 
 		PRINTFORMW %CALLNAME:ARG%의 준비한 과자는……너무 달콤했다.
 
 		SETBIT CFLAG:ARG:71, 2
 	ELSEIF RANDCHK(2, CFLAG:ARG:71, 0, 2)
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에 차를 끓여 받기로 했습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에 차를 끓여 받기로 했습니다
 		PRINTL 
 		PRINTFORMW 「네,%CNAMET(ARG, "二人称")%의 부탁과 기뻐해. 지금, 가져오네요」
 		PRINTFORMW %CALLNAME:ARG%는 표정이야말로 변함없기는 하지만,%CALLNAME:MASTER%(와)과 단 둘에서의 다회에 기쁜 듯합니다…
@@ -6402,12 +6402,12 @@ CASE "서류작업：도움"
 
 		SETBIT CFLAG:ARG:71, 1
 	ELSE
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
 		PRINTL 
 		PRINTFORMW 「네,%CNAMET(ARG, "二人称")%의 부탁과 기뻐해. 지금, 차를 가져오네요」
 		PRINTFORMW %CALLNAME:ARG%는 표정이야말로 변함없기는 하지만,%CALLNAME:MASTER%(와)과 단 둘에서의 다회에 기쁜 듯합니다…
 		PRINTL 
-		PRINTFORMW 온화한 교환으로 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+		PRINTFORMW 온화한 교환으로 리프레쉬 했다%조사처리(CALLNAME:MASTER,"는")%서류작업에 돌아왔습니다.
 
 		SETBIT CFLAG:ARG:71, 0
 	ENDIF

@@ -594,7 +594,7 @@ IF SELECTCOM == 5
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「%CNAME("二人称", "かな")%는 좀 더 큰 젖가슴이 좋다…노？」
-			PRINTFORMW 「…그렇지 않으면%CNAME("二人称", "かな")%하 『이혼』씨이니까작음편이 좋은 걸까나？」
+			PRINTFORMW 「…그렇지 않으면%조사처리(CNAME("二人称", "かな"),"는")% 『이혼』씨이니까작음편이 좋은 걸까나？」
 			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 대답하지 않고%CALLNAME:TARGET%의 얇다가슴을애무했다
 			PRINTFORMW 「아읏, 역시 『이혼』씨인 것이구나…앗, 끝 쪽 집으면 야응♪」
 		;それ以外
@@ -2160,7 +2160,7 @@ IF SELECTCOM == 95 && PENIS(PLAYER)
 	ELSE
 		;연모＋새드끼Lv3이상
 		IF TALENT:연모 && ABL:새드끼 >= 3
-			PRINTFORMW 「에헤헤, 변태이혼%CNAME("二人称", "かな")%하아…작음발로 칼리를 간질간질 되는 것을 좋아하네요♪」
+			PRINTFORMW 「에헤헤, 변태이혼%조사처리(CNAME("二人称", "かな"),"는")%아…작음발로 칼리를 간질간질 되는 것을 좋아하네요♪」
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「아…자지, 쫑긋쫑긋 해 왔어？」

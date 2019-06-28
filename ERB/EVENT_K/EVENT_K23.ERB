@@ -5003,12 +5003,12 @@ CASE "조수で성처리：事後"
 ;서류작업이벤트
 ;-------------------------------------------------
 CASE "서류작업：도움"
-	PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+	PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
 	PRINTL 
 	PRINTFORMW 「너의 부탁이라면 물론이야！ 자, 나는 어떤 것을 먹으면 좋은 거야？！」
 	PRINTFORMW 텐션의 높다%CALLNAME:ARG%에 맞추어 호들갑스러운 연기를 섞으면서, 즐거운 한때를 보냈습니다…
 	PRINTL 
-	PRINTFORMW 온화한 교환으로 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+	PRINTFORMW 온화한 교환으로 리프레쉬 했다%조사처리(CALLNAME:MASTER,"는")%서류작업에 돌아왔습니다.
 	SETBIT CFLAG:ARG:71, 0
 CASE "서류작업：키스"
 
@@ -5023,7 +5023,7 @@ CASE "서류작업：무시"
 		PRINTFORM 「그런 너에게는……이러하닷！
 		CALL HEARTMARK_L
 		IF RAND:2
-			PRINTFORMW %CALLNAME:ARG%하, 꽉 껴안아\@ TALENT:거유 ? 가슴の谷間で腕を挟んで # 頬ずりして \@왔다…
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")%, 꽉 껴안아\@ TALENT:거유 ? 가슴の谷間で腕を挟んで # 頬ずりして \@왔다…
 		ELSE
 			PRINTFORMW %CALLNAME:ARG%는 뒤로부터 껴안아,%CALLNAME:MASTER%의 후두부에가슴을꽉 눌러 왔다…
 		ENDIF

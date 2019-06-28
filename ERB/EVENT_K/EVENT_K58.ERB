@@ -4679,11 +4679,11 @@ CASE "조수で성처리：事後"
 ;-------------------------------------------------
 CASE "서류작업：도움"
 	IF RANDCHK(4, CFLAG:ARG:71, 0, 3)
-		PRINTFORM %CALLNAME:MASTER%하%CALLNAME:ARG%에,
+		PRINTFORM %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에,
 		PRINTFORMW 계속 앉아 있는 채로엉덩이하지만 아파져 왔기 때문에 의자가 되어 주지 않겠는가？(와)과 농담을 말해 보았습니다
 		PRINTL 
 		PRINTFORMW 「알았다！ 그럼 거기를 움직여서는 안 돼！」
-		PRINTFORMW %CALLNAME:ARG%하%CALLNAME:MASTER%의 무릎 위에 앉으면, 서로 마주 본 모습으로 껴안아 왔습니다.
+		PRINTFORMW %조사처리(CALLNAME:ARG,"는")%%CALLNAME:MASTER%의 무릎 위에 앉으면, 서로 마주 본 모습으로 껴안아 왔습니다.
 		PRINTFORMW 「훌륭한 안정감！ 자 각오 하게！」
 		PRINTFORMW %CALLNAME:ARG%하지만 산들산들 손가락을 움직이기 시작하므로,%CALLNAME:MASTER%의 몸은 반사적으로 떨려 버립니다.
 		PRINTFORMW 「안된다 안된다 그런 것 안된다！ 의자가 앉으면 움직이지 않는, 그런 일밤의 나라는 상식이 아닌가！」
@@ -4692,7 +4692,7 @@ CASE "서류작업：도움"
 
 		SETBIT CFLAG:ARG:71, 3
 	ELSEIF RANDCHK(3, CFLAG:ARG:71, 0, 3)
-		PRINTFORMW 피로가 쌓였다%CALLNAME:MASTER%하,%CALLNAME:ARG%에 맛사지를 부탁해 보았습니다
+		PRINTFORMW 피로가 쌓였다%조사처리(CALLNAME:MASTER,"는")%,%CALLNAME:ARG%에 맛사지를 부탁해 보았습니다
 		PRINTL 
 		IF RAND:5 == 0
 			PRINTFORML 「큰 일이다, 종양이 있겠어！ 곧바로도 마녀의 일격을！」
@@ -4702,7 +4702,7 @@ CASE "서류작업：도움"
 			PRINTFORMW 「자%CNAMET(ARG, "一人称")%의 신부,웃옷를 벗어 눕게……」
 			PRINTFORMW %마스터는()% 말해지는 대로 겨드랑이의 침대에서 엎드렸다.
 			PRINTFORMW 「막상 가지 않는 모험의 여행！ 그러나 조심해라 브잡에！」
-			PRINTFORMW %CALLNAME:ARG%하%CALLNAME:MASTER%의 허리에 걸쳐, 등을 천천히 주물러 풀기 시작했다.
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")%%CALLNAME:MASTER%의 허리에 걸쳐, 등을 천천히 주물러 풀기 시작했다.
 			PRINTFORMW 「등뼈 태생의 용사가～♪ 견갑골의 동쪽으로부터～♪ 북쪽의 목의 임금님에게～♪」
 			PRINTFORMW 「핫, 나타났군자바워크！ 보팔의 검, 지금이야말로 힘을！」
 			PRINTFORMW %CALLNAME:ARG%는 열중하고 있는 장소를 찾아내서는 철저하게 맛사지를 하고 있다…
@@ -4712,11 +4712,11 @@ CASE "서류작업：도움"
 			PRINTFORMW 「……이렇게 해 새파래진 말은 집에 돌아간 것이었습니다. 교신 종료！」
 		ENDIF
 		PRINTL 
-		PRINTFORMW 생각했다이상에 몸이 가벼워졌다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+		PRINTFORMW 생각했다이상에 몸이 가벼워졌다%조사처리(CALLNAME:MASTER,"는")%서류작업에 돌아왔습니다.
 
 		SETBIT CFLAG:ARG:71, 2
 	ELSEIF RANDCHK(2, CFLAG:ARG:71, 0, 3)
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에 차를 끓여 받기로 했습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에 차를 끓여 받기로 했습니다
 		PRINTL 
 		PRINTFORML 「%CNAMET(ARG, "ニ人称")%는은 무서운 일을입로 할까！ 맡기게！」
 		PRINTFORML ………
@@ -4769,12 +4769,12 @@ CASE "서류작업：도움"
 
 		SETBIT CFLAG:ARG:71, 1
 	ELSE
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
 		PRINTL 
 		CALL R3
 		CALL RDD
 		PRINTL 
-		PRINTFORMW 온화한 교환으로 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+		PRINTFORMW 온화한 교환으로 리프레쉬 했다%조사처리(CALLNAME:MASTER,"는")%서류작업에 돌아왔습니다.
 
 		SETBIT CFLAG:ARG:71, 0
 	ENDIF

@@ -6385,23 +6385,23 @@ CASE "조수で성처리：事後"
 ;-------------------------------------------------
 CASE "서류작업：도움"
 	IF RANDCHK(2, CFLAG:ARG:71, 0, 1)
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에서류작업노도움를 부탁해 보았습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에서류작업노도움를 부탁해 보았습니다
 		PRINTL 
 		PRINTFORMW 「응？ 좋아요, 나 그러한 것 상당히 좋아하니까」
 		PRINTFORMW 「그렇지만, 다른 사람에게 성과 보이거나 든지 하지 않으니까……조금 글자가 더러워도 허락해요？」
 		PRINTFORMW 과연은 마도학구의 도,%CALLNAME:ARG%의 일의 속도라고 말하면 굉장한 것입니다…
 		PRINTL 
-		PRINTFORMW 자신이 하는 것보다 좋은 솜씨를 보게 되었다%CALLNAME:MASTER%하,%CALLNAME:ARG%를 칭찬해 부추겨 일을 끝냈습니다.
+		PRINTFORMW 자신이 하는 것보다 좋은 솜씨를 보게 되었다%조사처리(CALLNAME:MASTER,"는")%,%CALLNAME:ARG%를 칭찬해 부추겨 일을 끝냈습니다.
 
 		SETBIT CFLAG:ARG:71, 1
 	ELSE
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
 		PRINTL 
 		PRINTFORMW 「흐음……아라, 과자만？ 차가 없잖아」
 		PRINTFORMW 「조금 기다리고 있어,%CNAMET(ARG, "一人称")%하지만 소중히 간직함의 끓여 주기 때문에」
 		PRINTFORMW %CALLNAME:ARG%의 차……에 대해서는 감히 언급을 피하지만, 둘이서 즐거운 한때를 보냈다……
 		PRINTL 
-		PRINTFORMW 온화한 교환으로 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+		PRINTFORMW 온화한 교환으로 리프레쉬 했다%조사처리(CALLNAME:MASTER,"는")%서류작업에 돌아왔습니다.
 
 		SETBIT CFLAG:ARG:71, 0
 	ENDIF

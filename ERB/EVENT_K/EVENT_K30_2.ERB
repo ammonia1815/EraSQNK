@@ -1275,7 +1275,7 @@ IF SELECTCOM == 7
 			ELSEIF CHECK_COM("보지애무")
 				PRINTFORM 「%CNAME("二人称")%에, 휘저을 수 있으면…아아, 좀 더 안 되는 것을 갖고 싶어져…
 			ELSE
-				PRINTFORM 「하앙…♪%CNAME("二人称")%하, 안 되는 장소를 스윽스윽 하는 것이…너무 능숙합니다…
+				PRINTFORM 「하앙…♪%조사처리(CNAME("二人称"),"는")%, 안 되는 장소를 스윽스윽 하는 것이…너무 능숙합니다…
 			ENDIF
 			PRINTFORM 부끄러운데…
 			IF RAND:2 == 0
@@ -1608,7 +1608,7 @@ IF SELECTCOM == 16
 				ELSE
 					PRINTFORMW 「네…♪첨단으로,키스해…응우, 딱딱한 간을 서로 켜…아, 하아, 서로 앞달리기를 서로 바릅니다…♪」
 					PRINTFORMW 이쪽의 지시 대로, 오히려 그것이상에 적극적으로페니스를 움직여음경맞대기를 즐긴다%CALLNAME:TARGET%
-					PRINTFORMW 「아아, 부끄럽습니다…매우 부끄럽지만…응우♪이케나이바이콘의%CNAME("一人称")%하…」
+					PRINTFORMW 「아아, 부끄럽습니다…매우 부끄럽지만…응우♪이케나이바이콘의%조사처리(CNAME("一人称"),"는")%…」
 					PRINTFORMW 「이렇게 해…응우,%조사처리(CNAME("二人称"),"과")%도착적쾌락에 빠지는 것으로부터는, 아아,♪피해, 선」
 					PRINTFORMW 그런%CALLNAME:TARGET%의 추잡하게 정열적인허리놀림에, 이쪽의페니스도 뜨겁고 딱딱하게 고조되어 갔다
 				ENDIF
@@ -2378,7 +2378,7 @@ ELSEIF SELECTCOM >= 60 && SELECTCOM <= 79 && COND("３Ｐ")
 				IF INSERT("인서트", TARGET, MASTER)
 					PRINTFORMW 「응응, 응히이…%CNAME("一人称")%의보지,%CNAME("주인")%그리고 가득이기 때문에…하아,%CNAME("조수")%조, 조금 상냥하게 했으면 좋겠다고 합니까…」
 				ELSEIF INSERT("Ａ인서트", TARGET, MASTER)
-					PRINTFORMW 「응응, 응히이…%CNAME("一人称")%의엉덩이,%CNAME("주인")%의로 가득이기 때문에…%CNAME("조수")%하, 응우, 조금 상냥하게 했으면 좋겠다고 합니까…」
+					PRINTFORMW 「응응, 응히이…%CNAME("一人称")%의엉덩이,%CNAME("주인")%의로 가득이기 때문에…%조사처리(CNAME("조수"),"는")%, 응우, 조금 상냥하게 했으면 좋겠다고 합니까…」
 				ELSEIF INSERT("인서트", TARGET, ASSI)
 					PRINTFORMW 「응응, 응히이…%CNAME("一人称")%의보지,%CNAME("조수")%그리고 가득이기 때문에…하아,%CNAME("주인")%의는, 조금 상냥하게 했으면 좋겠다고 합니까…」
 				ELSEIF INSERT("Ａ인서트", TARGET, ASSI)
@@ -8908,7 +8908,7 @@ CASE "一言이벤트"
 			PRINTFORML 「엣또,%CNAMET(ARG, "二人称")%…이런 밤 늦고이니까 즐길 수 있는 일이 있으면 있습니까…그렇지만,%CNAMET(ARG, "一人称")%는 밤이 아니어도 전혀 좋다고 합니까…♪」
 		ELSE
 			IF RANDF(2) == 0 && COND("밤")
-				PRINTFORML 「%CNAMET(ARG, "二人称")%하, 아직 쉬시지 않습니까…그러면,%CNAMET(ARG, "一人称")%도 좀 더…일어나고 있고 싶습니다만…후아」
+				PRINTFORML 「%조사처리(CNAMET(ARG, "二人称"),"는")%, 아직 쉬시지 않습니까…그러면,%CNAMET(ARG, "一人称")%도 좀 더…일어나고 있고 싶습니다만…후아」
 			ELSE
 				PRINTFORML 「%CNAMET(ARG, "二人称")%, 너무 밤샘 너무 하는 것은…아, 그렇지만, 안 되는 것을 한다면 밤이 좋지요」
 			ENDIF
@@ -8963,16 +8963,16 @@ CASE "조수で성처리：事後"
 ;-------------------------------------------------
 CASE "서류작업：도움"
 	IF RANDCHK(4, CFLAG:ARG:71, 0, 3)
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
 		PRINTL 
 		PRINTFORMW %마스터는()% 막대 모양의 과자를 물면, 반대측을%CALLNAME:ARG%에 먹어 받도록(듯이) 내며 보았습니다
 		PRINTFORMW 「이, 이런…부끄럽지만…그, 좋습니까？」
 		PRINTFORMW 「%CNAMET(ARG, "一人称")%…사양 할 수 없게 되어 버린다고 합니까…%CNAMET(ARG, "二人称")%까지, 먹어 버린다고 합니까…」
 		PRINTL 
-		PRINTFORMW 온화한 교환으로 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+		PRINTFORMW 온화한 교환으로 리프레쉬 했다%조사처리(CALLNAME:MASTER,"는")%서류작업에 돌아왔습니다.
 		SETBIT CFLAG:ARG:71, 3
 	ELSEIF RANDCHK(3, CFLAG:ARG:71, 0, 3)
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에서류작업노도움를 부탁해 보았습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에서류작업노도움를 부탁해 보았습니다
 		PRINTL 
 		PRINTFORMW 「네, 노력하네요」
 		PRINTFORMW %CALLNAME:ARG%는 눈앞의 서류를손에 취하면, 거기에 대충 훑어보기 시작했습니다……
@@ -8985,7 +8985,7 @@ CASE "서류작업：도움"
 		PRINTFORMW %CALLNAME:MASTER%부, 부끄러운 듯이 하면서도, 기대가 가득찬 시선을 향하여 있었다…
 		SETBIT CFLAG:ARG:71, 2
 	ELSEIF RANDCHK(2, CFLAG:ARG:71, 0, 3)
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에 차를 끓여 받기로 했습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에 차를 끓여 받기로 했습니다
 		PRINTL 
 		PRINTFORMW 「네, 맡겨 주세요…」
 		PRINTFORML ………
@@ -8998,7 +8998,7 @@ CASE "서류작업：도움"
 		PRINTFORMW %CALLNAME:MASTER%하지만 또 대접해 주고라고 말하면,%CALLNAME:ARG%는 웃는 얼굴로 수긍했습니다.
 		SETBIT CFLAG:ARG:71, 1
 	ELSE
-		PRINTFORMW 조금 지쳤다%CALLNAME:MASTER%하,%CALLNAME:ARG%에 무릎 베개를 부탁해 보았습니다
+		PRINTFORMW 조금 지쳤다%조사처리(CALLNAME:MASTER,"는")%,%CALLNAME:ARG%에 무릎 베개를 부탁해 보았습니다
 		PRINTL 
 		PRINTFORMW 「후후, 아무쪼록, 편하게 해 주세요…」
 		PRINTFORMW %CALLNAME:ARG%는 무릎에 실었다%CALLNAME:MASTER%의 머리를 어루만지면서, 조용하게 노래를 부르기 시작했습니다……
@@ -9006,7 +9006,7 @@ CASE "서류작업：도움"
 		PRINTFORML ………
 		PRINTFORML ……
 		PRINTFORMW …
-		PRINTFORMW 충분히 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+		PRINTFORMW 충분히 리프레쉬 했다%조사처리(CALLNAME:MASTER,"는")%서류작업에 돌아왔습니다.
 		SETBIT CFLAG:ARG:71, 0
 	ENDIF
 CASE "서류작업：키스"
