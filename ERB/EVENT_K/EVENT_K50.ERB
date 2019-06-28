@@ -26,7 +26,9 @@
 ;디시인사이드 텍스트갤러리
 ;○스텔라 구상 완전번역 완료
 ;○스텔라 구상 가필
-;○CFLAG:999 = 남녀 판정
+;	-매각 대사
+;	-엔딩 추가
+;	-호접지몽 관련 구상 추가
 ;-------------------------------------------------
 ;EVENTTRAIN関係（X1を캐릭터번호に置換）
 ;조교개시 시의 대사CFLAG 201～210を使用
@@ -534,8 +536,8 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 	PRINTFORMW 「우∼…그럼, 슬슬 진심으로 갈거야! 각오 해, %CNAME("二人称")%☆」
 	SETBIT CFLAG:201, 3
 	RETURN 1
-;호접지몽 BADEND CFLAG503
-ELSEIF COND("호접지몽") == MASTER && CFLAG:503 >= 200 && TALENT:MASTER:여자
+;호접지몽 BADEND CFLAG503, 이것이 뜬 후 조교 후 대사에서 선택지에 따라 BAD로 직행하거나, 다시는 이 조교시작대사가 안뜸
+ELSEIF COND("호접지몽") == MASTER && CFLAG:503 >= 225 && TALENT:MASTER:여자 && CFLAG:504 == 0
 	PRINTFORMW %타겟과()% 몸을 바꾼지 얼마나 지났을까
 	PRINTFORMW ……그렇게 긴 시간은 아닐텐데, 어째서인지 감각이 흐트러지는 기분이 든다
 	PRINTFORMW 모두 이 %CALLNAME:TARGET%의 몸 때문이겠지
@@ -548,7 +550,7 @@ ELSEIF COND("호접지몽") == MASTER && CFLAG:503 >= 200 && TALENT:MASTER:여�
 	IF PENIS(TARGET) 
 		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 자연스럽게 %CALLNAME:TARGET%의 페니스 쪽으로 눈이 갔다
 		PRINTFORMW 이미 하늘을 향해 우뚝 솟아있는 페니스, 아아 그것을 이 몸에 받아들이고 싶다
-		PRINTFORMW 그렇게 생각하자 %CALLNAME:PLAYER%의 하복부가 큥큥거리며 욱신거리기 시작했다
+		PRINTFORMW 그렇게 생각하자 %CALLNAME:PLAYER%의 하복부가 뜨겁게 욱신거리기 시작했다
 		PRINTFORMW 이것이 몽마의 몸이란 것인가
 	ELSE
 		PRINTFORMW %타겟이()% 가까이 다가오자 몸이 저절로 발정하기 시작했다
@@ -558,6 +560,15 @@ ELSEIF COND("호접지몽") == MASTER && CFLAG:503 >= 200 && TALENT:MASTER:여�
 	PRINTFORMW 그러고선 %CALLNAME:PLAYER%의 비소에 손가락을 쑤셔놓고 이미 애액으로 흥건이 젖은 꿀단지를 마구 휘젓기 시작했다
 	PRINTFORMW 손가락의 움직임에 따라 몸이 움찔거리며 숨은 거칠어진다……
 	PRINTFORMW 「벌써 몸의 준비는 끝난거 같네……이제 더이상은 못참겠지?」
+	PRINTFORMW ……그렇고 말고, %CALLNAME:TARGET%의 말에 고개를 끄덕이려는 순간 %조사처리(CALLNAME:PLAYER,"는")% 섬뜩한 느낌에 몸을 떨었다
+	PRINTFORMW 언제부터일까?
+	PRINTFORMW %CALLNAME:TARGET%와 몸을 바꾸고서 점차 정신이 영향을 받고 있는것 같다
+	PRINTFORMW 언제부터 나는 자신의 몸에 안기면서 환희하게 되었던가?
+	PRINTFORMW 나는 그런 나르시스트였던가?
+	PRINTFORMW 「…!」
+	PRINTFORMW 「%CNAME("二人称")%!」
+	PRINTFORMW 「아이참, %CNAME("二人称")%!!」
+	PRINTFORMW 그런 고민을 하며 입을 닫은 %조사처리(CALLNAME:PLAYER,"를")% %타겟이()% 의아하다는 눈으로 바라보고 있었다
 	IF PENIS(TARGET) 
 		PRINTFORMW 「자, 손가락으론 못참는거 다 보인다구? 이걸 원한다면……알지?」
 		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 인내심에 한계에 도달해 스스로 %타겟을()% 쓰러트리고, 그 위에 올라탔다
@@ -930,69 +941,82 @@ IF COND("호접지몽") == MASTER && CFLAG:507 == 1 && PENIS(TARGET)
 	PRINTFORMW 애초에 호접지몽이라는 물건은, 어디까지나 서로의 몸을 체험해보기 위한 것으로 효과는 일시적이다
 	PRINTFORMW 꿈에서 깨기를 바라는 것으로도 간단하게 효과는 사라진다
 	PRINTFORMW ……하지만 그걸로 좋은 것일까?
-	PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의……, 아니 지금은 자신의 것인 하복부를 가볍게 쓰다듬어 봤다
-	PRINTFORMW 그러자 방금까지만 해도 격렬한 정사를 치루고 있었는데도 불구하고, 아직 부족하다는 듯이 욱신거리기 시작한다
-	PRINTFORMW 엘더 서큐버스의 육체, 몸을 바꾸고 나서도 처음 몇번 이후엔 암컷의 쾌락을 가르쳐준 이 몸
-	PRINTFORMW 마치 뇌리에 새겨진 듯, 잊을 수 없는 이 쾌감
-	PRINTFORMW 이 고깃단지가 주는 열락에 한 번 잠긴 자는, 돌이킬 수 없으리라
-	PRINTFORMW 그렇게 %조사처리(CALLNAME:PLAYER,"는")% 자신의 본심을 자각했다
-	PRINTFORML
-	PRINTFORMW "이 몸을 돌려주기 싫다"
-	PRINTFORML
-	PRINTFORMW 아직 부족하다
-	PRINTFORMW 더 많은 쾌락을 원하는 듯이 욱신거리는 신체에 떠밀려
-	PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 지쳐 잠들어 있는 %CALLNAME:TARGET%의 위에 천천히 올라탔다
-	PRINTFORMW 그리고 천천히, 하지만 힘을 줘서 
-	PRINTFORMW 그 목을 졸랐다
-	PRINTFORMW
-	PRINTFORMW …………………………………
-	PRINTFORMW …………………
-	PRINTFORMW ………
-	PRINTFORMW
-	;주인이 마법사
-	IF TALENT:MASTER:151
-		PRINTFORMW 그 뒤는 기억나지 않는다
-		PRINTFORMW %타겟이()% 들어가 있는 %CALLNAME:PLAYER%의 원래 몸은 그 숨이 끊어졌던가?
-		PRINTFORMW 그저 무언가에서 도망치듯이 저택을 떠난 %조사처리(CALLNAME:PLAYER,"는")% 매일을 불안감에 시달리며 보냈다
-		PRINTFORMW 이대로 원래대로 돌아가면, %조사처리(CALLNAME:PLAYER,"는")% 어디로 가게 되는것일까?
-		PRINTFORMW %CALLNAME:PLAYER%의 원래 몸………아니, %타겟이()% 아직 살아있다면 뒤쫓아 오는게 아닐까?
-		PRINTFORMW 그리고 그런 불안감을 가라앉히기 위해 남자들에게 안겼다
-		PRINTFORMW 그럴 때마다 뱃속을 가득 채우는 충족감에 몸은 한층 더 뜨겁게 달아오른다
-		PRINTFORMW 뇌수가 녹아버릴 정도의 쾌락, 이것만이 %조사처리(CALLNAME:PLAYER,"를")% 달래줬다
-		PRINTFORMW 소용돌이 치는 열락 속에 잠겨가며, 마지막 물음이 머리에 떠올랐다
-		PRINTFORMW 자신은 %CALLNAME:TARGET%인가 %CALLNAME:PLAYER%인가…………
+	PRINTFORML [0]꿈은 꿈일뿐 %조사처리(CALLNAME:PLAYER,"는")% 어디까지나 %CALLNAME:PLAYER%이다
+	PRINTFORML [1]아니, 좋을리가 없다
+	CALL INPUT_SELECT, 2
+	IF RESULT == 0
+		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 웃으면서 %CALLNAME:TARGET%의 머리를 쓰다듬었다
+		PRINTFORMW 그리고서, 이 놀이도 끝날 때가 온것 같다고
+		PRINTFORMW 그래도 끝나기 전까진, 조금 더 이 별난 경험을 즐겨보자고, 그렇게 대답했다
+		PRINTFORMW 「후응~, 그렇구나☆ 그럼 %CALLNAME:TARGET%도 좀 더 즐겨봐야겠어♪」
+		PRINTFORMW 다음엔 무엇을 해볼까, 그렇게 두 사람은 신난듯이 떠들며 시간을 보냈다
+		CFLAG:504 = 1
+		DRAWLINE
+	ELSEIF RESULT == 1
+		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의…… 아니 지금은 자신의 것인 하복부를 가볍게 쓰다듬어 봤다
+		PRINTFORMW 그러자 방금까지만 해도 격렬한 정사를 치루고 있었는데도 불구하고, 아직 부족하다는 듯이 욱신거리기 시작한다
+		PRINTFORMW 엘더 서큐버스의 육체, 몸을 바꾸고 나서도 처음 몇번 이후엔 암컷의 쾌락을 가르쳐준 이 몸
+		PRINTFORMW 마치 뇌리에 새겨진 듯, 잊을 수 없는 이 쾌감
+		PRINTFORMW 이 고깃단지가 주는 열락에 한 번 잠긴 자는, 돌이킬 수 없으리라
+		PRINTFORMW 그렇게 %조사처리(CALLNAME:PLAYER,"는")% 자신의 본심을 자각했다
+		PRINTFORML
+		PRINTFORMW "이 몸을 돌려주기 싫다"
+		PRINTFORML
+		PRINTFORMW 아직 부족하다
+		PRINTFORMW 더 많은 쾌락을 원하는 듯이 욱신거리는 신체에 떠밀려
+		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 지쳐 잠들어 있는 %CALLNAME:TARGET%의 위에 천천히 올라탔다
+		PRINTFORMW 그리고 천천히, 하지만 힘을 줘서 
+		PRINTFORMW 그 목을 졸랐다
 		PRINTFORMW
+		PRINTFORMW …………………………………
+		PRINTFORMW …………………
+		PRINTFORMW ………
 		PRINTFORMW
-		PRINTFORMW 
-		PRINTFORMW 으슥한 마을의 뒷골목
-		PRINTFORMW 사람이 아닌 것도 종종 나타난다고 하는 도시의 어두운 그림자
-		PRINTFORMW 그곳에서 한 어린 소녀가 어느 남자에게 말을 걸고 있었다 
-		PRINTFORMW 『저기 오빠☆ 스텔라랑 재밌는 놀이 하나 하지 않을래?」
-		PRINTFORMW 겉으로 보이는 모습과는 달리, 그 행동 하나 하나에서는 마성이 느껴지는 요염함이 느껴진다
-		PRINTFORMW 『먼저 가버리는 쪽이 지는걸로, 알았지?』
-		PRINTFORMW 『그럼~~간다~!』
-		PRINTFORMW 곧장 남자의 바지를 끌어내리고 그 페니스를 자신의 비소로 이끈다
-		PRINTFORMW 어린 몸에는 도저히 들어가리라고는 상상할 수 없는 굵은 페니스를 아주 자연스럽게 그 균열에 삼킨다
-		PRINTFORMW 『우후후…… 이거, 좋아☆ 좀 더 스텔라를 기분좋게 해줘』
-		PRINTFORMW 녹아내릴 듯한 달콤한 목소리로 소녀는 남자의 귀에 속삭인다
-		PRINTFORMW 그러자 남자는 무언가에 홀린듯 소녀의 말에 따른다
-		PRINTFORMW 그렇다, 이 소녀는 평범한 인간이 아니라 몽마
-		PRINTFORMW ……일까?
-	ELSE
-		PRINTFORMW …………!?
-		PRINTFORMW 숨통을 끊기 위해, 완전히 손으로 그 목을 비틀었다고 생각헀다
-		PRINTFORMW 하지만, 목을 졸리고 있는 것은 어느새 %CALLNAME:PLAYER%였다
-		PRINTFORMW 눈 앞에서 자신의 목을 조르고 있는 손의 주인은 %CALLNAME:TARGET%
-		PRINTFORMW 그 작은 몸 어디에서 그런 힘이 나는 것일까
-		PRINTFORMW 그것보다 %타겟과()% %CALLNAME:PLAYER%의 몸은 원래대로 돌아온 걸까?
-		PRINTFORMW 그렇다면 왜 %타겟은()% 그대로 목을 조르고 있는 것일까
-		PRINTFORMW 숨을 못쉬어 고통스럽다
-		PRINTFORMW 눈 앞의 시야가 점점 흐려져 간다
-		PRINTFORMW 아아, 나는 대체 무엇을───
-		PRINTFORMW  
-		PRINTFORMW 
+		;주인이 마법사
+		IF TALENT:MASTER:151
+			PRINTFORMW 그 뒤는 기억나지 않는다
+			PRINTFORMW %타겟이()% 들어가 있는 %CALLNAME:PLAYER%의 원래 몸은 그 숨이 끊어졌던가?
+			PRINTFORMW 그저 무언가에서 도망치듯이 저택을 떠난 %조사처리(CALLNAME:PLAYER,"는")% 매일을 불안감에 시달리며 보냈다
+			PRINTFORMW 이대로 원래대로 돌아가면, %조사처리(CALLNAME:PLAYER,"는")% 어디로 가게 되는것일까?
+			PRINTFORMW %CALLNAME:PLAYER%의 원래 몸………아니, %타겟이()% 아직 살아있다면 뒤쫓아 오는게 아닐까?
+			PRINTFORMW 그리고 그런 불안감을 가라앉히기 위해 남자들에게 안겼다
+			PRINTFORMW 그럴 때마다 뱃속을 가득 채우는 충족감에 몸은 한층 더 뜨겁게 달아오른다
+			PRINTFORMW 뇌수가 녹아버릴 정도의 쾌락, 이것만이 %조사처리(CALLNAME:PLAYER,"를")% 달래줬다
+			PRINTFORMW 소용돌이 치는 열락 속에 잠겨가며, 마지막 물음이 머리에 떠올랐다
+			PRINTFORMW 자신은 %CALLNAME:TARGET%인가 %CALLNAME:PLAYER%인가…………
+			PRINTFORMW
+			PRINTFORMW
+			PRINTFORMW 
+			PRINTFORMW 으슥한 마을의 뒷골목
+			PRINTFORMW 사람이 아닌 것도 종종 나타난다고 하는 도시의 어두운 그림자
+			PRINTFORMW 그곳에서 한 어린 소녀가 어느 남자에게 말을 걸고 있었다 
+			PRINTFORMW 『저기 오빠☆ 스텔라랑 재밌는 놀이 하나 하지 않을래?」
+			PRINTFORMW 겉으로 보이는 모습과는 달리, 그 행동 하나 하나에서는 마성이 느껴지는 요염함이 느껴진다
+			PRINTFORMW 『먼저 가버리는 쪽이 지는걸로, 알았지?』
+			PRINTFORMW 『그럼~~간다~!』
+			PRINTFORMW 곧장 남자의 바지를 끌어내리고 그 페니스를 자신의 비소로 이끈다
+			PRINTFORMW 어린 몸에는 도저히 들어가리라고는 상상할 수 없는 굵은 페니스를 아주 자연스럽게 어린 균열에 삼킨다
+			PRINTFORMW 『우후후…… 이거, 좋아☆ 좀 더 스텔라를 기분좋게 해줘』
+			PRINTFORMW 녹아내릴 듯한 달콤한 목소리로 소녀는 남자의 귀에 속삭인다
+			PRINTFORMW 그러자 남자는 무언가에 홀린듯 소녀의 말에 따른다
+			PRINTFORMW 그렇다, 이 소녀는 평범한 인간이 아니라 몽마……
+			PRINTFORMW
+			PRINTFORMW
+			PRINTFORMW ……………일까?
+		ELSE
+			PRINTFORMW …………!?
+			PRINTFORMW 숨통을 끊기 위해, 완전히 손으로 그 목을 비틀었다고 생각헀다
+			PRINTFORMW 하지만, 목을 졸리고 있는 것은 어느새 %CALLNAME:PLAYER%였다
+			PRINTFORMW 눈 앞에서 자신의 목을 조르고 있는 손의 주인은 %CALLNAME:TARGET%
+			PRINTFORMW 이 작은 몸 어디에서 그런 힘이 나는 것일까
+			PRINTFORMW 그것보다 %CALLNAME:TARGET%와 %CALLNAME:PLAYER%의 몸은 원래대로 돌아온 걸까?
+			PRINTFORMW 그렇다면 왜 %타겟은()% 그대로 목을 조르고 있는 것일까
+			PRINTFORMW 숨을 못쉬어 고통스럽다
+			PRINTFORMW 눈 앞의 시야가 점점 흐려져 간다
+			PRINTFORMW 아아, 나는 대체 무엇을───
+		ENDIF
+		CALL GAMEOVER
 	ENDIF
-	CALL GAMEOVER
 ENDIF
 ;-------------------------------------------------
 ;やきもち度計算（終了時） CFLAG462
@@ -9220,9 +9244,67 @@ CASE "自発脱ぎ"
 CASE "질내사정후황홀"
 	;연모
 	IF TALENT:연모
-	;	PRINTFORMW 
+		PRINTFORMW 「따뜻해서……기분 좋아……」
 	ELSE
 		PRINTFORMW 「아하앗… 배가 빵빵……♪」
+	ENDIF
+	RETURN 1
+
+	
+
+;-------------------------------------------------
+;요바이키스
+;-------------------------------------------------
+CASE "요바이키스"
+	IF TALENT:연모
+		IF !RAND:2
+			PRINTFORMW 「에에…? %CNAME("二人称")%, 벌써 잠들어 버린거야?」
+			PRINTFORMW 「자기 전의 키스 받고 싶었는데………」
+			PRINTFORMW 「…쪽 %KOJO_K5_HT()% 좋은 꿈 꿔, %CNAME("二人称")%」
+		ELSE
+			SIF COND("호접지몽") == MASTER
+				PRINTFORMW 「후응……잠든 %CNAME("一人称")%의 얼굴도 역시 귀여워~」
+			PRINTFORMW 「……쪽%KOJO_K5_HT()%」
+			PRINTFORMW 「이대로 야한걸 하고 싶긴 하지만……깨우면 미안하니까☆」
+			PRINTFORMW 그런것 치고는 꽤나 진한 입맞춤이였다고 %조사처리(CALLNAME:PLAYER,"는")% 자는 척을 하면서 생각하며 얼굴을 붉혔다
+		ENDIF
+	;それ以外
+	ELSE
+		PRINTFORMW 「잘때는 이렇게나 무방비 해지는구나☆」
+		PRINTFORMW 「에잇…쪽 %KOJO_K5_HT()% 후후후, 맛있어라~」
+	ENDIF
+	RETURN 1
+
+
+;-------------------------------------------------
+;요바이기승위
+;-------------------------------------------------
+CASE "요바이기승위구상操作"
+	TCVAR:24 = 1
+CASE "요바이기승위"
+	;연모
+	IF TALENT:연모
+		IF ABL:Ｖ감각 >= 5
+			PRINTFORMW 「저기,  %CNAME("二人称")%…… %CNAME("一人称")%, 보지가 욱신거려서 잠을 못자겠어………」
+			PRINTFORMW 「이런 몸으로 만들어버린거 책임줘 줘야해……?」
+			PRINTFORMW %타겟은()% 작은 몸을 바들바들 떨며, 한밤의 행위에 열중했다
+		ELSEIF !RAND:2
+			PRINTFORMW 「좋아해 %CNAME("二人称")%……」
+			PRINTFORMW 「아웃……」
+		ELSE
+			PRINTFORMW 「후후… %CNAME("一人称")%, 아직도 부족해☆」
+			PRINTFORMW 「%CNAME("二人称")%도 그렇지? ……역시, 헤헤」
+		ENDIF
+		PRINTFORMW %타겟은()% %CALLNAME:PLAYER% 위에 올라타 격렬하게 허리를 흔들며 쾌락을 탐하고 있다……
+	;V감각Lv5이상
+	ELSEIF ABL:Ｖ감각 >= 5
+		PRINTFORMW 「우우…… %CNAME("一人称")% 이상해져 버린걸까…?」
+		PRINTFORMW 「계속 계속 보지가 뜨겁고 욱신거려……」
+		PRINTFORMW 「%KOJO_RAND_5("삽입", 4)%」
+	;それ以外
+	ELSE
+		PRINTFORMW 「헤헤…… 밤중에 실례하러 왔어 %CNAME("二人称")%☆」
+		PRINTFORMW 「%KOJO_RAND_5("삽입", 4)%」
 	ENDIF
 	RETURN 1
 ;-------------------------------------------------
@@ -9290,16 +9372,36 @@ CASE "아침키스"
 		PRINTFORMW 「저기, 이번에는 %조사처리(CNAME("二人称"),"가")% 해줬으면 하는데♪ 아침 인사 키스♪」
 		PRINTFORMW 「―… 츄우…… 후후, %CNAME("二人称")%」
 		PRINTFORMW 「너무 좋아」
-		PRINTFORMW 키스 직후 가까운 거리에서 보이는 %CALLNAME:TARGET%의 웃는 얼굴은, 행복해보여 눈부셨다
+		PRINTFORMW 키스 직후 가까운 거리에서 보이는 %CALLNAME:TARGET%의 웃는 얼굴은, 행복해 보여 눈부셨다
 	ENDIF
 
 
+
+;-----------------------------
+;정상위で犯されて起こされる
+;----------------------------
+CASE "아침逆정상위"
+	;호접지몽
+	IF COND("호접지몽") == MASTER
+		PRINTFORMW 하복부에서 느껴지는 강렬한 둔통에 %조사처리(CALLNAME:PLAYER,"는")% 눈을 떴다
+		PRINTFORMW 그리고 바로 눈 앞에 있는 것은 자기 자신의 얼굴이였다
+		PRINTFORMW 「하우으, %CNAME("一人称")%의 안 기분 좋아아앗……」
+		PRINTFORMW 열중하여 허리를 흔들고 있는 %CALLNAME:TARGET%에게 뭐하고 있는거냐고 물어봤지만, 아무래도 들리지 않는 모양이다
+		PRINTFORMW 「%CNAME("一人称")%의 몸이 야한게 잘못이니까……」
+	;연모
+	ELSEIF TALENT:연모
+		;PRINTFORMW 
+	;それ以外
+	ELSE
+		;PRINTFORMW 
+	ENDIF
+	RETURN 1
 ;-------------------------------------------------
 ;매각
 ;-------------------------------------------------
 CASE "매각した"
-	;호접지몽 조교 5회 이상, 반발각인취득이력 1이상
-	IF CFLAG:503 >= 125 && MARK:4 >= 1 && TALENT:남자 == 0
+	;호접지몽 상태에서 많이 가버림 반발각인취득이력 3이상
+	IF CFLAG:503 >= 165 && MARK:4 >= 3 && TALENT:남자 == 0 
 		PRINTFORMW 「팔아버린다구? 정말로?」
 		PRINTFORMW %CALLNAME:TARGET%의 매각이 결정됐음을 알리자, %CALLNAME:TARGET%의 얼굴은 충격으로 굳어버렸다
 		PRINTFORMW 처음부터 이것은 놀이가 아니라 팔기 위한 조교라고 했을텐데, 이제서야 그것을 깨달은 모양이다
@@ -9487,9 +9589,8 @@ CASE "매각した"
 			PRINTFORML
 			PRINTFORMW 가슴이 불타버릴 듯한 감정의 격류
 			PRINTFORMW 세찬 폭풍과도 같은 그 격류는 곧 끝나고, 정적이 찾아왔다
-			PRINTFORMW 귓가에서 들려오던 %CALLNAME:TARGET%의 목소리는 멎었지만
-			PRINTFORMW ………그럼에도 %조사처리(CALLNAME:PLAYER,"는")% 잠에서 깰 수 없었다
-			CALL GAMEOVER
+			PRINTFORMW 귓가에서 들려오던 %타겟은()% 더이상 들리지 않는다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 온 몸에서 식은땀을 흘리며 최악의 기분으로 잠에서 깼다
 		ELSE
 			PRINTFORMW 「%조사처리(CNAME("一人称"),"가")% 다른 사람한테 가게 됐다구?」
 			PRINTFORMW %CALLNAME:TARGET%의 매각이 결정됐다는 것을 알리자, %조사처리(CNAME("一人称"),"는")% 충격을 받은 얼굴로 이쪽을 바라봤다
@@ -9602,7 +9703,17 @@ CASE "조수で성처리：事後"
 ;서류작업이벤트
 ;-------------------------------------------------
 CASE "서류작업：도움"
-
+	PRINTFORMW 「%CNAME("二人称")%♪ %CNAME("一人称")%가 도와주러 왔다구」
+	PRINTFORMW %CALLNAME:TARGET%에겐 아직 어려운 내용이다, 그렇게 말했지만 %타겟은()% 고개를 가로저었다
+	PRINTFORMW 「후후후, 걱정마 %CNAME("二人称")%☆ 도와주는건 %CNAME("一人称")%가 아니라 %CNAME("一人称")%의 인형친구들이니까」
+	PRINTFORMW 그렇게 말한 %CALLNAME:TARGET%의 뒤에 안경을 쓴 곰인형 몇이 뒤따라 들어오고 있었다
+	PRINTFORMW 「예전에 이런걸 자주 해봤다고들 했으니까♪ 꽤 도움이 되지 않을까?」
+	PRINTFORMW %타겟이()% 계속 달라붙기에, 영 아니다 싶으면 쫓아내겠다고 말하고 상태를 지켜보기로 했다
+	PRINTFORMW …………………………
+	PRINTFORMW ………………
+	PRINTFORMW ………
+	PRINTFORMW 이 곰인형들, 굉장한데……?
+	SETBIT CFLAG:ARG:71, 0
 CASE "서류작업：키스"
 
 CASE "서류작업：성희롱"
