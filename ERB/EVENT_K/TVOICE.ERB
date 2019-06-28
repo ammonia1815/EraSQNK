@@ -561,7 +561,7 @@ CASE "휴식：목욕탕에서섹스"
 	IF NO:TARGET == 16
 		PRINTFORMW 「크후후……기분 좋을 것이다？ 자, 참지 않고%CNAME("一人称")%그리고 기분 좋아져 주십시오……」
 	ELSEIF NO:TARGET == 22
-		PRINTFORMW 「훗…야무지지 못하다얼굴를 하고 있어.  이봐요, 받아 들여 주기 때문에 빨리 내는 것이 좋다…」
+		PRINTFORMW 「훗…야무지지 못하다얼굴을 하고 있어.  이봐요, 받아 들여 주기 때문에 빨리 내는 것이 좋다…」
 	ELSEIF NO:TARGET == 7 && TALENT:사족보행
 		PRINTFORMW 「와웃! 와읏! 와읏, 와웃, 와우!」
 	;[교만][건방짐][심술쟁이][강기]持ちなら分岐
@@ -619,11 +619,11 @@ CASE 7
 		IF MARK:반발각인 >= 3
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 일을 경계해 응시하고 있다…
 		ELSEIF TALENT:연모
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 얼굴를 기쁜듯이 응시하고, 배려 흘러넘치는 후희를 즐기고 있다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 얼굴을 기쁜듯이 응시하고, 배려 흘러넘치는 후희를 즐기고 있다…
 		ELSEIF MARK:반발각인 && TALENT:연모 + TALENT:음란 == 0 && MARK:굴복각인 < 3 && ABL:순종 < 3
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 모습을 살피고 있다…
 		ELSEIF TALENT:부끄럼쟁이
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 부끄러움으로얼굴를 진빨강로 해 작아지고 있지만, 별로 싫지 않는 것 같다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 부끄러움으로얼굴을 진빨강로 해 작아지고 있지만, 별로 싫지 않는 것 같다…
 		ELSE
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 음란한 반응을 돌려주면서, 마음 탓인지 기쁜듯이%CALLNAME:PLAYER%에 몸을 바치고 있다…
 		ENDIF
@@ -648,7 +648,7 @@ CASE 31
 			CASE IS < 10000
 				PRINTFORMW …로 가장해 마지막에 다시 한번 돌진하고 나서 뽑아 내 주면, %조사처리(CALLNAME:TARGET,"는")% 푼과 애액을 분출해신체를 흠칫 뛰게 했습니다…
 			CASEELSE
-				PRINTFORMW 뽑아 내기 전에 마음껏 격렬하고 빼고 꽂기 해 주면, %조사처리(CALLNAME:TARGET,"는")% 전신을 몸부림쳐 뒹굴게 해 기분 좋은 것 같은얼굴를 보였다…
+				PRINTFORMW 뽑아 내기 전에 마음껏 격렬하고 빼고 꽂기 해 주면, %조사처리(CALLNAME:TARGET,"는")% 전신을 몸부림쳐 뒹굴게 해 기분 좋은 것 같은얼굴을 보였다…
 			ENDSELECT
 		ENDIF
 	ENDIF
@@ -662,7 +662,7 @@ CASE 33
 			CASE IS< 300
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 개방된 일에 안도의 한숨을 토하고 있다…
 			CASE IS < 1000
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%, 엉덩이의 위화감에 미묘한얼굴를 보이고 있다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%, 엉덩이의 위화감에 미묘한얼굴을 보이고 있다…
 			CASE IS < 3000
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 더러운구멍로부터도 늘어뜨려진 쾌감에, 견디지 못할 허덕이는 소리를 흘리고 있다…
 			CASE IS < 6000
@@ -1026,7 +1026,7 @@ CASE 140
 		ELSEIF ABL:기교 >= 3 && RAND:3 == 0
 			PRINTFORM 교묘하게 혀를 사용해, 
 		ELSEIF RAND:2
-			PRINTFORM 흥분과 괴로움으로얼굴를 홍조 시키면서, 
+			PRINTFORM 흥분과 괴로움으로얼굴을 홍조 시키면서, 
 		ELSE
 			PRINTFORM 코로 난폭하게 숨을 쉬면서, 
 		ENDIF
@@ -1036,13 +1036,13 @@ CASE 140
 			IF COND("視力") && RAND:3 == 0
 				SIF CUP:고통 >= 500 || (PREVCOM == SELECTCOM && CUP:고통 >= 100)
 					PRINT 눈물고인 눈으로
-				PRINTFORM %CALLNAME:PLAYER%의 얼굴를 응시하면서, 
+				PRINTFORM %CALLNAME:PLAYER%의 얼굴을 응시하면서, 
 			ELSEIF RAND:2 == 0
 				PRINTFORM 도구(와)과 같이 다루어지는 처사에 몸을 진동시키면서, 
 			ELSE
 				SIF CUP:고통 >= 500 || PREVCOM == SELECTCOM || RAND:3 == 0
 					PRINT 괴로움으로
-				PRINTFORM 얼굴를 진빨강로 하면서, 
+				PRINTFORM 얼굴을 진빨강로 하면서, 
 			ENDIF
 		ELSE
 			IF RAND:3 == 0 && COND("손가락 사용")
@@ -1062,7 +1062,7 @@ CASE 140
 			ELSE
 				SIF CUP:고통 >= 500 || PREVCOM == SELECTCOM || RAND:3 == 0
 					PRINT 괴로움으로
-				PRINTFORM 얼굴를 진빨강로 하면서, 
+				PRINTFORM 얼굴을 진빨강로 하면서, 
 			ENDIF
 		ENDIF
 	ENDIF
@@ -1204,7 +1204,7 @@ CASE 511
 		IF TALENT:교만
 			PRINTFORMW %조사처리(CALLNAME:PLAYER,"를")% 코로 웃었다
 		ELSE
-			PRINTFORMW 더럽혀졌다가랑이(와)과%CALLNAME:PLAYER%의 얼굴를 식은 눈으로 바라보고 있다
+			PRINTFORMW 더럽혀졌다가랑이(와)과%CALLNAME:PLAYER%의 얼굴을 식은 눈으로 바라보고 있다
 		ENDIF
 	ELSEIF COND("손가락 사용")
 		IF TALENT:헌신
