@@ -99,7 +99,7 @@ CASE "システム処理"
 		IF COND("밤")
 			TALENT:ARG:피임약복용 -= 1
 			SIF TALENT:ARG:피임약복용 == 0
-				PRINTFORMW %CALLNAME:ARG%하지만피임약를 다 사용했습니다.
+				PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 피임약를 다 사용했습니다.
 		ENDIF
 	;임신判定(出産後すぐに임신できるようにしてみる)
 	ELSEIF BASE:ARG:자궁정자량 && BASE:ARG:태아 == 0 && COND("임신가능", ARG)
@@ -123,12 +123,12 @@ CASEELSE
 	IF CONFIG("임신패치：受精확률표시")
 	    PRINTFORM %CALLNAME:ARG%의 태내정액량：{BASE:ARG:태내정액량}pt    
 	    PRINTFORML 자궁정자량：{BASE:ARG:자궁정자량}pt
-		LOCALS = %CALLNAME:ARG%の受精확률：_
+		LOCALS = %CALLNAME:ARG%의 수정확률：_
 
 		;最終확률
 		SELECTCASE COND("受精확률", ARG)
 		CASE IS >= 100
-			LOCALS = %LOCALS%하트핑크_임신確実！_
+			LOCALS = %LOCALS%하트핑크_임신확정！_
 		CASE IS > 50
 			LOCALS = %LOCALS%하트핑크_{COND("受精확률", ARG)}％_
 		CASE IS > 20
@@ -175,10 +175,10 @@ CASEELSE
 
 		CALL SETFLAG, "受精확인플래그", ARG
 
-		PRINTFORMW %CALLNAME:ARG%노정액각인의 모습이 이상하다……어지럽게 색과 형태가 변해간다！
+		PRINTFORMW %CALLNAME:ARG%의 정액각인의 모습이 이상하다……어지럽게 색과 형태가 변해간다！
 		SETCOLOR DEF_COLOR("하트핑크")
 		CALL HEARTMARK
-		PRINTFORM %CALLNAME:ARG%하%CONDS("정액의우세", ARG)%의 정자로 수정했습니다
+		PRINTFORM %조사처리(CALLNAME:ARG,"는")% %CONDS("정액의우세", ARG)%의 정자로 수정했습니다
 		CALL HEARTMARK
 		RESETCOLOR
 
@@ -256,7 +256,7 @@ IF BASE:육아중
 			PRINTFORM 저택에 충만한 힘탓인지, 상당히 빨리 
 		ENDIF
 		PRINTFORMW 자라났습니다. 
-		PRINTFORMW 이젠 돌봐주지않아도 괜찮을 것같습니다. 
+		PRINTFORMW 이젠 돌봐주지 않아도 괜찮을 것 같습니다. 
 
 		CALL SELF_KOJO, "子離れ"
 
@@ -270,13 +270,13 @@ ENDIF
 ;出産予定報告(子育て中には産まれない)
 IF COND("임신中：分娩直前") && TALENT:임신 == 2 && BASE:육아중 == 0
 	DRAWLINE
-	PRINTFORMW %CALLNAME:TARGET%의 뱃속에는 태아가 활발하게 움직이고 있는 것같습니다. 
-	PRINTFORMW 내일이라도 태어날 것같습니다…
+	PRINTFORMW %CALLNAME:TARGET%의 뱃속에는 태아가 활발하게 움직이고 있는 것 같습니다. 
+	PRINTFORMW 내일이라도 태어날 것 같습니다…
 	TALENT:임신 = 3
 ELSEIF COND("임신中：臨月") && TALENT:임신 == 1
 	DRAWLINE
-	PRINTFORMW %CALLNAME:TARGET%의 배는 눈에 띄게 커지고있습니다. 
-	PRINTFORMW 앞으로 며칠있다가 태어날 것같습니다…
+	PRINTFORMW %CALLNAME:TARGET%의 배는 눈에 띄게 커지고 있습니다. 
+	PRINTFORMW 앞으로 며칠 있다가 태어날 것 같습니다…
 	TALENT:임신 = 2
 ;子育て中以外の임신発覚
 ELSEIF COND("임신中：임신発覚直前") && TALENT:임신 == 0
@@ -304,7 +304,7 @@ ELSEIF COND("임신中：임신発覚直前") && TALENT:임신 == 0
 		CALL DAUGHTER_CHECK, "슬라임"
 	ELSEIF COND("임신中") && CFLAG:468 == 0
 		PRINTL 
-		PRINTFORMW 임신에 따라서, %CALLNAME:TARGET%의 가슴이 커지고있습니다. 
+		PRINTFORMW 임신해서 %CALLNAME:TARGET%의 가슴이 커지고 있습니다. 
 		;소질変更など
 		IF TALENT:모유체질 == 0
 			TALENT:모유체질 = 2
@@ -315,7 +315,7 @@ ELSEIF COND("임신中：임신発覚直前") && TALENT:임신 == 0
 			CFLAG:468 |= 1p0
 			;２階級特進
 			IF RAND:3 == 0
-				PRINTFORMW 이런 일도 있는 건지 불가사의하지만, \@ TALENT:작은몸집 ? %CALLNAME:MASTER%의 예상을 넘어서 # \@ 출렁출렁하게 될 것같다…
+				PRINTFORMW 이런 일도 있는 건지 불가사의하지만, \@ TALENT:작은몸집 ? %CALLNAME:MASTER%의 예상을 넘어서 # \@ 출렁출렁하게 된 것 같다…
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% \@ GETBIT(CFLAG:468, 2) ? [모유체질]과 # \@[거유]를 얻었습니다. 
 				CALL CALC, "거유化", TARGET
 			ELSE
@@ -364,29 +364,29 @@ DRAWLINE
 ;슬라임分裂! 
 IF TALENT:슬라임 && CONFIG("임신패치：슬라임分裂")
 	IF TARGET == MASTER
-		PRINTFORMW 갑자기 %조사처리(CALLNAME:MASTER,"는")% 온몸에 고통을 느끼고, 신체의 형태를 유지할 수 없게되었다
+		PRINTFORMW 갑자기 %조사처리(CALLNAME:MASTER,"는")% 온몸에 고통을 느끼고, 신체의 형태를 유지할 수 없게 되었다
 		PRINTFORMW 점액상태로 돌아가도 %조사처리(CALLNAME:MASTER,"는")% 한동안 계속 고통에 몸부림쳤다…
 		PRINTFORMW ………
 		PRINTFORMW ……
 		PRINTFORMW …
 		PRINTFORMW 
-		PRINTFORM 당분간 지나 근처를 바라보면%CALLNAME:MASTER%
-		PRINTFORM \@ !TALENT:MASTER:작은몸집 ? の소녀時代 # \@에 잘 닮은, 그러나
+		PRINTFORM 당분간 지나 근처를 바라보면 %마스터와()%
+		PRINTFORM \@ !TALENT:MASTER:작은몸집 ? 의 소녀시절 # \@ 닮은, 그러나
 	ELSE
-		PRINTFORMW 돌연%조사처리(CALLNAME:TARGET,"가")% 움찔 떨자, 신체가점액으로 돌아가버렸다
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"였")%던 점액은 부들부들거리면서 부피를 늘려갔다…
+		PRINTFORMW 갑자기 %조사처리(CALLNAME:TARGET,"가")% 움찔 떨자, 신체가 점액으로 돌아가 버렸다
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"였")%던 점액은 움찔움찔거리면서 부피를 늘려갔다…
 		PRINTFORMW ………
 		PRINTFORMW ……
 		PRINTFORMW …
 		PRINTFORMW 
-		PRINTFORMW 부들부들 거리던 것이 진정되자 점액은 두명의 소녀의 모습이 되었다. 
+		PRINTFORMW 움찔거리던 것이 진정되자 점액은 두명의 소녀의 모습이 되었다. 
 		PRINTFORML 평소같은 분열일까 생각했지만, 한쪽의 소녀는 다른 한쪽의 %CALLNAME:TARGET%보다 어리고, 
 	ENDIF
 
 	SELECTCASE FATHER
 	;부친は캐릭터의誰か
 	CASE IS > 0
-		PRINTFORM 얼굴인화성에%CALLNAME:FATHER%의 모습이 있다
+		PRINTFORM 얼굴 생김새에%CALLNAME:FATHER%의 모습이 있는
 	;부친は드래곤
 	CASE -3
 		PRINTFORM 몸 안에 감춰진 강력함이 느껴지는 
@@ -399,9 +399,9 @@ IF TALENT:슬라임 && CONFIG("임신패치：슬라임分裂")
 	ENDSELECT
 	IF TARGET == MASTER
 		PRINTL 
-		PRINTFORMW 슬라임 소녀가 %조사처리(CALLNAME:MASTER,"를")% 지긋이 쳐다보고있다…
+		PRINTFORMW 슬라임 소녀가 %조사처리(CALLNAME:MASTER,"를")% 지긋이 쳐다보고 있다…
 	ELSE
-		PRINTFORMW 같은 생각이 든다…
+		PRINTFORMW 것 같은 생각이 든다…
 	ENDIF
 
 	PRINTFORM %조사처리(CALLNAME:TARGET,"는")% ……
@@ -419,14 +419,14 @@ IF TALENT:슬라임 && CONFIG("임신패치：슬라임分裂")
 	CASEELSE
 		PRINT 누군가
 	ENDSELECT
-	PRINTFORML 노정액를자궁에 받아 분열해 버린 것 같다！
+	PRINTFORML 의 정액을 자궁에 받아 분열해 버린 것 같다！
 
 	FORCEWAIT
 
 	CALL SELF_KOJO, "임신発覚"
 ELSE
 	IF TARGET == MASTER
-		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 어쩐지 몸상태가 좋지 않아서, 조금 주의깊게 검사를 해보았습니다…
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 어쩐지 몸 상태가 좋지 않아서, 조금 주의깊게 검사를 해보았습니다…
 		PRINTFORMW ………
 		PRINTFORMW ……
 		PRINTFORMW …
@@ -439,19 +439,19 @@ ELSE
 		CASE -5
 			PRINTFORM 놀랍게도 촉수의 
 		ENDSELECT
-		PRINTFORML 아이를임신해 버린 것 같습니다.
+		PRINTFORML 아이를 임신해 버린 것 같습니다.
 	;子育て中
 	ELSEIF BASE:육아중
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 몸상태의 변화를 호소하고있다…
-		PRINTFORML 조사한 결과,%타겟은()% 육아의 도중에 다시임신한 것 같다.
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 몸상태의 변화를 호소하고 있다…
+		PRINTFORML 조사한 결과,%타겟은()% 육아의 도중에 다시 임신한 것 같다.
 	;연모
 	ELSEIF TALENT:연모
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 임신했다고 호소해왔다…
-		PRINTFORML 조사한 결과, 확실히%타겟은()% 임신한 것 같다.
+		PRINTFORML 조사한 결과, 확실히 %타겟은()% 임신한 것 같다.
 	;その他
 	ELSE
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 몸상태의 변화를 호소하고있다…
-		PRINTFORML 조사한 결과,%타겟은()% 임신한 것 같다.
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 몸상태의 변화를 호소하고 있다…
+		PRINTFORML 조사한 결과, %타겟은()% 임신한 것 같다.
 	ENDIF
 
 	FORCEWAIT
@@ -459,7 +459,7 @@ ELSE
 	;피임약は回収
 	IF TALENT:피임약복용 > 0
 		PRINTFORML …피임약를 마시는 것이 늦었던 것 같다. 
-		PRINTFORML 어쩔 수 없기 때문에, 남은 약은 환금합니다. 
+		PRINTFORML 어쩔 수 없기 때문에, 남은 약은 환불합니다. 
 		PRINTFORMW 소지금＋%MONEY_C(TALENT:피임약복용*150)%
 		MONEY += TALENT:피임약복용*150
 		TALENT:피임약복용 = 0
@@ -472,22 +472,22 @@ ELSE
 	;부친は드래곤
 	ELSEIF FATHER == -3
 		PRINTFORML 뱃속의 아이의 부친이 드래곤이라는 것을 알자, 
-		PRINTFORMW 예상외의 사건에 %조사처리(CALLNAME:TARGET,"는")% 놀라움을 넘어 망연해지고말았다…
+		PRINTFORMW 예상외의 사건에 %조사처리(CALLNAME:TARGET,"는")% 놀라움을 넘어 멍해지고 말았다…
 	;부친は촉수! 
 	ELSEIF FATHER == -5
 		PRINTFORML 뱃속의 아이의 부친이 이형의 촉수이라는 것을 알자, 
 		IF TALENT:연모
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:MASTER,"이")% 아닌 사람의 아이를 임신한 것에 유감스러운 얼굴을 했다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:MASTER,"이")% 아닌 사람의 아이를 임신한 것에 슬픈 얼굴을 했다…
 		ELSEIF TALENT:구지배자의자취
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 뭐라고 말할 수 없는 얼굴하고있다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 뭐라고 말할 수 없는 표정을 하고 있다…
 		;겁쟁이or大人しいor悲観的
 		ELSEIF TALENT:겁쟁이 || TALENT:내성적 || TALENT:음기
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 치솟아 오르는 것을 억누르지 못하고 격렬하게 구토를 했다…
 		;억압or저항or一線or보수적or꿋꿋함
 		ELSEIF TALENT:억압 || TALENT:저항 || TALENT:일선을넘지않음 || TALENT:보수적 || TALENT:꿋꿋함
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 망연해하면서 부푼 배를 쳐다보았다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 망연자실해 하면서 부푼 배를 쳐다보았다…
 		ELSE
-			PRINTFORMW 지독한 사실에 %조사처리(CALLNAME:TARGET,"는")% 털썩 무릎을 꿇고, 망연해하고말았다…
+			PRINTFORMW 지독한 사실에 %조사처리(CALLNAME:TARGET,"는")% 털썩 무릎을 꿇고, 망연자실해 하고 말았다…
 		ENDIF
 	;연모
 	ELSEIF TALENT:연모
@@ -495,19 +495,19 @@ ELSE
 		IF FATHER == MASTER
 			;반항적orプライド高いor강기
 			IF TALENT:반항적 || TALENT:교만 || TALENT:강기
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 부푼 배를 보이고, 쓰다듬어달라고 부탁해왔다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 부푼 배를 보이고, 쓰다듬어 달라고 부탁해 왔다…
 			;솔직or楽観的
 			ELSEIF TALENT:솔직 || TALENT:양기
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%에게 미소지으면서, 부푼 배를 쓰다듬고있다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%에게 미소지으면서, 부푼 배를 쓰다듬고 있다…
 			ELSE
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 부푼 배를 쓰다듬으면서, 기뻐하고있다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 부푼 배를 쓰다듬으면서, 기뻐하고 있다…
 			ENDIF
 		ELSE
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:MASTER,"가")% 아닌 사람의 아이를 가진 것이 유감인 모양입니다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:MASTER,"가")% 아닌 사람의 아이를 가진 것이 슬픈 모양입니다…
 		ENDIF
 	;子育て中
 	ELSEIF BASE:육아중
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 뭐라고 말할 수 없는 얼굴을 하고있다…
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 뭐라고 말할 수 없는 얼굴을 하고 있다…
 	;반발각인Lv3or반항적
 	ELSEIF MARK:반발각인 == 3 || TALENT:반항적
 		;출산경험あり
@@ -519,30 +519,30 @@ ELSE
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 부푼 배를 쓰다듬고있지만, %조사처리(CALLNAME:MASTER,"가")% 가까이 다가가자 마구 노려보았다…
 		;겁쟁이or大人しいor悲観的
 		ELSEIF TALENT:겁쟁이 || TALENT:내성적 || TALENT:음기
-			PRINTFORML 그렇게 전해들은 %조사처리(CALLNAME:TARGET,"는")% 새파래져서, 입을 억눌렀지만 곧바로 구토를 시작해, 
+			PRINTFORML 그렇게 전해 들은 %조사처리(CALLNAME:TARGET,"는")% 새파래져서, 입을 억눌렀지만 곧바로 구토를 시작해, 
 			PRINTFORMW 토사물을 바닥에 쏟았다…
 		;억압or저항or一線or보수적or꿋꿋함
 		ELSEIF TALENT:억압 || TALENT:저항 || TALENT:일선을넘지않음 || TALENT:보수적 || TALENT:꿋꿋함
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 부푼 배를 텅빈 눈으로 쳐다보고있다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 부푼 배를 텅빈 눈으로 쳐다보고 있다…
 		ELSE
-			PRINTFORMW 그렇게 전해들은 %조사처리(CALLNAME:TARGET,"는")% 오열하기 시작했다…
+			PRINTFORMW 그렇게 전해 들은 %조사처리(CALLNAME:TARGET,"는")% 오열하기 시작했다…
 		ENDIF
 	;굴복각인Lv2or순종4LV
 	ELSEIF MARK:굴복각인 >= 2 || ABL:순종 >= 4
 		;반항적orプライド高いor강기
 		IF TALENT:반항적 || TALENT:교만 || TALENT:강기
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 복잡한 얼굴을 하면서, 부푼 배를 쓰다듬고있따…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 복잡한 얼굴을 하면서, 부푼 배를 쓰다듬고 있다…
 		;겁쟁이or大人しいor悲観的
 		ELSEIF TALENT:겁쟁이 || TALENT:내성적 || TALENT:음기
-			PRINTFORMW 그렇게 전해들은 %조사처리(CALLNAME:TARGET,"는")% 불안한 듯이, %CALLNAME:MASTER%의 손을 살며시 붙잡았다…
+			PRINTFORMW 그렇게 전해 들은 %조사처리(CALLNAME:TARGET,"는")% 불안한 듯이, %CALLNAME:MASTER%의 손을 살며시 붙잡았다…
 		ELSE
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 애정이 담긴 손놀림으로 부푼 배를 어루만디고있다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 애정이 담긴 손놀림으로 부푼 배를 어루만지고 있다…
 		ENDIF
 	;その他
 	ELSEIF FATHER > 0
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:FATHER,"과")%의 사이에서 아이가 생긴 것에 놀라워하고있다…
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:FATHER,"과")%의 사이에서 아이가 생긴 것에 놀라워하고 있다…
 	ELSE
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 아이가 생긴 것에 놀라워하고있다…
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 아이가 생긴 것에 놀라워하고 있다…
 	ENDIF
 ENDIF
 
@@ -605,12 +605,12 @@ IF COND("임신中：分娩") && TALENT:임신 && BASE:육아중 == 0
 	ENDIF
 
 	IF COND("임신中：아들")
-		PRINTFORMW \@ FATHER > 0 ? 부친似の # \@건강한 사내 아이입니다.
+		PRINTFORMW \@ FATHER > 0 ? 부친을 닮은 # \@건강한 사내 아이입니다.
 		CFLAG:469 += 100
 		;아들플래그
 		CALL SETFLAG, "육아중：아들", TARGET
 	ELSE
-		PRINTFORMW \@ TARGET == MASTER ? %CALLNAME:MASTER% # 모친 \@似の可愛い女の子です。
+		PRINTFORMW \@ TARGET == MASTER ? %CALLNAME:MASTER% # 모친 \@을 닮은 귀여운 여자아이입니다.
 		CFLAG:469 += 1
 	ENDIF
 
@@ -619,7 +619,7 @@ IF COND("임신中：分娩") && TALENT:임신 && BASE:육아중 == 0
 		PRINTFORMW 갓난아이를 안고있는 %조사처리(CALLNAME:TARGET,"는")%, %CALLNAME:MASTER%에게 자신의 아이를 안아달라고 졸랐습니다. 
 	;반발각인Lv2
 	ELSEIF MARK:반발각인 == 2
-		PRINTFORMW 갓난아이를 안고있는 %조사처리(CALLNAME:TARGET,"는")%, 자신의 아이를 향해서 미소짓고있습니다. 
+		PRINTFORMW 갓난아이를 안고있는 %조사처리(CALLNAME:TARGET,"는")%, 자신의 아이를 향해서 미소짓고 있습니다. 
 	;반발각인Lv3
 	ELSEIF MARK:반발각인 == 3
 		IF TALENT:반항적 || TALENT:교만 || TALENT:강기
@@ -628,7 +628,7 @@ IF COND("임신中：分娩") && TALENT:임신 && BASE:육아중 == 0
 			PRINTFORMW 갓난아이를 안고있는 %조사처리(CALLNAME:TARGET,"는")%, 자신의 아이를 %CALLNAME:MASTER%에게서 보호하듯이 꼭 껴안았습니다.
 		ENDIF
 	ELSEIF TARGET != MASTER
-		PRINTFORMW 갓난아이를 안고있는 %조사처리(CALLNAME:TARGET,"는")%, 자신의 아이와 %조사처리(CALLNAME:MASTER,"를")% 향해서 미소짓고있습니
+		PRINTFORMW 갓난아이를 안고있는 %조사처리(CALLNAME:TARGET,"는")%, 자신의 아이와 %조사처리(CALLNAME:MASTER,"를")% 향해서 미소짓고 있습니다.
 	ENDIF
 
 	CALL SELF_KOJO, "출산"
@@ -666,36 +666,36 @@ ELSEIF BASE:육아중 && RAND:4 && COND("손一杯", MASTER) + COND("同衾이�
 	DRAWLINE
 	;임신しているのはMASTER
 	IF TARGET == MASTER
-		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 아이 돌보기에 쫓기고있습니다…
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 아이 돌보기에 쫓기고 있습니다…
 			SETBIT CFLAG:MASTER:95, 0
 	;부친はMASTERor既にいないor연모
 	ELSEIF FATHER == MASTER || FATHER < 0 || TALENT:연모
-		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% %조사처리(CALLNAME:TARGET,"과")% 아이의 상태를 보러갔습니다. 
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% %조사처리(CALLNAME:TARGET,"과")% 아이의 상태를 보러 갔습니다. 
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
 			IF RAND:5 == 0 && (TALENT:반항적 || TALENT:교만 || TALENT:강기)
 				PRINTFORMW 방에 들어갈 수 없었습니다…
 			ELSEIF RAND:4 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:MASTER,"를")% 노려보고있습니다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:MASTER,"를")% 노려보고 있습니다…
 			ELSEIF RAND:3 == 0
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%의 얼굴을 보자 아이를 지키듯이 감쌌습니다…
 			ELSEIF RAND:2 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 즐거운듯이 아이와 놀고있습니다. 
-				PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 그대로 자기방으로 돌아갔습니다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 즐거운 듯이 아이와 놀고 있습니다. 
+				PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 그대로 자기 방으로 돌아갔습니다…
 			ELSE
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 환성을 지르며 아이와 놀고있었습니다만, 
-				PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 방아넹 들어오자 그만둬버렸습니다…
+				PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 방안에 들어오자 그만두어 버렸습니다…
 			ENDIF
 		ELSEIF RAND:6 == 0
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 아이에게 젖을 주던 중이었습니다. 
 			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:TARGET%의 어머니다운 모습을보고, 왠지 훈훈해졌습니다…
 		ELSEIF RAND:5 == 0
-			PRINTFORMW 두사람이 졸린듯이 마중 나갔기때문에, 오늘 밤은 함께 자주기로 했습니다…
+			PRINTFORMW 두사람이 졸린 듯이 마중 나갔기때문에, 오늘 밤은 함께 자주기로 했습니다…
 			SETBIT CFLAG:MASTER:95, 0
 			CFLAG:MASTER:96 = TARGET
 			CFLAG:96 = MASTER
 		ELSEIF RAND:4 == 0
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 잠들지 않는 아이때문에 곤란해하고있어서, 함께 밤을샐 각오로 달래기로 했습니다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 잠들지 않는 아이때문에 곤란해하고 있어서, 함께 밤을 샐 각오로 달래기로 했습니다…
 			SETBIT CFLAG:MASTER:95, 0
 			CFLAG:MASTER:96 = TARGET
 			CFLAG:96 = MASTER
@@ -735,25 +735,25 @@ ELSEIF TALENT:임신 && COND("손一杯", MASTER) + COND("同衾이벤트", MAST
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
 			IF RAND:4 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 공허한 눈으로 부푼 배를 쳐다보고있었습니다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 공허한 눈으로 부푼 배를 쳐다보고 있었습니다…
 			ELSEIF RAND:3 == 0
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 배에 귀를 대거나하는 %조사처리(CALLNAME:MASTER,"를")%, 무감정하게 내려다보고있습니다…
 			ELSEIF RAND:2 == 0
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 공허하게 웃으면서 뱃속이 아이에게 말을 걸고있습니다…
 			ELSE
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 즐겁게 뱃속의 아이에게 말을 걸고있었습니다만, 
-				PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 보고있자 갑자기 눈물을 흘리기시작했습니다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 즐겁게 뱃속의 아이에게 말을 걸고 있었습니다만, 
+				PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 보고있자 갑자기 눈물을 흘리기 시작했습니다…
 			ENDIF
 		ELSEIF FATHER == MASTER && RAND:4
 			IF RAND:4 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 졸린 듯이 배웅을 하기에, 오늘 밤에는 같이 자주기로했습니다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 졸린 듯이 배웅을 하기에, 오늘 밤에는 같이 자주기로 했습니다…
 				SETBIT CFLAG:MASTER:95, 0
 				CFLAG:MASTER:96 = TARGET
 				CFLAG:96 = MASTER
 			ELSEIF RAND:3 == 0
 				PRINTFORMW …만, %조사처리(CALLNAME:TARGET,"가")% 이미 자고있는 듯해서, 키스만 해주고 돌아갔습니다…
 			ELSEIF RAND:2
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 배에 귀를 대고 %조사처리(CALLNAME:MASTER,"를")%, 눈을 가늘게 뜨고 기쁜듯이 바라보고있습니다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 배에 귀를 대고 %조사처리(CALLNAME:MASTER,"를")%, 눈을 가늘게 뜨고 기쁜듯이 바라보고 있습니다…
 			ELSE
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 태어날 아이의 이야기를 하거나, 즐거운 시간을 보냈습니다…
 			ENDIF

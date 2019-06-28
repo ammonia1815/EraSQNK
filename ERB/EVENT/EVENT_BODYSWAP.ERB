@@ -43,7 +43,7 @@ SIF ARG > LOCAL
 IF ARG == MASTER
 	PRINTFORML %조사처리(CALLNAME:ARG,"가")% 한권을 갖고, 나머지 한권을 [{LOCAL, 2}]%CALLNAME:LOCAL%에게 줍니다. 
 ELSE
-	PRINTFORML [{ARG, 2}]%CALLNAME:ARG%(와)과[{LOCAL, 2}]%CALLNAME:LOCAL%에게 책을 줍니다. 
+	PRINTFORML [{ARG, 2}]%조사처리(CALLNAME:ARG,"와")% [{LOCAL, 2}]%CALLNAME:LOCAL%에게 책을 줍니다. 
 ENDIF
 PRINTL 
 PRINTL 책을 통한 신체 교환기간을 어느정도로 합니까?
@@ -68,11 +68,11 @@ CASE 3
 	PRINTFORML 선택된 교환 기간：꿈으로부터 깰 때까지…
 CASEELSE
 	ITEM:호접지몽 = RESULT + 1
-	PRINTFORML 선택된 교환 기간：{ITEM:호접지몽}날
+	PRINTFORML 선택된 교환 기간：{ITEM:호접지몽}일
 ENDSELECT
 
 PRINTL 
-PRINTFORMW 두사람은 갑작스레 졸음에 빠졌다…
+PRINTFORMW 두 사람은 갑작스레 졸음에 빠졌다…
 
 CALL BODYSWAP, ARG, LOCAL
 
@@ -234,9 +234,9 @@ ELSE
 	PRINTFORML …
 	PRINTFORMW …
 	PRINTFORMW %NAME_ARG%는 눈을 떴다.
-	PRINTFORMW 당황해 자신의 모습을 확인하면… 익숙해졌음이 분명한 원의 모습이다.
-	PRINTFORMW 하지만, 이것이 정말로 자신의 모습으로 맞고 있을까？
-	PRINTFORMW 잠에 취한 눈을 비빈다%NAME_ARG%의 뇌리에 떠오르는 모습은…%NAME_ARG:1%의 것이었다.
+	PRINTFORMW 당황해 자신의 모습을 확인하면… 익숙해진 분명한 원래의 모습이다.
+	PRINTFORMW 하지만, 이것이 정말로 자신의 모습이 맞을까？
+	PRINTFORMW 잠에 취한 눈을 비비는 %NAME_ARG%의 뇌리에 떠오르는 모습은…%NAME_ARG:1%의 것이었다.
 
 	BASE:ARG:호접지몽 = 0
 	BASE:(ARG:1):호접지몽 = 0

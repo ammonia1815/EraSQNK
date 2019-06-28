@@ -79,14 +79,14 @@ CASE "휴식：청소"
 
 
 CASE "휴식：목욕"
-	PRINTFORMW %CALLNAME:MASTER%하지만 자기 방에서%TEXTR("休憩して", "横になって", "寛いで")%있으면\@ TARGET == ASSI ? 、%TEXTS("조수の명칭")%노 # \@%CALLNAME:TARGET%의 왔습니다
+	PRINTFORMW %마스터가()% 자기 방에서%TEXTR("쉬고", "누워", "느긋하게")%있는데\@ TARGET == ASSI ? ,%TEXTS("조수の명칭")%인 # \@%타겟이()% 왔습니다
 	PRINTFORM 무슨 일이냐고 물어보니…… 어째선지, 
 	IF RAND:2
 		PRINTFORMW 목욕탕에서 등을 밀어준다고 합니다
 	ELSE
 		PRINTFORMW 목욕탕에서 몸을 씻어준다고 합니다
 	ENDIF
-	PRINTFORMW 물론, 말한 그대로의 의미는 아닐것입니다만…
+	PRINTFORMW 물론, 말한 그대로의 의미는 아닐 것입니다만…
 
 	PRINTL 
 	PRINTFORML ……어떻게합니까?
@@ -97,7 +97,7 @@ CASE "휴식：목욕"
 	SELECTCASE RESULT
 	CASE 100
 		;「아……그, 그렇게.  …안녕히 주무세요, 이번에는 사귀자？」
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%의 할 생각이 없는 모습에 조금 실망한 듯하지만, 순순히 방을 나갔습니다…
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%의 의욕 없는 모습에 조금 실망한 듯하지만, 순순히 방을 나갔습니다…
 		RETURN 0
 	CASE 0
 
@@ -150,9 +150,9 @@ CASE "휴식：목욕"
 			ELSEIF ABL:Ｖ감각 >= MAX(3, ABL:MASTER:기교) && RAND:2
 				PRINTFORMW 귀엽게 신음하고있다…
 			ELSEIF RAND:2
-				PRINTFORMW 격렬하게 공격해오고있습니다…
+				PRINTFORMW 격렬하게 공격해오고 있습니다…
 			ELSE
-				PRINTFORMW 허리를 흔들고있습니다…
+				PRINTFORMW 허리를 흔들고 있습니다…
 			ENDIF
 			LOCALS = 휴식：목욕탕에서섹스
 		ELSE
@@ -177,17 +177,17 @@ CASE "휴식：목욕"
 	;PRINTFORM 매트에 누운 %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%에게 가랑이를 벌리고 씻기 어려운 몸의 안쪽 부분을 씻어 주게 조르고 왔습니다
 
 CASE "휴식：귀파기"
-	PRINTFORMW %CALLNAME:MASTER%하지만 자기 방에서%TEXTR("休憩して", "横になって", "寛いで")%있으면\@ TARGET == ASSI ? 、%TEXTS("조수の명칭")%노 # \@%CALLNAME:TARGET%의 왔습니다
+	PRINTFORMW %마스터가()% 자기 방에서 %TEXTR("쉬고", "누워", "느긋하게")%있는데\@ TARGET == ASSI ? ,%TEXTS("조수の명칭")%인 # \@%타겟이()% 왔습니다
 	PRINTFORM 무슨일이냐고 물어보니…… 어째선지, 
 	IF TALENT:라미아
-		PRINTFORMW 귀를 파주겠다고합니다
-		PRINTFORMW 침대에 자리를 잡은 %조사처리(CALLNAME:TARGET,"는")% 몸을 눕혀 완만하게 경사를 지게 만들고, %CALLNAME:MASTER%에게 누우라고 손짓을 하고있습니다…
+		PRINTFORMW 귀를 파주겠다고 합니다
+		PRINTFORMW 침대에 자리를 잡은 %조사처리(CALLNAME:TARGET,"는")% 몸을 눕혀 완만하게 경사를 지게 만들고, %CALLNAME:MASTER%에게 누우라고 손짓을 하고 있습니다…
 	ELSEIF TALENT:머메이드
-		PRINTFORMW 귀를 파주겠다고합니다
-		PRINTFORMW 침대에 주저앉은 %조사처리(CALLNAME:TARGET,"는")% 물고기인 하반신에 얹어놓은 베개를 퐁, 퐁, 두드리며 %CALLNAME:MASTER%에게 손짓을 하고있습니다…
+		PRINTFORMW 귀를 파주겠다고 합니다
+		PRINTFORMW 침대에 주저앉은 %조사처리(CALLNAME:TARGET,"는")% 물고기인 하반신에 얹어놓은 베개를 퐁, 퐁, 두드리며 %CALLNAME:MASTER%에게 손짓을 하고 있습니다…
 	ELSE
-		PRINTFORMW 무릎베개로 귀를 파주겠다고합니다
-		PRINTFORMW 침대에 앉은 %조사처리(CALLNAME:TARGET,"는")% 무릎을 퐁, 퐁, 두드리며 %CALLNAME:MASTER%에게 손짓을 하고있습니다…
+		PRINTFORMW 무릎베개로 귀를 파주겠다고 합니다
+		PRINTFORMW 침대에 앉은 %조사처리(CALLNAME:TARGET,"는")% 무릎을 퐁, 퐁, 두드리며 %CALLNAME:MASTER%에게 손짓을 하고 있습니다…
 	ENDIF
 
 	PRINTL 
@@ -203,14 +203,14 @@ CASE "휴식：귀파기"
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%의 할 생각이 없어보이는 모습에 실망한것 같지만, 순순히 방에서 나갔습니다…
 		RETURN 0
 	CASE 0
-		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 무릎베개\@ TALENT:라미아 + TALENT:머메이드 ? ？ # \@자세로 누워 귀청소를 받으며, 꾸벅꾸벅 졸면서 잠깐의 휴식으 즐겼습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 무릎베개\@ TALENT:라미아 + TALENT:머메이드 ? ？ # \@자세로 누워 귀청소를 받으며, 꾸벅꾸벅 졸면서 잠깐의 휴식을 즐겼습니다
 		IF ABL:기교 >= 5
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 전혀 아프지 않게 훌륭한 솜씨로 양쪽 귀를 파준후, 졸고있는 %CALLNAME:MASTER%의 머리카락을 부드럽게 손으로 빗어주었습니다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 전혀 아프지 않게 훌륭한 솜씨로 양쪽 귀를 파준 후, 졸고있는 %CALLNAME:MASTER%의 머리카락을 부드럽게 손으로 빗어주었습니다…
 		ELSE
 			IF RAND:10 > ABL:기교
 				PRINTFORMW 가끔 좀 아파서 흠칫 눈을 뜨기도 했지만, 조만간 능숙해지겠지요…
 			ELSE
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %TEXTR("커다란 귀지를 파내고 조잘조잘 떠들고있습니다…", "귀지가 별로 나오지않아서, 조금 유감스러워하고있습니다…", "진지한 표정으로 귀청소에 빠져서 즐기고있습니다…")%
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %TEXTR("커다란 귀지를 파내고 조잘조잘 떠들고있습니다…", "귀지가 별로 나오지않아서, 조금 속상해하고있습니다…", "진지한 표정으로 귀청소에 빠져서 즐기고있습니다…")%
 			ENDIF
 		ENDIF
 	CASE 1
@@ -222,7 +222,7 @@ CASE "휴식：귀파기"
 			ELSE
 				PRINTFORM %TEXTS("겨드랑이")% 밑을 
 			ENDIF
-			PRINTFORMW 간지럽히는 것은 실패였던 것같습니다! 
+			PRINTFORMW 간지럽히는 것은 실패였던 것 같습니다! 
 			PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 			IF TALENT:감정결핍 + TALENT:냉정
 				PRINTFORM 『…자업자득』
@@ -231,21 +231,21 @@ CASE "휴식：귀파기"
 			ELSE
 				PRINTFORM 『어, 어쩌지…』
 			ENDIF
-			PRINTFORML 하고 말하는 듯한 표정으로 경직되어서, 괴로워서 몸부림치는 %조사처리(CALLNAME:MASTER,"를")% 지켜보고있습니다…
+			PRINTFORML 하고 말하는 듯한 표정으로 경직되어서, 괴로워서 몸부림치는 %조사처리(CALLNAME:MASTER,"를")% 지켜보고 있습니다…
 			PRINTFORMW ※귀 안쪽을 청소해줄 때는 다른 사람을 간지럽히지맙시다※
 		ELSE
 			PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 			IF TALENT:감정결핍 + TALENT:냉정 && RAND:3
-				PRINTFORMW 별 반응없이 간지럽히는대로 놔둔 채로 귀를 묵묵하게 계속팠습니다…
-				PRINTFORMW 과연%TEXTR("유두に悪戯された", "음핵を摘まれた", "膣に指を入れられた")%때는, 흠칫 몸을 뛰게 한 뒤무지개와～로 한 시선을%CALLNAME:MASTER%에 향하여 왔습니다
-				PRINTFORMW 그렇다고는 해도 별로 화가나지는 않았는지, %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:MASTER,"가")% 장난치기 쉽도록 자세를 바꾸고는, 민감한 부분을 만질 때마다 달콤한 소리를 내면서 귀파기를 계속해주었습니다…
+				PRINTFORMW 별 반응없이 간지럽히는대로 놔둔 채로 귀를 묵묵하게 계속 팠습니다…
+				PRINTFORMW 하지만 %TEXTR("유두에 장난할", "음핵을 꼬집었을", "질에 손가락을 넣었을")%때는, 흠칫 몸을 떤 뒤 원망하는 시선을 %CALLNAME:MASTER%에 향해 왔습니다
+				PRINTFORMW 그렇다고는 해도 별로 화가 나지는 않았는지, %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:MASTER,"가")% 장난치기 쉽도록 자세를 바꾸고는, 민감한 부분을 만질 때마다 달콤한 소리를 내면서 귀파기를 계속해 주었습니다…
 			ELSEIF TALENT:양기 && RAND:3
 				PRINTFORMW %CALLNAME:MASTER%에게 %TEXTR("그곳을 쓰다듬어질", "만져질", "가슴을 주물러질")% 때마다 기분좋은 듯한 소리를 내며, 때때로는 『안돼』라고 하면서 흥겹게 귀청소를 했습니다…
 			ELSEIF TALENT:강기 + TALENT:교만 && RAND:3
 				PRINTFORMW 처음에 장난 칠때는 불평을 했지만, 그만큼 자신에게 매력이 있다는 것을 깨달았는지 의외로 관대한 태도입니다
-				PRINTFORMW …하지만,저항얇은 것을 구실로, 손대고 있는 동안에%TEXTR("팬티が濡れて" , "클리토리스が大きくなって", "유두が硬くなって")%오고 있는 일을 지적해 보면 『우쭐해지지마』라고 얻어맞았습니다…
+				PRINTFORMW …하지만,저항얇은 것을 구실로, 손대고 있는 동안에 %TEXTR("팬티가 젖어" , "클리토리스가 커져", "유두가 단단해져")%오고 있는 일을 지적해 보면 『우쭐해지지마』라고 얻어맞았습니다…
 			ELSEIF TALENT:거유 && RAND:3
-				PRINTFORMW %CALLNAME:MASTER%의 얼굴에 무거운 가슴을 올려놓아서 반격하고, 장난치면서 즐겁게 귀파기를 비교적 즐거운듯이즐겼습니다…
+				PRINTFORMW %CALLNAME:MASTER%의 얼굴에 무거운 가슴을 올려놓아서 반격하고, 장난치면서 즐겁게 귀파기를 비교적 즐거운듯이 즐겼습니다…
 			ELSE
 				PRINTFORMW 전혀 아픔이 느껴지지 않는 멋진 솜씨로 귀를 파주고, %조사처리(CALLNAME:MASTER,"가")% 치는 야한 장난에도 화내지 않고 머리카락을 부드럽게 손으로 빗어주었습니다…
 			ENDIF

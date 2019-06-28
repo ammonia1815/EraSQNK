@@ -2505,7 +2505,7 @@ CASE "おっぱい", "おっぱい：描写"
 
 	IF ARGS == "おっぱい"
 		IF TALENT:ARG:거유 && CONFIG("３사이즈") && RAND:3 == 0
-			LOCALS = %LOCALS%%TOFULL(CONDS("바스트컵", ARG) )%컵の%TALENT_NAME(110, TALENT:ARG:거유, ARG)%
+			LOCALS = %LOCALS%%TOFULL(CONDS("바스트컵", ARG) )%컵의 %TALENT_NAME(110, TALENT:ARG:거유, ARG)%
 		ELSEIF RAND:2
 			LOCALS = %LOCALS%유방
 		ELSE
@@ -3146,6 +3146,26 @@ CASE "조교파라미터のＬＶ"
 		LOCALS = Max
 	ENDSELECT
 CASE "漢数字概数"
+
+	SELECTCASE ARG
+	CASE 9
+		LOCALS = 아홉
+	CASE 8
+		LOCALS = 여덟
+	CASE 7
+		LOCALS = 일곱
+	CASE 6
+		LOCALS = 여섯
+	CASE 5
+		LOCALS = 다섯
+	CASE 4
+		LOCALS = 네
+	CASE 3
+		LOCALS = 세
+	CASE 2
+		LOCALS = 두
+	ENDSELECT
+
 	SELECTCASE ARG
 	CASE 0
 		LOCALS = 영

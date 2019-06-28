@@ -231,7 +231,7 @@ VARSET DUNGEON
 DUNGEON:0 = 초원
 DUNGEON:1 = 에르툼삼림
 DUNGEON:2 = 류두흐동굴
-DUNGEON:3 = 안쇼스海
+DUNGEON:3 = 안쇼스 해
 DUNGEON:4 = 베르나도트의대미궁
 DUNGEON:5 = 고즈번 사막
 DUNGEON:6 = 키아즈마의유곽
@@ -279,7 +279,7 @@ SELECTCASE FIELD_EXPLORER
 CASE "키아즈마의유곽"
 	PRINTFORML %FIELD_EXPLORER%의 탐색에는 %조사처리(TEXTS("조수の명칭"), "가")% 동행하지 못하고, $1,000～$10,000의 대금이 듭니다
 	IF MONEY < 1000
-		PRINTFORML …안 됐지만 가지고 있는 게 없는 것같네요
+		PRINTFORML …안 됐지만 돈이 없는 것 같네요
 		PRINTFORML 다음 방문을 기다리겠습니다
 		RESTART
 	ENDIF
@@ -613,7 +613,7 @@ FOR COUNT:99, 0, 30
 	IF PALAM_EXPLORER("센시브")
 		CALL SET_PALAM_EXPLORER, "센시브", -1
 		SIF PALAM_EXPLORER("센시브") == 0
-			PRINTFORML 독 함정의 효과가 끝났다. 
+			PRINTFORML 미약 함정의 효과가 끝났다. 
 	ENDIF
 
 	;시간調整
@@ -692,13 +692,13 @@ IF IS_ITEMGET
 		PRINTFORML 스푼이나 찻잔은 식사때는 물론, 탐험 중의 휴식에서도 우아한 한때를 연출하겠지요…
 	;악세사리の鑑定
 	SIF GETBIT(IS_ITEMGET, 2)
-		PRINTFORML 감정되지않은 악세사리는 『신기루당』에 가져가시는 것을 추천합니다
+		PRINTFORML 감정되지않은 악세사리는 『악세서리상점:신기루당』에 가져가시는 것을 추천합니다
 ELSEIF IS_ITEMGET + MONEY:6 == 0
 	PRINTL 아이템 입수 등：없음
 ENDIF
 
 SIF I:999 && PLAYER == MASTER
-	PRINTFORML %조사처리(NAME:TARGET,"를")% 동료마로 만들었으므로 경험치에 보너스가 발생합니다
+	PRINTFORML %조사처리(NAME:TARGET,"를")% 동료 몽마로 만들었으므로 경험치에 보너스가 발생합니다
 ;LVUP
 SIF PLAYER == MASTER
 	CALL ABLUP_MASTER, "通常"

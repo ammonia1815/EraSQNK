@@ -154,9 +154,9 @@ IF CONFIG("蓄精") && FLAG:8 && ITEM:보온병 && EXP_GAIN(17) > 0 && ABL:순�
 	PRINTL [ 1] 아니오
 	CALL INPUT_SELECT, 2
 	IF RESULT == 0
-		PRINTFORML %타겟은()% 벌려진 그곳에 보온병의 입구를 대고, 안에 쌓인 정액을 따라냈다…
+		PRINTFORML %타겟은()% 벌려진 그곳에 보온병의 입구를 대고, 안에 쌓인 정액을 긁어냈다…
 		ITEM:정액저축량 += EXP_GAIN(17)
-		PRINTFORMW 정액저축량＋{EXP_GAIN(17)}
+		PRINTFORMW 정액 저축량＋{EXP_GAIN(17)}
 		CALL EQ_EXP_GAIN, 17, TARGET
 	ENDIF
 ENDIF
@@ -349,11 +349,11 @@ CALL SETFLAG, "사정게이지", PLAYER
 ;まずは建物で分岐
 SELECTCASE NPC_HOME
 CASE "스트립극장"
-	TEXT_INTRO = …\@ COND("인외度") ? 사람의 모습으로 둔갑한 # \@%조사처리(CALLNAME:TARGET,"는")% 뛰어들어 스트립 쇼에 출연하고 사냥감을 물색한 것이다
+	TEXT_INTRO = …\@ COND("인외度") ? 사람의 모습으로 둔갑한 # \@%조사처리(CALLNAME:TARGET,"는")% 뛰어들어 스트립 쇼에 출연하고 사냥감을 물색했다
 
 	;ポールダンス
 	IF TALENT:양기 + TALENT:눈에띄고싶어함 && ABL:허리놀림 >= 5 && RANDIF(2, ABL:자위중독 >= 3)
-		TEXT_PLAY = 열정적인 폴 댄스를 선 보이고
+		TEXT_PLAY = 열정적인 폴 댄스를 선보이고
 		NUM_NPC += RAND:3
 	;オナニーショー
 	ELSEIF ABL:자위중독 >= 3 && RAND:2
@@ -379,7 +379,7 @@ CASE "스트립극장"
 	ELSEIF TALENT:강기 && RAND:2
 		TEXT_PLAY = %TEXT_PLAY%억척스러운 웃는 얼굴을 짓고
 	ELSE
-		TEXT_PLAY = %TEXT_PLAY%즐거운듯이 
+		TEXT_PLAY = %TEXT_PLAY%즐거운 듯이 
 	ENDIF
 
 	TEXT_PLAY = %TEXT_PLAY%%TEXTR("착의", "의상")%를
@@ -393,22 +393,22 @@ CASE "스트립극장"
 	IF RAND:2
 		TEXT_PLAY = %TEXT_PLAY%무대에서 춤을 마쳤다 
 	ELSE
-		TEXT_PLAY = %TEXT_PLAY%을 마치고 무대를 내려왔다
+		TEXT_PLAY = %TEXT_PLAY%을 마치고 무대를 내려왔다 
 	ENDIF
-	TEXT_PLAY = %TEXT_PLAY%%CALLNAME:TARGET%의 권유에,{NUM_NPC}사람의 관객들이 먹이가 되었습니다 
+	TEXT_PLAY = %TEXT_PLAY%%CALLNAME:TARGET%의 권유에,{NUM_NPC}사람의 관객들의 먹이가 되었습니다 
 
-	TEXT_PLAY:1 = \@ COND("인외度")? 본색을 드러냈다 # \@%조사처리(CALLNAME:TARGET,"는")% %TEXTR("파고 든다","팽창하고 있었다"," 뜨거운 딱딱한")%육봉들
+	TEXT_PLAY:1 = \@ COND("인외度")? 본색을 드러낸 # \@%조사처리(CALLNAME:TARGET,"는")% %TEXTR("파고 드는","팽창한"," 뜨거운 딱딱한")% 육봉들을
 	IF COND("베테랑：Ｖ섹스") && COND("베테랑：Ａ섹스") && RAND:2
-		TEXT_PLAY:1 = %TEXT_PLAY:1%%TEXTR("양쪽의 구멍","안팎의 구멍","질과 애널의 양쪽")%로
+		TEXT_PLAY:1 = %TEXT_PLAY:1%%TEXTR("양쪽의 구멍","안팎의 구멍","질과 애널의 양쪽")%으로
 		CALL SIMULATE_TRAIN_COM, 65, MAX(RAND:NUM_NPC, 1)*(6 + RAND:NUM_NPC)/3
 		CALL SIMULATE_TRAIN_COM, 71, MAX(RAND:NUM_NPC, 1)*(6 + RAND:NUM_NPC)/3
 	ELSEIF COND("베테랑：Ｖ섹스") && RANDIF(1, COND("베테랑：Ａ섹스") )
 		IF COND("위험일")
-			TEXT_PLAY:1 = %TEXT_PLAY:1%위험일にも拘らず%TEXTR("보지", "전의 구멍", "질")%で
+			TEXT_PLAY:1 = %TEXT_PLAY:1%위험일임에도 %TEXTR("보지", "앞의 구멍으", "질")%으로
 		ELSEIF ABL:Ｖ명기도 >= 70 && RAND:2
-			TEXT_PLAY:1 = %TEXT_PLAY:1%%TEXTR("자랑의"," 옥죄기 좋은")%%TEXTR("보지", "질구")%で
+			TEXT_PLAY:1 = %TEXT_PLAY:1%%TEXTR("자랑의"," 조임이 좋은")%%TEXTR("보지", "질구")%로
 		ELSE
-			TEXT_PLAY:1 = %TEXT_PLAY:1%경험풍부한 %TEXTR("전의 구멍", "질")%で
+			TEXT_PLAY:1 = %TEXT_PLAY:1%경험풍부한 %TEXTR("앞의 구멍", "질")%으로
 		ENDIF
 		CALL SIMULATE_TRAIN_COM, 60, MAX(RAND:NUM_NPC, 1)*(6 + RAND:NUM_NPC)/3
 		CALL SIMULATE_TRAIN_COM, 65, MAX(RAND:NUM_NPC, 1)*(6 + RAND:NUM_NPC)/3
@@ -418,44 +418,44 @@ CASE "스트립극장"
 		ELSEIF ABL:Ａ명기도 >= 70 && RAND:2
 			TEXT_PLAY:1 = %TEXT_PLAY:1%%TEXTR("자랑의 "," 달라붙는 ")%애널로
 		ELSE
-			TEXT_PLAY:1 = %TEXT_PLAY:1%경험풍부한 %TEXTR("애널","뒤의 구멍","항문")%로
+			TEXT_PLAY:1 = %TEXT_PLAY:1%경험풍부한 %TEXTR("애널","뒤의 구멍","항문")%으로
 		ENDIF
 		CALL SIMULATE_TRAIN_COM, 71, MAX(RAND:NUM_NPC, 1)*(6 + RAND:NUM_NPC)/3
 		CALL SIMULATE_TRAIN_COM, 75, MAX(RAND:NUM_NPC, 1)*(6 + RAND:NUM_NPC)/3
 	ENDIF
 	IF COND("위험일")
-		TEXT_PLAY:1 = %TEXT_PLAY:1%%TEXTR("깊이","희희낙락하며")% 받아들이고 차례를 기다리고 있는 손님의 물건을
+		TEXT_PLAY:1 = %TEXT_PLAY:1%%TEXTR("깊게","희희낙락하며")% 받아들이고 차례를 기다리고 있는 손님의 물건을
 	ELSE
-		TEXT_PLAY:1 = %TEXT_PLAY:1%%TEXTR("깊이","쉬움과","희희낙락하며")% 받아들이고 차례를 기다리고 있는 손님의 물건을
+		TEXT_PLAY:1 = %TEXT_PLAY:1%%TEXTR("깊게","쉽게","희희낙락하며")% 받아들이고 차례를 기다리고 있는 손님의 물건을
 	ENDIF
 	IF TALENT:감정결핍 || (TALENT:냉정 && RAND:2)
-		TEXT_PLAY:1 = %TEXT_PLAY:1%%TEXTR("시원한 얼굴에서 ","여유 있게","얼굴 색도 바꾸지 않고"," 맛있게")% 우물거리며
+		TEXT_PLAY:1 = %TEXT_PLAY:1%%TEXTR("쿨한 얼굴으로 ","여유 있게","얼굴 색도 바꾸지 않고"," 맛있게")% 우물거리며
 	ELSE
-		TEXT_PLAY:1 = %TEXT_PLAY:1%%TEXTR("맛있게","황홀","상기된 얼굴에서 ","그냥 얼굴에서 "," 녹았다. 표정으로 ")% 우물거리며
+		TEXT_PLAY:1 = %TEXT_PLAY:1%%TEXTR("맛있게","황홀하게","상기된 얼굴으로 ","무표정한 얼굴으로 "," 녹은 표정으로 ")% 우물거리며
 	ENDIF
-	TEXT_PLAY:1 = %TEXT_PLAY:1%차례에 처박는 가차없는 내사정을 즐기는…
+	TEXT_PLAY:1 = %TEXT_PLAY:1%차례에 처박는 가차없는 질내사정을 즐겼다…
 
 	CALL SIMULATE_TRAIN_COM, 90, MAX(RAND:NUM_NPC, 1)*(3 + RAND:NUM_NPC)/3
 	CALL SIMULATE_TRAIN_COM, 91, MAX(RAND:NUM_NPC, 1)*(3 + RAND:NUM_NPC)/3
 
-	TEXT_LAST = 남자들은 열광에 몸을 맡기며, %CALLNAME:TARGET%에 원하는 대로 여러 차례 정을 털어 버렸다……
+	TEXT_LAST = 남자들은 열광에 몸을 맡기며, %CALLNAME:TARGET%에 원하는 대로 여러 차례 정을 짜내 버렸다……
 CASE "글로리홀가게"
-	TEXT_INTRO = …%타겟은()% 글로리홀가게에서 페니스를{NUM_NPC}근본까지 입으로\@ RAND:2 ? 받아들이고 목을 축인 # \@것 같다
+	TEXT_INTRO = …%타겟은()% 글로리홀가게에서 {NUM_NPC}개의 페니스를 뿌리까지 입으로\@ RAND:2 ? 받아들여 목을 축인 # 한 \@것 같다
 
 	CALL SIMULATE_TRAIN_COM, 91, MAX(RAND:NUM_NPC, 1)*(3 + RAND:NUM_NPC)/2
 	IF ABL:봉사정신 >= 3 && RANDIF(2, ABL:새드끼 >= 3)
-		TEXT_PLAY = %TEXT_PLAY%밀린 치구를 혀로 핥고 하거나
+		TEXT_PLAY = %TEXT_PLAY%쌓인 치구를 혀로 핥고 하거나
 	ELSEIF ABL:새드끼 >= 3 && RAND:2
 		TEXT_PLAY = %TEXT_PLAY%요도를 혀로 괴롭혀서 하거나
 	ELSEIF RAND:2
-		TEXT_PLAY = %TEXT_PLAY%남은 껍질을 쉽게 씹고 주고
+		TEXT_PLAY = %TEXT_PLAY%남은 껍질을 맛있게 잘근거려 주고
 	ENDIF
 
 	IF ABL:목확장 >= 2 && RANDIF(2, ABL:발놀림 >= 3, ABL:마유 >= 3, ABL:손가락놀림 >= 3)
-		TEXT_PLAY = %TEXT_PLAY%%TEXTR("목 안까지 물었고","딥 스로트하고")% 주고
+		TEXT_PLAY = %TEXT_PLAY%%TEXTR("목 안까지 물어","딥 스로트해")% 주고
 	ELSEIF ABL:손가락놀림 >= 3 && RANDIF(2, ABL:발놀림 >= 3, ABL:마유 >= 3)
 		IF EQUIP:팬티 && RAND:2
-			TEXT_PLAY = %TEXT_PLAY%팬티로 쓰다듬어 주기도
+			TEXT_PLAY = %TEXT_PLAY%팬티로 쓰다듬고
 			CALL SIMULATE_TRAIN_COM, 97, MAX(RAND:NUM_NPC, 1)
 		ELSE
 			TEXT_PLAY = %TEXT_PLAY%손으로 비비어주고
@@ -478,14 +478,14 @@ CASE "글로리홀가게"
 	ENDIF
 
 	IF ABL:봉사정신 >= 3 && RANDIF(2, ABL:새드끼 >= 3)
-		TEXT_PLAY = %TEXT_PLAY%공들인 청소펠라를 하고 주고
+		TEXT_PLAY = %TEXT_PLAY%공들인 청소펠라를 해 주고
 		EXP:청소펠라경험 += MAX(RAND:NUM_NPC, 1)
 	ELSEIF ABL:새드끼 >= 3 && RAND:2
-		TEXT_PLAY = %TEXT_PLAY%말 책임 하고 주고
+		TEXT_PLAY = %TEXT_PLAY%말로 괴롭혀 주고
 	ENDIF
 
 	IF TEXT_PLAY == "" || RAND:5 == 0
-		TEXT_PLAY = %타겟은()% 벽의 구멍으로 돌출한 누구의 것인지 알 수 없는 페니스를 들이 빨다
+		TEXT_PLAY = %타겟은()% 벽의 구멍으로 나온 누구의 것인지 알 수 없는 페니스를 열심히 빨아
 	ELSEIF COND("和姦Ｐ") >= COND("強姦Ｐ")
 		TEXT_PLAY = %타겟은()% 리퀘스트에 응하여%TEXT_PLAY%하고
 	ELSE
@@ -500,7 +500,7 @@ CASE "글로리홀가게"
 		IF ABL:기교 >= 4 && RAND:2
 			TEXT_LAST = 손님들은, %CALLNAME:TARGET%의 탐욕스러운 입의 정욕에 견디지 못하고 몇번이나 정을 털어 버렸다……
 		ELSE
-			TEXT_LAST = 손님들은, %CALLNAME:TARGET%に에 나불거리며 자꾸 정을 내뿜고 말았다……
+			TEXT_LAST = 손님들은, %CALLNAME:TARGET%에 나불거리며 자꾸 정을 내뿜고 말았다……
 		ENDIF
 	CASEELSE
 		TEXT_LAST = 손님들은, %CALLNAME:TARGET%의 열심인 봉사에 답하고 한계까지 정을 털어 버렸다……
@@ -514,15 +514,15 @@ CASE "주점", "여관", "집회소", "비밀의 놀이터"
 	CASE "청년"
 		NPC_PENIS = %TEXTR("육봉", "페니스")%
 	CASE "소년"
-		NPC_PENIS = 젊은페니스
+		NPC_PENIS = 어린 페니스
 	ENDSELECT
 
 	SELECTCASE CONDS("하룻밤개방での襲撃傾向")
 	;CASE "強姦"
-	;	TEXT_INTRO = …%타겟은()% %NPC_HOME%에서{NUM_NPC}사람 %NPC_NAME%를 덮친 것 같다
-	;	TEXT_PLAY = %타겟은()% 거근에서 차례로 사나운 기승위에서 범하면서 밀린 대기자의 페니스를 두 손과 입으로 희롱하는…
+	;	TEXT_INTRO = …%타겟은()% %NPC_HOME%에서 {NUM_NPC}명 %조사처리(NPC_NAME,"를")% 덮친 것 같다
+	;	TEXT_PLAY = %타겟은()% 거근에서 차례로 사납게 기승위로 범하면서 차례를 기다리는 페니스를 두 손과 입으로 훑어냈다…
 	CASEELSE
-		TEXT_INTRO = …%타겟은()% %NPC_HOME%で{NUM_NPC}人の%NPC_NAME%%TEXTR("을 권했다","고 즐겼다")%것 같다
+		TEXT_INTRO = …%타겟은()% %NPC_HOME%에서 {NUM_NPC}명 %조사처리(NPC_NAME,"를")% %TEXTR(" 꼬신"," 즐긴")%것 같다
 
 		;まずはどの穴を優先的に使うかで大きな分岐
 		;양구멍삽입. 애널광と음호必須
@@ -550,53 +550,53 @@ CASE "주점", "여관", "집회소", "비밀의 놀이터"
 		CASE "양구멍삽입"
 			SELECTCASE NPC_NAME
 			CASE "모험자"
-				TEXT_PLAY = %타겟은()% %TEXTR("힘자랑의 난폭한 사람","몸시 힘이 센 모험자","모여있는 남자","성욕에 폭주기색의 남자")%들에게
+				TEXT_PLAY = %타겟은()% %TEXTR("난폭한 사람","힘이 센 모험자","모여있는 남자","성욕에 폭주하는 남자")%들에게
 			CASE "청년"
-				TEXT_PLAY = %타겟은()% %TEXTR("성욕이 왕성한 청년","굶어서 동물화한 청년","가득 하고싶은 남자")%들에게
+				TEXT_PLAY = %타겟은()% %TEXTR("성욕이 왕성한 청년","굶어서 동물같은 청년","가득 하고싶은 남자")%들에게
 			CASE "소년"
-				TEXT_PLAY = %타겟은()% %TEXTR("호기심왕성한 소년","여체에 흥미 진진한 소년","흥분으로 말수가 적어지게된 소년")%들에게
+				TEXT_PLAY = %타겟은()% %TEXTR("호기심 왕성한 소년","여체를 알고싶은 소년","흥분으로 말수가 적어진 소년")%들에게
 			ENDSELECT
 			IF RAND:5 == 0
-				TEXT_PLAY = %TEXT_PLAY%전후의 구멍을 메워지면서,
+				TEXT_PLAY = %TEXT_PLAY%앞뒤의 구멍을 메워지면서,
 			ELSEIF RAND:4 == 0
-				TEXT_PLAY = %TEXT_PLAY%전후의 구멍을 엉망이되면서
+				TEXT_PLAY = %TEXT_PLAY%앞뒤의 구멍이 엉망으로 되면서
 			ELSEIF RAND:3 == 0
-				TEXT_PLAY = %TEXT_PLAY%전후의 구멍을 달아오른 손에 범해지며, 
+				TEXT_PLAY = %TEXT_PLAY%앞뒤의 구멍을 달아오른 손에 범해지며, 
 			ELSEIF RAND:2
-				TEXT_PLAY = %TEXT_PLAY%전후의 구멍을 사용하면서
+				TEXT_PLAY = %TEXT_PLAY%앞뒤의 구멍을 사용하면서
 			ELSE
-				TEXT_PLAY = %TEXT_PLAY%전후의 구멍을 동시에 범해지면서 ,
+				TEXT_PLAY = %TEXT_PLAY%앞뒤의 구멍을 동시에 범해지면서 ,
 			ENDIF
 		CASE "Ａのみ"
 			;애널の描写
 			IF COND("身嗜み：Ａ準備") >= 3 && RANDIF(3, TALENT:장액분비체질, EXP:Ａ성교경험 >= 200, ABL:Ａ감각 >= 5, COND("身嗜み：Ａ확장") )
-				LOCALS = 洗浄済みの애널
+				LOCALS = 준비를 끝낸 애널
  			ELSEIF COND("身嗜み：Ａ확장") && RANDIF(3, TALENT:장액분비체질, EXP:Ａ성교경험 >= 200, ABL:Ａ감각 >= 5)
-				LOCALS = 애널플러그を引き抜かれて大입を開けた後ろの穴
+				LOCALS = 애널플러그가 뽑혀 크게 입을 벌린 뒷구멍
 			ELSEIF ABL:Ａ감각 >= 5 && RANDIF(3, TALENT:장액분비체질, EXP:Ａ성교경험 >= 200)
-				LOCALS = 開発されきった애널
+				LOCALS = 개발이 끝난 애널
 			ELSEIF EXP:Ａ성교경험 >= 200 && RANDIF(3, TALENT:장액분비체질)
 				LOCALS = %TEXTR("男に飢えた", "정액に飢えた", "경험풍부한 ")%애널
 			ELSEIF TALENT:장액분비체질 && RAND:3 == 0
-				LOCALS = 汚い윤활液を溢れさせる애널
+				LOCALS = 더러운 윤활액이 넘치는 애널
 			;このルートは애널好きしか来ない
 			ELSE
-				LOCALS = 大好きな엉덩이구멍
+				LOCALS = 좋아하는 엉덩이구멍
 			ENDIF
 
-			TEXT_PLAY = %타겟은()% %LOCALS%%TEXTR("을 쉴 새없이 범해 계속","차례 차례로 페니스를 받아","엉망이되어")%하면서
+			TEXT_PLAY = %타겟은()% %LOCALS%%TEXTR("을 쉴 새없이 범해 계속 하","차례 차례로 페니스를 받으","엉망이 되어가")%면서
 		CASEELSE
 			IF RAND:3 == 0
 				TEXT_PLAY = %타겟은()% 질 안쪽 겨냥해 주입되는 %NPC_PENIS%를
 			ELSEIF RAND:2
-				TEXT_PLAY = %타겟은()% 질내를 탐내는 것처럼 찔러 빚어 오는 %NPC_PENIS%를
+				TEXT_PLAY = %타겟은()% 질내를 탐내는 것처럼 찔러 오는 %NPC_PENIS%를
 			ELSE
-				TEXT_PLAY = %타겟은()% 질내를 탐내는 것처럼 찔러 빚어 오는 %NPC_PENIS%를
+				TEXT_PLAY = %타겟은()% 질내를 탐내는 것처럼 찔러 오는 %NPC_PENIS%를
 			ENDIF
 
 			IF ABL:Ｖ확장 >= 3
 				IF TALENT:호색 && COND("다리 사용") && RAND:2
-					TEXT_PLAY = %TEXT_PLAY%황새 걸음을 연 몸의 자세로 삼키고면서, 
+					TEXT_PLAY = %TEXT_PLAY%허벅지를 벌린 자세로 삼키면서, 
 				ELSE
 					TEXT_PLAY = %TEXT_PLAY%여유있게 삼키면서, 
 				ENDIF
@@ -604,7 +604,7 @@ CASE "주점", "여관", "집회소", "비밀의 놀이터"
 				TEXT_PLAY = %TEXT_PLAY%얽혀지면서, 
 			ELSE
 				IF TALENT:젖기쉬움 && RANDIF(2, TALENT:냉정)
-					TEXT_PLAY = %TEXT_PLAY%받아들이며 가랑이 사이에 탁한 액웅덩이를 만들면서, 
+					TEXT_PLAY = %TEXT_PLAY%받아들이며 가랑이 사이에 탁한 웅덩이를 만들면서, 
 				ELSEIF TALENT:냉정 && RAND:2
 					TEXT_PLAY = %TEXT_PLAY%얼굴색 하나 바꾸지 않고 받아들이면서, 
 				ELSE
@@ -619,27 +619,27 @@ CASE "주점", "여관", "집회소", "비밀의 놀이터"
 				;명기도が高い
 				ELSEIF ABL:Ｖ명기도 >= 70 && RAND:2
 					IF TALENT:강기
-						TEXT_PLAY = %타겟은()% 성겨처럼 야무진 강한 질에서 %NPC_PENIS%에 비명을 올리게하면서, 
+						TEXT_PLAY = %타겟은()% 성격처럼 야무진 강한 질으로 %NPC_PENIS%에 비명을 올리게하면서, 
 					ELSEIF TALENT:양기
-						TEXT_PLAY = %타겟은()% 느슨한 성격에 반해 조임이 강한 질에에서%NPC_PENIS%에 비명을 올리게하면서,
+						TEXT_PLAY = %타겟은()% 완만한 성격에 반해 조임이 강한 질으로%NPC_PENIS%에 비명을 올리게하면서,
 					ENDIF
 				;명기도が低いが余裕あり
 				ELSEIF (ABL:Ｖ명기도 < 20 || TALENT:작은몸집) && ABL:Ｖ확장 > 2 && NPC_NAME == "모험자" && RAND:2
 					IF TALENT:작은몸집
-						TEXT_PLAY = %타겟은()% 굵은 성인의 페니스로 배꼽 위까지 가득받으며,
+						TEXT_PLAY = %타겟은()% 굵은 성인의 페니스로 배꼽 위까지 가득 채우며,
 					ELSEIF TALENT:강기
-						TEXT_PLAY = %타겟은()% 성격과는 정반대로 느슨한 질에서 %NPC_PENIS%를 여유있게 삼키고하면서, 
+						TEXT_PLAY = %타겟은()% 성격과는 정반대로 느슨한 질으로 %NPC_PENIS%를 여유있게 삼키면서, 
 					ELSEIF TALENT:양기
-						TEXT_PLAY = %타겟은()% 성격과 같이 느슨한 질에서%NPC_PENIS%를 여유있게 삼키고하면서,
+						TEXT_PLAY = %타겟은()% 성격과 같이 느슨한 질으로 %NPC_PENIS%를 여유있게 삼키면서,
 					ENDIF
 				;穴が小さめ
 				ELSEIF ABL:Ｖ명기도 >= 20 && ABL:Ｖ확장 < 2 && RAND:2
 					IF TALENT:강기 && RANDIF(1, TALENT:작은몸집)
-						TEXT_PLAY = %타겟은()% 성격뿐만 아니라 깐깐한상태의 질을%NPC_PENIS%에서 풀어주면서, 
+						TEXT_PLAY = %타겟은()% 성격처럼 깐깐한 상태의 질으로 %NPC_PENIS%를 받아주면서, 
 					ELSEIF TALENT:작은몸집 && TALENT:유치
-						TEXT_PLAY = %타겟은()% 조개를 한계까지 열어%NPC_PENIS%를 작은 질에서 열심히 받아들이면서, 
+						TEXT_PLAY = %타겟은()% 조개를 한계까지 열어%NPC_PENIS%를 작은 질으로 열심히 받아들이면서, 
 					ELSEIF TALENT:작은몸집
-						TEXT_PLAY = %타겟은()% 신체와 마찬가지로 작은 질을%NPC_PENIS%로 가득하게 받으면서, 
+						TEXT_PLAY = %타겟은()% 신체와 마찬가지로 작은 질을 %NPC_PENIS%로 가득 받으면서, 
 					ENDIF
 				ENDIF
 			ENDIF
@@ -650,37 +650,37 @@ CASE "주점", "여관", "집회소", "비밀의 놀이터"
 			TEXT_PLAY = %TEXT_PLAY%애널에 흥미 있는 상대에는 엉덩이 구멍도 쓰고 있다…
 			CALL SIMULATE_TRAIN_COM, 71, MAX(RAND:NUM_NPC, 1)*(6 + RAND:NUM_NPC)/4
 		ELSEIF (TALENT:도착적 || TALENT:마조) && RANDIF(4, TALENT:음탕한입술, TALENT:호색, (TALENT:쾌감에솔직 && TALENT:양기) )
-			TEXT_PLAY = %TEXT_PLAY%성욕 처리를위한 구멍으로 사용되는 행복에 젖어있는…
+			TEXT_PLAY = %TEXT_PLAY%성욕 처리를위한 구멍으로 사용되는 행복에 젖어있다…
 		ELSEIF TALENT:쾌감에솔직 && TALENT:양기 && RANDIF(4, TALENT:음탕한입술, TALENT:호색)
-			TEXT_PLAY = %TEXT_PLAY%차례를 기다리는%NPC_NAMES%한 사람 한사람의 페니스에 키스를 해서, 가득 기분 좋게 해주도록과 조르기 하고 있다…
+			TEXT_PLAY = %TEXT_PLAY%차례를 기다리는 %NPC_NAMES% 한 사람 한사람의 페니스에 키스를 해서, 가득 기분 좋게 해주며 조르기 하고 있다…
 		ELSEIF TALENT:호색 && RANDIF(4, TALENT:음탕한입술)
 			IF RAND:2
-				TEXT_PLAY = %TEXT_PLAY%차례를 기다리는%NPC_NAMES%의 페니스를 음미해 다음 상대를 물새가고있다…
+				TEXT_PLAY = %TEXT_PLAY%차례를 기다리는 %NPC_NAMES%의 페니스를 음미하며 다음 상대를 물색하고 있다…
 			ELSE
-				TEXT_PLAY = %TEXT_PLAY%차례를 기다리는%NPC_NAMES%물건을 쓰다듬어 문지르거나 입으로 음미하고 알찬 시간을 보내고있다…
+				TEXT_PLAY = %TEXT_PLAY%차례를 기다리는 %NPC_NAMES%물건을 쓰다듬어 문지르거나 입으로 음미하고 알찬 시간을 보내고 있다…
 			ENDIF
 			CALL SIMULATE_TRAIN_COM, 90, MAX(RAND:NUM_NPC, 1)*(3 + RAND:NUM_NPC)/3
 			CALL SIMULATE_TRAIN_COM, 91, MAX(RAND:NUM_NPC, 1)*(3 + RAND:NUM_NPC)/3
 		ELSEIF TALENT:음탕한입술 && RAND:4 == 0
-			TEXT_PLAY = %TEXT_PLAY%손사이의%NPC_NAMES%と%TEXTR("콧김 난폭하고","농후한")%키스를 하고%TEXTR("타액의 교환을 즐겨","혀를 얽히게 할 수 있는 있어")%있다…
+			TEXT_PLAY = %TEXT_PLAY%잠깐 사이에%NPC_NAMES%と%TEXTR("콧김 난폭한","농후한")%키스를 하고%TEXTR("타액의 교환을 즐기고","혀를 얽히고")% 있다…
 			CALL SIMULATE_TRAIN_COM, 6, MAX(RAND:NUM_NPC, 1)*(3 + RAND:NUM_NPC)/3
 		ELSEIF COND("질내사정에약함") && PLAY_NIGHTWALK == "Ｖのみ" && RAND:4 == 0
-			TEXT_PLAY = %TEXT_PLAY%질내를 정액으로 가득 쾌감에 얼굴을 녹게 하고 있다…
+			TEXT_PLAY = %TEXT_PLAY%질내를 정액으로 가득 채운 쾌감에 얼굴을 녹게 하고 있다…
 		ELSEIF COND("장내사정에약함") && PLAY_NIGHTWALK == "Ａのみ" && RAND:4 == 0
-			TEXT_PLAY = %TEXT_PLAY%배설 기관에 정액이 부어지는 감각에 얼굴을 녹게하는…
+			TEXT_PLAY = %TEXT_PLAY%배설 기관에 정액이 부어지는 감각에 얼굴을 녹게 하고 있다…
 		ELSEIF ABL:정액중독 >= 5 && RANDIF(2, ABL:봉사정신 >= 5)
 			IF TALENT:양기 && RAND:3 == 0
 				TEXT_PLAY = %TEXT_PLAY%입에 배설된 대량의 정액을 혀로 굴리면서 만면의 미소로 맛보고 있다…
 			ELSEIF RAND:2
-				TEXT_PLAY = %TEXT_PLAY%둘러싸고 있는%NPC_NAMES%에 전신을 정액투성이로 되어 요염하게 미소짓고 있다…
+				TEXT_PLAY = %TEXT_PLAY%둘러싸고 있는 %NPC_NAMES%에 전신을 정액투성이로 되어 요염하게 미소짓고 있다…
 			ELSE
-				TEXT_PLAY = %TEXT_PLAY%숨 돌아가는 것 같은 정령의 수상한 열기에 심취하고 있다…
+				TEXT_PLAY = %TEXT_PLAY%숨 돌아가는 것 같은 정액의 냄새와 열기에 심취하고 있다…
 			ENDIF
 		ELSEIF ABL:봉사정신 >= 5 && RAND:2
 			IF TALENT:양기 && RAND:3 == 0
-				TEXT_PLAY = %TEXT_PLAY%페니스에 묻는 자신의 더러움을 빨고 취하면서 상태가 어떠했는지를 담소하고 있다…
+				TEXT_PLAY = %TEXT_PLAY%페니스에 묻는 자신의 더러움을 빨고 취하면서 상태가 어떠했는지 담소하고 있다…
 			ELSEIF RAND:3 == 0
-				TEXT_PLAY = %TEXT_PLAY%코끝에 쑥 내밀어진 페니스의 치구를 혀로 빨고 취하면서 숙성된 수상한 냄새에 심취하고 있다…
+				TEXT_PLAY = %TEXT_PLAY%코끝에 쑥 내밀어진 페니스의 치구를 혀로 빨고 취하면서 숙성된 냄새에 심취하고 있다…
 			ELSEIF RAND:2
 				TEXT_PLAY = %TEXT_PLAY%다음 상대의 페니스에 정성스럽게 침을 묻혀 준비 하고 있다…
 			ELSE
@@ -688,7 +688,7 @@ CASE "주점", "여관", "집회소", "비밀의 놀이터"
 			ENDIF
 			CALL SIMULATE_TRAIN_COM, 91, MAX(RAND:NUM_NPC, 1)*(3 + RAND:NUM_NPC)/2
 		ELSE
-			TEXT_PLAY = %TEXT_PLAY%전신 모든 곳에서%NPC_NAMES%의 물건으로부터 정령을 짜 취하려 하고 있다……
+			TEXT_PLAY = %TEXT_PLAY%전신 모든 곳에서%NPC_NAMES%의 물건으로부터 정액을 짜 취하려 하고 있다……
 			CALL SIMULATE_TRAIN_COM, 90, MAX(RAND:NUM_NPC, 1)*(3 + RAND:NUM_NPC)/3
 			CALL SIMULATE_TRAIN_COM, 91, MAX(RAND:NUM_NPC, 1)*(3 + RAND:NUM_NPC)/3
 			CALL SIMULATE_TRAIN_COM, 95, MAX(RAND:NUM_NPC, 1)*(3 + RAND:NUM_NPC)/4
@@ -697,11 +697,11 @@ CASE "주점", "여관", "집회소", "비밀의 놀이터"
 
 	SELECTCASE NPC_NAME
 	CASE "모험자"
-		TEXT_LAST = %NPC_NAMES%는, 몇번이나 그 정력을 짜여 버렸다……
+		TEXT_LAST = %조사처리(NPC_NAMES,"는")%, 몇번이나 그 정력을 짜여 버렸다……
 	CASE "청년"
-		TEXT_LAST = %NPC_NAMES%는, 몇번이나 그 정액을 쏟아 버렸다……
+		TEXT_LAST = %조사처리(NPC_NAMES,"는")%, 몇번이나 그 정액을 쏟아 버렸다……
 	CASEELSE
-		TEXT_LAST = %NPC_NAMES%는, 몇번이나 그 젊은 성을 발산해 버렸다……
+		TEXT_LAST = %조사처리(NPC_NAMES,"는")%, 몇번이나 그 어린 성욕을 발산해 버렸다……
 	ENDSELECT
 CASEELSE
 	TEXT_INTRO = %타겟은()% \@ NUM_PLAY ? 이번은 # \@
@@ -710,55 +710,55 @@ CASEELSE
 
 	CASE "모험자"
 		IF RAND:8 == 0
-			TEXT_INTRO = %TEXT_INTRO%몹시 힘이 셈인
+			TEXT_INTRO = %TEXT_INTRO%몹시 힘이 센
 		ELSEIF RAND:7 == 0
-			TEXT_INTRO = %TEXT_INTRO%자신을 창녀라고 착각하고있다
+			TEXT_INTRO = %TEXT_INTRO%자신을 창부라고 착각하고 있는 
 		ELSEIF RAND:6 == 0
-			TEXT_INTRO = %TEXT_INTRO%기녀를 물색하고 있었다
+			TEXT_INTRO = %TEXT_INTRO%창녀를 물색하던
 		ELSEIF RAND:5 == 0
 			TEXT_INTRO = %TEXT_INTRO%성욕이 왕성할 것 같은
 		ELSEIF RAND:4 == 0
-			TEXT_INTRO = %TEXT_INTRO%열렬하게 설득해 왔다
+			TEXT_INTRO = %TEXT_INTRO%열렬하게 꾀어내는
 		ELSEIF RAND:3 == 0
-			TEXT_INTRO = %TEXT_INTRO%핡고 돌리듯이 신체를 바라보고 있었다
+			TEXT_INTRO = %TEXT_INTRO%핡고 돌리듯이 신체를 바라보고 있던
 		ELSEIF RAND:2
-			TEXT_INTRO = %TEXT_INTRO%힐끔힐끔하고 모습을 엿보고 있었다
+			TEXT_INTRO = %TEXT_INTRO%힐끔힐끔하고 모습을 엿보는
 		ELSE
 			TEXT_INTRO = %TEXT_INTRO%난폭한 것 같은
 		ENDIF
 
 	CASE "청년"
 		IF RAND:9 == 0
-			TEXT_INTRO = %TEXT_INTRO%창관 앞에서 등을 밝고 있었다
+			TEXT_INTRO = %TEXT_INTRO%창관 앞에서 등을 밝던
 		ELSEIF RAND:8 == 0
-			TEXT_INTRO = %TEXT_INTRO%몹시 힘이 셈인
+			TEXT_INTRO = %TEXT_INTRO%몹시 힘이 센
 		ELSEIF RAND:7 == 0
-			TEXT_INTRO = %TEXT_INTRO%자신을 창녀라고 착각하고있다
+			TEXT_INTRO = %TEXT_INTRO%자신을 창부라고 착각하고 있는 
 		ELSEIF RAND:6 == 0
-			TEXT_INTRO = %TEXT_INTRO%기녀를 물색하고 있었다
+			TEXT_INTRO = %TEXT_INTRO%창녀를 물색하던
 		ELSEIF RAND:5 == 0
 			TEXT_INTRO = %TEXT_INTRO%성욕이 왕성할 것 같은
 		ELSEIF RAND:4 == 0
-			TEXT_INTRO = %TEXT_INTRO%열렬하게 설득해 왔다
+			TEXT_INTRO = %TEXT_INTRO%열렬하게 꾀어내는
 		ELSEIF RAND:3 == 0
-			TEXT_INTRO = %TEXT_INTRO%핡고 돌리듯이 신체를 바라보고 있었다
+			TEXT_INTRO = %TEXT_INTRO%핡고 돌리듯이 신체를 바라보고 있던
 		ELSEIF RAND:2
-			TEXT_INTRO = %TEXT_INTRO%힐끔힐끔하고 모습을 엿보고 있었다
+			TEXT_INTRO = %TEXT_INTRO%힐끔힐끔하고 모습을 엿보고 있보는
 		ELSE
 			TEXT_INTRO = %TEXT_INTRO%난폭한 것 같은
 		ENDIF
 
 	CASE "소년"
 		IF RAND:5 == 0
-			TEXT_INTRO = %TEXT_INTRO%힐끔힐끔하고 모습을 살피고 있었다
+			TEXT_INTRO = %TEXT_INTRO%힐끔힐끔하고 모습을 살피고 있던
 		ELSEIF RAND:4 == 0
 			TEXT_INTRO = %TEXT_INTRO%경험 적은 것 같은
 		ELSEIF RAND:3 == 0
 			TEXT_INTRO = %TEXT_INTRO%자신의 취향에 드는
 		ELSEIF RAND:2
-			TEXT_INTRO = %TEXT_INTRO%과연 여자를 모름듯한
+			TEXT_INTRO = %TEXT_INTRO%여자를 모르는듯한
 		ELSE
-			TEXT_INTRO = %TEXT_INTRO%갖추어진 용모의
+			TEXT_INTRO = %TEXT_INTRO%단정한 모습의
 		ENDIF
 	ENDSELECT
 	TEXT_INTRO = %TEXT_INTRO%{NUM_NPC}사람의 %NPC_NAME%를 덮친 것 같다
@@ -767,9 +767,9 @@ CASEELSE
 	SELECTCASE NPC_NAME
 	CASE "여성", "소녀"
 		IF NPC_NAME == "여성" && RAND:2
-			TEXT_LAST = %NPC_NAMES%는, 몇번이나 신경 써 버렸다 ……
+			TEXT_LAST = %조사처리(NPC_NAMES,"는")%, 몇번이나 신경 써 버렸다 ……
 		ELSE
-			TEXT_LAST = %NPC_NAMES%는, 몇번이나 절정에 몰리고했다……
+			TEXT_LAST = %조사처리(NPC_NAMES,"는")%, 몇번이나 절정에 내몰리고 말았다……
 		ENDIF
 		IF (PENIS(TARGET) && TALENT:동정 == 0) || (ABL:레즈끼 >= 3 && ABL:새드끼 >= 3 && RAND:3 == 0)
 			CALL SIMULATE_TRAIN_COM, 120, MAX(RAND:NUM_NPC, 1)*(3 + RAND:NUM_NPC)/2
@@ -818,9 +818,9 @@ CASEELSE
 			ENDIF
 		NEXT
 
-		TEXT_LAST = %NPC_NAMES%は%CALLNAME:TARGET%
+		TEXT_LAST = %조사처리(NPC_NAMES,"는")% %CALLNAME:TARGET%
 		IF GETBIT(TFLAG:13, 0) && GETBIT(TFLAG:13, 1) && RAND:3 == 0
-			TEXT_LAST = %TEXT_LAST%の%TEXTR("전후의 구멍","질과 애널","전신 곳곳")%에
+			TEXT_LAST = %TEXT_LAST%의 %TEXTR("앞뒤의 구멍","질과 애널","전신 곳곳")%에
 		ELSEIF GETBIT(TFLAG:13, 0) && RANDIF(2, GETBIT(TFLAG:13, 1) )
 			IF ABL:허리놀림 >= 3 
 				IF TALENT:조야 && RAND:2
@@ -830,20 +830,20 @@ CASEELSE
 				ENDIF
 			ELSEIF ABL:Ｖ명기도 >= 80
 				IF ABL:Ｖ확장 >= 3 && RAND:2
-					TEXT_LAST = %TEXT_LAST%の%TEXTR("신축 자재 인","단련 된")%꿀단지에
+					TEXT_LAST = %TEXT_LAST%의 %TEXTR("달라붙는","단련된")%꿀단지에
 				ELSE
-					TEXT_LAST = %TEXT_LAST%の%TEXTR("달라붙어 오는 것 같은","이 세상의 것이라고는 생각되지 않는 기분 좋은")%꿀단지에
+					TEXT_LAST = %TEXT_LAST%의 %TEXTR("달라붙어 오는 것 같은","이 세상의 것이라고는 생각되지 않는 기분 좋은")%꿀단지에
 				ENDIF
 			ELSE
 				SELECTCASE AGE(TARGET)
 				CASE 1
-					TEXT_LAST = %TEXT_LAST%の%TEXTR("어린 질", "어린 보지", "건방진 보지")%에
+					TEXT_LAST = %TEXT_LAST%의 %TEXTR("어린 질", "어린 보지", "건방진 보지")%에
 				CASE 2
-					TEXT_LAST = %TEXT_LAST%の%TEXTR("싱싱한 보지", "발전중인 질구")%에
+					TEXT_LAST = %TEXT_LAST%의 %TEXTR("싱싱한 보지", "발전중인 질구")%에
 				CASE 3
-					TEXT_LAST = %TEXT_LAST%の%TEXTR("성숙한 성기", "탐욕적인 질구")%에
+					TEXT_LAST = %TEXT_LAST%의 %TEXTR("성숙한 성기", "탐욕적인 질구")%에
 				CASEELSE
-					TEXT_LAST = %TEXT_LAST%の%TEXTR("익은 꿀 구멍", "어른의 질구")%에
+					TEXT_LAST = %TEXT_LAST%의 %TEXTR("익은 꿀 구멍", "어른의 질구")%에
 				ENDSELECT
 			ENDIF
 		ELSEIF GETBIT(TFLAG:13, 1) && RAND:2
@@ -855,20 +855,20 @@ CASEELSE
 				ENDIF
 			ELSEIF ABL:Ａ명기도 >= 80
 				IF ABL:Ａ확장 >= 3 && RAND:2
-					TEXT_LAST = %TEXT_LAST%の%TEXTR("신축 자재인","단련된","완전히 성기가 되었다")%애널에
+					TEXT_LAST = %TEXT_LAST%의 %TEXTR("달라붙는","단련된","완전히 성기가 된")%애널에
 				ELSE
-					TEXT_LAST = %TEXT_LAST%の%TEXTR("틈새 없게 밀착해 오는","이 세상의 것이라고는 생각되지 않는 기분 좋은")%애널에
+					TEXT_LAST = %TEXT_LAST%의 %TEXTR("틈새 없게 밀착해 오는","이 세상의 것이라고는 생각되지 않는 기분 좋은")%애널에
 				ENDIF
 			ELSE
 				SELECTCASE AGE(TARGET)
 				CASE 1
-					TEXT_LAST = %TEXT_LAST%の%TEXTR("어린 애널", "작은 엉덩이구멍")%에
+					TEXT_LAST = %TEXT_LAST%의 %TEXTR("어린 애널", "작은 엉덩이구멍")%에
 				CASE 2
-					TEXT_LAST = %TEXT_LAST%の%TEXTR("배덕적인 애널", "예쁜 엉덩이구멍")%에
+					TEXT_LAST = %TEXT_LAST%의 %TEXTR("배덕적인 애널", "예쁜 엉덩이구멍")%에
 				CASE 3
-					TEXT_LAST = %TEXT_LAST%の%TEXTR("성숙한 성기", "질대신 애널")%에
+					TEXT_LAST = %TEXT_LAST%의 %TEXTR("성숙한 성기", "질대신 애널")%에
 				CASEELSE
-					TEXT_LAST = %TEXT_LAST%の%TEXTR("크게 벌어진 애널", "탐욕에 질질 끌어 들여 오는 항문")%에
+					TEXT_LAST = %TEXT_LAST%의 %TEXTR("크게 벌어진 애널", "탐욕에 질질 끌어 들여 오는 항문")%에
 				ENDSELECT
 			ENDIF
 		ELSE
@@ -876,11 +876,11 @@ CASEELSE
 				IF NPC_NAME == "소년" && GETBIT(TFLAG:13, 0) && RAND:2
 					TEXT_LAST = %TEXT_LAST%에 상냥하게 동정상실 되어,
 				ELSE
-					TEXT_LAST = %TEXT_LAST%에 조르는되는대로,
+					TEXT_LAST = %TEXT_LAST%에 조르는 대로,
 				ENDIF
 			ELSEIF TALENT:강기
 				IF TALENT:장사 && RAND:2
-					TEXT_LAST = %TEXT_LAST%에 거역도 제대로 못하고,
+					TEXT_LAST = %TEXT_LAST%에 반항도 제대로 못하고,
 				ELSE
 					TEXT_LAST = %TEXT_LAST%에 밀어 넘어뜨려져,
 				ENDIF
@@ -888,18 +888,18 @@ CASEELSE
 				TEXT_LAST = %TEXT_LAST%에 요구되는 대로, 
 			ENDIF
 		ENDIF
-		TEXT_LAST = %TEXT_LAST%%TEXTR("듬뿍", "몇번이나", "한계를 넘어", "허리가 서지 않게 될 때까지", "후냐후냐가 될 때까지")%
-		TEXT_LAST = %TEXT_LAST%%TEXTR("정액을 짜 놓쳐", "정령을 토해내고")%끝냈다……
+		TEXT_LAST = %TEXT_LAST%%TEXTR("듬뿍", "몇번이나", "한계를 넘어", "허리가 서지 않게 될 때까지", "흐물흐물하게 될 때까지")%
+		TEXT_LAST = %TEXT_LAST%%TEXTR("정액을 짜 내어", "정액을 쏟아내고")%버렸다……
 
 		;범용
 		IF RAND:4 == 0
 			SELECTCASE NPC_NAME
 			CASE "모험자"
-				TEXT_LAST = %NPC_NAMES%는, 몇번이나 그 정력을 짜여 버렸다……
+				TEXT_LAST = %조사처리(NPC_NAMES,"는")%, 몇번이나 그 정력을 짜여 버렸다……
 			CASE "청년"
-				TEXT_LAST = %NPC_NAMES%는, 몇번이나 그 정액을 쏟아 버렸다……
+				TEXT_LAST = %조사처리(NPC_NAMES,"는")%, 몇번이나 그 정액을 쏟아 버렸다……
 			CASEELSE
-				TEXT_LAST = %NPC_NAMES%는, 몇번이나 그 젊은 성을 발산해 버렸다……
+				TEXT_LAST = %조사처리(NPC_NAMES,"는")%, 몇번이나 그 젊은 성욕을 발산해 버렸다……
 			ENDSELECT
 		ENDIF
 	ENDSELECT
@@ -1001,7 +1001,7 @@ IF FLAG:8
 		PRINTFORMW 손님들을 완전히 만족시킨 %타겟은()%, 잔뜩 팁을 받고 스트립극장에서 나와 집으로 돌아왔다…
 	CASE "글로리홀가게"
 		IF COND("절정") == 0 && NUM_PLAY < ABL:욕망 && (RAND:3 || (RAND:5 && EXP_GAIN(20) < (MAXBASE:성욕 + MAXBASE:정액욕)*2 - BASE:성욕 - BASE:정액욕) )
-			PRINTFORMW 일단락되자 %타겟은()% 글로리홀가게를 뒤로했다
+			PRINTFORMW 일단락되자 %타겟은()% 글로리홀가게를 뒤로 했다
 			PRINTL 
 			PRINTFORMW ……만, 아무래도 부족했던 모양이다
 			NUM_PLAY += 1
@@ -1045,12 +1045,12 @@ CFLAG:55 += CFLAG:53 * CFLAG:54 * (NUM_NPC_TOTAL/5 + 1)
 IF FLAG:8
 	PRINTFORM 오늘밤의 피해 수：{NUM_NPC_TOTAL}사람
 	SIF NUM_NPC_TOTAL >= 10
-		PRINTFORM \@ NUM_NPC_TOTAL >= 100 ? ☆ # \@하룻밤 %TEXTS("漢数字概数", NUM_NPC_TOTAL)%인베기 달성\@ NUM_NPC_TOTAL >= 100 ? ☆ # \@
+		PRINTFORM \@ NUM_NPC_TOTAL >= 100 ? ☆ # \@하룻밤 %TEXTS("漢数字概数", NUM_NPC_TOTAL)%인포식 달성\@ NUM_NPC_TOTAL >= 100 ? ☆ # \@
 	PRINTL 
 
 	PRINTFORM 누적된 피해자 수：{CFLAG:51}명 
 	SIF CFLAG:51 >= 10
-		PRINTFORM \@ CFLAG:51 >= 100 ? ☆ # \@누계 %TEXTS("漢数字概数", CFLAG:51)%인베기 달성\@ CFLAG:51 >= 100 ? ☆ # \@ 
+		PRINTFORM \@ CFLAG:51 >= 100 ? ☆ # \@누계 %TEXTS("漢数字概数", CFLAG:51)%인포식 달성\@ CFLAG:51 >= 100 ? ☆ # \@ 
 
 	;連続して実行した일数＆"連続して実行した일数"で襲った総人数
 	SIF CFLAG:52 >= 1 && CFLAG:52 == DAY
@@ -1072,35 +1072,35 @@ LOCALS =
 SELECTCASE ARGS
 CASE "스트립극장"
 	IF (TALENT:클리피어스 || TALENT:라비아피어스) && RANDIF(3, ABL:Ｖ확장 > 2, AGE(TARGET) == 1)
-		PRINTFORML 『이런 곳에 피어스는 붙이고 자빠져 이 변태가！ 오락！ 임신해라！！』
+		PRINTFORML 『이런 곳에 피어스는 붙이고 자빠져있는 이 변태가！ 자！ 임신해라！！』
 	ELSEIF AGE(TARGET) == 1 && RANDIF(3, ABL:Ｖ확장 > 2)
-		PRINTFORML 『꼬마의 주제에 이런 일하고 자빠졋！ 오라, 충분히 벌 해 준다！！』
+		PRINTFORML 『꼬마의 주제에 이런 일하고 자빠져！ 자, 충분히 벌 해 주마！！』
 	ELSEIF ABL:Ｖ확장 > 2 && RAND:3 == 0
-		PRINTFORML 『무, 무엇이다, 이\@ AGE(TARGET) >= 3 ? 女 # ガキ \@！ 나의 자랑의 녀석을 여유 가득 근원까지…！ 구아앗！！』
+		PRINTFORML 『무, 무엇이다, 이\@ AGE(TARGET) >= 3 ? 년 # 꼬마 \@！ 나의 자랑하는 녀석을 여유있게 뿌리까지…！ 구아앗！！』
 	ELSEIF RAND:7 == 0
-		PRINTFORML 『구웃…이, 이 녀석, 바닥 없음인가, 해,…짜내진다앗！우아…』
+		PRINTFORML 『으웃…이, 이 녀석, 이제 안나오는, 데, …짜내진다앗！우아…』
 	ELSEIF RAND:6 == 0
-		PRINTFORML 『아아앗！이, 이제(벌써)…나온닷！나온다앗！！！』
+		PRINTFORML 『아아앗！이, 이제…나온닷！나온다앗！！！』
 	ELSEIF RAND:5 == 0
-		PRINTFORML 『괴, 굉장하다！ 휘감기는 것 같다！！쿠……』
+		PRINTFORML 『괴, 굉장하다！ 휘감기는 것 같다！！아……』
 	ELSEIF RAND:4 == 0
 		PRINTFORML 『…나, 나옵니다！정액냅니다아！아아아아아……』
 	ELSEIF RAND:3 == 0
-		PRINTFORML 『내겠어！확실히 받아 들여라！ ………오오오！』
+		PRINTFORML 『싸겠어！확실히 받아 들여라！ ………오오오！』
 	ELSEIF RAND:2 == 0
 		PRINTFORML 『허, 허리가…멈추지 않는다！……우웃！！』
 	ELSE
-		PRINTFORML 『젠장, 에로하다허리놀림하고 자빠져！조금 전부터 쳐박고 싶었어요, 오라！』
+		PRINTFORML 『젠장, 에로한 허리놀림하고 자빠져！조금 전부터 박고 싶었어요, 자！』
 	ENDIF
 CASE "글로리홀가게"
 	IF RAND:5 == 0 && ABL:목확장 > 2
-		PRINTFORML 『무, 무엇이다, 이\@ AGE(TARGET) >= 3 ? 女 # ガキ \@！ 나의 자랑의 녀석을 여유 가득 근원까지…！ 구아앗！！』
+		PRINTFORML 『무, 무엇이다, 이\@ AGE(TARGET) >= 3 ? 년 # 꼬마 \@！ 나의 자랑의 녀석을 여유 가득 근원까지…！ 구아앗！！』
 	ELSEIF RAND:5 == 0 && AGE(TARGET) <= 2 && TALENT:남자 == 0
 		PRINTFORML 『좋아…아, 아가씨, 좀 더 나의 것을 날름날름 해……우웃！」
 	ELSEIF RAND:5 == 0
 		PRINTFORML 『우웃！최, 최고다, 이 변기는……오오옷！ 나, 나온닷！！！』
 	ELSEIF RAND:4 == 0
-		PRINTFORML 『아아앗！이, 이제(벌써)…나온닷！나온다앗！！！』
+		PRINTFORML 『아아앗！이, 이제…나온닷！나온다앗！！！』
 	ELSEIF RAND:3 == 0
 		PRINTFORML 『괴, 굉장하다！ 휘감기는 것 같다！！쿠……』
 	ELSEIF RAND:2
@@ -1112,35 +1112,35 @@ CASEELSE
 	SELECTCASE ARGS:1
 	CASE "여성"
 		IF RAND:7 == 0 && TALENT:남자 == 0
-			PRINTFORML 『나, 남자보다, 좋은 것…』
+			PRINTFORML 『나, 남자보다, 좋아…』
 		ELSEIF RAND:6 == 0 && PENIS(TARGET) == 0
 			PRINTFORML 『아앙…여자끼리인데…』
 		ELSEIF RAND:5 == 0
-			PRINTFORML 『힛구…웃구…이런 건, 아니』
+			PRINTFORML 『히잇…으읏…이런 건, 싫어』
 		ELSEIF RAND:4 == 0
-			PRINTFORML 『나, 나에게는, 마음으로 결정한 사람이……있는데』
+			PRINTFORML 『나, 나에게는, 좋아하는 사람이……있는데』
 		ELSEIF RAND:3 == 0
-			PRINTFORML 『후후…이 느낌 오래간만…응……』
+			PRINTFORML 『후후…이 느낌 오래간만…읏……』
 		ELSEIF RAND:2 == 0
 			PRINTFORML 『무,몽마…？오, 오지마아…！』
 		ELSE
-			PRINTFORML 『가, 가서는…가 버린다아！！가는 것…간다아！！』
+			PRINTFORML 『가, 간다…가 버린다아！！간다…간다아！！』
 		ENDIF
 	CASE "소녀"
 		IF RAND:7 == 0 && PENIS(TARGET) == 0
-			PRINTFORML 『아하아…좋아…기분 좋아…누나』
+			PRINTFORML 『하아…좋아…기분 좋아…언니』
 		ELSEIF RAND:6 == 0
-			PRINTFORML 『뭐, 뭐 해…』
+			PRINTFORML 『뭐, 뭐 하는 거야…』
 		ELSEIF RAND:5 == 0
-			PRINTFORML 『또, 또 근질근질 하는 것…어떻게든 해』
+			PRINTFORML 『또, 또 근질근질 한단 말야…어떻게든 해줘』
 		ELSEIF RAND:4 == 0
 			PRINTFORML 『아…이것, 섹스, 라고 하는거네요…』
 		ELSEIF RAND:3 == 0
-			PRINTFORML 『오, 오지마아！뭔가 와 버린다…와 버리는 것！！』
+			PRINTFORML 『오, 오지마아！뭔가 와 버린다…온다！！』
 		ELSEIF RAND:2 == 0
 			PRINTFORML 『야…나, 처음인데…』
 		ELSE
-			PRINTFORML 『…버릇이 될 것 같다？』
+			PRINTFORML 『…좋아질 것 같아…』
 		ENDIF
 	CASE "청년", "모험자"
 		SELECTCASE CONDS("하룻밤개방での襲撃傾向")
@@ -1148,9 +1148,9 @@ CASEELSE
 			IF RAND:3 == 0
 				LOCALS = 『무, 몽마에게, 짜 놓치는! 으아…』
 			ELSEIF RAND:2
-				LOCALS = 『…에, 나옵니다! 정액나오는! 아아아아아……』
+				LOCALS = 『…나, 나온다! 정액나온다! 아아아아아……』
 			ELSE
-				LOCALS = 『멈추어라! 몽마 따위에………크으윽』
+				LOCALS = 『멈춰라! 몽마 따위에………크으윽』
 			ENDIF
 		CASE "和姦"
 			IF RAND:3 == 0
@@ -1160,7 +1160,7 @@ CASEELSE
 					LOCALS = 『크으윽……!  이, 이런아이에게, …빌어먹을! 안에 내겠어! ! 』
 				ENDIF
 			ELSEIF RAND:2
-				LOCALS = 『…에서, 나온다!  이제 더이상 안돼!  ……우으으! ! 』
+				LOCALS = 『…나, 나온다!  이제 더이상 안돼!  ……우으으! ! 』
 			ELSE
 				LOCALS = 『무, 물론 안에 내도 좋은거지？!  ……나오는! 』
 			ENDIF
@@ -1172,9 +1172,9 @@ CASEELSE
 			PRINTFORML %LOCALS%
 		ELSE
 			IF RAND:5 == 0 && ABL:Ｖ확장 > 2
-				PRINTFORML 『무, 무엇이다, 이\@ AGE(TARGET) >= 3 ? 女 # ガキ \@！ 나의 자랑의 녀석을 여유 가득 근원까지…！ 구아앗！！』
+				PRINTFORML 『무, 무엇이다, 이\@ AGE(TARGET) >= 3 ? 년 # 꼬마 \@！ 나의 자랑의 녀석을 여유있게 뿌리까지…！ 아앗！！』
 			ELSEIF RAND:4 == 0
-				PRINTFORML 『아아앗！이, 이제(벌써)…나온닷！나온다앗！！！』
+				PRINTFORML 『아아앗！이, 이제…나온닷！나온다앗！！！』
 			ELSEIF RAND:3 == 0
 				PRINTFORML 『괴, 굉장하다！ 휘감기는 것 같다！！쿠……』
 			ELSEIF RAND:2 == 0
@@ -1189,7 +1189,7 @@ CASEELSE
 			IF RAND:2
 				LOCALS = 『아 우우…오 꼬추 먹혀버린다…』
 			ELSE
-				LOCALS = 『…도, 도와…줘………이상하게…되면…으윽』
+				LOCALS = 『…도, 도와…줘………이상하게…되어버려…으윽』
 			ENDIF
 		CASE "和姦"
 
@@ -1202,15 +1202,15 @@ CASEELSE
 			IF RAND:6 == 0 && PENIS(TARGET) == 0
 				PRINTFORML 『기, 기분 좋아…누나』
 			ELSEIF RAND:5 == 0 && PENIS(TARGET) == 0
-				PRINTFORML 『누, 누나…그것, 안돼에……！』
+				PRINTFORML 『누, 누나…그건, 안돼에……！』
 			ELSEIF RAND:4 == 0
 				PRINTFORML 『아아아……！,,！！』
 			ELSEIF RAND:3 == 0
-				PRINTFORML 『아후우…무, 무엇인가……뭔가 나와버린다！！』
+				PRINTFORML 『하앗…무, 무엇인가……뭔가 나와버린다！！』
 			ELSEIF RAND:2 == 0
 				PRINTFORML 『이, 이런 건……너, 너무 좋아……읏！』
 			ELSE
-				PRINTFORML 『노, 녹아 버린다아…자지 녹습니다…！』
+				PRINTFORML 『노, 녹아 버린다아…자지 녹아버려…！』
 			ENDIF
 		ENDIF
 	ENDSELECT

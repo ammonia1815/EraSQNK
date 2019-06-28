@@ -245,7 +245,7 @@ IF NO:TARGET == 22 && CFLAG:8 == 2 && PALAM_EXPLORER("敵キャラ数") == 1
 	CALL ADD_CHARACTER_EXPLORER, 222
 	LOCALS:2 = %NAME:PALAM_EXPLORER("二人目")%(LV:{ABL:PALAM_EXPLORER("二人目"):90})
 	LOCALS:3 = %NAME:PALAM_EXPLORER("三人目")%(LV:{ABL:PALAM_EXPLORER("三人目"):90})
-	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 세명으로 분신해서 덤벼들었다! 
+	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 세 명으로 덤벼들었다! 
 ENDIF
 
 ;무드 0,1～4,5～8,9이상でランク分け. 
@@ -435,11 +435,11 @@ CASEELSE
 				ENDIF
 				PRINTFORM %CALLNAME:PLAYER%
 				IF RAND:3 == 0
-					PRINTFORML %조사만처리(CALLNAME:PLAYER,"를")% 어딘가 기대하는 눈동자로 계속 노려보고있다…
+					PRINTFORML %조사만처리(CALLNAME:PLAYER,"를")% 어딘가 기대하는 눈동자로 계속 노려보고 있다…
 				ELSEIF RAND:2 == 0
-					PRINTFORML %조사만처리(CALLNAME:PLAYER,"를")% 힐끔힐끔 쳐다보면서 얼굴을 붉히고있다…
+					PRINTFORML %조사만처리(CALLNAME:PLAYER,"를")% 힐끔힐끔 쳐다보면서 얼굴을 붉히고 있다…
 				ELSE
-					PRINTFORML %조사만처리(CALLNAME:PLAYER,"를")% 유혹하는 듯이 도발하고있다…
+					PRINTFORML %조사만처리(CALLNAME:PLAYER,"를")% 유혹하는 듯이 도발하고 있다…
 				ENDIF
 			;その他범용
 			ELSE
@@ -461,13 +461,13 @@ CASEELSE
 				ELSEIF RAND:3 == 0
 					PRINTFORML 의 발치에 가까이 다가온다…
 				ELSEIF RAND:2 == 0
-					PRINTFORML 에게 손을 내밀어 따라왔다…
+					PRINTFORML 에게 손을 뻗어 따라 왔다…
 				ELSE
-					PRINTFORML 에게 더욱더 행위를 요구하고있다…
+					PRINTFORML 에게 더욱 더 행위를 요구하고 있다…
 				ENDIF
 			ENDIF
 
-			PRINTFORML [0] 손을 잡는다 [1] 돌아보지않는다
+			PRINTFORML [0] 손을 잡는다 [1] 돌아보지 않는다
 			CALL INPUT_SELECT, 2
 
 			IF RESULT == 0
