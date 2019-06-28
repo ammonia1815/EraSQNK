@@ -486,7 +486,7 @@ IF SELECTCOM == 1
 			;연모
 			IF TALENT:연모
 				PRINTFORMW 「♪♪와, 기분…와, 기분 좋지 않다니까」
-				PRINTFORMW %CALLNAME:PLAYER%는 기분 좋지 않으면 멈추어? 라고 물어 본다
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 기분 좋지 않으면 멈추어? 라고 물어 본다
 				PRINTFORMW 「아아아! 싫어 싫어…좀더 …혀…할짝할짝 라고…우응♪」
 				PRINTFORMW 「,  조금도 좋지 않아요 …♪」
 				PRINTFORMW (좀더 좀더 맛봐…나의 보지∼…좋은 것 ♪)
@@ -581,20 +581,20 @@ IF SELECTCOM == 2
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
 			PRINTFORMW 「도 -그렇게 좋아하면…돼지 오두막에라도 외양간이라도 라고 즐겨서 오세요! 이 진성 변태!」
-			PRINTFORMW 상당히말에 %CALLNAME:PLAYER%는 깊게 마음을 도려내진…울이 될 것 같다….
+			PRINTFORMW 상당히말에 %조사처리(CALLNAME:PLAYER,"는")% 깊게 마음을 도려내진…울이 될 것 같다….
 		;それ以外
 		ELSE
 			;연모+プレイ受け入れ가능
 			IF TALENT:연모 && CHECK("Ａ손가락넣기")
 				PRINTFORMW 「히야…그, 그런 곳 안 되요 …네? 그, 그런 일 말해도…안돼요…구재불능인의」
 				PRINTFORMW 「변태야 …그런 것에 흥미 가지다니…그래요…안돼~!」
-				PRINTFORMW %CALLNAME:PLAYER%는 지나친 반발에 조교를 포기하는 일로 했다…
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 지나친 반발에 조교를 포기하는 일로 했다…
 				PRINTFORMW 「~ 벌써…어쩔 수 없다…%CALLNAME:PLAYER% 뿐이니까!…이런 부끄러운 것 당신이 아니면…별것 아니에요!」
 				PRINTFORMW 「히야 "응…슥슥라고 그뉴그뉴라고 하는 것…♪」
 			;연모
 			ELSEIF TALENT:연모
 				PRINTFORMW 「에…싫어…싫어 싫어 싫어 싫어! 두~싶은…싫어!」
-				PRINTFORMW %타겟은()% 굉장한 험악한 얼굴로저항하고 있다…흡혈귀의 타격은손가감(상태)하고 있어도…아프다…%CALLNAME:PLAYER%는 풀이 죽었다….
+				PRINTFORMW %타겟은()% 굉장한 험악한 얼굴로저항하고 있다…흡혈귀의 타격은손가감(상태)하고 있어도…아프다…%조사처리(CALLNAME:PLAYER,"는")% 풀이 죽었다….
 				PRINTFORMW 「…이번 만여라…니까…별로…인가, 불쌍해와 부분비치는 것 귀엽다는 건…생각해도 보지 않았다로부터…」
 				PRINTFORMW 「이나, 상냥하게 해줄래? …」
 			;A感覚Lv3이상+プレイ受け入れ가능
@@ -645,7 +645,7 @@ IF SELECTCOM == 3 && TEQUIP:샤워 == 0
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「네? 해!…게다가 당신의 앞에서! 싫어요 …절대로 싫어!」
-			PRINTFORMW 정자라도 움직이지 않는 모습의%CALLNAME:TARGET%에 %CALLNAME:PLAYER%는 교환 조건을 냈다.
+			PRINTFORMW 정자라도 움직이지 않는 모습의%CALLNAME:TARGET%에 %조사처리(CALLNAME:PLAYER,"는")% 교환 조건을 냈다.
 			PRINTFORMW 「네? 피, 들이마시게 해 주는 것♪당신의 것도 보여 준다고는? ……」
 			PRINTFORMW (피 주는 것 기쁘고…그 사람이 볼 수 있고…어, 어쩌지…혈…혈의 옵션인걸…벼, 변태가 아니어요…나는! )
 			PRINTFORMW 「괘, 괜찮아요! 바라는 곳이 아닌…나에게 정정 정신없이 보지 말아!…」
@@ -1667,7 +1667,7 @@ IF SELECTCOM == 65
 				;반발각인Lv3
 				IF MARK:반발각인 == 3
 					PRINTFORMW 「네♪상이 되어도 좋은거야! 빨리 빨리!」
-					PRINTFORMW 평소와 다르게 위기분그래서%CALLNAME:PLAYER%는 마음이 놓였다…５분후에 파랑 탄이 되어있고 너덜너덜이 된 것은 말할 필요도 없다….
+					PRINTFORMW 평소와 다르게 위기분그래서%조사처리(CALLNAME:PLAYER,"는")% 마음이 놓였다…５분후에 파랑 탄이 되어있고 너덜너덜이 된 것은 말할 필요도 없다….
 				;연모
 				ELSEIF TALENT:연모
 					PRINTFORMW 「응？기승위？좋아요？우리들은 보통체위이고…벼, 별로 좋아한다는 것은…그, 그…흐, 흥미는 있다 라는 위야…」
@@ -1691,7 +1691,7 @@ IF SELECTCOM == 65
 			;반발각인Lv3
 			IF MARK:반발각인 == 3
 				PRINTFORMW 「글쎄♪빨리 빨리!」
-				PRINTFORMW %CALLNAME:PLAYER%는 침대에 던지고 쓰러지고 위로자로 된…벌써 사위에 갈 수 없을지도 모른다…
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 침대에 던지고 쓰러지고 위로자로 된…벌써 사위에 갈 수 없을지도 모른다…
 			;연모
 			ELSEIF TALENT:연모
 				PRINTFORMW 
@@ -2659,7 +2659,7 @@ IF SELECTCOM == 63
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
 			PRINTFORMW 「훌륭하지 않아! 도망칠 수 없는 것이다로부터…각오 해 주세요!」
-			PRINTFORMW %CALLNAME:PLAYER%는 일각이라도 빨리 이체위로부터 도망이고 싶어져 왔다…
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 일각이라도 빨리 이체위로부터 도망이고 싶어져 왔다…
 			PRINTFORMW 파랑 멍이 증가해 가는….
 		;연모
 		ELSEIF TALENT:연모
@@ -2700,7 +2700,7 @@ IF SELECTCOM == 63
 			PRINTFORMW (으윽∼…여유 새긴 얼굴 해 …이렇게 해서 한다! )
 			PRINTFORMW 질안이 이상하게 억압%CALLNAME:TARGET%의 송곳니와 혀로 목덜미를애무해 온다…
 			PRINTFORMW 「응후후우♪날름…움찔움찔 해 사랑스러워요…떨어질 수 없을 것입니다？이제(벌써), 떼어 놓지 않기 때문에…」
-			PRINTFORMW %CALLNAME:TARGET%의 격렬한 사랑을 받는데%CALLNAME:PLAYER%는 필사적이다.
+			PRINTFORMW %CALLNAME:TARGET%의 격렬한 사랑을 받는데%조사처리(CALLNAME:PLAYER,"는")% 필사적이다.
 		;굴복각인Lv3＋V感覚Lv3이상
 		ELSEIF MARK:굴복각인 == 3 && ABL:Ｖ감각 >= 3
 			PRINTFORMW 「글쎄, 오늘~와 소섬키……새근」

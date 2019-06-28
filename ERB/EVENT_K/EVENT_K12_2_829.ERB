@@ -397,9 +397,9 @@ IF SELECTCOM == 1
 			;연모
 			IF TALENT:연모
 				PRINTFORML 클리토리스를 혀로 굴리면 비밀의 틈[秘裂]으로부터 애액이 흘러넘쳐 왔다
-				PRINTFORML %CALLNAME:PLAYER%는 넘쳐 나오는 애액을 날름날름 빨아내고 있다…
+				PRINTFORML %조사처리(CALLNAME:PLAYER,"는")% 넘쳐 나오는 애액을 날름날름 빨아내고 있다…
 				PRINTFORMW 「후후…너 마치 개같구나…♪」
-				PRINTFORML %CALLNAME:PLAYER%는 갑자기클리토리스를 빨아 올리고 입술로 찌부러뜨렸다
+				PRINTFORML %조사처리(CALLNAME:PLAYER,"는")% 갑자기클리토리스를 빨아 올리고 입술로 찌부러뜨렸다
 				PRINTFORML %CALLNAME:TARGET%의 허리가 흠칫 튄다
 				PRINTFORMW 「히아아앗！…이제(벌써)…불평이 있다면입로 말하세요…」
 			;굴복각인Lv3
@@ -510,7 +510,7 @@ ELSEIF SELECTCOM == 3 && TEQUIP:샤워
 		IF TALENT:연모 && ABL:자위중독 >= 3
 			PRINTFORMW 「하아아아…, 따뜻하다…」
 			PRINTFORMW %타겟은()% 벽에 의지해샤워의 쾌감에 몸을 바치고 있다…
-			PRINTFORMW %CALLNAME:PLAYER%는 뒤손그리고 남몰래샤워의 스윗치를 궁리해 수량을최대로 했다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 뒤손그리고 남몰래샤워의 스윗치를 궁리해 수량을최대로 했다
 			PRINTFORMW 「아…코라…！후와아아앗！」
 		;연모
 		ELSEIF TALENT:연모
@@ -573,7 +573,7 @@ IF SELECTCOM == 5
 	IF CFLAG:226 == 0
 		;연모
 		IF TALENT:연모
-			PRINTFORMW %CALLNAME:PLAYER%는 보들보들가슴전체를 주물러 풀고 있다…
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 보들보들가슴전체를 주물러 풀고 있다…
 			PRINTFORMW 「응…그래그래…격렬하게 하지 말아줘…상냥하고…저기」
 		;それ以外
 		ELSE
@@ -587,7 +587,7 @@ IF SELECTCOM == 5
 		IF TALENT:연모
 			PRINTFORMW 민감한 돌기를 손가락으로 연주하고 있으면,%타겟은()% 얼굴을 홍조 시켜 신체를 진동시켰다
 			PRINTFORMW 「햐읏！놀지 말고…분명하게……그…만져！」
-			PRINTFORMW %CALLNAME:PLAYER%는 돌기를 손가락의 사이에 끼워, 연주하도록(듯이)하면서%CALLNAME:TARGET%노가슴을뭉그러뜨렸다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 돌기를 손가락의 사이에 끼워, 연주하도록(듯이)하면서%CALLNAME:TARGET%노가슴을뭉그러뜨렸다
 			PRINTFORMW 「아앗！…해…저린닷！…찌릿찌릿 온다앗！」
 		;B感覚Lv3이상
 		ELSEIF ABL:Ｂ감각 >= 3
@@ -612,7 +612,7 @@ IF SELECTCOM == 6
 		IF TALENT:연모
 			PRINTFORMW %타겟은()% 가볍게 눈을 감아%CALLNAME:PLAYER%의 입술이 닿는 것을 기다리고 있다…
 			PRINTFORMW 긴장으로 신체가 희미하게 떨고 있어 얼굴이 주홍에 물들고 있는,%CALLNAME:PLAYER%하지만손를 잡으면 꽉 잡아 돌려주어 왔다
-			PRINTFORMW %CALLNAME:PLAYER%는 천천히%CALLNAME:TARGET%에 입술을 거듭해 갔다…
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 천천히%CALLNAME:TARGET%에 입술을 거듭해 갔다…
 		;それ以外
 		ELSE
 			PRINTFORMW %타겟은()% 돌연의 사태에 동작 1개 취하지 못하고 눈을 크게 열어%조사처리(CALLNAME:PLAYER,"를")% 보고 있다…
@@ -628,12 +628,12 @@ IF SELECTCOM == 6
 			PRINTFORMW %CALLNAME:PLAYER%하지만키스를 하면%타겟은()% 황홀로서%CALLNAME:PLAYER%에 기대고 걸려 왔다
 			PRINTFORMW 「츄푸…날름…응응…하아…」
 			PRINTFORML %CALLNAME:PLAYER%하지만 혀를 넣으면%CALLNAME:TARGET%의 혀가 휘감겨 온다…
-			PRINTFORMW %CALLNAME:PLAYER%는 당분간의 사이%타겟과()% 농후한키스를 계속 주고 받았다…
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 당분간의 사이%타겟과()% 농후한키스를 계속 주고 받았다…
 		;순종Lv2이상
 
 		ELSEIF ABL:순종 >=2
 			PRINTFORMW 혀를 %CALLNAME:TARGET%의 입술에 끼어들게 하려고 하면,%타겟은()% 무슨저항도 하지 않고 혀를 받아들였다
-			PRINTFORMW %CALLNAME:PLAYER%는 심하게입안을 다 희롱하고 나서 입술을 떼어 놓았다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 심하게입안을 다 희롱하고 나서 입술을 떼어 놓았다
 		;それ以外
 		ELSE
 			PRINTFORMW %타겟은()% 이야이야를 하도록(듯이) 고개를 젓고 있다…
@@ -653,12 +653,12 @@ IF SELECTCOM == 30
 		IF TALENT:연모
 			PRINTFORMW 「너…그것을 어떻게 할 생각이야…？」
 			PRINTFORMW %타겟은()% 작고 모터 소리를 내 진동한다로터에공포(와)과 관심의 뒤섞인 눈빛을 향하여 있다
-			PRINTFORMW %CALLNAME:PLAYER%는 아무것도 말하지 않고로터를클리토리스에 강압했다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 아무것도 말하지 않고로터를클리토리스에 강압했다
 		;それ以外
 		ELSE
 			PRINTFORMW 「너…그것을 어떻게 할 생각이야…？」
 			PRINTFORMW %타겟은()% 작고 모터 소리를 내 진동한다로터에공포(와)과 관심의 뒤섞인 눈빛을 향하여 있다
-			PRINTFORMW %CALLNAME:PLAYER%는 아무것도 말하지 않고로터를클리토리스에 강압했다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 아무것도 말하지 않고로터를클리토리스에 강압했다
 		ENDIF
 			CFLAG:229 = 1
 			RETURN 1
@@ -754,9 +754,9 @@ IF SELECTCOM == 32
 		IF TALENT:연모
 			PRINTFORML 「아″～～～……, 기분이 좋은……」
 			PRINTFORMW 「…그렇지만 어째서 돌연 너가 맛사지기는 사용해 주고 있어？」
-			PRINTFORMW %CALLNAME:PLAYER%는 맛서쟈를 사용해%CALLNAME:TARGET%의 어깨나 목덜미를 풀고 있다…
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 맛서쟈를 사용해%CALLNAME:TARGET%의 어깨나 목덜미를 풀고 있다…
 			PRINTFORML %타겟은()% 의심스럽게 생각하면서도%CALLNAME:PLAYER%에 몸을 맡겨 되는 대로 되어 있다
-			PRINTFORMW %CALLNAME:PLAYER%는 허를 찔러%CALLNAME:TARGET%의 사타구니에 맛서쟈를 꽉 눌렀다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 허를 찔러%CALLNAME:TARGET%의 사타구니에 맛서쟈를 꽉 눌렀다
 			PRINTFORMW 「헤…뭐…,…！응아아아앗！」
 		;それ以外
 		ELSE
@@ -988,7 +988,7 @@ IF SELECTCOM == 60
 			;それ以外
 			ELSE
 				PRINTFORMW %CALLNAME:TARGET%노질안은 매우 힘들게 꼭 죄여,페니스의 침입을 강하게 거절하고 있다
-				PRINTFORMW %CALLNAME:PLAYER%는 조금씩페니스를 밀어넣어 갔다
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 조금씩페니스를 밀어넣어 갔다
 				PRINTFORMW 「하앗…！들어 온다아…！우아아…！」
 			ENDIF
 		ENDIF
@@ -1002,7 +1002,7 @@ IF SELECTCOM == 60
 		;연모
 		ELSEIF TALENT:연모
 			IF RAND:2 == 0
-				PRINTFORML %CALLNAME:PLAYER%는 질입에페니스를 주자, 곧바로는삽입하지 않고 질입를 귀두로 켜기 시작했다
+				PRINTFORML %조사처리(CALLNAME:PLAYER,"는")% 질입에페니스를 주자, 곧바로는삽입하지 않고 질입를 귀두로 켜기 시작했다
 				PRINTFORML 애액이 자꾸자꾸 흘러넘치고이고, 시트에 얼룩을 만들어 간다…
 				PRINTFORMW 「글자…초조하게 하고 있을 생각이야…？…우…빨리…빨리 들어갈 수 있으세요…」
 				PRINTFORML 「아…후아아아…」
@@ -1023,7 +1023,7 @@ IF SELECTCOM == 60
 					CALL BOUHATSU
 				ENDIF
 			ELSE
-				PRINTFORMW %CALLNAME:TARGET%의 비밀의 틈[秘裂]은 다 벌써 촉촉하고 있다…%CALLNAME:PLAYER%는 질입에페니스를 주어 단번에 안쪽 깊게까지 찔러 넣었다
+				PRINTFORMW %CALLNAME:TARGET%의 비밀의 틈[秘裂]은 다 벌써 촉촉하고 있다…%조사처리(CALLNAME:PLAYER,"는")% 질입에페니스를 주어 단번에 안쪽 깊게까지 찔러 넣었다
 				PRINTFORML 「조금…얏！…아 아″！」
 				PRINTFORMW %CALLNAME:TARGET%노질안은 수축을 반복해페니스를 힘들게 단단히 조여 온다
 				PRINTFORML 「하앗…하앗…하앗…, 이제(벌써)…좀 더 상냥하고…꺗！아앗…」
@@ -1106,7 +1106,7 @@ IF SELECTCOM == 61
 				PRINTFORML 「빨리 끝내요…」
 				PRINTFORMW %타겟은()% 그다지 마음 내키지 않는 모습으로 포복이 되어 있다
 				PRINTFORML %CALLNAME:TARGET%의 비밀의 틈[秘裂]은 벌써페니스를 받아들일 준비가 갖추어지고 있어 애액 투성이가 되고 녹진녹진이 되어 있다
-				PRINTFORMW %CALLNAME:PLAYER%는 단번에 최안쪽까지페니스를 찔러 넣으면, 원을 그리듯이 각도를 바꾸면서 격렬하게 피스톤 했다…
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 단번에 최안쪽까지페니스를 찔러 넣으면, 원을 그리듯이 각도를 바꾸면서 격렬하게 피스톤 했다…
 				PRINTFORML 페니스가 빠득빠득 질벽을 꾸물거려, 넘쳐 나오는 애액을 긁어내 간다
 				PRINTFORML 페니스를 당기는 뽑을 때에%CALLNAME:TARGET%의 비밀의 틈[秘裂]으로부터 애액이 흘러 떨어져, 시트의 얼룩을 넓혀 간다…
 					IF COND("절정", PLAYER)
@@ -1118,9 +1118,9 @@ IF SELECTCOM == 61
 						CALL BOUHATSU
 					ENDIF
 			ELSE
-				PRINTFORMW %CALLNAME:PLAYER%는 포복이 되어 있다%CALLNAME:TARGET%의 뒤에 주위, 신체가 접촉하지 않도록 하면서페니스를삽입했다
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 포복이 되어 있다%CALLNAME:TARGET%의 뒤에 주위, 신체가 접촉하지 않도록 하면서페니스를삽입했다
 				PRINTFORML %CALLNAME:TARGET%노질안은 뜨겁게 미끌거리고 있어저항없고페니스를 받아들인다
-				PRINTFORMW %CALLNAME:PLAYER%는 허리가 부딪치지 않게 조심하면서 피스톤을 시작했다…
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 허리가 부딪치지 않게 조심하면서 피스톤을 시작했다…
 				PRINTFORMW 「후웃…저기…응읏…헤…이상한 일 하지 말아줘…보통으로 해요…읏」
 				PRINTFORML %타겟은()% 페니스이외로%CALLNAME:PLAYER%의 신체와 접촉이 없는 것에 침착하지 않다 같다
 				PRINTFORML 피스톤을 계속하고 있으면 점점%CALLNAME:TARGET%의 피부가 붉은 빛을 늘려 가 어렴풋이 땀이 배여 왔다…
@@ -1131,14 +1131,14 @@ IF SELECTCOM == 61
 						PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 위에 덮어씌워,가슴을비비면서 격렬하게 허리를 흔들기 시작했다
 						PRINTFORML 「아아…따뜻하다…읏！…비비어지는 것 좋다！앗…우웃！이제 안돼…간닷！」
 						PRINTFORMW %타겟은()% 허리를 강압해,정액를 요구해페니스를 요주어 왔다…
-						PRINTFORMW %CALLNAME:PLAYER%는 귀두를자궁입에 칠해지면서사정했다
+						PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 귀두를자궁입에 칠해지면서사정했다
 						PRINTFORMW 기세 좋게 토해내졌다정액하지만%CALLNAME:TARGET%노자궁를 채워 간다…
 						CALL BOUHATSU
 					ENDIF
 			ENDIF
 		;굴복각인Lv3＋V感覚Lv3이상
 		ELSEIF MARK:굴복각인 == 3 && ABL:Ｖ감각 >= 3
-			PRINTFORMW %CALLNAME:PLAYER%는 뒤로부터%CALLNAME:TARGET%에 껴안으면서 피스톤 하고 있다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 뒤로부터%CALLNAME:TARGET%에 껴안으면서 피스톤 하고 있다
 			PRINTFORMW %CALLNAME:TARGET%의 머리카락이 흔들릴 때에 희미하게 좋은 향기가 나,%CALLNAME:PLAYER%의 흥분을 일으킬 수 있다
 		;굴복각인Lv3
 		ELSEIF MARK:굴복각인 == 3
@@ -1424,7 +1424,7 @@ IF SELECTCOM == 91
 					IF COND("절정", PLAYER)
 						PRINTFORML 
 						PRINTFORMW %CALLNAME:TARGET%노애무는 자꾸자꾸 속도를 더해 가,페니스는 이미 폭발 직전이 되어 있다…
-						PRINTFORMW %CALLNAME:TARGET%의 귀두를 질네기세 좋게 빨아내면,%CALLNAME:PLAYER%는 어이없고정액를 쳐 발해 버렸다
+						PRINTFORMW %CALLNAME:TARGET%의 귀두를 질네기세 좋게 빨아내면,%조사처리(CALLNAME:PLAYER,"는")% 어이없고정액를 쳐 발해 버렸다
 						CALL BOUHATSU
 						PRINTFORMW %타겟은()% 한 방울도 흘리지 않고입그리고 받아 들여, 귀두를 혀로 간질이면서페니스의 안에 남는다정액까지도 빨아내 갔다…
 					ENDIF
@@ -1518,7 +1518,7 @@ IF SELECTCOM == 92
 					ENDIF
 				ELSE
 					PRINTFORMW %타겟은()% 녹은 얼굴로 일심 불란에파이즈리를 하고 있다…
-					PRINTFORML %CALLNAME:PLAYER%는 허를 찔러%CALLNAME:TARGET%노가슴에손를 늘렸다
+					PRINTFORML %조사처리(CALLNAME:PLAYER,"는")% 허를 찔러%CALLNAME:TARGET%노가슴에손를 늘렸다
 					PRINTFORMW 「꺗, 아읏…야…그만두어요, 지금은 내가 너를 탓하고 있기 때문에…쿠웃…」
 					PRINTFORML 가슴의 상하 운동으로 정확히유두하지만 스치는 장소에 손가락을 펴고 있을 뿐이지만,%타겟은()% 점점 자신으로부터유두를 칠해 시작했다
 					PRINTFORMW 손가락으로 튕겨지고 계속하면,유두하지만 자꾸자꾸 딱딱해져 응어리가 나왔다…
@@ -1733,7 +1733,7 @@ IF SELECTCOM == 65
 					PRINTFORMW 「각오 하세요…발허리 서지 않게 될 때까지 짜내 주기 때문에！」
 					PRINTFORML 그렇게 말해 입술을 낼름 빨면,%타겟은()% 크게 허리를 움직이기 시작했다…
 					PRINTFORMW %타겟은()% %CALLNAME:PLAYER%의 위에서 종횡 무진에 허리를 계속 흔들어,%조사처리(CALLNAME:PLAYER,"를")%사정로 이끌고 있다…
-					PRINTFORML %CALLNAME:PLAYER%는 난처한 나머지에%CALLNAME:TARGET%노가슴을잡으면 격렬하게 주물러 보았다
+					PRINTFORML %조사처리(CALLNAME:PLAYER,"는")% 난처한 나머지에%CALLNAME:TARGET%노가슴을잡으면 격렬하게 주물러 보았다
 					PRINTFORMW 「꺄읏！…하앗…응웃！…이제(벌써) 갈 것 같겠지？빨리 가세요！」
 					PRINTFORML %타겟은()% 허리의 움직임을 빨리 해, 허리를 내던지도록(듯이) 피스톤 해 왔다…
 						IF COND("절정", PLAYER)
@@ -2485,14 +2485,14 @@ IF SELECTCOM == 64
 			PRINTFORMW 「쿳…이런…일방적으로 꾸짖다니…아아읏…불공평해요…！」
 			PRINTFORML %타겟은()% 피스톤과 동시에가슴을비비어져 2점으로부터의 쾌감에 좋아하고 있다
 			PRINTFORMW 생각과 끌어 들이면,%타겟은()% 저항하지 않고%CALLNAME:PLAYER%에 기대어 왔다…
-			PRINTFORMW %CALLNAME:PLAYER%는 피스톤을 강하게 하면서 편손를 %CALLNAME:TARGET%의 사타구니로 옮겨,클리토리스를애무하기 시작했다…
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 피스톤을 강하게 하면서 편손를 %CALLNAME:TARGET%의 사타구니로 옮겨,클리토리스를애무하기 시작했다…
 			PRINTFORML 「하아…응응우…기분…좋다…아앙…♪」
 			PRINTFORMW %타겟은()% %CALLNAME:PLAYER%에게 줄 수 있는 쾌감에 만취해, 몸을 비튼다
 			PRINTFORMW %CALLNAME:PLAYER%하지만클리토리스를 비빌 때에,%CALLNAME:TARGET%노질안이 불규칙하게 파도페니스에 휘감겨 온다…
 			IF COND("절정", PLAYER)
 				PRINTFORMW 「좋아요…이대로…아앗…간닷…간닷！」
 				PRINTFORMW \@ CALCF("Ｂ발정") ? 유두をコリコリと擦りあげると # \@%타겟은()% 뒤로 젖히면서절정에 이르렀다…
-				PRINTFORMW 절정에 의한 강한 억압이 약해져 온 것을 가늠해,%CALLNAME:PLAYER%는 격렬한 피스톤을 재개했다
+				PRINTFORMW 절정에 의한 강한 억압이 약해져 온 것을 가늠해,%조사처리(CALLNAME:PLAYER,"는")% 격렬한 피스톤을 재개했다
 				PRINTFORML 「히아우！…조금！아타시이뿐이니까…상냥하고…꺄읏」
 				PRINTFORMW 절정직후의 민감한질안에페니스를 찔러 넣으면, 그때마다%CALLNAME:TARGET%의 허리가 튀어페니스가 강하게 잡아당겨진다
 				PRINTFORMW %CALLNAME:PLAYER%하페니스를 질 안쪽에 밀어넣으면서절정를 맞이했다…
@@ -2529,7 +2529,7 @@ IF SELECTCOM == 94
 		;それ以外
 		ELSE
 			PRINTFORMW 「보통으로 스펀지로 씻어서는 안돼？」
-			PRINTFORMW %CALLNAME:PLAYER%는 당연하다고 말할듯이 목을 옆에 흔들었다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 당연하다고 말할듯이 목을 옆에 흔들었다
 			PRINTFORMW 「아무튼…그렇게 오는 것은 알았지만 말야…」
 		ENDIF
 			CFLAG:318 = 1
@@ -2860,7 +2860,7 @@ IF SELECTCOM == 145
 			IF COND("음모") == 3
 				PRINTFORMW 「……누가 이렇게 깎아도 좋다고 말한거야！」
 				PRINTFORMW 「실패한다면 최초부터 말하지 않으면 좋은데」
-				PRINTFORMW 예정 대로입니다. 라고는 말하지 못하고%CALLNAME:PLAYER%는 허둥지둥도구를 정리하기 시작한다…
+				PRINTFORMW 예정 대로입니다. 라고는 말하지 못하고%조사처리(CALLNAME:PLAYER,"는")% 허둥지둥도구를 정리하기 시작한다…
 			;剃り整えられた時
 			ELSEIF COND("음모") == 5
 				PRINTFORMW 「그 정도는 스스로 할 수 있지만…」
@@ -2926,7 +2926,7 @@ IF SELECTCOM == 145
 			;脱毛された時
 			ELSEIF COND("음모") == 2
 				PRINTFORMW 「……이번 나에게도 방식 가르치세요. 별로 이상한 일에는 사용하지 않으니까」
-				PRINTFORMW %CALLNAME:TARGET%로부터 불온한 기색을 느껴%CALLNAME:PLAYER%는 거절했다…
+				PRINTFORMW %CALLNAME:TARGET%로부터 불온한 기색을 느껴%조사처리(CALLNAME:PLAYER,"는")% 거절했다…
 				PRINTFORMW 「의외로 구두쇠인 거네…」
 			ENDIF
 		ENDIF
@@ -3437,7 +3437,7 @@ ELSEIF SHOOT("입")
 			PRINTFORMW 「후읏…이것으로 만발그럴까？」
 		ELSE
 			PRINTFORML %CALLNAME:TARGET%노애무는 자꾸자꾸 속도를 더해 가,페니스는 이미 폭발 직전이 되어 있다…
-			PRINTFORMW %CALLNAME:TARGET%의 귀두를 질네기세 좋게 빨아내면,%CALLNAME:PLAYER%는 어이없고정액를 쳐 발해 버렸다
+			PRINTFORMW %CALLNAME:TARGET%의 귀두를 질네기세 좋게 빨아내면,%조사처리(CALLNAME:PLAYER,"는")% 어이없고정액를 쳐 발해 버렸다
 			PRINTFORMW %타겟은()% 한 방울도 흘리지 않고입그리고 받아 들여, 귀두를 혀로 간질이면서페니스의 안에 남는다정액까지도 빨아내 갔다…
 			PRINTFORML 「읏…응～～～…츄폿,…후우」
 			PRINTFORMW 정액를 다 들이마시면%타겟은()% 양손를 그릇으로 해정액를 입로부터 따라,%CALLNAME:PLAYER%에 과시했다

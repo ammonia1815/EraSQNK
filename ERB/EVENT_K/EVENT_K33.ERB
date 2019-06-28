@@ -4641,15 +4641,15 @@ IF SELECTCOM == 177
 		IF RAND:2 == 0
 			PRINTFORMW 「아기가 배에 있다……」
 			PRINTFORMW 「알고 있지만……갖고 싶은거야…♪」
-			PRINTFORM %CALLNAME:PLAYER%는 배의 크다
+			PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 배의 크다
 		ELSE
 			PRINTFORMW 「아기에게…듬뿍 영양을 주며♪」
-			PRINTFORM %CALLNAME:PLAYER%는 배가 부풀어 올랐다
+			PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 배가 부풀어 올랐다
 		ENDIF
 	ELSEIF TALENT:처녀
-		PRINTFORMW %CALLNAME:PLAYER%는 %CALLNAME:TARGET%의 몸을 신경써 빠듯이로 단념했다
+		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 몸을 신경써 빠듯이로 단념했다
 		PRINTFORMW 「……이것은%조사처리(CALLNAME:TARGET,"가")% 바라는 것이야…이니까…오며♪」
-		PRINTFORM %CALLNAME:TARGET%의 말을 들어, %CALLNAME:PLAYER%는
+		PRINTFORM %CALLNAME:TARGET%의 말을 들어, %조사처리(CALLNAME:PLAYER,"는")%
 	ELSE
 		IF RAND:3 == 0
 			PRINTFORMW 「아앙☆」
@@ -4658,7 +4658,7 @@ IF SELECTCOM == 177
 		ELSE
 			PRINTFORMW 「응……☆」
 		ENDIF
-		PRINTFORM %CALLNAME:PLAYER%는
+		PRINTFORM %조사처리(CALLNAME:PLAYER,"는")%
 	ENDIF
 	PRINTFORMW %CALLNAME:TARGET%에 인서트 했다…
 	SIF TALENT:처녀
@@ -13112,7 +13112,7 @@ CASE "Ｖ바이브추가구상"
 					PRINTFORMW 공포마음이 아직 남아 있는지 다소 당황하는 모습을 볼 수 있다
 				ELSE
 					PRINTFORMW 「아무리 뭐라해도……이것은……」
-					PRINTFORMW 안면이 창백해지는%타겟을()% 봐서, %CALLNAME:PLAYER%는 한번 더 바이브래이터를 다시 선택하기로 했습니다.
+					PRINTFORMW 안면이 창백해지는%타겟을()% 봐서, %조사처리(CALLNAME:PLAYER,"는")% 한번 더 바이브래이터를 다시 선택하기로 했습니다.
 					TEQUIP:바이브 = 0
 				ENDIF
 				SETBIT CFLAG:377, 4
