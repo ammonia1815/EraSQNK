@@ -1127,9 +1127,9 @@ FOR LCOUNT, 0, 5
 		;今回のターンの절정具合の表示で使用する
 		;특수な절정
 		IF LCOUNT == 0 && NOWEX:ARG:요도절정
-			LOCALS = %LOCALS%절정\@NOWEX:ARG:(LCOUNT + 6) ? 寸止め # \@
+			LOCALS = %LOCALS%절정\@NOWEX:ARG:(LCOUNT + 6) ? 직전멈춤 # \@
 		ELSE
-			LOCALS = %SUBSTRING(EXNAME:LCOUNT, 0, 2)%%LOCALS%절정\@NOWEX:ARG:(LCOUNT + 6) ? 寸止め # \@
+			LOCALS = %SUBSTRING(EXNAME:LCOUNT, 0, 2)%%LOCALS%절정\@NOWEX:ARG:(LCOUNT + 6) ? 직전멈춤 # \@
 		ENDIF
 		PRINTFORML %LOCALS% \@ ARG == ASSI ? (%TEXTS("조수の명칭")%) # \@
 	ENDIF
@@ -1165,7 +1165,7 @@ ELSEIF CHECK_ECST(ARG) >= 2
 		SETCOLOR DEF_COLOR("황색")
 	ENDSELECT
 
-	PRINTFORML %LOCALS% \@ ARG == ASSI ? (%TEXTS("조수の명칭")%) # \@ (それぞれ{CHECK_ECST(ARG)}배의 구슬를 얻을 수 있습니다)
+	PRINTFORML %LOCALS% \@ ARG == ASSI ? (%TEXTS("조수の명칭")%) # \@ (각 {CHECK_ECST(ARG)}배의 구슬을 얻습니다)
 
 	RESETCOLOR
 ENDIF
@@ -1182,12 +1182,12 @@ IF NOWEX:ARG:가는것을참았다
 	IF NOWEX:ARG:사정직전멈춤 && COND("요도사용中", ARG)
 		PRINTFORML %CALLNAME:ARG%는 치밀어 오르는 정액를 어찌할 도리가 없이, 몸을 굳어지게 해 필사적으로 견디고 있다…
 	ELSEIF EX:ARG:가는것을참았다 == 1 && SELECTCOM == 3
-		PRINTFORML %조사처리(CALLNAME:ARG,"는")%, 더욱더 절정을 찾으며 자신을 안달나게 하고있다…
+		PRINTFORML %조사처리(CALLNAME:ARG,"는")%, 더욱 더 절정을 찾으며 자신을 안달나게 하고있다…
 	ELSEIF EX:ARG:가는것을참았다 == 1 && RAND:3 == 0
 		PRINTFORML %조사처리(CALLNAME:ARG,"는")% 절정을 견뎌냈다! 
 	ELSE
 		IF EXP_GAIN(6, ARG) == 0 && EX:ARG:절정수합계 == 0 && INSERT("인서트", ARG) && TALENT:ARG:강기 && RAND:3 == 0
-			PRINTFORML %조사처리(CALLNAME:ARG,"는")% %조사처리(CALLNAME:PLAYER,"를")% 먼저 가게해주겠다며 쾌감을 견디고있다…
+			PRINTFORML %조사처리(CALLNAME:ARG,"는")% %조사처리(CALLNAME:PLAYER,"를")% 먼저 가게 해주겠다며 쾌감을 견디고있다…
 		ELSEIF INSERT("인서트", ARG) && RANDIF(3, COND("視力", ARG) )
 			IF INSERT("Ｖ인서트", ARG)
 				PRINTFORML %조사처리(CALLNAME:ARG,"는")% 질을 꽈악 조이면서, 절정에 저항하고있다…
@@ -1439,7 +1439,7 @@ RESETCOLOR
 ;요도성감の獲得…めんどくさい感覚なので弄りながらのＣ절정で良いこととする
 IF TALENT:요도성감 == 0 && COND("요도성감플래그") && NOWEX:Ｃ절정 + NOWEX:요도절정
 	TALENT:요도성감 = 1
-	PRINTFORML ……%타겟은()% 요도를 괴롭히면서 절정하면서, 새로운 경지를 열어 버린 것 같다
+	PRINTFORML ……%타겟은()% 요도를 괴롭혀지면서 절정해, 새로운 경지를 열어 버린 것 같다
 	PRINTFORM %타겟은()% 
 	CALL PRINT_COLORTEXT, "[요도성감]", DEF_COLOR("황색")
 	PRINTFORML 를 얻었다
@@ -1739,7 +1739,7 @@ IF TEQUIP:ARG:비디오카메라 && NOWEX:ARG:방뇨 + NOWEX:ARG:절정실금 &&
 ENDIF
 ;性器ピアス
 IF COND("피어스ＯＮ플래그", ARG) && COND("클리피어스플래그", ARG) + COND("라비아피어스플래그", ARG) + COND("니플피어스플래그", ARG) && GETBIT(CFLAG:ARG:12, 4) == 0
-	PRINTL ＜이상경험：성기 피어스＞
+	PRINTL ＜이상경험：성기 피어싱＞
 	LOCAL:50 += 1
 	SETBIT CFLAG:ARG:12, 4
 ENDIF
@@ -1977,7 +1977,7 @@ SIF TCVAR:131 > 0
 SIF TCVAR:136 > 0
 	LOCALS = %LOCALS%순종추가({TCVAR:136})
 SIF TCVAR:132 > 0
-	LOCALS = %LOCALS%의출({TCVAR:132})
+	LOCALS = %LOCALS%노출({TCVAR:132})
 SIF TCVAR:133 > 0
 	LOCALS = %LOCALS%굴복({TCVAR:133})
 SIF TCVAR:134 > 0
