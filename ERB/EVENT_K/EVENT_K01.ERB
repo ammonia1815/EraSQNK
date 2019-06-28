@@ -3973,7 +3973,7 @@ ENDIF
 IF SELECTCOM == 131
 	;初めて
 	IF CFLAG:247 == 0
-		PRINTFORMW 「아긋 ,  채찍으로는 ,  %CNAME("一人称")%는 가축은 ,  아아앗!」
+		PRINTFORMW 「아긋 ,  채찍으로는 ,  %조사처리(CNAME("一人称"),"는")% 가축은 ,  아아앗!」
 		CFLAG:247 = 1
 		RETURN 1
 	;二回目以降
@@ -4355,7 +4355,7 @@ IF SELECTCOM == 170 && TEQUIP:비디오카메라
 		;それ以外（연모無し）
 		ELSE
 			PRINTFORMW 「그 기계로 %CNAME("一人称")%의 치태를 기록 해서,  다른 인간에 강매하는 거야?」
-			PRINTFORMW 「%CNAME("一人称")%는 별로 상관없지만 ,  완전히 아까운 이야기이죠」
+			PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% 별로 상관없지만 ,  완전히 아까운 이야기이죠」
 			PRINTFORMW 「기분 좋아지고 싶다면,  %CNAME("一人称")%들몽마가 언제라도 짜 줄 것인데……쿡쿡」
 		ENDIF
 			CFLAG:257 = 1
@@ -4603,7 +4603,7 @@ IF SELECTCOM == 160
 	IF CFLAG:259 == 0
 		;연모
 		IF TALENT:연모
-			PRINTFORMW 「%CNAME("一人称")%는 보고 있을 뿐……?」
+			PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% 보고 있을 뿐……?」
 		;それ以外（연모無し）
 		ELSE
 			PRINTFORMW 「어머나 ,  참가하면 안 되는거야?」
@@ -5729,7 +5729,7 @@ IF SELECTCOM == 300
 			IF RAND:3 == 0
 				PRINTFORMW 「…………………」
 				PRINTFORML %타겟은()% 가슴에 손을 대어 폭과%조사처리(CALLNAME:PLAYER,"를")% 응시하고 있었지만 ,  깜짝하고 되어%CALLNAME:PLAYER%로부터 등을 향했다
-				PRINTFORMW (%CNAME("一人称")%는 어째서…정말 어떻게든 하고 있는…에서도 ,  이런 것도 좋을지도…♪)
+				PRINTFORMW (%조사처리(CNAME("一人称"),"는")% 어째서…정말 어떻게든 하고 있는…에서도 ,  이런 것도 좋을지도…♪)
 				PRINTFORML 배후로부터 감싸도록(듯이) 꼭 껴안을 수 있어 재차속삭임 쉰 단 말에 모두 질퍽질퍽하게 녹여져 가는 착각을 기억하면서, %타겟은()%%CALLNAME:PLAYER%가 격분한 페니스에 엉덩이를 문지르고 붙여 미소지었다
 				PRINTFORMW 「그 말 ,  후회할 정도로 사랑해 아··♪」
 			ELSEIF RAND:2 == 0
@@ -8682,7 +8682,7 @@ CASE "서약의반지"
 		PRINTFORMW %마스터는()% %CALLNAME:TARGET%의 손을 잡고, 자신의 생각을 제대로 말한다……! 
 		PRINTFORMW 「후훗, 욕심쟁이. 그렇지만…… 그렇게 진지한 눈으로 말한다면, 거절 할 수 없잖아……♪」
 	ELSE
-		PRINTFORMW 「……%CNAME("一人称")%는 음란한 여성이야. 그런 여자도……괜찮아？」
+		PRINTFORMW 「……%조사처리(CNAME("一人称"),"는")% 음란한 여성이야. 그런 여자도……괜찮아？」
 		PRINTFORMW %마스터는()% %CALLNAME:TARGET%의 손을 잡고, 자신의 생각을 제대로 말한다……!
 		PRINTFORMW 「후훗…… 그렇게 진지한 말, 처음 들었어」
 		PRINTFORMW 「………………사실은 말이야, 이렇게 되면 좋겠다 라고……전부터 생각하고 있었어……♪」

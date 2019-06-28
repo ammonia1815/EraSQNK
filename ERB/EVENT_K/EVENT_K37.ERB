@@ -316,7 +316,7 @@ ELSEIF GETBIT(CFLAG:201, 34) == 0 && GETBIT(CFLAG:201, 33)
 		PRINTFORMW 「그래, 그런……말사슴인…제정신에게 되돌려 준다……지금 도와에」
 		PRINTFORMW 【도움은요정들 없으니까】
 		PRINTFORMW 「에？」
-		PRINTFORMW 【%CNAME("一人称")%는 진심이야…만약, %CNAME("一人称")%로부터%CNAME("二人称")%를 빼앗자는 일 한다면 익사시켜 준다】
+		PRINTFORMW 【%조사처리(CNAME("一人称"),"는")% 진심이야…만약, %CNAME("一人称")%로부터%CNAME("二人称")%를 빼앗자는 일 한다면 익사시켜 준다】
 		PRINTFORMW 「거짓말…(이)다」
 		PRINTFORMW 【그러면 이제(벌써) 찾지 말아줘】
 		PRINTFORMW 영상이 돌연 끊어졌다…
@@ -707,7 +707,7 @@ ELSEIF MARK:굴복각인 == 1
 		PRINTFORMW 강기태도를 취하고 있을 생각과 같지만 동요가 소리에 나타나고 있다
 		PRINTFORMW 배에 새겨졌다정액각인를 살그머니 어루만지면 흠칫 반응을 나타냈다
 	ELSE
-		PRINTFORMW 「………또 지금일도 왔어？%CNAME("一人称")%는 %CALLNAME:PLAYER%의 물건은 되지 않아요」
+		PRINTFORMW 「………또 지금일도 왔어？%조사처리(CNAME("一人称"),"는")% %CALLNAME:PLAYER%의 물건은 되지 않아요」
 		PRINTFORMW 강기태도를 취하지만 소리가 떨고 있다
 		PRINTFORMW 몸을 살그머니 손대면 흠칫 반응을 나타냈다
 	ENDIF
@@ -2801,7 +2801,7 @@ IF SELECTCOM == 36 && TEQUIP:착유기
 		;반발각인有
 		IF MARK:반발각인
 			PRINTFORMW 「천한 신분! ! 」
-			PRINTFORMW 「%CNAME("一人称")%는 가축이 아니닷! 」
+			PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% 가축이 아니닷! 」
 		ELSEIF ASSIPLAY
 			PRINTFORMW 
 		;연모
@@ -2810,7 +2810,7 @@ IF SELECTCOM == 36 && TEQUIP:착유기
 			PRINTFORMW 「그래, 그런 것 기계가 아니어도 직접 해 주어도 좋은데…♪」
 		;それ以外
 		ELSE
-			PRINTFORMW 「%CNAME("一人称")%는 가축이 아니야! ! 」
+			PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% 가축이 아니야! ! 」
 		ENDIF
 		CFLAG:235 = 1
 		RETURN 1
@@ -2832,7 +2832,7 @@ IF SELECTCOM == 36 && TEQUIP:착유기
 			ENDIF
 		;それ以外
 		ELSE
-			PRINTFORMW 「………%CNAME("一人称")%는 소가 아닌데」
+			PRINTFORMW 「………%조사처리(CNAME("一人称"),"는")% 소가 아닌데」
 		ENDIF
 		RETURN 1
 	ENDIF
@@ -4742,7 +4742,7 @@ IF SELECTCOM == 93
 		ELSEIF TALENT:연모
 			IF RAND:3 == 0 && ABL:봉사정신 == 5
 				PRINTFORMW 「앗, 응읏…넣지 않았는데…%CNAME("二人称")%의로 느껴 버립니다…♪」
-				PRINTFORMW 「참지 말아 주세요, %CNAME("二人称")%읏♪%CNAME("一人称")%는 괜찮기 때문에…」
+				PRINTFORMW 「참지 말아 주세요, %CNAME("二人称")%읏♪%조사처리(CNAME("一人称"),"는")% 괜찮기 때문에…」
 				PRINTFORMW %타겟을()% 봉사를 잊지 않으려고 열심히 허벅지로 다루고 있다…
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 「얏…♪하아, 하아…읏…안타깝다…입니닷♪」
@@ -5973,7 +5973,7 @@ IF SELECTCOM == 148
 			IF GETBIT(CFLAG:201, 32) || TALENT:상사상애 == 0
 				PRINTFORMW 「부탁합니다♪그 사람에게 구애해져도 곤란하므로%조사처리(CNAME("二人称"),"과")%의 증거를 갖고 싶었던 것입니다♪」
 			ELSE
-				PRINTFORMW 「물론 좋아요♪ %CNAME("一人称")%는 몸도 마음도%CNAME("二人称")%에 바쳤으니까♪」
+				PRINTFORMW 「물론 좋아요♪ %조사처리(CNAME("一人称"),"는")% 몸도 마음도%CNAME("二人称")%에 바쳤으니까♪」
 			ENDIF
 			PRINTFORM %타겟을()% 
 				IF COND("손가락 사용")
@@ -8405,7 +8405,7 @@ ELSEIF SHOOT("Ｖ내사정")
 				PRINTFORMW %타겟을()% 녹았다얼굴를 보여 줘굴복한 암컷의 열락에 잠겨 있다…
 			ELSE
 				PRINTFORMW 「앗, 오고 있다…쿨렁쿨렁은 오고 있다…읏♪」
-				PRINTFORMW 「아아…지금%CNAME("一人称")%는 교배되고 있는 것이군요…♪」
+				PRINTFORMW 「아아…지금%조사처리(CNAME("一人称"),"는")% 교배되고 있는 것이군요…♪」
 				PRINTFORM 「아읏♪ %CNAME("二人称")%의 교배 엣치…최고입니다
 				CALL HEARTMARK_E
 			ENDIF
@@ -8499,7 +8499,7 @@ ELSEIF SHOOT("역컨닐링구스")
 	IF TALENT:연모
 		IF RAND:2 == 0
 			PRINTFORMW 「후훗…양쪽 모두 동시에 가 버리다니…」
-			PRINTFORMW 「%CNAME("一人称")%는 아래의입밖에 접하지 않았는데…♪」
+			PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% 아래의입밖에 접하지 않았는데…♪」
 			PRINTFORMW 「그렇게%CNAME("一人称")%도 혀가 기분이 좋으면 좀 더 해 주네요♪」
 		ELSE
 			PRINTFORMW 「양쪽 모두 가 버리다니…그렇게 기분 좋았던 것입니까%CNAME("二人称")%♪」
@@ -8731,7 +8731,7 @@ CASE "強制종료"
 	IF TALENT:연모
 		PRINTFORMW 「…이제 한계야？」
 	ELSE 
-		PRINTFORMW 「%CNAME("一人称")%는 %CALLNAME:PLAYER%의 물건에 뭔가 안 돼요」
+		PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% %CALLNAME:PLAYER%의 물건에 뭔가 안 돼요」
 		PRINTFORMW 「그러니까…%CALLNAME:PLAYER%가 그 기분이라면%CNAME("一人称")%가 %조사처리(CALLNAME:PLAYER,"를")% 굴복시켜 준다」
 		PRINTFORMW 「절대로 그의 곳으로 돌아가기 위해서(때문에)도………」
 	ENDIF
@@ -9335,7 +9335,7 @@ CASE "비디오送付"
 			;상사상애
 			ELSEIF TALENT:상사상애
 				PRINTFORMW 「로즈닐, 당신이니까 아직%CNAME("一人称")%를 찾고 있겠지요……그렇지만 말야, 」
-				PRINTFORMW 「%CNAME("一人称")%, %조사처리(CNAME("二人称"),"과")% 결혼했어……당신(이)가 떠올린다%CNAME("一人称")%는 이제 없는거야…」
+				PRINTFORMW 「%CNAME("一人称")%, %조사처리(CNAME("二人称"),"과")% 결혼했어……당신(이)가 떠올린다%조사처리(CNAME("一人称"),"는")% 이제 없는거야…」
 				PRINTFORMW 「그러니까 말야, 이제 찾지 않아도 괜찮아요………안녕…」
 			;음란
 			ELSEIF TALENT:음란
@@ -9517,7 +9517,7 @@ CASE "피임약"
 	RETURN 1
 CASE "비상용피임약"
 	IF TALENT:연모
-		PRINTFORMW 「…%CNAME("一人称")%는 상관없는데…」
+		PRINTFORMW 「…%조사처리(CNAME("一人称"),"는")% 상관없는데…」
 	ELSE
 		PRINTFORMW 「신경써 아무래도」
 		PRINTFORMW %타겟을()% 밉살스럽고 형태만의 답례를 했다
@@ -9616,8 +9616,8 @@ CASE "서약의반지"
 	PRINTFORMW 「%CNAME("一人称")%…처음은 그 밖에 약혼자가 있어…」
 	PRINTFORMW 「%CNAME("二人称")%에조교되어 가는 동안에 몸도 마음도 저속해져 가…」
 	PRINTFORMW 「그렇지만…%CNAME("二人称")%는 조교스승이니까%CNAME("一人称")%를 손놓는다고 생각하고 있었고…」
-	PRINTFORMW 「%CNAME("一人称")%는 결국 다른 남자로부터 네토리한 여자이니까……읏! ! 」
-	PRINTFORMW 「…%CNAME("一人称")%는 결국조교스승의 일이나 놀이로서라고 생각해…의 것에…」
+	PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% 결국 다른 남자로부터 네토리한 여자이니까……읏! ! 」
+	PRINTFORMW 「…%조사처리(CNAME("一人称"),"는")% 결국조교스승의 일이나 놀이로서라고 생각해…의 것에…」
 	PRINTFORMW 「정말로…%CNAME("一人称")%그리고 좋습니까？다른 사람에 가랑이를 열게 되는 것 같은 경솔에서도…」
 	PRINTFORMW ―――그런 일 관계없다%타겟이()% 좋다, 라고 말하면 굵은 눈물이 1개 흐름, 
 	PRINTFORMW 「…기뻐…입니닷%CNAME("一人称")%도%CNAME("二人称")%를 사랑하고 있습니닷, 쭉 함께 있고 싶습니닷」
@@ -9630,13 +9630,13 @@ CASE "정액각인"
 	CASE 1
 		IF MARK:반발각인
 			PRINTFORMW 「악취미로 그야말로%CNAME("二人称")%의 할 것 같은 일이군요」
-			PRINTFORMW 「이런 낙서 되어도%CNAME("一人称")%는 절대로%CNAME("二人称")%의 것에 뭔가 안 돼요」
+			PRINTFORMW 「이런 낙서 되어도%조사처리(CNAME("一人称"),"는")% 절대로%CNAME("二人称")%의 것에 뭔가 안 돼요」
 			PRINTFORMW %타겟을()% 꺼림칙한 듯이 칫 이쪽을 노려봤다
 		ELSEIF TALENT:연모
 			PRINTFORM 「아라♪사랑스러운 모양…♪한층%CNAME("二人称")%의 것이 된 기분입니다
 			CALL HEARTMARK_E
 		ELSE
-			PRINTFORMW 「이런 낙서 되어도%CNAME("一人称")%는 절대로%CNAME("二人称")%의 것에 뭔가 안 돼요」
+			PRINTFORMW 「이런 낙서 되어도%조사처리(CNAME("一人称"),"는")% 절대로%CNAME("二人称")%의 것에 뭔가 안 돼요」
 		ENDIF
 	;Lv2
 	CASE 2

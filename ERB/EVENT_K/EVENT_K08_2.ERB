@@ -360,7 +360,7 @@ ELSEIF MARK:굴복각인 == 2
 		PRINTFORMW %CALLNAME:TARGET%에 손을 접하면 울기 시작할 것 같게 되어 버린다
 		PRINTFORMW 「…흑, 죄송합니다…아직…무섭습니다…」
 	ELSEIF RAND:2 == 0
-		PRINTFORMW 「,  그…%CNAME("一人称")%는…서문, 제대로 합니까?」
+		PRINTFORMW 「,  그…%조사처리(CNAME("一人称"),"는")%…서문, 제대로 합니까?」
 		PRINTFORMW %타겟은()% 불안한 듯한 얼굴로 그런 것을 물어 왔던
 		PRINTFORMW 「능숙하게 되어 있지 않아도…,  화내지 말고 주세요…흑」
 		PRINTFORMW 울기 시작할 것 같게 되어 버린%타겟을()% 당황해서 위로했다
@@ -384,7 +384,7 @@ ELSEIF MARK:굴복각인 == 3
 		PRINTFORMW 울기 시작할 것 같게 되어 버렸다…
 	ELSE
 		PRINTFORMW (언제나, 상냥하게 해 주어…다행이야…)
-		PRINTFORMW (에서도 %CNAME("一人称")%는 울어뿐이구나…미움받아버릴까…흑)
+		PRINTFORMW (에서도 %조사처리(CNAME("一人称"),"는")% 울어뿐이구나…미움받아버릴까…흑)
 		PRINTFORMW %타겟은()% 불안한 듯한 얼굴로 침대에 앉아 있다
 		PRINTFORMW 근처에 앉아 주면 조금 안심한 것 같다
 	ENDIF
@@ -4153,7 +4153,7 @@ IF SELECTCOM == 134 && TEQUIP:구속
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 「%CNAME("一人称")%는 어디에도 도망치지 않습니다…에서도 묶습니까…,  좋아요…흑」
+			PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% 어디에도 도망치지 않습니다…에서도 묶습니까…,  좋아요…흑」
 			PRINTFORMW %CALLNAME:TARGET%의 눈물을 모은 눈동자로부터의 시선에 참으면서 다 묶었다
 		;それ以外
 		ELSE
@@ -4707,7 +4707,7 @@ IF SELECTCOM == 170 && TEQUIP:비디오카메라
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 「…부끄럽습니다…거기에 %CNAME("一人称")%는 찍어도…흑」
+			PRINTFORMW 「…부끄럽습니다…거기에 %조사처리(CNAME("一人称"),"는")% 찍어도…흑」
 			PRINTFORML 모포에 파오 기다려 숨어 버리고 있는%타겟을()% 상냥하게
 			PRINTFORMW 달래면서 머리를 어루만져 주면 부끄러운 듯이  모포로부터 나왔다
 		;それ以外
@@ -4835,7 +4835,7 @@ ELSEIF SELECTCOM == 171 && COND("화원")
 				PRINTFORMW %타겟은()% 기쁜 듯이 미소짓고 있다
 			;それ以外
 			ELSE
-				PRINTFORMW 「…깨끗한 곳입니다…에서도 %CNAME("一人称")%는……흑」
+				PRINTFORMW 「…깨끗한 곳입니다…에서도 %조사처리(CNAME("一人称"),"는")%……흑」
 				PRINTFORMW %타겟은()% 슬픈 듯이  자신에게 붙여진 목걸이를 응시하고 있다
 			ENDIF
 		;２回目以降
@@ -4932,7 +4932,7 @@ IF SELECTCOM == 172 && TEQUIP:목욕탕플레이
 		;それ以外
 		ELSE
 			PRINTFORMW 「목욕을 해 좋겠습니까…와아…」
-			PRINTFORMW 「네…함께 들어가는……는, 는%CNAME("一人称")%는 들어가고 싶지 않습니다…」
+			PRINTFORMW 「네…함께 들어가는……는, 는%조사처리(CNAME("一人称"),"는")% 들어가고 싶지 않습니다…」
 			PRINTFORMW %타겟은()% 일순간 기쁜 듯한 얼굴을 했지만 곧바로 슬픈 것 같은 얼굴에 되어 버렸다
 		ENDIF
 		CFLAG:322 = 1
@@ -5019,7 +5019,7 @@ IF SELECTCOM == 173 && TEQUIP:새댁플레이
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 「지금만큼은…%CNAME("一人称")%는 주인(서방)님의 부인입니다……많이 사랑해 주세요…」
+			PRINTFORMW 「지금만큼은…%조사처리(CNAME("一人称"),"는")% 주인(서방)님의 부인입니다……많이 사랑해 주세요…」
 			PRINTFORMW %타겟은()% 언제보다 더 기특해지고 있다
 		;それ以外
 		ELSE
@@ -5119,7 +5119,7 @@ IF SELECTCOM == 175
 			PRINTFORMW 「어떻습니까…%CNAME("一人称")%,  어른 스럽게 보이는군요…」
 		;프릴팬티
 		ELSEIF CHECK_PANTIES("프릴")
-			PRINTFORMW 「조금 아이 같습니까…에서도, %CNAME("一人称")%는 사랑스럽고 좋아합니다」
+			PRINTFORMW 「조금 아이 같습니까…에서도, %조사처리(CNAME("一人称"),"는")% 사랑스럽고 좋아합니다」
 		;끈팬티
 		ELSEIF CHECK_PANTIES("끈")
 			PRINTFORMW 「아, 아우…,  매듭을 만지작거리면 안돼요 …」

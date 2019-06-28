@@ -208,7 +208,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	PRINTFORMW %CALLNAME:PLAYER%가 방에 들어가도, %타겟은()% 입다물고 숙이고 있다
 	PRINTFORMW 평상시라면 조교전에 두번 말하는 것3말의 설교를 듣지만, 아무래도 모습이 이상하다
 	PRINTFORMW 어쩔 수 없이%CALLNAME:TARGET%의 근처에 앉으면, 간신히 포트리포트리 말하기 시작했다
-	PRINTFORMW 「……%CNAME("一人称")%는 %CNAME("二人称")%를 갱생시키려고, 그것만을 생각해 아퍼」
+	PRINTFORMW 「……%조사처리(CNAME("一人称"),"는")% %CNAME("二人称")%를 갱생시키려고, 그것만을 생각해 아퍼」
 	PRINTFORMW 「그러니까, %CNAME("二人称")%가 기분이 좋아져서, 가득 차고 충분한 표정을 보여 준 것은 기뻤습니다만 ……」
 	PRINTFORMW %CALLNAME:TARGET%의 얼굴은 붉은 빛을 늘렸다
 	PRINTFORMW 「……%CNAME("二人称")%도 또한, %CNAME("一人称")%를 듬뿍 기분 좋게 해 주었군요」
@@ -2939,7 +2939,7 @@ IF SELECTCOM == 65
 					PRINTFORML 연달아%CALLNAME:TARGET%의 허리를 잡아, 한층 더 격렬하게 허리를 쳐 올린다.
 					PRINTFORMW 「안돼~입니다 ♪ 망가지면, 망가지면 ……♪」
 				ELSEIF RAND:5 == 0
-					PRINTFORMW 「후아♪%CNAME("二人称")%…기분이 좋습니까? ♪%CNAME("一人称")%는 벌써…하아♪」
+					PRINTFORMW 「후아♪%CNAME("二人称")%…기분이 좋습니까? ♪%조사처리(CNAME("一人称"),"는")% 벌써…하아♪」
 					PRINTFORML %타겟은()% 군침을 늘어뜨리면서 허리를 흔들고 있는.
 					PRINTFORML %CALLNAME:TARGET%의 안은 마구마구 페니스를 조이면서 있다.
 					PRINTFORMW 「♪…한 잔 내 주세요 …♪후아 아앙♪」
@@ -5983,7 +5983,7 @@ IF SELECTCOM == 304 && TEQUIP:넘어뜨리기 == 0
 	ELSEIF TFLAG:16 == 2
 		;初めて
 		IF CFLAG:342 == 0
-			PRINTFORMW 「…%CNAME("二人称")%……%CNAME("一人称")%는 싫은데 …」
+			PRINTFORMW 「…%CNAME("二人称")%……%조사처리(CNAME("一人称"),"는")% 싫은데 …」
 			CFLAG:342 = 1
 		;二回目以降
 		ELSE

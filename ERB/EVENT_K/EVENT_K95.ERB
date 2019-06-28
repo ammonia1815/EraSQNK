@@ -241,7 +241,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	PRINTFORMW 「조교를 시작하기 전에, %타겟이()% 머뭇머뭇 하면서 이야기를 시작했다…」
 	PRINTFORMW 「저기요…%CNAME("一人称")%…%CNAME("二人称")%가 좋아하게 되어 버린 것 같다…♪」
 	SIF COND("부친") == MASTER || COND("모친") == MASTER
-	PRINTFORMW 「근친상간 같은거 관계없닷…%CNAME("一人称")%는 %CNAME("二人称")%사랑하고 있다…」
+	PRINTFORMW 「근친상간 같은거 관계없닷…%조사처리(CNAME("一人称"),"는")% %CNAME("二人称")%사랑하고 있다…」
 	PRINTFORMW 「그러니까 매일매일…%CNAME("一人称")% 기분 좋게 했으면 좋겠다……」
 	PRINTFORMW %타겟은()% 뜨거운 한숨을 흘리면서, %CALLNAME:MASTER%에 껴안아 온다
 	;マスター生えてるかつ오토코노코
@@ -362,7 +362,7 @@ IF STATE("撃沈", MASTER)
 			PRINTFORMW 「후우…후아아…%CNAME("一人称")%도 지쳤다…」
 			PRINTFORMW %타겟은()% %CALLNAME:MASTER%를 껴안으면서 잠에 들었다…
 		ELSEIF TALENT:오토코노코 && INSERT("Ａ인서트")
-			PRINTFORMW 「안돼？ %CNAME("一人称")%는 만족하고 있지 않기 때문에, %CNAME("二人称")%♪」
+			PRINTFORMW 「안돼？ %조사처리(CNAME("一人称"),"는")% 만족하고 있지 않기 때문에, %CNAME("二人称")%♪」
 			PRINTFORMW 「%CNAME("二人称")%가 움직일 수 없는 것이라면%CNAME("一人称")%가 하네요♪」
 			PRINTFORMW %CALLNAME:TARGET%의 애널에 의한 고문은 당분간 계속되었다…
 		;逆Vで終了
@@ -796,7 +796,7 @@ IF SELECTCOM == 3 && TEQUIP:샤워 == 0
 			IF TALENT:오토코노코
 				IF RAND:2 == 0
 					PRINTFORMW 「하아하아…%CNAME("二人称")%의를 갖고 싶다, 매우 안타까워…」
-					PRINTFORM 「%CNAME("一人称")%는 언제라도 기다리고 있기 때문에…
+					PRINTFORM 「%조사처리(CNAME("一人称"),"는")% 언제라도 기다리고 있기 때문에…
 					CALL HEARTMARK_E
 					PRINTFORMW %타겟은()% %조사처리(CALLNAME:PLAYER,"를")% 유혹하도록(듯이) 한사람에로하고 있다…
 				;アナニー
@@ -1091,7 +1091,7 @@ IF SELECTCOM == 5
 			IF TALENT:오토코노코
 				IF RAND:2 == 0
 					PRINTFORMW 「후아…젖가슴 비비면 커진다 라고 하지만…」
-					PRINTFORMW 「%CNAME("一人称")%는 남자이니까무리(이)지요……읏…」
+					PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% 남자이니까무리(이)지요……읏…」
 					PRINTFORMW 애석해 한다%CALLNAME:TARGET%에 그대로 좋아, (와)과 전달해 두었다…
 				ELSE
 					PRINTFORMW 「안돼에…젖가슴민감그런데, 그렇게 강하게 비비어지면……」
@@ -3063,7 +3063,7 @@ IF SELECTCOM == 70 || SELECTCOM == 72
 					ELSEIF INSERT("Ａ인서트") && (PREVCOM != 70 || PREVCOM != 73) && RAND:4 == 0
 						PRINTFORMW 「앗♪다음은 이체위？」
 						SIF COND("마음에 드는 체위中")
-						PRINTFORMW 「역시 이체위하지만%CNAME("一人称")%는 제일 좋앗♪」
+						PRINTFORMW 「역시 이체위하지만%조사처리(CNAME("一人称"),"는")% 제일 좋앗♪」
 						PRINTFORM 「후후♪, %CNAME("一人称")%힘껏 사랑해%CNAME("二人称")%
 						CALL HEARTMARK_E
 					;おねだり
@@ -3217,7 +3217,7 @@ IF SELECTCOM == 71
 					ELSEIF INSERT("Ａ인서트") && PREVCOM != 71  && RAND:5 == 0
 						PRINTFORMW 「앗♪다음은 이체위？」
 						SIF COND("마음에 드는 체위中")
-						PRINTFORMW 「역시 이 동물 같은체위하지만%CNAME("一人称")%는 제일 좋앗♪」
+						PRINTFORMW 「역시 이 동물 같은체위하지만%조사처리(CNAME("一人称"),"는")% 제일 좋앗♪」
 						PRINTFORM 「후후♪, 동물 엣치해 사랑해%CNAME("二人称")%
 						CALL HEARTMARK_E
 					;おねだり
@@ -3362,7 +3362,7 @@ IF SELECTCOM == 73
 							PRINTFORMW %타겟은()% 신체를 껴안고 있는 것이 고작인 것인가, 얼굴는 쾌락나가 되어 군침이 야무지지 못하게 늘어지고 있다…
 							PRINTFORMW 「앗…아아아♪응하아…♪응아아…♪」
 						ELSE
-							PRINTFORM 「%CNAME("一人称")%는 언제라도 좋으니까, %CNAME("二人称")%(이)가 좋아하는 때에 내엣
+							PRINTFORM 「%조사처리(CNAME("一人称"),"는")% 언제라도 좋으니까, %CNAME("二人称")%(이)가 좋아하는 때에 내엣
 							CALL HEARTMARK_E
 							PRINTFORMW 쭉 이 태세로애널섹스를 하고 있다%타겟은()% 전신이 쾌락으로 녹고 있다…
 						ENDIF
@@ -3370,7 +3370,7 @@ IF SELECTCOM == 73
 					ELSEIF INSERT("Ａ인서트") && PREVCOM != 73 && RAND:4 == 0
 						PRINTFORMW 「앗♪다음은 이체위？」
 						SIF COND("마음에 드는 체위中")
-						PRINTFORMW 「%CNAME("二人称")%를 꽉 할 수 있기 때문에, %CNAME("一人称")%는 이체위하지만 제일 좋앗♪」
+						PRINTFORMW 「%CNAME("二人称")%를 꽉 할 수 있기 때문에, %조사처리(CNAME("一人称"),"는")% 이체위하지만 제일 좋앗♪」
 						PRINTFORM 「후후♪, %CNAME("二人称")%너무 좋아
 						CALL HEARTMARK_E
 					;おねだり
@@ -3521,7 +3521,7 @@ IF SELECTCOM == 74
 					ELSEIF INSERT("Ａ인서트") && PREVCOM != 74 && RAND:4 == 0
 						PRINTFORMW 「앗♪다음은 이체위？」
 						SIF COND("마음에 드는 체위中")
-						PRINTFORMW 「%CNAME("二人称")%에 꽉 되기 때문에, %CNAME("一人称")%는 이체위하지만 제일 좋앗♪」
+						PRINTFORMW 「%CNAME("二人称")%에 꽉 되기 때문에, %조사처리(CNAME("一人称"),"는")% 이체위하지만 제일 좋앗♪」
 						PRINTFORM 「후후♪, %CNAME("二人称")%의 따끈따끈 몸이불로, 가득, 사랑해
 						CALL HEARTMARK_E
 					;おねだり
@@ -3802,7 +3802,7 @@ IF SELECTCOM == 75
 						ELSEIF INSERT("Ａ인서트") && PREVCOM != 75 && RAND:4 == 0
 							PRINTFORMW 「앗♪다음은 이체위？」
 							SIF COND("마음에 드는 체위中")
-							PRINTFORMW 「역시 스스로 할 수 있는 이것이%CNAME("一人称")%는 제일 좋앗♪」
+							PRINTFORMW 「역시 스스로 할 수 있는 이것이%조사처리(CNAME("一人称"),"는")% 제일 좋앗♪」
 							PRINTFORM 「후후♪, %CNAME("二人称")%힘껏 사랑해 준닷
 							CALL HEARTMARK_E
 						;인서트してない
@@ -4031,7 +4031,7 @@ IF SELECTCOM == 90
 					PRINTFORMW 「후후, 굉장히 움찔움찔 하고 있다…♪」
 					PRINTFORMW 「기분이 좋지요, %CNAME("二人称")%♪」
 				ELSE
-					PRINTFORMW 「%CNAME("一人称")%는 언제나 이런 느낌으로 하고 있지만, 어떨까…？」
+					PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% 언제나 이런 느낌으로 하고 있지만, 어떨까…？」
 				ENDIF
 			;それ以外
 			ELSE
@@ -6193,7 +6193,7 @@ IF SELECTCOM == 122
 						ENDIF
 					ELSE
 						PRINTFORMW 「하아하아…♪배에빨강있는데 자신으로부터 허리 흔들어 버리는 마마는 매우에로뭔가들♪」
-						PRINTFORM 「그렇지만 그런%CNAME("二人称")%가 %CNAME("一人称")%는 정말 좋아해
+						PRINTFORM 「그렇지만 그런%CNAME("二人称")%가 %조사처리(CNAME("一人称"),"는")% 정말 좋아해
 						CALL HEARTMARK_E
 					ENDIF
 				;위험일
@@ -6307,7 +6307,7 @@ IF SELECTCOM >= 125 && SELECTCOM <= 129 && FIRSTCOMS("Ａ逆삽입") == 0
 			ELSE
 				PRINTFORMW 「엉덩이그리고 하면 푹 빠져 버린다고…♪」
 				SIF TALENT:동정
-				PRINTFORMW 「그것이라면%CNAME("一人称")%는 일생동정일지도…♪」
+				PRINTFORMW 「그것이라면%조사처리(CNAME("一人称"),"는")% 일생동정일지도…♪」
 			ENDIF
 		ELSEIF MARK:굴복각인 == 3
 			IF TALENT:오토코노코
@@ -11288,7 +11288,7 @@ ELSEIF SHOOT("Ａ내사정")
 			ELSE
 				IF RAND:2 == 0
 					PRINTFORMW 「뱃속으로 정자가 헤엄치고 있는 것이 안닷…♪」
-					PRINTFORMW 「%CNAME("一人称")%는 남자로, 거기는엉덩이그런데, 관계없이 올라 오고 있는…♪」
+					PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% 남자로, 거기는엉덩이그런데, 관계없이 올라 오고 있는…♪」
 				ELSE
 					PRINTFORMW 「후웃…♪ 엉덩이의 안에정액하지만 쿨렁쿨렁 나오고 있다…♪」
 					PRINTFORMW 「좋아하는 뿐…%CNAME("一人称")%노엉덩이에 흘려 넣어도 좋아…♪」
@@ -11358,7 +11358,7 @@ ELSEIF SHOOT("역레이프") || SHOOT("역애널") || SHOOT("애널봉사")
 			;TARGETが사정してない
 			ELSEIF PENIS(TARGET)
 				PRINTFORMW 「%CNAME("一人称")%에엉덩이범해져사정해 버린 것이다…」
-				PRINTFORMW 「%CNAME("一人称")%는 아직 가지 않았는데 간사하다」
+				PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% 아직 가지 않았는데 간사하다」
 			ENDIF
 		ELSE
 			PRINTFORMW 「엉덩이를자지로 쓱쓱 되어 기분이 좋은거야…？」
@@ -11415,7 +11415,7 @@ ELSEIF SHOOT("조교자가여자")
 					PRINTFORMW 「%CNAME("一人称")%, 좀 더 노력하기 때문에 기분 좋아져♪」
 				ENDIF
 			ELSE
-				PRINTFORMW （%CNAME("一人称")%는 남자이니까 여자의 기쁨을 잘 모르지만…）
+				PRINTFORMW （%조사처리(CNAME("一人称"),"는")% 남자이니까 여자의 기쁨을 잘 모르지만…）
 				PRINTFORMW 「%CNAME("二人称")%가 매우 기분 좋은 것 같으니까 기쁘다♪」
 			ENDIF
 		ELSE
@@ -11445,7 +11445,7 @@ ELSEIF SHOOT("조교자가여자")
 					PRINTFORMW 「%CNAME("一人称")%, 좀 더 노력하기 때문에 기분 좋아져♪」
 				ENDIF
 			ELSE
-				PRINTFORMW （%CNAME("一人称")%는 남자이니까 여자의 기쁨을 잘 모르지만…）
+				PRINTFORMW （%조사처리(CNAME("一人称"),"는")% 남자이니까 여자의 기쁨을 잘 모르지만…）
 				PRINTFORMW 「%CNAME("二人称")%가 기분 좋은 것 같으니까 기쁘다♪」
 			ENDIF
 		ELSE
@@ -12526,7 +12526,7 @@ CASE "하룻밤개방：주점", "하룻밤개방：여관", "하룻밤개방：
 				PRINTFORMW 창녀와 같은 의상으로 남자들이 모이는 장소를 방문했다%타겟은()% , 금새 둘러싸진다
 				PRINTFORMW 당분간%CALLNAME:TARGET%의 음 목소리가 울린 거기는, 아침에는 끝난 남자의 산이 완성되고 있었다…
 			ELSE
-				PRINTFORMW 「후훗, 그렇게 당황하지 않아도%CNAME("一人称")%는 도망치지 않아…♪」
+				PRINTFORMW 「후훗, 그렇게 당황하지 않아도%조사처리(CNAME("一人称"),"는")% 도망치지 않아…♪」
 				PRINTFORMW 「손, 입, 항문보지…좋아하는 곳에서 다뤄 주네요♪」
 			ENDIF
 		ENDIF

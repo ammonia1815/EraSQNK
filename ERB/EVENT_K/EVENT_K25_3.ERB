@@ -271,7 +271,7 @@ ELSEIF TALENT:연모 && GETBIT(CFLAG:201, 4) == 0
 		PRINTFORMW 「바, 말사슴자! 그 일은 아니다! 라고 할까, 그런 일은 생각해 내지 않아라도 좋다! 」
 	ENDIF
 	PRINTL
-	PRINTFORMW 「……엣또, 그래, 그래서다, 그 때%CNAME("一人称")%는 %CALLNAME:MASTER%에 『농락 해 하인으로 해 준다』등이라고 말했지만……」
+	PRINTFORMW 「……엣또, 그래, 그래서다, 그 때%조사처리(CNAME("一人称"),"는")% %CALLNAME:MASTER%에 『농락 해 하인으로 해 준다』등이라고 말했지만……」
 	PRINTFORMW 「아무래도, 그……로, 농락 되어 버린 것은%CNAME("一人称")%쪽인것 같다……」
 	PRINTFORMW ……즉？
 	PRINTFORMW 「개, 즉……에에이, 둔한 녀석! 그렇지 않으면 일부러인가! 일부러인가! ？」
@@ -398,7 +398,7 @@ ELSEIF GETBIT(CFLAG:201, 31) == 0 && CHECK_STAIN(STAIN:PLAYER:Ｐ, "Ｐ치구") 
 ELSEIF GETBIT(CFLAG:201, 32) == 0 && CEVENT("흡혈습득") == 1
 	PRINTFORMW %CALLNAME:MASTER%를 방에 불러들였다%타겟은()% , 어쩐지 겁없는 미소를 띄우고 있었다.
 	PRINTFORML 
-	PRINTFORMW 「후훈, 오늘의%CNAME("一人称")%는 한가닥 다르겠어！고귀한흡혈귀에 어울린 필살기를 몸에 댄 것이다！」
+	PRINTFORMW 「후훈, 오늘의%조사처리(CNAME("一人称"),"는")% 한가닥 다르겠어！고귀한흡혈귀에 어울린 필살기를 몸에 댄 것이다！」
 	PRINTFORMW 「……무, 무엇이다 그 질린 것 같은 얼굴은！그러고 보니%CNAME("一人称")%하지만 바보 같은 말을 하고 있다고 생각하고 있구나！？」
 	PRINTFORMW 「흥, 그러면 몸을 가지고 맛보는 것이 좋다！울어도 모르기 때문에！」
 	PRINTFORMW 말하자마자,%타겟은()% %CALLNAME:MASTER%에 달려들어, 그 목덜미와 교 보고 붙었다！
@@ -421,7 +421,7 @@ ELSEIF GETBIT(CFLAG:201, 32) == 0 && CEVENT("흡혈습득") == 1
 		PRINTFORMW 그렇게 말하면 지난번%CALLNAME:TARGET%의,%CALLNAME:ASSI%로부터 지도를 받고 있던 것을%마스터는()% 생각해 냈다.
 		;☆연모
 		IF TALENT:연모
-			PRINTFORMW 「뭐, 뭐 어쨌든！이것으로%CNAME("一人称")%하지만 어제까지의%CNAME("一人称")%는 아니라고 말하는 것이 몸을 가지고 이해할 수 있었을 것이다！」
+			PRINTFORMW 「뭐, 뭐 어쨌든！이것으로%CNAME("一人称")%하지만 어제까지의%조사처리(CNAME("一人称"),"는")% 아니라고 말하는 것이 몸을 가지고 이해할 수 있었을 것이다！」
 			PRINTFORM 「후후후, 각오 해 받겠어%CNAME("二人称")%……새로운 힘도 구사해%CNAME("一人称")%에 열중하게 시켜 줄거니까
 			CALL HEARTMARK_E
 		;MASTERが처녀
@@ -432,8 +432,8 @@ ELSEIF GETBIT(CFLAG:201, 32) == 0 && CEVENT("흡혈습득") == 1
 		ELSEIF PENIS(MASTER)
 			PRINTFORMW 「그, 그런 일보다, 붉은 것을 마시면 이번은 흰 것도 맛보고 싶어졌어……쿠쿡, 그런데, 어느 정도 짜내 줄까……♪」
 		ELSE
-			PRINTFORMW 「뭐, 뭐 어쨌든！이것으로%CNAME("一人称")%하지만 어제까지의%CNAME("一人称")%는 아니라고 말하는 것이 몸을 가지고 이해할 수 있었을 것이다！」
-			PRINTFORMW 「하지만 안심해라,%CNAME("一人称")%는 고귀한흡혈귀주, 죽는 만큼 들이마시는 것 같은 상스러운 흉내는 하지 않는다……아마, 크크크……♪」
+			PRINTFORMW 「뭐, 뭐 어쨌든！이것으로%CNAME("一人称")%하지만 어제까지의%조사처리(CNAME("一人称"),"는")% 아니라고 말하는 것이 몸을 가지고 이해할 수 있었을 것이다！」
+			PRINTFORMW 「하지만 안심해라,%조사처리(CNAME("一人称"),"는")% 고귀한흡혈귀주, 죽는 만큼 들이마시는 것 같은 상스러운 흉내는 하지 않는다……아마, 크크크……♪」
 		ENDIF
 	ELSE
 		PRINTFORM 브래지어드삭크……그렇게 말하면
@@ -448,7 +448,7 @@ ELSEIF GETBIT(CFLAG:201, 32) == 0 && CEVENT("흡혈습득") == 1
 		PRINTFORMW ……아무튼 일부러 그것을 지적할 것도 없을 것이다. 「피가 배이는 듯」라고 하는 표현에 거짓말은 없고……
 		;☆연모
 		IF TALENT:연모
-			PRINTFORMW 「자, 이것으로%CNAME("一人称")%하지만 어제까지의%CNAME("一人称")%는 아니라고 말하는 것이 몸을 가지고 이해할 수 있었을 것이다！」
+			PRINTFORMW 「자, 이것으로%CNAME("一人称")%하지만 어제까지의%조사처리(CNAME("一人称"),"는")% 아니라고 말하는 것이 몸을 가지고 이해할 수 있었을 것이다！」
 			PRINTFORM 「후후후, 각오 해 받겠어%CNAME("二人称")%……새로운 힘도 구사해%CNAME("一人称")%에 열중하게 시켜 줄거니까
 			CALL HEARTMARK_E
 		;MASTERが처녀
@@ -459,7 +459,7 @@ ELSEIF GETBIT(CFLAG:201, 32) == 0 && CEVENT("흡혈습득") == 1
 		ELSEIF PENIS(MASTER)
 			PRINTFORMW 「쿠쿡, 붉은 것을 마시면 이번은 흰 것도 맛보고 싶어졌군……그런데, 어느 정도 짜내 줄까……♪」
 		ELSE
-			PRINTFORMW 「자, 이것으로%CNAME("一人称")%하지만 어제까지의%CNAME("一人称")%는 아니라고 말하는 것이 몸을 가지고 이해할 수 있었을 것이다！」
+			PRINTFORMW 「자, 이것으로%CNAME("一人称")%하지만 어제까지의%조사처리(CNAME("一人称"),"는")% 아니라고 말하는 것이 몸을 가지고 이해할 수 있었을 것이다！」
 			PRINTFORMW 「하지만 안심해라, 나는 고귀한흡혈귀주, 죽는 만큼 들이마시는 것 같은 상스러운 흉내는 하지 않는다……아마, 크크크……♪」
 		ENDIF
 	ENDIF
@@ -791,7 +791,7 @@ ELSEIF NO:ASSI == 18
 		PRINTFORMW 「겟, 거미녀……」
 		PRINTFORMW %CALLNAME:MASTER%가 조수로서 데려 왔다%CALLNAME:ASSI%를 보았다%타겟을()% , 얼굴를 경련이 일어나게 했다. 
 		PRINTFORMW 『아무튼, 인사군요……확실히, 잘못하지는 않지만』
-		PRINTFORMW 「%CNAME("一人称")%는 거미가 싫다! 실은 끈적끈적 다 관련되어, 원래 그 기분 나쁜 겉모습이 마음에 들지 않아! 」
+		PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% 거미가 싫다! 실은 끈적끈적 다 관련되어, 원래 그 기분 나쁜 겉모습이 마음에 들지 않아! 」
 		PRINTFORMW 「앗! 이, 말해 두지만, 별로 무섭다든가는 아니야! ？이 고귀한%CNAME("一人称")%에는 적합하지 않다고 하는 것만으로―――」
 		PRINTFORMW 『아라？어깨에 거미가 들러붙고 있어요？』
 		PRINTFORMW %CALLNAME:ASSI%의 돌연의 말에, %타겟을()% 당황해 자신의 어깨를 본다. 
@@ -3461,7 +3461,7 @@ IF SELECTCOM == 60
 			ENDIF
 		;새드끼Lv3이상で삽입中ではない＆조교자が마조끼Lv3이하、새드끼Lv3이상
 		ELSEIF  INSERT("Ｖ인서트") == 0 && ABL:새드끼 >= 3 && ABL:PLAYER:마조끼 <= 3 && ABL:PLAYER:새드끼 >= 3
-			PRINTFORMW 「왓！？이, 이봐！%CNAME("一人称")%는 아직삽입라고 좋다고는 말해……아웃……！」
+			PRINTFORMW 「왓！？이, 이봐！%조사처리(CNAME("一人称"),"는")% 아직삽입라고 좋다고는 말해……아웃……！」
 		;☆흡혈修得時にMASTERが절정
 		ELSEIF GETBIT(CFLAG:201, 32) == 1 && BASE:PLAYER:절정 >= MAXBASE:PLAYER:절정
 			;☆뱀파이어Ｖ절정
@@ -6884,7 +6884,7 @@ IF SELECTCOM == 93
 				PRINTFORMW (%CNAME("一人称")%의 저기에 이 녀석의 자지가 접하고 있다고 생각하면 구토가 나는구나……)
 			;연모有り
 			ELSEIF TALENT:연모 && PLAYER == MASTER
-				PRINTFORMW 「삽입없는 것인지？아, 아무튼%CNAME("二人称")%하지만 이렇게 하면 좋겠다고 말한다면%CNAME("一人称")%는 상관없겠지만……」
+				PRINTFORMW 「삽입없는 것인지？아, 아무튼%CNAME("二人称")%하지만 이렇게 하면 좋겠다고 말한다면%조사처리(CNAME("一人称"),"는")% 상관없겠지만……」
 			;それ以外
 			ELSE
 				IF TALENT:PLAYER:동정
@@ -15974,7 +15974,7 @@ EXP:PLAYER:수치쾌락경험 += 1
 ;CALL PRINTW_EXP_ADD, "수치쾌락경험", 1, PLAYER
 PRINTL
 PRINTFORMW 「쿠쿡, 꽤 즐거운 여흥이었구나, 그런데 다음은……」
-PRINTFORMW 「무, 무엇이다 그 눈은……%CNAME("一人称")%는 생각해 준다고 한 것 뿐이다？보인다 따위라고 말했는지？」
+PRINTFORMW 「무, 무엇이다 그 눈은……%조사처리(CNAME("一人称"),"는")% 생각해 준다고 한 것 뿐이다？보인다 따위라고 말했는지？」
 PRINTFORMW ……설마 고귀한흡혈귀이다%CALLNAME:TARGET%모양이, 그렇게 추악한 발뺌을 하다니……
 PRINTFORMW 「긋……！？아, 알았어！하면 될 것이다, 하면！？」
 CALL SET_CEVENT, "조교자자위命令"

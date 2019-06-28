@@ -59,7 +59,7 @@ IF GETBIT(CFLAG:201, 0) == 0
 	PRINTFORMW 「이상한 것으로 불렀다면 화내면 "응"이니까 」
 	PRINTFORMW 마치 아이에 타이르도록(듯이) 이야기하는%CALLNAME:TARGET%의 몸집이 작은 몸을 잡아 지금부터 실시하는 것을 가르친다
 	PRINTFORMW 「…네………%CNAME("一人称")%를 잡아…조교를 하는……조교는……,  …」
-	PRINTFORMW 「…도 ,  무…듣지 않았던 거야? …%CNAME("一人称")%는 바쁘다니까」
+	PRINTFORMW 「…도 ,  무…듣지 않았던 거야? …%조사처리(CNAME("一人称"),"는")% 바쁘다니까」
 	PRINTFORMW 조교된다고 (들)물어, %타겟은()% 뺨을 부풀려 날개를 윙윙 울린다
 	PRINTFORMW 이쪽에 힘껏의 강한 모습을 보고 있지만 ,  뭐라고(정말) 사랑스럽게 보여 버리는 그 모습에 쓴웃음하면서, %타겟을()% 침대에 데리고 간다
 	PRINTFORMW 「……도 …말해도 들어줘 그렇지 않고…」
@@ -501,7 +501,7 @@ ELSEIF MARK:굴복각인 <= 1
 ;굴복각인Lv2
 ELSEIF MARK:굴복각인 == 2
 	IF RAND:2 == 0
-		PRINTFORMW 「확실히,  %CNAME("一人称")%는 기분 좋게는 되었지만…」
+		PRINTFORMW 「확실히,  %조사처리(CNAME("一人称"),"는")% 기분 좋게는 되었지만…」
 		PRINTFORMW 「그 만큼이 아니고 ,  좀더 꿀을 모으고 싶었는데 …역시 흐르게 되고 있는 원…」
 	ELSE
 		PRINTFORMW 「후우 ,  오늘도 분명하게 조교에 교제해 주었으니까」
@@ -2413,11 +2413,11 @@ IF SELECTCOM == 64
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORML 「%CNAME("一人称")%는 수술 위에 앉은채로 좋은거야? 으응,  %CNAME("一人称")%로부터 무엇인가 하지 않는다고 말하는 것도 빠짐 입지 않는 이군요…」
+			PRINTFORML 「%조사처리(CNAME("一人称"),"는")% 수술 위에 앉은채로 좋은거야? 으응,  %CNAME("一人称")%로부터 무엇인가 하지 않는다고 말하는 것도 빠짐 입지 않는 이군요…」
 			PRINTFORMW 「 그렇지만 ,  모처럼 %CNAME("二人称")%가 권해 주고 있기 때문에 부탁 해볼까…♪」
 		;それ以外
 		ELSE
-			PRINTFORML 「후후 ,  %CNAME("一人称")%는 수술의 위로 앉은채로 좋다니 락찡이군요」
+			PRINTFORML 「후후 ,  %조사처리(CNAME("一人称"),"는")% 수술의 위로 앉은채로 좋다니 락찡이군요」
 			PRINTFORMW 「이것으로 꿀까지 받을 수 있기 때문에 극진함이라는 느낌일까」
 		ENDIF
 		PRINTFORMW 일방적으로 신체 안을 꾸짖을 수 있다고는 생각하지 않았다%타겟은()% ,  갑작스럽게 시작된 전신에의 고문에 가부간의 대답 없게 교성을 줄꺼야였다…
@@ -4145,7 +4145,7 @@ IF SELECTCOM == 121 && COND("권속", MASTER) == TARGET && GETBIT(CFLAG:201, 32)
 			PRINTFORMW 「그렇지만, 흥분 알아 버리고 있는 것은%CNAME("一人称")%도 같은가…이렇게 수술이 커져 버리고 있는걸」
 			PRINTFORMW 「…%CNAME("一人称")%하지만, 정말 좋아하는%CNAME("二人称")%를 위해서(때문에) 가득 쏟아 준다」
 		ELSE
-			PRINTFORMW 「그렇지만, 그러한%CNAME("二人称")%도%CNAME("一人称")%는 좋아해요…%CNAME("一人称")%의 수술로 가득 좋아하게 해 준다」
+			PRINTFORMW 「그렇지만, 그러한%CNAME("二人称")%도%조사처리(CNAME("一人称"),"는")% 좋아해요…%CNAME("一人称")%의 수술로 가득 좋아하게 해 준다」
 		ENDIF
 	;二回目以降
 	ELSE
@@ -5366,7 +5366,7 @@ IF SELECTCOM == 171 && COND("마을")
 			;노출벽Lv3이상
 			ELSEIF ABL:노출벽 >= 3
 				PRINTFORMW 「흐응…이런 곳에서도는 ,  꽤 스릴이 있는 일이군요」
-				PRINTFORMW 「괜찮(좋)아요,  %CNAME("一人称")%는 이런 것 싫지 않게 되어 오고 있으니」
+				PRINTFORMW 「괜찮(좋)아요,  %조사처리(CNAME("一人称"),"는")% 이런 것 싫지 않게 되어 오고 있으니」
 			;それ以外
 			ELSE
 				PRINTFORMW 「으응…여기는 초조하지만…역시 ,  여기서 일 하는 거야…?」
@@ -5443,7 +5443,7 @@ ELSEIF SELECTCOM == 171 && COND("화원")
 		ELSE
 			;연모＋노출벽Lv3이상
 			IF TALENT:연모 && ABL:노출벽 >= 3
-				PRINTFORMW 「여기는 고산 식물이 만발한 곳에서 ,  %CNAME("一人称")%는 꿀벌…후후…이니까 ,  여기서 %CNAME("一人称")%가 꿀을 모아도 전혀 이상하지 않아…♪」
+				PRINTFORMW 「여기는 고산 식물이 만발한 곳에서 ,  %조사처리(CNAME("一人称"),"는")% 꿀벌…후후…이니까 ,  여기서 %CNAME("一人称")%가 꿀을 모아도 전혀 이상하지 않아…♪」
 				PRINTFORMW %타겟은()% 달려들도록(듯이) 안아 따라 오면(자) ,  흥분해 버린 신체로부터 꿀을 흘러넘치게 한 열이 깃들인 시선으로 응시하고 온다
 				PRINTFORMW 「하아 ,  …%CNAME("一人称")%,  평소보다 흥분해 버린다로부터…격렬하게 짜 준다」
 			;노출벽Lv3이상
@@ -5718,7 +5718,7 @@ IF SELECTCOM == 175
 			PRINTFORMW 
 		ELSEIF CHECK_SHIRT("Ｙ셔츠")
 			IF GETBIT(CFLAG:331, 0) == 0
-				PRINTFORMW 「%CNAME("一人称")%는 누나이군 ,  어른인 Y셔츠는 자주(잘) 어울리고 있지」
+				PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% 누나이군 ,  어른인 Y셔츠는 자주(잘) 어울리고 있지」
 				PRINTFORMW 「후후∼,  이봐요 이봐요 보일 것 같으면서 안보여요♪」
 				PRINTFORMW %CALLNAME:TARGET%의 헐렁헐렁의 Y셔츠의 옷자락을 탁탁하고 흔들어 보이고 있다
 				PRINTFORMW 그 모습은 누나라고 할까 ,  아이 같다…
@@ -5751,7 +5751,7 @@ IF SELECTCOM == 175
 				PRINTFORMW 「소매의 곳이 팔랑팔랑 해서,  벌인데 나비 보고 싶다」
 				SETBIT CFLAG:331, 2
 			ELSE
-				PRINTFORMW 「사랑스러운 나비가 된 %CNAME("一人称")%는 ,  %CNAME("二人称")%에 잡혀 먹을 수 있게 되는…꺄∼♪」
+				PRINTFORMW 「사랑스러운 나비가 된 %조사처리(CNAME("一人称"),"는")% ,  %CNAME("二人称")%에 잡혀 먹을 수 있게 되는…꺄∼♪」
 				PRINTFORMW %타겟은()% 침대에 가로놓여 나비가 된 생각으로 즐거운 듯이 소매를 탁탁 시켜 보고 다툰다
 				PRINTFORMW 「이 아름다운 일본옷의 날개도 꿀로 질퍽질퍽하게 되어버리는 원 ,  반드시♪」
 			ENDIF
@@ -5803,7 +5803,7 @@ IF SELECTCOM == 175
 		ELSEIF CHECK_SHIRT("무녀")
 			IF GETBIT(CFLAG:331, 8) == 0
 				PRINTFORMW 「무녀님은 ,  분명히…불제라든지 ,  그러한 일을 하는 것이군요…」
-				PRINTFORMW 「이라고 하는 것은,  %CNAME("一人称")%는…신체에빙 있던 나쁜 꿀을 빨아내는 무녀님이라는 느낌으로 괜찮을까」
+				PRINTFORMW 「이라고 하는 것은,  %조사처리(CNAME("一人称"),"는")%…신체에빙 있던 나쁜 꿀을 빨아내는 무녀님이라는 느낌으로 괜찮을까」
 				SETBIT CFLAG:331, 8
 			ELSE
 				PRINTFORMW 「…수술이 이렇게 끙끙이 되어 ,  괴로울 것 같다…」
@@ -8321,7 +8321,7 @@ IF GETBIT(CFLAG:201, 31)
 	PRINTFORMW 「후후 ,  기능(활약)자의 착한아이 끊어♪자,  %CNAME("二人称")%도 슬슬 괜찮을까? 다음은 ,  또 다음에 먹여 줄 테니까」
 	PRINTFORMW 아직도 모유가 방울져 떨어지는 가슴으로부터 이쪽의 머리를 해방하면서 미소짓는%CALLNAME:TARGET%,  많은 기능(활약)벌들이 있다고는 해도 그녀의 일은 아직도 많이 있다
 	PRINTFORMW 충분히(듬뿍) 꿀을 먹여 준%CALLNAME:TARGET%에 인사를 해 ,  욕실의 준비를 해 준 아이에 선도되어 목욕탕에 향한다
-	PRINTFORML 「그렇다면은,  %CNAME("一人称")%는 모두의 밥의 준비를 해 오지 않으면」
+	PRINTFORML 「그렇다면은,  %조사처리(CNAME("一人称"),"는")% 모두의 밥의 준비를 해 오지 않으면」
 	PRINTFORML 「%CNAME("二人称")%도 이 아이들도 가득 먹어야 하기 때문에 ,  정말 만들어 보람도 있어요 ,  즐겁게 하고 있어」
 	PRINTFORMW 「원―」 「했다―」 「밥좋아해―」
 	PRINTFORMW ………
@@ -8363,7 +8363,7 @@ ELSE
 	PRINTFORMW 「상대의 아이는 괜찮아? 별로(너무) 격렬하게 되어 버려서 혼자서 욕실까지 갈 수 없게 되거나 하지 않을까…」
 	PRINTFORML 욕실의 준비까지 확실히 정돈해 준%CALLNAME:TARGET%에 인사를 해,
 	PRINTFORMW 그녀의 일이 더 이상 증가하는 것은 미안하기 때문에 상대의 몽마를 목욕탕까지 데리고 간다
-	PRINTFORML 「당신이 대려 가줘라면…뭐 ,  안심일까,  %CNAME("一人称")%는 방의 청소를 끝마쳐버리는 원」
+	PRINTFORML 「당신이 대려 가줘라면…뭐 ,  안심일까,  %조사처리(CNAME("一人称"),"는")% 방의 청소를 끝마쳐버리는 원」
 	PRINTFORMW 「…그리고 ,  밥은 청소의 후에 괜찮을까? 준비는 되어 있기 때문에 ,  욕실로부터 나오면(자) 조금만 기다려서 줬으면해」
 	PRINTFORMW 이렇게 해서 무엇으로 무엇까지 ,  정말로 자주(잘) 해내 주는%CALLNAME:TARGET%에는 감사해도 다 할 수  없을 정도 지만
 	PRINTFORMW ………
