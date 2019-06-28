@@ -823,7 +823,7 @@ CASE "플레이直後"
 		IF RAND:4 == 0
 			PRINTFORMW 「그런데…다음은 어떻게 기분 좋게 해 줄까의…♪」
 		ELSEIF RAND:3 == 0
-			PRINTFORMW 「후후…저의손관도 상당한 것일 것이다…？ %CNAME("二人称")%를 포로로 해 주기 때문의♪」
+			PRINTFORMW 「후후…저의손관도 상당한 것일 것이다…？ %조사처리(CNAME("二人称"),"를")% 포로로 해 주기 때문의♪」
 		ELSEIF RAND:2 == 0
 			PRINTFORMW 「후후후…좀더 좀더해 주었으면 할까…？좋아, 지금은 충분히짚악어 응석부려, 모두를 맡긴다♪」
 		ELSE
@@ -2955,7 +2955,7 @@ RETURN 1
 SIF TALENT:상위몽마 == 0
 	RETURN 0
 
-PRINTFORM 「%CNAME("二人称")%를 이 9개의 꼬리의 포로로 해 주자구…♪ 
+PRINTFORM 「%조사처리(CNAME("二人称"),"를")% 이 9개의 꼬리의 포로로 해 주자구…♪ 
 SELECTCASE ARGS
 CASE "꼬리コキ"
 	PRINTFORMW %CNAME("二人称")%의 자지～와 귀여워해 주기 때문의…♪」
@@ -3177,7 +3177,7 @@ FOR LCOUNT, 1, 10
 			PRINTFORML 하지만,%CALLNAME:PLAYER%의 배꼽을 후비려고 그 첨단을 기어들게 해 왔다！
 			;쾌락각인LV3이상
 			IF MARK:PLAYER:쾌락각인 >= 3
-				PRINTFORMW 「자, 또%CNAME("二人称")%를 배꼽으로 기쁘게 해 주자구…♪」
+				PRINTFORMW 「자, 또%조사처리(CNAME("二人称"),"를")% 배꼽으로 기쁘게 해 주자구…♪」
 				PRINTFORMW %CALLNAME:PLAYER%는 완전히 성감대로 개발되어 버린 구멍을 범해져 달콤한 소리를 질러 버린다…
 				PRINTFORMW 「이런 곳에서 느끼는 것을 느껴 버린다 따위…터무니 없는 변태가 되어 버렸군♪무엇보다, 그렇게 가르친 것은 저는이…」
 				PRINTFORMW 완전히 이상한 쾌락에 푹 빠지게 되어 버렸다%CALLNAME:PLAYER%하,%CALLNAME:TARGET%노꼬리에 배꼽을 후벼파지고 허리를 녹여져 버린다…
@@ -3365,7 +3365,7 @@ ELSE
 ENDIF
 CALL INPUT_SELECT, 3
 IF RESULT == 0
-	PRINTFORMW 「그렇게까지 졸라져서는 어쩔 수 없구나…어떤 것, 한번 더%CNAME("二人称")%를 다시 예의범절을 가르쳐 준다고 할까의♪」
+	PRINTFORMW 「그렇게까지 졸라져서는 어쩔 수 없구나…어떤 것, 한번 더%조사처리(CNAME("二人称"),"를")% 다시 예의범절을 가르쳐 준다고 할까의♪」
 	CALL END_SM_16
 ELSEIF RESULT == 1
 	PRINTFORMW 「전부, 사라…%CNAME("二人称")%는 탐욕이구먼♪좋을 것이다, 그럼 소망 대로 다 짜 주자구♪」

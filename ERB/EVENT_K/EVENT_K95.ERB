@@ -253,7 +253,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 		PRINTFORMW 「그런데도%조사처리(CNAME("一人称"),"를")% 신부로 해 주지 않겠습니까…？」
 	;マスターが남자でない
 	ELSEIF TALENT:MASTER:남자 == 0
-		PRINTFORMW 「%CNAME("一人称")%읏…노력하기 때문에…노력해%CNAME("二人称")%를 기분 좋게 시키기 때문에」
+		PRINTFORMW 「%CNAME("一人称")%읏…노력하기 때문에…노력해%조사처리(CNAME("二人称"),"를")% 기분 좋게 시키기 때문에」
 		PRINTFORMW 「%조사처리(CNAME("一人称"),"를")% …신랑씨로 해 주지 않겠습니까…？」
 	ENDIF
 	PRINTFORMW %마스터는()% , 좋다고, 라고 대답해조교를 시작하는 것이었다…
@@ -432,7 +432,7 @@ ELSEIF TALENT:연모 && CFLAG:99
 	ELSEIF EXP_GAIN(3) >= 20 && EXP_GAIN(15) >= 10
 		PRINTFORMW 「보지에 자지 쓱쓱 하는 것 굉장히 기분 좋았다아…♪」
 		IF TALENT:MASTER:남자 == 0 && TALENT:오토코노코 == 0
-			PRINTFORMW 「이번은%CNAME("二人称")%를 임신하게 하는 정도, 노력하기 때문에♪」
+			PRINTFORMW 「이번은%조사처리(CNAME("二人称"),"를")% 임신하게 하는 정도, 노력하기 때문에♪」
 		ELSE
 			PRINTFORMW 「이번은%CNAME("二人称")%노엉덩이로 해 주네요♪」
 		ENDIF
@@ -3278,7 +3278,7 @@ IF SELECTCOM == 71
 						PRINTFORMW 「아읏……아하아……좀 더, 좀 더에로소리 내자%CNAME("二人称")%…」
 					ENDIF
 				ELSE
-					PRINTFORMW 「아, 앗…뒤로부터%CNAME("二人称")%를 굉장히 느낀다…♪」
+					PRINTFORMW 「아, 앗…뒤로부터%조사처리(CNAME("二人称"),"를")% 굉장히 느낀다…♪」
 				ENDIF
 			ELSE
 				IF ABL:Ａ감각 >= 3
@@ -3370,7 +3370,7 @@ IF SELECTCOM == 73
 					ELSEIF INSERT("Ａ인서트") && PREVCOM != 73 && RAND:4 == 0
 						PRINTFORMW 「앗♪다음은 이체위？」
 						SIF COND("마음에 드는 체위中")
-						PRINTFORMW 「%CNAME("二人称")%를 꽉 할 수 있기 때문에, %조사처리(CNAME("一人称"),"는")% 이체위하지만 제일 좋앗♪」
+						PRINTFORMW 「%조사처리(CNAME("二人称"),"를")% 꽉 할 수 있기 때문에, %조사처리(CNAME("一人称"),"는")% 이체위하지만 제일 좋앗♪」
 						PRINTFORM 「후후♪, %CNAME("二人称")%너무 좋아
 						CALL HEARTMARK_E
 					;おねだり
@@ -3693,7 +3693,7 @@ IF SELECTCOM == 75
 							CALL HEARTMARK_E
 						ENDIF
 					ELSE
-						PRINTFORMW 「익숙해지지 않지만…%CNAME("二人称")%를 위해서(때문에)야, 노력하네요♪」
+						PRINTFORMW 「익숙해지지 않지만…%조사처리(CNAME("二人称"),"를")% 위해서(때문에)야, 노력하네요♪」
 						PRINTFORMW 애널의 개발이 아직 미숙한%CALLNAME:TARGET%의, %CALLNAME:PLAYER%의 위해(때문에)허리를 계속 거절하고 있다…
 					ENDIF
 				ELSE
@@ -3713,7 +3713,7 @@ IF SELECTCOM == 75
 						IF RAND:2 == 0
 							PRINTFORMW 「후후…%CNAME("二人称")%, 오토코노코노엉덩이그리고 범해지고 있는 기분은 어때…？ …그래, 좋았다♪」
 						ELSE
-							PRINTFORMW 「아앙♪ %CNAME("二人称")%를 타에로, 기분이 좋아♪」
+							PRINTFORMW 「아앙♪ %조사처리(CNAME("二人称"),"를")% 타에로, 기분이 좋아♪」
 						ENDIF
 					ELSE
 						PRINTFORMW 「%조사처리(CNAME("一人称"),"가")% , 짜내, 주네요…♪」
@@ -3859,7 +3859,7 @@ IF SELECTCOM == 75
 							PRINTFORMW %타겟은()% 페니스를 철썩철썩 울릴 정도로 격렬하고, 허리를 상하나 옆에 흔들고 있다…
 						ENDIF
 					ELSE
-						PRINTFORMW 「쿠, 괴롭지만%CNAME("二人称")%를 위해서(때문에) 노력하네요…읏」
+						PRINTFORMW 「쿠, 괴롭지만%조사처리(CNAME("二人称"),"를")% 위해서(때문에) 노력하네요…읏」
 						PRINTFORMW %CALLNAME:TARGET%의 미숙한애널하, 삐걱삐걱%CALLNAME:PLAYER%의 페니스를 단단히 조였다…
 					ENDIF
 				ELSE
@@ -3959,7 +3959,7 @@ IF SELECTCOM == 90
 				IF TALENT:오토코노코
 					PRINTFORMW 「도, 어때？기분이 좋을까？」
 					PRINTFORMW %CALLNAME:PLAYER%가 긍정하면%타겟은()% 기쁜듯이 뺨을 물들였다
-					PRINTFORMW 「좋았다…%CNAME("二人称")%를 좀 더 기분 좋게 시키기 위해서(때문에) 노력한다♪」
+					PRINTFORMW 「좋았다…%조사처리(CNAME("二人称"),"를")% 좀 더 기분 좋게 시키기 위해서(때문에) 노력한다♪」
 				ELSE
 					PRINTFORMW 「어떨까%CNAME("二人称")%…？다음은%CNAME("一人称")%의를 기분 좋게 시켜♪」
 				ENDIF
@@ -4016,7 +4016,7 @@ IF SELECTCOM == 90
 					ELSEIF PREVCOM == SELECTCOM
 						IF COND("前回절정", PLAYER)
 							PRINTFORMW 「%CNAME("二人称")%…%CNAME("一人称")%노손굉장히 기분이 좋지요♪」
-							PRINTFORMW 「%CNAME("二人称")%를 위해서(때문에) 공부한 것이니까, 좀 더 내도 좋아♪」
+							PRINTFORMW 「%조사처리(CNAME("二人称"),"를")% 위해서(때문에) 공부한 것이니까, 좀 더 내도 좋아♪」
 						ELSE
 							PRINTFORMW 「%CNAME("二人称")%…슬슬 갈 것 같다？」
 							PRINTFORMW 「…응, %CNAME("一人称")%노손그리고 좋아할 뿐(만큼) 가도 좋으니까…♪」
@@ -5829,7 +5829,7 @@ IF SELECTCOM >= 120 && SELECTCOM <= 124 && FIRSTCOMS("Ｖ逆삽입") == 0
 					PRINTFORMW 「%CNAME("一人称")%노동정자지, %CNAME("二人称")%에 바치네요…♪」
 				ELSE
 					PRINTFORMW 「%조사처리(CNAME("二人称"),"가")% …%CNAME("一人称")%노첫사람(이)가 되는 것이군…♪」
-					PRINTFORMW 「긴장한다…키, 힘껏%CNAME("二人称")%를 기쁘게 해 준닷」
+					PRINTFORMW 「긴장한다…키, 힘껏%조사처리(CNAME("二人称"),"를")% 기쁘게 해 준닷」
 					PRINTFORMW %타겟은()% %조사처리(CALLNAME:PLAYER,"를")% 느끼게 하려고 필사적으로허리를 털고 있다…
 					PRINTFORMW 「하앗, 하앗…도, 어때？ %CNAME("二人称")%？기분이 좋다？」
 					PRINTFORM 「앗…♪가 버린닷, %CNAME("二人称")%노질안에서 실시해 버린다～～～
@@ -6342,7 +6342,7 @@ IF SELECTCOM >= 125 && SELECTCOM <= 129 && FIRSTCOMS("Ａ逆삽입") == 0
 					PRINTFORMW 그만두게 하지 않으려고다리그리고 단단히%타겟은()% 홀드 해, 애널로삽입시켰다
 					PRINTFORMW 「얏…～～～～～～～～읏♪♪」
 				ELSE
-					PRINTFORMW 「이번은엉덩이그렇네♪ 엉덩이그렇지만%CNAME("二人称")%를 헤롱헤롱해 준닷♪」
+					PRINTFORMW 「이번은엉덩이그렇네♪ 엉덩이그렇지만%조사처리(CNAME("二人称"),"를")% 헤롱헤롱해 준닷♪」
 				ENDIF
 			ENDIF
 		ELSEIF MARK:굴복각인 == 3
@@ -7132,7 +7132,7 @@ IF SELECTCOM == 139
 				ELSE
 					PRINTFORMW 「무슨 일이야%CNAME("二人称")%…？」
 					PRINTFORMW 「…………읏♪♪」
-					PRINTFORMW 「%CNAME("一人称")%도%CNAME("二人称")%를 아주 좋아해♪」
+					PRINTFORMW 「%CNAME("一人称")%도%조사처리(CNAME("二人称"),"를")% 아주 좋아해♪」
 				ENDIF
 			ELSEIF MARK:굴복각인 == 2
 				IF RAND:7 == 0
@@ -8020,7 +8020,7 @@ IF SELECTCOM == 160
 					PRINTFORMW 페니스를 더듬어 위로하고 있다…
 				ENDIF
 			ELSE
-				PRINTFORMW 「저기, 빨리%CNAME("一人称")%에도%CNAME("조수")%(와)과\@ TALENT:MASTER:남자 == 0 ? %CNAME("二人称")%를 #  \@えっちさせてぇっ♪」
+				PRINTFORMW 「저기, 빨리%CNAME("一人称")%에도%CNAME("조수")%(와)과\@ TALENT:MASTER:남자 == 0 ? %조사처리(CNAME("二人称"),"를")% #  \@えっちさせてぇっ♪」
 				PRINTFORMW 기다리고 있는 것이 계속 참을 수 없게 되었다%타겟은()% 두 명을 반찬에 자위하기 시작했다…
 			ENDIF
 			EXP:자위경험 += 1
@@ -8606,7 +8606,7 @@ IF SELECTCOM == 175
 				ELSEIF CHECK_SHIRT("체조복")
 					PRINTFORMW 「움직이기 쉬워서 이것이라면 침대 위에서도 많이”운동”할 수 있네요…♪」
 				ELSEIF CHECK_SHIRT("간호사")
-					PRINTFORML 「%CNAME("二人称")%를%조사처리(CNAME("一人称"),"가")% 간호 해 준닷♪」
+					PRINTFORML 「%조사처리(CNAME("二人称"),"를")%%조사처리(CNAME("一人称"),"가")% 간호 해 준닷♪」
 					PRINTFORMW 「우선은…앗, 붓고 있는 여기를 치료해요♪」
 				ELSEIF CHECK_SHIRT("차이나드레스")
 					PRINTFORML 「후훗, 어울린다？」
@@ -8651,7 +8651,7 @@ IF SELECTCOM == 175
 					PRINTFORMW 「조금 또가 스으스으 하는구나…」
 				ELSEIF CHECK_BODYS("본디지")
 					PRINTFORML 「후후후…%조사처리(CNAME("一人称"),"가")% 여왕님이구나…♪」
-					PRINTFORMW 「%CNAME("二人称")%를 드레이로 해 준다…♪」
+					PRINTFORMW 「%조사처리(CNAME("二人称"),"를")% 드레이로 해 준다…♪」
 				ELSEIF CHECK_BODYS("바니슈트")
 					PRINTFORML 「에, 어울리지 않지요…」
 					PRINTFORMW 분명히레오타드의 아래로부터 주장해 온다페니스(와)과 출렁출렁가슴원래는 어울리지 않았다
@@ -11684,7 +11684,7 @@ CASE "굴복각인Lv3취득"
 	IF FIRST_EV("굴복각인Lv3취득") == 0
 		PRINTFORMW 「%CNAME("二人称")%로 해 받으면 기분이 좋다…」
 		PRINTFORMW 「%CNAME("二人称")%라고 있으면 두근두근 한다…」
-		PRINTFORMW 「%CNAME("二人称")%를 기분 좋게 하면 기쁘다…」
+		PRINTFORMW 「%조사처리(CNAME("二人称"),"를")% 기분 좋게 하면 기쁘다…」
 		SIF COND("부친") == MASTER || COND("모친") == MASTER
 		PRINTFORMW 「근친상간은 정말로 안 되는 것이야…？」
 		PRINTFORMW 「%CNAME("二人称")%♪ %CNAME("二人称")%읏♪ %CNAME("二人称", "甘え")%♪」

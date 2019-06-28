@@ -150,7 +150,7 @@ ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2
 ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 	PRINTFORMW 방에 들어가자, %타겟은()% 숨을 난폭하게 하며 기대고 있었다.
 	PRINTFORMW 「부탁해……빨리……%조사처리(CNAME("一人称"),"를")% 엉망진창으로 해…♪」
-	PRINTFORMW 「%CNAME("一人称")%,  %CNAME("二人称")%를 갖고 싶어서 참을 수 없는걸……」
+	PRINTFORMW 「%CNAME("一人称")%,  %조사처리(CNAME("二人称"),"를")% 갖고 싶어서 참을 수 없는걸……」
 	PRINTFORMW 「자아……하자……」
 	PRINTFORMW %타겟은()%%CALLNAME:MASTER%를 침대에 밀어 넘어뜨리고, 키스를 세례를 퍼부었다
 	SETBIT CFLAG:201, 3
@@ -338,7 +338,7 @@ SIF CFLAG:209 != 1
 ;당신が권속で、레벨20이상、あと色々
 IF GETBIT(CFLAG:201, 30) == 0 && COND("권속", MASTER) == TARGET && ABL:MASTER:ＬＶ >= 20 && EXP:MASTER:Ｖ경험 >= 150 && EXP:MASTER:동정탈취경험
 	PRINTFORML 「우후후…%CNAME("二人称")%매우 훌륭한서큐버스(이)가 되었군요. 이제(벌써)상위몽마라고 불러도 좋아요」
-	PRINTFORMW 「원래는 음마가 아니었는데 자주(잘) 노력했군요,%CNAME("一人称")%,%CNAME("二人称")%를 자랑으로 생각해요」
+	PRINTFORMW 「원래는 음마가 아니었는데 자주(잘) 노력했군요,%CNAME("一人称")%,%조사처리(CNAME("二人称"),"를")% 자랑으로 생각해요」
 	PRINTFORMW 그렇게 상냥하게 고한다%타겟을()% 보고 있으면,%CALLNAME:MASTER%의가슴에 부끄러움과 기쁨이 울컥거려 온다.
 	PRINTFORML 「후후,%CNAME("二人称")%울고 있어요？그렇지만 아직도 지금부터」
 	PRINTFORMW 「앞으로도 많이Ｈ일 해 최고의서큐버스(이)가 됩시다？」
@@ -388,7 +388,7 @@ ELSEIF TALENT:연모
 	DRAWLINE
 	IF RAND:2 == 0
 		PRINTFORMW 「아직도 부족한데……벌써 가버린거네」
-		PRINTFORMW 「다음은 좀더 %CNAME("二人称")%를 사랑해,  %CNAME("二人称")%에 사랑받고……후후, 각오 하세요」
+		PRINTFORMW 「다음은 좀더 %조사처리(CNAME("二人称"),"를")% 사랑해,  %CNAME("二人称")%에 사랑받고……후후, 각오 하세요」
 		PRINTFORMW  %타겟은()% 윙크를 해서, %CALLNAME:MASTER%를 전송했다
 	ELSE
 		PRINTFORMW 「아직도 부족한데……벌써 가버린거야?」
@@ -2552,7 +2552,7 @@ IF SELECTCOM == 65
 			;それ以外（연모無し, 순종Lv5未満）
 			ELSE
 				PRINTFORMW 「♪」
-				PRINTFORMW 「%CNAME("二人称")%를"범해"준다」
+				PRINTFORMW 「%조사처리(CNAME("二人称"),"를")%"범해"준다」
 			ENDIF
 				CFLAG:245 = 1
 				RETURN 1
@@ -2598,7 +2598,7 @@ IF SELECTCOM == 65
 						PRINTFORMW 「%CNAME("二人称")%의 것이 안으로 크게 되어 ,  ,  아아♪」
 						PRINTFORML %타겟은()% 질내에서 벌벌떨리는 페니스에 만취하면서 ,  한층 더 허리의 움직임을 격렬하게 한다
 						PRINTFORMW 「,  이봐요 ,  내,  %CNAME("二人称")%의 정액이 갖고 싶은 것!」
-						PRINTFORMW 「, ,  빨리 ,  끈적끈적(질퍽)으로 한 진한 정액으로 ,  %CNAME("二人称")%를 느끼게 해 보내♪」
+						PRINTFORMW 「, ,  빨리 ,  끈적끈적(질퍽)으로 한 진한 정액으로 ,  %조사처리(CNAME("二人称"),"를")% 느끼게 해 보내♪」
 					ENDIF
 				ENDIF
 			;굴복각인Lv2＋V감각Lv3이상
@@ -6856,7 +6856,7 @@ CASE "Ｂ절정20회이상"
 			PRINTFORMW 「유두가 ,  움찔이라고 기대해 버린다 ,  젖가슴이 ,  ,  가는 , ,  히아아아아!」
 		;それ以外
 		ELSE
-			PRINTFORMW 「젖가슴이 ,  %CNAME("二人称")%를 요구해 ,  젖가슴으로 보내!」
+			PRINTFORMW 「젖가슴이 ,  %조사처리(CNAME("二人称"),"를")% 요구해 ,  젖가슴으로 보내!」
 		ENDIF
 	;二回目以降
 	ELSE
@@ -6866,7 +6866,7 @@ CASE "Ｂ절정20회이상"
 			PRINTFORMW %타겟은()% 가슴을 비비어지는 것만으로 성대하게 조수를 불면서 절정마구 에 이르렀다
 		;それ以外
 		ELSE
-			PRINTFORMW 「젖가슴이 ,  %CNAME("二人称")%를 요구해 ,  젖가슴으로 보내!」
+			PRINTFORMW 「젖가슴이 ,  %조사처리(CNAME("二人称"),"를")% 요구해 ,  젖가슴으로 보내!」
 		ENDIF
 	ENDIF
 ;-------------------------------------------------
@@ -7740,7 +7740,7 @@ CASE "Ｖ인서트"
 	CASE "強"
 		IF RAND:2 == 0 && TEQUIP:새댁플레이
 			PRINTFORML %타겟은()% 조금(뿐)만 숨을 정돈하면(자) 부끄러운 듯한 모양에 귀엣말해 온다
-			PRINTFORMW 「좀더 ,  좀더 %CNAME("二人称")%를 느끼고 싶습니다…♪」
+			PRINTFORMW 「좀더 ,  좀더 %조사처리(CNAME("二人称"),"를")% 느끼고 싶습니다…♪」
 			PRINTFORMW %CALLNAME:TARGET%에 요구되어%CALLNAME:PLAYER%는 격렬하게 피스톤을 시작했다
 		ELSEIF TEQUIP:넘어뜨리기 && RAND:2 == 0
 			PRINTFORMW 「후훗 ,  좀더 기분 좋게 되고 싶다는 깜짝 깜짝 하고 있다」

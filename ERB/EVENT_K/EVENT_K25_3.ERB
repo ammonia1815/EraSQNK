@@ -111,7 +111,7 @@ IF GETBIT(CFLAG:201, 0) == 0
 		PRINTFORMW 「그누누……그런 일을 위해서(때문에)%조사처리(CNAME("一人称"),"를")% 호출한다고는 무례한 녀석……！」
 		PRINTFORMW 「하, 하지만！%CNAME("一人称")%에도흡혈귀로서의 자랑이 있는,%CNAME("二人称")%어째서에 거뜬히조교되지는 않아！」
 	ENDIF
-	PRINTFORMW 「무, 오히려%CNAME("二人称")%를 농락 해 하인으로 해 준다……인가, 각오 해 두어라! 」
+	PRINTFORMW 「무, 오히려%조사처리(CNAME("二人称"),"를")% 농락 해 하인으로 해 준다……인가, 각오 해 두어라! 」
 	SETBIT CFLAG:201, 0
 ;-------------------------------------------------
 ;조교개시時（一回のみ） CFLAG201
@@ -149,7 +149,7 @@ ELSEIF GETBIT(CFLAG:201, 26) == 0 && COND("권속", MASTER) == TARGET
 		PRINTFORMW 「낫, %CNAME("二人称")%라면! ？도, 어째서%CNAME("一人称")%(와)과 같음얼굴에……학! 」
 		PRINTFORMW （그래, 그런가……그 시한계까지정력를 빼앗았기 때문에……! ）
 		PRINTL
-		PRINTFORMW 「스, 미안하다%CNAME("二人称")%……!  %조사처리(CNAME("一人称"),"가")% 손대중하지 않았다(뿐)만에, %CNAME("二人称")%를 그런 모습에……! 」
+		PRINTFORMW 「스, 미안하다%CNAME("二人称")%……!  %조사처리(CNAME("一人称"),"가")% 손대중하지 않았다(뿐)만에, %조사처리(CNAME("二人称"),"를")% 그런 모습에……! 」
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 미안한 것 같은 표정을 띄우고 있다. 
 		PRINTFORMW 이렇게 기특해지고 있는 것은 좀처럼 볼 수 없는 것이 아닐까……
 		PRINTL
@@ -168,7 +168,7 @@ ELSEIF GETBIT(CFLAG:201, 26) == 0 && COND("권속", MASTER) == TARGET
 			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 울 것 같은 표정의%조사처리(CALLNAME:TARGET,"를")% 껴안으면, 상냥하게 머리를 어루만진다……
 			PRINTL
 			PRINTFORMW 「……우우, %조사처리(CNAME("二人称"),"는")% 상냥하구나……」
-			PRINTFORMW 「……, 이봐%CNAME("二人称")%……%CNAME("二人称")%를몽마로 해 버렸다%조사처리(CNAME("一人称"),"가")% 말할 수 있던 의리는 아닐지도 모르겠지만……」
+			PRINTFORMW 「……, 이봐%CNAME("二人称")%……%조사처리(CNAME("二人称"),"를")%몽마로 해 버렸다%조사처리(CNAME("一人称"),"가")% 말할 수 있던 의리는 아닐지도 모르겠지만……」
 			PRINTFORML 「비유%조사처리(CNAME("二人称"),"가")% 흡혈귀(이)가 되어도, %CNAME("一人称")%(와)과 같은 모습이 되어도……」
 			PRINTFORMW 「%CNAME("一人称","どもり")%노, %CNAME("二人称")%에 대한 생각은 변함없어……」
 			PRINTFORMW 얼굴를 진빨강거기에 해 머뭇머뭇 하면서 말한다%CALLNAME:TARGET%에, %조사처리(CALLNAME:MASTER,"는")% 살그머니키스를 했다……
@@ -235,7 +235,7 @@ ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2 && TALENT:연모 == 0
 	PRINTFORMW 「그런데 어때, 현실은 반대로 녀석에게 좋은 것 같게 되고 있다……」
 	PRINTFORMW 「쿳……! 무엇이다 저 녀석은, 이 긍지 높다흡혈귀이다%조사처리(CNAME("一人称"),"를")% , 이런……! 」
 	PRINTFORMW 「……이, 아니, 아직 당황하는 것 같은시간(이)가 아니다, 역전의 찬스는 있을 것……」
-	PRINTFORMW 「보고 있어라%CALLNAME:MASTER%, 반드시%CNAME("二人称")%를 우리 전에 무릎 꿇게 해 준다……! 」
+	PRINTFORMW 「보고 있어라%CALLNAME:MASTER%, 반드시%조사처리(CNAME("二人称"),"를")% 우리 전에 무릎 꿇게 해 준다……! 」
 	SETBIT CFLAG:201, 2
 ;굴복각인Lv3
 ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
@@ -1091,7 +1091,7 @@ ELSEIF TALENT:연모 && CFLAG:99
 ;연모
 ELSEIF TALENT:연모
 	PRINTFORMW 「도, 벌써 끝인가？와, 알았다……」
-	PRINTFORMW （정직물발리나 겉껍데기……%CNAME("二人称")%를 곤란하게 할 수도 없구나）
+	PRINTFORMW （정직물발리나 겉껍데기……%조사처리(CNAME("二人称"),"를")% 곤란하게 할 수도 없구나）
 	PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 유감스러운 듯하다……
 	;CALL CLEANLINESS_CHECK
 ;굴복각인Lv3이하＋체력500未満
@@ -4550,7 +4550,7 @@ IF SELECTCOM == 90
 								PRINTFORMW 「좋아……모처럼이고, %조사처리(CNAME("一人称"),"가")% 이민감자지를 단련해 주자」
 								PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 정액투성이가 되어 있는 귀두를, 손바닥으로 싸도록(듯이)해 자극 하기 시작했다! 
 								PRINTFORMW 「후훈, 사정했다뿐인 벗겨 세우고의 끝 쪽을 꾸짖을 수 있는 것은 효과가 있을 것이다？」
-								PRINTFORMW 「하지만 멈추어 주지 않아, 이것은%CNAME("二人称")%를 위해서(때문에)인거니까？쿠쿡……! 」
+								PRINTFORMW 「하지만 멈추어 주지 않아, 이것은%조사처리(CNAME("二人称"),"를")% 위해서(때문에)인거니까？쿠쿡……! 」
 								;☆가학쾌락경험加算
 								CALL PRINTL_EXP_ADD, "가학쾌락경험", 1+RAND:3, TARGET
 								;☆PLAYERの고통쾌락경험加算
@@ -5056,7 +5056,7 @@ IF SELECTCOM == 90
 								PRINTFORMW 「좋아……모처럼이고, %조사처리(CNAME("一人称"),"가")% 이민감자지를 단련해 주자」
 								PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 정액투성이가 되어 있는 귀두를, 손바닥으로 싸도록(듯이)해 자극 하기 시작했다! 
 								PRINTFORMW 「후훈, 사정했다뿐인 벗겨 세우고의 끝 쪽을 꾸짖을 수 있는 것은 효과가 있을 것이다？」
-								PRINTFORMW 「하지만 멈추어 주지 않아, 이것은%CNAME("二人称")%를 위해서(때문에)인거니까？쿠쿡……! 」
+								PRINTFORMW 「하지만 멈추어 주지 않아, 이것은%조사처리(CNAME("二人称"),"를")% 위해서(때문에)인거니까？쿠쿡……! 」
 								;☆가학쾌락경험加算
 								CALL PRINTL_EXP_ADD, "가학쾌락경험", 1+RAND:3, TARGET
 								;☆PLAYERの고통쾌락경험加算
@@ -5292,7 +5292,7 @@ IF SELECTCOM == 90
 			ELSEIF ABL:봉사정신 >= 3
 				PRINTFORMW 「%조사처리(CNAME("二人称"),"는")% 코코가 약한 것 같아？그리고, 코코도……」
 				PRINTFORMW 「쿠쿡……꽤 효과가 있는 것 같다, %CNAME("二人称")%노성감대를 연구한 보람이 있었다고 하는 것이다」
-				PRINTFORMW 「……일단 말해 두지만, %CNAME("二人称")%를 기쁘게 하기 위해서가 아니야？착각 하지 마! 」
+				PRINTFORMW 「……일단 말해 두지만, %조사처리(CNAME("二人称"),"를")% 기쁘게 하기 위해서가 아니야？착각 하지 마! 」
 			;それ以外
 			ELSE
 				PRINTFORM 「후훈, %CNAME("二人称")%노
@@ -8960,7 +8960,7 @@ IF SELECTCOM == 139
 						PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 응하지 않고, 소리를 내지 않도록 하고 있다……
 						PRINTFORMW 「……엣？오, 어이%CNAME("二人称")%……？」
 						PRINTFORMW 「아니, 설마……소리도 세우지 않고 나가는 것 따위……」
-						PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 의리가 있게도아이마스크를 취할려고도 하지 않고, %CNAME("二人称")%를 찾도록(듯이) 팔을 뻗고 있다……
+						PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 의리가 있게도아이마스크를 취할려고도 하지 않고, %조사처리(CNAME("二人称"),"를")% 찾도록(듯이) 팔을 뻗고 있다……
 						PRINTFORMW 무심코 웃음소리를 흘리면, %조사처리(CALLNAME:TARGET,"는")% 조롱해졌다고 눈치, 뺨을 부풀렸다……
 					ENDIF
 				;☆それ以外
@@ -14284,7 +14284,7 @@ CASE "요바이기승위"
 			SIF COND("同衾이벤트")
 				PRINTFORMW 「미안하다……하지만, 아직 신체의 욱신거림이 수습되지 않는 것이다……읏! 」
 			PRINTFORMW 「아읏……아핫……♪」
-			PRINTFORM 「좀 더, 좀 더……!  %CNAME("一人称")%노질안에서……%CNAME("二人称")%를 느끼게 해 줘……읏
+			PRINTFORM 「좀 더, 좀 더……!  %CNAME("一人称")%노질안에서……%조사처리(CNAME("二人称"),"를")% 느끼게 해 줘……읏
 			CALL HEARTMARK_E
 		;それ以外
 		ELSE
@@ -14353,7 +14353,7 @@ CASE "매각した"
 		PRINTFORMW 「갑자기 불려 가, %조사처리(CNAME("一人称"),"를")% 조교해 팔아 치운다고 들었을 때에는 상당히 심한 녀석이라고 생각했지만……」
 		PRINTFORMW 갑자기 말이 중단되고, %조사처리(CALLNAME:TARGET,"는")% 홱%조사처리(CALLNAME:MASTER,"를")% 노려보았다. 
 		PRINTFORMW 「지금 분명하게 라고 알았다……역시 그 때의%CNAME("一人称")%의 생각은 잘못되어 있지 않았다고! 」
-		PRINTFORMW 「%CNAME("二人称")%에 상냥하게 여겨져……%조사처리(CNAME("一人称"),"는")% 조금씩%CNAME("二人称")%를 신뢰하기 시작해……」
+		PRINTFORMW 「%CNAME("二人称")%에 상냥하게 여겨져……%조사처리(CNAME("一人称"),"는")% 조금씩%조사처리(CNAME("二人称"),"를")% 신뢰하기 시작해……」
 		PRINTFORMW 「이윽고%조사처리(CNAME("一人称"),"는")% %CNAME("二人称")%에 사랑을 해 버렸다……」
 		PRINTFORMW 「그런데도……%CNAME("一人称")%의 마음을 알고 있으면서 이 처사다! 」
 		PRINTFORMW 「이것을 비도[非道]라고 말하지 않고 뭐라고 말한다! 이 외도째, 극악인째! ! 」
@@ -14375,7 +14375,7 @@ CASE "매각した"
 	;それ以外
 	ELSE
 		PRINTFORMW 「이, 일단……신세를 졌다……(와)과만은 말해 두어 주자」
-		PRINTFORMW 「인가, 착각 하지마!  %CNAME("二人称")%를 허락했을 것은 아니기 때문에! 」
+		PRINTFORMW 「인가, 착각 하지마!  %조사처리(CNAME("二人称"),"를")% 허락했을 것은 아니기 때문에! 」
 	ENDIF
 	RETURN 1
 ;-----------------------------
@@ -15129,7 +15129,7 @@ CASE "다방"
 			PRINTFORML 「이런 일은 지금까지 없는 체험이다, %CNAME("二人称")%에는 감사하지 않으면……후훅」
 			PRINTL
 		ELSEIF RAND:2 == 0
-			PRINTFORML 「그런데, 지금일도 일한다고 할까……%CNAME("二人称")%를 위해서(때문에)도, ♪」
+			PRINTFORML 「그런데, 지금일도 일한다고 할까……%조사처리(CNAME("二人称"),"를")% 위해서(때문에)도, ♪」
 			PRINTL
 		ELSE
 			IF COND("인기：다방")
@@ -15417,7 +15417,7 @@ CASE "お土産"
 ;-------------------------------------------------
 CASE "日常：食事当番"
 	IF TALENT:연모
-		PRINTFORMW 「%CNAME("二人称")%를 위해서(때문에), 최선의 솜씨를 발휘해 요리하겠어！」
+		PRINTFORMW 「%조사처리(CNAME("二人称"),"를")% 위해서(때문에), 최선의 솜씨를 발휘해 요리하겠어！」
 	ELSE
 		IF MARK:굴복각인 == 3
 			PRINTFORMW 「흥, 뭐 좋을 것이다……맛있음에 깜짝 놀라 기급하지 마？」

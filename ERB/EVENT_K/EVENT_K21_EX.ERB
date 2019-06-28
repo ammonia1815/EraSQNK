@@ -675,7 +675,7 @@ CASE "플레이直後"
 		IF RAND:4 == 0
 			PRINTFORMW 「그런데…다음은 어떻게 기분 좋게 해 줄까…♪」
 		ELSEIF RAND:3 == 0
-			PRINTFORMW 「후후…%CNAME("一人称")%의 테크닉도 상당한 것일 것이다…？ %CNAME("二人称")%를 포로로 해 주니까요♪」
+			PRINTFORMW 「후후…%CNAME("一人称")%의 테크닉도 상당한 것일 것이다…？ %조사처리(CNAME("二人称"),"를")% 포로로 해 주니까요♪」
 		ELSEIF RAND:2
 			PRINTFORMW 「후후후…좀더 좀더해 주었으면 한네…？좋아, 지금은 충분히%CNAME("一人称")%에 응석부려, 모두를 맡기는거야♪」
 		ELSE
@@ -2521,7 +2521,7 @@ ELSE
 ENDIF
 CALL INPUT_SELECT, 3
 IF RESULT == 0
-	PRINTFORMW 「그렇게까지 졸라져서는 어쩔 수 없다…어떤 것, 한번 더%CNAME("二人称")%를 다시 예의범절을 가르쳐 준다♪」
+	PRINTFORMW 「그렇게까지 졸라져서는 어쩔 수 없다…어떤 것, 한번 더%조사처리(CNAME("二人称"),"를")% 다시 예의범절을 가르쳐 준다♪」
 	CALL END_SM_21
 ELSEIF RESULT == 1
 	PRINTFORMW 「전부, 인가…%CNAME("二人称")%는 탐욕이구나♪좋아, 그러면 소망 대로 다 짜 주네요♪」
