@@ -202,7 +202,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모 && BASE:몇번째 == 1
 	PRINTFORMW 「아………」
 	PRINTFORMW (게다가 조교가 아니다……틀림없다…)
 	PRINTFORMW 「좋아해요……%CNAME("二人称")%……」
-	PRINTFORMW 「세계에서 제일………%CNAME("二人称")%가……좋아해」
+	PRINTFORMW 「세계에서 제일………%조사처리(CNAME("二人称"),"가")%……좋아해」
 	PRINTFORMW 진지한 음색으로 좋아해라고 전해 오는 %CALLNAME:TARGET%…
 	PRINTFORMW 그 진심은 충분히……감지할 수 있었다
 	PRINTFORMW 부친으로서………아니, 주장은 벌써 여기까지로 하자
@@ -274,7 +274,7 @@ IF BASE:몇번째 == 1
 			ENDIF
 		ELSEIF RAND:2 == 0
 			PRINTFORMW 「반드시…이 체계의 탓이야……」
-			PRINTFORMW 「%CNAME("二人称")%가 전혀 나에게 뒤돌아 봐 주지 않는 것은……」
+			PRINTFORMW 「%조사처리(CNAME("二人称"),"가")% 전혀 나에게 뒤돌아 봐 주지 않는 것은……」
 			PRINTFORMW 「어째서 평평이겠지?」
 			PRINTFORMW 「몸이 좀더로 라면…뒤돌아 봐 줄리야…」
 			PRINTFORMW 거울의 앞에서 몇번이나 같은 일을 자문하고 있다…
@@ -708,7 +708,7 @@ IF SELECTCOM == 2 && BASE:몇번째 == 1
 		;それ以外
 		ELSE
 			PRINTFORMW 「네? 엉덩이로…하는 거야?」
-			PRINTFORMW 「%CNAME("二人称")%가 무슨 일이 있어도 라고 말한다면……」
+			PRINTFORMW 「%조사처리(CNAME("二人称"),"가")% 무슨 일이 있어도 라고 말한다면……」
 		ENDIF
 		CFLAG:223 = 1
 		RETURN 1

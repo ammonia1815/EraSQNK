@@ -249,7 +249,7 @@ ELSEIF GETBIT(CFLAG:201, 6) == 0 && TALENT:연모 && TALENT:임신 && COND("정�
 	;상대が몽마
 	SIF COND("몽마")
 		PRINTFORM 몽마이니까, 
-	PRINTFORMW %CNAME("二人称")%가 꿈을 보여주고 있는 것 같아」
+	PRINTFORMW %조사처리(CNAME("二人称"),"가")% 꿈을 보여주고 있는 것 같아」
 	PRINTFORMW 「하지만 꿈만으로는 역시 배고프니까, 오늘은 %CNAME("一人称")%의 안에 %CNAME("二人称")%의 정액을 가득 부어줘♪」
 	SETBIT CFLAG:201, 6
 ;연모＋당신の子임신＋明일生まれる
@@ -260,7 +260,7 @@ ELSEIF GETBIT(CFLAG:201, 7) == 0 && TALENT:연모 && TALENT:임신 == 3 && COND(
 	PRINTFORML 어려 보이며 천진난만하게 자는 얼굴, 둥글고 부드러운 사지, 요정의 상징 중에 하나인 무지개 빛으로 빛나는 날개
 	PRINTFORMW 그리고 내일 출산을 앞둬 작은 신체에 맞지 않게 불어난 배가 호흠에 맞춰 부드럽게 위아래로 움직인다……
 	PRINTFORMW 「음냐……어라？ %CNAME("二人称")% 언제 들어 왔었어……？」
-	PRINTFORMW 「%CNAME("二人称")%가 왔다는걸 알았다면 당장이라도 일어났을텐 데, 심술쟁이」
+	PRINTFORMW 「%조사처리(CNAME("二人称"),"가")% 왔다는걸 알았다면 당장이라도 일어났을텐 데, 심술쟁이」
 	PRINTFORMW 「내일은 드디어 %CNAME("二人称")%의 아기가 태어나 네. 조금 무섭긴 하지만……%CNAME("一人称")%, 노력 할께」
 	PRINTFORM 「하지만 그 전에, %CNAME("一人称")%의 보지
 	;당신に生えている
@@ -342,7 +342,7 @@ ELSEIF COND("ご無沙汰")
 		PRINTFORMW 「%CNAME("二人称")% 늦어～! 왜 이렇게 오질 않은거야～! 」
 		PRINTFORML 침대의 위에서 큰 배를 내고, 발을 동동 굴리며 %타겟은()% %CALLNAME:PLAYER%에게 항의 했다
 		PRINTFORMW 작은 균열에서 애액이 흘러 솟아 나와, 음란한 향기가 방 가득 넘치게 되었다
-		PRINTFORMW 「배에 아기가 있어도 기분 좋은거 하고 싶단 말이야, %CNAME("二人称")%가 아기 아빠니까 말이야」
+		PRINTFORMW 「배에 아기가 있어도 기분 좋은거 하고 싶단 말이야, %조사처리(CNAME("二人称"),"가")% 아기 아빠니까 말이야」
 		PRINTFORMW 「제대로 와주지 않으면 아기도 쓸쓸하게 되버릴꺼야……무규우웃」
 		PRINTFORML 바쁘게 움직이는 %CALLNAME:TARGET%의 입술을 키스로 막고, 부드럽게 무너뜨리자 %타겟은()% 토라진 표정을 지었다
 		PRINTFORM 「정말, %CNAME("二人称")%야아……제대로
@@ -357,7 +357,7 @@ ELSEIF COND("ご無沙汰")
 	ELSEIF TALENT:연모
 		PRINTFORMW 「%CNAME("二人称", "～")%, 만나고 싶었어～! 」
 		PRINTFORMW 방에 들어가자 마자 날라온 %타겟이()% 껴안겨, 달콤한 향이 나는 얇은 몸을 힘껏 비볐다
-		PRINTFORMW 「기분 좋은거 하고 싶은데 %CNAME("二人称")%가 전혀 오질 않아서, %CNAME("一人称")%버림 받은게 아닐까 라고……훌쩍」
+		PRINTFORMW 「기분 좋은거 하고 싶은데 %조사처리(CNAME("二人称"),"가")% 전혀 오질 않아서, %CNAME("一人称")%버림 받은게 아닐까 라고……훌쩍」
 		PRINTFORML 훌쩍 거리는 %타겟을()% 부드럽게 쓰다듬고, 뺨에 몇번이나 키스를 하자
 		PRINTFORMW %CALLNAME:TARGET%의 표정은 점차 풀려 갔고, 잠시 후 평정심을 회복했다
 		PRINTFORM 「응……모처럼 왔으니 용서해 줄게. 대신, 지금 까지 기다리게 한 만큼 저언～부 기분 좋게 해줘야해
@@ -450,7 +450,7 @@ ELSEIF TALENT:연모 && TALENT:임신 == 1
 		PRINTFORM 「에헤헤, 뱃속에 아기가 있는데도 와 줘서 기뻐
 		CALL HEARTMARK_E
 		PRINTFORMW 「%CNAME("一人称")%의 대한건 걱정하지 않아도 괜찮아」
-		PRINTFORM 「그보다 %CNAME("二人称")%가, %CNAME("一人称")%의 몸 으로 잔뜩 기분 좋게 되길 원해
+		PRINTFORM 「그보다 %조사처리(CNAME("二人称"),"가")%, %CNAME("一人称")%의 몸 으로 잔뜩 기분 좋게 되길 원해
 		CALL HEARTMARK_E
 	ELSEIF RAND:2 == 0
 		PRINTFORM 「임신하면 하면 말이야, 평소보다 더 기분좋게 되고 싶어져……
@@ -459,7 +459,7 @@ ELSEIF TALENT:연모 && TALENT:임신 == 1
 		CALL HEARTMARK_E
 		PRINTFORMW 「뭐, 그러면 평상시와 변함 없다고？므우～」
 	ELSE
-		PRINTFORM 「아, 배에 아기가 움직였어! %CNAME("二人称")%가 와줘서 기쁜 것 같아
+		PRINTFORM 「아, 배에 아기가 움직였어! %조사처리(CNAME("二人称"),"가")% 와줘서 기쁜 것 같아
 		CALL HEARTMARK_E
 		PRINTFORM 「그러면 뱃속의 아기와 함께 세명이서 사랑하자
 		CALL HEARTMARK_E
@@ -504,7 +504,7 @@ ELSEIF TALENT:음란 && RANDIF(1, TALENT:연모)
 	IF RAND:3 == 0
 		PRINTFORM 「우후후
 		CALL HEARTMARK
-		PRINTFORM %CNAME("二人称")%가 또 %CNAME("一人称")%로 기분 좋게 되길 원하는가 보구나
+		PRINTFORM %조사처리(CNAME("二人称"),"가")% 또 %CNAME("一人称")%로 기분 좋게 되길 원하는가 보구나
 		CALL HEARTMARK_E
 		PRINTFORM 「좋아～
 		CALL HEARTMARK
@@ -562,7 +562,7 @@ ELSEIF TALENT:연모
 	ELSE
 		PRINTFORMW 「%CNAME("一人称")%말야, %CNAME("二人称")%와 음란 한 것을 한다던가……」
 		PRINTFORMW 「%CNAME("二人称")%를 기분 좋게 해주는것도 좋아하지만……」
-		PRINTFORM 「그것들 보다 %CNAME("二人称")%가 %CNAME("一人称")%에게 와주는게……그게 가장 좋아
+		PRINTFORM 「그것들 보다 %조사처리(CNAME("二人称"),"가")% %CNAME("一人称")%에게 와주는게……그게 가장 좋아
 		CALL HEARTMARK_E
 	ENDIF
 ;굴복각인Lv3
@@ -570,7 +570,7 @@ ELSEIF MARK:굴복각인 == 3
 	IF RAND:2 == 0
 		PRINTFORM 「%CNAME("二人称")%, 실은 %CNAME("一人称")%에 대한 것을 좋아하는 거지～
 		CALL HEARTMARK_E
-		PRINTFORM 「왜냐면 여러번 %CNAME("二人称")%가 만나러 와줘선, 가득 조교해주잖아
+		PRINTFORM 「왜냐면 여러번 %조사처리(CNAME("二人称"),"가")% 만나러 와줘선, 가득 조교해주잖아
 		CALL HEARTMARK_E
 		PRINTFORM 「후후
 		CALL HEARTMARK
@@ -597,7 +597,7 @@ ELSEIF MARK:굴복각인 == 2
 	ELSE
 		PRINTFORMW 「와아, %CNAME("二人称")%다～! 」
 		PRINTFORMW 방의 문을 열자마자, %타겟이()% 가슴으로 들어왔다
-		PRINTFORM 「이 저택의 생활도 좋지만, %CNAME("二人称")%가 있지 않으면 너무 지루하다구. 어서 조교하자, 빨리
+		PRINTFORM 「이 저택의 생활도 좋지만, %조사처리(CNAME("二人称"),"가")% 있지 않으면 너무 지루하다구. 어서 조교하자, 빨리
 		CALL HEARTMARK_E
 	ENDIF
 ;굴복각인Lv0
@@ -11738,7 +11738,7 @@ ELSEIF SHOOT("가슴")
 			CALL HEARTMARK
 			PRINTFORM %CNAME("二人称")%의 자지도 키─하지도, 매우 뜨거워서 흥분해 버린다……
 			CALL HEARTMARK_E
-			PRINTFORM 「%CNAME("二人称")%가짜─밖에 차진 곳으로부터, 자꾸자꾸 기분이 좋은 것이 퍼져……이상함
+			PRINTFORM 「%조사처리(CNAME("二人称"),"가")%짜─밖에 차진 곳으로부터, 자꾸자꾸 기분이 좋은 것이 퍼져……이상함
 			CALL HEARTMARK_E
 		ELSE
 			PRINTFORM 「(이)나
@@ -13053,7 +13053,7 @@ CASE "매각した"
 			PRINTFORM 「에, %조사처리(CNAME("一人称"),"는")% 별로 이사 간다 던가 하고 싶진 않은데. 그것 보다 기분 좋은거 하자
 			CALL HEARTMARK_E
 			PRINTFORMW 「……우우……우우우우……역시 안돼？ 칫, 모처럼 %CNAME("二人称")%와는 상성이 딱 좋다고 생각했는데」
-			PRINTFORMW 「뭔가 분하니까 %CNAME("一人称")%, 더욱 더욱 야하게 변할꺼야! 그래서 %CNAME("二人称")%가 %CNAME("一人称")%나 없이는 있을 수 없게 만들꺼야! 」
+			PRINTFORMW 「뭔가 분하니까 %CNAME("一人称")%, 더욱 더욱 야하게 변할꺼야! 그래서 %조사처리(CNAME("二人称"),"가")% %CNAME("一人称")%나 없이는 있을 수 없게 만들꺼야! 」
 			PRINTFORMW 「알겠지, 절대로 그렇게 만들꺼야! 그때까지는 다른 몽마 따위에게 말라 비틀어 지지 말라고! 」
 			PRINTFORMW %타겟은()% %CALLNAME:PLAYER%의 모습이 보이지 않을 때 까지 손을 계속 흔들었다……
 		ELSE

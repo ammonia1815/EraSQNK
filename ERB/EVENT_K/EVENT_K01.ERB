@@ -1776,7 +1776,7 @@ ELSEIF SELECTCOM == 34 && TEQUIP:클리캡 == 0
 	;연모
 	ELSEIF TALENT:연모
 		PRINTFORMW 「안돼……도구는 만족할 수 없는거야……♪」
-		PRINTFORMW 「역시……%CNAME("二人称")%가 아니면……안돼♪」
+		PRINTFORMW 「역시……%조사처리(CNAME("二人称"),"가")% 아니면……안돼♪」
 		PRINTFORMW %타겟은()%%CALLNAME:PLAYER%에 안아 붙으면(자) ,  상기 한 뺨과 눈을 치켜 뜨고 봄으로 이쪽을 보고 있다
 	;それ以外
 	ELSE
@@ -1978,7 +1978,7 @@ IF SELECTCOM >= 60 && SELECTCOM <= 69 && FIRSTCOMS("Ｖ삽입") == 0
 				PRINTFORMW 「싫지 않아요♪ 빨리 들어 와」
 				PRINTFORMW %타겟은()% 처음의 아픔보다 , %조사처리(CALLNAME:PLAYER,"를")% 제일로 생각해 권하고 있다
 			ELSE
-				PRINTFORMW 「하 ,  하!  하아 ,  ……%CNAME("二人称")%가 들어 와,  ……」
+				PRINTFORMW 「하 ,  하!  하아 ,  ……%조사처리(CNAME("二人称"),"가")% 들어 와,  ……」
 				PRINTFORMW 「, 나 ,  찢을 수 있어……,  으윽 ,  ,  아아아아아아 아아아!」
 			ENDIF
 		ENDIF
@@ -2015,7 +2015,7 @@ IF SELECTCOM == 60
 			RETURN 1
 		;연모＋처녀
 		ELSEIF TALENT:연모 && TALENT:처녀
-			PRINTFORMW 「하 ,  하!  하아 ,  ……%CNAME("二人称")%가 들어 와,  ……」
+			PRINTFORMW 「하 ,  하!  하아 ,  ……%조사처리(CNAME("二人称"),"가")% 들어 와,  ……」
 			PRINTFORMW 「, 나 ,  찢을 수 있어……,  으윽 ,  ,  아아아아아아 아아아!」
 		;それ以外（연모無し, 순종Lv5未満）
 		ELSE
@@ -2148,7 +2148,7 @@ IF SELECTCOM == 61
 			RETURN 1
 		;연모＋처녀
 		ELSEIF TALENT:연모 && TALENT:처녀
-			PRINTFORMW 「하 ,  하!  하아 ,  ……%CNAME("二人称")%가 들어 와,  ……」
+			PRINTFORMW 「하 ,  하!  하아 ,  ……%조사처리(CNAME("二人称"),"가")% 들어 와,  ……」
 			PRINTFORMW 「, 나 ,  찢을 수 있어……,  으윽 ,  ,  아아아아아아 아아아!」
 		;それ以外（연모無し, 순종Lv5未満)
 		ELSE
@@ -4677,7 +4677,7 @@ ELSEIF SELECTCOM == 179 && TEQUIP:수치플레이 == 0
 		;연모
 		IF TALENT:연모
 			PRINTFORMW 「부끄러웠다……지만……」
-			PRINTFORMW 「%CNAME("二人称")%가 옆에 있다면 아무렇지도 않구나♪」
+			PRINTFORMW 「%조사처리(CNAME("二人称"),"가")% 옆에 있다면 아무렇지도 않구나♪」
 			PRINTFORMW 태양보다 눈부신 웃는 얼굴을 향하는%CALLNAME:TARGET%에 , %CALLNAME:PLAYER%는 두근로 했다
 		;それ以外
 		ELSE
@@ -4690,7 +4690,7 @@ ELSEIF SELECTCOM == 179 && TEQUIP:수치플레이 == 0
 		;연모
 		IF TALENT:연모
 			PRINTFORMW 「역시 부끄러웠지만」
-			PRINTFORMW 「%CNAME("二人称")%가 항상 옆에 있다면 아무렇지도 않았어♪」
+			PRINTFORMW 「%조사처리(CNAME("二人称"),"가")% 항상 옆에 있다면 아무렇지도 않았어♪」
 			PRINTFORMW 어떤 것보다 눈부신 웃는 얼굴을 향하는%CALLNAME:TARGET%에 , %CALLNAME:PLAYER%는 두근로 했다
 		;それ以外
 		ELSE
@@ -5069,7 +5069,7 @@ IF SELECTCOM == 125 || SELECTCOM == 126
 					PRINTFORMW 「저기,  %CNAME("二人称")%의"보지"에 따르고 싶어서 참을 수 없는이…받아 들이며♪」
 				ELSEIF RAND:4 == 0
 					PRINTFORMW 「%CNAME("二人称")%는 이제(벌써) %CNAME("一人称")%에 꿈 속♪」
-					PRINTFORMW 「…아니요 %CNAME("二人称")%가 정말로 열중한 것은 %CNAME("一人称")%의 페니스의 (분)편이었는지 ..♪ 쿡쿡」
+					PRINTFORMW 「…아니요 %조사처리(CNAME("二人称"),"가")% 정말로 열중한 것은 %CNAME("一人称")%의 페니스의 (분)편이었는지 ..♪ 쿡쿡」
 				ELSEIF RAND:3 == 0
 					PRINTFORMW 「%CNAME("二人称")%의"보지",  야해 소리내 기뻐하는…♪」
 					PRINTFORMW 「저기,  흘러넘칠 정도로에 충분히(듬뿍) 쏟아 줄께」
@@ -8257,7 +8257,7 @@ CASE "매각した"
 		PRINTFORMW 아무것도 말하지 않는다. 오로지에 ,  입다물고 있다
 		PRINTFORMW 「………!  설마……」
 		PRINTFORMW 그녀가 무엇을 예측 하면 해 있고. 입이 벌벌 떨려 손을 댄다
-		PRINTFORMW 「%CNAME("二人称")%가 ,  조련사……이니까……?」
+		PRINTFORMW 「%조사처리(CNAME("二人称"),"가")% ,  조련사……이니까……?」
 		PRINTFORMW 말없이 수긍했다
 		PRINTFORMW 처음은 ,  변덕---
 		PRINTFORMW 서서히 ,  신경이 쓰이기 시작하고---
