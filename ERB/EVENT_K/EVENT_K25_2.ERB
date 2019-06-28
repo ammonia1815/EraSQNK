@@ -2220,7 +2220,7 @@ ELSEIF NO:ASSI == 40
 	IF CEVENT("조수会話：롯코・바롯코") == 0
 		;연모＋연모時初구상（陥落이벤트）が発生済みかつ조수が연모
 		IF TALENT:연모 && GETBIT(CFLAG:201, 4) && TALENT:ASSI:연모 
-			PRINTFORMW 『%CALLNAME:TARGET%씨는경험풍부한 것 같지만,%NICKNAME:ASSI%노도움그리고 괜찮아？』
+			PRINTFORMW 『%CALLNAME:TARGET%씨는경험풍부한 것 같지만,%NICKNAME:ASSI%의도움그리고 괜찮아？』
 			PRINTFORMW 「후훗,경험풍부하다고 해도, 나도당신(와)과 같음주인님를 좋아하는 여자 아이예요」
 			PRINTFORMW 「되면……어떻게 말하는 일을 하면 좋은가 아는군요♪」
 			PRINTFORMW %CALLNAME:ASSI%는 빙그레 웃으면,%CALLNAME:TARGET%의 몸을애무하기 시작했습니다……
@@ -2256,7 +2256,7 @@ ELSEIF NO:ASSI == 40
 		;조수が연모
 		ELSEIF TALENT:ASSI:연모 
 			PRINTFORMW 『여어～해,%CALLNAME:ASSI%씨의조교그래서%NICKNAME:ASSI%의 굉장한 곳 보여 버리겠어～！』
-			PRINTFORMW %CALLNAME:ASSI%하%CALLNAME:TARGET%노조교를 의욕에 넘쳐 있는 것 같습니다……
+			PRINTFORMW %CALLNAME:ASSI%하%CALLNAME:TARGET%의조교를 의욕에 넘쳐 있는 것 같습니다……
 		ELSE
 			PRINTFORMW 『（아우～,흡혈귀씨는 무섭지만, 일 노력하지 않으면）』
 			PRINTFORMW %CALLNAME:ASSI%하공포마음을 숨기면서, 어떻게든%TEXTS("조수の명칭")%의 일을 완수하려고 하고 있습니다……
@@ -2301,7 +2301,7 @@ ELSEIF NO:ASSI == 14
 			ELSE
 				PRINTFORML 『그옷그러면 움직이기 어려울 것입니다？ %CNAMET(ASSI, "一人称")%하지만 도와 주어요』
 				PRINTFORMW 「춋, 좋습니다！좋으니까！！」
-				PRINTFORMW %CALLNAME:ASSI%하%CALLNAME:TARGET%노옷를 승손에 벗기려고 하고 있습니다……
+				PRINTFORMW %CALLNAME:ASSI%하%CALLNAME:TARGET%의옷를 승손에 벗기려고 하고 있습니다……
 			ENDIF
 		;조수が연모
 		ELSEIF TALENT:ASSI:연모 
@@ -12057,7 +12057,7 @@ IF SELECTCOM == 171 && COND("마을")
 										PRINTFORMW 「이것이상인내는………이제(벌써)무리(이에)예요……♪」
 										PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 바이브(이)가 들어갔다보지를누르면서, 어떻게든 참으려고 하고 있었지만――
 										PRINTFORMW 「아…하앗♪나오는 나오는 나온다아♪♪♪」
-										PRINTFORMW %CALLNAME:TARGET%노다리하지만 삐걱삐걱 떨리면,바이브(와)과 음순의 틈새로부터 힘차게 오줌이 새기 시작했다
+										PRINTFORMW %CALLNAME:TARGET%의다리하지만 삐걱삐걱 떨리면,바이브(와)과 음순의 틈새로부터 힘차게 오줌이 새기 시작했다
 										PRINTFORMW 「아아아……아……우…앗♪」
 										PRINTFORMW %CALLNAME:TARGET%의 오줌 흘리기가 끝나면, 그녀의 물고 있다바이브로부터 작은 진동소리가 울리기 시작했다
 										PRINTFORMW 「하앗…하앗……좀 더…내도 좋지요……♪」
@@ -12068,7 +12068,7 @@ IF SELECTCOM == 171 && COND("마을")
 										PRINTFORMW 「이것이상인내는………이제(벌써)무리(이에)예요……♪」
 										PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 보지를누르면서, 어떻게든 참으려고 하고 있었지만――
 										PRINTFORMW 「아…하앗♪나오는 나오는 나온다아♪♪♪」
-										PRINTFORMW %CALLNAME:TARGET%노다리하지만 삐걱삐걱 떨리면, 부자연스럽게 부풀어 오른 속옷으로부터 힘차게 오줌이 새기 시작했다
+										PRINTFORMW %CALLNAME:TARGET%의다리하지만 삐걱삐걱 떨리면, 부자연스럽게 부풀어 오른 속옷으로부터 힘차게 오줌이 새기 시작했다
 										PRINTFORMW 「아아아……아……우…앗♪」
 										PRINTFORMW %CALLNAME:TARGET%의 오줌 흘리기가 끝나면, 그녀의 흠뻑축축한 속옷의 안쪽으로부터 작은 진동소리가 울리기 시작했다
 										PRINTFORMW 「하앗…하앗……좀 더…내도 좋지요……♪」
@@ -12159,11 +12159,11 @@ IF SELECTCOM == 171 && COND("마을")
 							PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 꾸짖는 것 같은입모습이지만, 화내지 않는 것 같다
 						;바이브＆애널바이브삽입中
 						ELSEIF TEQUIP:바이브 && TEQUIP:애널바이브
-							PRINTFORMW 양산을 가려 걷는다%CALLNAME:TARGET%노옷의 아래로부터는, 작은 진동소리가 들려 온다…
+							PRINTFORMW 양산을 가려 걷는다%CALLNAME:TARGET%의옷의 아래로부터는, 작은 진동소리가 들려 온다…
 							PRINTFORMW 「～～～～읏♪얏……발각되어 버린다…발각되어 버립니다아♪ …응, 응읏♪」
 							PRINTFORMW %CALLNAME:TARGET%에삽입된 2개의바이브는 그녀 앞 다음에 가차 없이 날뛰어,발원래에는 부자연스럽게 물방울이 방울져 떨어지고 있다
 							PRINTFORMW 「빠르게…빨리 해 주세요……♪벌써 늘어져 버려, 인내 할 수 없습니다아…♪」
-							PRINTFORMW 양산을 가진다%CALLNAME:TARGET%노손는 삐걱삐걱 털어, 그 몸은 때때로 흠칫 뛴다
+							PRINTFORMW 양산을 가진다%CALLNAME:TARGET%의손는 삐걱삐걱 털어, 그 몸은 때때로 흠칫 뛴다
 							PRINTFORMW 엇갈리는 사람들은%CALLNAME:TARGET%의 모습을 이상한 것 같게 보지만, 바로 그 본인은 그 시선조차도 쾌감으로서 받고 있는 것 같다…
 						;바이브삽입中or애널바이브삽입中or로터삽입中
 						ELSEIF TEQUIP:바이브 || TEQUIP:애널바이브 || TEQUIP:로터삽입
