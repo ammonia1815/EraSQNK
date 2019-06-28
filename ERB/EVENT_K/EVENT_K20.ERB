@@ -68,7 +68,7 @@ IF GETBIT(CFLAG:201, 0) == 0
 	PRINTFORMW 「엣, 조교! 음란하게 해 팔아 버린다?」
 	PRINTFORMW 「그런 것 안됩니다. 신사마도 반드시 허락하가 되지 않을 것입니다아」
 	PRINTFORMW 「……므우, 알았습니다.%CNAME("二人称")%하성욕하지만 너무 모이고 있기 때문에, 악행에손를 물들이고 있습니다아」
-	PRINTFORMW 「이 %CNAME("一人称")%가 %CNAME("二人称")%를 깨끗이 시켜, 갱생함키있습니다 ♪」
+	PRINTFORMW 「이 %조사처리(CNAME("一人称"),"가")% %CNAME("二人称")%를 깨끗이 시켜, 갱생함키있습니다 ♪」
 	SETBIT CFLAG:201, 0
 	RETURN 1
 
@@ -239,7 +239,7 @@ ELSEIF GETBIT(CFLAG:201, 30) == 0 && GETBIT(CFLAG:201, 4) && CFLAG:2 >= 3000 && 
 		ENDIF
 	ELSEIF RESULT == 0
 		PRINTFORMW 「다행이야」
-		PRINTFORMW 「그럼,  %CNAME("二人称")%는 %CNAME("一人称")%가 수호 해 주는」
+		PRINTFORMW 「그럼,  %CNAME("二人称")%는 %조사처리(CNAME("一人称"),"가")% 수호 해 주는」
 		PRINTFORMW 「쿡♪반드시 좋은 일이 있어요 ♪」
 		PRINTFORMW 
 		IF ABL:PLAYER:기교 < NUM("최대레벨", 2)
@@ -380,7 +380,7 @@ ELSEIF TALENT:연모
 ;굴복각인Lv3
 ELSEIF MARK:굴복각인 == 3
 	PRINTFORMW 「%CNAME("二人称")%,  매정한 기분과의 싸움은 괴롭습니까?」
-	PRINTFORMW 「 그렇지만, %CNAME("一人称")%가 전력으로 서포트하고, 신님은 항상 지켜봐 주시는」
+	PRINTFORMW 「 그렇지만, %조사처리(CNAME("一人称"),"가")% 전력으로 서포트하고, 신님은 항상 지켜봐 주시는」
 	PRINTFORMW 「앞으로 조금이에요, 오늘도 깨끗이 해요 ♪」
 	RETURN 1
 ;굴복각인Lv2
@@ -647,7 +647,7 @@ IF SELECTCOM == 1
 		IF CFLAG:351 == 0
 			;미약사용 중
 			IF TEQUIP:미약
-				PRINTFORMW 「쿡♪♪오늘은 %CNAME("一人称")%가 %CNAME("二人称")%를 사랑해 주네요♪」
+				PRINTFORMW 「쿡♪♪오늘은 %조사처리(CNAME("一人称"),"가")% %CNAME("二人称")%를 사랑해 주네요♪」
 				PRINTFORMW %타겟은()% 음란한 얼굴로 비밀의 입술을 꽉 눌러 혀의 감촉을 즐겨서 있다.
 				PRINTFORMW 「하아♪기분예요 …녹아버릴 것 같습니다 ♪」
 			;연모
@@ -927,12 +927,12 @@ IF SELECTCOM == 4
 				PRINTFORMW 「수호♪ 굉장해로 종류♪」
 				PRINTFORMW 「%CNAME("二人称")%의 입,  혀,  매우 좋고 종류♪」
 				PRINTFORMW %조사만처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 입에 페니스를 꽂아 세워 남자의 쾌감을 탐내고 있다…
-				PRINTFORMW 「 벌써 안돼♪ %CNAME("一人称")%가 깨끗이 할 때까지, 라고, 도와줘 주세요♪」
+				PRINTFORMW 「 벌써 안돼♪ %조사처리(CNAME("一人称"),"가")% 깨끗이 할 때까지, 라고, 도와줘 주세요♪」
 			;연모
 			ELSEIF TALENT:연모
 				PRINTFORMW 「%CNAME("二人称", "응석부리고")%♪이것을 입에 물면 좋은 입니다 ♪」
 				PRINTFORMW %타겟은()% 페니스를 %CALLNAME:PLAYER%의 입에 페니스를 찔러 넣었다.
-				PRINTFORMW 「하아♪대단하군요 ♪이렇게 기분이 좋다니 ♪%CNAME("一人称")%가 낼 때까지 놓지 말아 주세요♪」
+				PRINTFORMW 「하아♪대단하군요 ♪이렇게 기분이 좋다니 ♪%조사처리(CNAME("一人称"),"가")% 낼 때까지 놓지 말아 주세요♪」
 			;それ以外
 			ELSE
 				PRINTFORMW 「\@ TALENT:남자 ?  이러한 것을 할 때 # 남자 \@의 기분을 알고 싶습니다 ♪도와줘 주시는군요♪」
@@ -1019,7 +1019,7 @@ IF SELECTCOM == 4
 				PRINTFORMW 「%CNAME("二人称", "응석부리고")%…%CNAME("一人称")%남을 수 있는을 깨끗이 시켜 주세요♪, ♪」
 			;それ以外
 			ELSE
-				PRINTFORMW 「아아…대단한 …♪%CNAME("二人称")%의 흉내를 내 이번은 %CNAME("一人称")%가 깨끗이 시켜 주네요 …♪」
+				PRINTFORMW 「아아…대단한 …♪%CNAME("二人称")%의 흉내를 내 이번은 %조사처리(CNAME("一人称"),"가")% 깨끗이 시켜 주네요 …♪」
 			ENDIF
 			RETURN 1
 		ENDIF
@@ -2465,10 +2465,10 @@ IF SELECTCOM == 90
 			;봉사정신Lv3이상
 			ELSEIF ABL:봉사정신 >= 3
 				PRINTFORMW 「%CNAME("二人称")%의 여기, 굉장히~ 괴로운 듯하게 하고 있어요 」
-				PRINTFORMW 「쿡♪%CNAME("一人称")%가 곧바로 편하게 해 드리니까요 ♪」
+				PRINTFORMW 「쿡♪%조사처리(CNAME("一人称"),"가")% 곧바로 편하게 해 드리니까요 ♪」
 			;それ以外
 			ELSE
-				PRINTFORMW 「글쎄, %CNAME("一人称")%가 여기를 어루만지고 문질러 드리는」
+				PRINTFORMW 「글쎄, %조사처리(CNAME("一人称"),"가")% 여기를 어루만지고 문질러 드리는」
 				PRINTFORMW 「인내같은 것을 하지 않아 좋아요, 기분이 좋아져서 주세요」
 			ENDIF
 			CFLAG:241 = 1
@@ -3670,7 +3670,7 @@ ELSEIF SELECTCOM == 171 && COND("삼림")
 					PRINTFORMW 「%CNAME("二人称")%♪조금 쉬지 않습니까?」
 					PRINTFORMW 「이상한 것 들어 좋습니까?」
 					PRINTFORMW %타겟은()% 성실한 얼굴을 해 이쪽을 봐 왔다.
-					PRINTFORMW 「만약…만약도예요? %CNAME("一人称")%가 인간이라면…」
+					PRINTFORMW 「만약…만약도예요? %조사처리(CNAME("一人称"),"가")% 인간이라면…」
 					PRINTFORMW 「신부에게…네…진정한 애인이…되어 주겠습니까?」
 					DRAWLINE
 					PRINTFORML [0] 「물론」
@@ -3939,14 +3939,14 @@ IF SELECTCOM == 140
 		ELSEIF ABL:봉사정신 >= 3
 			PRINTFORMW 「우훅 ,!, ,, 」
 			PRINTFORMW 「……하아하아……사양 하시지 않고, 좀더 난폭하게 찔러 상관없어요?」
-			PRINTFORMW 「괴로운 듯하게 하고 있는 %CNAME("二人称")%의 자지, %CNAME("一人称")%가 입으로 진정시켜 드릴테니까♪」
+			PRINTFORMW 「괴로운 듯하게 하고 있는 %CNAME("二人称")%의 자지, %조사처리(CNAME("一人称"),"가")% 입으로 진정시켜 드릴테니까♪」
 			PRINTFORMW 「……,  시작하겠어요……,  무우」
 			PRINTFORMW %조사만처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 페니스를 목 안쪽까지 단단히 물고, 소리를 내인 체하며 있다
 		;それ以外
 		ELSE
 			PRINTFORMW 「우훅 ,!, ,, 」
 			PRINTFORMW 「……하아하아……좀더 난폭하게 찔러도 상관없어요」
-			PRINTFORMW 「%CNAME("一人称")%가 입으로 진정시켜 드리는♪……,  좀더 부디……」
+			PRINTFORMW 「%조사처리(CNAME("一人称"),"가")% 입으로 진정시켜 드리는♪……,  좀더 부디……」
 			PRINTFORMW %타겟은()% 군침을 가득 채운 입을 크게 열어, %CALLNAME:PLAYER%에 범해지는 것을 기다리고 있다
 		ENDIF
 		CFLAG:260 = 1
@@ -4344,7 +4344,7 @@ IF SELECTCOM == 232
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「%CNAME("二人称")%의 공짜조차 큰데…굉장합니다 …♪」
-			PRINTFORMW 「…가득 내 주세요 ♪%CNAME("一人称")%가 새하얗게 될 때까지 떼어 놓지 않아요 ♪」
+			PRINTFORMW 「…가득 내 주세요 ♪%조사처리(CNAME("一人称"),"가")% 새하얗게 될 때까지 떼어 놓지 않아요 ♪」
 		;それ以外（연모無し）
 		ELSE
 			PRINTFORMW 「큽니다 …♪벌벌 해 빨리 넣고 싶어군요 ♪」
@@ -4650,7 +4650,7 @@ IF SELECTCOM == 300
 				PRINTFORML [1] 아니요
 				CALL INPUT_SELECT, 2
 				IF RESULT == 0
-					PRINTFORMW 「그러면 당신은,  %CNAME("一人称")%가 지켜 주는 ♪」
+					PRINTFORMW 「그러면 당신은,  %조사처리(CNAME("一人称"),"가")% 지켜 주는 ♪」
 				ELSEIF RESULT == 1
 					PRINTFORMW 「안 되요, 사랑은 모두에게 주지 않으면 안된다」
 					TEQUIP:달콤한말 = 0
@@ -4918,7 +4918,7 @@ IF SELECTCOM == 8
 				PRINTFORMW 「%CNAME("二人称", "응석부리고")%…자극이 너무 강한 …좀더 상냥하게 ♪」
 			ELSE
 				PRINTFORML %CALLNAME:PLAYER%가 만지작거리고 있으면%타겟은()% 안아 붙어 목덜미에 키스 마크를 붙이기 시작했다.
-				PRINTFORMW 「%CNAME("一人称")%가…%CNAME("二人称")%를…사랑한…증거입니다 ♪」
+				PRINTFORMW 「%조사처리(CNAME("一人称"),"가")%…%CNAME("二人称")%를…사랑한…증거입니다 ♪」
 			ENDIF
 		;V감각Lv3이상
 		ELSEIF ABL:Ｖ감각 >= 3
@@ -5958,7 +5958,7 @@ IF SELECTCOM == 304 && TEQUIP:넘어뜨리기 == 0
 					IF RAND:2 == 0
 						PRINTFORMW 「류 짱♪키스 합시다♪」
 						PRINTFORMW 「쪽♪쪽♪………하아, 쿡♪」
-						PRINTFORMW 「지금은 %CNAME("一人称")%가 류 짱의 노예이랍니다♪좋아하게 범해 주세요♪」
+						PRINTFORMW 「지금은 %조사처리(CNAME("一人称"),"가")% 류 짱의 노예이랍니다♪좋아하게 범해 주세요♪」
 						PRINTFORML 드래곤은 기다릴 수  없는 것인지%CALLNAME:TARGET%의 몸에 페니스를 문지르고 있다
 						PRINTFORMW 「팬♪…서두르면 안되어요…♪……여기에……부디 넣어 주세요♪」
 						PRINTFORMW %타겟은()% 스스로의 손가락으로 여성의 음부를 넓히고 드래곤을 맞아들였다
@@ -7276,7 +7276,7 @@ CASE "애무"
 		ELSEIF RAND:5 == 0
 			PRINTFORMW 「이러합니다는 정말♪」
 		ELSEIF RAND:4 == 0 || TALENT:PLAYER:여자
-			PRINTFORMW 「이번은 %CNAME("一人称")%가 기분 좋게 해 주는 ♪」
+			PRINTFORMW 「이번은 %조사처리(CNAME("一人称"),"가")% 기분 좋게 해 주는 ♪」
 			PRINTFORML %타겟은()% 집요하게 키스를 눈부신이라고 왔다…
 		ELSEIF RAND:3 == 0
 			PRINTFORMW 「쿡♪참아 주세요 ♪시련입니다 ♪」
@@ -7776,7 +7776,7 @@ CASE "아침ＳＭ"
 		PRINTFORMW 「%CNAME("一人称")%,  알고 있습니다……?」
 		PRINTFORMW 「%CNAME("二人称")%가 속마음으로 무엇을 바래 있는 것인가……」
 		PRINTFORMW 「여자아이에게 괴롭혀져 받고 싶다는……본심에서는 그렇게 바라고 있습니다?」
-		PRINTFORMW 「그런 %CNAME("二人称")%의 소망, %CNAME("一人称")%가 실현되어 주는♪」
+		PRINTFORMW 「그런 %CNAME("二人称")%의 소망, %조사처리(CNAME("一人称"),"가")% 실현되어 주는♪」
 		PRINTFORMW 「쿠스♪」
 	ENDIF
 	RETURN 1

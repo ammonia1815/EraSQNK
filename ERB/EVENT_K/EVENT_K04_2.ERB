@@ -145,7 +145,7 @@ ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2
 	SETBIT CFLAG:201, 2
 ;굴복각인Lv3
 ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
-	PRINTFORMW 「계속 궁금했던 것이지만……%CNAME("二人称")%는, 만약 %CNAME("一人称")%가 다른 인간씨나 몽마를 좋아지게 되면 어떻게 되는거야？」
+	PRINTFORMW 「계속 궁금했던 것이지만……%CNAME("二人称")%는, 만약 %조사처리(CNAME("一人称"),"가")% 다른 인간씨나 몽마를 좋아지게 되면 어떻게 되는거야？」
 	PRINTFORMW %타겟은()% 높은 곳에 있는, 발판에 앉아 쉬면서 이쪽을 향하여 물어보았다……
 	DRAWLINE
 	PRINTFORML [0] 「관계를 갈라 버린다」
@@ -154,7 +154,7 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 	PRINTFORML [3] 「흥분된다」
 	CALL INPUT_SELECT, 4
 	IF RESULT == 0
-		PRINTFORMW 「그건 역시, %CNAME("一人称")%가 좋아서 그러는 거지？」
+		PRINTFORMW 「그건 역시, %조사처리(CNAME("一人称"),"가")% 좋아서 그러는 거지？」
 		PRINTFORMW %타겟은()% 히죽거리며 물어보았다……
 		DRAWLINE
 		PRINTFORML [0] 「예」
@@ -367,12 +367,12 @@ ELSEIF COND("ご無沙汰")
 		PRINTFORMW %타겟은()% 당장이라도 울 것 같이 눈을 글썽 이며, 뺨을 불게 물 들인채 %CALLNAME:PLAYER%을 보고있다
 		;당신が요정好き
 		IF COND("성벽：요정", PLAYER)
-			PRINTFORMW 「더 이상 참을 수 없어! 오늘은 %CNAME("一人称")%가 %CNAME("二人称")%을 조교할 차례야! 」
+			PRINTFORMW 「더 이상 참을 수 없어! 오늘은 %조사처리(CNAME("一人称"),"가")% %CNAME("二人称")%을 조교할 차례야! 」
 			PRINTFORMW %CALLNAME:TARGET%의 음란한 요청을 거절 할 이유도 없으니, 그냥 밀려 넘어 졌다
 			TEQUIP:넘어뜨리기 = 1
 		;互いのLvに応じて랜덤
 		ELSEIF RAND(ABL:PLAYER:ＬＶ) >= RAND(ABL:ＬＶ)
-			PRINTFORMW 「더 이상 참을 수 없어! 오늘은 %CNAME("一人称")%가 %CNAME("二人称")%을 조교할 차례야! 」
+			PRINTFORMW 「더 이상 참을 수 없어! 오늘은 %조사처리(CNAME("一人称"),"가")% %CNAME("二人称")%을 조교할 차례야! 」
 			PRINTFORMW 고조된 성욕에 흥분해 버린 %CALLNAME:TARGET%와 뒤치락 거리다, 그대로 밀려 넘어 졌다
 			TEQUIP:넘어뜨리기 = 1
 		ELSE
@@ -417,7 +417,7 @@ ELSEIF TALENT:연모 && TALENT:임신 == 2
 		PRINTFORMW %CALLNAME:PLAYER%의 품 안에서 걱정 스럽게 올려다 보는 %타겟을()% 살며시 안아준다
 		PRINTFORM 「응……고마워, %CNAME("二人称")%
 		CALL HEARTMARK_E
-		PRINTFORM 「좋～아, 이런 변태씨 인%CNAME("二人称")%를 위해, %CNAME("一人称")%가 노력해서 기분 좋게 해줄께
+		PRINTFORM 「좋～아, 이런 변태씨 인%CNAME("二人称")%를 위해, %조사처리(CNAME("一人称"),"가")% 노력해서 기분 좋게 해줄께
 		CALL HEARTMARK_E
 	ELSEIF RAND:2 == 0
 		PRINTFORM 「아, %CNAME("二人称")%! 지금, 배속의 아기에게 이야기를 들려주고 있었어
@@ -434,7 +434,7 @@ ELSEIF TALENT:연모 && TALENT:임신 == 2
 			PRINTFORMW 온화 한 내용의 그림책 두 권이 있는 것을 보고 %CALLNAME:PLAYER%은 안심이 된다
 		ENDIF
 	ELSE
-		PRINTFORMW 「저기, 이제 아기의 이름을 정해 주면 안 될까？ 음, %CNAME("一人称")%가 정하길 원해？」
+		PRINTFORMW 「저기, 이제 아기의 이름을 정해 주면 안 될까？ 음, %조사처리(CNAME("一人称"),"가")% 정하길 원해？」
 		PRINTFORM 「그것도 좋지만……역시 둘이서 결정하는것이 즐겁다고 생각해
 		CALL HEARTMARK
 		PRINTFORM 잘 생각해 둬
@@ -545,7 +545,7 @@ ELSEIF TALENT:음란 && RANDIF(1, TALENT:연모)
 			PRINTFORM 「오늘도 엉덩이구멍이 구멍이 닫혀 지지않을 정도로 가～득 하자
 			CALL HEARTMARK_E
 		ELSE
-			PRINTFORM 「오늘은 %CNAME("一人称")%가 쓰러질 정도로 가～득 하자
+			PRINTFORM 「오늘은 %조사처리(CNAME("一人称"),"가")% 쓰러질 정도로 가～득 하자
 			CALL HEARTMARK_E
 		ENDIF
 	ENDIF
@@ -13044,7 +13044,7 @@ CASE "매각した"
 		ELSEIF TALENT:연모
 			PRINTFORMW 「%조사처리(CNAME("一人称"),"를")% 파는거야？ %CNAME("一人称")%, %CNAME("二人称")%를 사랑하는거 알지？」
 			PRINTFORMW 「……그래. 괜찮아, %조사처리(CNAME("一人称"),"는")% 알고 있으니까…… %CNAME("二人称")%는, 사실 좋은 사람이라는거 말이야」
-			PRINTFORMW 「%CNAME("一人称")%에게 잔뜩 기분 좋게 해 주고, %CNAME("一人称")%가 기분 좋게 했을 때 칭찬도 해주고」
+			PRINTFORMW 「%CNAME("一人称")%에게 잔뜩 기분 좋게 해 주고, %조사처리(CNAME("一人称"),"가")% 기분 좋게 했을 때 칭찬도 해주고」
 			PRINTFORMW 「잔뜩 수다도 하고, 함께 밥도 먹고, 밖에서도 같이 놀고……」
 			PRINTFORMW 「전부 %CNAME("一人称")%의 소중한 추억이야. 계속……쭉, %CNAME("二人称")%의 모든 것, 기억하고 있을께……」
 			PRINTFORMW %타겟은()% 눈물을 흘리기 직전이면서도, %CALLNAME:PLAYER%의 모습이 보이지 않을 때까지 손을 계속 흔들었다……

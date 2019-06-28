@@ -262,7 +262,7 @@ ELSEIF NO:ASSI == 30 && CFLAG:ASSI:209 != 2
 	IF CEVENT("조수会話：유니콘") == 0
 		PRINTFORMW 「오늘은,%TEXTS("조수の명칭")%(분)편이 계(오)십니까…」
 		PRINTFORML 「그, 그런…그런 것 3 P가 되어 버리는군요…」
-		PRINTFORM 「아아…아무리 %CNAME("一人称")%가 바이콘에서도 ,
+		PRINTFORM 「아아…아무리 %조사처리(CNAME("一人称"),"가")% 바이콘에서도 ,
 		;연모＋연모時初구상（陥落이벤트）が発生済み
 		IF TALENT:연모 && GETBIT(CFLAG:201, 4)
 			PRINTFORMW %CNAME("二人称")%의 사랑을 받아 들이면서%TEXTS("조수の명칭")%의 (분)편과도는, 그런…안 돼요」
@@ -497,7 +497,7 @@ ELSEIF MARK:굴복각인 == 2
 	ELSE
 		PRINTFORMW 「오늘도 조교됩니다,  %CNAME("一人称")%…」
 		PRINTFORMW 「후후 ,  조교…좋은 영향이군요 ,  그 말만으로 %CNAME("一人称")%의 신체는 오싹오싹(조마조마) 해 버립니다」
-		PRINTFORMW 「부끄러운데요 ,  그런데도 이렇게 즐거운 것은 %CNAME("一人称")%가 바이콘이니까…만이 아니어요」
+		PRINTFORMW 「부끄러운데요 ,  그런데도 이렇게 즐거운 것은 %조사처리(CNAME("一人称"),"가")% 바이콘이니까…만이 아니어요」
 	ENDIF
 ;굴복각인Lv3
 ELSEIF MARK:굴복각인 == 3
@@ -812,7 +812,7 @@ IF SELECTCOM == 1
 				IF RAND:2 == 0
 					PRINTFORMW 「은 , …,  그 %CNAME("一人称")%의 국물 들이마셔 주세요」
 				ELSE
-					PRINTFORMW 「,  …대단한 혀 사용해,  %CNAME("一人称")%가 흘러넘쳐 있습니다」
+					PRINTFORMW 「,  …대단한 혀 사용해,  %조사처리(CNAME("一人称"),"가")% 흘러넘쳐 있습니다」
 				ENDIF
 			ENDIF
 		ENDIF
@@ -1102,7 +1102,7 @@ IF SELECTCOM == 4
 				;굴복각인Lv2
 				ELSEIF MARK:굴복각인 >= 2
 					IF RAND:3 == 0 && PENIS(PLAYER)
-						PRINTFORMW 「,  후우…%CNAME("一人称")%가 펠라해 받고 있는데…%CNAME("二人称")%의 뿔도 ,  음란하게…」
+						PRINTFORMW 「,  후우…%조사처리(CNAME("一人称"),"가")% 펠라해 받고 있는데…%CNAME("二人称")%의 뿔도 ,  음란하게…」
 						PRINTFORMW 「안돼…안되어요…,  그렇게 부끄러운 것 보여지면(자),  %CNAME("一人称")%의 뿔이 좀더 음란하게…」
 					ELSEIF RAND:2 == 0
 						PRINTFORMW 「…그렇게 맛있게 %CNAME("一人称")%의 뿔를 뺨 펴 받을 수 있다니…」
@@ -1114,7 +1114,7 @@ IF SELECTCOM == 4
 				;それ以外
 				ELSE
 					IF RAND:2 == 0 && PENIS(PLAYER)
-						PRINTFORMW 「…후우…%CNAME("一人称")%가 해 받고 있는데…%CNAME("二人称")%까지 ,  뿔를 떠나게 하며…」
+						PRINTFORMW 「…후우…%조사처리(CNAME("一人称"),"가")% 해 받고 있는데…%CNAME("二人称")%까지 ,  뿔를 떠나게 하며…」
 						PRINTFORMW 「안돼…안되어요…너무 음란합니다」
 					ELSE
 						PRINTFORMW 「…그렇게 맛있게 %CNAME("一人称")%의 뿔를…」
@@ -2667,7 +2667,7 @@ IF SELECTCOM == 64
 				PRINTFORMW 「아아 ,  ,  히…역시 ,  이런 음란한 것 하다니 너무 굉장합니다」
 				PRINTFORMW 「…음란하고 부끄러운 아이의 %조사처리(CNAME("一人称"),"는")% ,  …,  아아…헤롱헤롱이 되어 버립니다, 」
 			ELSE
-				PRINTFORML 「,  …나 , …%CNAME("一人称")%가 ,  바이콘 그렇지만은 ,  조금 강하게는 , 」
+				PRINTFORML 「,  …나 , …%조사처리(CNAME("一人称"),"가")% ,  바이콘 그렇지만은 ,  조금 강하게는 , 」
 				PRINTFORMW 「%CNAME("一人称")%…,  이런 ,  대단해 의…싫다니 ,  말할 수 없고 있습니다, 」
 			ENDIF
 		;それ以外
@@ -2710,7 +2710,7 @@ IF SELECTCOM == 65
 					PRINTFORMW 「은…이제(벌써),  %CNAME("一人称")%들…엣찌한 아이 , 군요♪」
 				ELSE
 					PRINTFORMW 「…후우…그…손 ,  악있네요…」
-					PRINTFORMW 「,  …이것 ,  %CNAME("一人称")%가 ,  위로허리 흔들고 있는의 것에 , 무엇인가 러브 러브입니다」
+					PRINTFORMW 「,  …이것 ,  %조사처리(CNAME("一人称"),"가")% ,  위로허리 흔들고 있는의 것에 , 무엇인가 러브 러브입니다」
 					PRINTFORMW 「…아아 ,  …%CNAME("一人称")%,  녹이라고 와 버려…,  부끄럽습니다」
 				ENDIF
 			;굴복각인Lv2이상
@@ -2741,7 +2741,7 @@ IF SELECTCOM == 65
 				PRINTFORMW 「그…부끄럽고 ,  기뻐서…도 ,  완장있습니다」
 			;それ以外
 			ELSE
-				PRINTFORML 「…이것은,  %CNAME("一人称")%가 위로 괜찮겠지요」
+				PRINTFORML 「…이것은,  %조사처리(CNAME("一人称"),"가")% 위로 괜찮겠지요」
 				PRINTFORMW 「은 ,  부끄럽지만…,  노력하겠습니다군요」
 			ENDIF
 			CFLAG:245 = 1
@@ -2753,7 +2753,7 @@ IF SELECTCOM == 65
 			;연모
 			ELSEIF TALENT:연모
 				IF RAND:3 == 0
-					PRINTFORMW 「말님의 %CNAME("一人称")%가 ,  승마 위이라니…」
+					PRINTFORMW 「말님의 %조사처리(CNAME("一人称"),"가")% ,  승마 위이라니…」
 					PRINTFORMW 「,  히…%CNAME("二人称")% 위에 승인가는 끝내다니」
 					PRINTFORMW 「그…좀더 엣찌로 해버릴 인가? ……원 ,  %조사처리(CNAME("一人称"),"는")%…,  있습니다, 」
 				ELSEIF RAND:2 == 0
@@ -2848,7 +2848,7 @@ IF SELECTCOM == 67
 			PRINTFORMW 
 		;それ以外
 		ELSE
-			PRINTFORML 「, …그, 그런 곳까지 , 는…%CNAME("一人称")%가 ,  바이콘 그렇지만은」
+			PRINTFORML 「, …그, 그런 곳까지 , 는…%조사처리(CNAME("一人称"),"가")% ,  바이콘 그렇지만은」
 			PRINTFORMW 「조, 조금(자, 잠깐) ,  적극 지나고라고 합니까…,  아아 , , 」
 		ENDIF
 	;二回目以降…기승자궁구자극
@@ -2859,7 +2859,7 @@ IF SELECTCOM == 67
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「,  그…갖고 싶어져 버린다고 합니까…,  그 가장 안쪽에입니다만 , 」
-			PRINTFORMW 「그러니까 ,  %CNAME("一人称")%가…하아 ,  히…이렇게 나쁜 아이가 되어 버리는 것도 어쩔 수 없습니다, 」
+			PRINTFORMW 「그러니까 ,  %조사처리(CNAME("一人称"),"가")%…하아 ,  히…이렇게 나쁜 아이가 되어 버리는 것도 어쩔 수 없습니다, 」
 		;굴복각인Lv2이상
 		ELSEIF MARK:굴복각인 >= 2
 			PRINTFORMW 「개 ,  이…,  안쪽까지 와 버렸다라고 하는 ,  배덕감이라고 말합니까」
@@ -3332,7 +3332,7 @@ IF CHECK_COM("파후파후손훑기")
 		IF TALENT:연모
 			IF COND("모유마시기플래그", PLAYER)
 				PRINTFORMW 「아아 ,  …그런 ,  바이콘의 엣찌한 젖가슴을 열중해 마셔 버리다는…하면 안되는이에요」
-				PRINTFORMW 「바이콘의 엣찌한 마력으로 ,  %CNAME("二人称")%의 인삼(당근) 상도 %CNAME("一人称")%가 감당하기 힘들 정도로 끙끙이 되어 버리며…」
+				PRINTFORMW 「바이콘의 엣찌한 마력으로 ,  %CNAME("二人称")%의 인삼(당근) 상도 %조사처리(CNAME("一人称"),"가")% 감당하기 힘들 정도로 끙끙이 되어 버리며…」
 				PRINTFORMW 「절대로 엣찌한 아이에게 길러 버리는 자신이 있다고 합니까…, 는 ,  부끄러운 것을 말해 버렸습니다」
 			ELSE
 				PRINTFORMW 「하아…그렇게 ,  행복한 얼굴을 보여주고 있었던이다 차면(자) , 군요…」
@@ -3632,7 +3632,7 @@ IF SELECTCOM == 92
 				IF RAND:3 == 0
 					PRINTFORMW 「읏샤 ,  읏샤…조금 큰 일이어도 ,  열심히 봉사해요」
 					PRINTFORMW 「사랑스러운 사람이기 때문에라면 %CNAME("一人称")%의 젖가슴 ,  얼마든지 사용해 주고 싶다고 합니까…」
-					PRINTFORMW 「오히려,  %CNAME("一人称")%가 기분 좋아져버려라고 합니까…어쨌든 노력해 버립니다」
+					PRINTFORMW 「오히려,  %조사처리(CNAME("一人称"),"가")% 기분 좋아져버려라고 합니까…어쨌든 노력해 버립니다」
 				ELSEIF RAND:2 == 0
 					PRINTFORMW 「,  %CNAME("二人称")%의 뿔…뜨겁고 벌벌 하고 있습니다…그래서,  %CNAME("一人称")%도 두근두근…」
 					PRINTFORMW 「이렇게 젖가슴으로 밀착해 버리면(자) ,  이런 기분이 되어 버립니다만」
@@ -3712,7 +3712,7 @@ IF SELECTCOM == 93
 			IF RAND:3 == 0 && TALENT:후타나리
 				PRINTFORMW 「아아,  하아…이것은,  %CNAME("一人称")%의 뿔와 %CNAME("二人称")%의 뿔이 함께 스쳐, 」
 				PRINTFORMW 「마치,  %CNAME("一人称")%에…하아 ,  뿔이 2 개나 버린 것 같은…,  후우」
-				PRINTFORMW 「%CNAME("一人称")%가 바이콘으로 뿔이 둘이다로부터는 ,  이런 음란한 것 가르치면…,  안되어요」
+				PRINTFORMW 「%조사처리(CNAME("一人称"),"가")% 바이콘으로 뿔이 둘이다로부터는 ,  이런 음란한 것 가르치면…,  안되어요」
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 「하아…,  무, 무엇인가 의식해 버리며…」
 				PRINTFORMW 「넣지 않았는데…부끄러워져 섬의자」
@@ -3953,7 +3953,7 @@ IF SELECTCOM == 96
 			;연모
 			ELSEIF TALENT:연모
 				PRINTFORMW 「그럼 ,  더러운 곳 이니까…오히려 ,  불타 버린다고 합니까」
-				PRINTFORMW 「%CNAME("一人称")%가 바이콘이니까 ,  괜찮다고 말합니까」
+				PRINTFORMW 「%조사처리(CNAME("一人称"),"가")% 바이콘이니까 ,  괜찮다고 말합니까」
 				PRINTFORMW 「그…가득 지엄청 있어요」
 			;それ以外
 			ELSE
@@ -3975,7 +3975,7 @@ IF SELECTCOM == 96
 					PRINTFORMW 「그렇게 기쁜 듯한 얼굴을 해 버려…%CNAME("一人称")%과 같은 ,  음란한<하다) 말님과 갖추어져가 되어 버려요」
 				ELSE
 					PRINTFORMW 「…후후 ,  엉덩이의 구멍 완전히 알 수 있어 버렸네요…」
-					PRINTFORMW 「엣찌한 액으로 끈적끈적으로…거기에 씰룩씰룩(벌렁벌렁) 해서,  보고 있는 %CNAME("一人称")%가 부끄럽습니다」
+					PRINTFORMW 「엣찌한 액으로 끈적끈적으로…거기에 씰룩씰룩(벌렁벌렁) 해서,  보고 있는 %조사처리(CNAME("一人称"),"가")% 부끄럽습니다」
 					PRINTFORMW 「 그렇지만 ,  괜찮아요…쪽 ,  쪽 ,  그러한 부끄러운 구멍도 %조사처리(CNAME("一人称"),"는")% 굉장히 좋아하는 음식입니다 , 로부터…쪽♪」
 				ENDIF
 			;연모
@@ -4108,7 +4108,7 @@ IF SELECTCOM == 98
 					PRINTFORMW 「하아 ,  …이런 ,  바이콘의 %CNAME("一人称")%에…,  %CNAME("二人称")%의 처녀의 맛을 기억하게 해 버려 괜찮을까요?」
 					;バイコーンに페니스がある
 					SIF PENIS(TARGET)
-						PRINTFORMW 「그…%CNAME("一人称")%가 , 자신을 다 막을 수 있지 않게 되어도…응우, 허락해 간다, (이)다 차이군요」
+						PRINTFORMW 「그…%조사처리(CNAME("一人称"),"가")% , 자신을 다 막을 수 있지 않게 되어도…응우, 허락해 간다, (이)다 차이군요」
 				ENDIF
 			ELSE
 				;연모
@@ -4116,7 +4116,7 @@ IF SELECTCOM == 98
 					PRINTFORMW 「하아♪…좋습니다…%CNAME("二人称")%의 부끄러운 국물의 맛, 매우 추잡해서 바이콘의%CNAME("一人称")%에는 견딜 수 없습니다…♪」
 				;それ以外
 				ELSE
-					PRINTFORMW 「하아…이런, 부끄러운 국물을 바이콘의%CNAME("一人称")%가 , 기억해 버리면…응츄, 츄…아아, 안 된다, 안 됩니다♪」
+					PRINTFORMW 「하아…이런, 부끄러운 국물을 바이콘의%조사처리(CNAME("一人称"),"가")% , 기억해 버리면…응츄, 츄…아아, 안 된다, 안 됩니다♪」
 				ENDIF
 			ENDIF
 			CFLAG:360 = 1
@@ -4566,7 +4566,7 @@ IF SELECTCOM == 120
 					PRINTFORMW 를 흔들어 친족이 된 음란한<하다) 신체를 차분히 맛본다
 					PRINTFORMW 그리고 ,  그것을 받아 들이는 이쪽의 신체도%CALLNAME:TARGET%에 승낙같게 ,  질내의 고기 주름을 음란하게 꾸불꾸불하게 해 버린다
 					PRINTFORMW 「으윽…부끄러울 정도  탐욕으로…하아 ,  어쩔 수 없을 정도  ,  음란한<하다)…」
-					PRINTFORMW 「같은 바이콘의 %CNAME("一人称")%가 말하는 것도 ,  ,  이상하지만…이런 훌륭한 보지에 종부 시켜 받을 수 있다니 행복합니다」
+					PRINTFORMW 「같은 바이콘의 %조사처리(CNAME("一人称"),"가")% 말하는 것도 ,  ,  이상하지만…이런 훌륭한 보지에 종부 시켜 받을 수 있다니 행복합니다」
 				ELSEIF RAND:2 == 0
 					PRINTFORMW 「하아…그 ,  %CNAME("二人称")%로부터 %CNAME("一人称")%의 음란한<하다) 뿔를 받아들여 주다니…」
 					PRINTFORMW 「게다가,  %CNAME("一人称")%과 같은 정도…아니요 그 이상으로 음란하게 흐트러져 주시다니」
@@ -4592,7 +4592,7 @@ IF SELECTCOM == 120
 					PRINTFORMW 「%조사처리(CNAME("一人称"),"는")%…그 ,  %CNAME("二人称")%안이 너무 좋아…, 도 ,  이제(벌써) 부끄러운 것으로 머리가 가득합니다, 」
 				ELSE
 					PRINTFORMW 「…,  그…대단히 기분이 좋습니다…%CNAME("二人称")%안…」
-					PRINTFORMW 「바이콘의 뿔에 큐는 휘감겨…%CNAME("一人称")%가 부끄럽고 있습니다」
+					PRINTFORMW 「바이콘의 뿔에 큐는 휘감겨…%조사처리(CNAME("一人称"),"가")% 부끄럽고 있습니다」
 				ENDIF
 			ENDIF
 		ENDIF
@@ -4653,7 +4653,7 @@ IF SELECTCOM == 121
 			ELSEIF RAND:2 == 0
 				PRINTFORMW %CALLNAME:TARGET%의 뿔이 나는포로가 된 신체는 ,  짐승끼리의 교미와 같이 격렬한 허리 사용에도 질을 관련되어 붙게 한이면서 승낙
 				PRINTFORMW 「하아…아아앙…%CNAME("二人称")%의…그렇기는 하지만요 ,  대단히 상태가 괜찮(좋)아요」
-				PRINTFORMW 「바이콘의 %CNAME("一人称")%가 말하기 때문에 ,  자랑해 버려도 괜찮을 정도…♪」
+				PRINTFORMW 「바이콘의 %조사처리(CNAME("一人称"),"가")% 말하기 때문에 ,  자랑해 버려도 괜찮을 정도…♪」
 				PRINTFORMW 「이봐요…%CNAME("一人称")%의 뿔도 이제 곧 %CNAME("二人称")% 에서 기분이 좋은 것 일키있어요」
 				PRINTFORMW 신체의 안쪽 느낌터질 것 같이의 고기의 뿔에 자신의 신체와 꼭 죄여 정령을 강청은 끝내고 있었다
 			ELSE
@@ -4780,7 +4780,7 @@ IF SELECTCOM == 125
 					PRINTFORMW 격분하다육의 뿔를 질질 밀어넣어 ,  어널의 안에 자신의 뿔이 나는형을 기억하고 붐비게 하고 있다
 				ENDIF
 				PRINTFORMW 「,  흐응…%CNAME("二人称")%의 엉덩이 ,  %CNAME("一人称")%의 뿔이 나는형펼쳐져 ,  평상시와 입장 역전이군요」
-				PRINTFORMW 「후후…에서도 ,  안심해 주세요…입장이 바뀌어도 %CNAME("一人称")%가 사랑하는 기분은 바뀌지 않기 때문에…」
+				PRINTFORMW 「후후…에서도 ,  안심해 주세요…입장이 바뀌어도 %조사처리(CNAME("一人称"),"가")% 사랑하는 기분은 바뀌지 않기 때문에…」
 				PRINTFORMW 음미롭게 미소짓는다%CALLNAME:TARGET%에 응시되어지면서, 조교스승과는 동떨어진 모습이 되어 엉덩이 구멍으로 계속 흐트러져 버린다
 				PRINTFORMW 「…이대로,  %CNAME("二人称")%의 엣찌한 엉덩이와 %CNAME("一人称")%의 엣찌한 뿔에서 ,  눈가득 서로 사랑해요」
 			ENDIF
@@ -4917,7 +4917,7 @@ IF SELECTCOM == 126
 				PRINTFORMW 「엉덩이를 사랑했으면 좋다니…그것도 ,  말님의 %CNAME("一人称")%에 부탁해 버리다니…」
 				PRINTFORMW 「은 ,  부끄럽지만…말님의 사랑하는 방법 ,  뒤로부터 가득 가르침있습니다」
 			ELSE
-				PRINTFORMW 「%CNAME("一人称")%가 말님이니까…그 ,  이 몸의 자세로 엉덩이를 빌려 주어 주십니다」
+				PRINTFORMW 「%조사처리(CNAME("一人称"),"가")% 말님이니까…그 ,  이 몸의 자세로 엉덩이를 빌려 주어 주십니다」
 				PRINTFORMW 「은 ,  부끄럽지만,  %CNAME("一人称")%…노력해 %CNAME("二人称")%에 대해 좋아하게 해 보입니다」
 			ENDIF
 			CFLAG:266 = 1
@@ -4940,7 +4940,7 @@ IF SELECTCOM == 126
 					ENDIF
 					PRINTFORMW 어널의 입구로부터 깊게까지를 쾌락으로 정복 해 나간다
 					PRINTFORMW 「하아 ,  …이렇게,  %CNAME("一人称")%의 뿔에 달라붙는 것 같은 엉덩이 보지이니까 ,  하아 ,  어쩔 수 없다고 합니까, 」
-					PRINTFORMW 「어쨌든 ,  하아…이런 하면 안되는 친족 상의 엉덩이는…,  %CNAME("一人称")%가 만족시켜 줍니다, 」
+					PRINTFORMW 「어쨌든 ,  하아…이런 하면 안되는 친족 상의 엉덩이는…,  %조사처리(CNAME("一人称"),"가")% 만족시켜 줍니다, 」
 				ElSEIF RAND:2 == 0
 					PRINTFORMW %타겟은()% 뒤로부터 지워지도록(듯이) 해서,  그 음미한  마력을 감돌게 하는 뿔에서 어널을 고문 세운다
 					PRINTFORMW 「하아 ,  는,  …말님의 허리 사용에도 ,  완전히 열중해 버리며…」
@@ -6048,7 +6048,7 @@ IF SELECTCOM == 171 && COND("마을")
 		ELSE
 			;연모
 			IF TALENT:연모
-				PRINTFORMW 「오늘은 ,  도대체 몇 명의 사람에게…그 ,  %CNAME("一人称")%가 누구의 것일까하고 말하는 것을 보이고 개 찰 수 있겠지요…♪」
+				PRINTFORMW 「오늘은 ,  도대체 몇 명의 사람에게…그 ,  %조사처리(CNAME("一人称"),"가")% 누구의 것일까하고 말하는 것을 보이고 개 찰 수 있겠지요…♪」
 				PRINTFORMW 「하, 하지만 소동이 되어서는 안되기 때문에…정도들로 하지 않으면이군요」
 			;노출벽Lv3이상
 			ELSEIF ABL:노출벽 >= 3
@@ -6176,7 +6176,7 @@ ELSEIF SELECTCOM == 171 && COND("강가")
 			IF TALENT:연모
 				PRINTFORML 「조용해 매우 깨끗한 곳…에서도 ,  그런 곳에서 %CNAME("一人称")%들은…」
 				PRINTFORMW 「굉장히 엣찌한 소리를 내…서로의 신체중 흠뻑젖어에 더러워질 때까지 사귀어 버리다니…」
-				PRINTFORMW 「%CNAME("一人称")%가 바이콘이라고 해도…하면 안되는이군요」
+				PRINTFORMW 「%조사처리(CNAME("一人称"),"가")% 바이콘이라고 해도…하면 안되는이군요」
 			;노출벽Lv3이상
 			ELSEIF ABL:노출벽 >= 3
 				PRINTFORMW 「%CNAME("一人称")%,  말님이기 때문에 밖에서  수영을 하고 있어도 전혀 부자연스럽지 않다고 합니까…」
@@ -6297,7 +6297,7 @@ IF SELECTCOM == 173 && TEQUIP:새댁플레이
 			IF RAND:2 == 0
 				PRINTFORMW 「……가만히 응시하면…새댁 상이 곤란해 버립니다…♪」
 			ELSE
-				PRINTFORML 「%CNAME("一人称")%가 새댁 상이기 때문에…%CNAME("二人称")%는 주인(서방)님…♪」
+				PRINTFORML 「%조사처리(CNAME("一人称"),"가")% 새댁 상이기 때문에…%CNAME("二人称")%는 주인(서방)님…♪」
 			ENDIF
 		;それ以外
 		ELSE
@@ -6425,7 +6425,7 @@ IF SELECTCOM == 175
 			ENDIF
 		ELSEIF CHECK_SHIRT("여교사")
 			IF GETBIT(CFLAG:331, 1) == 0
-				PRINTFORMW 「%CNAME("一人称")%가 선생님은…괜찮(좋)겠습니까」
+				PRINTFORMW 「%조사처리(CNAME("一人称"),"가")% 선생님은…괜찮(좋)겠습니까」
 				PRINTFORMW 「…반드시…하면 안되는 선생님이 되어 버려요,  %CNAME("一人称")%…」
 				SETBIT CFLAG:331, 1
 			ELSE
@@ -6479,7 +6479,7 @@ IF SELECTCOM == 175
 			ENDIF
 		ELSEIF CHECK_SHIRT("세라복")
 			IF GETBIT(CFLAG:331, 7) == 0
-				PRINTFORMW 「%CNAME("一人称")%가 학생은 ,  부끄럽습니다…」
+				PRINTFORMW 「%조사처리(CNAME("一人称"),"가")% 학생은 ,  부끄럽습니다…」
 				PRINTFORMW 「하지만 , 군요…이렇게 음란한<하다) 아이는 ,  하면 안되는이기 때문에…」
 				SETBIT CFLAG:331, 7
 			ELSE
@@ -6488,7 +6488,7 @@ IF SELECTCOM == 175
 			ENDIF
 		ELSEIF CHECK_SHIRT("무녀")
 			IF GETBIT(CFLAG:331, 8) == 0
-				PRINTFORMW 「바이콘의 %CNAME("一人称")%가 ,  무녀님은…」
+				PRINTFORMW 「바이콘의 %조사처리(CNAME("一人称"),"가")% ,  무녀님은…」
 				PRINTFORMW 「번뇌 소용돌이쳐 ,  벌써 더러워져 버리고 있는 느낌으로…부끄럽습니다」
 				SETBIT CFLAG:331, 8
 			ELSE
@@ -8110,7 +8110,7 @@ CASE "조교후자위"
 	;연모
 	ELSEIF TALENT:연모
 		PRINTFORML 「,  ……이런 상스러운 것을…하아 ,  해 버리는 것은…」
-		PRINTFORMW 「%CNAME("一人称")%가 바이콘이니까가 아니라…,  %CNAME("二人称")%에 대한 것이 ,  정말 좋아하기 때문에…」
+		PRINTFORMW 「%조사처리(CNAME("一人称"),"가")% 바이콘이니까가 아니라…,  %CNAME("二人称")%에 대한 것이 ,  정말 좋아하기 때문에…」
 	;자위중독Lv3이상
 	ELSEIF ABL:자위중독 >= 3
 		PRINTFORML 「,  …,  …%CNAME("一人称")%,  바이콘이니까…나쁜 아이이니까 , 」
@@ -8134,7 +8134,7 @@ CASE "조교후레즈플레이"
 		PRINTFORMW 「…바이콘의 %CNAME("一人称")%과 음란하게 흐트러집시다」
 	;레즈끼Lv5
 	ELSEIF ABL:레즈끼 >= 5
-		PRINTFORMW 「,  %CNAME("二人称")%의 신체 ,  멋집니다…바이콘의 %CNAME("一人称")%가 좀더 음란하게 해 줍니다…♪」
+		PRINTFORMW 「,  %CNAME("二人称")%의 신체 ,  멋집니다…바이콘의 %조사처리(CNAME("一人称"),"가")% 좀더 음란하게 해 줍니다…♪」
 	;레즈끼Lv3이상
 	ELSEIF ABL:레즈끼 >= 3
 		PRINTFORMW 「여자아이끼리는…아, 안됩니다지만…%CNAME("一人称")%,  바이콘이기 때문에…♪」
@@ -8804,7 +8804,7 @@ CASE "トイレでつまみ食い"
 		PRINTFORML 「이런, 추잡한 바이콘에욕정해 버리다니…오손님모양도, 안 되는 아이이니까…」
 		PRINTFORMW 「부끄럽지만…서로, 이제(벌써) 참을 수 있지 않네요…특별히 바이콘의 승차감, 가르쳐 줍니닷」
 	ELSE
-		PRINTFORML 「아아…♪이런 상스러운 바이콘의%CNAME("一人称")%가 , 이렇게도손님님이 생각해 받을 수 있다니…」
+		PRINTFORML 「아아…♪이런 상스러운 바이콘의%조사처리(CNAME("一人称"),"가")% , 이렇게도손님님이 생각해 받을 수 있다니…」
 		PRINTFORMW 「지금 만, 이지만 말이죠…답례하도록 해 받습니다…물론, 불순을 맡는 이%CNAME("一人称")%의 신체로, (이에)예요♪」
 	ENDIF
 	RETURN 1
@@ -8854,7 +8854,7 @@ CASE "하룻밤개방：주점", "하룻밤개방：여관", "하룻밤개방：
 CASE "하룻밤개방：모험자상대", "하룻밤개방：청년상대", "하룻밤개방：소년상대"
 	IF RAND:3 == 0
 		PRINTFORMW 「하아, 아앙♪…가득 종 교부해 받을 수 있을 때까지…하아, 쭉, 보지로 짜 주니까요」
-		PRINTFORMW 「추잡해서, 부끄러운 암컷말노%CNAME("一人称")%가 …응우, 당신를 훌륭한 종말로 해 버립니닷♪」
+		PRINTFORMW 「추잡해서, 부끄러운 암컷말노%조사처리(CNAME("一人称"),"가")% …응우, 당신를 훌륭한 종말로 해 버립니닷♪」
 	ELSEIF RAND:2 == 0
 		PRINTFORMW 「아아♪그런, 반응을 되어 버리면…부끄러운데, %CNAME("一人称")%도 견딜 수 없게 되어 버려…하아」
 		PRINTFORMW 「이, 바이콘의 신체로…응우, 당신의 고조됨을, 모두 받아 들이도록 해 받습니닷」

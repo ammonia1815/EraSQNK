@@ -336,7 +336,7 @@ ELSEIF GETBIT(CFLAG:201, 34) == 0 && GETBIT(CFLAG:201, 33)
 		PRINTFORMW  만나는 방법……그것은 최악이었을 지도 모른다
 		PRINTFORMW 그러나, 그녀는 자신을 선택해 주었다
 		PRINTFORMW 그 일이 굉장히……굉장히 기쁘다고 생각한다. 
-		PRINTFORMW 「그럼, 이번은%CNAME("一人称")%가 노력해%CNAME("二人称")%를손에 넣는 차례군요♪」
+		PRINTFORMW 「그럼, 이번은%조사처리(CNAME("一人称"),"가")% 노력해%CNAME("二人称")%를손에 넣는 차례군요♪」
 		PRINTFORMW 지금일도%CALLNAME:MASTER%에 있어서는 아무것도 변함없다일상이 시작되었다
 	ELSEIF RESULT == 1
 		CALL K37_KOJO2_1
@@ -1383,7 +1383,7 @@ IF SELECTCOM == 3 && TEQUIP:샤워 == 0
 						PRINTFORMW （냄새와 맛으로 머리가 어질 어질한닷♪자위가 멈추지 않는닷♪）
 						PRINTFORMW 「쥬부…응쥬우♪맛있어서, 어느 쪽의 군침도 멈추지 않는 것♪」
 					ELSE
-						PRINTFORMW 「후훗♪, %CNAME("一人称")%가 처리할테니까%조사처리(CNAME("一人称"),"를")% 반찬으로 해도 좋아요♪」
+						PRINTFORMW 「후훗♪, %조사처리(CNAME("一人称"),"가")% 처리할테니까%조사처리(CNAME("一人称"),"를")% 반찬으로 해도 좋아요♪」
 					ENDIF
 				;양구멍바이브
 				ELSEIF TEQUIP:바이브 && TEQUIP:애널바이브
@@ -1513,7 +1513,7 @@ ELSEIF SELECTCOM == 3 && TEQUIP:샤워
 				PRINTFORMW 보지를끊임없이수류로 자극되고, %타겟을()% 황홀의 표정을 띄우고 있다…
 			ELSE
 				PRINTFORMW 「따듯하고…응응응응응♪」
-				PRINTFORMW 「보고 있어 주세욧♪ %CNAME("一人称")%가 샤워그리고 가 버린다♪」
+				PRINTFORMW 「보고 있어 주세욧♪ %조사처리(CNAME("一人称"),"가")% 샤워그리고 가 버린다♪」
 				PRINTFORMW %타겟을()% 수치심을 느끼면서도샤워의 쾌락에 빠지고 있는 것 같다…
 			ENDIF
 		;연모
@@ -3448,7 +3448,7 @@ IF SELECTCOM == 65
 						PRINTFORMW 「%CNAME("二人称")%가 초조하게 하기 때문에, 지금부터 찢어 버립니다…잘 보고 있어 주세요♪」
 					ELSEIF COND("위험일") && PENIS(PLAYER)
 						PRINTFORMW 「아읏, 응응우…좀 더 찔러♪자지로부터정액내♪」
-						PRINTFORMW 「기록해…%CNAME("一人称")%가 임신해지는 순간♪」
+						PRINTFORMW 「기록해…%조사처리(CNAME("一人称"),"가")% 임신해지는 순간♪」
 					ELSEIF TALENT:임신
 						PRINTFORMW 「아아읏♪…(와)과, 찍혀 버리고 있다…♪」
 						PRINTFORMW 「배에빨강있다, 자신으로부터허리를 털어 버린다…」
@@ -3478,7 +3478,7 @@ IF SELECTCOM == 65
 					PRINTFORMW 「응응우…좀 더, 좀 더 밀어올려%CNAME("一人称")%에 사랑의 증거를 따라 주세욧」
 					PRINTFORMW 「%CNAME("二人称")%의 뜨거운 것을%CNAME("一人称")%에 충분히 느끼게 햇♪」
 				ELSE
-					PRINTFORMW 「후훗♪%CNAME("一人称")%가 , 가득봉사하네요♪」
+					PRINTFORMW 「후훗♪%조사처리(CNAME("一人称"),"가")% , 가득봉사하네요♪」
 					PRINTFORMW 「많이, 사정해도 좋으니까♪」
 				ENDIF
 			;それ以外
@@ -3535,7 +3535,7 @@ IF SELECTCOM == 65
 						PRINTFORMW 「지금부터 찢어 버려요…결합부가 보이기 때문에 잘 보고 있어 주세요♪」
 					ELSEIF COND("위험일") && PENIS(PLAYER)
 						PRINTFORMW 「아읏, 응응우…좀 더 찔러♪자지로부터정액내♪」
-						PRINTFORMW 「%CNAME("一人称")%가 임신해지는 순간 봣♪」
+						PRINTFORMW 「%조사처리(CNAME("一人称"),"가")% 임신해지는 순간 봣♪」
 					ELSEIF TALENT:임신
 						PRINTFORMW 「아아읏♪…(와)과, 찍혀 버리고 있다…♪」
 						PRINTFORMW 「배에빨강있다, 자신으로부터허리를 털어 버린다…」
@@ -3556,7 +3556,7 @@ IF SELECTCOM == 65
 				ELSEIF TALENT:처녀 && PLAYER == MASTER
 					PRINTFORM 「아아…또%CNAME("一人称")%노처녀를%CNAME("二人称")%에 바칠 수가 있는 것이군요…
 					CALL HEARTMARK_E
-					PRINTFORMW 「게다가 이번은%CNAME("一人称")%가 위에 걸쳐…이제(벌써), %CNAME("二人称")%의 변태♪」
+					PRINTFORMW 「게다가 이번은%조사처리(CNAME("一人称"),"가")% 위에 걸쳐…이제(벌써), %CNAME("二人称")%의 변태♪」
 				ELSEIF RAND:2 == 0
 					PRINTFORML 「아읏…%조사처리(CNAME("二人称"),"과")%의 사랑의 증거를…응쿳…♪」
 					PRINTFORMW 「%CNAME("一人称")%에 조각해 주세욧♪…아우…후아앗♪」
@@ -5026,7 +5026,7 @@ IF SELECTCOM == 105
 		;연모
 		ELSEIF TALENT:연모
 			IF RAND:2 == 0
-				PRINTFORML 「%CNAME("一人称")%가 있다고 하는데, 이런 것으로 기분 좋아져 버린다…」
+				PRINTFORML 「%조사처리(CNAME("一人称"),"가")% 있다고 하는데, 이런 것으로 기분 좋아져 버린다…」
 				PRINTFORMW 「그런%CNAME("二人称")%에는 이러합니닷♪」
 				PRINTFORMW %타겟을()% 적확하게성감대를 공격하면서 이쪽을 초조하게 하고 있다…
 			ELSE
@@ -6110,7 +6110,7 @@ IF SELECTCOM == 150
 				PRINTFORMW %타겟을()% 일부러 추잡한 소리를 내 있는 것 같이 목 안에서 강하게 다뤘다…
 			ELSE
 				PRINTFORMW （%CNAME("二人称")%남아라…목 안에서 움찔움찔 떨고 있네요…♪）
-				PRINTFORMW （자제 같은거 하지 않아도 괜찮은데…♪ %CNAME("一人称")%가 결정타를 찔러 줍니다♪）
+				PRINTFORMW （자제 같은거 하지 않아도 괜찮은데…♪ %조사처리(CNAME("一人称"),"가")% 결정타를 찔러 줍니다♪）
 				PRINTFORMW 「…쥬루루, 쥬우우…♪」
 			ENDIF
 		;연모
@@ -6687,7 +6687,7 @@ ELSEIF SELECTCOM == 171 && COND("강가")
 					PRINTFORMW 「여기는 들켜 버리네요……. 조금 떨어집시다♪」
 					IF RAND:2 == 0
 						PRINTFORMW 주위로부터는 뭐 하고 있는지 모르는 정도의 난바다에 나왔다
-						PRINTFORMW 「%CNAME("一人称")%가 지지해 주는 것을 좋아할 뿐(만큼) 사랑해 주세요♪」
+						PRINTFORMW 「%조사처리(CNAME("一人称"),"가")% 지지해 주는 것을 좋아할 뿐(만큼) 사랑해 주세요♪」
 					ELSE
 						PRINTFORMW 주위로부터는 조금 보이기 어려운 바위 밭까지 왔다
 						PRINTFORMW 자주(잘) 귀를 기울이면 그 밖에도 하고 있다컵르가 있는 것 같다…
@@ -7533,7 +7533,7 @@ IF SELECTCOM == 280
 	IF TALENT:연모
 		;成功
 		IF TEQUIP:넘어뜨리기 == 0
-			PRINTFORMW 「다음은%CNAME("一人称")%가 사랑해 받는 차례군요, %CNAME("二人称")%…♪」
+			PRINTFORMW 「다음은%조사처리(CNAME("一人称"),"가")% 사랑해 받는 차례군요, %CNAME("二人称")%…♪」
 		;失敗
 		ELSEIF TFLAG:39 > 0
 			PRINTFORMW 「안됩니다♪%CNAME("一人称")%노봉사는 아직 끝나 있지 않기 때문에」
@@ -8720,9 +8720,9 @@ CASE "황홀"
 	ENDIF
 CASE "넘어뜨리기"
 	IF TALENT:연모
-		PRINTFORMW 「뒤는…모두%CNAME("一人称")%가 해 주네요♪」
+		PRINTFORMW 「뒤는…모두%조사처리(CNAME("一人称"),"가")% 해 주네요♪」
 	ELSE
-		PRINTFORMW 「뒤는 아무것도 하지 않아도 괜찮아요. 뒤는%CNAME("一人称")%가 하기 때문에…」
+		PRINTFORMW 「뒤는 아무것도 하지 않아도 괜찮아요. 뒤는%조사처리(CNAME("一人称"),"가")% 하기 때문에…」
 	ENDIF
 CASE "스톡사용"
 	SIF TALENT:연모
@@ -8732,7 +8732,7 @@ CASE "強制종료"
 		PRINTFORMW 「…이제 한계야？」
 	ELSE 
 		PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% %CALLNAME:PLAYER%의 물건에 뭔가 안 돼요」
-		PRINTFORMW 「그러니까…%CALLNAME:PLAYER%가 그 기분이라면%CNAME("一人称")%가 %조사처리(CALLNAME:PLAYER,"를")% 굴복시켜 준다」
+		PRINTFORMW 「그러니까…%CALLNAME:PLAYER%가 그 기분이라면%조사처리(CNAME("一人称"),"가")% %조사처리(CALLNAME:PLAYER,"를")% 굴복시켜 준다」
 		PRINTFORMW 「절대로 그의 곳으로 돌아가기 위해서(때문에)도………」
 	ENDIF
 CASE "황홀から復帰"
@@ -8995,7 +8995,7 @@ CASE "요바이기승위"
 			ELSE
 				PRINTFORMW 한사람은 외롭습니다…」
 			ENDIF
-			PRINTFORM 「%CNAME("一人称")%가 사랑해 주네요, %CNAME("二人称")%
+			PRINTFORM 「%조사처리(CNAME("一人称"),"가")% 사랑해 주네요, %CNAME("二人称")%
 			CALL HEARTMARK_E
 		ELSE
 			IF RAND:2 == 0
@@ -9390,7 +9390,7 @@ CASE "비디오送付"
 				PRINTFORMW 「진지한얼굴그래서 『일생 사랑합니다』는 맹세해 주었기 때문에 결혼해 버렸어♪」
 			ELSEIF CHARA_NUM("연모") >= 2
 				PRINTFORMW 「%CNAME("二人称")%는 조교스승이니까 그 밖에도 연정을 안고 있다딸입었지만…」
-				PRINTFORMW 「%CNAME("一人称")%가 제일 좋아, 사랑하고 있다 라고 해 주었기 때문에 결혼했어♪」
+				PRINTFORMW 「%조사처리(CNAME("一人称"),"가")% 제일 좋아, 사랑하고 있다 라고 해 주었기 때문에 결혼했어♪」
 			ELSEIF CHECK_SHIRT("웨딩드레스")
 				PRINTFORMW 「이드레스예쁘다？결혼식은 다른딸도 축복해 주었어요♪」
 			ELSE
