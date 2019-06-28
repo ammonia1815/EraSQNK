@@ -33,7 +33,7 @@ ENDIF
 ;-------------------------------------------------
 IF GETBIT(CFLAG:201, 0) == 0
 	DRAWLINE
-	PRINTFORMW %CALLNAME:MASTER%가 방에 들어가면, %타겟은()% 웅크리고 있던 침대 위에서 움찍 신체를 진동시켰다.
+	PRINTFORMW %마스터가()% 방에 들어가면, %타겟은()% 웅크리고 있던 침대 위에서 움찍 신체를 진동시켰다.
 	PRINTFORMW 「누구……? "저기,  나에게 무엇을 할 생각이야……?」
 	PRINTFORMW 무서워하고를 포함한 소리에, %마스터는()% 우선 설명을 시작했다.
 	PRINTFORMW 「,  조교……?」
@@ -70,14 +70,14 @@ ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2
 ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 	DRAWLINE
 	PRINTFORMW 「또, 해주는 거야…?」
-	PRINTFORMW %타겟은()%%CALLNAME:MASTER%가 느긋하게 가까워지면, 기대 하도록 표정을 상기 시키고 있다….
+	PRINTFORMW %타겟은()%%마스터가()% 느긋하게 가까워지면, 기대 하도록 표정을 상기 시키고 있다….
 	SETBIT CFLAG:201, 3
 	RETURN 1
 ;굴복각인Lv3+연모
 ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	DRAWLINE
 	PRINTFORMW 「아, 그…」
-	PRINTFORMW %CALLNAME:MASTER%가 조교를 시작하려고 하면, %조사처리(CALLNAME:TARGET,"가")% 흠칫흠칫 말을 걸어 온다.
+	PRINTFORMW %마스터가()% 조교를 시작하려고 하면, %조사처리(CALLNAME:TARGET,"가")% 흠칫흠칫 말을 걸어 온다.
 	PRINTFORMW 그런%CALLNAME:TARGET%에 고개를 갸웃하면서%CALLNAME:MASTER%하지만 이야기를 듣는 태도를 취해 주면,%타겟은()% 입를 열었다.
 	PRINTFORMW 「원, 나, 그럼, 그…꺅!」
 	PRINTFORMW 그러나, 얼굴을 새빨갛게 해입깃들이고 있다%타겟을()% %CALLNAME:MASTER%하지만 허를 찔러 껴안아 주면,%타겟은()% 흠칫, 라고 신체를 뛰게 했다.
@@ -121,7 +121,7 @@ ELSEIF MARK:굴복각인 == 1
 ;굴복각인Lv2+반발각인なし
 ELSEIF MARK:굴복각인 == 2 && MARK:반발각인 == 0
 	DRAWLINE
-	PRINTFORMW %CALLNAME:MASTER%가 방에 들어가면, %타겟은()% 조용히 숨소리를 내고 있었다. 그 잠자는 얼굴은 조용해, 그리고 맑고 깨끗했다. 아무래도, 무방비에 잘 수 있으려면  이 생활에 익숙한 것 같다.
+	PRINTFORMW %마스터가()% 방에 들어가면, %타겟은()% 조용히 숨소리를 내고 있었다. 그 잠자는 얼굴은 조용해, 그리고 맑고 깨끗했다. 아무래도, 무방비에 잘 수 있으려면  이 생활에 익숙한 것 같다.
 	PRINTFORMW 와%타겟은()% 몸화로 의치라고 눈을 희미하게 열었다. 그녀는 토론으로 한 눈으로 몇 초%CALLNAME:MASTER%를 응시해 그로부터 얼굴을 새빨갛게 해 벌떡 몸을 일으켰다.
 	PRINTFORMW 「이나, 싫어……잠자는 얼굴 보여졌다……」
 	RETURN 1
@@ -138,16 +138,16 @@ ELSEIF TALENT:연모
 	DRAWLINE
 	;ランダムで구상が変化する（使わない場合はすべて同じにすればよい）
 	IF RAND:3 == 0
-		PRINTFORMW %CALLNAME:MASTER%가 방에 들어가면, %타겟은()% 꽃과 같은 미소를 띄워 달려 왔다.
+		PRINTFORMW %마스터가()% 방에 들어가면, %타겟은()% 꽃과 같은 미소를 띄워 달려 왔다.
 		PRINTFORMW 「겨우 와 주었다……기다리고 있던 것이야. 쭉당신(뿐)만 생각하고 있었다」
 		PRINTFORMW %타겟은()% %CALLNAME:MASTER%의가슴에 얼굴을 묻어, 가득 냄새를 들이마시면서 넋을 잃고눈을 감았다…….
 	ELSEIF RAND:2 == 0
 		PRINTFORMW 「아……또 와주었던……」
-		PRINTFORMW %CALLNAME:MASTER%가 방에 들어가면, %조사처리(CALLNAME:TARGET,"가")% 만면의 미소를 띄워 문지르고 모여 왔다.
+		PRINTFORMW %마스터가()% 방에 들어가면, %조사처리(CALLNAME:TARGET,"가")% 만면의 미소를 띄워 문지르고 모여 왔다.
 		PRINTFORMW 그리고 그대로%CALLNAME:MASTER%하%타겟을()% 안아올린다(와)과 침대에 옮겼다.
 	ELSE
 		PRINTFORMW 「……아……」
-		PRINTFORMW %CALLNAME:MASTER%가 방에 들어가면, %CALLNAME:TARGET%, 라고 표정을 밝게 한다.
+		PRINTFORMW %마스터가()% 방에 들어가면, %CALLNAME:TARGET%, 라고 표정을 밝게 한다.
 		PRINTFORMW 그리고, 탁탁 달려들어 왔다%타겟을()% 안아올린다라고%마스터는()% 침대에 향했다.
 		PRINTFORMW 「……너무 좋아……」
 	ENDIF

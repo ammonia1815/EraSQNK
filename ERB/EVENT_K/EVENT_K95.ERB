@@ -114,7 +114,7 @@ IF GETBIT(CFLAG:201, 0) == 0
 		PRINTFORMW 
 		PRINTFORMW 「아, %CNAME("二人称")%…여기서 뭐 해…？」
 		PRINTFORMW %타겟은()% 궁금해 하는 얼굴로 %CALLNAME:MASTER%에게 물어 온다
-		PRINTFORMW %CALLNAME:MASTER%가 지금부터 하는 것을 귀엣말하자 얼굴을 빨갛게 해 물러났다
+		PRINTFORMW %마스터가()% 지금부터 하는 것을 귀엣말하자 얼굴을 빨갛게 해 물러났다
 		IF COND("부친") == MASTER || COND("모친") == MASTER
 			PRINTFORMW 「아, 안돼, 그런 일…%조사처리(CNAME("一人称"),"와")% %조사처리(CNAME("二人称"),"는")% 부모와 자식인 것이야…？」
 		ELSEIF TALENT:MASTER:남자
@@ -145,7 +145,7 @@ IF GETBIT(CFLAG:201, 0) == 0
 		PRINTFORMW 
 		PRINTFORMW 「아, %CNAME("二人称")%…여기서 뭐 해…？」
 		PRINTFORMW %타겟은()% 궁금해하는 얼굴로 %CALLNAME:MASTER%에게 물어 온다
-		PRINTFORMW %CALLNAME:MASTER%가 지금부터 하는 것을 귀엣말하자 얼굴을 빨갛게 해 물러났다
+		PRINTFORMW %마스터가()% 지금부터 하는 것을 귀엣말하자 얼굴을 빨갛게 해 물러났다
 		IF COND("부친") == MASTER || COND("모친") == MASTER
 			PRINTFORMW 「아, 안돼, 그런 일…%조사처리(CNAME("一人称"),"와")% %조사처리(CNAME("二人称"),"는")% 부모와 자식인 것이야…？」
 		ELSEIF TALENT:MASTER:남자
@@ -296,9 +296,9 @@ ELSEIF MARK:굴복각인 == 2
 ELSEIF MARK:굴복각인 == 3 && TALENT:연모 == 0
 	;オナニーのじかん
 	IF RAND:2 == 0
-		PRINTFORMW %CALLNAME:MASTER%가 문의 틈새로부터 들여다 보면, %타겟은()% 자위에 빠지고 있었다
+		PRINTFORMW %마스터가()% 문의 틈새로부터 들여다 보면, %타겟은()% 자위에 빠지고 있었다
 		PRINTFORMW 「…읏! 기분이 좋다! 자지 기분이 좋다♪」
-		PRINTFORMW %CALLNAME:MASTER%가 방에 들어 와도 놀라는 일 없이자위를 계속하고 있다…
+		PRINTFORMW %마스터가()% 방에 들어 와도 놀라는 일 없이자위를 계속하고 있다…
 		PRINTFORMW 「%CNAME("二人称", "かな", "甘え")%…%CNAME("一人称")%기다리고 있던 것이야…？」
 		PRINTFORMW 「빨리 기분이 좋은 일 햇…빨리…♪」
 	ELSE
@@ -315,7 +315,7 @@ ELSEIF TALENT:연모
 		TEQUIP:넘어뜨리기 = 1
 	ELSEIF RAND:2 == 0
 		PRINTFORMW 「아아읏…기분이 좋다! 자지 기분이 좋다♪」
-		PRINTFORMW %CALLNAME:MASTER%가 방에 들어 오면 음란한 얼굴를 이쪽에 향한다
+		PRINTFORMW %마스터가()% 방에 들어 오면 음란한 얼굴를 이쪽에 향한다
 		PRINTFORMW 「%CNAME("二人称", "かな", "甘え")%…%CNAME("一人称")%기다리고 있던 것이야…？」
 		IF TALENT:오토코노코 && SIZE("페니스", TARGET) == 0
 			IF ABL:Ａ감각 >= 3 && TALENT:Ａ처녀 == 0
@@ -8940,7 +8940,7 @@ IF SELECTCOM == 200 && TEQUIP:촉수
 		;연모
 		ELSEIF TALENT:연모 || MARK:굴복각인 >= 3
 			PRINTFORMW 「, 뭐야 이것…」
-			PRINTFORMW %CALLNAME:MASTER%가 설명해도%타겟은()% 아니아니하고저항하고 있다
+			PRINTFORMW %마스터가()% 설명해도%타겟은()% 아니아니하고저항하고 있다
 			PRINTFORMW 「싫닷, %CNAME("二人称")%로 햇……! ! 」
 		;それ以外
 		ELSE

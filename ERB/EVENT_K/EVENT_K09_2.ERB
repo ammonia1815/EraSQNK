@@ -119,10 +119,10 @@ ELSEIF MARK:반발각인 == 3
 	CALL K9_KOJO2_2
 ;굴복각인Lv1
 ELSEIF GETBIT(CFLAG:201, 1) == 0 && MARK:굴복각인 == 1
-	PRINTFORMW %CALLNAME:MASTER%가 조교의 준비를 하고 있으면(자), %타겟이()% 주저하기 쉽상에 중얼거렸다
+	PRINTFORMW %마스터가()% 조교의 준비를 하고 있으면(자), %타겟이()% 주저하기 쉽상에 중얼거렸다
 	PRINTFORMW 「그와 같은 행위 ,  지금 곧 멈추세요…그러면 ,  용서(허락)해 주지 않는 것도 아니어요…」
 	PRINTFORMW 그와 같은 행위와는 어떤 일인가
-	PRINTFORMW %CALLNAME:MASTER%가 들어보면 , %CALLNAME:TARGET%의 얼굴이 일순간으로 붉어졌다…
+	PRINTFORMW %마스터가()% 들어보면 , %CALLNAME:TARGET%의 얼굴이 일순간으로 붉어졌다…
 	PRINTFORMW 「에 ,  변태! 정말로 당신은 최악입니다 것!」
 	SETBIT CFLAG:201, 1
 ;굴복각인Lv2
@@ -137,7 +137,7 @@ ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2
 ;굴복각인Lv3
 ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 	PRINTFORMW 「갔어요…」
-	PRINTFORMW %CALLNAME:MASTER%가 방에 들어가든지%타겟이()% 통로 제일로 고해 왔다.
+	PRINTFORMW %마스터가()% 방에 들어가든지%타겟이()% 통로 제일로 고해 왔다.
 	;플레이ヤーが몽마
 	IF COND("몽마", PLAYER)
 		PRINTFORMW 「당신같은 몽마 상대에게 결코 굽히지 않는…그렇게 생각하고 있었습니다 원」
@@ -161,7 +161,7 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 	SETBIT CFLAG:201, 3
 ;굴복각인Lv3+연모
 ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
-	PRINTFORMW %CALLNAME:MASTER%가 방에 들어간 순간 , %타겟이()% 달려들어 안겼다
+	PRINTFORMW %마스터가()% 방에 들어간 순간 , %타겟이()% 달려들어 안겼다
 	;거유
 	IF TALENT:거유
 		PRINTFORMW 풍만한 가슴이%CALLNAME:MASTER%과의 사이에 눌러 무너지고 있는 것이 ,  옷감 넘어로에서도 충분히 전해져 온다
@@ -252,7 +252,7 @@ ELSEIF GETBIT(CFLAG:201, 9) == 0 && TALENT:상사상애
 	IF RESULT == 0
 		PRINTFORMW %마스터는()% 조심조심 머리를 세로로 흔들었다
 		PRINTFORMW 「~~~~~~~~~~!」
-		PRINTFORMW %CALLNAME:MASTER%가 수긍 하는 동시에, %타겟은()% 새빨갛게 된 얼굴을 다시 베개에 소용돌이 끼워 끝냈다
+		PRINTFORMW %마스터가()% 수긍 하는 동시에, %타겟은()% 새빨갛게 된 얼굴을 다시 베개에 소용돌이 끼워 끝냈다
 		PRINTFORMW 「우우우우우……이, 이런 부끄러운 모습을 본 이상에는 …키 ,  책임을 져 주어요」
 		PRINTFORMW 당돌하게 얼굴을 들었다일까하고 생각하면(자), %타겟이()% 뺨을 수치에 물들인 채로 덤벼 들어 왔다
 		TEQUIP:넘어뜨리기 = 1
@@ -943,7 +943,7 @@ ELSEIF TALENT:연모
 			;세라복を所持
 			ELSEIF ITEM:세라복 && RANDIF(1, ITEM:본디지 && ABL:새드끼 >= 5, ITEM:무녀복)
 				PRINTFORMW 「 이제(벌써)…선생님 ,  늦어 …♪ 모처럼 ,  선생님을 위해서(때문에)…이런 모양 해 기다리고 있었는데…♪」
-				PRINTFORMW %CALLNAME:MASTER%가 방에 들어가는 것과 동시에 ,  응석부린 항의의 목소리가 던져지는
+				PRINTFORMW %마스터가()% 방에 들어가는 것과 동시에 ,  응석부린 항의의 목소리가 던져지는
 				PRINTFORMW 무슨 일인가 하고 생각해 보면 ,  세라복에 몸을 싼%타겟이()% 앞가슴으로 뛰어들어 왔다
 				PRINTFORMW 「안되어요  ,  선생님…♪ 멍하니 하고 있다고(면)…나같은 학생에게 습격당하면 이니까…♪」
 				PRINTFORMW 귓전으로 달콤한 목소리로 속삭이면서%타겟이()% 양손을 돌려 온다
@@ -977,7 +977,7 @@ ELSEIF TALENT:연모
 			ENDIF
 		ELSE
 			PRINTFORMW 「후후…기다리고 있었습니다」
-			PRINTFORMW %CALLNAME:MASTER%가 내방하는 것과 동시에, %타겟이()% 세 손가락을 붙어 무릎 꿇는다
+			PRINTFORMW %마스터가()% 내방하는 것과 동시에, %타겟이()% 세 손가락을 붙어 무릎 꿇는다
 			PRINTFORMW 「오늘은 나의 앞으로 행차 받아 ,  정말로 감사합니다」
 			PRINTFORMW 「이번도 저 , %타겟이()% ,  성심성의 할인해 드리겠습니다」
 			PRINTFORMW 「당신에게 따라서 단련할 수 있었던 기교 ,  마음껏 능숙주십시오」
@@ -1022,7 +1022,7 @@ ELSEIF TALENT:연모
 	ENDIF
 ;굴복각인Lv0
 ELSEIF MARK:굴복각인 == 0
-	PRINTFORMW %CALLNAME:MASTER%가 오면(자), %타겟은()% 외면해 버렸다…
+	PRINTFORMW %마스터가()% 오면(자), %타겟은()% 외면해 버렸다…
 ;굴복각인Lv1
 ELSEIF MARK:굴복각인 == 1
 	PRINTFORMW 「언제까지…이런 일을 계속할 생각이에요?」
@@ -24518,7 +24518,7 @@ CASE "조교후섹스"
 					PRINTFORMW 이미 그 복부가 아이를 숨어인가와 같이 부풀어 올라 있다고 하는 것으로 , %타겟은()% 정령을 탐내는 것을 멈추려고는 하지 않는다
 				ELSE
 					PRINTFORMW 「자궁이 …아기 갖고 싶다고 ,  쑤셔 어쩔 수 없어요 …♪」
-					PRINTFORMW 얼굴을 누덕누덕에 녹일 수 있는이면서 , %타겟은()% 자궁중에서%CALLNAME:MASTER%가 쓸모 있게 되려고 ,  열심히 허리를 쳐 붙인다
+					PRINTFORMW 얼굴을 누덕누덕에 녹일 수 있는이면서 , %타겟은()% 자궁중에서%마스터가()% 쓸모 있게 되려고 ,  열심히 허리를 쳐 붙인다
 				ENDIF
 				PRINTFORMW 「도 ,  좀더 …좀더 내 …♪ 당신의 자식으로 임신하고 싶습니다의 …♪」
 			ELSE
@@ -24792,7 +24792,7 @@ CASE "매각した"
 		;임신+MASTERの子
 		IF TALENT:임신 && COND("정액의우세") == MASTER
 			PRINTFORMW 「…배의 아이는 ,  내가 책임을 가지고 길러요」
-			PRINTFORMW 그 말에 %CALLNAME:MASTER%가 말을 잃고 있는 동안에 , %타겟은()% 마차로 탔다
+			PRINTFORMW 그 말에 %마스터가()% 말을 잃고 있는 동안에 , %타겟은()% 마차로 탔다
 		ELSE
 			PRINTFORMW 「 이제(벌써) 만나는 일도 않겠지요. 제발 당신도 ,  건강해」
 			PRINTFORMW 의연히 한 태도를 취해 되돌려, %타겟은()% 정중하게 인사를 한다
@@ -24804,7 +24804,7 @@ CASE "매각した"
 		PRINTFORML …
 		PRINTFORMW ――그 후, %타겟이()% 어떻게 되었는가는 모른다
 		PRINTFORMW 한 번 ,  판매자에게 확인을 할까하고도 생각했지만, %마스터는()% 단념했다
-		PRINTFORMW 그것을 알았다고 해서, %CALLNAME:MASTER%가 그녀와 재회하는 일은 ,  이제(벌써) 두 번 다시 아니니까…
+		PRINTFORMW 그것을 알았다고 해서, %마스터가()% 그녀와 재회하는 일은 ,  이제(벌써) 두 번 다시 아니니까…
 	;음란
 	ELSEIF TALENT:음란
 		PRINTFORMW 「어머나…그렇게…역시 ,  저는 팔려 버려요…」
@@ -25714,7 +25714,7 @@ RETURN 1
 	PRINTFORMW %CALLNAME:MASTER%의 행위에 대해 , %타겟은()% 응석부리는 것 같은 음색을 흘려 몸을 구부러지게 한다
 	PRINTFORMW 그 모습(상태)에 %마스터는()% 일종의 달성감을 기억하면서 ,  다시 행위를 재개한 것에서 만났다
 	PRINTFORMW ――성의 지식을 가지지 않는 초심인 소녀에게 색과 요염함을 철저히 가르쳐 ,  한마리의 정숙한 암컷으로 만들어 바꾼다
-	PRINTFORMW 그러한 의미에서는%CALLNAME:TARGET%개소화 , %CALLNAME:MASTER%가 다룬 노예 중(안)에서 ,  가장 자랑할 수 있는 작품이라고 말할 수 있을지도 모른다
+	PRINTFORMW 그러한 의미에서는%CALLNAME:TARGET%개소화 , %마스터가()% 다룬 노예 중(안)에서 ,  가장 자랑할 수 있는 작품이라고 말할 수 있을지도 모른다
 	PRINTFORMW 「아아…좋다 ♪ 괜찮아요…♪ 굉장히…기분이 좋다…♪」
 	PRINTFORMW 앞으로도%CALLNAME:TARGET%과의 꿀시는 끝나 없게 계속되어 갈 것이다
 	PRINTFORMW 그 중에 %타겟은()% 어떻게 음란하게 ,  그리고 아름답게 되어 가는 것인가

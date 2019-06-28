@@ -153,7 +153,7 @@ ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2
 	SETBIT CFLAG:201, 2
 ;굴복각인Lv3
 ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
-	PRINTFORMW %CALLNAME:MASTER%가 방에 들어가면, %조사처리(CALLNAME:TARGET,"가")% 젖은 눈동자로 응시하고 왔다
+	PRINTFORMW %마스터가()% 방에 들어가면, %조사처리(CALLNAME:TARGET,"가")% 젖은 눈동자로 응시하고 왔다
 	PRINTFORML 「부탁……빨리…안아……!」
 	PRINTFORMW 침대 위에 엎드려 누워, 허덕인다
 	PRINTFORML 「…갖고 싶어서…견딜 수 없는거야……」
@@ -394,7 +394,7 @@ ELSEIF MARK:반발각인 == 3 && EX:처녀상실
 	PRINTFORMW %타겟은()%, 침대 위에서 소리를 눌러 참아 울고 있었다……
 ;반발각인Lv3（一回のみ）
 ELSEIF MARK:반발각인 == 3 && CFLAG:220 == 0
-	PRINTFORMW %타겟은()%, 마치%CALLNAME:MASTER%가 존재 하지 않겠어와 같이, 착의를 정돈하기 시작했다
+	PRINTFORMW %타겟은()%, 마치%마스터가()% 존재 하지 않겠어와 같이, 착의를 정돈하기 시작했다
 	PRINTFORMW 「……………………」
 	PRINTFORMW 거북한 침묵에 견딜 수 없게 되어 방을 나오려고 하면, 얼어붙는 것 같은 시선을 등뒤에 느꼈다……
 	CFLAG:220 = 1
@@ -413,7 +413,7 @@ ELSEIF MARK:반발각인 == 3
 ;	PRINTFORMW (그 때……저런 것을 한 것은, 이 사람의 젊음 이유의 잘못……이었던 것이라면)
 ;	PRINTFORMW (……나는 이 사람을…용서해 주어야 하는 것……)
 ;	PRINTFORMW (…당신에……한번 더 찬스를 준다……)
-;	PRINTFORMW 평소와 같이%CALLNAME:MASTER%가 방을 퇴출 하려고 하면, 그 등중에 %CALLNAME:TARGET%의 목소리가 걸렸다
+;	PRINTFORMW 평소와 같이%마스터가()% 방을 퇴출 하려고 하면, 그 등중에 %CALLNAME:TARGET%의 목소리가 걸렸다
 ;	PRINTFORMW 「또 와요…기다리고 있을 테니까……」
 ;굴복각인Lv3
 ELSEIF MARK:굴복각인 == 3
@@ -5851,7 +5851,7 @@ IF SELECTCOM == 161
 					PRINTFORMW %타겟은()%%CALLNAME:MASTER%에 힐끔하고 시선을 보내면, 사랑스러운 듯이  %CALLNAME:ASSI%의 뺨을 어루만져 눈의 구석에서 배이는 눈물을 닦아 취했다
 				ENDIF
 				PRINTFORMW 「…과시해 줍시다……♪」
-				PRINTFORMW %CALLNAME:MASTER%가 보고 있는 눈앞에서, %CALLNAME:TARGET%과%CALLNAME:ASSI%는 어깨를 얼싸안아, 절정을 향해 달리기 시작했다……
+				PRINTFORMW %마스터가()% 보고 있는 눈앞에서, %CALLNAME:TARGET%과%CALLNAME:ASSI%는 어깨를 얼싸안아, 절정을 향해 달리기 시작했다……
 			;そうじゃない, ♀
 			ELSE
 				;조수は후타나리か？
@@ -5859,7 +5859,7 @@ IF SELECTCOM == 161
 					PRINTFORMW %타겟은()% 크게 다리를 벌려%CALLNAME:ASSI%의 허리에 걸쳤다
 					PRINTFORMW %CALLNAME:ASSI%의 페니스를 손에 들어, 앞달리기의 국물을 흘리는 그것을 젖어있어 꽃잎에 나누어준다
 					PRINTFORMW 「응……잘 보고 있어군요……♪」
-					PRINTFORMW %CALLNAME:MASTER%가 보고 있는 눈앞에서, %CALLNAME:TARGET%과%CALLNAME:ASSI%는 허리를 합쳐지게 했다
+					PRINTFORMW %마스터가()% 보고 있는 눈앞에서, %CALLNAME:TARGET%과%CALLNAME:ASSI%는 허리를 합쳐지게 했다
 					;대상は처녀か？
 					IF TALENT:처녀
 						PRINTFORMW 「어땠어요…? 나의 로스트 virgin……」
@@ -5887,7 +5887,7 @@ IF SELECTCOM == 161
 						PRINTFORMW %타겟은()%%CALLNAME:MASTER%에 힐끔하고 시선을 보내면, 사랑스러운 듯이  %CALLNAME:ASSI%의 뺨을 어루만져 눈의 구석에서 배이는 눈물을 닦아 취했다
 					ENDIF
 					PRINTFORMW 「…과시해 줍시다……♪」
-					PRINTFORMW %CALLNAME:MASTER%가 보고 있는 눈앞에서, %CALLNAME:TARGET%과%CALLNAME:ASSI%는 어깨를 얼싸안아, 절정을 향해 달리기 시작했다……
+					PRINTFORMW %마스터가()% 보고 있는 눈앞에서, %CALLNAME:TARGET%과%CALLNAME:ASSI%는 어깨를 얼싸안아, 절정을 향해 달리기 시작했다……
 				ENDIF
 			ENDIF
 		;あまりにもめんどいので, とりあえず同じ内容です
@@ -5918,7 +5918,7 @@ IF SELECTCOM == 161
 					PRINTFORMW %타겟은()%%CALLNAME:MASTER%에 힐끔하고 시선을 보내면, 사랑스러운 듯이  %CALLNAME:ASSI%의 뺨을 어루만져 눈의 구석에서 배이는 눈물을 닦아 취했다
 				ENDIF
 				PRINTFORMW 「…과시해 줍시다……♪」
-				PRINTFORMW %CALLNAME:MASTER%가 보고 있는 눈앞에서, %CALLNAME:TARGET%과%CALLNAME:ASSI%는 어깨를 얼싸안아, 절정을 향해 달리기 시작했다……
+				PRINTFORMW %마스터가()% 보고 있는 눈앞에서, %CALLNAME:TARGET%과%CALLNAME:ASSI%는 어깨를 얼싸안아, 절정을 향해 달리기 시작했다……
 			;そうじゃない, ♀
 			ELSE
 				;조수は후타나리か？
@@ -5926,7 +5926,7 @@ IF SELECTCOM == 161
 					PRINTFORMW %타겟은()% 크게 다리를 벌려%CALLNAME:ASSI%의 허리에 걸쳤다
 					PRINTFORMW %CALLNAME:ASSI%의 페니스를 손에 들어, 앞달리기의 국물을 흘리는 그것을 젖어있어 꽃잎에 나누어준다
 					PRINTFORMW 「응……잘 보고 있어군요……♪」
-					PRINTFORMW %CALLNAME:MASTER%가 보고 있는 눈앞에서, %CALLNAME:TARGET%과%CALLNAME:ASSI%는 허리를 합쳐지게 했다
+					PRINTFORMW %마스터가()% 보고 있는 눈앞에서, %CALLNAME:TARGET%과%CALLNAME:ASSI%는 허리를 합쳐지게 했다
 					;대상は처녀か？
 					IF TALENT:처녀
 						PRINTFORMW 「어땠어요…? 나의 로스트 virgin……」
@@ -5954,7 +5954,7 @@ IF SELECTCOM == 161
 						PRINTFORMW %타겟은()%%CALLNAME:MASTER%에 힐끔하고 시선을 보내면, 사랑스러운 듯이  %CALLNAME:ASSI%의 뺨을 어루만져 눈의 구석에서 배이는 눈물을 닦아 취했다
 					ENDIF
 					PRINTFORMW 「…과시해 줍시다……♪」
-					PRINTFORMW %CALLNAME:MASTER%가 보고 있는 눈앞에서, %CALLNAME:TARGET%과%CALLNAME:ASSI%는 어깨를 얼싸안아, 절정을 향해 달리기 시작했다……
+					PRINTFORMW %마스터가()% 보고 있는 눈앞에서, %CALLNAME:TARGET%과%CALLNAME:ASSI%는 어깨를 얼싸안아, 절정을 향해 달리기 시작했다……
 				ENDIF
 			ENDIF
 		ENDIF
@@ -5968,7 +5968,7 @@ IF SELECTCOM == 161
 			IF TALENT:MASTER:후타나리
 				PRINTFORMW %마스터는()% 페니스를 꺼내면, 격렬하게 사귀고 있는 두명에게 과시하듯이 훑어 내기 시작했다
 				PRINTFORMW 여자들은 그런%CALLNAME:MASTER%의 모습에 열정적인 시선을 씻어, 더욱 더 격렬하게 서로 요구했다
-				PRINTFORMW 「%CALLNAME:MASTER%가 보고 있어요…아아……는 징그러운 눈으로……♪」
+				PRINTFORMW 「%마스터가()% 보고 있어요…아아……는 징그러운 눈으로……♪」
 				PRINTFORMW 두 명이 절정에 이르는 것과 동시에 %CALLNAME:MASTER%도 달해, 얽히는 여체에 정령을 퍼부었다
 				PRINTFORMW 절정의 여운에 떨리는 미모를, 정령의 백탁이 더럽혀 간다……
 			;주인は여자
@@ -5976,7 +5976,7 @@ IF SELECTCOM == 161
 				PRINTFORMW %마스터는()% 소파에 앉은 채로 크게 다리를 벌려 젖어있어 성기를 두명에게 과시하듯이 쬐었다
 				PRINTFORMW 느긋하게 만지작거려, 스스로 흥분을 높여 간다…
 				PRINTFORMW 여자들은 그런%CALLNAME:MASTER%의 행위에 열정적인 시선을 씻어, 더욱 더 격렬하게 서로 요구했다
-				PRINTFORMW 「%CALLNAME:MASTER%가 보고 있어요…아아……는 음란한 모습으로……♪」
+				PRINTFORMW 「%마스터가()% 보고 있어요…아아……는 음란한 모습으로……♪」
 				PRINTFORMW 두 명이 절정에 이르는 것과 동시에 %CALLNAME:MASTER%도 달해, 얽히는 여체로 향해 조수를 불었다
 				PRINTFORMW 절정의 여운에 떨리는 미모를, 암컷의국물이 더럽혀 간다……
 			ENDIF
@@ -5989,7 +5989,7 @@ IF SELECTCOM == 161
 			IF TALENT:MASTER:후타나리
 				PRINTFORMW %마스터는()% 페니스를 꺼내면, 사귀고 있는 두 명의 눈앞에서 과시하듯이 훑어 내기 시작했다
 				PRINTFORMW 여자들은 그런%CALLNAME:MASTER%의 모습에 열정적인 시선을 씻어, 더욱 더 격렬하게 서로 요구했다
-				PRINTFORMW 「%CALLNAME:MASTER%가 보고 있어요…아아……는 징그러운 눈으로……♪」
+				PRINTFORMW 「%마스터가()% 보고 있어요…아아……는 징그러운 눈으로……♪」
 				PRINTFORMW 두 명이 절정에 이르는 것과 동시에 %CALLNAME:MASTER%도 달해, 얽히는 여체에 정령을 퍼부었다
 				PRINTFORMW 「는……♪ …맛있어……♪」
 				PRINTFORMW 절정의 여운에 떨리는 미모를, 정령의 백탁이 더럽혀 간다……
@@ -6004,7 +6004,7 @@ IF SELECTCOM == 161
 				PRINTFORMW %마스터는()% 소파에 앉은 채로 크게 다리를 벌려 젖어있어 성기를 두명에게 과시하듯이 쬐었다
 				PRINTFORMW 느긋하게 만지작거려, 스스로 흥분을 높여 간다…
 				PRINTFORMW 여자들은 그런%CALLNAME:MASTER%의 행위에 열정적인 시선을 씻어, 더욱 더 격렬하게 서로 요구했다
-				PRINTFORMW 「%CALLNAME:MASTER%가 보고 있어요…아아……는 음란한 모습으로……♪」
+				PRINTFORMW 「%마스터가()% 보고 있어요…아아……는 음란한 모습으로……♪」
 				PRINTFORMW 두 명이 절정에 이르는 것과 동시에 %CALLNAME:MASTER%도 달해, 얽히는 여체로 향해 조수를 불었다
 				PRINTFORMW 절정의 여운에 떨리는 미모를, 암컷의국물이 더럽혀 간다……
 				;潮吹きでＶ汚れを
@@ -10837,10 +10837,10 @@ CASE "매각した"
 		PRINTFORMW %마스터는()% 아무것도 말하지 않는다. 말할 수 없었다
 		PRINTFORML 「……"조교"가 끝났기 때문에 파는……당연한 것이에요……군요…!  」
 		PRINTFORMW 입술을 씹어 잡아%타겟은()% 눌러 짬 내요 게 말했다
-		PRINTFORML 「나는……어땠어요……? %CALLNAME:MASTER%가 매도에 내 부끄럽지 않은, 훌륭한 노예가 될 수 있던 것……까……?」
+		PRINTFORML 「나는……어땠어요……? %마스터가()% 매도에 내 부끄럽지 않은, 훌륭한 노예가 될 수 있던 것……까……?」
 		PRINTFORMW 말없이……수긍했다
 		PRINTFORMW 큰 눈동자에 가득한 눈물을 모아 두어%타겟은()% 힘껏의 미소를 만들었다
-		PRINTFORML 「%CALLNAME:MASTER%가 도움이 될 수 있어……기뻐요……」
+		PRINTFORML 「%마스터가()% 도움이 될 수 있어……기뻐요……」
 		PRINTFORML 굳어지는 신체를 무리하게 움직여, %타겟은()% 정중한 인사를 했다
 		PRINTFORMW 그것이 그녀의, 힘껏의 항의였던 것일 것이다
 		PRINTFORML 「그럼, 주인님도 가는 히사수, 건강해……」

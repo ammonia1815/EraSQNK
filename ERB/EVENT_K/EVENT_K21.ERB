@@ -480,24 +480,24 @@ ELSEIF MARK:굴복각인 == 3 && TALENT:연모 == 0
 ;연모+새댁플레이経験あり
 ELSEIF TALENT:연모 && FIRSTCOM(173)
 	IF RAND:8 == 0
-		PRINTFORMW %CALLNAME:MASTER%가 방을 가볍게 노크 하면, %CALLNAME:TARGET%벗겨 여기 없게 문을 열었다.
+		PRINTFORMW %마스터가()% 방을 가볍게 노크 하면, %CALLNAME:TARGET%벗겨 여기 없게 문을 열었다.
 		PRINTFORMW 「어서 오세요…당신」
-		PRINTFORMW %CALLNAME:MASTER%가 장렬하게 분출하면%타겟은()% 얼굴을 새빨갛게 해 경직되었다.
+		PRINTFORMW %마스터가()% 장렬하게 분출하면%타겟은()% 얼굴을 새빨갛게 해 경직되었다.
 		PRINTFORMW 「후후후…시니타이노네♪아·나·타♪」
 		PRINTFORMW %타겟은()% 붙은 미소로 어디에서 가지고 왔는지 두꺼운 책을 던져 왔다.
 		PRINTFORMW %마스터는()% 기절했다…
 		PRINTFORMW 「♪~~~♪~♪~♪」
-		PRINTFORMW %CALLNAME:MASTER%가 눈을 뜨면%타겟은()% 무엇을 노래하고 있다…
+		PRINTFORMW %마스터가()% 눈을 뜨면%타겟은()% 무엇을 노래하고 있다…
 		PRINTFORMW 「응…? 일어났는지? 싫은…언제나 언제나…」
 		PRINTFORMW 인 늘어지는%CALLNAME:TARGET%에 %마스터는()% 무엇을 노래해 있었던 건가 물었다…
 		PRINTFORMW 「응? 이 노래인가? 뭐야인? 쭉 옛날에 배운 것 같은…처음부터 기억했어요인…」
 		PRINTFORMW 「그런 것보다 시작해요♪」
 	ELSEIF RAND:7 == 0
-		PRINTFORMW %타겟은()%%CALLNAME:MASTER%가 방에 들어가자 마자 달라붙기 다리 사이를 손으로 문질러 왔다.
+		PRINTFORMW %타겟은()%%마스터가()% 방에 들어가자 마자 달라붙기 다리 사이를 손으로 문질러 왔다.
 		PRINTFORMW 「∼♪오늘도 건강하구나…반하고 반하고 해요♪」
 		PRINTFORMW 「글쎄…빨리 %조사처리(CNAME("一人称"),"를")% 쾌락의 소용돌이에 떨어뜨려 주어라♪」
 	ELSEIF RAND:6 == 0
-		PRINTFORMW %CALLNAME:MASTER%가%CALLNAME:TARGET%의 방으로 향해 문의 앞에 서면 기세 좋게 문이 열려 간! 이렇게 말하는 좋은 소리가 울렸다…
+		PRINTFORMW %마스터가()%%CALLNAME:TARGET%의 방으로 향해 문의 앞에 서면 기세 좋게 문이 열려 간! 이렇게 말하는 좋은 소리가 울렸다…
 		PRINTFORMW 「아∼~~~~………테헥♪」
 		PRINTFORMW %마스터는()%%CALLNAME:TARGET%의 관자놀이를 괴롭히며 엄하게 꾸짖음했다.
 		PRINTFORMW 「아픈 아픈 나빴다니까 기다릴 수  없었다」
@@ -534,7 +534,7 @@ ELSEIF TALENT:연모 && FIRSTCOM(173)
 		TEQUIP:새댁플레이 = 1
 	ELSE
 		PRINTFORMW 「♪~~~♪~♪~♪…다른데…」
-		PRINTFORMW %CALLNAME:MASTER%가 문의 앞에 서면, 안으로부터 가성이 들린다.
+		PRINTFORMW %마스터가()% 문의 앞에 서면, 안으로부터 가성이 들린다.
 		PRINTFORMW 「♪~♪~♪~………던가?」
 		PRINTFORMW 기다려 녹초가 되어 있는 것 같다. %마스터는()% 문의 앞에 서 좀 더 상태를 보기로 했다…
 		PRINTFORMW 「정말이지도 …빨리 오라고 말했었는데 그 녀석은………(잔소리중)」
@@ -9856,7 +9856,7 @@ CASE "매각した"
 		PRINTFORML 그리고 그것과 함께 모두를 단념한 것 같은 표정을 띄웠다…
 		PRINTFORMW 「하, 하하하…이것도 신을 배신한 보답이나…」
 		PRINTFORMW 「……그렇지만 아무튼…나쁜 추억이 없었던 것 뿐 %CNAME("一人称")%의 승리다」
-		PRINTFORML 괴로운 안, 미소를 띄운%CALLNAME:TARGET%에 %CALLNAME:MASTER%가 손을 접하려고 하면
+		PRINTFORML 괴로운 안, 미소를 띄운%CALLNAME:TARGET%에 %마스터가()% 손을 접하려고 하면
 		PRINTFORMW 「손대지 말아라"」
 		PRINTFORML 그 한마디로%CALLNAME:MASTER%의 손은석과 같이 굳어져 버린다.
 		PRINTFORML 그리고%타겟은()% 숙이면서 차례차례로 말을 뽑는다
@@ -10273,7 +10273,7 @@ IF MARK:주인굴복각인 == 3 && TALENT:MASTER:음란 && TALENT:MASTER:마조 
 	PRINTFORMW 문을 열자 마자 마구 퍼부을 수 있던 그 말에, %마스터는()% 얼굴을 푸르게 하면서 넙죽 엎드리고, 변명의 말을 말한다…
 	PRINTFORMW 문의 저 편에 퍼지는 방은 저택 안에서 가장 크게, 그 정도의 귀족이라도 손이 닿지 않는 것 같은 고가의 물건으로 흘러넘치고 있었다
 	PRINTFORMW 동방의 요염한 직물, 남방의 눈부신 금세공, 북방의 우아한 동물의 모피, 서방의 중후해 격식의 높은 일상 생활 용품…
-	PRINTFORMW 그 방에는%CALLNAME:MASTER%가 번 재라고 하는 재가 모두 투입되고 있었다…
+	PRINTFORMW 그 방에는%마스터가()% 번 재라고 하는 재가 모두 투입되고 있었다…
 	PRINTFORMW 모든 것은, 이 방의 주인을 위해에.
 	PRINTFORMW 「후후후…농담이야♪ 그렇게평 덮지 않고 하지 않아도 괜찮아, 얼굴을 올려♪ 그리고, 오늘의 상담의 수미은 어땠어요? %CNAME("一人称")%의 말하면 우리가 되었을 것이다…?」
 	PRINTFORMW 수긍하는%CALLNAME:MASTER%에, 방의 주…%타겟은()% 만족하게 미소지어, 눈을 가늘게 떠…
@@ -10321,7 +10321,7 @@ IF MARK:주인굴복각인 == 3 && TALENT:MASTER:음란 && TALENT:MASTER:마조 
 	PRINTFORMW ……
 	PRINTFORMW ―――%CALLNAME:TARGET%모양의 노예 엔드---
 ELSE
-	PRINTFORMW %CALLNAME:MASTER%가 눈을 뜨면 거기에는"아무것도 없었다"
+	PRINTFORMW %마스터가()% 눈을 뜨면 거기에는"아무것도 없었다"
 	PRINTFORMW 상이나아래나 오른쪽이나 왼쪽도 어두운 곳
 	PRINTFORMW 걸어도 몸을 움직여도 실감이 없고
 	PRINTFORMW 자신이 어떤 모습을 하고 있을까조차 모르는 공간이었다
