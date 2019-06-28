@@ -48,7 +48,7 @@ DRAWLINE
 ;初조교時 CFLAG201
 ;-------------------------------------------------
 IF GETBIT(CFLAG:201, 0) == 0
-	PRINTFORMW 「여긴 어디고？당신은 누구야？ 뭐, %CNAME("一人称")%를 조교？」
+	PRINTFORMW 「여긴 어디고？당신은 누구야？ 뭐, %조사처리(CNAME("一人称"),"를")% 조교？」
 	PRINTFORMW 「정말, 어쩔수 없네……기분 좋게 해주지 않으면 싫다구？」
 	SETBIT CFLAG:201, 0
 
@@ -69,7 +69,7 @@ ELSEIF GETBIT(CFLAG:201, 26) == 0 && COND("권속", MASTER) == TARGET
 ;굴복각인Lv1
 ELSEIF GETBIT(CFLAG:201, 1) == 0 && MARK:굴복각인 == 1
 	PRINTFORMW 「그러고 보니 신경이 쓰이는 것이 있었어……」
-	PRINTFORMW 「%CNAME("二人称")%는 %CNAME("一人称")%를 조교 한 다음 어떻게 할려고 하는거야？」
+	PRINTFORMW 「%CNAME("二人称")%는 %조사처리(CNAME("一人称"),"를")% 조교 한 다음 어떻게 할려고 하는거야？」
 	DRAWLINE
 	PRINTFORML [0] 「팔아 버린다」
 	PRINTFORML [1] 「연인으로 만든다」
@@ -196,7 +196,7 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 			PRINTFORMW %타겟은()% 기쁜 듯 미소 지으며, 높은곳에서 내려와 조교 침대에 살짝 내려 섯다
 			PALAM:순종 += 10000
 		ELSEIF RESULT == 1
-			PRINTFORM 「싫어라, 그거 %CNAME("一人称")%를 신뢰하고 있다는 거야？우후후……
+			PRINTFORM 「싫어라, 그거 %조사처리(CNAME("一人称"),"를")% 신뢰하고 있다는 거야？우후후……
 			CALL HEARTMARK_E
 			PRINTFORM 「괜찮아, %조사처리(CNAME("一人称"),"는")% 어디에도 가지 않아
 			CALL HEARTMARK_E
@@ -350,7 +350,7 @@ ELSEIF COND("ご無沙汰")
 		IF PENIS(PLAYER)
 			PRINTFORM 배가 몰캉몰캉 할 때까지 정액 줘야해
 		ELSE
-			PRINTFORM %CNAME("一人称")%를 만족 시킬때 까지 가득 기분 좋게 해줘야 해
+			PRINTFORM %조사처리(CNAME("一人称"),"를")% 만족 시킬때 까지 가득 기분 좋게 해줘야 해
 		ENDIF
 		CALL HEARTMARK_E
 	;연모
@@ -376,7 +376,7 @@ ELSEIF COND("ご無沙汰")
 			PRINTFORMW 고조된 성욕에 흥분해 버린 %CALLNAME:TARGET%와 뒤치락 거리다, 그대로 밀려 넘어 졌다
 			TEQUIP:넘어뜨리기 = 1
 		ELSE
-			PRINTFORMW 「이렇게 %CNAME("一人称")%를 이렇게 참게 만들어 버렸으니, 오늘은 %CNAME("二人称")%에게 문제가 생길 때 까지 풀어 주지 않을꺼야! 」
+			PRINTFORMW 「이렇게 %조사처리(CNAME("一人称"),"를")% 이렇게 참게 만들어 버렸으니, 오늘은 %CNAME("二人称")%에게 문제가 생길 때 까지 풀어 주지 않을꺼야! 」
 		ENDIF
 	ENDIF
 ;연모＋明일生まれる
@@ -386,7 +386,7 @@ ELSEIF TALENT:연모 && TALENT:임신 == 3
 		PRINTFORMW 방 앞에 오자 %타겟이()% 괴롭게 신음 하는 소리가 들려왔다
 		PRINTFORMW 황급히 달려 들어가 배를 문질러 주니 잠시 후 통증이 사라진 것 같아 보였다
 		PRINTFORMW 「하아아……하아……괜찮아, 아직 태어나려고 하는것 아닌 것 같아……」
-		PRINTFORM 「저기, 내일은 힘낼테니까……금방이니까, 그 전에 가득 가득 %CNAME("一人称")%를 사랑해줘……
+		PRINTFORM 「저기, 내일은 힘낼테니까……금방이니까, 그 전에 가득 가득 %조사처리(CNAME("一人称"),"를")% 사랑해줘……
 		CALL HEARTMARK_E
 	ELSE
 		PRINTFORMW 「이거 봐바, %CNAME("二人称")%. 아기가 이렇게 크게 성장 했어」
@@ -553,7 +553,7 @@ ELSEIF TALENT:음란 && RANDIF(1, TALENT:연모)
 ELSEIF TALENT:연모
 	IF RAND:3 == 0
 		PRINTFORMW 「저기, %CNAME("二人称")%……」
-		PRINTFORMW 「%CNAME("二人称")%는 언젠가, %CNAME("一人称")%를 두고 어디론가 가지 않는거지？」
+		PRINTFORMW 「%CNAME("二人称")%는 언젠가, %조사처리(CNAME("一人称"),"를")% 두고 어디론가 가지 않는거지？」
 		PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% %CNAME("二人称")%와 함께라면 어디라도 같이 갈꺼야, 그러니까 버리지 말아 줘……」
 	ELSEIF RAND:2 == 0
 		PRINTFORMW 「아, %CNAME("二人称")%! 와 줬구나! 」
@@ -577,7 +577,7 @@ ELSEIF MARK:굴복각인 == 3
 		PRINTFORM 오늘도 열심히 하자
 		CALL HEARTMARK_E
 	ELSE
-		PRINTFORM 「후훗, 오늘도 %CNAME("一人称")%를 만나러 와줬구나
+		PRINTFORM 「후훗, 오늘도 %조사처리(CNAME("一人称"),"를")% 만나러 와줬구나
 		CALL HEARTMARK_E
 		PRINTFORM 「%CNAME("二人称")%도 참 완전히 %CNAME("一人称")%의 매력에 푹 빠졋다니까……
 		CALL HEARTMARK
@@ -13042,7 +13042,7 @@ CASE "매각した"
 			PRINTFORMW 사랑하는 사람의 아이를 가지고 있는채 팔리고 있는 %CALLNAME:TARGET%의 울음 소리는, 곧 수평선 너머로 사라져 갔다……
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 「%CNAME("一人称")%를 파는거야？ %CNAME("一人称")%, %CNAME("二人称")%를 사랑하는거 알지？」
+			PRINTFORMW 「%조사처리(CNAME("一人称"),"를")% 파는거야？ %CNAME("一人称")%, %CNAME("二人称")%를 사랑하는거 알지？」
 			PRINTFORMW 「……그래. 괜찮아, %조사처리(CNAME("一人称"),"는")% 알고 있으니까…… %CNAME("二人称")%는, 사실 좋은 사람이라는거 말이야」
 			PRINTFORMW 「%CNAME("一人称")%에게 잔뜩 기분 좋게 해 주고, %CNAME("一人称")%가 기분 좋게 했을 때 칭찬도 해주고」
 			PRINTFORMW 「잔뜩 수다도 하고, 함께 밥도 먹고, 밖에서도 같이 놀고……」
@@ -13075,7 +13075,7 @@ CASE "매각した"
 			PRINTFORMW 휘몰아 치는 흙먼지가 가라앉고 겨우 없어지자, 폭심지의 가운데 봉인되어 있어야할 %타겟이()% 봉인과 구속을 날려 버리고 공중에 떠 있었다
 			;반발각인Lv3
 			IF MARK:반발각인 == 3
-				PRINTFORMW 「지금까지 멋대로 %CNAME("一人称")%를 괴롭히곤…… 이런 식이라니…… 도저히 용서 할 수 없어! 」
+				PRINTFORMW 「지금까지 멋대로 %조사처리(CNAME("一人称"),"를")% 괴롭히곤…… 이런 식이라니…… 도저히 용서 할 수 없어! 」
 				PRINTFORMW 도망가려는 %CALLNAME:PLAYER%의 가슴에 심각한 통증이 올라온다. 그 이후, 텅 비어버린 집과 계속 올라오는 통증에 미친 %CALLNAME:PLAYER%의 모습만이 남았다……
 			;연모
 			ELSEIF TALENT:연모

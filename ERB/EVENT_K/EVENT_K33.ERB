@@ -52,7 +52,7 @@ IF GETBIT(CFLAG:201, 0) == 0
 	PRINTFORMW 「어? 평소의 던전이 아니다…」
 	PRINTFORMW (그런가···%CNAME("一人称")%,  인간에 잡혀버렸어…. )
 	PRINTFORMW 방의 주위를 드문 듯이  둘러보고 있으면 방에 있던%CALLNAME:MASTER%과 눈이 맞았다
-	PRINTFORMW 「아하♪%CNAME("二人称")%가 %CNAME("一人称")%를 여기에 데려 왔어?」
+	PRINTFORMW 「아하♪%CNAME("二人称")%가 %조사처리(CNAME("一人称"),"를")% 여기에 데려 왔어?」
 	PRINTFORMW 「헤에~호기심이구나…♪」
 	PRINTFORMW %타겟은()% 기쁜듯이%CALLNAME:MASTER%를 응시하고 있다
 	SETBIT CFLAG:201, 0
@@ -408,7 +408,7 @@ ELSEIF MARK:굴복각인 == 2
 	ELSE
 		PRINTFORMW 「%CNAME("二人称")%~있잖아? 갖고 싶은 물건이 있어」
 		PRINTFORMW 「그…군요? 새로운 보물 상자가…그럼?」
-		PRINTFORMW 「이봐요, 방에 보물 상자가 하나라면 %CNAME("二人称")%틀림없이 %CNAME("一人称")%를 담보겠지? 그러니까…」
+		PRINTFORMW 「이봐요, 방에 보물 상자가 하나라면 %CNAME("二人称")%틀림없이 %조사처리(CNAME("一人称"),"를")% 담보겠지? 그러니까…」
 		PRINTFORMW 「아아멈추어 %CNAME("一人称")%의 보물 상자를 나누어 둘에 하려고 하지 말고, 죄송합니다! 이제 말하지 않기 때문에∼」
 	ENDIF
 ;굴복각인Lv3＋연모無し
@@ -791,7 +791,7 @@ IF SELECTCOM == 0
 					PRINTFORMW 「가득……귀여운이 라고 주어…고마워♪」
 					PRINTFORMW %타겟은()%%CALLNAME:MASTER%의 손가락에 자신의 손가락을 거듭해 왔다…
 					PRINTFORMW 「%CNAME("二人称")%만…」
-					PRINTFORMW 「%CNAME("一人称")%를 이런 기분으로 해 잠기는 것은 %CNAME("二人称")%만……♪」
+					PRINTFORMW 「%조사처리(CNAME("一人称"),"를")% 이런 기분으로 해 잠기는 것은 %CNAME("二人称")%만……♪」
 				ELSE
 					PRINTFORMW 「좋은……기분이 좋아………는 ♪」
 				ENDIF
@@ -1282,7 +1282,7 @@ IF SELECTCOM == 1
 						PRINTFORMW 「이제…내리고 싶지 않을지도……쭉 타 아프다…」
 						PRINTFORMW 「은, 좀더…날름날름 해…와, 기분 좋은거야♪」
 					ELSE
-						PRINTFORMW 「이나 ……%CNAME("一人称")%를 꾸짖고 싶은데…」
+						PRINTFORMW 「이나 ……%조사처리(CNAME("一人称"),"를")% 꾸짖고 싶은데…」
 						PRINTFORMW 「허리가…빠져 버렸다……☆」
 					ENDIF
 				ENDIF
@@ -2197,7 +2197,7 @@ ELSEIF SELECTCOM == 3 && TEQUIP:바이브
 				ELSEIF SIZE("바이브", TARGET) == 2
 					PRINTFORMW 「웅……좋다!」
 					PRINTFORMW 「아∼~…기분이 좋아!」
-					PRINTFORMW 「봐,  %CNAME("一人称")%를…좀더 봐~!」
+					PRINTFORMW 「봐,  %조사처리(CNAME("一人称"),"를")%…좀더 봐~!」
 				;極太の바이브
 				ELSEIF SIZE("바이브", TARGET) == 3
 					IF ABL:Ｖ감각 >= 3
@@ -3429,7 +3429,7 @@ IF SELECTCOM == 6
 					CALL KOJO_KISS_33
 					PRINTFORMW 「쪽,  쪽,  쪽♪」
 					PRINTFORMW 「후훗, ……쪽,  루루루♪」
-					PRINTFORMW 「%CNAME("一人称")%를…봐 ♪」
+					PRINTFORMW 「%조사처리(CNAME("一人称"),"를")%…봐 ♪」
 					PRINTFORMW 젖은 눈동자는%CALLNAME:MASTER%를 제대로 비추어 입가는 불어 있다.
 					PRINTFORMW 「%조사처리(CNAME("一人称"),"는")%…%CNAME("二人称")%가 있으면…앞으로는  아무것도 필요없다」
 				ELSEIF RAND:2 == 0
@@ -4212,7 +4212,7 @@ IF SELECTCOM == 33 && TEQUIP:애널바이브
 					ELSE
 						PRINTFORMW 「이나, 싫어……」
 						PRINTFORMW %타겟은()% 항문에 넣는 자극에 진심으로 싫어하고 있다…
-						PRINTFORMW 「%CNAME("一人称")%를 장난감으로 하지 말아 …」
+						PRINTFORMW 「%조사처리(CNAME("一人称"),"를")% 장난감으로 하지 말아 …」
 					ENDIF
 				ENDIF
 			ENDIF
@@ -6025,7 +6025,7 @@ IF SELECTCOM == 90
 					PRINTFORMW 「기분이 좋아? ………그런가, 기쁘다♪」
 					PRINTFORMW 실제로 받고 있는 것은%CALLNAME:MASTER%지만%타겟은()% 눈을 가늘게 떠 기쁜듯이 하고 있다…
 					PRINTFORMW 「좋아하는 때에 내도 좋아♪만족할 때까지 계속하기 때문에…」
-					PRINTFORMW 「 그렇지만 너무 %CNAME("一人称")%를 초조하게 하면 러브 트랩 사용해버리니까?」
+					PRINTFORMW 「 그렇지만 너무 %조사처리(CNAME("一人称"),"를")% 초조하게 하면 러브 트랩 사용해버리니까?」
 					PRINTFORMW 농담이나 진심인가 모르는 미소다…
 				ELSE
 					PRINTFORMW 「,  오늘도 듬뿍 나올 것 같아군요♪」
@@ -7230,7 +7230,7 @@ IF SELECTCOM == 131
 	IF CFLAG:247 == 0
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
-			PRINTFORMW 「%CNAME("一人称")%를 뭐라고 생각해?」
+			PRINTFORMW 「%조사처리(CNAME("一人称"),"를")% 뭐라고 생각해?」
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「히…아얏…아프다…」
@@ -7424,7 +7424,7 @@ IF SELECTCOM == 134 && TEQUIP:구속
 	ELSE
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
-			PRINTFORMW 「자신의 힘으론 %CNAME("一人称")%를 억누르는 일도 할 수 없는거야?」
+			PRINTFORMW 「자신의 힘으론 %조사처리(CNAME("一人称"),"를")% 억누르는 일도 할 수 없는거야?」
 		;연모＋마조끼Lv5
 		ELSEIF TALENT:연모 && ABL:마조끼 >= 5
 			PRINTFORMW 「우후훗♪오늘은 어떤 일해주는 거야?」
@@ -8319,7 +8319,7 @@ ELSEIF SELECTCOM == 143
 			PRINTFORMW 「아,  하, 아우4다 ♪♪」
 			PRINTFORMW %타겟은()% 질과 항문의 2개소에서%CALLNAME:MASTER%의 주먹을 받아들인다
 			PRINTFORMW 「그렇게♪,  좋은 것♪♪전부, 기분이 좋은 것 ♪」
-			PRINTFORMW 「부수어,  %CNAME("一人称")%를 부수어 ♪♪」
+			PRINTFORMW 「부수어,  %조사처리(CNAME("一人称"),"를")% 부수어 ♪♪」
 		ENDIF
 	;それ以外
 	ELSE
@@ -10782,7 +10782,7 @@ IF SELECTCOM == 100
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 「%CNAME("二人称")%의 자지…따뜻하다♪」
 			ELSE
-				PRINTFORMW 「이렇게 하고 있으면…정말로 %CNAME("一人称")%를 범하고 있는 것 같지 않아?」
+				PRINTFORMW 「이렇게 하고 있으면…정말로 %조사처리(CNAME("一人称"),"를")% 범하고 있는 것 같지 않아?」
 			ENDIF
 		ENDIF
 		RETURN 1
@@ -12225,7 +12225,7 @@ CASE "애무"
 				PRINTFORMW 「아앙……그런 소리 내지 말아  …흥분해버리는…♪」
 				PRINTFORMW 입술을 빼앗긴다
 				PRINTFORMW 「츗, %CNAME("二人称")%노…탓, (이)야」
-				PRINTFORMW 「%CNAME("一人称")%를, 이렇게 유혹 했는걸……비겁해」
+				PRINTFORMW 「%조사처리(CNAME("一人称"),"를")%, 이렇게 유혹 했는걸……비겁해」
 				PRINTFORMW 「 벌써, 여기에도 쪽 해 버리니까……」
 				PRINTFORMW 가슴에 달라붙어진다. 양쪽 모두의 유두에 달리는 쾌감에 이룰 방법 없게 소리를 질렀다…
 			ELSE
@@ -12727,7 +12727,7 @@ CASE "요바이기승위"
 			PRINTFORMW 「놀랐어?」
 			PRINTFORMW 「그런거로 만족한다고 생각하면 큰착각이야☆」
 			PRINTFORMW 「이라고 해도,  %CNAME("二人称")%도 만족하고 있지 않는 것 같고」
-			PRINTFORMW 「그러고 보니 %CNAME("一人称")%를 권했는지인?」
+			PRINTFORMW 「그러고 보니 %조사처리(CNAME("一人称"),"를")% 권했는지인?」
 			PRINTFORMW %CALLNAME:TARGET%의 가는 손가락이%CALLNAME:MASTER%의 뺨을 위를 덧쓴다…
 			PRINTFORMW 「흐응☆………어느 쪽으로도 상관없다……기분 좋게?」
 			PRINTFORMW 그러한과 허리의 움직임을 재개했다…
@@ -12855,7 +12855,7 @@ CASE "매각した"
 			PRINTFORMW (그래서…전부…… )
 			PRINTFORMW 「싫엇! 싫어요! 떨어지고 싶지…않다!」
 			PRINTFORMW ( %CNAME("一人称")%,  무슨 말이야?  )
-			PRINTFORMW 「부탁! 좋은 와로 한다! %CNAME("一人称")%를 버리지 말고!」
+			PRINTFORMW 「부탁! 좋은 와로 한다! %조사처리(CNAME("一人称"),"를")% 버리지 말고!」
 			PRINTFORMW (이제…만회해무슨 붙지 않는…그런 것 알고 있는데 )
 			PRINTFORMW %CALLNAME:MASTER%의 손이%CALLNAME:TARGET%의 머리를 상냥하게 어루만진다
 			PRINTFORMW (응, 벌써…좋아…%CNAME("二人称", "かな")%…무슨 이유를 대든 언제나……… )
@@ -13617,7 +13617,7 @@ ELSEIF RAND:2 == 0
 	ELSE
 		PRINTFORMW 「하아……하아……아……♪」
 		PRINTFORMW 「아아앙……%CNAME("二人称")%가 안 돼?」
-		PRINTFORMW 「%CNAME("一人称")%를 처녀로 하기 때문에…………」
+		PRINTFORMW 「%조사처리(CNAME("一人称"),"를")% 처녀로 하기 때문에…………」
 		PRINTFORMW 「하지만,  %CNAME("二人称")%의 자지 이렇게 갖고 싶고 되라고 하는건 생각하지 않았었는 걸♪」
 	ENDIF
 ELSE

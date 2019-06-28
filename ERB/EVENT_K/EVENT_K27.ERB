@@ -119,7 +119,7 @@ ELSEIF GETBIT(CFLAG:201, 30) == 0 && TALENT:후타나리 == 2
 		PRINTFORMW 「예언 되어 있었어요…당신하지만 특출의 변태래…에에…」
 		PRINTFORMW 「…여자의 몸을 이런 식으로 바꾸고 기뻐하는 변태래…에에, 알고 있었어요」
 		PRINTFORMW %타겟은()% 희미하게 웃는다
-		PRINTFORMW 「그렇지만…이것으로,%CNAME("一人称")%를조교할 수 있다고 생각하고 있을까？」
+		PRINTFORMW 「그렇지만…이것으로,%조사처리(CNAME("一人称"),"를")%조교할 수 있다고 생각하고 있을까？」
 		PRINTFORMW 「할 수 있는 것이라면 해 보세요…？」
 		PRINTFORMW 「아무리%CNAME("一人称")%의 몸을 만져도,당신에는무리…킥킥」
 	ENDIF
@@ -428,7 +428,7 @@ IF SELECTCOM == 1
 					PRINTFORMW 「이봐요…좀 더 강하게 빨지 않으면, 여자는 만발하지 않아요？」
 				ELSEIF RAND:2 == 0
 					PRINTFORMW 「물러나면 좋겠다？그렇지만 안돼.」
-					PRINTFORMW 「%CNAME("一人称")%를 만발시키지 않으면 물러나 주지 않는다」
+					PRINTFORMW 「%조사처리(CNAME("一人称"),"를")% 만발시키지 않으면 물러나 주지 않는다」
 					PRINTFORMW 「알면 이봐요…좀 더 빠세요？개와 같이 필사적으로」
 				ELSE
 					PRINTFORMW 「아…♪」
@@ -4478,7 +4478,7 @@ ELSEIF SHOOT("조교자가여자")
 			ELSE
 				PRINTFORMW %타겟은()% 비밀스런 장소를 열어,%CALLNAME:PLAYER%에 과시한다
 				PRINTFORMW 「이봐요……%CNAME("一人称")%도 이렇게…그러니까」
-				PRINTFORMW 「다음은…%CNAME("一人称")%를 사랑해 줘？」
+				PRINTFORMW 「다음은…%조사처리(CNAME("一人称"),"를")% 사랑해 줘？」
 			ENDIF
 		;恋してないのに절정
 		ELSE
@@ -4619,7 +4619,7 @@ CASE "조수に抜擢"
 			PRINTFORMW 「%CNAMET(ARG, "一人称")%노손하지만필요？」
 			PRINTFORMW 「물론, 맡아요…예언의 힘은%TEXTS("조수の명칭")%라고 해도 도움이 되겠지요. 그렇지만」
 			PRINTFORMW 거기서,%CALLNAME:ARG%하%CALLNAME:PLAYER%의 눈을 들여다 본다
-			PRINTFORMW 「다음에%CNAME("一人称")%를 충분히 사랑하는 것…알았군요？」
+			PRINTFORMW 「다음에%조사처리(CNAME("一人称"),"를")% 충분히 사랑하는 것…알았군요？」
 		ELSE
 			PRINTFORMW 「%CNAMET(ARG, "一人称")%노손하지만필요？」
 			PRINTFORMW 「다시 나오세요…이렇게 말하고 싶지만」

@@ -174,7 +174,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	PRINTFORMW 서로 얼싸안는 것 같은 모습으로, 서로의 한숨마저도손에 취하도록(듯이) 알아 그렇게 거리로,%CALLNAME:TARGET%의입를 열었다
 	PRINTFORMW 「…%CNAME("一人称")%, 역시세이렌그러니까…%CNAME("一人称")%의 노래를 들어 주는 사람이 없으면 안 되는 것 같습니다」
 	PRINTFORMW 「그래서,%CNAME("二人称")%하%CNAME("一人称")%의 노래를 몇번이나 (들)물어 주었고…」
-	PRINTFORMW 「%CNAME("一人称")%를 열심히 레슨 해 주어 버리거나 했고…」
+	PRINTFORMW 「%조사처리(CNAME("一人称"),"를")% 열심히 레슨 해 주어 버리거나 했고…」
 	PRINTFORMW 「그, 지금이라도…%CNAME("一人称")%도와 줘…엣또, 이렇게 두근두근 하게 해 버리고～…」
 	PRINTFORMW 「그러니까…%CNAME("一人称")%의 제일의 이해자씨, 라는 느낌이예요…멋진 일이군요♪」
 	PRINTFORMW 가만히, 눈앞의 한사람만을 응시한다%CALLNAME:TARGET%…
@@ -406,7 +406,7 @@ ELSEIF MARK:굴복각인 == 3
 	ELSE
 		PRINTFORMW 「에헤헤, 기다리고 있었습니닷, 오늘은 이제 떨어져 주지 않아요」
 		PRINTFORMW 「%CNAME("二人称")%에 딱 들러붙어,손잡기날개 잡기 레슨 해 받기 때문에～스」
-		PRINTFORMW 「그러니까,%CNAME("二人称")%도 사양하지 말아줘%CNAME("一人称")%를 기분 좋게 울려져 버려 주세요─♪」
+		PRINTFORMW 「그러니까,%CNAME("二人称")%도 사양하지 말아줘%조사처리(CNAME("一人称"),"를")% 기분 좋게 울려져 버려 주세요─♪」
 		PRINTFORMW 염이나인가 날개를 이쪽의 신체에 칠하면서, %타겟은()% 기대가 깃들인 표정으로 가만히 응시하고 있다
 	ENDIF
 ENDIF
@@ -635,7 +635,7 @@ IF SELECTCOM == 1
 			;굴복각인Lv2이상
 			ELSEIF MARK:굴복각인 >= 2
 				IF RAND:3 == 0
-					PRINTFORMW 「후후…%CNAME("一人称")%를 타 받아 기쁜 듯하네요, 매우 영광이에요～…그래서～, 좀 더 강압해 버립니다」
+					PRINTFORMW 「후후…%조사처리(CNAME("一人称"),"를")% 타 받아 기쁜 듯하네요, 매우 영광이에요～…그래서～, 좀 더 강압해 버립니다」
 				ELSEIF RAND:2 == 0
 					PRINTFORMW 「하아, 아앙…가득 빨아도 좋아요～,%CNAME("一人称")%도 가득 비비어 버리니까요―」
 				ELSE
@@ -679,7 +679,7 @@ IF SELECTCOM == 1
 					PRINTFORMW 「%CNAME("一人称")%의 여기, 후우,%CNAME("二人称")%의 혀로 긁어 울려…응우, 엣치하게 노래하게 햇…」
 				ELSEIF RAND:2 == 0
 					PRINTFORMW 「하아, 응아…%CNAME("二人称")%의 날름날름도 물론입니다만―」
-					PRINTFORMW 「…함께 흘러넘쳐 버리는 엣치한 소리가, 하아,%CNAME("一人称")%를 좀 더 기분 좋게 해 버립니닷」
+					PRINTFORMW 「…함께 흘러넘쳐 버리는 엣치한 소리가, 하아,%조사처리(CNAME("一人称"),"를")% 좀 더 기분 좋게 해 버립니닷」
 				ELSE
 					PRINTFORMW 「응우, 응햐아…드, 들이마셔져 버리는 것은, 굉장하기 때문에～, 응웃」
 					PRINTFORMW 「%CNAME("一人称")%의 엣치한 소리, 흘러넘쳐, 햐우, 멈추지 않게 되어 있어요～」
@@ -3354,7 +3354,7 @@ IF SELECTCOM == 91
 					PRINTFORMW 「응후후…말해 받지 않아도―,%CNAME("二人称")%하지만 어떻게 해 주었으면 할까는입로 밝혀져 버려요」
 					PRINTFORMW 「응, 츄푸, 츄푸♪응헤, 끝 쪽, 좋지요～, 츄푸, 츄파♪」
 				ELSEIF RAND:2 == 0
-					PRINTFORMW 「하아, 응…%CNAME("二人称")%의 마이크는, 어떻게도%CNAME("一人称")%를 이상하게 해 버립니다～…」
+					PRINTFORMW 「하아, 응…%CNAME("二人称")%의 마이크는, 어떻게도%조사처리(CNAME("一人称"),"를")% 이상하게 해 버립니다～…」
 					PRINTFORMW 「냄새도 맛도%CNAME("一人称")%너무 좋아해―…츄, 츄…응우, 오입로부터 떼어 놓고 싶지 않게 되어 버립니닷♪」
 				ELSE
 					PRINTFORMW 「응후～…%CNAME("一人称")%, 제대로 하고 있다고 생각하므로～…포상, 기대해도 되지요―…응츄, 츄푸, 쥬루우」
@@ -8122,7 +8122,7 @@ CASE "조교後섹스"
 	;V感覚Lv4이상
 	IF ABL:Ｖ감각 >= 4
 		PRINTFORMW 「하아, 하아♪…%CNAME("一人称")%이제(벌써), 이런 가벼운 레슨은 만발할 수 없어요」
-		PRINTFORMW 「이런 레슨 열심인%CNAME("一人称")%를 위해서라면, 좀더 좀더 기분이 좋은 일 가르쳐 주는군요♪」
+		PRINTFORMW 「이런 레슨 열심인%조사처리(CNAME("一人称"),"를")% 위해서라면, 좀더 좀더 기분이 좋은 일 가르쳐 주는군요♪」
 	;それ以外
 	ELSE
 		PRINTFORMW 「하아, 하아…응후후,%CNAME("一人称")%아직도 갈 수 있습니다, 훌륭하지요」
@@ -8541,7 +8541,7 @@ CASE "하룻밤개방スキンシップ"
 	IF TALENT:연모
 		IF RAND:3 == 0
 			PRINTFORMW 「～♪～♪～～♪」
-			PRINTFORMW 「에헤헤…세이렌노매혹의 노래～♪…%CNAME("二人称")%하,%CNAME("一人称")%를 아주 좋아하게 되어 버립니닷」
+			PRINTFORMW 「에헤헤…세이렌노매혹의 노래～♪…%CNAME("二人称")%하,%조사처리(CNAME("一人称"),"를")% 아주 좋아하게 되어 버립니닷」
 		ELSEIF RAND:2 == 0
 			PRINTFORMW 「엣또 -…%CNAME("二人称")%(이)가 좋아하는 노래하고 무엇입니까―？」
 			PRINTFORMW 「%CNAME("一人称")%, 능숙하게 노래해 보여 버려요♪」

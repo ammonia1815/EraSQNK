@@ -45,7 +45,7 @@ DRAWLINE
 ;-------------------------------------------------
 IF GETBIT(CFLAG:201, 0) == 0
 	PRINTFORMW 침대의 위의 몽마는 가라앉힌 표정으로 앉아 있다
-	PRINTFORMW 「……%CNAME("二人称")%가 %CNAME("一人称")%를 읽었어…?」
+	PRINTFORMW 「……%CNAME("二人称")%가 %조사처리(CNAME("一人称"),"를")% 읽었어…?」
 	PRINTFORMW 느긋하게 이쪽을 향한%CALLNAME:TARGET%에 지금부터 실시하는 것을 고한다
 	PRINTFORMW 「…그렇게……」
 	PRINTFORMW 「…그렇다면은 ,  노력하며…」
@@ -4096,7 +4096,7 @@ IF SELECTCOM == 134 && TEQUIP:구속
 			PRINTFORMW 
 		;それ以外
 		ELSE
-			PRINTFORML 「…%CNAME("一人称")%를 묶는 거야…?」
+			PRINTFORML 「…%조사처리(CNAME("一人称"),"를")% 묶는 거야…?」
 			PRINTFORMW 「…별로 ,  도망치거나 무엇을 하지 않는데…」
 		ENDIF
 		CFLAG:251 = 1
@@ -4882,11 +4882,11 @@ IF SELECTCOM == 170 && TEQUIP:비디오카메라
 			PRINTFORMW 
 		;연모
 		ELSEIF TALENT:연모
-			PRINTFORMW 「…비디오……%CNAME("一人称")%를 찍는 거야…?」
+			PRINTFORMW 「…비디오……%조사처리(CNAME("一人称"),"를")% 찍는 거야…?」
 			PRINTFORMW 「…"응"…좋아…예쁘게 찍어…」
 		;それ以外
 		ELSE
-			PRINTFORMW 「…비디오……%CNAME("一人称")%를 찍는 거야…?」
+			PRINTFORMW 「…비디오……%조사처리(CNAME("一人称"),"를")% 찍는 거야…?」
 			PRINTFORMW 「…%CNAME("一人称")%로…좋으면……」
 		ENDIF
 		CFLAG:257 = 1
