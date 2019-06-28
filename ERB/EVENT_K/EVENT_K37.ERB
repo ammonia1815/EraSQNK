@@ -266,7 +266,7 @@ ELSEIF GETBIT(CFLAG:201, 33) == 0 && GETBIT(CFLAG:201, 32) && TALENT:연모 && C
 	PRINTFORMW 따뜻하다…거기에 안심한다……이것은”인어의 소리”그러니까는 아니고
 	PRINTFORMW ”%CALLNAME:TARGET%”의 소리이니까일 것이다
 	PRINTFORMW ｢후훗, 그렇다 치더라도%조사처리(CNAME("一人称"),"는")% 부수입이군요♪｣
-	PRINTFORMW ｢질투한다%CNAME("二人称")%…기뻐서 어쩔 수 없었던 것이에요…｣
+	PRINTFORMW ｢질투하는 %CNAME("二人称")%…기뻐서 어쩔 수 없었던 것이에요…｣
 	PRINTFORMW ｢……거기에 이렇게 해%조사처리(CALLNAME:MASTER,"를")% 껴안아 있을 수 있다…최고의 사치군요♪｣
 	SETBIT CFLAG:201, 33
 	RETURN 1
@@ -407,7 +407,7 @@ ELSEIF NO:ASSI == 33
 				PRINTFORMW 『에헤헤…처음 뵙겠습니다%CNAMET(ASSI, "一人称")%입니다♪』
 				PRINTFORMW 『본 곳%CALLNAME:TARGET%씨는 아직과 같기 때문에 안심☆』
 				PRINTFORMW 「%CNAME("二人称")%……이런여자아이에까지…」
-				PRINTFORMW %CALLNAME:MASTER%에 덤벼들려고 한다%조사처리(CALLNAME:TARGET,"를")% %조사처리(CALLNAME:ASSI,"가")% 억제했다
+				PRINTFORMW %CALLNAME:MASTER%에 덤벼들려고 하는 %조사처리(CALLNAME:TARGET,"를")% %조사처리(CALLNAME:ASSI,"가")% 억제했다
 				PRINTFORMW 『지금의 조금 묵과할 수 없어』
 				PRINTFORMW 『%CNAMET(ASSI, "一人称")%는 오빠에게 굉장한 감사하고 있어』
 				PRINTFORMW 『넓은 세계를 가르쳐 줘, 사람을 사랑한다고 하는 일도 가르쳐 받았다』
@@ -923,7 +923,7 @@ ELSEIF MARK:굴복각인 == 2
 	IF MARK:정액각인 >= 4 && EXP_GAIN(17) > 20 && (EXP_GAIN(20) > 50 || EXP_GAIN(68) > 10 || EXP_GAIN(8) + EXP_GAIN(12) > 100)
 		PRINTFORMW 「하아…하아…하아………별일 아니었지요…」
 		PRINTFORMW 「로즈닐이 도우러 오면…기억해 주세요」
-		PRINTFORMW 힘껏 강한척 한다%CALLNAME:TARGET%의, 그 시선은%CALLNAME:MASTER%를 향하고 있었다…
+		PRINTFORMW 힘껏 강한척 하는 %CALLNAME:TARGET%의, 그 시선은%CALLNAME:MASTER%를 향하고 있었다…
 		;5이하なら40％ぐらいで정액중독が上がる
 		IF ABL:정액중독 < 5 && RAND:5 < 2
 			ABL:정액중독 += 1
@@ -2055,7 +2055,7 @@ IF SELECTCOM == 13
 				;임신+MASTERの子
 				ELSEIF TALENT:임신 && COND("정액의우세") == MASTER
 					PRINTFORMW 「자, 보셔♪이것이%CNAME("一人称")%의 임산부 보지…♪」
-					PRINTFORMW 「누구의 아이인가는？우후훗…사랑한다%CNAME("二人称")%이외로 누가 있다 라고 합니다？」
+					PRINTFORMW 「누구의 아이인가는？우후훗…사랑하는 %CNAME("二人称")%이외로 누가 있다 라고 합니다？」
 					PRINTFORMW 「원약혼자？저런 연약 자지로임신하는 만큼%CNAME("一人称")%의 난자는 무절조가 아니야？」
 					PRINTFORMW 「%CNAME("二人称")%의 교배섹스그리고 밖에%CNAME("一人称")%의 얼굴 밝하는 사람 난자는 수정하지 않아요♪」
 				;経産婦
@@ -2593,7 +2593,7 @@ IF SELECTCOM == 32
 		;연모
 		ELSEIF TALENT:연모
 			IF RAND:2 == 0
-				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 몸부림쳐 안마사로부터 멀어지려고 한다%CALLNAME:TARGET%의 음핵를 집요하게 노린다
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 몸부림쳐 안마사로부터 멀어지려고 하는 %CALLNAME:TARGET%의 음핵를 집요하게 노린다
 				PRINTFORMW 「앗…응읏, 얏, 그만두어엇」
 				PRINTFORMW %CALLNAME:PLAYER%가 스윗치를 강으로 바꾸어%CALLNAME:TARGET%의 음핵에 강압하면 참지 못하고꾸중 미친다
 			ELSEIF RAND:2 == 0
@@ -3061,7 +3061,7 @@ IF SELECTCOM == 60
 		IF MARK:반발각인
 			PRINTFORMW 「하, 이야기햇!! 그만두어, 그만두세요!! !」
 			IF MARK:정액각인 >= 4
-				PRINTFORMW 저항한다%타겟을()% 무리시리 눌러삽입그러자 아니나 다를까, 애타게 기다리고 있었던 것처럼 달라붙어 왔다…
+				PRINTFORMW 저항하는 %타겟을()% 무리시리 눌러삽입그러자 아니나 다를까, 애타게 기다리고 있었던 것처럼 달라붙어 왔다…
 				PRINTFORMW 정액각인태우고 있고로 쾌락에 거역할 수 없게 되어 와 있는 육체를 %조사처리(CALLNAME:PLAYER,"는")% 마음껏 범했다…
 			ENDIF
 		;연모
@@ -5003,7 +5003,7 @@ IF SELECTCOM == 104
 				IF RAND:3 == 0
 					PRINTFORMW %타겟을()% , 상냥하다손돌출하고%CALLNAME:PLAYER%의 머리를 어루만지면서, 자신의가슴에 해당되는 흥분한 한숨에 뺨을빨강
 				ELSEIF RAND:2 == 0
-					PRINTFORMW %타겟을()% 자신의가슴그리고 숨을 난폭하게 한다%조사처리(CALLNAME:PLAYER,"를")% 사랑스러운 듯이 응시해 그 머리에 하그 했다
+					PRINTFORMW %타겟을()% 자신의가슴그리고 숨을 난폭하게 하는 %조사처리(CALLNAME:PLAYER,"를")% 사랑스러운 듯이 응시해 그 머리에 하그 했다
 				ELSE
 					PRINTFORMW 요염하다%CALLNAME:TARGET%의 유방하, 달라붙도록(듯이)%CALLNAME:PLAYER%의 얼굴을 포장, 더 없이 행복한 쾌감을 주어 온다
 				ENDIF
@@ -5514,7 +5514,7 @@ IF SELECTCOM == 144
 		;반발각인有
 		IF MARK:반발각인
 			PRINTFORMW 「당신, 적당히 하는거야……하웃!」
-			PRINTFORMW 말도중에노랑금수를 발한다%CALLNAME:TARGET%…
+			PRINTFORMW 말도중에노랑금수를 발하는 %CALLNAME:TARGET%…
 			PRINTFORMW 믿을 수 없는 것을 보는 것처럼 눈을 막아 목을 좌우에 흔들었다…
 			PRINTFORMW 「거짓말! 거짓말이야 이런 건!!」
 		;연모+오줌싸개버릇+야외플레이
@@ -6194,7 +6194,7 @@ IF SELECTCOM == 170 && TEQUIP:비디오카메라
 		;반발각인有
 		IF MARK:반발각인
 			PRINTFORMW 「아니, 싫어요! ! 그만두어～～! ! 」
-			PRINTFORMW 저항한다%타겟을()% 무리시리 억누르고촬영를 개시했다…
+			PRINTFORMW 저항하는 %타겟을()% 무리시리 억누르고촬영를 개시했다…
 		;상사상애かつ웨딩드레스着用
 		ELSEIF TALENT:상사상애 && CHECK_SHIRT("웨딩드레스")
 			PRINTFORMW 「%CNAME("一人称")%의 신부 모습, 확실히 찍어 주세요♪」
@@ -6214,7 +6214,7 @@ IF SELECTCOM == 170 && TEQUIP:비디오카메라
 				;인기：ＡＶ
 				ELSEIF COND("인기：ＡＶ") && RAND:3 == 0
 					PRINTFORML 「후훗, 이 비디오를 봐 자위 해 버리는 사람이 있군요…♪」
-					PRINTFORMW 「%CNAME("一人称")%에는 사랑한다%조사처리(CNAME("二人称"),"가")% 있는데 불쌍한 사람들…♪」
+					PRINTFORMW 「%CNAME("一人称")%에는 사랑하는 %조사처리(CNAME("二人称"),"가")% 있는데 불쌍한 사람들…♪」
 				ELSEIF TALENT:음란 && RAND:2 == 0
 					PRINTFORMW 「%CNAME("一人称")%들의서로사랑한다모습을 볼 수 있다니…흥분해 버립니다♪」
 				ELSE
@@ -6336,7 +6336,7 @@ IF SELECTCOM == 171 && COND("마을")
 			;연모
 			ELSEIF TALENT:연모
 				PRINTFORMW 「할 수 있으면조교(이)가 아니고 데이트로 오고 싶었던 것입니다…」
-				PRINTFORMW 애석해 한다%타겟을()% 따라, %마스터는()% 가까이의마을로 왔다…
+				PRINTFORMW 애석해 하는 %타겟을()% 따라, %마스터는()% 가까이의마을로 왔다…
 			;それ以外
 			ELSE
 				PRINTFORMW 「그만두어………」
@@ -6344,7 +6344,7 @@ IF SELECTCOM == 171 && COND("마을")
 				PRINTFORMW 사람이 많은 장소에 가면 약혼자라는 것에 발견된다가능성이 높아지기 때문인가
 				PRINTFORMW %타겟을()% 필사적으로저항하고 있다
 				PRINTFORMW 「아니, 싫어요! ! 아니～～! ! 」
-				PRINTFORMW 저항한다%타겟을()% 무리시리마을에 데려 갔다…
+				PRINTFORMW 저항하는 %타겟을()% 무리시리마을에 데려 갔다…
 			ENDIF
 		;２回目以降
 		ELSE
@@ -6422,7 +6422,7 @@ IF SELECTCOM == 171 && COND("마을")
 						PRINTFORMW 주위에인기는 없고, 그 고요함의 탓으로 얼마 안되는소리라도 들려 올 것 같은 생각이 든다
 						PRINTFORMW 「밤의 산책은 이 근처로 해 둬, 이 근처에 할까요♪」
 						PRINTFORMW 「이제(벌써), 자제 할 수 없습니다…빨리 합시다♪」
-						PRINTFORMW 그렇게 이야기한다%CALLNAME:TARGET%의 비부[秘部]는 주륵주륵 젖고 있었다…
+						PRINTFORMW 그렇게 이야기하는 %CALLNAME:TARGET%의 비부[秘部]는 주륵주륵 젖고 있었다…
 					ENDIF
 				ENDIF
 			;연모
@@ -6553,7 +6553,7 @@ ELSEIF SELECTCOM == 171 && COND("삼림")
 				;노출벽Lv3이상
 				IF ABL:노출벽 >= 3
 					PRINTFORMW 「숲속에서동물같은 엣치, 멋졌지요…」
-					PRINTFORMW 그렇게 말한다%CALLNAME:TARGET%의 뺨은빨강구 물들고 있었다
+					PRINTFORMW 그렇게 말하는 %CALLNAME:TARGET%의 뺨은빨강구 물들고 있었다
 				ELSE
 					PRINTFORMW 「누군가에게 보여지지 않았던 것입니까…？」
 				ENDIF
@@ -6585,7 +6585,7 @@ ELSEIF SELECTCOM == 171 && COND("화원")
 				PRINTFORMW 음유시인이라고 하는 약혼자라는 것에 발견된다가능성이 있기 때문인가
 				PRINTFORMW %타겟을()% 필사적으로저항하고 있다
 				PRINTFORMW 「아니, 싫어요! ! 아니～～! ! 」
-				PRINTFORMW 저항한다%타겟을()% 무리시리화원에 데려 갔다…
+				PRINTFORMW 저항하는 %타겟을()% 무리시리화원에 데려 갔다…
 			ENDIF
 		;２回目以降
 		ELSE
@@ -6670,7 +6670,7 @@ ELSEIF SELECTCOM == 171 && COND("강가")
 				ENDIF
 				PRINTFORMW 사정을 아는 약혼자등이라면 가장 먼저 찾을 것 같은 장소이기도 하다
 				PRINTFORMW 「아니, 싫어요! ! 아니～～무긋, 응～～～! ! ! 」
-				PRINTFORMW 저항한다%CALLNAME:TARGET%의 입를 눌러조교를 재개했다……
+				PRINTFORMW 저항하는 %CALLNAME:TARGET%의 입를 눌러조교를 재개했다……
 			ENDIF
 		;２回目以降
 		ELSE
@@ -7038,7 +7038,7 @@ IF SELECTCOM == 175
 					PRINTFORMW 「응─…앗, 지금일는 선생님과 노래의 공부를 할까요…♪」
 					IF RAND:4 == 0
 						PRINTFORMW 「………또, 소리가 빠지고 있어요…후후…」
-						PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 밀착한다%CALLNAME:TARGET%에 두근두근 해 잘 노래할 수 없다…
+						PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 밀착하는 %CALLNAME:TARGET%에 두근두근 해 잘 노래할 수 없다…
 						PRINTFORMW 「완전히, 몹쓸 학생이군요……♪」
 					ELSE
 						PRINTFORMW 「능숙하게 노래할 수 있으면, 선생님이 포상을 줍니다♪」
@@ -7454,7 +7454,7 @@ IF SELECTCOM == 264
 			IF GETBIT(CFLAG:201, 31) == 0
 				PRINTFORMW 「와, 이 약은 혹시…？」
 				PRINTFORMW 「%CNAME("一人称")%(와)과의아이를 갖고 싶다고 말하는 일입니까, %CNAME("二人称")%？」
-				PRINTFORMW 안절부절 한다%타겟이()% , 힐끔힐끔 이쪽을 보면서 (들)물어 온다
+				PRINTFORMW 안절부절 하는 %타겟이()% , 힐끔힐끔 이쪽을 보면서 (들)물어 온다
 				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 수긍하면 뺨을 피기 시작하게 해, 
 				PRINTFORM 「우, 기쁩니다%CNAME("二人称")%…♪노력해 만들어요
 				CALL HEARTMARK_E
@@ -7472,7 +7472,7 @@ IF SELECTCOM == 264
 			PRINTFORMW 「그것은 무엇？」
 			PRINTFORMW %CALLNAME:PLAYER%가 설명하면%CALLNAME:TARGET%의 얼굴하지만파랑…
 			PRINTFORMW 「야, 그만두어…다른 것이라면 뭐든지 하기 때문에…」
-			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 저항한다%타겟을()% 억눌러무리시리 먹였다…
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 저항하는 %타겟을()% 억눌러무리시리 먹였다…
 		ENDIF
 		CFLAG:330 = 1
 		RETURN 1
@@ -9301,7 +9301,7 @@ CASE "비디오매각"
 				PRINTFORMW …조교스승의 팔이 인정되고 있다고 하는 일로 하자, 응…
 			ENDIF
 			PRINTFORMW 「후훗, 이렇게%CNAME("一人称")%들의 정사를 봐 주는 사람이 있는 것은 기쁩니다…♪」
-			PRINTFORMW 그렇다 치더라도 여기까지인기그러면 다음의조교대상는 유부녀도 있는 곳인이라고 생각한다%CALLNAME:MASTER%(이었)였다…
+			PRINTFORMW 그렇다 치더라도 여기까지인기그러면 다음의조교대상는 유부녀도 있는 곳인이라고 생각하는 %CALLNAME:MASTER%(이었)였다…
 		;음란
 		ELSEIF RAND:2 == 0 && TALENT:음란
 			PRINTFORMW 「%조사처리(CNAME("一人称"),"를")% 반찬으로 하고 있는 사람이 있다는 것은 두근두근 하네요…♪」
@@ -9359,7 +9359,7 @@ CASE "비디오送付"
 			ELSE
 				PRINTFORMW 「싫엇, 싫어요…읏! 이런 모습, 누구에게도, 보여지고 싶지 않은데……, 하물며, 그 사람에게 보내다니…!」
 			ENDIF
-			PRINTFORMW 울면서 간원 한다%CALLNAME:TARGET%에%조사처리(CALLNAME:MASTER,"는")% 악의로 가득 찬 미소를 돌려주면서, 비디오에 라벨을 붙이는 것이었다…
+			PRINTFORMW 울면서 간원 하는 %CALLNAME:TARGET%에%조사처리(CALLNAME:MASTER,"는")% 악의로 가득 찬 미소를 돌려주면서, 비디오에 라벨을 붙이는 것이었다…
 			PRINTFORMW 보내버려 주는 것은, 아직 앞이다…%조사처리(CALLNAME:TARGET,"가")% 저속해져 가는 곳을 찍어 모아, 한숨에 옛 연인의 슬하로보내버려 준다
 		ENDIF
 	;ビデオレター이벤트中

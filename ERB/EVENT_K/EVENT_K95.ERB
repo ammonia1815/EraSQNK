@@ -154,7 +154,7 @@ IF GETBIT(CFLAG:201, 0) == 0
 			PRINTFORMW 「이 관에 있는 사람들 같은 일을 해…？」
 		ENDIF
 		PRINTFORMW 이 아이를 어떠한 색에 물들여 줄까…머릿속에서 입맛을 다심을 하면서, 
-		PRINTFORMW 싫어한다%타겟은()% 넘어뜨리기라고조교를 시작했다…
+		PRINTFORMW 싫어하는 %타겟은()% 넘어뜨리기라고조교를 시작했다…
 		PRINTFORMW 
 	ENDIF
 	SETBIT CFLAG:201, 0
@@ -1092,7 +1092,7 @@ IF SELECTCOM == 5
 				IF RAND:2 == 0
 					PRINTFORMW 「후아…젖가슴 비비면 커진다 라고 하지만…」
 					PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% 남자이니까무리(이)지요……읏…」
-					PRINTFORMW 애석해 한다%CALLNAME:TARGET%에 그대로 좋아, (와)과 전달해 두었다…
+					PRINTFORMW 애석해 하는 %CALLNAME:TARGET%에 그대로 좋아, (와)과 전달해 두었다…
 				ELSE
 					PRINTFORMW 「안돼에…젖가슴민감그런데, 그렇게 강하게 비비어지면……」
 					PRINTFORMW 「핫…훗…읏…응응응…읏…아아…이상하고, 되어 버린다…」
@@ -3094,7 +3094,7 @@ IF SELECTCOM == 70 || SELECTCOM == 72
 					ELSEIF INSERT("Ａ인서트")  == 0 && RAND:2 == 0
 						PRINTFORM 「%CNAME("二人称")%♪여기의 준비하ＯＫ(이)야…
 						CALL HEARTMARK_E
-						PRINTFORMW %타겟은()% 엉덩이살을 벌리고, 애널헤 향한다%CALLNAME:PLAYER%의 페니스를 맞아들였다…
+						PRINTFORMW %타겟은()% 엉덩이살을 벌리고, 애널헤 향하는 %CALLNAME:PLAYER%의 페니스를 맞아들였다…
 					ELSE
 						PRINTFORMW 「하아하아…♪ %CNAME("一人称")%의엉덩이는 완전히%CNAME("二人称")%전용이구나…♪」
 						PRINTFORMW 「읏…♪ %CNAME("二人称")%의로%CNAME("一人称")%의 여기를 채워…♪」
@@ -4422,7 +4422,7 @@ IF SELECTCOM == 91
 			;反発してたり, 정액중독が低かったり, 불결무시が無いのに汚れてたりするとといい얼굴しない
 			IF MARK:반발각인 == 3 || ABL:정액중독 < 3  || (TALENT:불결무시 == 0 && CHECK_STAIN(STAIN:PLAYER:Ｐ, "Ｖ", "Ａ", "尿", "촉수", "치구"))
 				PRINTFORMW 「엣…그래, 거기는 더럽기 때문에 안됏…」
-				PRINTFORMW 저항한다%CALLNAME:TARGET%의 입안에무리시리페니스를 돌진했다
+				PRINTFORMW 저항하는 %CALLNAME:TARGET%의 입안에무리시리페니스를 돌진했다
 				IF ABL:정액중독 < 3
 					PRINTFORMW %타겟은()% 페니스를 입붙이는 것을 싫어하고 있다
 					PRINTFORMW 정액에의 중독도가 오르면 바뀔지도 모른다…
@@ -6594,7 +6594,7 @@ IF SELECTCOM == 127
 						PRINTFORMW 선망의 눈빛을 보내고 있다…
 					ENDIF
 				ELSE
-					PRINTFORMW 「읏…하아하앗…엉덩이구멍그리고 한다%CNAME("二人称")%의 모습 엣치해…♪」
+					PRINTFORMW 「읏…하아하앗…엉덩이구멍그리고 하는 %CNAME("二人称")%의 모습 엣치해…♪」
 					PRINTFORMW 「뭐라고 할까…%CNAME("一人称")%끊어 안 되는 것 하고 있는 기분…」
 					PRINTFORMW 조잡하게 말하면 그 대로이지만 분위기를 부수지 않게, 허리의 움직임을 바꾸는 것으로 대답했다…
 				ENDIF
@@ -7230,11 +7230,11 @@ IF SELECTCOM == 140
 		ELSEIF MARK:굴복각인 > 0
 			PRINTFORMW 「응ﾞ읏……쥬루…쥬보……쥬부………푸핫…하아하아…」
 			PRINTFORMW 「%CNAME("二人称")%…좀 더 상냥하게 할 수 없다？」
-			PRINTFORMW 그렇게 호소한다%CALLNAME:TARGET%의 눈은 조금 눈물로 배이고 있었다…
+			PRINTFORMW 그렇게 호소하는 %CALLNAME:TARGET%의 눈은 조금 눈물로 배이고 있었다…
 		;それ以外
 		ELSE
 			PRINTFORMW 「응ﾞ～～～～～～읏! ! 」
-			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 싫어한다%타겟은()% 억눌러무리시리페니스를 찔러 넣었다…
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 싫어하는 %타겟은()% 억눌러무리시리페니스를 찔러 넣었다…
 		ENDIF
 	ENDIF
 	RETURN 1
@@ -8530,7 +8530,7 @@ IF SELECTCOM == 174 && TEQUIP:관내노출플레이
 		;それ以外
 		ELSE
 			PRINTFORMW 「아니…싫다앗…」
-			PRINTFORMW 방의 밖에 나오는 것을 싫어한다%타겟은()% 무리시리 끌어내조교를 재개했다
+			PRINTFORMW 방의 밖에 나오는 것을 싫어하는 %타겟은()% 무리시리 끌어내조교를 재개했다
 		ENDIF
 	;二回目以降
 	ELSE
@@ -8556,7 +8556,7 @@ IF SELECTCOM == 174 && TEQUIP:관내노출플레이
 		;それ以外
 		ELSE
 			PRINTFORMW 「싫다아…보여지고 싶지 않아……」
-			PRINTFORMW 방의 밖에 나오는 것을 싫어한다%타겟은()% 어떻게든 데리고 나갔다
+			PRINTFORMW 방의 밖에 나오는 것을 싫어하는 %타겟은()% 어떻게든 데리고 나갔다
 		ENDIF
 	ENDIF
 	RETURN 1
