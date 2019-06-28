@@ -98,7 +98,7 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	PRINTFORMW %마스터는()% 문을 여는 것과 동시에 입술을 채워졌다
 	PRINTFORMW 「응……쪽…쪽……」
-	PRINTFORMW %타겟은()% 그대로%CALLNAME:MASTER%를 침대로 밀어 넘어뜨린다…
+	PRINTFORMW %타겟은()% 그대로%마스터를()% 침대로 밀어 넘어뜨린다…
 	PRINTFORMW %마스터는()% 갑작스러운 행위에 놀라, 무심코%타겟을()% 갈라 놓았다
 	PRINTFORMW 「역시, 구재불능인의…」
 	PRINTFORMW %CALLNAME:TARGET%의 푸른 눈동자로부터 눈물이 흘러넘친다…
@@ -241,14 +241,14 @@ ELSEIF MARK:굴복각인 == 0
 	ELSE
 		PRINTFORML %마스터는()% 느긋하게%CALLNAME:TARGET%의 뒤로 회전한다
 		PRINTFORMW 「! 아, 안돼……」
-		PRINTFORML %CALLNAME:MASTER%를 눈치챈%타겟은()% 그 가드를 딱딱하게 한다
+		PRINTFORML %마스터를()% 눈치챈%타겟은()% 그 가드를 딱딱하게 한다
 		PRINTFORMW %마스터는()% 한숨을 다해 옷을 벗기 시작했다
 	ENDIF
 ;굴복각인Lv1
 ELSEIF MARK:굴복각인 == 1
 	PRINTFORML %타겟은()%%마스터가()% 옷을 벗는 상태를 입다물고 보고 있다
 	PRINTFORMW 「원…………」
-	PRINTFORMW %타겟은()% 옷을 벗어 끝낸%CALLNAME:MASTER%를 기대가 깃들인 눈으로 응시하고 있다
+	PRINTFORMW %타겟은()% 옷을 벗어 끝낸%마스터를()% 기대가 깃들인 눈으로 응시하고 있다
 ;굴복각인Lv2
 ELSEIF MARK:굴복각인 == 2
 	IF RAND:2 == 0
@@ -4207,7 +4207,7 @@ IF SELECTCOM == 173 && TEQUIP:새댁플레이
 				PRINTFORMW %타겟은()% 소리를 죽여 울고 있다…
 			ELSE
 				PRINTFORMW 「어서 오세요,당신♪」
-				PRINTFORMW %타겟은()% 만면의 미소로%CALLNAME:MASTER%를 마중했다
+				PRINTFORMW %타겟은()% 만면의 미소로%마스터를()% 마중했다
 			ENDIF
 		;それ以外
 		ELSE
@@ -5308,7 +5308,7 @@ CASE "쾌락각인Lv3취득"
 CASE "굴복각인Lv3취득"
 	IF FIRST_EV("굴복각인Lv3취득") == 0
 		PRINTFORMW 「…………」
-		PRINTFORMW %CALLNAME:TARGET%의%CALLNAME:MASTER%를 보는 눈이 이상하다
+		PRINTFORMW %CALLNAME:TARGET%의%마스터를()% 보는 눈이 이상하다
 		PRINTFORMW ………그런 이유가 아닌가
 		RETURN 1
 	ENDIF
@@ -5557,7 +5557,7 @@ CASE "요바이기승위"
 	;それ以外
 	ELSE
 		PRINTFORMW %마스터가()% 잠자리에 들려고 했을 때, 돌연%조사처리(CALLNAME:TARGET,"가")% 방을 방문해 왔다
-		PRINTFORMW 그대로 그녀는%CALLNAME:MASTER%를 밀어 넘어뜨려, 꿀 단지로 페니스를 단단히 물고 격렬하게 허리를 부딪히기 시작했다
+		PRINTFORMW 그대로 그녀는%마스터를()% 밀어 넘어뜨려, 꿀 단지로 페니스를 단단히 물고 격렬하게 허리를 부딪히기 시작했다
 		PRINTFORMW 「…좀더……해………」
 		PRINTFORMW 「%CALLNAME:MASTER%의……좀더 …!」
 		PRINTFORMW 굶은 짐승의 입은 군침을 방울져 떨어지게 해 핏줄선관을 탐내, 자궁의 갈증을 달래고 있다…

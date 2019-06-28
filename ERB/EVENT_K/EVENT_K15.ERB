@@ -107,7 +107,7 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 ;굴복각인Lv3+연모
 ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	DRAWLINE
-	PRINTFORMW 방에 들어가면,%CALLNAME:TARGET%의 가만히%CALLNAME:MASTER%를 봐 왔다.
+	PRINTFORMW 방에 들어가면,%CALLNAME:TARGET%의 가만히%마스터를()% 봐 왔다.
 	PRINTFORMW 그녀의 시선이 기분에 되기는 했지만,%CALLNAME:MASTER%도 특별히 (듣)묻는 일 없이조교의 준비를 시작한다.
 	PRINTFORMW 「（무엇인 것일까？열정과는 또 별로, 이 (분)편을 생각하는 것만으로 몸중에서 솟구쳐 오는 이 감정）」
 	PRINTFORMW 「（완전히 모르지만, 이상하게 싫은 느낌도 아니며…）」
@@ -143,7 +143,7 @@ ELSEIF MARK:굴복각인 == 0
 	DRAWLINE
 	PRINTFORMW 방에 들어가면,%타겟은()% 촉수를 꾸불꾸불움직이면서 작게 하품을 하고 있었다.
 	PRINTFORMW 「기다려 녹초가 되었어요. 자, 시작해 주세요」
-	PRINTFORMW %CALLNAME:MASTER%를 깨달으면%CALLNAME:TARGET%입자 말해 눈매를 닦았다.
+	PRINTFORMW %마스터를()% 깨달으면%CALLNAME:TARGET%입자 말해 눈매를 닦았다.
 	RETURN 1
 ;굴복각인Lv1
 ELSEIF MARK:굴복각인 == 1
@@ -210,17 +210,17 @@ IF STATE("撃沈", MASTER)
 	;반발각인LV3
 	IF MARK:반발각인 == 3
 		PRINTFORMW %CALLNAME:TARGET%벗기는 충분하고 하고 있다%CALLNAME:MASTER%의다리에촉수를 관련되었다.
-		PRINTFORMW 그리고%CALLNAME:MASTER%를 마루에필요이상에 비벼대면서 밖에 끌어냈다
+		PRINTFORMW 그리고%마스터를()% 마루에필요이상에 비벼대면서 밖에 끌어냈다
 	;연모
 	ELSEIF TALENT:연모
 		PRINTFORMW 「아라……미안해요. 조금 너무 흐트러져 버렸어요」
-		PRINTFORMW %타겟은()% 힘이 다해 녹초가 되어 있다%CALLNAME:MASTER%를 신경쓰면서, 뒷정리를 하고 있다.
+		PRINTFORMW %타겟은()% 힘이 다해 녹초가 되어 있다%마스터를()% 신경쓰면서, 뒷정리를 하고 있다.
 		PRINTFORMW 「그런데, 뒤처리도 끝나 버렸고, 뒤는……」
 		IF RAND:2 == 0
 			PRINTFORMW 「당신, (이)예요」
 			PRINTFORMW %타겟은()% 그렇게 말하면,%CALLNAME:MASTER%의 몸을촉수를 사용해 정중하게 들어 올렸다.
 			PRINTFORMW 「발대신의촉수그러니까 조금 상스러울까도 생각합니다만……」
-			PRINTFORMW 그리고%타겟은()% 싫어하는 %CALLNAME:MASTER%를 거들떠보지도 않고, 방까지 옮겨 갔다.
+			PRINTFORMW 그리고%타겟은()% 싫어하는 %마스터를()% 거들떠보지도 않고, 방까지 옮겨 갔다.
 			SIF ASSI
 				PRINTFORMW 다음에%CALLNAME:ASSI%로부터 심하게로부터인가 깨져 버렸다.
 		ELSE
@@ -238,7 +238,7 @@ IF STATE("撃沈", MASTER)
 				PRINTFORMW 참는 것 같은체력도 없다%마스터는()% 시원스럽게촉수의 안에사정해 버린다！
 				PRINTFORMW 「상당히 남아 오셨군요. 후훗, 이것이상는 정말로 위험할까？」
 				PRINTFORMW 「네, 최후는 조금 장난쳐 버렸습니다만 완전히 예쁘게 되었어요」
-				PRINTFORMW 2, 3회사정시킨 후, 간신히%타겟은()% %CALLNAME:MASTER%를 개방한 것이었다.
+				PRINTFORMW 2, 3회사정시킨 후, 간신히%타겟은()% %마스터를()% 개방한 것이었다.
 			;主人が女性で후타나리
 			ELSEIF TALENT:MASTER:남자 == 0 && TALENT:MASTER:후타나리
 				PRINTFORMW 그렇게 말해,%타겟은()% %CALLNAME:MASTER%의 양발에촉수를 얽히게 할 수 있으면, 크고발를 열어 왔다.
@@ -307,9 +307,9 @@ IF STATE("撃沈", MASTER)
 	;굴복각인Lv.1
 	ELSEIF MARK:굴복각인 == 1
 		IF RAND:2 == 0
-			PRINTFORMW 녹초가 되어 있다%CALLNAME:MASTER%를 %타겟은()% 시시한 듯이 바라보고 있다.
+			PRINTFORMW 녹초가 되어 있다%마스터를()% %타겟은()% 시시한 듯이 바라보고 있다.
 		ELSE
-			PRINTFORMW 녹초가 되어 있다%CALLNAME:MASTER%를 %타겟은()% 불만인 것처럼 바라보고 있다.
+			PRINTFORMW 녹초가 되어 있다%마스터를()% %타겟은()% 불만인 것처럼 바라보고 있다.
 		ENDIF
 		IF RAND:2 == 0
 			PRINTFORMW 「어머나 한심하다. 좀 더 정진 하세요」
@@ -331,7 +331,7 @@ ELSEIF MARK:반발각인 == 3
 	DRAWLINE
 	PRINTFORMW %타겟은()% 안절부절 한 모습으로촉수를 벌름거리고 있다.
 	PRINTFORMW 「완전히, 불쾌감이 쌓일 뿐이에요」
-	PRINTFORMW 그리고%타겟은()% %CALLNAME:MASTER%를촉수그리고 잡아 방의 밖으로 내던졌다.
+	PRINTFORMW 그리고%타겟은()% %마스터를()%촉수그리고 잡아 방의 밖으로 내던졌다.
 	RETURN 1
 ;굴복각인Lv1이하+체력500이상（余力모드）
 ELSEIF MARK:굴복각인 <= 1 && BASE:체력 > 500

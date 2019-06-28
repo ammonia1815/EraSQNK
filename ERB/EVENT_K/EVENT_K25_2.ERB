@@ -427,7 +427,7 @@ ELSEIF NO:ASSI == 7
 					PRINTFORMW 슬슬%CALLNAME:TARGET%의 조교노시간입니다만, %CALLNAME:ASSI%의 모습이 보이지 않습니다
 					PRINTFORMW 시간(와)과 장소는 말해 두었을 텐데…그렇게 생각하면서%CALLNAME:TARGET%의 방의 문을 열었습니다
 					PRINTFORMW 그러자 거기에는, 침대 위에서%CALLNAME:TARGET%에 무릎 베개를 되면서, 구구와 숨소리를 낸다%CALLNAME:ASSI%하지만 있었습니다! 
-					PRINTFORMW %CALLNAME:MASTER%를 알아차렸다%조사처리(CALLNAME:TARGET,"는")% “좀 더 기다리고 있어 주세요”(와)과 작은 소리로 말해 왔습니다
+					PRINTFORMW %마스터를()% 알아차렸다%조사처리(CALLNAME:TARGET,"는")% “좀 더 기다리고 있어 주세요”(와)과 작은 소리로 말해 왔습니다
 					PRINTFORMW ……계속해, “무릎 베개 해 주었으면 했으면 언제라도 말해 주세요♪”(와)과 덧붙여 왔습니다
 				ELSE
 					PRINTFORMW 「…아, 갈라진 머리카락 있네요. 분명하게손넣고 하지 않으면 안됩니다？」
@@ -1733,7 +1733,7 @@ ELSEIF NO:ASSI == 30
 			;조수が연모
 			ELSEIF TALENT:ASSI:연모 
 				PRINTFORMW 『여기에 있어도…아픈 것뿐이지요？ %CNAMET(ASSI, "一人称")%의 방에 갑시다』
-				PRINTFORMW %TEXTS("조수の명칭")%로서 데려 왔음이 분명한%CALLNAME:ASSI%그렇지만, 이미 일을 내던져%CALLNAME:MASTER%를 유혹하고 있습니다……
+				PRINTFORMW %TEXTS("조수の명칭")%로서 데려 왔음이 분명한%CALLNAME:ASSI%그렇지만, 이미 일을 내던져%마스터를()% 유혹하고 있습니다……
 				PRINTFORMW ……차분하다얼굴을 하고 있다%조사처리(CALLNAME:TARGET,"가")% 기분를 해치기 전에, 빨리조교를 시작하기로 했습니다
 			;それ以外
 			ELSE
@@ -1782,7 +1782,7 @@ ELSEIF NO:ASSI == 25 && CFLAG:ASSI:209 == 3
 				PRINTFORMW 아무래도%CALLNAME:ASSI%는 %CALLNAME:MASTER%의 몸을 걱정하고 있는 것 같다……! 
 				PRINTFORMW 「그렇지만주인같아요？우리 두 명 정도 괜찮습니다 라고♪」
 				PRINTFORMW 『그래, 그렇다! (들)물었을 것이다%CNAMET(ASSI, "二人称")%, 지금일하%CNAMET(ASSI, "一人称")%들이 탓하는 차례다! ! 』
-				PRINTFORMW ……꼬드겨졌다%CALLNAME:ASSI%는 , %타겟과()% 함께 되어%CALLNAME:MASTER%를 넘어뜨리기했다
+				PRINTFORMW ……꼬드겨졌다%CALLNAME:ASSI%는 , %타겟과()% 함께 되어%마스터를()% 넘어뜨리기했다
 				CALL SETFLAG, "Ｗ넘어뜨리기"
 			ELSEIF RAND:5 == 0
 				PRINTFORMW 「엣또, 지금일의 희생자는 두 명입니까. 후후, 즐거움이군요♪」
@@ -1794,7 +1794,7 @@ ELSEIF NO:ASSI == 25 && CFLAG:ASSI:209 == 3
 			ELSEIF RAND:3 == 0
 				PRINTFORMW 『어이, 그 녀석의 몸은 너만의 물건은 아니기 때문에!  %CNAMET(ASSI, "一人称")%의 분도 남겨 둬! 』
 				PRINTFORMW 「응～자 우선 반 정도로……」
-				PRINTFORMW ……두 명은%CALLNAME:MASTER%를 그대로 둬, %CALLNAME:MASTER%의 권리 여러 가지를 교섭하고 있습니다
+				PRINTFORMW ……두 명은%마스터를()% 그대로 둬, %CALLNAME:MASTER%의 권리 여러 가지를 교섭하고 있습니다
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 「저기～, %CALLNAME:ASSI%도 섞여 주세요♪」
 				PRINTFORMW %타겟을()% %CALLNAME:ASSI%를 권해3P를 하려고 하고 있습니다만……？
@@ -2278,7 +2278,7 @@ ELSEIF NO:ASSI == 14
 		;それ以外
 		ELSE
 			PRINTFORMW 『흡혈귀조차조교하자니, 그렇게 자신을 시험하고 싶은 것？』
-			PRINTFORMW %조사처리(CALLNAME:ASSI,"는")%%CALLNAME:MASTER%를 이상한 것 같게 보고 있습니다……
+			PRINTFORMW %조사처리(CALLNAME:ASSI,"는")%%마스터를()% 이상한 것 같게 보고 있습니다……
 		ENDIF
 		CALL SET_CEVENT, "조수会話：압사라"
 	;二回目以降
@@ -2290,7 +2290,7 @@ ELSEIF NO:ASSI == 14
 				PRINTFORMW 『오늘은%CNAMET(ASSI, "二人称")%에 시련을 주어 버릴까』
 				PRINTFORMW %CALLNAME:ASSI%하지만 그렇게 말하면, 그녀는%타겟과()% 함께%CALLNAME:MASTER%에 강요해 왔습니다
 				PRINTFORMW 「후훗……여자 아이 두 명만발하게 하는지, 실력을 나타내 받을까 하고♪」
-				PRINTFORMW 두 명은 결탁 해%CALLNAME:MASTER%를넘어뜨리기했다！
+				PRINTFORMW 두 명은 결탁 해%마스터를()%넘어뜨리기했다！
 				CALL SETFLAG, "Ｗ넘어뜨리기"
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 『아직시간있겠지요？그러면 조금 정도 즐겨도 괜찮네요？』
@@ -2501,7 +2501,7 @@ IF TALENT:연모 && GETBIT(CFLAG:201, 30) == 0 && ( (COND("조교공백기간") 
 			IF RAND:4 == 0 
 				PRINTFORMW 「설날은 천천히 하고 싶지만, 너무 질질 하고 있으면 살쪄 버리는군요？」
 				PRINTFORMW 「그러니까 가득 몸을 움직입시다. 물론, 침대 위에서♪」
-				PRINTFORMW %타겟을()% %CALLNAME:MASTER%를 넘어뜨리기했다…
+				PRINTFORMW %타겟을()% %마스터를()% 넘어뜨리기했다…
 				TEQUIP:넘어뜨리기 = 1
 			ELSEIF RAND:3 == 0 
 				PRINTFORMW 「또 와 준 것입니까？이제(벌써), 신년 조속히 격렬하니까♪」
@@ -2592,7 +2592,7 @@ IF TALENT:연모 && GETBIT(CFLAG:201, 30) == 0 && ( (COND("조교공백기간") 
 					PRINTFORMW 「화이트 데이에 적당하고…진하양(이)가 될 정도로 내 받아요♪」
 				ELSEIF RESULT == 1
 					PRINTFORMW 「아라, 그쪽은 싫습니까？그러면…」
-					PRINTFORMW %타겟을()% %CALLNAME:MASTER%를 넘어뜨리기라고, 그팬티의 안에손를 숨겨 왔습니다…
+					PRINTFORMW %타겟을()% %마스터를()% 넘어뜨리기라고, 그팬티의 안에손를 숨겨 왔습니다…
 					PRINTFORMW 「내가만족할 때까지, 가득 내 받으니까요♪」
 					TEQUIP:넘어뜨리기 = 1
 				ENDIF
@@ -2607,7 +2607,7 @@ IF TALENT:연모 && GETBIT(CFLAG:201, 30) == 0 && ( (COND("조교공백기간") 
 					PRINTFORMW 「당신의 달콤한 소리, 정말 좋아합니다. 지금일는 가득 대접시켜 받아요♪」
 				ELSEIF RESULT == 1
 					PRINTFORMW 「아라, 그쪽은 싫습니까？그러면…」
-					PRINTFORMW %타겟을()% %CALLNAME:MASTER%를 넘어뜨리기라고, 그가슴을상냥하게 비비기 시작했습니다…
+					PRINTFORMW %타겟을()% %마스터를()% 넘어뜨리기라고, 그가슴을상냥하게 비비기 시작했습니다…
 					PRINTFORMW 「내가만족할 때까지, 당신의 달콤한 소리를 받으니까요♪」
 					TEQUIP:넘어뜨리기 = 1
 				ENDIF
@@ -2681,7 +2681,7 @@ IF TALENT:연모 && GETBIT(CFLAG:201, 30) == 0 && ( (COND("조교공백기간") 
 					PRINTFORMW 「나특제의 『호박과 시금치의 쿠키』입니다. 분명하게 맛봐 주세요♪」
 					PRINTFORMW 「…그런데, “트리트”로서 과자를 건네주었습니다만…만족입니까？」
 					PRINTFORMW 「“트릭”를 하고 싶으면, 좋아할 뿐(만큼) 해도 좋아요」
-					PRINTFORMW %타겟을()% 침대에 엎드려 누워, 『장난 해』라고 할듯이%CALLNAME:MASTER%를 유혹하고 있습니다…
+					PRINTFORMW %타겟을()% 침대에 엎드려 누워, 『장난 해』라고 할듯이%마스터를()% 유혹하고 있습니다…
 				ENDIF
 			;初めて来た
 			ELSE
@@ -2776,7 +2776,7 @@ IF TALENT:연모 && GETBIT(CFLAG:201, 30) == 0 && ( (COND("조교공백기간") 
 				PRINTL [2] 피를 빨아들이게 해 준다
 				CALL INPUT_SELECT, 3
 				PRINTFORMW 「아라, 이야기가 빠르고 살아납니다. 그러면…♪」
-				PRINTFORMW %타겟을()% %CALLNAME:MASTER%를 침대에넘어뜨리기, 그 근처에 엎드려 누워…
+				PRINTFORMW %타겟을()% %마스터를()% 침대에넘어뜨리기, 그 근처에 엎드려 누워…
 				PRINTFORMW 「――나보다 좋아하는딸하지만 있어도, 그것은 상관하지 않습니다.  당신의 옆에 있을 수 있는 것만으로…나는 기쁩니다. 그것정도로 화내거나 하지 않습니다」
 				PRINTFORMW 「그렇지만…거짓말만은. 거짓말만은 토하지 않는다고…약속했으면 좋습니다」
 				PRINTFORMW %CALLNAME:TARGET%의 외로운 듯한 눈동자에 응시할 수 있다, %마스터는()% 살그머니 수긍했습니다…
@@ -2998,7 +2998,7 @@ IF TALENT:연모 && GETBIT(CFLAG:201, 30) == 0 && ( (COND("조교공백기간") 
 							PRINTFORMW %타겟을()% 곤란했다얼굴을 해 웃고 있습니다…
 							PRINTFORMW 「그렇지만…당신하지만아이에, 나와 같이“진정한 사랑”를 가르쳐 주면…그 소원도 언젠가 실현된다고 생각합니다」
 							PRINTFORMW 「아이의 일도…진심으로 사랑해 주세요. 그러면…반드시……」
-							PRINTFORMW %CALLNAME:TARGET%의 표정은 매우 온화하게 되어, %CALLNAME:MASTER%를 상냥하게 응시하고 있습니다…
+							PRINTFORMW %CALLNAME:TARGET%의 표정은 매우 온화하게 되어, %마스터를()% 상냥하게 응시하고 있습니다…
 							IF RAND:2 == 0
 								PRINTFORMW 「아.  아이노상대에질투해서는 안됩니다♪」
 							ELSE
@@ -3221,7 +3221,7 @@ IF TALENT:연모 && GETBIT(CFLAG:201, 30) == 0 && ( (COND("조교공백기간") 
 			;初めて
 			ELSE
 				PRINTFORMW 「………작일하지만 무슨일(이었)였는지, 기억하고 있습니다？」
-				PRINTFORMW %타겟을()% 충혈한 눈으로 %CALLNAME:MASTER%를 노려보고 있습니다…
+				PRINTFORMW %타겟을()% 충혈한 눈으로 %마스터를()% 노려보고 있습니다…
 				PRINTFORMW 작일이렇게 말하면……
 				PRINTL [0] …………앗! 
 				PRINTL [1] 크리스마스라고 그렇게 소중한일？
@@ -12061,7 +12061,7 @@ IF SELECTCOM == 171 && COND("마을")
 										PRINTFORMW 「아아아……아……우…앗♪」
 										PRINTFORMW %CALLNAME:TARGET%의 오줌 흘리기가 끝나면, 그녀의 물고 있다바이브로부터 작은 진동소리가 울리기 시작했다
 										PRINTFORMW 「하앗…하앗……좀 더…내도 좋지요……♪」
-										PRINTFORMW %타겟은()% 황홀로 한 표정을 띄워,%CALLNAME:MASTER%를 기대의 시선으로 보고 있다……
+										PRINTFORMW %타겟은()% 황홀로 한 표정을 띄워,%마스터를()% 기대의 시선으로 보고 있다……
 									ELSE
 										PRINTFORMW 태양아래에서도일우산의 덕분으로 제대로 걸을 수 있었다%CALLNAME:TARGET%(이었)였지만, 뒷골목에 들어가면 그발는 서서히 속도를 잃어, 이윽고 탁 멈춰 섰다
 										PRINTFORMW 「저…벌써 흘려 버려도 괜찮지요……？」
@@ -12072,7 +12072,7 @@ IF SELECTCOM == 171 && COND("마을")
 										PRINTFORMW 「아아아……아……우…앗♪」
 										PRINTFORMW %CALLNAME:TARGET%의 오줌 흘리기가 끝나면, 그녀의 흠뻑축축한 속옷의 안쪽으로부터 작은 진동소리가 울리기 시작했다
 										PRINTFORMW 「하앗…하앗……좀 더…내도 좋지요……♪」
-										PRINTFORMW %타겟은()% 황홀로 한 표정을 띄워,%CALLNAME:MASTER%를 기대의 시선으로 보고 있다……
+										PRINTFORMW %타겟은()% 황홀로 한 표정을 띄워,%마스터를()% 기대의 시선으로 보고 있다……
 									ENDIF
 								ELSE
 									;알몸

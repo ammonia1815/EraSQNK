@@ -201,7 +201,7 @@ ELSEIF GETBIT(CFLAG:201, 6) == 0 && TALENT:임신 && TALENT:연모 && COND("정�
 	CALL INPUT_SELECT, 2
 	;さっぱり分からない
 	IF RESULT == 0
-		PRINTFORMW 곤혹의 표정을 띄우는%CALLNAME:MASTER%를 응시하면서, %타겟은()% 험했던 표정을 느슨하게했다
+		PRINTFORMW 곤혹의 표정을 띄우는%마스터를()% 응시하면서, %타겟은()% 험했던 표정을 느슨하게했다
 		PRINTFORMW 「어머나 ,  당신은 의외로 둔합니다 것…후훗…」
 		PRINTFORMW 「그토록 ,  몇번이나 나의 질내에 자식을 흘려 넣어 두어 ,  짐작이 가지않는다니」
 		PRINTFORMW 혹시…
@@ -229,7 +229,7 @@ ELSEIF GETBIT(CFLAG:201, 7) == 0 && TALENT:임신 >= 3 && TALENT:연모 && COND(
 ;상사상애
 ELSEIF GETBIT(CFLAG:201, 9) == 0 && TALENT:상사상애
 	PRINTFORMW 「후후후~♪ 후훗 후후~응♪ 하아∼…행복합니다 와아∼♪」
-	PRINTFORMW %CALLNAME:MASTER%를 눈치채는 모습(상태)도 없고, %타겟은()% 콧노래를 노래하면서 침대 위를 널려 있었다
+	PRINTFORMW %마스터를()% 눈치채는 모습(상태)도 없고, %타겟은()% 콧노래를 노래하면서 침대 위를 널려 있었다
 	PRINTFORMW 자주(잘) 보면%타겟은()% 반지가 들어간 작은 상자를 소중한 듯이 양손으로 움켜 쥐고 있는 것 같았다
 	PRINTFORMW 「그 (분)편도 참 ♪ 뭔가♪ 저를 여기까지 행복하게 해서,  도대체 어떻게 할 생각인가 ..♪」
 	PRINTFORMW 「아아 , 도~너무 행복해 ♪ 어떻게든 되어 버릴 것 같네요♪」
@@ -313,7 +313,7 @@ ELSEIF GETBIT(CFLAG:201, 32) == 0 && GETBIT(CFLAG:201, 31) && TALENT:빈유 == 0
 	PRINTFORMW 「오! 이제(벌써) 이것으로 빈유 과 업신여겨지는 날들과는 작별! 저 ,  대승리예요―! 」
 	PRINTFORMW 스스로의 나체를 아낌없이 쬐어, %타겟이()% 큰 웃음을 올린다
 	PRINTFORMW %타겟이()% 웃을 때 ,  크게 된 가슴이 작게 흔들려%CALLNAME:MASTER%의 열정을 자극한다
-	PRINTFORMW 그런%CALLNAME:MASTER%를 눈치채, %타겟은()% 방금전까지와는 일전해 요염함이 있는 미소를 띄웠다
+	PRINTFORMW 그런%마스터를()% 눈치채, %타겟은()% 방금전까지와는 일전해 요염함이 있는 미소를 띄웠다
 	PRINTFORMW 「…어머나…? 그렇게 필사적으로 어디를 응시하고 있을까…♪」
 	PRINTFORMW 「속이려고 해도 쓸데없네요. 조금 전부터 당신의 시선이 나의 가슴에 정부 인거야」
 	PRINTFORMW 「후훗…♪ 그렇게 가슴에 흥미가 있어라면…마음대로 해 괜찮(좋)습니다 예요…♪」
@@ -406,7 +406,7 @@ ELSEIF TALENT:연모 && TALENT:빈유 && TALENT:ASSI:빈유 && GETBIT(CFLAG:201,
 		PRINTFORMW 그 시선은%CALLNAME:ASSI%의 단조로운 앞가슴으로 따라지고 있었다
 		PRINTFORMW 「그 신중하다 유방…그렇게…당신도 가지지 못한 자예요…!」
 		PRINTFORMW 「예…아무것도 말하지 않아도 알겠어요…! 저도 당신의 동료예요…!」
-		PRINTFORMW %CALLNAME:MASTER%를 거들떠보지도 않고, %CALLNAME:TARGET%과%CALLNAME:ASSI%는 뜨거운 악수를 주고 받고 있다…
+		PRINTFORMW %마스터를()% 거들떠보지도 않고, %CALLNAME:TARGET%과%CALLNAME:ASSI%는 뜨거운 악수를 주고 받고 있다…
 		PRINTFORMW 아무래도 같은 빈유 끼리 ,  감동하는 물건이 있던 것 같다…
 		PRINTFORMW %마스터는()% 두 명이 침착하는 것 기다리는 옆 ,  묵묵히 조교의 준비를 정돈해 갔다
 		CALL SET_CEVENT, "조수会話：빈유"
@@ -445,7 +445,7 @@ ELSEIF TALENT:연모
 		;상사상애持ちの상대がいるか判定し, LOCALに格納
 		LOCAL = FIND_COND("상사상애")
 		PRINTFORMW 「상당히 오래간만이예요…」
-		PRINTFORMW 문을 연%CALLNAME:MASTER%를 ,  입술을 날카롭게 할 수 있던%타겟이()% 마중나간다
+		PRINTFORMW 문을 연%마스터를()% ,  입술을 날카롭게 할 수 있던%타겟이()% 마중나간다
 		PRINTFORMW 「나의 곳에 얼굴도 보이지 않고…당신은 뭘 하셨을까 ..」
 		;他に상사상애持ちが居る
 		IF LOCAL > 0
@@ -492,17 +492,17 @@ ELSEIF TALENT:연모
 			;아침컨닐링구스
 			CASE NUM_EV("아침컨닐링구스")
 				PRINTFORMW 「아무래도 인내 할 수 없었다 같아요 우와군요…♪」
-				PRINTFORMW 방문한%CALLNAME:MASTER%를 , %타겟이()% 요염한 미소로 마중나간다
+				PRINTFORMW 방문한%마스터를()% , %타겟이()% 요염한 미소로 마중나간다
 				PRINTFORMW 「후후 ,  알고 있습니다원…체가 화끈해져 어쩔 수 없어요군요…♪」
 				PRINTFORMW 「자고 있는 동안 실컷 지는 드렸던 인거야 ,  당연하네요…♪」
 				;후타나리
 				IF TALENT:후타나리
-					PRINTFORMW 미소를 띄우면서%타겟이()%%CALLNAME:MASTER%를 침대에 권한다
+					PRINTFORMW 미소를 띄우면서%타겟이()%%마스터를()% 침대에 권한다
 					PRINTFORMW 허벅지에 해당되는 뜨겁고 딱딱한 감촉에 , %CALLNAME:MASTER%의 질 입구로부터 저절로꿀이 넘쳐 나온다
 					PRINTFORMW 「우후후…♪ 보지가 쑤셔 어쩔 수 없는 것 같네요…♪」
 					PRINTFORMW 「걱정하지 않아도…처음의 기세가 죽어버리는 정도 ,  범해 드려요…♪」
 				ELSE
-					PRINTFORMW 미소를 띄우면서%타겟이()%%CALLNAME:MASTER%를 침대에 권한다
+					PRINTFORMW 미소를 띄우면서%타겟이()%%마스터를()% 침대에 권한다
 					PRINTFORMW 단%CALLNAME:TARGET%의 향기에 %CALLNAME:MASTER%의 고동이 저절로 경종을 치고 있다
 					PRINTFORMW 「우후후…♪ ,  잔뜩…서로 사랑합시다…♪」
 				ENDIF
@@ -532,7 +532,7 @@ ELSEIF TALENT:연모
 			CASE NUM_EV("아침기승위")
 				PRINTFORMW 「자고 일어나기에 있을 수 있는만 짜 드렸는데…아직 내 부족하어요…♪」
 				PRINTFORMW 「그렇지 않으면…기분 너무 좋고 ,  또 시 싶고 되어버린 것일까…♪」
-				PRINTFORMW 방을 방문한%CALLNAME:MASTER%를 응시해%타겟이()% 미소를 띄운다
+				PRINTFORMW 방을 방문한%마스터를()% 응시해%타겟이()% 미소를 띄운다
 				PRINTFORMW 「후훗♪ 괜찮아요♪ 당신이 요구하는 한 ,  얼마든지 교제해요…♪」
 				PRINTFORMW 「,  당신의 아내의 신체 ,  마음껏 맛봐주십시오…♪」
 				RETURN 1
@@ -656,7 +656,7 @@ ELSEIF TALENT:연모
 			PRINTFORMW 그 입으로부터는 괴로운 듯한 한숨이 새어 눈동자는 무엇을 기대 하도록 물기를 띠고 있었다
 			PRINTFORMW 「위험일이니까인가 ..…상스럽지만 ,  일어나고 나서 쭉 자궁이 쑤시고 있으며…」
 			PRINTFORMW 「그러니까 그…오늘은 언제나 이상으로 ,  당신에게임신 뛰어날 수 있는 싶다고…생각해 버리고 있습니다의…」
-			PRINTFORMW 상기 한 얼굴을 숨기도록(듯이) 숙여, %타겟은()%%CALLNAME:MASTER%를 침대에 불러 넣었다
+			PRINTFORMW 상기 한 얼굴을 숨기도록(듯이) 숙여, %타겟은()%%마스터를()% 침대에 불러 넣었다
 			PRINTFORMW 「오늘은…확실히 임신할 수 있게…난자가 빠지는 정도 ,  종 교부해주십시오…♪」
 		ELSE
 			;출산경험
@@ -726,7 +726,7 @@ ELSEIF TALENT:연모
 					PRINTFORMW 「어머나…? 우후훗…♪」
 					PRINTFORMW 「알고 있었던 것이나요…그렇지 않으면 ,  우연히 까…♪」
 					PRINTFORMW 「…어디라도 상관하지 않아요군요…두 명이 서로 사랑하는데 ,  이유는 필요 없습니다  것…♪」
-					PRINTFORMW 물기를 띤 눈동자에 %CALLNAME:MASTER%를 비추면서, %타겟이()% 느긋하게 접근해 온다
+					PRINTFORMW 물기를 띤 눈동자에 %마스터를()% 비추면서, %타겟이()% 느긋하게 접근해 온다
 					PRINTFORMW 「…♪ 아침해가 뜰 때까지…충분히(듬뿍) 서로 사랑합시다…♪」
 					;무드が増加
 					TFLAG:33 += 30
@@ -756,7 +756,7 @@ ELSEIF TALENT:연모
 				PRINTFORMW 「그러니까 오늘 밤도…많이 많이 ,  사랑해주십시오…♪」
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 「어서 오세요 ,  당.신♪」
-				PRINTFORMW 방을 방문한%CALLNAME:MASTER%를 , %타겟이()% 알몸 에이프런으로 마중나간다
+				PRINTFORMW 방을 방문한%마스터를()% , %타겟이()% 알몸 에이프런으로 마중나간다
 				PRINTFORMW 「오늘은 언제나 노력하고 있는 당신을 ,  내가 잔뜩 달래요」
 				PRINTFORMW 「물론 사양은 필요 없습니다  원. 왜냐하면 저희들은 ,  부부입니다 것♪」
 				PRINTFORMW 「,  사랑의 일을…시작해요…♪」
@@ -764,7 +764,7 @@ ELSEIF TALENT:연모
 				TEQUIP:새댁플레이 = 1
 			ELSE
 				PRINTFORMW 「어서 오세요. 오늘도 수고 하셨습니다 원♪」
-				PRINTFORMW 밤에 방문한%CALLNAME:MASTER%를 %타겟이()% 상냥하게 마중나간다
+				PRINTFORMW 밤에 방문한%마스터를()% %타겟이()% 상냥하게 마중나간다
 				PRINTFORMW 「언제나 노력하고 있는 당신을 , 오늘은 내가 달래 드려요…♪」
 				PRINTFORMW 「후후…,  누워…♪ 충분히(듬뿍)…사랑해 드려요…♪」
 				TEQUIP:넘어뜨리기 = 1
@@ -922,7 +922,7 @@ ELSEIF TALENT:연모
 			;여교사を所持
 			ELSEIF ITEM:여교사 && RANDIF(1, ITEM:본디지 && ABL:새드끼 >= 5, ITEM:무녀복, ITEM:세라복, ITEM:간호사복)
 				PRINTFORMW 「후후…겨우 왔네…♪」
-				PRINTFORMW 문을 연%CALLNAME:MASTER%를 슈트 모습의%타겟이()% 마중나간다
+				PRINTFORMW 문을 연%마스터를()% 슈트 모습의%타겟이()% 마중나간다
 				PRINTFORMW 여교사에게 분 한%타겟은()% 못된 장난인 미소를 띄워 침대의 가장자리에 걸터앉고 있었다
 				PRINTFORMW 「정말이지(전혀) 이제(벌써)…선생님을 기다리게 하다는…당신도 참 정말로 나쁜 아이네…♪」
 				PRINTFORMW 「덕분에 선생님 ,  당신을 기다리고 있는 동안에 완전히 몸이 불 비쳐 버렸다 원…♪」
@@ -968,7 +968,7 @@ ELSEIF TALENT:연모
 				PRINTFORMW 방 중(안)에서는 본디지 모습의%타겟이()% 우아한 모습(상태)로 의자에 허리를 안정시키고 있었다
 				PRINTFORMW 「정말이지(전혀)…저를 기다리게 하는이라니…상당히 예의범절의 나쁜 아이가 된 것…♪」
 				PRINTFORMW 「이것은 조금 격렬하게…벌 하지 않으면 안 되게…♪」
-				PRINTFORMW 가학적인 시선을%CALLNAME:MASTER%를 향하면서, %타겟이()% 붉은 입술을 혀끝에서 빨아 돌린다
+				PRINTFORMW 가학적인 시선을%마스터를()% 향하면서, %타겟이()% 붉은 입술을 혀끝에서 빨아 돌린다
 				PRINTFORMW 검은 에나멜 의상에 몸을 싼%타겟은()% ,  마치 여왕과 같이도 보였다
 				PRINTFORMW 「어머나 ,  아직 모르는 건가..…♪ 오늘은 내가 당신을 ,  마음껏 귀여워해 준다…♪」
 				PRINTFORMW 「후후…♪ 뼈의 골수까지 충분히(듬뿍) 끈적끈적…당신을 음란하게 예의범절을 가르쳐 주겠어요…♪」
@@ -24796,7 +24796,7 @@ CASE "매각した"
 		ELSE
 			PRINTFORMW 「 이제(벌써) 만나는 일도 않겠지요. 제발 당신도 ,  건강해」
 			PRINTFORMW 의연히 한 태도를 취해 되돌려, %타겟은()% 정중하게 인사를 한다
-			PRINTFORMW 그리고%CALLNAME:MASTER%를 시선을 돌림도 하지 않고 ,  스스로의 다리로 마차로 타 갔다
+			PRINTFORMW 그리고%마스터를()% 시선을 돌림도 하지 않고 ,  스스로의 다리로 마차로 타 갔다
 		ENDIF
 		PRINTFORMW 그 우아한 발걸음은 ,  엿보고 천민눈물이 환상이었는지와 같이 확실한 것이었다
 		PRINTFORML …………

@@ -28,7 +28,7 @@ IF GETBIT(CFLAG:201, 0) == 0
 	DRAWLINE
 	PRINTFORMW %마스터는()% 소리를 내지 않게 남몰래 방에 들어갔다
 	PRINTFORML %타겟은()% 침대 위에 앉아 숙이면서 가만히 하고 있다…
-	PRINTFORMW %CALLNAME:MASTER%를 눈치채면%타겟은()% 침대에서 획 비켜서 준비했다
+	PRINTFORMW %마스터를()% 눈치채면%타겟은()% 침대에서 획 비켜서 준비했다
 	PRINTFORMW 「너 누구야！나를 어떻게 할 생각？！」
 	PRINTFORMW 「조교…입니다 라고…, 후…장난치지 맛！누가 너 따위에！」
 	PRINTFORMW 「…절대 도망쳐 준다…！」
@@ -174,7 +174,7 @@ ELSEIF TALENT:연모
 		PRINTFORMW %CALLNAME:TARGET%의 뺨이 상기 해 숨이 난폭한, 분명하게 자고 있던 것은 아닌 것 같다…
 	ELSE
 		PRINTFORMW 「아……, 이…어서오세요…, 기다려어…했어요…」
-		PRINTFORMW %CALLNAME:TARGET%벗겨 여기 없는 말씨로%CALLNAME:MASTER%를 맞아들였다
+		PRINTFORMW %CALLNAME:TARGET%벗겨 여기 없는 말씨로%마스터를()% 맞아들였다
 		PRINTFORMW 지나친 위화감에 무심코 분출하면%타겟은()% 순간에 얼굴을 홍조 시켰다…
 		PRINTFORMW 「와…웃는 것이 아니에요 바보！, 내가 정중하게 말하는 것이 그렇게 이상하다고 말해？！」
 	ENDIF
@@ -221,7 +221,7 @@ ELSEIF MARK:반발각인 == 3
 ELSEIF MARK:굴복각인 <= 1
 	DRAWLINE
 	PRINTFORMW 「흥…, 너는 최악의 바보같구나…」
-	PRINTFORMW %타겟은()% 업신여긴 눈으로 %CALLNAME:MASTER%를 보고 있다
+	PRINTFORMW %타겟은()% 업신여긴 눈으로 %마스터를()% 보고 있다
 	RETURN 1
 ;굴복각인Lv2
 ELSEIF MARK:굴복각인 == 2
@@ -245,9 +245,9 @@ ELSEIF MARK:굴복각인 == 3 && TALENT:연모 == 0
 ELSEIF TALENT:연모 && CFLAG:99
 	DRAWLINE
 	PRINTFORMW 「너…격렬해져………」
-	PRINTFORMW %타겟은()% %CALLNAME:MASTER%를 말려들게 하면서 침대에 붕괴되었다
+	PRINTFORMW %타겟은()% %마스터를()% 말려들게 하면서 침대에 붕괴되었다
 	PRINTFORMW 「이제 안돼…잘 자요…」
-	PRINTFORMW %타겟은()% %CALLNAME:MASTER%를 껴안는 베게[抱き枕]로 하면서 잠에 떨어져 갔다…
+	PRINTFORMW %타겟은()% %마스터를()% 껴안는 베게[抱き枕]로 하면서 잠에 떨어져 갔다…
 	RETURN 1
 ;연모
 ELSEIF TALENT:연모
@@ -1385,7 +1385,7 @@ IF SELECTCOM == 91
 			ELSE
 				PRINTFORMW 「이런 명령하다닛…！기억해 주세요！？」
 				PRINTFORMW 「…츗……할짝……할짝…」
-				PRINTFORMW %타겟은()% ,%CALLNAME:ASSI%의페니스에 혀를 기게 하면서%CALLNAME:MASTER%를 노려보고 있다….
+				PRINTFORMW %타겟은()% ,%CALLNAME:ASSI%의페니스에 혀를 기게 하면서%마스터를()% 노려보고 있다….
 			ENDIF
 		ELSE
 			;반발각인Lv3
@@ -3787,7 +3787,7 @@ CASE "요바이기승위"
 	;V感覚Lv5이상
 	IF ABL:Ｖ감각 >= 5
 		PRINTFORMW 「신체가 뜨거워서…잘 수 없는거야…」
-		PRINTFORMW %CALLNAME:MASTER%를 깔아누른 채로,%타겟은()% 방에 들어 오고 처음으로 말했다
+		PRINTFORMW %마스터를()% 깔아누른 채로,%타겟은()% 방에 들어 오고 처음으로 말했다
 		PRINTFORMW %CALLNAME:TARGET%의 신체는 마치 목욕 마침인가와 같이 뜨겁게 달아오르고 있어, 접하는 것만으로 땀이 배여 온다
 		PRINTFORMW 「너에게 신체를 식히는 것 도와 받고 싶은거야…좋다？」
 		PRINTFORMW %타겟은()% 깊은 생각에 빠진 얼굴로 이쪽을 보고 있는,%CALLNAME:MASTER%하지만 수긍하면%타겟은()% 안도해 얼굴을 피기 시작하게 했다

@@ -128,7 +128,7 @@ ELSEIF GETBIT(CFLAG:201, 6) == 0 && TALENT:연모 && TALENT:임신 && COND("정�
 	PRINTFORMW （어떻게 하지……%CNAME("一人称")%, 굉장한 히죽히죽 하고 있다）
 	PRINTFORMW 단순한 사랑하는 아가씨에게 돌아와 버렸다감각
 	PRINTFORMW （이제(벌써)%CNAME("二人称")%이외 생각할 수 없어요）
-	PRINTFORMW 문이 열렸다……꼭%CALLNAME:MASTER%를 생각하고 있던 탓인지 직시 어쩐지 할 수 없다
+	PRINTFORMW 문이 열렸다……꼭%마스터를()% 생각하고 있던 탓인지 직시 어쩐지 할 수 없다
 	PRINTFORMW 「아, 저저저저」
 	PRINTFORMW ――빌리져(이)가 아니기 때문에…
 	PRINTFORMW 그런%CALLNAME:MASTER%의 공격에 분노가 울컥거려 왔다
@@ -598,7 +598,7 @@ ELSEIF GETBIT(CFLAG:201, 6) || GETBIT(CFLAG:201, 30)
 			PRINTFORMW 「지금일는 어쩐지 뱃속이 뜨거워서…」
 			PRINTFORMW 「자궁하지만 쑤셔…%CNAME("二人称")%의가 맹렬하게 갖고 싶습니다…」
 			PRINTFORMW 「위험일…답습니다이니까 그…%CNAME("二人称")%에 임신해지고 싶다는 감정이 멈추지 않아서…」
-			PRINTFORMW 인내 할 수 없는 것 같은 녹았다얼굴을 보이면서%타겟을()% %CALLNAME:MASTER%를 초대야 다툰다
+			PRINTFORMW 인내 할 수 없는 것 같은 녹았다얼굴을 보이면서%타겟을()% %마스터를()% 초대야 다툰다
 			PRINTFORM 「진심의 아이 만들기섹스를 부탁합니다%CNAME("二人称")%
 			CALL HEARTMARK_E
 		ENDIF
@@ -923,7 +923,7 @@ ELSEIF MARK:굴복각인 == 2
 	IF MARK:정액각인 >= 4 && EXP_GAIN(17) > 20 && (EXP_GAIN(20) > 50 || EXP_GAIN(68) > 10 || EXP_GAIN(8) + EXP_GAIN(12) > 100)
 		PRINTFORMW 「하아…하아…하아………별일 아니었지요…」
 		PRINTFORMW 「로즈닐이 도우러 오면…기억해 주세요」
-		PRINTFORMW 힘껏 강한척 하는 %CALLNAME:TARGET%의, 그 시선은%CALLNAME:MASTER%를 향하고 있었다…
+		PRINTFORMW 힘껏 강한척 하는 %CALLNAME:TARGET%의, 그 시선은%마스터를()% 향하고 있었다…
 		;5이하なら40％ぐらいで정액중독が上がる
 		IF ABL:정액중독 < 5 && RAND:5 < 2
 			ABL:정액중독 += 1
@@ -4379,7 +4379,7 @@ IF SELECTCOM == 90
 			IF TALENT:연모
 				IF RAND:2 == 0
 					PRINTFORMW 촉촉히 젖고 있다%CALLNAME:TARGET%의 손에 잡아당겨진다…
-					PRINTFORMW 격렬한 쾌락이%CALLNAME:MASTER%를 덮쳤다
+					PRINTFORMW 격렬한 쾌락이%마스터를()% 덮쳤다
 					PRINTFORMW 「인내는 몸에 나빠요, %CNAME("二人称")%읏♪」
 					PRINTFORMW 「소망과 몇 번이라도 할테니까……가고 싶었으면 아무쪼록♪」
 				ELSE
@@ -4424,7 +4424,7 @@ IF SELECTCOM == 90
 					PRINTFORMW %CALLNAME:PLAYER%가 소리를 지르면%타겟을()% 기쁜듯이 미소지어 게다가 격렬하고페니스를 켜기 시작했다
 				ELSE
 					PRINTFORMW 촉촉히 젖고 있다%CALLNAME:TARGET%의 손에 잡아당겨진다…
-					PRINTFORMW 격렬한 쾌락이%CALLNAME:MASTER%를 덮쳤다
+					PRINTFORMW 격렬한 쾌락이%마스터를()% 덮쳤다
 					PRINTFORMW 「인내는 몸에 나빠요, %CNAME("二人称")%읏♪」
 					PRINTFORMW 「소망과 몇 번이라도 할테니까……가고 싶었으면 아무쪼록♪」
 				ENDIF
@@ -4435,7 +4435,7 @@ IF SELECTCOM == 90
 					PRINTFORMW %CALLNAME:TARGET%의 손가락하지만페니스노민감부분을 비빌 때마다%조사처리(CALLNAME:PLAYER,"는")% 페니스를 진동시켰다
 				ELSE
 					PRINTFORMW 촉촉히 젖고 있다%CALLNAME:TARGET%의 손에 잡아당겨진다…
-					PRINTFORMW 격렬한 쾌락이%CALLNAME:MASTER%를 덮쳤다
+					PRINTFORMW 격렬한 쾌락이%마스터를()% 덮쳤다
 					PRINTFORMW 「인내는 몸에 나빠요, %CNAME("二人称")%읏♪」
 					PRINTFORMW 「소망과 몇 번이라도 할테니까……가고 싶었으면 아무쪼록♪」
 				ENDIF
@@ -4569,7 +4569,7 @@ IF SELECTCOM == 91
 					PRINTFORMW %타겟을()% 귀두를 빨아 올리면서민감령입에도 혀를 강압했다. 
 				ELSE
 					PRINTFORMW 촉촉히 젖고, 음미롭게 반짝인다%CALLNAME:TARGET%의 입에 잡아당겨진다…
-					PRINTFORMW 격렬한 쾌락이%CALLNAME:MASTER%를 덮쳤다
+					PRINTFORMW 격렬한 쾌락이%마스터를()% 덮쳤다
 					PRINTFORMW 「쥬루루…응츄…츄풋, 인내는 몸에 나빠요, %CNAME("二人称")%읏♪」
 					PRINTFORMW 「소망과 몇 번이라도 할테니까……쥿, 쥿, 쥬우우우우! 」
 				ENDIF
@@ -4618,7 +4618,7 @@ IF SELECTCOM == 91
 					PRINTFORMW 「%조사처리(CNAME("二人称"),"가")% 기뻐하도록(듯이) 노력할테니까…좀 더 기분 좋아져♪」
 				ELSE
 					PRINTFORML 촉촉히 젖고, 음미롭게 반짝인다%CALLNAME:TARGET%의 입에 잡아당겨진다…
-					PRINTFORMW 격렬한 쾌락이%CALLNAME:MASTER%를 덮쳤다
+					PRINTFORMW 격렬한 쾌락이%마스터를()% 덮쳤다
 					PRINTFORMW 「쥬루루…응츄…츄풋, 인내는 몸에 나빠요, %CNAME("二人称")%읏♪」
 					PRINTFORMW 「소망과 몇 번이라도 할테니까……쥿, 쥿, 쥬우우우우! 」
 				ENDIF
@@ -8247,7 +8247,7 @@ ELSEIF SHOOT("스마타")
 			ELSE
 				PRINTFORMW 「변함 없이 굉장한 양♪…멋집니다…」
 				PRINTFORMW 「다음은 여기에 내 주세요♪」
-				PRINTFORMW %타겟을()% 걸 수 있었다정액를 빨아내면서, 선정적인 모습으로 스스로비렬를 넓혀%CALLNAME:MASTER%를 권하고 있다…
+				PRINTFORMW %타겟을()% 걸 수 있었다정액를 빨아내면서, 선정적인 모습으로 스스로비렬를 넓혀%마스터를()% 권하고 있다…
 			ENDIF
 		;それ以外
 		ELSE
@@ -8885,7 +8885,7 @@ CASE "아침の새댁플레이"
 	;연모
 	IF TALENT:연모
 		IF RAND:3 == 0
-			PRINTFORMW %CALLNAME:MASTER%를 눈치채지 않았다%타겟을()% 뒤로부터 껴안으면, 
+			PRINTFORMW %마스터를()% 눈치채지 않았다%타겟을()% 뒤로부터 껴안으면, 
 			PRINTFORM 에이프런의 틈새로부터%CALLNAME:TARGET%의 
 			IF TALENT:빈유
 				PRINTFORMW 사랑스럽다가슴을더듬었다
