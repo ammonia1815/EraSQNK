@@ -348,7 +348,7 @@ ELSEIF MARK:굴복각인 <= 1
 	ELSEIF CFLAG:462 == 1
 		IF MARK:기분 == 2
 			IF ASSI > -1
-				PRINTFORMW %타겟은()% 기분인 모습으로 %CALLNAME:MASTER%과%CALLNAME:ASSI%에 시선을 보냈다……
+				PRINTFORMW %타겟은()% 기분인 모습으로 %마스터와()%%CALLNAME:ASSI%에 시선을 보냈다……
 			ELSEIF RAND:2 == 0
 				PRINTFORMW %타겟은()% 요염한 빛과 함께 사라졌다……
 			ELSE
@@ -356,7 +356,7 @@ ELSEIF MARK:굴복각인 <= 1
 			ENDIF
 		ELSEIF MARK:기분 == 1
 			IF ASSI > -1
-				PRINTFORMW %타겟은()% 기분인 모습으로 %CALLNAME:MASTER%과%CALLNAME:ASSI%에 시선을 보냈다……
+				PRINTFORMW %타겟은()% 기분인 모습으로 %마스터와()%%CALLNAME:ASSI%에 시선을 보냈다……
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 「어머나……이런 것?」
 			ELSE
@@ -645,7 +645,7 @@ IF SELECTCOM == 0
 		ELSEIF TALENT:연모 && ASSIPLAY == 0 && MARK:굴복각인 == 3
 			PRINTFORM %타겟은()%
 			IF (CHECK_STAIN(STAIN:Ｍ, "Ｐ", "정액", "Ａ", "尿", "촉수") == 0 || TALENT:MASTER:불결무시 || ASSIPLAY) && TEQUIP:재갈 == 0
-				PRINTFORM 눈감아%CALLNAME:MASTER%과
+				PRINTFORM 눈감아%마스터와()%
 				IF PALAM:욕정 < PALAMLV:1
 					PRINTFORM 기대에 춤추는 혀를 얽히게 할 수 있는 만나,
 				ELSEIF RAND:3 == 0

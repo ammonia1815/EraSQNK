@@ -4072,7 +4072,7 @@ IF SELECTCOM == 60
 					PRINTFORML %타겟은()% 주위에 들릴 것 같을 만큼에 소리를 지르고 격렬하게 허리를 구부러지게 하고 있다…
 				ELSEIF RAND:6
 					PRINTFORMW 「좀더, 좀더 찔러! 질퍽질퍽에 휘저어!」
-					PRINTFORMW %타겟은()%%CALLNAME:MASTER%과의 행위를 누군가에게 과시해 있는 것과 같게 흐트러지고 있다…
+					PRINTFORMW %타겟은()%%마스터와()%의 행위를 누군가에게 과시해 있는 것과 같게 흐트러지고 있다…
 				ELSEIF RAND:5
 					PRINTFORMW 「하아, 밖에서, 하면, 기분, 좋아」
 					PRINTFORML %마스터가()% 허리를 조금 쉬게 하면 멍하니로 한 표정을 하고 있다.
@@ -4853,7 +4853,7 @@ IF SELECTCOM == 65
 								PRINTFORML 환희의 미소를 띄우면서%타겟은()%%CALLNAME:MASTER%의 일을 뜨거운 시선으로 보고 있다….
 							ELSE
 								PRINTFORMW 「응…쪽…후핫…♪ 이번은 여기의 입으로, ♪」
-								PRINTFORML %타겟은()%%CALLNAME:MASTER%과의 키스를 즐겨 끝내 하반신에 의식을 집중하기 시작했다…
+								PRINTFORML %타겟은()%%마스터와()%의 키스를 즐겨 끝내 하반신에 의식을 집중하기 시작했다…
 								PRINTFORML 　
 								IF COND("절정", PLAYER) && RAND:2 == 0
 									PRINTFORMW 「아하♪ 끝 부풀어 올라 왔어요∼♪」
@@ -7057,7 +7057,7 @@ ELSEIF SELECTCOM == 134 && TEQUIP:구속 == 0
 			PRINTFORMW 「조금만 더 하고 있어 좋은데…♪」
 		ELSE
 			PRINTFORMW 「또 해주겠지요? 반드시 에요?」
-			PRINTFORMW 눈을 반짝반짝 시켜%타겟은()%%CALLNAME:MASTER%과 무리하게 약속을 주고 받았다….
+			PRINTFORMW 눈을 반짝반짝 시켜%타겟은()%%마스터와()% 무리하게 약속을 주고 받았다….
 		ENDIF
 	;연모
 	ELSEIF TALENT:연모
@@ -8296,7 +8296,7 @@ IF SELECTCOM == 160
 			ELSE
 				PRINTFORM 서늘하게
 			ENDIF
-			PRINTFORMW %CALLNAME:MASTER%과%CALLNAME:ASSI%의 교제를 보고 있다….
+			PRINTFORMW %마스터와()%%CALLNAME:ASSI%의 교제를 보고 있다….
 		;연모＋레즈끼３이상
 		ELSEIF TALENT:연모 && ABL:레즈끼 >= 3
 			IF RAND:3 == 0
@@ -8358,7 +8358,7 @@ IF SELECTCOM == 160
 				ELSE
 					PRINTFORM 아무것도 하지 않고
 				ENDIF
-				PRINTFORMW %CALLNAME:MASTER%과%CALLNAME:ASSI%를 교대로 응시하고 있다
+				PRINTFORMW %마스터와()%%CALLNAME:ASSI%를 교대로 응시하고 있다
 			ELSE
 				PRINTFORMW %타겟은()% 범해지는%CALLNAME:ASSI%를 조용히 보고 있다….
 			ENDIF
@@ -12695,7 +12695,7 @@ CASE "비디오매각失敗"
 	ELSE
 		PRINTFORMW 
 	ENDIF
-	PRINTFORMW 불량재고의 산을 앞에 두고, %CALLNAME:MASTER%과%타겟은()% 머리를 안았다…
+	PRINTFORMW 불량재고의 산을 앞에 두고, %마스터와()%%타겟은()% 머리를 안았다…
 	RETURN 1
 ENDSELECT
 
