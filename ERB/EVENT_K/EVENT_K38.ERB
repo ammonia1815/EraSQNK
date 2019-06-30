@@ -101,7 +101,7 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 	;반발각인Lv3취득してから굴복각인Lv3になった場合
 	IF MARK:반발각인의취득이력 >= 3
 		PRINTFORMW 「분하지만, 생각을 고치지 않을 수 없어요. 당신노손련, 확실한 것이군요…」
-		PRINTFORMW 저항를 계속해 왔다%CALLNAME:TARGET%(이었)였지만, 그얼굴은 홍조 해, 이미 계속 참을 수 없으면%CALLNAME:MASTER%에 기대고 걸려 왔다
+		PRINTFORMW 저항를 계속해 왔다%타겟이었()%지만, 그얼굴은 홍조 해, 이미 계속 참을 수 없으면%CALLNAME:MASTER%에 기대고 걸려 왔다
 		PRINTFORMW 「이제 안돼…인내 따위 할 수 있을 이유 없잖아」
 		PRINTFORMW 「당신하지만 나로 하고 온 것처럼, 나도당신를 좋아하게 시켜 받아요…」
 		PRINTFORMW 「그것이당신의 방식, 무엇일까요？」
@@ -385,7 +385,7 @@ IF STATE("撃沈", MASTER)
 	ELSEIF TALENT:연모
 		PRINTFORMW 「그렇게 너무 한 생각 는 없지만…」
 		PRINTFORMW 「손간이 걸려요♪」
-		PRINTFORMW 이렇게 말하면서도, 희희낙락 하면서%조사처리(CALLNAME:MASTER,"를")% 간호하는 %CALLNAME:TARGET%(이었)였다
+		PRINTFORMW 이렇게 말하면서도, 희희낙락 하면서%조사처리(CALLNAME:MASTER,"를")% 간호하는 %타겟이었()%다
 	;その他
 	ELSE
 		PRINTFORMW 「좀 더 연습하고 싶은 것이지만…」
@@ -3301,7 +3301,7 @@ IF SELECTCOM == 173 && TEQUIP:새댁플레이
 		IF MARK:반발각인 == 3
 			;구속されていない場合
 			IF TEQUIP:구속 == 0
-				PRINTFORMW 에이프런를솔직에 받았다%CALLNAME:TARGET%(이었)였지만, 
+				PRINTFORMW 에이프런를솔직에 받았다%타겟이었()%지만, 
 				PRINTFORMW 눈 깜짝할 순간에 구조로 찢어놀림쓸모 있게 되고 없애 버렸다…
 				PRINTFORMW <에이프런를 잃었습니다>
 				TEQUIP:새댁플레이 = 0
@@ -3326,7 +3326,7 @@ IF SELECTCOM == 173 && TEQUIP:새댁플레이
 		IF MARK:반발각인 == 3
 			;구속されていない場合
 			IF TEQUIP:구속 == 0
-				PRINTFORMW 에이프런를솔직에 받았다%CALLNAME:TARGET%(이었)였지만, 
+				PRINTFORMW 에이프런를솔직에 받았다%타겟이었()%지만, 
 				PRINTFORMW 눈 깜짝할 순간에 구조로 찢어놀림쓸모 있게 되고 없애 버렸다…
 				PRINTFORMW <에이프런를 잃었습니다>
 				TEQUIP:새댁플레이 = 0
