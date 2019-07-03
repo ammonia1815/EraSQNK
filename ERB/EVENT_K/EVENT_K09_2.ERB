@@ -101,12 +101,12 @@ IF GETBIT(CFLAG:201, 0) == 0
 	ABL:순종 = 0
 	ABL:봉사정신 = 1
 
-	PRINTFORMW 이번 소환한%타겟은()% 다른 %NAMES("종족", NO:TARGET)%과는 조금 모색이 차이가 났다
-	PRINTFORMW 「갑작스럽게 이런 곳에 호출해…뭔가요!」
-	PRINTFORMW 딱딱하게 연결된 입가 ,  의사의 강한 듯한 눈동자. 그리고 숨길려고도 하지 않는 오만한 태도
-	PRINTFORMW 그것은 마음이 약하고 겁장이인 %NAMES("종족", NO:TARGET)%라고 하는 종의 특성과는 너무나도 크게 동떨어지고 있었다…
+	PRINTFORMW 이번 소환한 %타겟은()% 다른 %조사처리(NAMES("종족", NO:TARGET),"와")%는 조금 모색이 차이가 났다
+	PRINTFORMW 「갑작스럽게 이런 곳에 소환당해…뭔가요!」
+	PRINTFORMW 딱딱하게 붙은 입술 ,  의지가 강한 듯한 눈동자. 그리고 숨길려고도 하지 않는 오만한 태도
+	PRINTFORMW 그것은 마음이 약하고 겁쟁이인 %NAMES("종족", NO:TARGET)%라고 하는 종의 특성과는 너무나도 크게 동떨어지고 있었다…
 	PRINTFORMW 「당신! 도대체 ,  저를 어떻게 한다고 합니다!」
-	PRINTFORMW %CALLNAME:PLAYER%가 조교에 대해 고하면(자), %타겟은()% 얼굴을 새빨갛게 물들였다
+	PRINTFORMW %CALLNAME:PLAYER%가 조교에 대해 고하자, %타겟은()% 얼굴을 새빨갛게 물들였다
 	PRINTFORMW 떨리는 몸이 그녀의 분노를 웅변에 이야기하고 있다…
 	PRINTFORMW 「이 저를…! 장난치지마! 지금 당장 저를 집에 돌아가 주세요!」
 	PRINTFORMW 마치 귀족과 같이 거만한 언동에 벽쉽다면서도 , %조사처리(CALLNAME:PLAYER,"는")% 조교를 개시하기로 했다
@@ -620,11 +620,11 @@ ELSEIF TALENT:연모
 				RETURN 1
 			;Ｖ빌리져以外が상대
 			CASE 0
-				PRINTFORMW 「무우…사실은 내가 당신의 자고 일어나기를 독점하고 싶었어요에…」
-				PRINTFORMW 「그것을 %CONDS("아침의 상대", MASTER)%에 추월당하다니…」
-				PRINTFORMW %CALLNAME:MASTER%에 몸을 의지하면서, %타겟은()% 분한 듯이뺨을 부풀리고 있다
+				PRINTFORMW 「무우…사실은 내가 당신의 자고 일어나는 것을 독점하고 싶었어요…」
+				PRINTFORMW 「그것을 %CONDS("아침の상대", MASTER)%에 추월당하다니…」
+				PRINTFORMW %CALLNAME:MASTER%에 몸을 의지하면서, %타겟은()% 분한 듯이 뺨을 부풀리고 있다
 				PRINTFORMW 「그렇다면…어떻게 해서든지 만회하지 않으면 안돼요」
-				PRINTFORMW 「,  %CONDS("아침의 상대", MASTER)%에 대해 생각할 수 없게 되는 정도 ,  짜 취해 드려요」
+				PRINTFORMW 「,  %CONDS("아침の상대", MASTER)%에 대해 생각할 수 없게 되는 정도 ,  짜 취해 드려요」
 				RETURN 1
 			ENDSELECT
 		ENDIF
@@ -634,10 +634,10 @@ ELSEIF TALENT:연모
 	IF COND("위험일") && COND("임신가능") && RAND:2 == 0
 		IF RAND:4 == 0
 			PRINTFORMW 「응 ,  당신. 저 ,  실은 갖고 싶은 것이 있습니다…♪」
-			PRINTFORMW 침대에 앉는%CALLNAME:MASTER%에 , %타겟이()% 호소하도록(듯이) 몸을접댄다
-			PRINTFORMW 「알고 있어요군요…내가 오늘 ,  위험일이래…♪」
+			PRINTFORMW 침대에 앉는%CALLNAME:MASTER%에 , %타겟이()% 호소하듯이 몸을 붙인다
+			PRINTFORMW 「알고 있었군요…내가 오늘 ,  위험일이래…♪」
 			PRINTFORMW 「그러니까 ,  저…당신의 아기를 갖고 싶어 어쩔 수 없어요…♪」
-			PRINTFORMW 「넋을 잃는 정도 범해 주어 ,  자궁의 안에 자식을 많이 따라 주어…그래서 당신의 아기를 임신하고 싶습니다의…♪」
+			PRINTFORMW 「넋을 잃는 정도로 범해 줘,  자궁의 안에 자식을 많이 따라 주어…그래서 당신의 아기를 임신하고 싶은거야…♪」
 			PRINTFORMW 단 한숨을%CALLNAME:MASTER%의 귓전에 내뿜어%타겟은()% 추잡한 조르기를 속삭이고 있었다
 			PRINTFORMW 「후후…♪ 그러니까 저라고 진심의 아이 만들기 섹스…해주십시오…♪」
 		ELSEIF RAND:3 == 0
