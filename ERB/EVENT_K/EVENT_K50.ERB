@@ -291,7 +291,7 @@ ELSEIF GETBIT(CFLAG:201, 25) == 0 && (COND("호접지몽") == MASTER || COND("�
 		CFLAG:503 = 0
 		CFLAG:507 = 0
 		DRAWLINE
-		PRINTFORMW 우발적인 충동으로, 몸을 서로 바꿔버린다고 하는 책을 스스로 %CALLNAME:TARGET%과 자신에게 사용한 %CALLNAME:PLAYER%
+		PRINTFORMW 우발적인 충동으로, 몸을 서로 바꿔버린다고 하는 책을 스스로 %타겟과()% 자신에게 사용한 %CALLNAME:PLAYER%
 		PRINTFORMW 방금 전까지만 해도 미심쩍게 생각했던 그 효과를, 지금은 그 몸으로 깨닫게 되었다
 		PRINTFORML 
 		;연모
@@ -1487,7 +1487,7 @@ IF CFLAG:462 > 20 && CONFIG("조교상대변경불가") == 0
 	PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 눈을 뜨자, 그곳은 어슴푸레한 방이었다.
 	PRINTFORMW 하나 밖에 없는 문을 찾아내 천천히 열자, 그곳은 %CALLNAME:TARGET%의 방이었다
 	PRINTFORMW 「아, %CNAME("二人称", "かな")%…다행이야…갑작기 움직이지 않게 되서, 죽어 버린건가 하고 생각했어…」
-	PRINTFORMW 「후후후,  %CNAME("二人称", "かな")%…쭉 쭉, %CALLNAME:TARGET%과 함께 있자 ☆」
+	PRINTFORMW 「후후후,  %CNAME("二人称", "かな")%…쭉 쭉, %타겟과()% 함께 있자 ☆」
 	PRINTFORMW ※당분간 조교 상대를 변경할 수 없게 되었다…
 	FLAG:252 = 1
 ELSE

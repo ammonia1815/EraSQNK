@@ -237,7 +237,7 @@ ELSEIF GETBIT(CFLAG:201, 9) == 0 && TALENT:상사상애
 	PRINTFORMW 기쁜듯이 손발을 탁탁하고 흔드는 행동은 ,  마치 아이 그 자체다
 	PRINTFORMW 평상시부터는 상상도 할 수 없는 Tension 의 높이에 %마스터는()% 걸치는 말을 잃고 있었다
 	PRINTFORMW 「그렇다고는 해도 그 (분)편은 전혀 오지마 이군요…도대체 어떤 것만 대다툴 수 있다--아」
-	PRINTFORMW 갑자기 일어난%CALLNAME:TARGET%과%CALLNAME:MASTER%의 시선이 교착한다
+	PRINTFORMW 갑자기 일어난%타겟과()%%CALLNAME:MASTER%의 시선이 교착한다
 	PRINTFORMW %타겟은()% 작은 상자를 안은 채로, %마스터는()% 방에 잠시 멈춰선 채로 ,  서로 동작을 취하지 못하고에 있었다
 	PRINTFORMW 「개 ,  음음! ……아 ,  어머나! 어, 어느새 계(오)시고 있었는지... 얘기해 주셔도 상관없어요에」
 	PRINTFORMW 방금전까지의 행동이 마치 없었는지와 같이, %타겟은()% 평정을 가장하려 하고 있다
@@ -406,7 +406,7 @@ ELSEIF TALENT:연모 && TALENT:빈유 && TALENT:ASSI:빈유 && GETBIT(CFLAG:201,
 		PRINTFORMW 그 시선은%CALLNAME:ASSI%의 단조로운 앞가슴으로 따라지고 있었다
 		PRINTFORMW 「그 신중하다 유방…그렇게…당신도 가지지 못한 자예요…!」
 		PRINTFORMW 「예…아무것도 말하지 않아도 알겠어요…! 저도 당신의 동료예요…!」
-		PRINTFORMW %마스터를()% 거들떠보지도 않고, %CALLNAME:TARGET%과%CALLNAME:ASSI%는 뜨거운 악수를 주고 받고 있다…
+		PRINTFORMW %마스터를()% 거들떠보지도 않고, %타겟과()%%CALLNAME:ASSI%는 뜨거운 악수를 주고 받고 있다…
 		PRINTFORMW 아무래도 같은 빈유 끼리 ,  감동하는 물건이 있던 것 같다…
 		PRINTFORMW %마스터는()% 두 명이 침착하는 것 기다리는 옆 ,  묵묵히 조교의 준비를 정돈해 갔다
 		CALL SET_CEVENT, "조수会話：빈유"
@@ -1288,7 +1288,7 @@ ELSEIF TALENT:연모 && CFLAG:99
 		IF COND("권속", MASTER) == TARGET
 			IF RAND:2 == 0
 				PRINTFORMW 「후후…오늘도 많이 서로 사랑했어요…♪」
-				PRINTFORMW 서로 가득 차고 충분한 기분안 , %CALLNAME:TARGET%과 그 친족은 화목하게 침대에서 얼싸안고 있었다
+				PRINTFORMW 서로 가득 차고 충분한 기분안 , %타겟과()% 그 친족은 화목하게 침대에서 얼싸안고 있었다
 				PRINTFORMW 「당신도 참 몇번이나꾸중 울어 ,  귀여웠어요…♪」
 				PRINTFORMW 「…쪽…♪ ,  그렇다면은 오늘밤은 함께…잡시다…♪」
 			ELSE
@@ -3440,7 +3440,7 @@ IF SELECTCOM == 6
 				ENDIF
 			ELSE
 				IF RAND:5 == 0
-					PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%과 격렬하게 혀를 얽히게 할 수 있는 있었다…
+					PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %타겟과()% 격렬하게 혀를 얽히게 할 수 있는 있었다…
 					PRINTFORMW 「…♪ 쪽…♪ 쪽♪ ♪ 쪽♪ 쪽♪ ♪」
 					PRINTFORMW %타겟이()%%CALLNAME:PLAYER%의 등뒤에 양손을 돌려 ,  강하게 안아 따라 온다
 					PRINTFORMW 이윽고%타겟이()% 한숨을 흘리면서 입술을 떼어 놓았다…
@@ -7499,7 +7499,7 @@ IF SELECTCOM == 60
 						PRINTFORMW 「이나 …아아…♪ 오늘은 안돼…안됩니다의 ♪」
 						PRINTFORMW 「오늘은 위험한 날이니까 …아기…할 수 있기 쉽어요 …♪」
 						PRINTFORMW 말과는 정반대로%타겟은()% 스스로 허리를 움직여 삽입을 맞이하고 있다
-						PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%과 움직임을 맞추어 질벽을 문질러 말했다
+						PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %타겟과()% 움직임을 맞추어 질벽을 문질러 말했다
 					ELSE
 						PRINTFORMW 「…♪ 아……쪽………♪」
 						PRINTFORMW %CALLNAME:TARGET%의 입술을 키스로 막아, %조사처리(CALLNAME:PLAYER,"는")% 피스톤을 반복해 간다
@@ -15440,7 +15440,7 @@ IF SELECTCOM == 120
 					PRINTFORMW 「후아아♪ 지금,  큐는♪ 잖아뭐제한 표지 쪽자리수등…다-째,  틀려♪」
 				ELSE
 					PRINTFORMW 「흐응♪ 쪽♪ 쪽♪ ,  쪽우웃♪」
-					PRINTFORMW 서로 허리를 흔들어 어지럽히면서, %CALLNAME:TARGET%과%조사처리(CALLNAME:PLAYER,"는")% 입술을 서로 탐내고
+					PRINTFORMW 서로 허리를 흔들어 어지럽히면서, %타겟과()%%조사처리(CALLNAME:PLAYER,"는")% 입술을 서로 탐내고
 					PRINTFORMW 「♪ ,  쪽,  ♪ 으응♪」
 					PRINTFORMW 키스에 열중하고는 있지만, %타겟은()% 질중의 민감한 곳을 정확하게 계속 공격하고 있다
 					PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 스스로의 허리를 띄워%타겟을()% 받아들이면서 ,  혀를 얽히게 할 수 있는 계속했다
@@ -19095,7 +19095,7 @@ IF SELECTCOM == 264
 			PRINTFORMW 「개 ,  즉…그…당신은…저와…」
 			PRINTFORMW 「와…「아이 만들기 섹스」를 하고 싶은 것인지…라고 하는 것이예요…」
 			PRINTFORMW 뺨이 수치에 물들인%타겟이()% ,  스러질 것 같은 소리로 물어 봐 온다
-			PRINTFORMW 그런%CALLNAME:TARGET%과는 대조적으로, %조사처리(CALLNAME:PLAYER,"는")% 침착한 모습(상태)로 수긍해 돌려주었다
+			PRINTFORMW 그런%타겟과()%는 대조적으로, %조사처리(CALLNAME:PLAYER,"는")% 침착한 모습(상태)로 수긍해 돌려주었다
 			PRINTFORMW 「아…♪」
 			PRINTFORMW 「그럼…그…그런 것이라면…저도 문제 없어요…♪」
 			PRINTFORMW 「,  거기에…저도…당신과의 아이가…갖고 싶으며…♪」
@@ -23070,7 +23070,7 @@ ELSEIF SHOOT("Ｖ내사정")
 								PRINTFORMW 사정을 질내에서 받으면서%타겟이()% 넋을 잃고 한 소리를 흘려 간다
 								PRINTFORMW 「질 안에 나오는 것은…어째서 이렇게 기분 좋아서…행복하게 될까…♪」
 								PRINTFORMW 「'아앙…♪ 너무 기뻐 보지가 꼭 죄여 ,  조금 정액이 흘러넘쳐 버렸어요…♪」
-								PRINTFORMW 보면 확실히, %CALLNAME:TARGET%과의 접합부로부터 백탁한 정액이 넘쳐 나오고 있었다
+								PRINTFORMW 보면 확실히, %타겟과()%의 접합부로부터 백탁한 정액이 넘쳐 나오고 있었다
 								PRINTFORMW 「후후…♪ 흘러넘친 만큼 이상으로 ,  다시 따라 주셔요…♪」
 							ELSEIF RAND:2 == 0
 								PRINTFORMW 「'아앙……후우……하아…♪」
@@ -25701,7 +25701,7 @@ RETURN 1
 	PRINTFORMW 살짝 입을 삐죽거리면서, %타겟이()% 부끄러운 듯이 눈을 내리깔았다
 	PRINTFORMW 그런 창피한 듯이 얼굴을 붉히는 그 모습은, 만난지 얼마 안 된 때를 생각하게 했다.
 	PRINTFORMW 「뭐, 아무튼…그 만큼 요구하시는 것도…싫지만은 않지만요」
-	PRINTFORMW %CALLNAME:TARGET%과 처음으로 만났을 무렵부터,  이미 무수한 시간이 지나고 있었다
+	PRINTFORMW %타겟과()% 처음으로 만났을 무렵부터,  이미 무수한 시간이 지나고 있었다
 	PRINTFORMW 그럼에도 관계없이 %CALLNAME:TARGET%의 아름다움은 전혀 퇴색되지 않았다.
 	PRINTFORMW 오히려 수많은 교류를 거쳐서 보다 아름답고, 보다 음란하게 변모하고 있었던 것이다.
 	PRINTFORMW 「무슨 일이 있으셨나요?」

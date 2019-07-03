@@ -224,7 +224,7 @@ ELSEIF NO:ASSI == 31
 			PRINTFORMW 이것이 몽마의 히어로 놀이인가……
 		;それ以外
 		ELSE
-			PRINTFORMW %CALLNAME:TARGET%과%CALLNAME:ASSI%는 침대의 위로 서로 비비고
+			PRINTFORMW %타겟과()%%CALLNAME:ASSI%는 침대의 위로 서로 비비고
 			PRINTFORMW 「~들 텐타크루랏슈~」
 			PRINTFORMW 「원∼,  이것은 정액 낼 수 있어? 」
 			PRINTFORMW 「어떨까요? 레벨업 하면 낼 수 있는 것일까?」
@@ -504,7 +504,7 @@ ELSEIF MARK:굴복각인 == 2
 	ELSE
 		PRINTFORMW %타겟은()% 자신의 하반신을 봐 무엇인가 생각하고 있는 것 같다
 		PRINTFORMW 「……아 ,  %CNAME("二人称", "かな")%. 으응 ,  아무것도 아냐」
-		PRINTFORMW 기분탓인가 평상시보다도%CALLNAME:TARGET%과의 거리를 느꼈다
+		PRINTFORMW 기분탓인가 평상시보다도%타겟과()%의 거리를 느꼈다
 	ENDIF
 ;굴복각인Lv3＋연모無し
 ELSEIF MARK:굴복각인 == 3 && TALENT:연모 == 0
@@ -564,7 +564,7 @@ ELSEIF MARK:굴복각인 == 3 && TALENT:연모 == 0
 		PRINTFORMW %CALLNAME:TARGET%의 시선이 음란한<하다)…. %조사처리(CALLNAME:PLAYER,"는")% 위험을 느낌줄을 풀어 주었다
 		EXP:조수경험 += 20
 	ELSEIF RAND:2 == 0
-		PRINTFORMW 「무드 업」을%CALLNAME:TARGET%과 공부했다
+		PRINTFORMW 「무드 업」을%타겟과()% 공부했다
 		PRINTFORMW 「그럼 ,  여자아이는 무드가 높은 것이 예민해서」
 		PRINTFORMW 「남자보다 무드에 좌우되기 쉬워?」
 		PRINTFORMW 응응 , 라고 당신은 수긍했다
@@ -572,10 +572,10 @@ ELSEIF MARK:굴복각인 == 3 && TALENT:연모 == 0
 		PRINTFORMW 
 		PRINTFORMW  …….
 		PRINTFORMW 「반드시 ,  한가운데 정도지요!」
-		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 묘하게 납득하면(자), %CALLNAME:TARGET%과 실전을 시작하기로 했다
+		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 묘하게 납득하면(자), %타겟과()% 실전을 시작하기로 했다
 		EXP:조수경험 += 10
 	ELSE
-		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 「구음」을%CALLNAME:TARGET%과 공부하기로 했다
+		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 「구음」을%타겟과()% 공부하기로 했다
 		PRINTFORMW 바이브래이터를 내미면(자) ,  빨아 보도록(듯이)%CALLNAME:TARGET%에 명령했다…
 		PRINTFORMW 「%CNAME("一人称")%몇시라도 연습하고 있으니 ,  반드시 제대로 한다고 생각한다♪」
 		PRINTFORMW %타겟은()% 윤기 나는 바이브래이터의 ,  빛뒤를 혀끝에서 살살 빨면서
@@ -612,7 +612,7 @@ ELSEIF TALENT:연모
 			PRINTFORMW 「이나,  이제(벌써)…낯간지러워♪」
 		ENDIF
 	ELSEIF RAND:7 == 0
-		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 「구음」을%CALLNAME:TARGET%과 공부하기로 했다
+		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 「구음」을%타겟과()% 공부하기로 했다
 		PRINTFORMW 바이브래이터를 내미면(자) ,  빨아 보도록(듯이)%CALLNAME:TARGET%에 전했다…
 		PRINTFORMW 「%CNAME("一人称")%몇시라도 연습하고 있으니 ,  반드시 제대로 한다고 생각한다!」
 		PRINTFORMW %타겟은()% 윤기 나는 바이브래이터의 ,  빛뒤를 혀끝에서 살살 빨면서
@@ -663,7 +663,7 @@ ELSEIF TALENT:연모
 		PRINTFORMW 「%CNAME("一人称")%로 가득 기분이 좋아져서 갖고 싶은거야…♪」
 		PRINTFORMW 「%CNAME("二人称", "かな")%가…텅 비게 될 때까지 짜 준다♪」
 		PRINTFORMW 「오늘은 %조사처리(CNAME("一人称"),"가")% %CNAME("二人称", "かな")%를 ,  나비 교사라고 줄꺼야♪」
-		PRINTFORMW %CALLNAME:TARGET%과%조사처리(CALLNAME:PLAYER,"는")% 상대를 욕정시키는 말을 공부하고 있다…
+		PRINTFORMW %타겟과()%%조사처리(CALLNAME:PLAYER,"는")% 상대를 욕정시키는 말을 공부하고 있다…
 		PRINTFORMW 「-뭔가 달라요군요 …%CNAME("二人称", "かな")%표본 보이면 좋겠다」
 		PRINTFORMW 
 		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %타겟을()% 밀어 넘어뜨리면(자) 뺨에 키스를 한 후
@@ -745,7 +745,7 @@ IF STATE("撃沈", PLAYER)
 					IF RAND:3 == 0
 						PRINTFORMW 줄무늬들의 속옷이 놓여져 있다
 					ELSEIF RAND:2 == 0
-						PRINTFORMW %CALLNAME:TARGET%과 갖춤의 속옷이 놓여져 있다
+						PRINTFORMW %타겟과()% 갖춤의 속옷이 놓여져 있다
 					ELSE
 						PRINTFORMW 척 척의 속옷이 놓여져 있다
 					ENDIF
@@ -3494,7 +3494,7 @@ IF SELECTCOM == 67
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 「기분이 좋아,  %CNAME("二人称", "かな")%…♪」
 				PRINTFORMW 「떨리고 있는…슬슬 갈 것 같아…? ,  좋아,  %CNAME("一人称")%의 일은 좋기 때문에 전부 안에 줬으면해♪」
-				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%과 함께가 좋은 것이라 귓전으로 속삭임 있었다
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%타겟과()% 함께가 좋은 것이라 귓전으로 속삭임 있었다
 				PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% %CNAME("二人称", "かな")%의 그러한 ,  상냥한 곳 정말 좋아해요…」
 				PRINTFORMW 「……%CNAME("二人称", "かな")%함께 이 와…♪」
 			ELSE
@@ -6787,7 +6787,7 @@ CASE "조교후섹스"
 		PRINTFORMW 「%CNAME("一人称")%도 %CNAME("二人称", "かな")%의 하고 싶은 것 ,  함께 하고 싶다…」
 		PRINTFORML 
 		PRINTFORMW 정말로 마무리(결정타)였다…
-		PRINTFORMW 결국%조사처리(CALLNAME:PLAYER,"는")% 시간이 허락하는 한%CALLNAME:TARGET%과 함께 보냈다
+		PRINTFORMW 결국%조사처리(CALLNAME:PLAYER,"는")% 시간이 허락하는 한%타겟과()% 함께 보냈다
 	;V감각Lv4이상
 	ELSEIF ABL:Ｖ감각 >= 4
 		PRINTFORMW 「하아……하아……」
@@ -7340,7 +7340,7 @@ PRINTFORMW …앞으로…후…데이트도 하고 싶은♪…물론 일도 �
 DRAWLINE
 PRINTFORMW 조련사와 노예도 아닌 ,  단순한 연인도 아니면 ,  일 동료도 아니다
 PRINTFORMW 「함께 있고 싶었기 때문에 ,  함께 있는 관계」
-PRINTFORMW 그것이%CALLNAME:TARGET%과%조사처리(CALLNAME:PLAYER,"가")% 낼 수 있었던 대답.
+PRINTFORMW 그것이%타겟과()%%조사처리(CALLNAME:PLAYER,"가")% 낼 수 있었던 대답.
 PRINTFORML 
 PRINTFORMW %CALLNAME:PLAYER%의 이야기는 아직도 계속되어?
 
