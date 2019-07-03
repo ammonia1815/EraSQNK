@@ -62,7 +62,7 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 	PRINTFORMW 「……나에게…저것……하세요」
 	PRINTFORMW 「…그, 그건 말하면 저것이야！」
 	PRINTFORMW 「……이제(벌써) 바봇！빨리 가게 해 주세요라고 말하고 있는거야！」
-	PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%타겟을()% 초조하게 하면서, 침대의 (분)편에발를 진행시켰다.
+	PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%타겟을()% 초조하게 하면서, 침대의 (분)편에발을 진행시켰다.
 	SETBIT CFLAG:201, 3
 	RETURN 1
 
@@ -74,7 +74,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	PRINTFORMW 「…어째서는,……아, 너가 없으면 외로운거야」
 	PRINTFORMW 「벼, 별로 너의 일을 좋아한다던가가 아니고, 다만 외로운 것뿐이니까！」
 	PRINTFORMW 「착각 하지 말아줘――」
-	PRINTFORMW %CALLNAME:MASTER%의입청구서로 그녀의 말은 차단해졌다.
+	PRINTFORMW %CALLNAME:MASTER%의입맞춤로 그녀의 말은 차단해졌다.
 	PRINTFORMW 「푸하･･････이제(벌써) 바봇」
 	SETBIT CFLAG:201, 4
 	RETURN 1
@@ -300,11 +300,11 @@ IF SELECTCOM == 0
 		;연모+미약
 		IF TALENT:연모 && TEQUIP:미약
 			PRINTFORMW 「응～읏, 응응～읏♪」
-			PRINTFORMW %CALLNAME:TARGET%의입를 막으면서 그 신체를애무해 주면,%타겟은()% 신체를 뛰게 한 계속하고 있다.
+			PRINTFORMW %CALLNAME:TARGET%의입을 막으면서 그 신체를애무해 주면,%타겟은()% 신체를 뛰게 한 계속하고 있다.
 		;미약
 		ELSEIF TEQUIP:미약
 			PRINTFORMW 「응읏, 후우우읏！？」
-			PRINTFORMW %CALLNAME:PLAYER%하지만입청구서를 하면서 신체를애무그러자,%타겟은()% 오슬오슬 신체를 진동시켰다.
+			PRINTFORMW %CALLNAME:PLAYER%하지만입맞춤을 하면서 신체를애무그러자,%타겟은()% 오슬오슬 신체를 진동시켰다.
 		;연모
 		ELSEIF TALENT:연모
 			PRINTFORMW 「읏훗, 하믓♪」
@@ -312,11 +312,11 @@ IF SELECTCOM == 0
 		;굴복각인Lv2이상
 		ELSEIF MARK:굴복각인 >= 2
 			PRINTFORMW 「응아･･････」
-			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%에무리해입청구서를 했다.
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%에무리해입맞춤을 했다.
 		;それ以外
 		ELSE
 			PRINTFORMW 「응므우･･････！」
-			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%에무리해입청구서를 했다.
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%에무리해입맞춤을 했다.
 			PRINTFORMW 「…떼어 놓으, 세요」
 		ENDIF
 			CFLAG:221 = 1
@@ -414,7 +414,7 @@ IF SELECTCOM == 1 && TEQUIP:수치플레이 == 0
 			IF TALENT:연모 && TEQUIP:미약
 				PRINTFORMW 「이제(벌써)…인내 할 수 없는거야…읏」
 				PRINTFORMW 「빠세요, 나의 여기. 기분 좋게 하세요！」
-				PRINTFORMW %CALLNAME:PLAYER%하지만%CALLNAME:TARGET%의 비밀스런 장소에입를 붙이면 그것만으로 가볍게 가 버린 것 같고 가볍게 몸을 진동시킨다…
+				PRINTFORMW %CALLNAME:PLAYER%하지만%CALLNAME:TARGET%의 비밀스런 장소에입을 붙이면 그것만으로 가볍게 가 버린 것 같고 가볍게 몸을 진동시킨다…
 				PRINTFORMW 「후아아앗…굉장하다아…」
 			;미약
 			ELSEIF TEQUIP:미약
@@ -924,7 +924,7 @@ IF SELECTCOM == 32
 		;연모
 		IF TALENT:연모
 			PRINTFORMW 「…응읏, 이, 이런 건의로 털보다 너의 손가락이…」
-			PRINTFORMW %타겟은()% 입를 헛디딘 것 같아, 곧바로 얼굴을 붉게 하면서 「착각 하지 않고군요」라고 붙어라발했다.
+			PRINTFORMW %타겟은()% 입을 헛디딘 것 같아, 곧바로 얼굴을 붉게 하면서 「착각 하지 않고군요」라고 붙어라발했다.
 		;굴복각인Lv3
 		ELSEIF MARK:굴복각인 == 3
 			PRINTFORMW %CALLNAME:PLAYER%하지만전기안마기를 %CALLNAME:TARGET%에 접근하면 스스로 허리를 주어 왔다.
@@ -1359,7 +1359,7 @@ IF SELECTCOM == 91
 		;봉사정신Lv3이상
 		IF ABL:봉사정신 >= 3
 			PRINTFORMW 「…턱으로부터손, 떼어 놓으세요」
-			PRINTFORMW %CALLNAME:PLAYER%하지만손를 떼어 놓으면%타겟은()% 자유롭게 되었다입를 구사해봉사해 왔다.
+			PRINTFORMW %CALLNAME:PLAYER%하지만손를 떼어 놓으면%타겟은()% 자유롭게 되었다입을 구사해봉사해 왔다.
 		;それ以外
 		ELSE
 			PRINTFORMW 「누가 너 따위에 명령되어…무리에 하면 물어 주기 때문에」
