@@ -174,7 +174,7 @@ ELSEIF GETBIT(CFLAG:201, 9) == 0 && TALENT:상사상애
 	PRINTFORML 「들～라라등～들～♪」
 	PRINTFORMW （이렇게 울렁울렁 하고 있는 것은 언제 이래지요…♪）
 	PRINTFORMW 「아아…너무 행복해 기다릴 수 없다…♪이런일하지만 쭉 계속되도록…」
-	PRINTFORMW %CALLNAME:PLAYER%가 대어 준 약손가락노반지를 볼 때마다 몸을 파닥파닥 시켜 버린다
+	PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 대어 준 약손가락노반지를 볼 때마다 몸을 파닥파닥 시켜 버린다
 	PRINTFORML 「♪～～～」
 	PRINTFORMW %CALLNAME:TARGET%의 방의 근처까지 오면 노랫소리가 들려 온다…
 	PRINTFORMW 상당히 기다릴 수 없었던 것일까 문을 연 순간에 뛰어 지쳐 버렸다
@@ -541,7 +541,7 @@ IF MARK:반발각인 >= 2 && MARK:용간각인 == 0
 		PRINTFORMW 「…………! ! 」
 		PRINTFORMW %타겟을()% %조사처리(CALLNAME:PLAYER,"와")% 눈을 맞추지 않으려고 뒤를 향해 움츠러들고 있다
 		PRINTFORMW 「아니…오지맛! ! 오지 말아요! ! ! 」
-		PRINTFORMW %CALLNAME:PLAYER%가 접근하려고 하면, %타겟을()% 손적중하는대로 물건을 던져 접근하게 하지 않으려고 했다
+		PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 접근하려고 하면, %타겟을()% 손적중하는대로 물건을 던져 접근하게 하지 않으려고 했다
 		PRINTFORMW 그런데도 억지로 가까워지면, %CALLNAME:TARGET%의 손하지만 멈추었다…
 		PRINTFORMW 「%CNAME("二人称")%에 이 표를 새겨지고 나서%CNAME("一人称")%…%CNAME("一人称")%…! 」
 		PRINTFORMW 그 배에 새겨졌다정액각인의 욱신거림이, 눈앞을 감돌게 하는 수컷냄새에 의해 멈추는 것이
@@ -732,13 +732,13 @@ ELSEIF MARK:굴복각인 == 2
 ELSEIF MARK:굴복각인 == 3
 	IF MARK:정액각인 >= 4 && ABL:정액중독 >= 5
 		PRINTFORMW （아직인 것 로즈닐…？빨리 도우러 와요…읏! 그렇지 않으면%CNAME("一人称")%…）
-		PRINTFORMW 방의 문이 열려%CALLNAME:PLAYER%가 들어 온다
+		PRINTFORMW 방의 문이 열려%조사처리(CALLNAME:PLAYER,"가")% 들어 온다
 		PRINTFORMW %타겟을()% 가장 사랑하는 사람이 왔다라는 듯이자궁의 안쪽이 쿨쿨 하고 있는 것을 느끼고 있다
 		PRINTFORMW （그렇지 않으면%CNAME("一人称")%…이 사람에게 떨어뜨려져 버린닷）
 	ELSEIF MARK:정액각인 >= 2 && ABL:정액중독 >= 5
 		PRINTFORMW 「이 표를 조각해지고 나서, 저 녀석을 볼 때마다 몸의 안쪽이 쑤시는 것을 멈출 수 없다…」
 		PRINTFORMW 「그것도 이것도 저 녀석의 탓…빨리 도우러 와요……」
-		PRINTFORMW 방의 문이 열려, 안에%CALLNAME:PLAYER%가 들어 온다
+		PRINTFORMW 방의 문이 열려, 안에%조사처리(CALLNAME:PLAYER,"가")% 들어 온다
 		PRINTFORMW 「%CALLNAME:PLAYER%…적당히 하는 것이 좋아요…」
 		PRINTFORMW 「로즈닐이 도와 준다…그렇게 되면 정말로 끝이니까」
 	ELSE
@@ -2595,7 +2595,7 @@ IF SELECTCOM == 32
 			IF RAND:2 == 0
 				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 몸부림쳐 안마사로부터 멀어지려고 하는 %CALLNAME:TARGET%의 음핵를 집요하게 노린다
 				PRINTFORMW 「앗…응읏, 얏, 그만두어엇」
-				PRINTFORMW %CALLNAME:PLAYER%가 스윗치를 강으로 바꾸어%CALLNAME:TARGET%의 음핵에 강압하면 참지 못하고꾸중 미친다
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 스윗치를 강으로 바꾸어%CALLNAME:TARGET%의 음핵에 강압하면 참지 못하고꾸중 미친다
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 「와, 이렇게 굉장한 것…견딜 수 없게 되어 버린다♪」
 			ELSE
@@ -3546,7 +3546,7 @@ IF SELECTCOM == 65
 							PRINTFORMW 「%CNAME("一人称")%에 이식하고로부터 범해져 기분이 좋지요？」
 							PRINTFORMW 「그렇지 않으면 이렇게 딱딱 단단하게 안 되는 거네, 어때？」
 							PRINTFORMW 「대답해 주면 좀 더 짜 주기 때문에…라고, 앗, 오, 도 잘라 찌르는 것 안돼에…♪」
-							PRINTFORMW %CALLNAME:PLAYER%가 아래로부터 밀어올려 주면%타겟을()% 교성을 주었다
+							PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 아래로부터 밀어올려 주면%타겟을()% 교성을 주었다
 						ELSE
 							PRINTFORM 「아앗♪…좋다♪…%CNAME("二人称")%의 자지…기분이 좋아요
 							CALL HEARTMARK_E
@@ -4421,7 +4421,7 @@ IF SELECTCOM == 90
 					PRINTFORMW %CALLNAME:TARGET%의 손가락하지만페니스노민감부분을 적확하게 스침, %조사처리(CALLNAME:PLAYER,"는")% 그 테크닉에페니스를 진동시켰다
 				ELSEIF RAND:2 == 0
 					PRINTFORMW 「아, 사랑스러운 소리…기분 좋았던 것이군요…매우 기쁩니다♪좀 더 기분 좋게 될 수 있도록(듯이) 노력하겠습니다」
-					PRINTFORMW %CALLNAME:PLAYER%가 소리를 지르면%타겟을()% 기쁜듯이 미소지어 게다가 격렬하고페니스를 켜기 시작했다
+					PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 소리를 지르면%타겟을()% 기쁜듯이 미소지어 게다가 격렬하고페니스를 켜기 시작했다
 				ELSE
 					PRINTFORMW 촉촉히 젖고 있다%CALLNAME:TARGET%의 손에 잡아당겨진다…
 					PRINTFORMW 격렬한 쾌락이%마스터를()% 덮쳤다
@@ -5084,7 +5084,7 @@ IF SELECTCOM == 130
 		ELSEIF TALENT:연모 && ABL:마조끼 >= 5
 			IF INSERT("인서트")
 				PRINTFORMW 「햣…아앗…응긋……%CNAME("二人称")%(이)가 넣고 있는 때에 얻어맞는다…읏…좋앗♪」
-				PRINTFORMW 그 말대로, %CALLNAME:PLAYER%가 두드릴 때마다%CALLNAME:TARGET%의 안은페니스를 꾸욱 단단히 조여 왔다…
+				PRINTFORMW 그 말대로, %조사처리(CALLNAME:PLAYER,"가")% 두드릴 때마다%CALLNAME:TARGET%의 안은페니스를 꾸욱 단단히 조여 왔다…
 			ELSE
 				PRINTFORMW 「앗…우웃…히잉♪ 엉덩이를얻어맞은 것 뿐으로 느끼게 되어 버렸다아…아읏♪」
 			ENDIF
@@ -7470,7 +7470,7 @@ IF SELECTCOM == 264
 		;それ以外
 		ELSE
 			PRINTFORMW 「그것은 무엇？」
-			PRINTFORMW %CALLNAME:PLAYER%가 설명하면%CALLNAME:TARGET%의 얼굴하지만파랑…
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 설명하면%CALLNAME:TARGET%의 얼굴하지만파랑…
 			PRINTFORMW 「야, 그만두어…다른 것이라면 뭐든지 하기 때문에…」
 			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 저항하는 %타겟을()% 억눌러무리시리 먹였다…
 		ENDIF
@@ -8732,7 +8732,7 @@ CASE "強制종료"
 		PRINTFORMW 「…이제 한계야？」
 	ELSE 
 		PRINTFORMW 「%조사처리(CNAME("一人称"),"는")% %CALLNAME:PLAYER%의 물건에 뭔가 안 돼요」
-		PRINTFORMW 「그러니까…%CALLNAME:PLAYER%가 그 기분이라면%조사처리(CNAME("一人称"),"가")% %조사처리(CALLNAME:PLAYER,"를")% 굴복시켜 준다」
+		PRINTFORMW 「그러니까…%조사처리(CALLNAME:PLAYER,"가")% 그 기분이라면%조사처리(CNAME("一人称"),"가")% %조사처리(CALLNAME:PLAYER,"를")% 굴복시켜 준다」
 		PRINTFORMW 「절대로 그의 곳으로 돌아가기 위해서(때문에)도………」
 	ENDIF
 CASE "황홀から復帰"

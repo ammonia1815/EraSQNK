@@ -242,7 +242,7 @@ ELSEIF GETBIT(CFLAG:201, 1) == 0 && MARK:굴복각인 == 1
 ;굴복각인Lv2
 ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2
 	PRINTFORML 「…오늘도 ,  나를 조교하는 거야?」
-	PRINTFORMW %CALLNAME:PLAYER%가 조교의 준비를 하고 있으면(자) ,  갑자기%타겟이()% 말을 건네 왔다.
+	PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 조교의 준비를 하고 있으면(자) ,  갑자기%타겟이()% 말을 건네 왔다.
 	PRINTFORML 놀란%조사처리(CALLNAME:PLAYER,"는")% , %CALLNAME:TARGET%에 말할 수 있었는지? (이)라고 물었다.
 	PRINTFORML 「예 ,  보통으로 말할 수 있어요. 내가 노래해 있었던 것은  (듣)묻고 있었지요?」
 	PRINTFORMW 「노래를 부를 수 있는데 말할 수 없다고 (일)것은 ,  보통은 없다고 생각하는데…」
@@ -568,7 +568,7 @@ ELSEIF MARK:굴복각인 == 0
 	PRINTFORML 「♪~~~」
 	PRINTFORML %CALLNAME:TARGET%의 노랫소리가 들린다. 그러나…
 	PRINTFORML 「………」
-	PRINTFORML %CALLNAME:PLAYER%가 문을 열면(자) ,  그 노래는 끝났다.
+	PRINTFORML %조사처리(CALLNAME:PLAYER,"가")% 문을 열면(자) ,  그 노래는 끝났다.
 	IF RAND:2 == 0
 		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 입다문 채로의%CALLNAME:TARGET%에 조교를 개시했다.
 	ELSE
@@ -578,13 +578,13 @@ ELSEIF MARK:굴복각인 == 0
 ELSEIF MARK:굴복각인 == 1
 	PRINTFORML 「♪~~~」
 	PRINTFORML %CALLNAME:TARGET%의 노랫소리가 들린다.
-	PRINTFORML %CALLNAME:PLAYER%가 문을 노크 하면(자) ,  가성은 그쳤다.
+	PRINTFORML %조사처리(CALLNAME:PLAYER,"가")% 문을 노크 하면(자) ,  가성은 그쳤다.
 	IF RAND:2 == 0
 		PRINTFORML 「………」
 		PRINTFORML %타겟은()% 언제나 당연 무언인 채로 ,  조교의 준비를 보고 있다.
 		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 조교를 개시했다.
 	ELSE
-		PRINTFORML %CALLNAME:PLAYER%가 문을 열면(자), %타겟은()% 침대 위에서 이쪽을 가만히 보고 있다.
+		PRINTFORML %조사처리(CALLNAME:PLAYER,"가")% 문을 열면(자), %타겟은()% 침대 위에서 이쪽을 가만히 보고 있다.
 		PRINTFORML 「………」
 		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 조교를 개시했다.
 	ENDIF
@@ -592,7 +592,7 @@ ELSEIF MARK:굴복각인 == 1
 ELSEIF MARK:굴복각인 == 2
 	PRINTFORMW 「♪~~~」
 	PRINTFORML %CALLNAME:TARGET%의 아름다운 노랫소리가 들린다.
-	PRINTFORML %CALLNAME:PLAYER%가 문을 열면(자), %타겟은()% 노래를 그만둬 ,  이쪽을 향했다.
+	PRINTFORML %조사처리(CALLNAME:PLAYER,"가")% 문을 열면(자), %타겟은()% 노래를 그만둬 ,  이쪽을 향했다.
 	PRINTFORM 「기다리고 있었어.
 	IF RAND:3 == 0
 		PRINTFORMW 오늘도 능숙하게 해…」
@@ -608,7 +608,7 @@ ELSEIF MARK:굴복각인 == 2
 ELSEIF MARK:굴복각인 == 3 && TALENT:연모 == 0
 	PRINTFORMW 「♪~~~」
 	PRINTFORML %CALLNAME:TARGET%의 아름다운 노랫소리가 들린다.
-	PRINTFORMW %CALLNAME:PLAYER%가 문을 열면(자), %타겟은()% 노래를 그만둬 ,  뺨을 붉히면서 이쪽을 향했다.
+	PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 문을 열면(자), %타겟은()% 노래를 그만둬 ,  뺨을 붉히면서 이쪽을 향했다.
 	IF RAND:3 == 0
 		PRINTFORMW (…시선이 마주쳤을 뿐인데 %CNAME("一人称")%…무엇인가…)
 		PRINTFORMW %타겟은()% 붉은 뺨에 양손을 수신자명 무늬 이쪽을 응시하고 있다
@@ -713,7 +713,7 @@ ELSEIF TALENT:연모
 			PRINTFORMW 「%CNAME("二人称")%에 대해서 생각해 노래하고 있으면(자) 참을 수 없게 되어 버렸어…많이 사랑해…」
 		;수槽というよりプールのふちで座ってという感じのイメージ
 		ELSEIF RAND:4 == 0
-			PRINTFORML %CALLNAME:PLAYER%가 문을 열면(자)%타겟은()% 수조에 앉아 이쪽을 기다리고 있었다
+			PRINTFORML %조사처리(CALLNAME:PLAYER,"가")% 문을 열면(자)%타겟은()% 수조에 앉아 이쪽을 기다리고 있었다
 			PRINTFORMW 「조금 기다려, 지금까지 헤엄치고 있었어.…아, 모처럼이니까%조사처리(CNAME("一人称"),"를")% 배트까지 데려가 주지 않는다」
 			PRINTFORML 돌연 생각난 로맨틱한 시추에이션에 눈을 빛냄%타겟은()% %조사처리(CALLNAME:PLAYER,"를")% 응시한다
 			PRINTFORM 그런 기대로 가득 차고 흘러넘치는 모습에 거절하는 것 따위 하지 못하고%조사처리(CALLNAME:PLAYER,"는")%
@@ -731,7 +731,7 @@ ELSEIF TALENT:연모
 			ENDIF
 		ELSEIF RAND:3 == 0
 			PRINTFORML 「오늘은 ,  시작하기 전에 %CNAME("一人称")%로부터 %CNAME("二人称")%에의 노래를 들어줬으면 해…」
-			PRINTFORMW %CALLNAME:PLAYER%가 수긍하면(자)%타겟은()% 이쪽을 응시하면서 노래하기 시작했다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 수긍하면(자)%타겟은()% 이쪽을 응시하면서 노래하기 시작했다
 			PRINTFORML 「♪~~♪~~」
 			PRINTFORMW 아름다운 노랫소리에 듣고 있는 동안에 점점%CALLNAME:PLAYER%의 몸이  뜨거워져…
 			IF RAND:2 == 0
@@ -754,7 +754,7 @@ ELSEIF TALENT:연모
 		ELSE
 			PRINTFORML 「♪~~~」
 			PRINTFORML %CALLNAME:TARGET%의 아름다운 노랫소리가 들린다.
-			PRINTFORML %CALLNAME:PLAYER%가 방에 들어가면(자), %타겟은()% 노래를 그만둬 ,  행복한 웃는 얼굴로 마중나가 주었다
+			PRINTFORML %조사처리(CALLNAME:PLAYER,"가")% 방에 들어가면(자), %타겟은()% 노래를 그만둬 ,  행복한 웃는 얼굴로 마중나가 주었다
 			PRINTFORMW 「후훗 ,  기다리고 있었어. 오늘도 가득 서로 사랑해요」
 		ENDIF
 	ENDIF
@@ -952,7 +952,7 @@ ELSEIF TALENT:연모
 		PRINTFORMW 그대로 당분간의 사이%타겟은()%%CALLNAME:PLAYER%의 가슴에 얼굴을 묻고 있었다
 	ELSE
 		PRINTFORML 「아 ,  아직 가지 말고…%CNAME("一人称")%의 노래 ,  들어 가주지 않겠어…?」
-		PRINTFORMW %CALLNAME:PLAYER%가 수긍하면(자)%타겟은()% 이쪽을 응시하고 미소지으면서 노래하기 시작했다
+		PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 수긍하면(자)%타겟은()% 이쪽을 응시하고 미소지으면서 노래하기 시작했다
 		PRINTFORML 「기쁜,  %CNAME("一人称")%의력해 노래해요…~♪~~♪」
 		PRINTFORMW 당분간의 사이 , %CALLNAME:TARGET%의 아름다운 가성에 들어 들어갔다
 	ENDIF
@@ -984,11 +984,11 @@ IF SELECTCOM == 0
 		;굴복각인Lv2이상
 		ELSEIF MARK:굴복각인 >= 2
 			PRINTFORMW 「아아앙! …엣찌♪」
-			PRINTFORMW %CALLNAME:PLAYER%가 신체에 접하면(자)%타겟은()% 사랑스러운 헐떡이는 소리를 주었다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 신체에 접하면(자)%타겟은()% 사랑스러운 헐떡이는 소리를 주었다
 		;それ以外
 		ELSE
 			PRINTFORMW 「………」
-			PRINTFORMW %CALLNAME:PLAYER%가 신체에 접해도%타겟은()% 무언인 채였다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 신체에 접해도%타겟은()% 무언인 채였다
 		ENDIF
 		CFLAG:221 = 1
 		RETURN 1
@@ -1556,7 +1556,7 @@ IF SELECTCOM == 5
 		;それ以外
 		ELSE
 			PRINTFORMW 「………」
-			PRINTFORMW %CALLNAME:PLAYER%가 가슴에 닿아도%타겟은()% 소리를 낼 것은 없었다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 가슴에 닿아도%타겟은()% 소리를 낼 것은 없었다
 		ENDIF
 		CFLAG:226 = 1
 		RETURN 1
@@ -2728,7 +2728,7 @@ IF SELECTCOM == 60
 				PRINTFORMW 「…………………하아…매우 멋져 ,  사랑 하고 있어요…♪」
 			ELSE
 				PRINTFORMW 「아,  아아,  ,  좋아요,  %CNAME("二人称")%의에서 좀 더 …%조사처리(CNAME("一人称"),"를")% 헐떡임이키라고∼♪」
-				PRINTFORMW %CALLNAME:PLAYER%가 안쪽을 찌를 때마다%타겟은()% 아름다운 교성을 울리게 해
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 안쪽을 찌를 때마다%타겟은()% 아름다운 교성을 울리게 해
 			ENDIF
 		;굴복각인Lv3＋V감각Lv3이상
 		ELSEIF MARK:굴복각인 == 3 && ABL:Ｖ감각 >= 3
@@ -2749,7 +2749,7 @@ IF SELECTCOM == 60
 		;それ以外
 		ELSE
 			PRINTFORMW 「………」
-			PRINTFORMW %타겟은()% 무언인 채%CALLNAME:PLAYER%가 찔러 넣고를 받아들이고 있다
+			PRINTFORMW %타겟은()% 무언인 채%조사처리(CALLNAME:PLAYER,"가")% 찔러 넣고를 받아들이고 있다
 		ENDIF
 		RETURN 1
 	ENDIF
@@ -3385,7 +3385,7 @@ IF SELECTCOM == 90
 					PRINTFORMW %CALLNAME:TARGET%의 손가락이 페니스의 민감한 부분을 문지를 때마다%조사처리(CALLNAME:PLAYER,"는")% 페니스를 벌벌진동시켰다
 				ELSEIF RAND:2 == 0
 					PRINTFORMW 「아 ,  귀여운 소리…기분 좋았어의 것…기뻐 ,  좀더 기분 좋게 될 수 있도록(듯이) 노력해요♪」
-					PRINTFORMW %CALLNAME:PLAYER%가 소리를 지르면(자)%타겟은()% 기쁜듯이 미소지어 한층 더 격렬하게 페니스를 문지르고 시작했다
+					PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 소리를 지르면(자)%타겟은()% 기쁜듯이 미소지어 한층 더 격렬하게 페니스를 문지르고 시작했다
 				ELSE
 					PRINTFORMW 「%CNAME("二人称")%마시자 ,  앞달리기로 흐믈흐믈…좀더 %조사처리(CNAME("一人称"),"가")% 부정한 짓을 하며…♪」
 					PRINTFORMW 처 달리기가 흘러넘치는 카메아타마를 %타겟은()% 그 하얀 손가락으로 간질이도록(듯이) 더듬었다
@@ -3870,7 +3870,7 @@ IF SELECTCOM == 65
 			ELSEIF MARK:굴복각인 == 3 && ABL:Ｖ감각 >= 3
 				IF RAND:2 == 0
 					PRINTFORMW 「야 …대단해…! 안쪽까지…닿아…! 후아 아아♪」
-					PRINTFORMW %CALLNAME:PLAYER%가 허리를 쳐올린다와%타겟은()% 꼬리와 지느러미를 뛰게 해 교성을 울리게 해
+					PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 허리를 쳐올린다와%타겟은()% 꼬리와 지느러미를 뛰게 해 교성을 울리게 해
 				ELSE
 					PRINTFORMW 「,  …%조사처리(CNAME("一人称"),"가")% 움직여 기분 좋게 해 줄 테니까…는」
 					PRINTFORMW 「%CNAME("二人称")%는 뜨거운 것 가득 사정해♪」
@@ -5175,7 +5175,7 @@ IF SELECTCOM == 120
 			PRINTFORMW 물기를 띤%CALLNAME:PLAYER%의 거기에 %CALLNAME:TARGET%의 페니스가 앞이 깨진다
 			IF TALENT:연모
 				PRINTFORMW 「%CNAME("一人称")%남을 수 있는도 사랑해 주군요…기뻐요 ,  많이 사랑해…♪」
-				PRINTFORMW 기쁜듯이 앞달리기를 늘어뜨리는 페니스를 %CALLNAME:PLAYER%가 녹은 질이 삼켜 갔다
+				PRINTFORMW 기쁜듯이 앞달리기를 늘어뜨리는 페니스를 %조사처리(CALLNAME:PLAYER,"가")% 녹은 질이 삼켜 갔다
 			;굴복각인Lv2이상
 			ELSEIF MARK:굴복각인 >= 2
 				PRINTFORMW 「,  %CNAME("二人称")%의 질내에 들어갈 수 있는 것 라고일까 두근두근 해요…」
@@ -5510,7 +5510,7 @@ IF SELECTCOM == 126
 							PRINTFORMW %CALLNAME:TARGET%과%조사처리(CALLNAME:PLAYER,"는")% 수중에 울리는 서로의 교성을 인어의 신체로 서로 느끼면서 ,  깊게 어널로 연결되어 갔다
 						ELSE
 							PRINTFORMW 「같은 사람어의 신체로 꼬리와 지느러미를 문지르고 있어…엉덩이로 하나가 되어…이렇게 해서 서로 사랑할 수 있다니 굉장히 매우 멋져…♪」
-							PRINTFORMW 어널로부터의 쾌락에 %CALLNAME:PLAYER%가 꼬리와 지느러미를 진동시키면(자) ,  거기에 승낙같게%CALLNAME:TARGET%의 페니스가 어널 중(안)에서 맥박친다
+							PRINTFORMW 어널로부터의 쾌락에 %조사처리(CALLNAME:PLAYER,"가")% 꼬리와 지느러미를 진동시키면(자) ,  거기에 승낙같게%CALLNAME:TARGET%의 페니스가 어널 중(안)에서 맥박친다
 							PRINTFORMW %CALLNAME:PLAYER%과%타겟은()% 꼬리와 지느러미를 문지르고 만나 ,  서로 쾌락을 서로 주면서 녹아 버릴 것 같은 쾌락에 빠져 갔다
 						ENDIF
 					ELSE
@@ -8246,7 +8246,7 @@ CASE "요바이기승위"
 			;ゲストがいるなら, ゲストのTEQUIP:Ｗ넘어뜨리기を弄る
 			TEQUIP:GUEST:Ｗ넘어뜨리기 = 1
 		ELSE
-			PRINTFORMW %CALLNAME:PLAYER%가 잠자리에 들려고 했을 때 ,  돌연%타겟이()% 방을 방문해 왔다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 잠자리에 들려고 했을 때 ,  돌연%타겟이()% 방을 방문해 왔다
 			PRINTFORMW 그대로 그녀는%조사처리(CALLNAME:PLAYER,"를")% 밀어 넘어뜨려 ,  꿀 단지로 페니스를 단단히 물고 격렬하게 허리를 부딪히기 시작했다
 			;연모
 			IF TALENT:연모

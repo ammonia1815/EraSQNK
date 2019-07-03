@@ -154,21 +154,21 @@ ELSEIF GETBIT(CFLAG:201, 25) == 0 && (COND("호접지몽") == MASTER || COND("�
 	SETBIT CFLAG:201, 26
 ;굴복각인Lv1
 ELSEIF GETBIT(CFLAG:201, 1) == 0 && MARK:굴복각인 == 1
-	PRINTFORMW %CALLNAME:PLAYER%가 방에 들어가면(자)%타겟이()% 즐거운 듯이 접근해 왔다
+	PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 방에 들어가면(자)%타겟이()% 즐거운 듯이 접근해 왔다
 	PRINTFORMW 「조교 ,  노력하고 있구나 ♪%CNAME("一人称")%도 즐거워요♪」
 	PRINTFORMW 「그래서 ♪%CNAME("一人称")%…번창해 와 버렸기 때문에,  빨리 조교하고 싶다♪」
 	PRINTFORMW %CALLNAME:TARGET%에 등 사이(뒤)를 밀려 침대로 향했다
 	SETBIT CFLAG:201, 1
 ;굴복각인Lv2
 ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2
-	PRINTFORMW %CALLNAME:PLAYER%가 방에 들어가면(자)%타겟이()% 기쁜듯이 달려 왔다
+	PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 방에 들어가면(자)%타겟이()% 기쁜듯이 달려 왔다
 	PRINTFORMW 「조교 ,  노력하고 있네요♪%조사처리(CNAME("一人称"),"가")% 칭찬해 준다♪」
 	PRINTFORMW 「그리고 노력하고 있는 포상에 ,  %CNAME("一人称")%도 열심히~ 기분 좋게 해 주어버린다,  네~있고♪」
 	PRINTFORMW 달려들도록(듯이) 달려들어 안겼다%타겟을()% 이끌어 주면서 침대로 향했다
 	SETBIT CFLAG:201, 2
 ;굴복각인Lv3
 ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
-	PRINTFORMW %CALLNAME:PLAYER%가 방에 들어가면(자)%타겟은()% 기쁜듯이 달려들어 안겼다
+	PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 방에 들어가면(자)%타겟은()% 기쁜듯이 달려들어 안겼다
 	PRINTFORMW 「♪조교 ,  매우 능숙하구나 ♪%CNAME("一人称")%,  이제(벌써) 조교되면의 기뻐서 견딜 수 없어∼♪」
 	PRINTFORMW 「이니까 ,  그렇게 멋진 조교를 해 주는 %CNAME("二人称")%에 대해서 %CNAME("一人称")%도 좀더 기분 좋게 해 준다♪」
 	PRINTFORMW 부드러운 신체를 눈가득 밀착시켜 오는%CALLNAME:TARGET%에 밀리는 대로, %조사처리(CALLNAME:PLAYER,"는")% 침대에 쓰러져 버린다
@@ -177,7 +177,7 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 	SETBIT CFLAG:201, 3
 ;굴복각인Lv3+연모
 ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
-	PRINTFORMW %CALLNAME:PLAYER%가 방에 들어가면 뺨을 붉게 한%타겟이()% 문의 앞에 서 있었다
+	PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 방에 들어가면 뺨을 붉게 한%타겟이()% 문의 앞에 서 있었다
 	PRINTFORMW 「은 ♪역시,  %CNAME("二人称")%는 조교 능숙하다 …%CNAME("一人称")%의 신체 ,  %CNAME("二人称")%의 조교의 포로가 되어 버렸다♪」
 	PRINTFORMW 「 그렇지만 , …포로가 되어 버린 것은 조교만이 아닌 보고 싶다」
 	PRINTFORMW 「%CNAME("一人称")%,  아직 음란한 것 만약이라고 없는데 %조사처리(CNAME("二人称"),"를")% 만날 수 있었을 뿐입니다 매우 기뻐 것♪」
@@ -195,7 +195,7 @@ ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	SETBIT CFLAG:201, 4
 ;굴복각인Lv3+연모+임신
 ELSEIF GETBIT(CFLAG:201, 6) == 0 && TALENT:연모 && TALENT:임신 && COND("정액의우세") == MASTER
-	PRINTFORMW %CALLNAME:PLAYER%가 방에 들어가면(자) ,  문의 앞으로 기다리고 있었다%CALLNAME:TARGET%에 안겨져 끝냈다
+	PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 방에 들어가면(자) ,  문의 앞으로 기다리고 있었다%CALLNAME:TARGET%에 안겨져 끝냈다
 	PRINTFORMW 「아아앙♪%CNAME("二人称")%~,  %CNAME("一人称")%이 아이와 둘이서 쭉기다렸다고요♪」
 	PRINTFORMW 「있잖아 ,  이 아이가 할 수 있어 매일 너무 기뻐 %CNAME("一人称")%,  평소보다 충분히(듬뿍) 잘 수 없게 되거나」
 	PRINTFORMW 「아이가 가능했으니까 엣찌도 정도들으로 하자고인가 말해져 버렸다들 어떻게 하든지인가,  불안하게 야 ♪」
@@ -209,7 +209,7 @@ ELSEIF GETBIT(CFLAG:201, 6) == 0 && TALENT:연모 && TALENT:임신 && COND("정�
 	SETBIT CFLAG:201, 6
 ;굴복각인Lv3+연모+임신＋明일生まれる
 ELSEIF GETBIT(CFLAG:201, 7) == 0 && TALENT:연모 && TALENT:임신 == 3 && COND("정액의우세") == MASTER
-	PRINTFORMW %CALLNAME:PLAYER%가 방에 들어가면(자) 완전히 배의 크게 된%타겟이()% 마중나가 주었다
+	PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 방에 들어가면(자) 완전히 배의 크게 된%타겟이()% 마중나가 주었다
 	PRINTFORMW 「응♪%CNAME("二人称")%,  %CNAME("一人称")%의 배 손대어 봐……어떻게 ,  아버지가 와 주었던 거야가 기쁘고 건강하게 움직이고 있지♪」
 	PRINTFORMW 임월을 맞이한%CALLNAME:TARGET%의 배에 닿으면(자), %CALLNAME:PLAYER%의 손에 넣어 빌리고와 자신의 아이의 태동이 전해져 온다
 	PRINTFORMW 「내일은 %CNAME("一人称")%,  노력해버리니까♪에서도 ,  그전에 한번 더,  %CNAME("二人称")%에 애정을 보급받지 않지 않으면 안 되는 것 같아…좋은 것 같아♪」
@@ -217,7 +217,7 @@ ELSEIF GETBIT(CFLAG:201, 7) == 0 && TALENT:연모 && TALENT:임신 == 3 && COND(
 	SETBIT CFLAG:201, 7
 ;굴복각인Lv3+연모+お産後
 ELSEIF GETBIT(CFLAG:201, 8) == 0 && GETBIT(CFLAG:201, 6) && TALENT:연모 && TALENT:임신 == 0 && TALENT:출산경험
-	PRINTFORMW %CALLNAME:PLAYER%가 방에 들어가면(자) 출산을 끝낸%타겟이()% 기쁜듯이 달려들어 안겼다
+	PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 방에 들어가면(자) 출산을 끝낸%타겟이()% 기쁜듯이 달려들어 안겼다
 	PRINTFORMW 「후훗♪자식을 낳는 것은 매우 큰 일이지만 ,  그 이상으로 것 몹시 행복하구나 ♪」
 	PRINTFORMW 「%CNAME("一人称")%,  엣찌 하고 있는 때도 행복하지만 ,  이렇게 행복하게 된것은 태어나고 처음으로야 ♪」
 	PRINTFORMW 「%CNAME("一人称")%에 대해 ,  이렇게 행복하게 해 주어 고마워 ♪」
@@ -294,7 +294,7 @@ ELSEIF NO:ASSI == 41
 				ELSE
 					PRINTFORMW 「%CNAME("조수")%~♪쪽,  쪽 ,  쪽♪좀더 시 같아요∼♪」
 					PRINTFORMW 「,  알았으니까…그렇게 들러붙지 말고…후 ,  키스는 안되니까」
-					PRINTFORMW %CALLNAME:PLAYER%가 방에 들어가면(자)%타겟이()%%CALLNAME:ASSI%에 안아 붙어 얽히고 있었다
+					PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 방에 들어가면(자)%타겟이()%%CALLNAME:ASSI%에 안아 붙어 얽히고 있었다
 					PRINTFORMW 「 이제(벌써) ,  늦은 ,  찰싹 달라붙어져 큰일이었으니까」
 					PRINTFORMW 「아♪%CNAME("二人称")%~♪빨리,  %CNAME("조수")%과 %CNAME("一人称")%과 함께 해요∼♪」
 					PRINTFORMW 발정한%타겟은()% 참지 못하고 %CALLNAME:ASSI%에 덤벼 들고 있던 것 같다
@@ -588,7 +588,7 @@ ELSEIF COND("발정기")
 	;연모
 	IF TALENT:연모
 		IF RAND:5 == 0
-			PRINTFORMW %CALLNAME:PLAYER%가 방에 들어가면 뺨을 붉게 물들인%타겟이()% 뜨거운 한숨을 토해 ,  가만히 이쪽을 응시하고 있었다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 방에 들어가면 뺨을 붉게 물들인%타겟이()% 뜨거운 한숨을 토해 ,  가만히 이쪽을 응시하고 있었다
 			PRINTFORMW 평소의 건강함이 거짓말과 같은 그 모습(상태)에 무슨 일인 걸까 하고 생각해 가까워지면(자), %타겟이()% 강하게 달려들어 안겼다
 			PRINTFORMW 「미안해…걱정 해 버렸어요…에서도 %CNAME("一人称")%번창해 버려서 어쩔 수 없는 것 ……♪」
 			PRINTFORMW 자주(잘) 보면 시트에는 얼룩이출 와 있어%CALLNAME:TARGET%의 착의는 흐트러져 단 암컷의 냄새를 거절해 따돌리고 있다
@@ -691,10 +691,10 @@ ELSEIF COND("발정기")
 		ELSEIF RAND:2 == 0
 			PRINTFORMW 「아아앙♪어서 오세요∼,  그리고 옷은 벗어 버리자∼♪」
 			PRINTFORMW 방에 들어간 바로 그때 ,  갑작스럽게%타겟이()% 날라와 걸쳐왔다
-			PRINTFORMW 그리고%CALLNAME:PLAYER%가 놀라고 있는 동안에 옷을 대단한 기세로 인벗겨 알몸으로 해 버렸다…
+			PRINTFORMW 그리고%조사처리(CALLNAME:PLAYER,"가")% 놀라고 있는 동안에 옷을 대단한 기세로 인벗겨 알몸으로 해 버렸다…
 			PRINTFORMW 「하웅♪…그렇다면은 번창해 버렸다 %CNAME("一人称")%의 쑤심이 다스려질 때까지 조교 부탁해요∼♪」
 		ELSE
-			PRINTFORMW %CALLNAME:PLAYER%가 방에 들어갔는데 눈치채면(자)%타겟이()% 무서울 기세로 달려들어 안겼다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 방에 들어갔는데 눈치채면(자)%타겟이()% 무서울 기세로 달려들어 안겼다
 			PRINTFORMW 「아아앙♪온 ,  왔다♪%CNAME("一人称")%과 시야 ♪군요 ,  빨리 빨리∼♪」
 			PRINTFORMW 번창하고 있는 것은 평소의 일이지만 오늘의%타겟은()% 몇시에도 늘어나 가득 걷고 있다
 			PRINTFORMW 「하웅♪오늘의 %조사처리(CNAME("一人称"),"는")% 매우 번창하고 있으니 만족할 때까지 돌려보내지 않으니까∼♪」
@@ -763,7 +763,7 @@ ELSEIF TALENT:연모
 		PRINTFORMW 「%조사처리(CNAME("一人称"),"가")% 발정 하는 거야도 ,  %CNAME("二人称")%과는 아~무것도 관계없기 때문에…」
 		PRINTFORMW 오늘의%타겟은()% 무엇인가 이상해 ,  어쨌다고 말하는 거야일까…
 		IF RAND:2 == 0
-			PRINTFORMW %CALLNAME:PLAYER%가 이상한 것 같이 응시하고 있으면(자)%타겟은()% 쿡쿡하고 웃음이고
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 이상한 것 같이 응시하고 있으면(자)%타겟은()% 쿡쿡하고 웃음이고
 			PRINTFORMW 「…흐응…후훗 ,  당당히 ♪%CNAME("一人称")%의 츤데레  귀여웠다일까♪」
 		ELSE
 			PRINTFORMW 우선%CALLNAME:TARGET%의 가슴을 비비어 보면 평소의 반응이 되돌아 왔다
@@ -4284,7 +4284,7 @@ IF SELECTCOM == 64
 				IF RAND:2 == 0
 					PRINTFORMW 격렬하게 허리를 강탈이면서 ,  배의 아이에게 때문에 모유를 충분히(듬뿍) 저축한%CALLNAME:TARGET%의 큰 가슴을 비비어 해 안는다
 					PRINTFORMW 「하아 ,  하웅♪%CNAME("一人称")%,  자지 넣을 수 있으면서 ,  젖가슴도 짜껭점♪」
-					PRINTFORMW 부드러운 가슴이%CALLNAME:PLAYER%가 생각하는 대로 형태를 바꾸어 모유를 배이게 할 때마다%CALLNAME:TARGET%의 질내를 즐겼다
+					PRINTFORMW 부드러운 가슴이%조사처리(CALLNAME:PLAYER,"가")% 생각하는 대로 형태를 바꾸어 모유를 배이게 할 때마다%CALLNAME:TARGET%의 질내를 즐겼다
 				ELSE
 					PRINTFORMW 「,  아아앙♪%CNAME("二人称")%,  배 어루만질 수 있는 것만으로도 ,  %CNAME("一人称")%,  기분이 좋아 ♪」
 					PRINTFORMW 느긋하게 한 허리를 밀어넣으면서 ,  큰 배를 어루만지는%타겟은()% 달콤한 목소리를 주어 질을 힘들고 조여댄다
@@ -4308,7 +4308,7 @@ IF SELECTCOM == 64
 				PRINTFORMW 「♪거기는 ,  기분이 좋은 곳이니까,  %CNAME("一人称")%곧바로 갈것같아야 ~♪」
 			ELSEIF RAND:3 == 0
 				PRINTFORMW 「는,  ♪%CNAME("二人称")%는 정말 ,  정말,  ♪%CNAME("一人称")%의 가슴 ,  좋아하기 때문에∼♪」
-				PRINTFORMW %CALLNAME:PLAYER%가 허리를 강탈이면서 부드러운 가슴을 비비어 해 안을 때마다, %CALLNAME:TARGET%의 질은 쿨쿨과 조이면서승낙
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 허리를 강탈이면서 부드러운 가슴을 비비어 해 안을 때마다, %CALLNAME:TARGET%의 질은 쿨쿨과 조이면서승낙
 				PRINTFORMW 「%CNAME("一人称")%도 , ,  ♪%CNAME("二人称")%의 자지를 좋아하기 때문에 ,  좀더 좀더 %CNAME("二人称")%의 자지 기분 좋게 해 준다♪」
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 「♪상냥한 것도 좋아하지만 ,  모처럼 이 몸의 자세 이니까 ,  좀더 격렬하게 시라고도 괜찮(좋)아요∼♪」
@@ -5052,7 +5052,7 @@ IF SELECTCOM == 75
 				ELSE
 					PRINTFORMW 「아우 ,  ♪%CNAME("一人称")%의 대단히 엣찌한 엉덩이의 구멍 ,  ♪기분이 좋지요 ♪좀더 좀더 ,  쳐 올리기라고 괜찮(좋)아요 ♪」
 					PRINTFORMW 쾌락에 녹은 표정의%타겟은()% 허리를 괴롭히며 구부러지게 해 , %CALLNAME:PLAYER%의 페니스를 깊게까지 탐욕에 삼킨다
-					PRINTFORMW 페니스 전체에 달라붙는 것 같은 쾌감에 %CALLNAME:PLAYER%가 허리를 쑥 내밀면(자), %타겟은()% 머리카락을 흔들어 어널로부터 영향을 주는 자극에 번민
+					PRINTFORMW 페니스 전체에 달라붙는 것 같은 쾌감에 %조사처리(CALLNAME:PLAYER,"가")% 허리를 쑥 내밀면(자), %타겟은()% 머리카락을 흔들어 어널로부터 영향을 주는 자극에 번민
 				ENDIF 
 			;A감각Lv3이상
 			ELSEIF ABL:Ａ감각 >= 3
@@ -12492,7 +12492,7 @@ CASE "정액각인"
 	CASE 1
 		PRINTFORMW %타겟을()% , 즐거운듯이 자신의 하복부에 새겨진 하트 마크를 응시하고 있다
 		PRINTFORMW 「%CNAME("二人称")%, 어떨까, 사랑스러울까♪%CNAME("一人称")%그러면 당연 사랑스럽네요～, 햐우♪」
-		PRINTFORMW %CALLNAME:PLAYER%가 부드러운 배에 새겨졌다정액각인를손가락그리고 훑으면%타겟을()% , 쾌락의 색을 포함한 사랑스러운 소리를 질렀다
+		PRINTFORMW %조사처리(CALLNAME:PLAYER,"가")% 부드러운 배에 새겨졌다정액각인를손가락그리고 훑으면%타겟을()% , 쾌락의 색을 포함한 사랑스러운 소리를 질렀다
 	;Lv2
 	CASE 2
 		PRINTFORMW %타겟을()% , 자궁를 본뜬 문양이 더해진 하트 마크를 가만히 응시하고 있다
