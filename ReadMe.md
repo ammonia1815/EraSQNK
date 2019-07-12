@@ -1,8 +1,8 @@
 # eraSQNKR
 >Korean translated version of eraSQN final version.  
->The texts in repository are written in Korean.
->The contents of this repository contains NSFW contents.
->Downloading, cloning this repository is considering you as an adult. 
+>The texts in repository are written in Korean.  
+>The contents of this repository contains NSFW contents.  
+>Downloading, cloning this repository is considering you as an adult.  
 ## How to download
 * You can download Stable Version at [here](https://github.com/mosochu/EraSQNK/releases)
     * Select .zip file at Assets
