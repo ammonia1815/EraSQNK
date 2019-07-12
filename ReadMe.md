@@ -1,6 +1,8 @@
 # eraSQNKR
 >Korean translated version of eraSQN final version.  
 >The texts in repository are written in Korean.
+>The contents of this repository contains NSFW contents.
+>Downloading, cloning this repository is considering you as an adult. 
 ## How to download
 * You can download Stable Version at [here](https://github.com/mosochu/EraSQNK/releases)
     * Select .zip file at Assets
@@ -18,13 +20,16 @@
 
 # eraSQNKR
 >eraSQN 최종판의 한국어 번역버전입니다.  
->이 저장소 내용물은 한국어로 구성되어있습니다.
+>이 저장소 내용물은 한국어로 구성되어있습니다.  
+>이 저장소에는 미성년자에게 적합하지 않은 내용을 포함하고 있습니다.  
+>이 저장소를 내려받거나, 복제, 열람하는 순간부터 성인임에 동의하는 것과 같습니다.  
+>>   미성년자가 플레이하면서 생기는 법적 책임에 대해 어떠한 책임도 지지 않습니다.
 ## 다운로드 방법
 * [여기서](https://github.com/mosochu/EraSQNK/releases) 정식 버전을 받을 수 있습니다.
     * Assets에서 .zip 파일을 받으세요.
-* 개발중인 _(불안정한)_ 두가지 브랜치가 있습니다 :
+* 개발중인 _(검증안됀)_ 두 가지 브랜치가 있습니다 :
     * [기능개선 브랜치](https://github.com/mosochu/EraSQNK/archive/renovation.zip)
-        * 각종 기능개선 작업이 이루어지는 브랜치로, 오류가 비교적 많이 발생할 수 있습니다.
+        * 각종 기능개선 작업이 이루어지는 브랜치로, 오류가 상대적으로 많이 발생할 수 있습니다.
     * [버그패치 브랜치](https://github.com/mosochu/EraSQNK/archive/master.zip)
         * 원본의 보고된 버그와 번역만 고치는 브랜치입니다.
 ## 버그 신고 또는 제안사항 남기는 방법
