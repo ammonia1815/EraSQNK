@@ -3718,7 +3718,7 @@ IF SELECTCOM == 67
 		;연모
 		ELSEIF TALENT:연모
 			;種付けプレス
-			IF INSERT("種付けプレス")
+			IF INSERT("굴곡위") && PREVCOM == 67
 				PRINTFORM 「하앗♪하앗♪하아…
 				CALL HEARTMARK
 				PRINTFORM  %CNAME("二人称")%의 강력한 피스톤…멋집니닷
@@ -8392,7 +8392,7 @@ ELSEIF SHOOT("Ｖ내사정")
 				ENDIF
 			ENDIF
 		;種付けプレス
-		ELSEIF INSERT("種付けプレス") && COND("임신가능")
+		ELSEIF INSERT("굴곡위") && PREVCOM == 67 && COND("임신가능")
 			IF COND("절정", PLAYER) >= 3
 				PRINTFORM 「키, 왔다…읏♪ %CNAME("二人称")%의 윤이 들어 왔다앗
 				CALL HEARTMARK_E
