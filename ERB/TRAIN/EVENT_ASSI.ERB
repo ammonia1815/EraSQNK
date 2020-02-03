@@ -30,8 +30,8 @@ ENDSELECT
 
 ABL:ASSI:조수 += 1
 PRINTL 
-PRINTFORML %CALLNAME:ASSI%하%TEXTS("조수の명칭")%의 역할에 대한 이해가 깊어졌다
-PRINTFORMW %CALLNAME:ASSI%노%TEXTS("조수の명칭")%LV하지만{ABL:ASSI:조수}(이)가 되었다！
+PRINTFORML %조사처리(CALLNAME:ASSI,"가")% %TEXTS("조수の명칭")%의 역할에 대한 이해가 깊어졌다
+PRINTFORMW %CALLNAME:ASSI%의 %TEXTS("조수の명칭")%LV이 {ABL:ASSI:조수}이 되었다！
 ;조수への지시呼び出し
 CALL ASSI_CHANGE_INDICATE, ASSI
 
@@ -71,7 +71,7 @@ CASE "조교개시"
 	IF TFLAG:6
 		TRYCALLFORM GUEST_KOJO_K{NO:ASSI}_{CFLAG:ASSI:209}, "조수：조교開始前의 준비後台詞", ASSI
 		PRINTL 
-		PRINTFORMW %조사처리(CALLNAME:ASSI,"는")% 두 명의 회화를 곁눈질에, 조교의 준비를 끝낸 것 같다…
+		PRINTFORMW %조사처리(CALLNAME:ASSI,"는")% 두 명의 회화를 곁눈질해, 조교의 준비를 끝낸 것 같다…
 	ENDIF
 CASEELSE
 	CALL EVENT_ASSI_MAGIC, ARGS
@@ -120,24 +120,24 @@ ENDIF
 IF LOCAL && RANDIF(1, LOCAL:1)
 	SELECTCASE LOCAL
 	CASE 1
-		PRINTFORM %CALLNAME:ASSI%는 질로부터 뽑아내진지 얼마 안된%CALLNAME:MASTER%의페니스를
+		PRINTFORM %조사처리(CALLNAME:ASSI,"는")% 질로부터 뽑아내진지 얼마 안된 %CALLNAME:MASTER%의 페니스를
 		;汚れの状態で判定(애널汚れのお청소펠라경험があるか？)
 		IF CHECK_STAIN(STAIN:MASTER:Ｐ, "Ａ") && GETBIT(CFLAG:ASSI:12, 9) == 0
 			PRINTFORMW 적신 수건으로 꼼꼼히 닦아냈다…
 		ELSEIF (ABL:ASSI:봉사정신 >= 3 || ABL:ASSI:정액중독 >= 3) && COND("입의 사용", ASSI)
-			PRINTFORMW 입으로 받아들이고, 정성스럽게 핥아서 닦은……
+			PRINTFORMW 입으로 받아들이고, 정성스럽게 핥아서 닦았다……
 			TRYCALLFORM GUEST_KOJO_K{NO:ASSI}_{CFLAG:ASSI:209}, "조수：주인に청소펠라", ASSI
 			CALL SETFLAG, "청소펠라", ASSI, MASTER
 		ELSE
 			PRINTFORMW 깨끗한 천으로 정중히 청소했다…
 		ENDIF
 	CASE 2
-		PRINTFORM %CALLNAME:ASSI%하애널로부터 뽑아내진지 얼마 안된%CALLNAME:MASTER%의페니스를
+		PRINTFORM %조사처리(CALLNAME:ASSI,"는")% 애널로부터 뽑아내진지 얼마 안된 %CALLNAME:MASTER%의 페니스를
 		;汚れの状態で判定(애널汚れのお청소펠라경험があるか？)
 		IF CHECK_STAIN(STAIN:MASTER:Ｐ, "Ａ") && GETBIT(CFLAG:ASSI:12, 9) == 0
 			PRINTFORMW 적신 수건으로 꼼꼼히 닦아냈다…
 		ELSEIF (ABL:ASSI:봉사정신 >= 3 || ABL:ASSI:정액중독 >= 3) && COND("입의 사용", ASSI)
-			PRINTFORMW 입으로 받아들이고, 정성스럽게 핥아서 닦은……
+			PRINTFORMW 입으로 받아들이고, 정성스럽게 핥아서 닦았다……
 			TRYCALLFORM GUEST_KOJO_K{NO:ASSI}_{CFLAG:ASSI:209}, "조수：주인に청소펠라", ASSI
 			CALL SETFLAG, "청소펠라", ASSI, MASTER
 		ELSE
@@ -145,22 +145,22 @@ IF LOCAL && RANDIF(1, LOCAL:1)
 		ENDIF
 	CASE 3
 		IF PENIS(TARGET)
-			PRINTFORM %CALLNAME:ASSI%하%CALLNAME:TARGET%노페니스로부터 뽑아내진지 얼마 안된%CALLNAME:MASTER%의 그것
+			PRINTFORM %조사처리(CALLNAME:ASSI,"는")% %CALLNAME:TARGET%의 페니스로부터 뽑아내진지 얼마 안된%CALLNAME:MASTER%의 그것
 		ELSE
-			PRINTFORM %CALLNAME:ASSI%는으로부터 뽑아내진지 얼마 안된%CALLNAME:MASTER%의페니스를
+			PRINTFORM %조사처리(CALLNAME:ASSI,"는")%으로부터 뽑아내진지 얼마 안된%CALLNAME:MASTER%의 페니스를
 		ENDIF
 		;汚れの状態で判定(애널汚れのお청소펠라경험があるか？)
 		IF CHECK_STAIN(STAIN:MASTER:Ｐ, "Ａ") && GETBIT(CFLAG:ASSI:12, 9) == 0
 			PRINTFORMW 적신 수건으로 꼼꼼히 닦아냈다…
 		ELSEIF (ABL:ASSI:봉사정신 >= 3 || ABL:ASSI:정액중독 >= 3) && COND("입의 사용", ASSI)
-			PRINTFORMW 입으로 받아들이고, 정성스럽게 핥아서 닦은……
+			PRINTFORMW 입으로 받아들이고, 정성스럽게 핥아서 닦았다……
 			TRYCALLFORM GUEST_KOJO_K{NO:ASSI}_{CFLAG:ASSI:209}, "조수：주인に청소펠라", ASSI
 			CALL SETFLAG, "청소펠라", ASSI, MASTER
 		ELSE
 			PRINTFORMW 깨끗한 천으로 정중히 청소했다…
 		ENDIF
 	CASE 4
-		PRINTFORM %조사처리(CALLNAME:ASSI,"는")% %CALLNAME:MASTER%의가랑이앞에 무릎을 꿇고 코를 누르자, 페니스를 꺼내고 
+		PRINTFORM %조사처리(CALLNAME:ASSI,"는")% %CALLNAME:MASTER%의 가랑이앞에 무릎을 꿇고 코를 누르자, 페니스를 꺼내고 
 		;봉사정신と헌신で判定
 		IF ABL:ASSI:봉사정신 + TALENT:ASSI:헌신 >= 4 && COND("입의 사용", ASSI)
 			PRINTFORMW 껍질을 벗겨냈다
@@ -191,28 +191,28 @@ ELSEIF LOCAL:1
 			TRYCALLFORM GUEST_KOJO_K{NO:ASSI}_{CFLAG:ASSI:209}, "조수：조교대상にお청소Ａ핥기", ASSI
 			CALL SETFLAG, "청소Ａ핥기", ASSI, TARGET
 		ELSE
-			PRINTFORMW 찐 타올로 정성스럽게 닦아서 깨끗하게 했다…
+			PRINTFORMW 덥힌 타올로 정성스럽게 닦아서 깨끗하게 했다…
 		ENDIF
 		STAIN:Ａ = SET_STAIN(0, "Ａ")
 	CASE 3
 		IF PENIS(TARGET)
-			PRINTFORM %CALLNAME:ASSI%하%CALLNAME:TARGET%노입를 연 채로 되어 있다페니스를
+			PRINTFORM %조사처리(CALLNAME:ASSI,"는")% %CALLNAME:TARGET%의 구멍을 연 채로 되어 있는 페니스를
 			IF ABL:봉사정신 >= 3 && COND("입의 사용", ASSI) && (ABL:ASSI:봉사정신 >= 5 || RAND:2)
-				PRINTFORMW 물어, 더러움을 훌쩍인 뒤로 정중하게 혀로 빨고 맑게 했다…
+				PRINTFORMW 물어, 더러움을 빨아 정중하게 혀로 빨고 깨끗하게 했다…
 				TRYCALLFORM GUEST_KOJO_K{NO:ASSI}_{CFLAG:ASSI:209}, "조수：조교대상に청소펠라", ASSI
 				CALL SETFLAG, "청소펠라", ASSI, TARGET
 			ELSE
-				PRINTFORMW 찐 수건으로 정중하게 닦아 맑게 했다…
+				PRINTFORMW 덥힌 수건으로 정중하게 닦아 깨끗하게 했다…
 			ENDIF
 			STAIN:Ｐ = SET_STAIN(0, "Ｐ")
 		ELSE
-			PRINTFORM %CALLNAME:ASSI%는 범해져 질척질척의%CALLNAME:TARGET%의 저기를 펴넓혀, 를 훨씬 노출로 하면
+			PRINTFORM %조사처리(CALLNAME:ASSI,"는")% 범해져 질척질척한 %CALLNAME:TARGET%의 저기를 펴넓혀, 노출하고
 			IF (ABL:ASSI:봉사정신 >= 4 || ABL:ASSI:레즈끼 >= 3) && COND("입의 사용", ASSI) && (MAX(ABL:ASSI:봉사정신, ABL:ASSI:레즈끼) >= 5 || RAND:2)
 				PRINTFORMW , 혀로 정중하게 더러움을 빨아냈다…
 				TRYCALLFORM GUEST_KOJO_K{NO:ASSI}_{CFLAG:ASSI:209}, "조수：조교대상に청소컨닐링구스", ASSI
 				CALL SETFLAG, "청소컨닐링구스", ASSI, TARGET
 			ELSE
-				PRINTFORMW 찐 수건으로 정중하게 닦아 맑게 했다…
+				PRINTFORMW 덥힌 수건으로 정중하게 닦아 깨끗하게 했다…
 			ENDIF
 			STAIN:Ｖ = SET_STAIN(0, "Ｖ")
 		ENDIF
@@ -223,7 +223,7 @@ ELSEIF LOCAL:1
 			TRYCALLFORM GUEST_KOJO_K{NO:ASSI}_{CFLAG:ASSI:209}, "조수：조교대상に청소컨닐링구스", ASSI
 			CALL SETFLAG, "청소컨닐링구스", ASSI, TARGET
 		ELSE
-			PRINTFORMW 찐 타올로 정성스럽게 닦아서 깨끗하게 했다…
+			PRINTFORMW 덥힌 타올로 정성스럽게 닦아서 깨끗하게 했다…
 		ENDIF
 		STAIN:Ｖ = SET_STAIN(0, "Ｖ")
 	ENDSELECT
@@ -362,7 +362,7 @@ IF ARGS == "조교개시" && GETBIT(CFLAG:ASSI:35, 36) && (STATE("흐물흐물",
 		PRINTFORMW %CALLNAME:TARGET%의 하드스킨의 효과가 사라졌다! 
 	ELSE
 		IF CHECK_COM("멜티키스", ASSI)
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:ASSI%에게 흐물하물해져버렸다! 
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:ASSI%에게 흐물흐물해져버렸다! 
 			CALL ADD_STATE, TARGET, "흐물흐물"
 		ELSE
 			PRINTFORMW 그러나 %CALLNAME:TARGET%에게는 효과가 없었다! 
@@ -425,7 +425,7 @@ ENDIF
 IF ARGS == "조교개시" && GETBIT(CFLAG:ASSI:35, 45)
 	PRINTL ＜옷을 벗긴다＞
 	CALL SETFLAG, "衣装全脱ぎ", TARGET
-	PRINTFORML %조사처리(CALLNAME:ASSI,"는")% %조사처리(CALLNAME:TARGET,"를")% 실오라기 하나 남기지않고 벗겼다! 
+	PRINTFORML %조사처리(CALLNAME:ASSI,"는")% %조사처리(CALLNAME:TARGET,"를")% 실오라기 하나 남기지 않고 벗겼다! 
 ENDIF
 
 ;로션
@@ -569,7 +569,7 @@ IF ARGS == "조교개시" && GETBIT(CFLAG:ASSI:35, 31) && TALENT:ASSI:가창기�
 ;비가갠뒤의윤무곡
 ELSEIF ARGS == "조교개시" && GETBIT(CFLAG:ASSI:35, 32) && TALENT:ASSI:가창기능 && TEQUIP:연주중 == 0
 	PRINTFORML ＜비가 갠 뒤의 윤무곡＞
-	PRINTFORML %조사처리(CALLNAME:ASSI,"는")% 곡을 연주하기시작했다! 
+	PRINTFORML %조사처리(CALLNAME:ASSI,"는")% 곡을 연주하기 시작했다! 
 	PRINTFORML 주변에 아름다운 선율이 메아리친다…
 	TEQUIP:연주중 = 3
 	TEQUIP:ASSI:연주중 = 10
@@ -602,7 +602,7 @@ SIF TALENT:ARG:아르스이사 || TALENT:ARG:마법사 >= 2
 	LOCALS:9 = [ 9] \@ GETBIT(CFLAG:ARG:35, 9) ? ○ # － \@ 황홀시에 아르스이사
 
 SIF TALENT:ARG:아르스군 || TALENT:ARG:마법사 >= 2
-	LOCALS:11 = [11] \@ GETBIT(CFLAG:ARG:35, 11) ? ○ # － \@ 常時아르스군
+	LOCALS:11 = [11] \@ GETBIT(CFLAG:ARG:35, 11) ? ○ # － \@ 상시 아르스군
 SIF TALENT:ARG:인라지 || TALENT:ARG:마법사 >= 2
 	LOCALS:12 = [12] \@ GETBIT(CFLAG:ARG:35, 12) ? ○ # － \@ 상대가 섹스에 익숙하면 인라지영창
 
@@ -619,7 +619,7 @@ SIF ITEM:비디오카메라 || NOITEM
 IF TALENT:ARG:가창기능
 	LOCALS:30 = [30] \@ GETBIT(CFLAG:ARG:35, 30) ? ○ # － \@ 적당히 평온의노래
 	LOCALS:31 = [31] \@ GETBIT(CFLAG:ARG:35, 31) ? ○ # － \@ 개시시에 로맨스송
-	LOCALS:32 = [32] \@ GETBIT(CFLAG:ARG:35, 32) ? ○ # － \@ 개시시에 비가갠뒤의윤무곡
+	LOCALS:32 = [32] \@ GETBIT(CFLAG:ARG:35, 32) ? ○ # － \@ 개시시에 비가갠뒤의 윤무곡
 ENDIF
 SIF NO:ARG == 34
 	LOCALS:35 = [35] \@ GETBIT(CFLAG:ARG:35, 35) ? ○ # － \@ 항상 하드스킨
@@ -668,7 +668,7 @@ RESTART
 ;조수に지시する画面
 @ASSI_LIST_INDICATE, ARG
 IF ABL:ARG:조수 == 0
-	PRINTFORM %TEXTS("조수の명칭")%LV하지만０그래서 지시할 수 없습니다
+	PRINTFORM %TEXTS("조수の명칭")%LV이 ０으로 지시할 수 없습니다
 	RETURN 0
 ENDIF
 
@@ -719,11 +719,11 @@ SIF GETBIT(CFLAG:ARG:35, 35)
 SIF GETBIT(CFLAG:ARG:35, 36)
 	PRINT [멜티키스]
 SIF GETBIT(CFLAG:ARG:35, 40)
-	PRINT [주인를청소]
+	PRINT [주인을청소]
 SIF GETBIT(CFLAG:ARG:35, 41)
-	PRINT [대상를청소]
+	PRINT [대상을청소]
 SIF GETBIT(CFLAG:ARG:35, 45)
-	PRINT [대상을전라로에]
+	PRINT [대상을전라로]
 SIF GETBIT(CFLAG:ARG:35, 50)
 	PRINT [대접]
 

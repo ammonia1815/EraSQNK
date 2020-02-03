@@ -604,9 +604,9 @@ NEXT
 ;ここの導入文は自由に作者さんが書き換えてください
 SELECTCASE NO:TARGET
 CASE 1
-	PRINTFORML 서큐버스그렇다고 하면？
-	PRINTFORML [ 0] 역시남자의 사람을 좋아하구나♪
-	PRINTFORML [ 1] 아라, 여자 아이도 정말 좋아해요. 물론후타나리씨도 말야♪아하♪
+	PRINTFORML 서큐버스라고 하면？
+	PRINTFORML [ 0] 역시 남자를 좋아하구나♪
+	PRINTFORML [ 1] 아라, 여자 아이도 정말 좋아해요. 물론후타나리씨도 말야♪ 아하♪
 	CALL INPUT_SELECT, 2
 	IF RESULT == 0
 		PRINTFORMW 이번에는 서큐버스 대사_1을 사용합니다. 
@@ -616,7 +616,7 @@ CASE 1
 		CFLAG:209 = 2
 	ENDIF
 CASE 3
-	PRINTFORML 당신(이)가 바란다드라이어드씨는？
+	PRINTFORML 당신이 바라는 드라이어드는？
 	PRINTFORML [ 0] 지적인 누나를 흐트러지게 하고 싶다！
 	PRINTFORML [ 1] 적극적인 누나에게 짜내지고 싶다！
 	CALL INPUT_SELECT, 2
@@ -628,7 +628,7 @@ CASE 3
 		CFLAG:209 = 2
 	ENDIF
 CASE 4
-	PRINTFORML 픽시(와)과 어떤 관계가 되고 싶다？
+	PRINTFORML 픽시와 어떤 관계가 되고 싶어？
 	PRINTFORML [ 0] 몸도 마음도 포로가 되는 것 같은 달콤한 관계
 	PRINTFORML [ 1] 체격차이를 아랑곳하지 않는 격렬한 관계
 	IF CFLAG:8 == 3
@@ -648,10 +648,10 @@ CASE 4
 		CFLAG:209 = 3
 	ENDIF
 CASE 7
-	PRINTFORML 이번은 어느워울프를 선택합니까？
-	PRINTFORML [ 0] 언제나 대로의사족보행！
-	PRINTFORML [ 1] 부부판의 2발보행！사람의 말도 말한다！
-	PRINTFORML [ 2] 강아지적인워울프！망상의 산물입니다！
+	PRINTFORML 이번은 어느 워울프를 선택합니까？
+	PRINTFORML [ 0] 언제나 대로의 사족보행！
+	PRINTFORML [ 1] 부부판의 2발보행！사람말도 말한다！
+	PRINTFORML [ 2] 강아지같은 워울프！망상의 산물입니다！
 	CALL INPUT_SELECT, 3
 	IF RESULT == 0
 		PRINTFORMW 이번에는 워울프 대사_1을 사용합니다. 
@@ -685,9 +685,9 @@ CASE 9
 		CFLAG:209 = 2
 		RETURN 0
 	ENDIF
-	PRINTFORML 처녀노빌리져그렇다고 하면？
+	PRINTFORML 처녀인 빌리져라고 하면？
 	PRINTFORML [ 0] 물론 소박한 마을 아가씨
-	CALL PRINT_STR, "[ 1] 我侭に育てられたお嬢様タイプも良いよね（_하트핑크_個別ＥＮＤ有_）_L_"
+	CALL PRINT_STR, "[ 1] 버릇없이 자란 아가씨 타입도 좋지（_하트핑크_個別ＥＮＤ有_）_L_"
 	;PRINTFORML [ 2] それとも……人間と몽마の狭間で悩んでいるのも良いかも？
 	CALL INPUT_SELECT, 2
 	IF RESULT == 0
@@ -701,7 +701,7 @@ CASE 9
 		CFLAG:209 = 3
 	ENDIF
 CASE 10
-	;멜루지네
+	;멜루진
 	IF CFLAG:8 == 2
 		CFLAG:209 = 2
 	ELSE
@@ -715,10 +715,10 @@ CASE 11
 		CFLAG:209 = 1
 	ENDIF
 CASE 12
-	PRINTFORML 리저드맨그렇다고 하면？
-	PRINTFORML [ 0] 승기로솔직(이)가 될 수 없는 튼 모습을ﾆﾖﾆﾖ바라보고 싶다！
+	PRINTFORML 리저드맨이라고 하면？
+	PRINTFORML [ 0] 오기없이 솔직하지 않은 츤츤한 모습을 헤실헤실 바라보고 싶다！
 	PRINTFORML   ※43씨＋140씨의구상됩니다
-	PRINTFORML [ 1] 데레시로 해 다워지는 갭이야말로 생명！
+	PRINTFORML [ 1] 데레할때 귀여운 갭이야말로 생명！
 	PRINTFORML   ※829씨의구상됩니다
 	CALL INPUT_SELECT, 2
 	IF RESULT == 0
@@ -729,19 +729,19 @@ CASE 12
 		CFLAG:209 = 2
 	ENDIF
 CASE 15
-	PRINTFORML 이번스큘라는 어느 쪽？
+	PRINTFORML 이번 스킬라는 어느 쪽？
 	PRINTFORML [ 0] 장편판
-	PRINTFORML 마녀의 저주에 의해 하반신이 괴물이 되어 버렸다소녀
-	PRINTFORML 괴물이 된 뒤는 카류브디스와 함께 바다에서 인간을 덮치고 있었다
-	PRINTFORML 그 때문인지강기태도를 취하기 쉽지만, 원래 경험이 적다소녀에서 만났기 때문에 의외로솔직이다
+	PRINTFORML 마녀의 저주에 의해 하반신이 괴물이 되어 버린 소녀
+	PRINTFORML 괴물이 된 뒤는 카리브디스와 함께 바다에서 인간을 덮치고 있었다
+	PRINTFORML 그 때문인지 강경한 태도를 취하기 쉽지만, 원래 경험이 적은 소녀이기 때문에 의외로 솔직하다
 	PRINTFORML 덮친 인간은 먹고 있었기 때문에 성교 경험은 거의 없다.
-	PRINTFORML 반대로자위하촉수조차 사용해 가고 있었기 때문에 베테랑（？）의 영역에 이르고 있다.
-	PRINTFORML 반격 시에는 마음껏 그 테크닉을 사용해 오기 (위해)때문에,촉수쾌감에 빠지지 않게 충분히 주의.
+	PRINTFORML 반대로 자위는 촉수를 사용해 가고 있었기 때문에 베테랑（？）의 영역에 이르고 있다.
+	PRINTFORML 반격 시에는 마음껏 그 테크닉을 사용해 오기 때문에, 촉수쾌감에 빠지지 않게 충분히 주의.
 	PRINTFORML 
 	CALL PRINT_STR, "[ 1] 短編版（_하트핑크_個別ＥＮＤ有_）_L_"
-	PRINTFORML 신화의 시대, 마녀의질투에 의해 하반신을 괴물로 되었다소녀(와)과 전해지는 몬스터
-	PRINTFORML 몽마에 범해지고몽마화하고 나서는 태고의소녀시대의 성격이 소생했는지헌신적이어 노력파
-	PRINTFORML 몬스터가 된 원인인 「질투」라고 하는 감정을 싫어해 있어 욕구를자위에 향하기 쉽다
+	PRINTFORML 신화의 시대, 마녀의 질투에 의해 하반신을 괴물로 된 소녀라고 전해지는 몬스터
+	PRINTFORML 몽마에 범해지고 몽마화하고 나서는 예전 소녀의 성격이 살아났는지 헌신적이고 노력파
+	PRINTFORML 몬스터가 된 원인인 「질투」라고 하는 감정을 싫어하고 욕구를 자위로 풀기 쉽다
 	CALL INPUT_SELECT, 2
 	IF RESULT == 0
 		PRINTFORMW 이번엔 장편판으로 합니다
@@ -768,9 +768,9 @@ CASE 17
 	ENDIF
 CASE 22
 	PRINTFORML 쿠노이치에 뭐라고 불리고 싶다？
-	PRINTFORML [ 0] 주！
+	PRINTFORML [ 0] 주인！
 	PRINTFORML   ※729씨＋985씨의구상됩니다
-	PRINTFORML [ 1] 너！
+	PRINTFORML [ 1] 당신！
 	PRINTFORML   ※829씨의구상됩니다
 	CALL INPUT_SELECT, 2
 	IF RESULT == 0
@@ -784,7 +784,7 @@ CASE 24
 	PRINTFORML 살로메씨라고 하면？
 	PRINTFORML [ 0] 눈에 빛을 되찾아 가는 과정을 보고 싶어！
 	PRINTFORML  ※221씨+857씨의구상됩니다
-	PRINTFORML [ 1] 사랑에 굶고 있다소녀(이)야！
+	PRINTFORML [ 1] 사랑에 굶주린 소녀야！
 	PRINTFORML  ※371씨+963씨의구상됩니다
 	CALL INPUT_SELECT, 2
 	IF RESULT == 0
@@ -796,10 +796,10 @@ CASE 24
 	ENDIF
 	CFLAG:209 = RESULT + 1
 CASE 25
-	PRINTFORML 뱀파이어그렇다고 하면？
+	PRINTFORML 뱀파이어라고 하면？
 	PRINTFORML [ 0] 츤데레계 아가씨이지만 얼빠진 아이속성
-	CALL PRINT_STR, "[ 1] デレるまではあらあらうふふ、デレてからは普通の乙女（_하트핑크_個別ＥＮＤ有_）_L_"
-	PRINTFORML [ 2] 교만인 체하며 있지만 실은 멍청이인소녀뭐라고 하는 것은 어떨까？
+	CALL PRINT_STR, "[ 1] 데레하기 전까진 어머어머 우후훗, 데레하고나선 보통 처녀（_하트핑크_個別ＥＮＤ有_）_L_"
+	PRINTFORML [ 2] 도도한 체 있지만 실은 헤타레인 소녀같은 것은 어떨까？
 	CALL INPUT_SELECT, 3
 	IF RESULT == 0
 		PRINTFORMW 이번에는 뱀파이어 대사_1을 사용합니다. 
@@ -808,7 +808,7 @@ CASE 25
 		PRINTFORMW 이번에는 뱀파이어 대사_2를 사용합니다. 
 		CFLAG:209 = 2
 	ELSEIF RESULT == 2
-		PRINTFORMW 이번은뱀파이어구상_3를 채용합니다（소질하지만 변화해, 경험이 반감합니다…）. 
+		PRINTFORMW 이번은뱀파이어구상_3를 채용합니다（소질이 변화해, 경험이 반감합니다…）. 
 		CFLAG:209 = 3
 		FOR LCOUNT, 0, 100
 			;経験が２이상のものは全て半減
@@ -840,10 +840,10 @@ CASE 25
 		CALL SETFLAG, "속성", TARGET
 	ENDIF
 CASE 30
-	PRINTFORML 그렇게 말하면,소환했다유니콘의 확인을 제대로 갔을 것인가？
-	CALL PRINT_STR, "[ 0] もちろんした（_하트핑크_個別ＥＮＤ有_）_L_"
+	PRINTFORML 그러고보니, 소환한 유니콘의 확인을 제대로 했나？
+	CALL PRINT_STR, "[ 0] 물론!（_하트핑크_個別ＥＮＤ有_）_L_"
 	;バイコーン
-	PRINTFORML [ 1] 저것, 그렇게 말하면, 어쩐지 위화감을 기억한 것 같은……？
+	PRINTFORML [ 1] 어라, 그러고 보니, 뭔가 위화감을 느낀 것 같은데……？
 	CALL INPUT_SELECT, 2
 	IF RESULT == 0
 		CFLAG:209 = 1
@@ -867,21 +867,21 @@ CASE 30
 			CALLNAME:TARGET = バイコーン
 	ENDIF
 CASE 31
-	PRINTFORML 고블린그렇다고 하면？
+	PRINTFORML 고블린이라고 하면？
 	PRINTFORML [ 0] 당신를 밀어 넘어뜨리는 것이 너무 좋아！
-	PRINTFORML [ 1] 과거에 상처를 가진다소녀(와)과 우정과 같은 사랑을 기르겠어！
+	PRINTFORML [ 1] 과거에 상처를 가진 소녀와 우정과 같은 사랑을 키워나가자！
 	CALL INPUT_SELECT, 2
 	IF RESULT == 0
 		PRINTFORMW 이번에는 고블린 대사_1을 사용합니다. 
 		CFLAG:209 = 1
 	ELSEIF RESULT == 1
-		PRINTFORMW 이번에는 고블린대사_2를 사용합니다. 
+		PRINTFORMW 이번에는 고블린 대사_2를 사용합니다. 
 		CFLAG:209 = 2
 	ENDIF
 CASE 42
-	PRINTFORML 번더스내치라고 어떤몽마？
-	PRINTFORML [ 0] 붙잡을 곳이 없는 느낌
-	CALL PRINT_STR, "[ 1] 大人しそうな感じ（_하트핑크_個別ＥＮＤ有_）_L_"
+	PRINTFORML 번더스내치는 어떤몽마？
+	PRINTFORML [ 0] 종잡을수 없는 느낌
+	CALL PRINT_STR, "[ 1] 얌전한 느낌（_하트핑크_個別ＥＮＤ有_）_L_"
 	CALL INPUT_SELECT, 2
 	IF RESULT == 0
 		PRINTFORMW 이번은번더스내치구상_1를 채용합니다. 
@@ -911,12 +911,12 @@ CASE 42
 		CALL SETFLAG, "속성", TARGET
 	ENDIF
 CASE 44
-	PRINTFORML 미란다에 오기 전의린하…
+	PRINTFORML 미란다에 오기 전의 린은…
 	PRINTFORML [ 0] 밝은 느낌. 스승으로 불리고 싶습니다…
-	PRINTFORML   ※331씨의구상됩니다
-	PRINTFORML [ 1] 차분히 마을 아가씨.빌리져에 가까운 이미지.
-	PRINTFORML   ※그 외의구상됩니다
-	CALL PRINT_STR, "[ 2] 明るいけどちょっと影のある感じ(>>331氏の설정を踏襲)（_하트핑크_個別ＥＮＤ有_）_L_"
+	PRINTFORML   ※331씨의 구상으로 됩니다
+	PRINTFORML [ 1] 차분한 마을 아가씨.빌리져에 가까운 이미지.
+	PRINTFORML   ※그 외의 구상으로 됩니다
+	CALL PRINT_STR, "[ 2] 밝지만 조금 그림자가 있는 느낌(>>331씨의 설정 가져옴)（_하트핑크_個別ＥＮＤ有_）_L_"
 	PRINTFORML   ※eraSQ제작 스레드>>644씨의구상됩니다
 	CALL INPUT_SELECT, 3
 	IF RESULT == 0
@@ -930,10 +930,10 @@ CASE 44
 		CFLAG:209 = 3
 	ENDIF
 CASE 48
-	PRINTFORML 에스트모양이라고 하면…
-	PRINTFORML [ 0] 미숙한조교스승에도 용서 없음！
-	PRINTFORML [ 1] 미숙한조교스승에는손가감(상태)해 준다！
-	PRINTFORML   ※체형이 바뀌면구상도가슴의 크기도 바뀝니다.
+	PRINTFORML 에스트님 이라고 하면…
+	PRINTFORML [ 0] 미숙한 조교사도 용서 못해！
+	PRINTFORML [ 1] 미숙한 조교사는 적당히 봐 준다！
+	PRINTFORML   ※체형이 바뀌면 구상도 가슴의 크기도 바뀝니다.
 	CALL INPUT_SELECT, 2
 	IF RESULT == 0
 		PRINTFORMW 이번에는 에스트님１을 사용합니다. 
@@ -943,9 +943,9 @@ CASE 48
 		CFLAG:209 = 2
 	ENDIF
 CASE 60
-	PRINTFORML 허니비라고 어떤몽마？
-	PRINTFORML [ 0] 일에 불타는 기능벌씨
-	CALL PRINT_STR, "[ 1] 강기だけど、世話焼きなおねーさん（_하트핑크_個別ＥＮＤ有_）_L_"
+	PRINTFORML 허니비는 어떤 몽마？
+	PRINTFORML [ 0] 일에 불타는 일벌씨
+	CALL PRINT_STR, "[ 1] 강인하지만, 정이 많은 누나（_하트핑크_個別ＥＮＤ有_）_L_"
 	CALL INPUT_SELECT, 2
 	IF RESULT == 0
 		PRINTFORMW 이번엔 허니비 대사_１을 사용합니다. 
@@ -975,11 +975,11 @@ CASE 97
 		CFLAG:209 = 857
 	ENDIF
 CASE 98
-	PRINTFORML 다음의 어느 쪽을 선택합니까？
-	PRINTFORML [ 0] 종래씨
-	PRINTFORML   ※127씨의구상됩니다
-	PRINTFORML [ 1] 카피하는 자질이 많아서 무입씨
-	PRINTFORML   ※1026씨의구상됩니다
+	PRINTFORML 다음 중 어느 쪽을 선택합니까？
+	PRINTFORML [ 0] 원래의 도플갱어씨
+	PRINTFORML   ※127씨의 구상됩니다
+	PRINTFORML [ 1] 카피하는 능력이 많은 무뚝뚝한 도플갱어씨
+	PRINTFORML   ※1026씨의 구상됩니다
 	CALL INPUT_SELECT, 2
 	IF RESULT == 0
 		CFLAG:209 = 1

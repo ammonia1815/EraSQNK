@@ -97,12 +97,12 @@ ELSEIF EVENT_NUM && (RAND:3 == 0 || CEVENT(LOCALS:EVENT_NUM) == 0)
 			PRINTFORML 왔습니다
 			PRINTFORMW 아무래도, 한가하고 있었으므로 함께 하고 싶은 것 같습니다
 			IF RAND:3 == 0
-				PRINTFORML 「응후, 말랑말랑♪%CNAME("一人称")%노가슴기분이 좋지요～」
-				PRINTFORMW 「%CNAME("二人称")%그렇다면, %CNAME("一人称")%노가슴만지작만지작 하면서 산책해도 돼～♪」
+				PRINTFORML 「응후, 말랑말랑♪%CNAME("一人称")%의가슴기분이 좋지요～」
+				PRINTFORMW 「%CNAME("二人称")%그렇다면, %CNAME("一人称")%의가슴만지작만지작 하면서 산책해도 돼～♪」
 				PRINTFORM 팔에%CALLNAME:TARGET%의 부드러운 가슴을쭉쭉 강압할 수 있거나 하면서
 			ELSEIF RAND:2
 				PRINTFORMW 「후훗♪%CNAME("二人称")%～, 보고 있어～, 빙글빙글～읏♪앗, 햐웃」
-				PRINTFORM 춤추어 보거나 구를 것 같게 되거나와 떠들썩한%CALLNAME:TARGET%(와)과
+				PRINTFORM 춤추어 보거나 구를 것 같게 되거나와 떠들썩한%타겟과()%
 			ELSE
 				PRINTFORMW 「아응♪부비부비～, 좀 더%CNAME("一人称")%스윽스윽 해도 돼～」
 				PRINTFORM 달라 붙어 응석부리고 왔다%CALLNAME:TARGET%의 머리를 어루만져 주거나 하면서
@@ -112,7 +112,7 @@ ELSEIF EVENT_NUM && (RAND:3 == 0 || CEVENT(LOCALS:EVENT_NUM) == 0)
 			PRINTFORM 도서실에 와 보면, %조사처리(CALLNAME:TARGET,"가")% 
 			IF RAND:2 == 0
 				PRINTFORML 드물고 열심히 책을 읽고 있는 것이 보였다
-				PRINTFORMW %CALLNAME:MASTER%를 알아차리면%조사처리(CALLNAME:TARGET,"는")% 읽고 있던 책을 가져 근처에 왔다
+				PRINTFORMW %마스터를()% 알아차리면%조사처리(CALLNAME:TARGET,"는")% 읽고 있던 책을 가져 근처에 왔다
 				PRINTFORMW 「그런데, 봐 봐아～, %조사처리(CNAME("二人称"),"는")% 어떤 것이 좋다고 생각할까나～♪」
 				IF RAND:3 == 0
 					PRINTFORMW 아무래도, 유행의 패션 따위가 실려 있는 책인 것 같다
@@ -129,12 +129,12 @@ ELSEIF EVENT_NUM && (RAND:3 == 0 || CEVENT(LOCALS:EVENT_NUM) == 0)
 				ENDIF
 			ELSE
 				PRINTFORML 묘하게 긴장해 책을 읽고 있는 것을 찾아냈다
-				PRINTFORML %CALLNAME:MASTER%를 알아차리면 자랑스럽게에 발끈해 보이고 나서 또 책을 읽기 시작했다
+				PRINTFORML %마스터를()% 알아차리면 자랑스럽게에 발끈해 보이고 나서 또 책을 읽기 시작했다
 				PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 자신의 읽고 싶은 책을 찾으러 갔다……
 				PRINTFORML 돌아와 보면, %조사처리(CALLNAME:TARGET,"는")% 책 위에 푹 엎드려 숨소리를 내고 있다
 				PRINTFORMW 뭔가 잠꼬대를 하고 있다……
 				IF RAND:3 == 0
-					PRINTFORML 「응우…무냐, 무냐…%CNAME("二人称")%를 위해서(때문에) 만든 것이다아……」
+					PRINTFORML 「응우…무냐, 무냐…%조사처리(CNAME("二人称"),"를")% 위해서(때문에) 만든 것이다아……」
 					PRINTFORMW 요리의 책을 읽고 있던 것 같고, 꿈 속에서는 요리를 만들어 주는 것 같다
 					PRINTFORML 「…미약(와)과…정력제가…가득 들어가 있는 것…에헤, 응헤헤에～…」
 					PRINTFORMW 조금 걱정으로 되어 버렸다……
@@ -194,7 +194,7 @@ ELSEIF EVENT_NUM && (RAND:3 == 0 || CEVENT(LOCALS:EVENT_NUM) == 0)
 			PRINTFORMW %CALLNAME:GUEST%에 지지 않으려고 심부름을 신청해 왔다……
 		ENDIF
 		IF RAND:2 == 0
-			PRINTFORML 「여어～쉿, %CNAME("一人称")%노력해 옮겨 버리겠어～♪」
+			PRINTFORML 「여어～쉿, %CNAME("一人称")%의력해 옮겨 버리겠어～♪」
 			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 짐을 안으면%CALLNAME:MASTER%의 소리도 듣지 말고 힘차게 달려 가 버린다
 			PRINTFORMW %CALLNAME:GUEST%는 어디에 옮길지도 (듣)묻지 않고 가 버렸다%조사처리(CALLNAME:TARGET,"를")% 서둘러 뒤쫓아 가 주었다
 			PRINTFORML 「아, %CALLNAME:GUEST%챠～응♪저것, 그렇게 말하면 어디에 옮기는 건가～, 잊어 버렸다, 미안해요～」
@@ -220,7 +220,7 @@ ELSEIF EVENT_NUM && (RAND:3 == 0 || CEVENT(LOCALS:EVENT_NUM) == 0)
 		ENDIF
 	;음기をなぐさめる
 	CASE 3
-		PRINTFORML %CALLNAME:GUEST%의 방에서%CALLNAME:TARGET%(와)과%CALLNAME:GUEST%하지만 뭔가 하고 있는 것 같다
+		PRINTFORML %CALLNAME:GUEST%의 방에서%타겟과()%%CALLNAME:GUEST%하지만 뭔가 하고 있는 것 같다
 		PRINTFORML %조사처리(CALLNAME:TARGET,"가")% , 왠지 슬픈 것 같은 표정의%CALLNAME:GUEST%를 위로하고 있는 것 같다
 		PRINTFORMW %CALLNAME:GUEST%의 표정은 개운치 않다……
 		IF RAND:2 == 0
@@ -238,7 +238,7 @@ ELSEIF EVENT_NUM && (RAND:3 == 0 || CEVENT(LOCALS:EVENT_NUM) == 0)
 			PRINTFORML 「그렇게 걱정하지 않아도 괜찮아, %CNAME("一人称")%왜냐하면 자주(잘) 실패해 버리는 걸, 일전에도 말야……」
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 포기하지 않고 상냥한 태도를 취하고 있는 것 같다
 			PRINTFORML 「후후♪역시, %CALLNAME:GUEST%는 웃고 있다얼굴쪽이 사랑스러워♪」
-			PRINTFORMW ……아무래도%CALLNAME:GUEST%도 기분을 고친 것 같아 소얼굴를 보이고 있다
+			PRINTFORMW ……아무래도%CALLNAME:GUEST%도 기분을 고친 것 같아 소얼굴을 보이고 있다
 		ENDIF
 		PRINTFORMW 일단 안심해, 거기를 떠났다……
 	;부끄럼쟁이とうろつく
@@ -251,7 +251,7 @@ ELSEIF EVENT_NUM && (RAND:3 == 0 || CEVENT(LOCALS:EVENT_NUM) == 0)
 		ELSE
 			PRINTFORM 한가닥의 실 감기지 않는 모습의
 		ENDIF
-			PRINTFORM %CALLNAME:TARGET%(와)과 갈아입음을 잊어 버렸는가
+			PRINTFORM %타겟과()% 갈아입음을 잊어 버렸는가
 		IF RAND:3 == 0
 			PRINTFORM 알몸Ｙ셔츠모습으로 부끄러운 듯이옷자락를 아래에 끌어들이고 있다
 		ELSEIF RAND:2 == 0
@@ -264,11 +264,11 @@ ELSEIF EVENT_NUM && (RAND:3 == 0 || CEVENT(LOCALS:EVENT_NUM) == 0)
 			PRINTFORML 「아, %CNAME("二人称")%～, 봐 봐～, 섹시 포즈♪」
 			PRINTFORMW 이쪽을 알아차렸다%조사처리(CALLNAME:TARGET,"는")% 아슬아슬한 포즈를 취해 보인다
 			PRINTFORML 「%CALLNAME:GUEST%도 숨지 말고 함께 섹시 포즈 해～♪」
-			PRINTFORMW 한편, 얼굴를빨강구 했다%CALLNAME:GUEST%는 필사적으로의 뒤로 숨으려고 하고 있었다……
+			PRINTFORMW 한편, 얼굴을빨강구 했다%CALLNAME:GUEST%는 필사적으로의 뒤로 숨으려고 하고 있었다……
 		ELSE
 			PRINTFORML 「와아, %CALLNAME:GUEST%의 신체는 예쁘다～」
 			PRINTFORMW 「좀 더, %CNAME("一人称")%에 보여 줘～♪라고, 앗…도망치지 않아도 괜찮은데～」
-			PRINTFORMW 이쪽을 알아차렸다%CALLNAME:GUEST%하얼굴를 진빨강로 하면%조사처리(CALLNAME:TARGET,"를")% 남겨 달려 가 버렸다……
+			PRINTFORMW 이쪽을 알아차렸다%조사처리(CALLNAME:GUEST,"는")%얼굴을 진빨강로 하면%조사처리(CALLNAME:TARGET,"를")% 남겨 달려 가 버렸다……
 		ENDIF
 	;부끄럼없음とうろつく
 	CASE 5
@@ -282,7 +282,7 @@ ELSEIF EVENT_NUM && (RAND:3 == 0 || CEVENT(LOCALS:EVENT_NUM) == 0)
 		ELSE
 			PRINTFORM 목욕타올을날개짠 것 뿐의
 		ENDIF
-		PRINTFORMW %CALLNAME:TARGET%(와)과%CALLNAME:GUEST%하지만 함께 걸어 왔다
+		PRINTFORMW %타겟과()%%CALLNAME:GUEST%하지만 함께 걸어 왔다
 		IF RAND:2 == 0
 			PRINTFORML 「%CALLNAME:GUEST%의 피부는 부드러운 것 같다～, 말랑말랑♪」
 			PRINTFORMW 「…햐, 아앙♪거기는 낯간지럽기 때문에 츤츤 하지 말아줘～읏」
@@ -294,7 +294,7 @@ ELSEIF EVENT_NUM && (RAND:3 == 0 || CEVENT(LOCALS:EVENT_NUM) == 0)
 		ENDIF
 	;현명함と練習
 	CASE 6
-		PRINTFORML %CALLNAME:GUEST%의 방에서%CALLNAME:TARGET%(와)과%CALLNAME:GUEST%하지만 뭔가 하고 있는 것 같다
+		PRINTFORML %CALLNAME:GUEST%의 방에서%타겟과()%%CALLNAME:GUEST%하지만 뭔가 하고 있는 것 같다
 		PRINTFORML %CALLNAME:GUEST%의 요염하다손다하고를%조사처리(CALLNAME:TARGET,"가")% 흉내내고 있다
 		PRINTFORMW 아무래도%CALLNAME:GUEST%하지만%CALLNAME:TARGET%에 이케나이코트를 가르치고 있는 것 같다……
 		IF RAND:2 == 0
@@ -316,12 +316,12 @@ ELSEIF EVENT_NUM && (RAND:3 == 0 || CEVENT(LOCALS:EVENT_NUM) == 0)
 			PRINTFORML 갑자기%조사처리(CALLNAME:TARGET,"가")% 힐쭉 미소지었다
 			PRINTFORML %CALLNAME:MASTER%의 속옷을 가져 히죽히죽 하고 있다
 			IF RAND:2 == 0
-				PRINTFORMW 「…%CNAME("二人称")%노팬티…킁킁…하응…♪」
+				PRINTFORMW 「…%CNAME("二人称")%의팬티…킁킁…하응…♪」
 			ELSE
-				PRINTFORMW 「아응♪…%CNAME("二人称")%노팬티…뺨을 비벼 버린다…부비부비♪」
+				PRINTFORMW 「아응♪…%CNAME("二人称")%의팬티…뺨을 비벼 버린다…부비부비♪」
 			ENDIF
 			IF TALENT:GUEST:보수적 || TALENT:GUEST:정조관념 || TALENT:GUEST:부끄럼쟁이
-				PRINTFORM %CALLNAME:GUEST%하얼굴를 진빨강로 하면서도
+				PRINTFORM %조사처리(CALLNAME:GUEST,"는")%얼굴을 진빨강로 하면서도
 				IF RAND:2 == 0
 					PRINTFORMW 자신도%CALLNAME:MASTER%의 속옷을 찾아내 기쁜듯이 하고 있다
 				ELSE
@@ -333,7 +333,7 @@ ELSEIF EVENT_NUM && (RAND:3 == 0 || CEVENT(LOCALS:EVENT_NUM) == 0)
 					PRINTFORMW 「응응♪%CALLNAME:GUEST%도, 번창해 버린 것이다…함께 시야♪」
 					PRINTFORMW 두 사람 모두 속옷의 냄새를 맡으면서 편손를 안 되는 느낌에 움직이려고 하고 있었으므로 서둘러 츳코미에 갔다……
 				ELSE
-					PRINTFORML 부러운 듯이 그것을 보고 있었다%CALLNAME:GUEST%하%CALLNAME:MASTER%의 속옷은
+					PRINTFORML 부러운 듯이 그것을 보고 있었다%조사처리(CALLNAME:GUEST,"는")%%CALLNAME:MASTER%의 속옷은
 					PRINTFORMW 자신이 조사하기 때문이라고%CALLNAME:TARGET%의 가지고 있던 속옷을 잡는다
 					PRINTFORMW 「앗, %조사처리(CNAME("一人称"),"가")% 먼저 찾아낸 것이니까, %조사처리(CNAME("一人称"),"가")% 씻는다～읏」
 					PRINTFORMW 두 명은 세탁 무시로 속옷 쟁탈전을 시작해 버렸으므로 츳코미에 갔다……
@@ -353,7 +353,7 @@ ELSEIF EVENT_NUM && (RAND:3 == 0 || CEVENT(LOCALS:EVENT_NUM) == 0)
 				PRINTFORMW 그 뒤에서는%CALLNAME:GUEST%하지만 자신도 칭찬했으면 좋은 듯이 이쪽을 힐끔힐끔 응시하면서청소를 계속하고 있었다……
 			ELSE
 				PRINTFORML 두 사람 모두 노력해청소를 하고 있다
-				PRINTFORMW 인사를 하면, 두 명은얼굴를빨강꼬치라고 수줍기 시작했다
+				PRINTFORMW 인사를 하면, 두 명은얼굴을빨강꼬치라고 수줍기 시작했다
 				PRINTFORMW 「아응♪%CALLNAME:GUEST%챠～응, 칭찬되어져 버렸어～읏♪」
 				PRINTFORMW 두 사람 모두손를 서로 빼앗아 기뻐하고 있다, 기쁜 듯한 것은 좋지만청소노손는 멈추어 버리고 있다……
 			ENDIF

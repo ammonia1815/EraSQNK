@@ -698,13 +698,13 @@ CASE "小柄の상한"
 CASE "보통の상한"
 	RETURNF 163
 ;날짜이벤트など특수이벤트
-CASE "크리스마스ツリー"
+CASE "크리스마스트리"
 	FOR LCOUNT, 2, CHARANUM
-		SIF CEVENT("날짜：크리스마스ツリー", LCOUNT)
+		SIF CEVENT("날짜：크리스마스트리", LCOUNT)
 			LOCAL += 1
 	NEXT
 CASEELSE
-	THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+	THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 RETURNF LOCAL
 
@@ -863,10 +863,10 @@ ENDSELECT
 RETURNF LOCAL
 
 ;-------------------------------------------------
-;頻繁に使う条件のまとめ
-;LOCALなどの사용禁止! 
-;ARGがARGSを満たすか判定する. ただし, 삽입については@INSERTで管理する
-;소질については"소질名"を入れると機能し, その소질が無いのを条件とするときには"!소질名"とします
+;자주 사용하는 조건의 정리
+;LOCALなどの사용금지! 
+;ARG가ARGS을 채울지 판정함. 다만, 삽입에 관해선 @INSERT이 관리함
+;소질에 대해선 "소질名"을 넣으면 기능하고, 그 소질이 없는걸 조건으로 한다면 "!소질名"로 넣기
 ;-------------------------------------------------
 @COND(ARGS, ARG)
 #FUNCTION
@@ -2518,9 +2518,9 @@ CASE "근친"
 				RETURNF 1
 		ENDSELECT
 		;유니크じゃないキャラは保留
-		;SIF NAMES("종족", NO:MASTER, CFLAG:MASTER:8) == "리리스" && NAMES("종족", NO:ARG, CFLAG:ARG:8) == "리림"
+		;SIF NAMES("종족", NO:MASTER, CFLAG:MASTER:8) == "릴리스" && NAMES("종족", NO:ARG, CFLAG:ARG:8) == "릴림"
 			;RETURNF 1
-		;SIF NAMES("종족", NO:MASTER, CFLAG:MASTER:8) == "리림" && NAMES("종족", NO:ARG, CFLAG:ARG:8) == "리리스"
+		;SIF NAMES("종족", NO:MASTER, CFLAG:MASTER:8) == "릴림" && NAMES("종족", NO:ARG, CFLAG:ARG:8) == "릴리스"
 			;RETURNF 1
 	ENDIF
 
@@ -2597,7 +2597,7 @@ CASE "온천관장플래그"
 	RETURNF GETBIT(TCVAR:ARG:10, 34)
 CASE "유内욕뇨플래그"
 	RETURNF GETBIT(TCVAR:ARG:10, 35)
-CASE "딥쓰로트플래그"
+CASE "딥스로트플래그"
 	RETURNF GETBIT(TCVAR:ARG:10, 36)
 CASE "삽입前폭발플래그"
 	RETURNF GETBIT(TCVAR:ARG:10, 37)
@@ -2877,8 +2877,8 @@ CASE "탐색：상태異常無効持ちが居る"
 	ENDIF
 
 ;날짜이벤트など특수이벤트
-CASE "크리스마스ツリー"
-	SIF CEVENT("날짜：크리스마스ツリー", ARG)
+CASE "크리스마스트리"
+	SIF CEVENT("날짜：크리스마스트리", ARG)
 		RETURNF 1
 
 ;종족や캐릭터의判定用
@@ -2918,7 +2918,7 @@ CASE "Ｃ임프"
 CASE "Ｃアルラウネ"
 	SIF NO:ARG == 3 && CFLAG:ARG:8 == 2
 		RETURNF 1
-CASE "Ｃ스코그스라"
+CASE "Ｃ스코그슬로"
 	SIF NO:ARG == 3 && CFLAG:ARG:8 == 3
 		RETURNF 1
 CASE "Ｃ드라이어드"
@@ -3053,7 +3053,7 @@ CASE "Ｃ하피２"
 CASE "Ｃサラマンダー"
 	SIF NO:ARG == 12 && CFLAG:ARG:8 == 2
 		RETURNF 1
-CASE "Ｃ뷔브르"
+CASE "Ｃ뷔이브"
 	SIF NO:ARG == 12 && CFLAG:ARG:8 == 4
 		RETURNF 1
 CASE "Ｃ리저드맨"
@@ -3076,20 +3076,20 @@ CASE "Ｃ머메이드"
 CASE "Ｃ다키니"
 	SIF NO:ARG == 14 && CFLAG:ARG:8 == 3
 		RETURNF 1
-CASE "Ｃ아프사라스"
+CASE "Ｃ압사라"
 	SIF NO:ARG == 14
 		RETURNF 1
 
 CASE "Ｃカリュブディス"
 	SIF NO:ARG == 15 && CFLAG:ARG:8 == 2
 		RETURNF 1
-CASE "Ｃ스큘라"
+CASE "Ｃ스킬라"
 	SIF NO:ARG == 15
 		RETURNF 1
-CASE "Ｃ스큘라１", "Ｃ長編스큘라"
+CASE "Ｃ스킬라１", "Ｃ長編스킬라"
 	SIF NO:ARG == 15 && CFLAG:ARG:209 == 1
 		RETURNF 1
-CASE "Ｃ스큘라２", "Ｃ短編스큘라"
+CASE "Ｃ스킬라２", "Ｃ短編스킬라"
 	SIF NO:ARG == 15 && CFLAG:ARG:209 == 2
 		RETURNF 1
 
@@ -3125,7 +3125,7 @@ CASE "Ｃナシュジェアスダ"
 CASE "Ｃシェロブ"
 	SIF NO:ARG == 18 && CFLAG:ARG:8 == 3
 		RETURNF 1
-CASE "Ｃ알케니"
+CASE "Ｃ아라크네"
 	SIF NO:ARG == 18
 		RETURNF 1
 
@@ -3983,7 +3983,7 @@ CASE "다방：제복"
 		LOCALS = 바니
 	ENDSELECT
 CASEELSE
-	THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+	THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 RETURNF LOCALS
 
@@ -4133,7 +4133,7 @@ ENDSELECT
 ;それぞれの이벤트日は다음날の深夜まではＯＫとする
 SELECTCASE ARGS
 ;날짜이벤트
-CASE "お正月"
+CASE "정월"
 	SIF ARGS:1 != "現実のみ" && CONFIG("날짜고정이벤트재현") && FLAG:871 == 101
 		RETURNF 1
 	SIF MONTH_DAY >= 10100 && MONTH_DAY <= 10203
@@ -4153,7 +4153,7 @@ CASE "발렌타인다음날"
 		RETURNF 1
 	SIF MONTH_DAY >= 21504 && MONTH_DAY <= 21603
 		RETURNF 1
-CASE "ホワイトデー"
+CASE "화이트데이"
 	;１年目は無し
 	SIF FLAG:872 < 2
 		RETURNF 0
@@ -4166,12 +4166,12 @@ CASE "바다의날"
 		RETURNF 1
 	SIF MONTH_DAY >= 71600 && MONTH_DAY <= 71703
 		RETURNF 1
-CASE "ハロウィン"
+CASE "할로윈"
 	SIF ARGS:1 != "現実のみ" && CONFIG("날짜고정이벤트재현") && FLAG:871 == 80
 		RETURNF 1
 	SIF MONTH_DAY >= 103100 && MONTH_DAY <= 110103
 		RETURNF 1
-CASE "크리스마스一週間前"
+CASE "크리스마스일주일전"
 	SIF ARGS:1 != "現実のみ" && CONFIG("날짜고정이벤트재현") && FLAG:871 == 91
 		RETURNF 1
 	SIF MONTH_DAY >= 121800 && MONTH_DAY <= 121903
@@ -4187,7 +4187,7 @@ CASE "크리스마스다음날"
 		RETURNF 1
 	SIF MONTH_DAY >= 122604 && MONTH_DAY <= 122703
 		RETURNF 1
-CASE "크리스마스期間"
+CASE "크리스마스주간"
 	SIF ARGS:1 != "現実のみ" && CONFIG("날짜고정이벤트재현") && FLAG:871 >= 91 && FLAG:871 <= 99
 		RETURNF 1
 	SIF MONTH_DAY >= 121800 && MONTH_DAY <= 122703
@@ -4334,7 +4334,7 @@ CASE "週末"
 CASE ""
 ;비워둠
 CASEELSE
-	THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+	THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 
 RETURNF 0
@@ -4821,7 +4821,7 @@ CASE "昇順"
 	CASE "가슴 크기"
 		SORTCHARA BASE:바스트
 	CASEELSE
-		THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+		THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 	ENDSELECT
 CASEELSE
 	SELECTCASE ARGS
@@ -4842,7 +4842,7 @@ CASEELSE
 	CASE "가슴 크기"
 		SORTCHARA BASE:바스트, BACK
 	CASEELSE
-		THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+		THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 	ENDSELECT
 ENDSELECT
 
@@ -5125,11 +5125,11 @@ ENDSELECT
 RETURNF LOCALS
 
 ;-------------------------------------------------
-;ビデオで촬영した内容の判定
+;비디오로 촬영한 내용의 판정
 ;-------------------------------------------------
 @VIDEO(ARGS)
 #FUNCTION
-;LOCALにのみ0이상の値を代入すると"커맨드番号==LOCAL", LOCAL:1にも値を代入すると"LOCAL이상でLOCAL:1이하"の커맨드なら1を返す
+;LOCAL에만 0이상의 값을 대입하든 "커맨드번호==LOCAL", LOCAL:1에도 값을 대입하든 "LOCAL이상でLOCAL:1이하"의 커맨드라면 1을 반환함
 LOCAL = -1
 LOCAL:1 = - 1
 SELECTCASE ARGS
@@ -5141,6 +5141,10 @@ CASE "절정방뇨"
 	RETURNF GETBIT(CFLAG:69, 12)
 CASE "관장"
 	LOCAL = 136
+CASE "역레이프"
+	LOCAL = 120
+CASE "역애널"
+	LOCAL = 126
 CASE "섹스"
 	LOCAL = 60
 	LOCAL:1 = 69
@@ -5177,10 +5181,10 @@ FOR LOCAL, 0, 64
 NEXT
 RETURNF LOCAL:1
 
-;페니스の名前
+;페니스의 명칭
 @PENISNAME(ARG)
 #FUNCTIONS
-;持ち主はPLAYER
+;소유주가 PLAYER
 IF TALENT:ARG:후타나리 || TALENT:ARG:남자
 	RESULTS = 페니스
 ELSE
@@ -5188,7 +5192,7 @@ ELSE
 ENDIF
 RETURNF RESULTS
 
-;ハートマーク!!  ちょっと, ハートマークは一時休止
+;하트마크!!  잠깐, 하트마크는 일시정지 ;<-폰트마다 달라서 폰트적용한다고 이러는듯?
 @HEART()
 #FUNCTIONS
 CHKFONT "ＭＳ ゴシック"
@@ -5311,7 +5315,7 @@ CASE "明회색"
 CASE "하양"
 	RETURNF 0xE3E3E3
 CASEELSE
-	THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+	THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 
 ;-------------------------------------------------
@@ -5377,7 +5381,7 @@ IF CONFIG("画面표시：カラーバー")
 			LOCAL = DEF_COLOR("파랑")
 		ENDSELECT
 	CASEELSE
-		THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+		THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 	ENDSELECT
 
 	SETCOLOR LOCAL
@@ -5769,7 +5773,7 @@ CALL SETFLAG, "성전환플래그", ARG
 CALL EXP50_CHECK, ARG
 
 IF CONFIG("페니스상세설정") && ARG == MASTER && PENIS(ARG) && TALENT:ARG:페니스 == 0
-	PRINTFORML 성별의 변화에 따라 %CALLNAME:MASTER%의 다리사이에 변화가 일어나고 있습니다…
+	PRINTFORML 성별의 변화에 따라 %CALLNAME:MASTER%의 다리 사이에 변화가 일어나고 있습니다…
 	CALL SETCONFIG, "페니스상세설정：주인"
 ENDIF
 

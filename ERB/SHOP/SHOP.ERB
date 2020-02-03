@@ -240,10 +240,10 @@ PRINTL
 IF TEXTS("날짜対応이벤트") != ""
 	SETCOLOR DEF_COLOR("황색")
 	PRINTFORM %TEXTS("날짜対応이벤트")%
-	;크리스마스ツリー체크
-	IF DAYEV("크리스마스期間") && NUM("크리스마스ツリー")
+	;크리스마스트리체크
+	IF DAYEV("크리스마스주간") && NUM("크리스마스트리")
 		SETCOLOR DEF_COLOR("하트핑크")
-		FOR LCOUNT, 0, NUM("크리스마스ツリー")
+		FOR LCOUNT, 0, NUM("크리스마스트리")
 			PRINTFORM %UNICODE(0xD83C)%%UNICODE(0xDF84)%
 		NEXT
 	ENDIF
@@ -709,7 +709,7 @@ ELSEIF CHOICE == 118
 	IF FLAG:40 == 0
 		CALL EAT_LUNCH
 	ELSE
-		PRINTFORMW 이것이상는 과식합니다
+		PRINTFORMW 더  이상은 과식합니다
 	ENDIF
 ;[120]外出許可を与える
 ELSEIF CHOICE == 120
@@ -2498,7 +2498,7 @@ CASE 330 TO 349
 			CALL CALC, "小柄化", CHOICE
 		ENDIF
 	CASE 338
-		PRINTFORM 현재[{CHOICE, 2}]%CALLNAME:CHOICE%노피부색하
+		PRINTFORM 현재[{CHOICE, 2}]%CALLNAME:CHOICE%의피부색하
 		IF TALENT:CHOICE:피부색
 			PRINTFORML %CONDS("피부색", CHOICE)%입니다
 		ELSE
@@ -2515,13 +2515,13 @@ CASE 330 TO 349
 		CASE 100
 			RETURN 0
 		CASE 0
-			PRINTFORMW ＜%CALLNAME:CHOICE%노피부색를 말[살색]에 변화시켰습니다＞
+			PRINTFORMW ＜%CALLNAME:CHOICE%의피부색를 말[살색]에 변화시켰습니다＞
 		CASE 1
-			PRINTFORMW ＜%CALLNAME:CHOICE%노피부색를 건강할 것 같은[갈색]에 변화시켰습니다＞
+			PRINTFORMW ＜%CALLNAME:CHOICE%의피부색를 건강할 것 같은[갈색]에 변화시켰습니다＞
 		CASE 2
-			PRINTFORMW ＜%CALLNAME:CHOICE%노피부색를 빠지는 것 같은[백옥]에 변화시켰습니다＞
+			PRINTFORMW ＜%CALLNAME:CHOICE%의피부색를 빠지는 것 같은[백옥]에 변화시켰습니다＞
 		CASE 3
-			PRINTFORMW ＜%CALLNAME:CHOICE%노피부색를 보통에서는 뵙기 힘들다[파랑]에 변화시켰습니다＞
+			PRINTFORMW ＜%CALLNAME:CHOICE%의피부색를 보통에서는 뵙기 힘들다[파랑]에 변화시켰습니다＞
 		ENDSELECT
 		IF TALENT:CHOICE:피부색 == RESULT
 			PRINTFORMW …근데 원래색이랑 똑같군요. 소재는 돌려드립니다

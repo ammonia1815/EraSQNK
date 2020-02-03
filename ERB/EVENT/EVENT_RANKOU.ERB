@@ -19,7 +19,7 @@
 ;난교参加者の人数
 CHARANUM_RANKOU = CHARA_NUM("난교참가中")
 ;난교プレイ参加者の名前の羅列。%CALLNAME:TARGET%と%CALLNAME:(TARGET:1)%など
-CNAMES_RANKOU = %CALLNAME:TARGET%と%CALLNAME:(TARGET:1)%\@ TARGET:2 > 0 ? と%CALLNAME:(TARGET:2)% # \@
+CNAMES_RANKOU = %타겟과()% %CALLNAME:(TARGET:1)%\@ TARGET:2 > 0 ? %조사만처리(CALLNAME:(TARGET:1),"과")% %CALLNAME:(TARGET:2)% # \@
 ;副次的なプレイは基本的には無し
 SUBCOM = -1
 ;스톡を記録
@@ -30,7 +30,7 @@ CALL SIMULATE_TRAIN_FIRST, CHARANUM_RANKOU
 
 SELECTCASE ARGS
 CASE "요바이난교"
-	PRINTFORMW %CALLNAME:MASTER%하지만 잠자리에 들려고 했을 때,%CNAMES_RANKOU%하지만 방을 방문해 왔다
+	PRINTFORMW %마스터는()% 지만 잠자리에 들려고 했을 때,%조사처리(CNAMES_RANKOU,"가")% 방을 방문해 왔다
 	;PRINTFORMW 相当焦れてるなと直感した%CALLNAME:MASTER%は、%TEXTS("漢数字概数", CHARANUM_RANKOU)%人を部屋に招いて淫靡な宴をはじめることにした…
 ENDSELECT
 
@@ -53,33 +53,33 @@ ENDIF
 ;プレイ内容で分岐
 SELECTCASE CSTR:난교
 CASE "重ねて交互突き"
-	PRINTFORMW %TEXTS("漢数字概数", CHARANUM_RANKOU)%사람은 침대에 가로놓여,%TEXTR("보지를広げて", "ポーズをとって", "衣옷をはだけながらの")%졸라댐 전투를 시작했다
-	PRINTFORMW %CALLNAME:TARGET%들은%CALLNAME:MASTER%에 범해지면서, 서로의 몸을애무서로 하고 즐기고 있다
+	PRINTFORMW %TEXTS("漢数字概数", CHARANUM_RANKOU)%사람은 침대에 가로놓여,%TEXTR("보지를 펼쳐", "포즈를 취해", "옷을 벌리며")% 조르는 경쟁을 시작했다
+	PRINTFORMW %CALLNAME:TARGET%들은 %CALLNAME:MASTER%에 범해지면서, 서로의 몸을 애무하고 즐기고 있다
 	MAINCOM = 60
 	SUBCOM = 13
 CASE "次々に犯す"
-	PRINTFORMW %TEXTS("漢数字概数", CHARANUM_RANKOU)%사람은%CALLNAME:MASTER%에 향하여 엉덩이를 내밀어, 속옷을 내려 재촉을 해 왔다
-	PRINTFORMW %CALLNAME:MASTER%는 눈앞에 줄섰다엉덩이의 유혹에 저항하지 못하고, 휘청휘청 끌어당길 수 있어 차례로 범해 돌아 버렸다
+	PRINTFORMW %TEXTS("漢数字概数", CHARANUM_RANKOU)%사람은 %CALLNAME:MASTER%에 향하여 엉덩이를 내밀어, 속옷을 내려 재촉을 해 왔다
+	PRINTFORMW %마스터는()% 눈 앞에 있는 엉덩이의 유혹에 저항하지 못하고, 흐물흐물 빨려들어 차례차례 범했다
 	MAINCOM = 61
 	SUBCOM = 13
 CASE "기승위輪姦"
 	IF RAND:2
-		PRINTFORMW %TEXTS("漢数字概数", CHARANUM_RANKOU)%사람은 협력해%CALLNAME:MASTER%를넘어뜨리기, 얼굴과 허리에 걸쳐 쾌락을 탐내기 시작했다
+		PRINTFORMW %TEXTS("漢数字概数", CHARANUM_RANKOU)%사람은 협력해 %마스터를()% 넘어뜨리고, 얼굴과 허리에 걸쳐 쾌락을 탐내기 시작했다
 	ELSE
-		PRINTFORMW %CALLNAME:MASTER%하%TEXTS("漢数字概数", CHARANUM_RANKOU)%사람에게 밀어 넘어뜨려져기승위그리고 번갈아 범해졌다
+		PRINTFORMW %마스터는()% %TEXTS("漢数字概数", CHARANUM_RANKOU)%사람에게 밀어 넘어뜨려져 기승위로 번갈아 범해졌다
 	ENDIF
 	IF RAND:6 == 0
-		PRINTFORMW %CALLNAME:TARGET%들은%CALLNAME:MASTER%의 얼굴을 히죽히죽 응시하면서, 그 표정을 즐기도록(듯이) 허리를 그라인드 시키고 있다！
+		PRINTFORMW %CALLNAME:TARGET%들은 %CALLNAME:MASTER%의 얼굴을 히죽히죽 응시하면서, 그 표정을 즐기듯이 허리를 그라인드 시키고 있다！
 	ELSEIF RAND:5 == 0
-		PRINTFORMW %CALLNAME:TARGET%들은 스스로 움직이려고 하지 않고, 내려다 보았다%CALLNAME:MASTER%에 허리를 흔들도록(듯이) 명령해 온다
+		PRINTFORMW %CALLNAME:TARGET%들은 스스로 움직이려고 하지 않고, %CALLNAME:MASTER%에 허리를 흔드라고 명령해 온다
 	ELSEIF RAND:4 == 0
-		PRINTFORMW %CALLNAME:TARGET%들은%CALLNAME:MASTER%의 몸을 단단히억눌러, 오로지 격렬하게 허리를 계속 흔들어 온다！
+		PRINTFORMW %CALLNAME:TARGET%들은 %CALLNAME:MASTER%의 몸을 단단히 억눌러, 오로지 격렬하게 허리를 계속 흔들어 온다！
 	ELSEIF RAND:3 == 0
-		PRINTFORMW %CALLNAME:TARGET%들은%CALLNAME:MASTER%(와)과 몸을 밀착시켜, 점막의 움직임만으로 짜내려고 해 온다！
+		PRINTFORMW %CALLNAME:TARGET%들은 %마스터와()% 몸을 밀착시켜, 점막의 움직임만으로 짜내려고 해 온다！
 	ELSEIF RAND:2
-		PRINTFORMW 즐거운 듯이 허리를 흔든다%CALLNAME:TARGET%에 지지 않으려고, 순번 기다리는%CALLNAME:(TARGET:1)%하지만%CALLNAME:MASTER%의 입술을 빼앗는다
+		PRINTFORMW 즐거운 듯이 허리를 흔드는 %CALLNAME:TARGET%에 지지 않으려고, 차례를 기다리는%조사처리(CALLNAME:(TARGET:1),"가")% %CALLNAME:MASTER%의 입술을 빼앗는다
 	ELSE
-		PRINTFORMW 깔아눌러져 허리를 흔든다%CALLNAME:MASTER%의 옆에서는, 순번을 기다린다몽마하지만 추잡한 말을 속삭여 온다
+		PRINTFORMW 깔아 눌려져 허리를 흔드는 %CALLNAME:MASTER%의 옆에서는, 차례를 기다리는 몽마가 추잡한 말을 속삭여 온다
 	ENDIF
 
 	IF CANTRAINS("넘어뜨리기기승위") == CHARANUM_RANKOU && (RAND:2 || CANTRAINS("넘어뜨리기애널기승위") < CHARANUM_RANKOU)
@@ -95,42 +95,42 @@ CASE "기승위輪姦"
 	;넘어뜨리기ＯＮ
 	CVARSET TEQUIP, 30, 1
 CASE "식스나인"
-	PRINTFORMW %TEXTS("漢数字概数", CHARANUM_RANKOU)%사람은 얽히도록(듯이)해 서로의 성기에 혀를 기게 하면서, %CALLNAME:MASTER%에 향하여 과격한 졸라댐을 해 왔다
+	PRINTFORMW %TEXTS("漢数字概数", CHARANUM_RANKOU)%사람은 얽히듯이 해 서로의 성기에 혀를 기게 하면서, %CALLNAME:MASTER%에 향하여 과격히 졸라 왔다
 	IF RAND:2
-		PRINTFORMW %CALLNAME:TARGET%들은입(와)과 사타구니를 교대로 범해지는 것을 스파이스로 해, 땀투성이로６９를 즐기고 있다
+		PRINTFORMW %CALLNAME:TARGET%들은 입과 사타구니를 교대로 범해지는 것을 스파이스로 해, 땀투성이로 ６９를 즐기고 있다
 	ELSE
 		PRINTFORMW %CALLNAME:TARGET%들은 범해지면서, 서로의 부끄러운 부분을 열중해 맛보고 있다
 	ENDIF
 	MAINCOM = 69
 	SUBCOM = 61
 CASE "Ｗ스마타"
-	PRINTFORMW %TEXTS("漢数字概数", CHARANUM_RANKOU)%사람은%CALLNAME:MASTER%를넘어뜨리기라고 둘러싸,\@ TARGET:2 ? 交代で # \@Ｗ스마타를 해 왔다
-	PRINTFORMW 저기의 부드러운 감촉으로페니스를 괴롭힐 수 있어절정하는 모습을,%CALLNAME:TARGET%들은 재미있을 것 같게 바라보고 있다
+	PRINTFORMW %TEXTS("漢数字概数", CHARANUM_RANKOU)%사람은 %마스터를()%넘어뜨리고 둘러싸,\@ TARGET:2 ? 교대로 # \@Ｗ스마타를 해 왔다
+	PRINTFORMW 그곳의 부드러운 감촉으로 페니스를 괴롭힐 수 있어 절정하는 모습을,%CALLNAME:TARGET%들은 재미있게 바라보고 있다
 	MAINCOM = 93
 CASE "풋잡"
 	;넘어뜨리기ＯＮ
 	CVARSET TEQUIP, 30, 1
 	MAINCOM = 95
 
-	PRINTFORMW %TEXTS("漢数字概数", CHARANUM_RANKOU)%사람은%CALLNAME:MASTER%를넘어뜨리기,\@ TARGET:2 ? 交代で # \@풋잡를 해 왔다
+	PRINTFORMW %TEXTS("漢数字概数", CHARANUM_RANKOU)%사람은 %마스터를()% 넘어뜨리고, \@ TARGET:2 ? 교대로 # \@풋잡을 해 왔다
 	IF RAND:3 == 0 && CANTRAINS("넘어뜨리기컨닐링구스") == CHARANUM_RANKOU
-		PRINTFORMW 반사적으로 피하려고 했다%CALLNAME:MASTER%(이었)였지만, 용서가 없다안면기승에 의해 반격의 싹을 집어내져 버린다……
+		PRINTFORMW 반사적으로 피하려고 한%CALLNAME:MASTER%였지만, 용서가 없는 안면기승에 의해 반격할수 없게되어 버린다……
 		SUBCOM = 1
 	ELSEIF RAND:2 && CANTRAINS("조개벌리기") == CHARANUM_RANKOU
-		PRINTFORMW 그 뿐만 아니라 겁없는 시선으로 내려다 봐지면서 전원에게 저기를 보게 되어%CALLNAME:MASTER%는 눈을 떼어 놓을 수 없게 되어 버렸다……
+		PRINTFORMW 그 뿐만 아니라 겁없는 시선으로 내려다 봐지면서 전원에게 그곳을 보게 되어 %마스터는()% 눈을 떼어 놓을 수 없게 되어 버렸다……
 		SUBCOM = 13
 	ELSE
-		PRINTFORMW 둘러싸지면서의 무자비한풋잡에,%CALLNAME:MASTER%하페니스를 격분하게 할 수 밖에 없다！
+		PRINTFORMW 둘러싸지면서의 무자비한풋잡에,%마스터는()% 페니스를 격분하게 할 수 밖에 없다！
 	ENDIF
 CASE "오나홀플레이"
-	PRINTFORMW %TEXTS("漢数字概数", CHARANUM_RANKOU)%사람은%CALLNAME:MASTER%를넘어뜨리기, 오나홀을 이용해 교대로페니스를 다뤄 왔다
-	PRINTFORMW 몰아세울 수 있다%CALLNAME:MASTER%의 안색이, 오나홀을 상하시킨다%CALLNAME:TARGET%들에게는 재미있어서 어쩔 수 없는 같다
+	PRINTFORMW %TEXTS("漢数字概数", CHARANUM_RANKOU)%사람은 %마스터를()% 넘어뜨리고,  오나홀을 이용해 교대로 페니스를 다뤄 왔다
+	PRINTFORMW 몰아세워지는 %CALLNAME:MASTER%의 안색이, 오나홀을 움직이는 %CALLNAME:TARGET%들에게는 재미있어서 어쩔 수 없는 같다
 	;넘어뜨리기ＯＮ
 	CVARSET TEQUIP, 30, 1
 	MAINCOM = 105
 ;雛形（ここへは来ない）
 CASEELSE
-	PRINTFORMW %CALLNAME:TARGET%들은%CSTR:난교%를 해 왔다
+	PRINTFORMW %CALLNAME:TARGET%들은 %CSTR:난교%를 해 왔다
 	;MAINCOM = 
 	;SUBCOM = 
 ENDSELECT
@@ -143,20 +143,20 @@ CALL PRINT_EVENT_RANKOU_STOCK, MEMO_BASE_STOCK
 ;プレイ終了時の地の文
 SELECTCASE CSTR:난교
 CASE "次々に犯す"
-	PRINTFORMW 질안에 충분히정액를 쏟아져%CALLNAME:TARGET%들은 행복한 것 같다……
+	PRINTFORMW 질안에 충분히 정액을 채워 %CALLNAME:TARGET%들은 행복한 것 같다……
 CASE "기승위輪姦"
 	IF RAND:2
-		PRINTFORMW 해방되었다%CALLNAME:MASTER%의 옆에서,%CALLNAME:TARGET%들은 짜냈다정액를 서로 과시하고 있다……
+		PRINTFORMW 해방된 %CALLNAME:MASTER%의 옆에서,%CALLNAME:TARGET%들은 짜낸 정액을 서로 과시하고 있다……
 	ELSE
-		PRINTFORMW %CALLNAME:TARGET%들은\@ MAINCOM == 65 ? アソコを # 애널を押し\@넓혀, 짜냈다정액를 %CALLNAME:MASTER%에 과시하고 있다……
+		PRINTFORMW %CALLNAME:TARGET%들은\@ MAINCOM == 65 ? 보지를 # 애널을 펴\@넓혀, 짜낸 정액을 %CALLNAME:MASTER%에 과시하고 있다……
 	ENDIF
 CASE "오나홀플레이"
-	PRINTFORMW 오나홀의 안에 나왔다정액를,%CALLNAME:TARGET%들은 맛있을 것 같게 돌려 마셔 하고 있다……
+	PRINTFORMW 오나홀의 안에 짜낸 정액을,%CALLNAME:TARGET%들은 맛있을 것 같게 돌려 마셔 하고 있다……
 CASEELSE
 	IF RAND:2
-		PRINTFORMW %CALLNAME:TARGET%들은정액의 들러붙은 얼굴을 서로 서로 빨고 있다……
+		PRINTFORMW %CALLNAME:TARGET%들은 정액의 들러붙은 얼굴을 서로 서로 빨고 있다……
 	ELSE
-		PRINTFORMW %CALLNAME:TARGET%들은, 짜냈다정액를 입옮기기로 서로 나누고 있다……
+		PRINTFORMW %CALLNAME:TARGET%들은, 짜낸 정액을 입으로 서로 나누고 있다……
 	ENDIF
 ENDSELECT
 PRINTL 
@@ -173,26 +173,26 @@ CASE "요바이난교"
 	;主人ダウン
 	IF BASE:MASTER:정력 <= 1 && BASE:MASTER:스톡 == 0
 		IF RAND:2 && PENIS(MASTER)
-			PRINTFORMW %CALLNAME:TARGET%들은 노력했다%CALLNAME:MASTER%의페니스를 만지작거리면서, 저것이나 이것이나와 위로해 왔다
-			PRINTFORMW 그리고%TEXTS("漢数字概数", CHARANUM_RANKOU + 1)%사람은 서로 몸을 의지해 얼싸안아, 깊은 잠에 떨어졌다…
+			PRINTFORMW %CALLNAME:TARGET%들은 노력한 %CALLNAME:MASTER%의 페니스를 만지작거리면서, 이것저것 격려해 왔다
+			PRINTFORMW 그리고%TEXTS("漢数字概数", CHARANUM_RANKOU + 1)%사람은 서로 몸을 의지해 얼싸안고, 깊은 잠에 떨어졌다…
 		ELSE
-			PRINTFORMW %CALLNAME:TARGET%들은 움직일 수 없다%CALLNAME:MASTER%를 어루만지면서, 와글와글잡담에 꽃을 피우고 있다
-			PRINTFORMW 그 후%TEXTS("漢数字概数", CHARANUM_RANKOU + 1)%사람은 서로 몸을 의지해 얼싸안아, 깊은 잠에 떨어졌다…
+			PRINTFORMW %CALLNAME:TARGET%들은 움직일 수 없는 %마스터를()% 어루만지면서, 와글와글 이야기꽃을 피우고 있다
+			PRINTFORMW 그 후 %TEXTS("漢数字概数", CHARANUM_RANKOU + 1)%사람은 서로 몸을 의지해 얼싸안고, 깊은 잠에 떨어졌다…
 		ENDIF
 	ELSE
 		;とりあえず今のところ一番上のみ。他は蛇발な気がする
 		IF 1
-			PRINTFORMW %CALLNAME:TARGET%들을 몇번이나절정시킨 후,%TEXTS("漢数字概数", CHARANUM_RANKOU + 1)%사람은 서로 몸을 의지해 얼싸안아, 깊은 잠에 떨어졌다…
+			PRINTFORMW %CALLNAME:TARGET%들을 몇번이나 절정시킨 후,%TEXTS("漢数字概数", CHARANUM_RANKOU + 1)%사람은 서로 몸을 의지해 얼싸안고, 깊은 잠에 떨어졌다…
 		ELSEIF RAND:2
-			PRINTFORMW 만발했다%CALLNAME:TARGET%들은,%CALLNAME:MASTER%에 몸을 밀착시켜 끈적끈적 응석부려 왔다
-			PRINTFORMW %CALLNAME:MASTER%하{CHARANUM_RANKOU}인분의 따듯해짐을 느끼면서, 온화한 수다의시간를 보냈다……
+			PRINTFORMW 만족한 %CALLNAME:TARGET%들은,%CALLNAME:MASTER%에 몸을 밀착시켜 끈적끈적 응석부려 왔다
+			PRINTFORMW %마스터는()% {CHARANUM_RANKOU}인분의 따뜻함을 느끼면서, 온화한 수다의 시간를 보냈다……
 		ELSE
 			IF RAND:2
-				PRINTFORMW %CALLNAME:TARGET%들은%CALLNAME:MASTER%의 기능에 만발가, 감사의 말을 말하면서 어루만져 왔다
+				PRINTFORMW %CALLNAME:TARGET%들은 %CALLNAME:MASTER%의 활동에 만족하고, 감사의 말을 말하면서 어루만져 왔다
 			ELSE
-				PRINTFORMW 만발했다%CALLNAME:TARGET%들은%CALLNAME:MASTER%(와)과 수다 하면서, 산들산들 여러 가지 곳을 손대어 왔다
+				PRINTFORMW 만족한 %CALLNAME:TARGET%들은 %마스터와()% 수다 하면서, 문질문질 여러 곳을 손대어 왔다
 			ENDIF
-			PRINTFORMW 낯간지러운 것 같은%CALLNAME:MASTER%를 봐,{CHARANUM_RANKOU}사람의 장난은 에스컬레이트할 뿐이다……
+			PRINTFORMW 간지러운 것 같은 %마스터를()% 봐,{CHARANUM_RANKOU}사람의 장난은 에스컬레이트할 뿐이다……
 		ENDIF
 	ENDIF
 	;MASTERが一緒に寝た相手フラグ(TARGET優遇)
@@ -418,9 +418,9 @@ SETCOLOR DEF_COLOR("하트핑크")
 ;SIF EXP:MASTER:3 > TCVAR:MASTER:303
 ;	PRINTFORML %CALLNAME:MASTER%は{EXP:MASTER:3 - TCVAR:MASTER:303}回사정してしまった！
 IF MEMO_EXP6_ALL > 10
-	PRINTFORML %CALLNAME:MASTER%하{MEMO_EXP6_ALL}회도 가게 되어 버렸다！
+	PRINTFORML %마스터는()% {MEMO_EXP6_ALL}회나 가게 되어 버렸다！
 ELSE
-	PRINTFORML %CALLNAME:MASTER%하{MEMO_EXP6_ALL}회 가게 되어 버렸다！
+	PRINTFORML %마스터는()% {MEMO_EXP6_ALL}회 가게 되어 버렸다！
 ENDIF
 
 SETCOLOR DEF_COLOR("물색")
@@ -429,12 +429,12 @@ IF ARG > BASE:MASTER:스톡
 	IF MEMO_EXP6_ALL
 		PRINTFORM 그리고,
 	ELSE
-		PRINTFORM %CALLNAME:MASTER%하
+		PRINTFORM %마스터는()% 
 	ENDIF
 	IF ARG - BASE:MASTER:스톡 >= 2
-		PRINTFORML {ARG - BASE:MASTER:스톡}회도 다운해 버렸다！
+		PRINTFORML {ARG - BASE:MASTER:스톡}회나 다운해 버렸다！
 	ELSE
-		PRINTFORML {ARG - BASE:MASTER:스톡}회다운해 버렸다！
+		PRINTFORML {ARG - BASE:MASTER:스톡}회 다운해 버렸다！
 	ENDIF
 ENDIF
 

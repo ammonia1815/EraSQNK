@@ -4,7 +4,7 @@
 ;FLAG:50の各bitで各種フラグを記録する(基本的にはボス遭遇と보스격파)
 ; 0- 4	에르툼삼림
 ; 5- 9	류두흐동굴
-;10-14	안쇼스海
+;10-14	안쇼스 해
 ;15-19	베르나도트의대미궁
 ;20-24	고즈번 사막
 ;25-29	키아즈마의유곽
@@ -231,7 +231,7 @@ VARSET DUNGEON
 DUNGEON:0 = 초원
 DUNGEON:1 = 에르툼삼림
 DUNGEON:2 = 류두흐동굴
-DUNGEON:3 = 안쇼스海
+DUNGEON:3 = 안쇼스 해
 DUNGEON:4 = 베르나도트의대미궁
 DUNGEON:5 = 고즈번 사막
 DUNGEON:6 = 키아즈마의유곽
@@ -279,7 +279,7 @@ SELECTCASE FIELD_EXPLORER
 CASE "키아즈마의유곽"
 	PRINTFORML %FIELD_EXPLORER%의 탐색에는 %조사처리(TEXTS("조수の명칭"), "가")% 동행하지 못하고, $1,000～$10,000의 대금이 듭니다
 	IF MONEY < 1000
-		PRINTFORML …안 됐지만 가지고 있는 게 없는 것같네요
+		PRINTFORML …안 됐지만 돈이 없는 것 같네요
 		PRINTFORML 다음 방문을 기다리겠습니다
 		RESTART
 	ENDIF
@@ -316,11 +316,11 @@ SELECTCASE ARGS
 CASE "초원"
 	PRINTFORML %"～초원～", 25, LEFT%
 CASE "에르툼삼림"
-	PRINTFORML %"～에르툼삼림～", 25, LEFT% %"BOSS：스코그스라", 25, LEFT% 유니크：티타니아
+	PRINTFORML %"～에르툼삼림～", 25, LEFT% %"BOSS：스코그슬로", 25, LEFT% 유니크：티타니아
 CASE "류두흐동굴"
-	PRINTFORML %"～류두흐동굴～", 25, LEFT% %"BOSS：스투나＆멜로나", 25, LEFT% 유니크：뷔브르
-CASE "안쇼스海"
-	PRINTFORML %"～안쇼스海～", 25, LEFT% %"BOSS：레비아탄", 25, LEFT% 유니크：카류브디스
+	PRINTFORML %"～류두흐동굴～", 25, LEFT% %"BOSS：스투나＆멜로나", 25, LEFT% 유니크：뷔이브
+CASE "안쇼스 해"
+	PRINTFORML %"～안쇼스 해～", 25, LEFT% %"BOSS：레비아탄", 25, LEFT% 유니크：카리브디스
 CASE "베르나도트의대미궁"
 	PRINTFORML %"～베르나도트의 대미궁～", 25, LEFT% %"BOSS：베르나도트", 25, LEFT%
 CASE "고즈번 사막"
@@ -379,13 +379,13 @@ CASE "류두흐동굴"
 	CALL SET_PALAM_EXPLORER, "플로어", 1
 	CALL SET_PALAM_EXPLORER, "最深플로어", 8
 	CALL SET_PALAM_EXPLORER, "敵の強さ", 3
-	;라미아, 리저드맨, 하피. 뷔브르, ストメロは後で追加. 
+	;라미아, 리저드맨, 하피. 뷔이브, ストメロは後で追加. 
 	CALL SET_PALAM_EXPLORER, "몽마", 10, 2
 	CALL SET_PALAM_EXPLORER, "몽마", 11, 2
 	CALL SET_PALAM_EXPLORER, "몽마", 12, 2
 	CALL SET_PALAM_EXPLORER, "基本の敵キャラ", 6
 
-CASE "안쇼스海"
+CASE "안쇼스 해"
 	CALL SET_PALAM_EXPLORER, "遭遇率", 30
 	CALL SET_PALAM_EXPLORER, "아이템発見率", 35
 	CALL SET_PALAM_EXPLORER, "아이템레벨", 3
@@ -393,7 +393,7 @@ CASE "안쇼스海"
 	CALL SET_PALAM_EXPLORER, "플로어", 1
 	CALL SET_PALAM_EXPLORER, "最深플로어", 10
 	CALL SET_PALAM_EXPLORER, "敵の強さ", 4
-	;머메이드、아프사라스、스큘라。레비아탄はあとで追加。
+	;머메이드、압사라、스킬라。레비아탄はあとで追加。
 	CALL SET_PALAM_EXPLORER, "몽마", 105, 2
 	CALL SET_PALAM_EXPLORER, "몽마", 13, 1
 	CALL SET_PALAM_EXPLORER, "몽마", 213, 1
@@ -411,7 +411,7 @@ CASE "베르나도트의대미궁"
 	CALL SET_PALAM_EXPLORER, "플로어", 1
 	CALL SET_PALAM_EXPLORER, "最深플로어", 3
 	CALL SET_PALAM_EXPLORER, "敵の強さ", 5
-	;캣시, 랴난시, 다키니, 알라우네, ハイＬＶ실프, 윗치
+	;캣시, 리난시, 다키니, 알라우네, ハイＬＶ실프, 윗치
 	CALL SET_PALAM_EXPLORER, "몽마", 203, 2
 	CALL SET_PALAM_EXPLORER, "몽마", 204, 2
 	CALL SET_PALAM_EXPLORER, "몽마", 305, 2
@@ -429,7 +429,7 @@ CASE "고즈번 사막"
 	CALL SET_PALAM_EXPLORER, "플로어", 1
 	CALL SET_PALAM_EXPLORER, "最深플로어", 6
 	CALL SET_PALAM_EXPLORER, "敵の強さ", 6
-	;アルプ、メリジューヌ、하피、알케니、スフィンクス
+	;アルプ、メリジューヌ、하피、아라크네、スフィンクス
 	CALL SET_PALAM_EXPLORER, "몽마", 202, 2
 	CALL SET_PALAM_EXPLORER, "몽마", 210, 1
 	CALL SET_PALAM_EXPLORER, "몽마", 11, 3
@@ -474,8 +474,8 @@ CASE "에르툼삼림"
 CASE "류두흐동굴"
 	SIF PALAM_EXPLORER("류두흐동굴：보스격파")
 		CALL SET_PALAM_EXPLORER, "계단발견率", 20
-CASE "안쇼스海"
-	SIF PALAM_EXPLORER("안쇼스海：보스격파")
+CASE "안쇼스 해"
+	SIF PALAM_EXPLORER("안쇼스 해：보스격파")
 		CALL SET_PALAM_EXPLORER, "계단발견率", 20
 CASE "베르나도트의대미궁"
 	SIF PALAM_EXPLORER("베르나도트의대미궁：보스격파")
@@ -510,7 +510,7 @@ CASE "키아즈마의유곽"
 		CALL SET_PALAM_EXPLORER, "몽마", 444, 10
 	ENDSELECT
 CASEELSE
-	THROW %GAMEBASE_YEAR%버젼 BUG : "%TEXTS("탐색先")%"를 찾을 수 없습니다.
+	THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%TEXTS("탐색先")%"를 찾을 수 없습니다.
 ENDSELECT
 
 ;탐색者と조수の効果
@@ -602,7 +602,7 @@ FOR COUNT:99, 0, 30
 		IF PALAM_EXPLORER("幸運") == 0
 			CALL SET_PALAM_EXPLORER, "아이템発見率", -50
 			CALL SET_PALAM_EXPLORER, "아이템레벨", -3
-			PRINTFORML 랴난시의 함정? 의 효과가 끝났다. 
+			PRINTFORML 리난시의 함정? 의 효과가 끝났다. 
 		ENDIF
 	ENDIF
 	IF PALAM_EXPLORER("クラムジ")
@@ -613,7 +613,7 @@ FOR COUNT:99, 0, 30
 	IF PALAM_EXPLORER("센시브")
 		CALL SET_PALAM_EXPLORER, "센시브", -1
 		SIF PALAM_EXPLORER("센시브") == 0
-			PRINTFORML 독 함정의 효과가 끝났다. 
+			PRINTFORML 미약 함정의 효과가 끝났다. 
 	ENDIF
 
 	;시간調整
@@ -692,13 +692,13 @@ IF IS_ITEMGET
 		PRINTFORML 스푼이나 찻잔은 식사때는 물론, 탐험 중의 휴식에서도 우아한 한때를 연출하겠지요…
 	;악세사리の鑑定
 	SIF GETBIT(IS_ITEMGET, 2)
-		PRINTFORML 감정되지않은 악세사리는 『신기루당』에 가져가시는 것을 추천합니다
+		PRINTFORML 감정되지않은 악세사리는 『악세서리상점:신기루당』에 가져가시는 것을 추천합니다
 ELSEIF IS_ITEMGET + MONEY:6 == 0
 	PRINTL 아이템 입수 등：없음
 ENDIF
 
 SIF I:999 && PLAYER == MASTER
-	PRINTFORML %조사처리(NAME:TARGET,"를")% 동료마로 만들었으므로 경험치에 보너스가 발생합니다
+	PRINTFORML %조사처리(NAME:TARGET,"를")% 동료 몽마로 만들었으므로 경험치에 보너스가 발생합니다
 ;LVUP
 SIF PLAYER == MASTER
 	CALL ABLUP_MASTER, "通常"
@@ -731,13 +731,13 @@ IF RAND:100 < PALAM_EXPLORER("계단발견率") && PALAM_EXPLORER("플로어") <
 		;티타니아出現
 		CASE 3
 			CALL SET_PALAM_EXPLORER, "몽마", 304, 1
-		;스코그스라出現
+		;스코그슬로出現
 		CASE 8
 			CALL SET_PALAM_EXPLORER, "몽마", 303, 5
 		ENDSELECT
 	CASE "류두흐동굴"
 		SELECTCASE PALAM_EXPLORER("플로어")
-		;뷔브르出現
+		;뷔이브出現
 		CASE 3
 			CALL SET_PALAM_EXPLORER, "몽마", 412, 1
 		;멜로나出現
@@ -749,9 +749,9 @@ IF RAND:100 < PALAM_EXPLORER("계단발견率") && PALAM_EXPLORER("플로어") <
 			SIF CONFIG("탐색ボス") || GETCHARA(34) < 0
 				CALL SET_PALAM_EXPLORER, "몽마", 34, 5
 		ENDSELECT
-	CASE "안쇼스海"
+	CASE "안쇼스 해"
 		SELECTCASE PALAM_EXPLORER("플로어")
-		;카류브디스増量
+		;카리브디스増量
 		CASE 3
 			CALL SET_PALAM_EXPLORER, "몽마", 215, 1
 		;레비아탄出現
@@ -895,8 +895,8 @@ CASE "류두흐동굴：中보스격파"
 	SETBIT FLAG:50, 5
 CASE "류두흐동굴：보스격파"
 	SETBIT FLAG:50, 6
-;10-14	안쇼스海
-CASE "안쇼스海：보스격파"
+;10-14	안쇼스 해
+CASE "안쇼스 해：보스격파"
 	SETBIT FLAG:50, 10
 ;15-19	베르나도트의대미궁
 CASE "베르나도트의대미궁：보스격파"
@@ -913,7 +913,7 @@ CASE "中보스격파"
 CASE "보스격파"
 	SETBIT FLAG:50, 61
 CASEELSE
-	THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+	THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 
 @PALAM_EXPLORER(ARGS, ARG)
@@ -1087,8 +1087,8 @@ CASE "류두흐동굴：中보스격파"
 	RETURNF GETBIT(FLAG:50, 5)
 CASE "류두흐동굴：보스격파"
 	RETURNF GETBIT(FLAG:50, 6)
-;10-14	안쇼스海
-CASE "안쇼스海：보스격파"
+;10-14	안쇼스 해
+CASE "안쇼스 해：보스격파"
 	RETURNF GETBIT(FLAG:50, 10)
 ;15-19	베르나도트의대미궁
 CASE "베르나도트의대미궁：보스격파"
@@ -1105,6 +1105,6 @@ CASE "中보스격파"
 CASE "보스격파"
 	RETURNF GETBIT(FLAG:50, 61)
 CASEELSE
-	THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+	THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 RETURNF 0

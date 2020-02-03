@@ -10,7 +10,7 @@ CALL SHOW_COM_ORDER_COM, 90
 ;実行できない
 IF TCVAR:28 == 0
 	SIF PENIS(PLAYER)
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 페니스에 손을 대는것조차 싫은 모양이다…
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 페니스에 손을 대는 것조차 싫은 모양이다…
 	RETURN 0
 ENDIF
 
@@ -145,22 +145,22 @@ IF CHECK_COM("Ｗ봉사")
 	IF SELECTCOM:1 == PREVCOM:1 && SELECTCOM == PREVCOM
 		PRINTFORM 두사람은 
 		IF TALENT:(TARGET:1):음란 + TALENT:(TARGET:1):연모 && TALENT:음란 + TALENT:연모 && RAND:4 == 0
-			PRINTFORMW 황홀해하면서 %CALLNAME:PLAYER%의 페니스를 계속 당기고있다…
+			PRINTFORMW 황홀해하면서 %CALLNAME:PLAYER%의 페니스를 계속 다루고 있다…
 		ELSEIF ABL:(TARGET:1):봉사정신 >= 3 && ABL:봉사정신 >= 3 && RAND:3 == 0
-			PRINTFORMW %CALLNAME:PLAYER%의 얼굴을 바라보면서 페니스를 계속 당기고있다…
+			PRINTFORMW %CALLNAME:PLAYER%의 얼굴을 바라보면서 페니스를 계속 다루고 있다…
 		ELSEIF ABL:(TARGET:1):기교 + ABL:기교 >= 6 && RAND:2 == 0
-			PRINTFORMW 완급을 조절하면서 %CALLNAME:PLAYER%의 페니스를 계속 당기고있다…
+			PRINTFORMW 완급을 조절하면서 %CALLNAME:PLAYER%의 페니스를 계속 다루고 있다…
 		ELSE
-			PRINTFORMW %CALLNAME:PLAYER%의 페니스를 계속 당기고있다…
+			PRINTFORMW %CALLNAME:PLAYER%의 페니스를 계속 다루고 있다…
 		ENDIF
 	ELSE
-		PRINTFORM %CALLNAME:TARGET%(와)과%CALLNAME:(TARGET:1)%하
+		PRINTFORM %타겟과()%%조사처리(CALLNAME:(TARGET:1),"는")%
 		SIF TALENT:(TARGET:1):음란 + TALENT:(TARGET:1):연모 && TALENT:음란 + TALENT:연모 && RAND:2 == 0
 			PRINTFORM 상기된 눈동자로 %조사처리(CALLNAME:MASTER,"를")% 바라보면서, 
 		IF RAND:2 == 0
-			PRINTFORMW 경쟁하듯이 페니스를 훑기시작했다…
+			PRINTFORMW 경쟁하듯이 페니스를 훑기 시작했다…
 		ELSE
-			PRINTFORMW 둘의 손에 끼워넣듯이 해서 페니스를 잡아당겼다…
+			PRINTFORMW 둘의 손에 끼워넣듯이 해서 페니스를 다루고 있다…
 		ENDIF
 	ENDIF
 ;==90で두개손훑기, == 91なら펠라＆손훑기, それ以外は犯されながら손훑기
@@ -196,15 +196,15 @@ ELSEIF PREVCOM == SELECTCOM && COND("前Ｔ조교자") == PLAYER
 		;냄새민감分岐
 		IF PLAYER == MASTER && TALENT:냄새민감 && RAND:3
 			IF RAND:2
-				PRINTFORMW 페니스노%TEXTS("匂い")%를 냄새 맡으면서손그리고 계속 잡아당기고 있다…
+				PRINTFORMW 페니스의 %조사처리(TEXTS("匂い"),"를")% 맡으면서 손으로 계속 다루고 있다…
 			ELSE
-				PRINTFORMW 코를 울려 땀흘렸다페니스노%TEXTS("匂い")%를 즐기면서 계속 켜고 있다…
+				PRINTFORMW 코를 울려 땀흘린 페니스의 %조사처리(TEXTS("匂い"),"를")% 즐기면서 계속 켜고 있다…
 			ENDIF
 		ELSE
-			PRINTFORMW 황홀해하면서 %CALLNAME:PLAYER%의 페니스를 계속 당기고있다…
+			PRINTFORMW 황홀해하면서 %CALLNAME:PLAYER%의 페니스를 계속 다루고 있다…
 		ENDIF
 	ELSEIF ABL:봉사정신 >= 3 && TEQUIP:안면기승 == 0 && RAND:3 == 0
-		PRINTFORMW %CALLNAME:PLAYER%의 얼굴을 바라보면서 페니스를 계속 당기고있다…
+		PRINTFORMW %CALLNAME:PLAYER%의 얼굴을 바라보면서 페니스를 계속 다루고 있다…
 	ELSEIF ABL:기교 >= 3 && RAND:2 == 0
 		PRINTFORMW 완급을 조절하면서 긴 스트로크로 페니스를 계속 훑고있다…
 	ELSE
@@ -215,11 +215,11 @@ ELSEIF CHECK_COM("손훑기펠라")
 	;냄새민감分岐
 	IF PLAYER == MASTER && TALENT:냄새민감 && TALENT:연모 && (CHOSECOM(SELECTCOM) == 0 || RAND:3 == 0)
 		IF CHECK_STAIN(STAIN:PLAYER:Ｐ, "Ｐ치구") && RAND:5
-			PRINTFORM ,%TEXTR("こびりつく垢", "チンカス")%노%TEXTS("匂い")%
+			PRINTFORM ,%TEXTR("붙은 때", "치구")%의 %TEXTS("匂い")%
 		ELSE
-			PRINTFORM ,페니스노%TEXTS("匂い")%
+			PRINTFORM ,페니스의 %TEXTS("匂い")%
 		ENDIF
-		PRINTFORM 를%TEXTR("嗅ぎ", "楽しみ")%(이)면서%CALLNAME:PLAYER%의
+		PRINTFORM 를 %TEXTR("맡으", "즐기")%면서 %CALLNAME:PLAYER%의
 	ELSEIF TALENT:연모 && RAND:4 == 0
 		PRINTFORM , 황홀해하면서 %CALLNAME:PLAYER%의 
 	ELSEIF ABL:봉사정신 >= 3 && RAND:3 == 0
@@ -274,7 +274,7 @@ ELSEIF TEQUIP:넘어뜨리기 || CHECK_COM("파후파후손훑기")
 		ENDIF
 	;腋の匂い嗅がせつつ
 	ELSEIF CHECK_CLO("겨드랑이노출") && COND("성벽：겨드랑이", PLAYER) && (CHOSECOM(SELECTCOM) == 0 || RAND:3 == 0)
-		PRINTFORMW %CALLNAME:PLAYER%에%TEXTS("겨드랑이")%노%TEXTS("匂い")%를 냄새 맡게 하면서, 즐거운 듯이페니스를 다루고 있다…
+		PRINTFORMW %CALLNAME:PLAYER%에 %TEXTS("겨드랑이")%의 %조사처리(TEXTS("匂い"),"를")% 냄새 맡게 하면서, 즐거운 듯이 페니스를 다루고 있다…
 		RETURN 1
 	;プライド高いor음란or새드끼Lv4이상
 	ELSEIF (TALENT:교만 || TALENT:음란 || ABL:새드끼 >= 4) && RAND:2 == 0
@@ -294,7 +294,7 @@ ELSEIF TEQUIP:넘어뜨리기 || CHECK_COM("파후파후손훑기")
 	ENDIF
 	PRINTFORM 페니스를 희롱해, 
 	IF PREVCOM == 1 || PREVCOM == 9
-		PRINTFORM 가랑이를 \@ RAND:2 ? 꽉누르거나 # 문지르거나 \@ 하면서
+		PRINTFORM 가랑이를 \@ RAND:2 ? 꽉 누르거나 # 문지르거나 \@ 하면서
 	ELSEIF CHECK_COM("파후파후손훑기") && RAND:2
 		PRINT 기뻐보이는 
 	ELSE
@@ -323,27 +323,27 @@ ELSE
 		IF CHECK_STAIN(STAIN:PLAYER:Ｐ, "Ｐ치구") && RAND:3
 			SELECTCASE RANDF(3 + TALENT:교만)
 			CASE 0
-				PRINTFORMW %CALLNAME:PLAYER%의페니스에 달라붙는 좆밥의%TEXTS("匂い")%를 한 바탕 냄새 맡고 나서, 흥분으로 얼굴을 붉히면서페니스를 잡아당기기 시작했다…
+				PRINTFORMW %CALLNAME:PLAYER%의 페니스에 달라붙는 좆밥의%조사처리(TEXTS("匂い"),"를")% 한 바탕 맡고 나서, 흥분으로 얼굴을 붉히면서 페니스를 잡아당기기 시작했다…
 			CASE 1
-				PRINTFORMW %CALLNAME:PLAYER%의페니스를 끈적끈적 소리를 내 잡아당기면서, 솟아오른다%TEXTS("匂い")%를 냄새 맡아 한층 더 흥분하고 있다…
+				PRINTFORMW %CALLNAME:PLAYER%의 페니스를 끈적끈적 소리를 내 잡아당기면서, 솟아오른 %조사처리(TEXTS("匂い"),"를")% 맡아 한층 더 흥분하고 있다…
 			CASE 2
-				PRINTFORMW 페니스를손그리고 잡아당기면서, 때때로손를 멈추어 칼리목에 코를 접근하고%TEXTS("匂い")%를 냄새 맡고 있다…
+				PRINTFORMW 페니스를 손으로 다루면서, 때때로 손을 멈추어 귀두에 코를 접근하고 %조사처리(TEXTS("匂い"),"를")% 맡고 있다…
 			CASE 3
-				PRINTFORMW %CALLNAME:PLAYER%의페니스에 달라붙는 때의%TEXTS("匂い")%에 악담을 다하면서도, 스침올린다일을 멈출 수 없다…
+				PRINTFORMW %CALLNAME:PLAYER%의 페니스에 달라붙는 때의 %TEXTS("匂い")%에 악담을 다하면서도, 훑는 일을 멈출 수 없다…
 			ENDSELECT
 			RETURN 1
 		ELSEIF CHECK_STAIN(STAIN:PLAYER:Ｐ, "정액") && RAND:3 == 0
 			IF RAND:2
-				PRINTFORM 정액그리고 더러워졌다페니스노%TEXTS("匂い")%를 냄새 맡아 흥분하면서
+				PRINTFORM 정액으로 더러워진 페니스의 %조사처리(TEXTS("匂い"),"를")% 맡아 흥분하면서
 			ELSE
-				PRINTFORM %CALLNAME:PLAYER%의페니스에 붙었다정액노%TEXTS("匂い")%를 냄새 맡으면서
+				PRINTFORM %CALLNAME:PLAYER%의 페니스에 붙은 정액의 %조사처리(TEXTS("匂い"),"를")% 맡으면서
 			ENDIF
 		ELSEIF RAND:3 == 0
-			PRINTFORM %CALLNAME:PLAYER%의페니스노%TEXTS("匂い")%를 냄새 맡으면서
+			PRINTFORM %CALLNAME:PLAYER%의 페니스의 %조사처리(TEXTS("匂い"),"를")% 냄새 맡으면서
 		ELSEIF RAND:2
-			PRINTFORM 페니스로부터 감도는 강하다%TEXTS("匂い")%를 들이 마시면, 넋을 잃으면서
+			PRINTFORM 페니스로부터 감도는 강한 %조사처리(TEXTS("匂い"),"를")% 들이 마시고 넋을 잃으면서
 		ELSE
-			PRINTFORM 코를 접근해%CALLNAME:PLAYER%의페니스노%TEXTS("匂い")%를 즐기면서
+			PRINTFORM 코를 접근해 %CALLNAME:PLAYER%의 페니스의 %조사처리(TEXTS("匂い"),"를")% 즐기면서
 		ENDIF
 	ENDIF
 	IF TALENT:하피

@@ -5,25 +5,25 @@
 ;58RDA使用・원더트립用
 ;折角なんで増やしても良いかも
 @RDA
-PRINTFORMW %CALLNAME:TARGET%는 이상한 행동으로 스텝을 밟았다！
+PRINTFORMW %타겟은()% 이상한 행동으로 스텝을 밟았다！
 PRINTFORMW 눈앞의 경치가 비뚤어져 간다！
-PRINTFORMW %CALLNAME:MASTER%는 패닉에 빠졌다
+PRINTFORMW %마스터는()% 패닉에 빠졌다
 IF RAND:6 == 0
-	PRINTFORM %CALLNAME:MASTER%하 
+	PRINTFORM %조사처리(CALLNAME:MASTER,"는")% 
 	CALL RDB
 ELSEIF RAND:5 == 0
-	PRINTFORMW %CALLNAME:MASTER%는 멍하니 하고 있다……
+	PRINTFORMW %마스터는()% 멍하니 하고 있다……
 ELSEIF RAND:4 == 0
-	PRINTFORMW %CALLNAME:MASTER%는 허둥지둥 하고 있다！
+	PRINTFORMW %마스터는()% 허둥지둥 하고 있다！
 ELSEIF RAND:3 == 0
-	PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:TARGET%노가슴을비비려고 했다
+	PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:TARGET%의가슴을비비려고 했다
 	PRINTFORMW 그러나 잘못해 어깨를 비비어 버렸다！
-	PRINTFORMW %CALLNAME:TARGET%는 질리고 있다……
+	PRINTFORMW %타겟은()% 질리고 있다……
 ELSEIF RAND:2 == 0
-	PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:TARGET%에 껴안았다！
-	PRINTFORMW %CALLNAME:TARGET%는 기뻐하고 있다！
+	PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:TARGET%에 껴안았다！
+	PRINTFORMW %타겟은()% 기뻐하고 있다！
 ELSE
-	PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:TARGET%에 넋을 잃고 보고 있다……
+	PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:TARGET%에 넋을 잃고 보고 있다……
 ENDIF
 ;終了
 RETURN 1
@@ -475,7 +475,7 @@ ELSEIF RAND:29 == 0
 ELSEIF RAND:28 == 0
 	PRINT 에르툼삼림
 ELSEIF RAND:27 == 0
-	PRINT 안쇼스바다
+	PRINT 안쇼스 해
 ELSEIF RAND:26 == 0
 	PRINT 고즈번 사막
 ELSEIF RAND:25 == 0
@@ -7310,30 +7310,30 @@ RETURN 1
 ;そのうち増やす
 @RDD
 IF RAND:7 == 0
-	PRINTFORMW %CALLNAME:TARGET%하발를 밟아 울리고 있다	
+	PRINTFORMW %타겟은()% 발을 밟아 울리고 있다	
 ELSEIF RAND:6 == 0
-	PRINTFORMW %CALLNAME:TARGET%는 신체를 비틀어 뒤로 어깨를 움츠려 보였다
+	PRINTFORMW %타겟은()% 신체를 비틀어 뒤로 어깨를 움츠려 보였다
 ELSEIF RAND:5 == 0
-	PRINTFORMW %CALLNAME:TARGET%는 밀크 넣고를 뒤엎어 버렸다……
+	PRINTFORMW %타겟은()% 밀크 넣고를 뒤엎어 버렸다……
 ELSEIF RAND:4 == 0
-	PRINTFORMW %CALLNAME:TARGET%하가슴을쳐 대잘난척이다
+	PRINTFORMW %타겟은()% 가슴을쳐 대잘난척이다
 ELSEIF RAND:3 == 0
-	PRINTFORMW %CALLNAME:TARGET%는 소리 높이 웃고 있다！
+	PRINTFORMW %타겟은()% 소리 높이 웃고 있다！
 ELSEIF RAND:2 == 0
-	PRINTFORMW %CALLNAME:TARGET%는 킥킥 웃고 있다…
+	PRINTFORMW %타겟은()% 킥킥 웃고 있다…
 ELSE
-	PRINTFORMW %CALLNAME:TARGET%는 조용하게 울기 시작했다……
+	PRINTFORMW %타겟은()% 조용하게 울기 시작했다……
 ENDIF
 RETURN 1
 
 ;低刻印用
 @RDDLM
 IF RAND:3 == 0
-	PRINTFORMW %CALLNAME:TARGET%는 소리 높이 웃고 있다！
+	PRINTFORMW %타겟은()% 소리 높이 웃고 있다！
 ELSEIF RAND:2 == 0
-	PRINTFORMW %CALLNAME:TARGET%는 킥킥 웃고 있다…
+	PRINTFORMW %타겟은()% 킥킥 웃고 있다…
 ELSE
-	PRINTFORMW %CALLNAME:TARGET%는 조용하게 울기 시작했다……
+	PRINTFORMW %타겟은()% 조용하게 울기 시작했다……
 ENDIF
 RETURN 1
 
@@ -7627,19 +7627,19 @@ RETURN 1
 ;隠し구상分岐先・조교スタート時・意味？　마치헤어に？
 @SECRETA
 IF TALENT:상사상애
-	PRINTFORMW %CALLNAME:TARGET%는 가만히%CALLNAME:MASTER%를 응시하고 있다
+	PRINTFORMW %타겟은()% 가만히%마스터를()% 응시하고 있다
 	PRINTFORMW 「자신이 이렇게 된다니 생각도 하지 않았다. 너의 탓이다」
-	PRINTFORMW %CALLNAME:TARGET%는 서스펜더를 제외한다. 슬랙스가 미끄러져 떨어져 마법과 같이 매끈매끈한 허리와 나긋나긋한다리하지만 나타났다
+	PRINTFORMW %타겟은()% 서스펜더를 제외한다. 슬랙스가 미끄러져 떨어져 마법과 같이 매끈매끈한 허리와 나긋나긋한다리하지만 나타났다
 	PRINTFORMW 「너에게 많이 손대어져, 너에게 많이 안겨」
 	PRINTFORMW 넥타이를 풀어, 칼라를 벗어, 옆에 떨어뜨렸다. 가는 매끈매끈한 목이 권하도록(듯이) 움직이고 있다.
 	PRINTFORMW 「나는 너의정액너, 너는 나의 애액 서로 투성이가 되어. 아니, 그 이외에도 가득」
 	PRINTFORMW 뷔스티에를 두고 있던 버튼을 풀면, 부드러운 유방이 개방되는 것을 기다리고 있던 것처럼 튀었다
 	PRINTFORMW 「나는, 너를 사랑하고 있다」
-	PRINTFORMW 섬세한 프릴이 붙은 검은 속옷을 천천히 허벅지까지 낮추어발를 비틀면저항없게 떨어져 갔다
+	PRINTFORMW 섬세한 프릴이 붙은 검은 속옷을 천천히 허벅지까지 낮추어발을 비틀면저항없게 떨어져 갔다
 	PRINTFORMW 「나는,당신, 없음로는 있을 수 없다. 언제나 당신의 곁에 있다」
 	PRINTFORMW 장갑를 붙인 채로의 양손그리고 어렴풋이 붉어진 분홍색의유두라고 은은하게 여성의 냄새를 감돌게 하기 시작한 거기를, 상냥한 듯한 움직임으로 숨긴다……
 	PRINTFORMW 「이 신체가 멀어져도.당신하지만 자면, 만나러 간다」
-	PRINTFORMW %CALLNAME:TARGET%는 쭉%CALLNAME:MASTER%를 응시한 채다. 얼굴을 기분, 수치인가, 색욕인가, 분홍색에 물들이고 있다
+	PRINTFORMW %타겟은()% 쭉%마스터를()% 응시한 채다. 얼굴을 기분, 수치인가, 색욕인가, 분홍색에 물들이고 있다
 	PRINTFORMW 「그러니까 만약 고독을 느끼거나 외로워지거나. 괴로워지면 생각해 내. 나는 언제라도 당신의 곁에 있다」
 	PRINTFORMW 그대로 천천히 허리를 구불거리게 할 수 있도록(듯이)해%CALLNAME:MASTER%에 다가갔다
 	PRINTFORMW 「당신를 보고 있다」
@@ -7647,13 +7647,13 @@ IF TALENT:상사상애
 	PRINTFORMW 「자, 시작합시다. 둘이서, 쾌락의 밀회[逢瀨]를. 열정의 다회를」
 	PRINTFORMW %CALLNAME:TARGET%의 눈동자는욕정(와)과 애정에 흔들리고 있다. 문득, 고개를 갸웃했다
 	PRINTFORMW 「옷, 입고 있었던 (분)편이 좋았다？」
-	PRINTFORMW 당신하%CALLNAME:TARGET%를 껴안았다……
+	PRINTFORMW 당신하%타겟을()% 껴안았다……
 	CALL COORDINATE_MUMA, TARGET
-	CALL SETFLAG, "ハダカにする", TARGET
+	CALL SETFLAG, "전부벗긴다", TARGET
 ELSE
-	PRINTFORMW 방에 들어가든지%CALLNAME:TARGET%(은)는 %CALLNAME:MASTER%에 달려들어 왔다
+	PRINTFORMW 방에 들어가든지%타겟은()% %CALLNAME:MASTER%에 달려들어 왔다
 	PRINTFORMW 「풍만한 탄성의 융기의 깊은 속에 봉인된 화염은, 해협을 굴착하는 특정의 고동에 의해 항상 개방되고 싶으면 바라고 있다」
-	PRINTFORMW 귀의 근처를 혀 끝으로 빨기 시작했다%CALLNAME:TARGET%를,%CALLNAME:MASTER%는 침대까지 안아 갔다……
+	PRINTFORMW 귀의 근처를 혀 끝으로 빨기 시작했다%타겟을()%,%마스터는()% 침대까지 안아 갔다……
 ENDIF
 RETURN 1
 

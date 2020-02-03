@@ -55,15 +55,15 @@ ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2
 	PRINTFORMW 「우후후…아니오, 스승을 선택한 것은 실수가 아니었구나, 라고 생각해서」
 	PRINTFORMW 「분명하게 위로해 주고, 창녀 지망을 경멸하지 않으며, 게다가…」
 	PRINTFORMW 「게다가, 엣치하고」
-	PRINTFORMW 그렇게 말해,%CALLNAME:TARGET%는 한번 더 못된 장난 같게 미소지었다…
+	PRINTFORMW 그렇게 말해,%타겟은()% 한번 더 못된 장난 같게 미소지었다…
 	SETBIT CFLAG:201, 2
 	RETURN 1
 ;굴복각인Lv3
 ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 	DRAWLINE
 	PRINTFORMW 「아…스승」
-	PRINTFORMW 방에 들어가면,%CALLNAME:TARGET%는 왜일까 시선을 영이 하고 있어, 당신과 시선을 맞추려고 하지 않는다
-	PRINTFORMW 뭔가 컨디션 불량에서도 일으켰는지, 라고 당신이 물으면,%CALLNAME:TARGET%는 크게 머리를 흔들어
+	PRINTFORMW 방에 들어가면,%타겟은()% 왜일까 시선을 영이 하고 있어, 당신과 시선을 맞추려고 하지 않는다
+	PRINTFORMW 뭔가 컨디션 불량에서도 일으켰는지, 라고 당신이 물으면,%타겟은()% 크게 머리를 흔들어
 	PRINTFORMW 「아니오…아무것도 아닙니다. 여느 때처럼, 언제나 대로 시작합시다」
 	PRINTFORMW 「（그래…아무것도, 아니다. 좋아하게, 되어서는, 안 돼…？）」
 	SETBIT CFLAG:201, 3
@@ -153,7 +153,7 @@ ELSEIF MARK:굴복각인 == 3 && TALENT:연모 == 0
 		PRINTFORMW 「스승, 오늘은…그, 내가 가득 기분 좋게 시켜 주네요」
 	ELSEIF RAND:2 == 0
 		PRINTFORML 「스승…기다릴 수 없습니다…빨리…」
-		PRINTFORMW %CALLNAME:TARGET%는 벌써 녹은 표정으로 당신을 불렀다…
+		PRINTFORMW %타겟은()% 벌써 녹은 표정으로 당신을 불렀다…
 	ELSE
 		PRINTFORMW 「…엣치, 가르쳐 주세요…」
 	ENDIF
@@ -173,7 +173,7 @@ ELSEIF TALENT:연모
 		PRINTFORMW 「스승…오늘은, 가득, 질에 흘러 들어가 주세요…」
 	ELSEIF RAND:3 == 0
 		PRINTFORML 「스승…기다리고 있을 수 없습니다…나…！」
-		PRINTFORMW %CALLNAME:TARGET%는 발정한 표정으로 당신을넘어뜨리기…
+		PRINTFORMW %타겟은()% 발정한 표정으로 당신을넘어뜨리기…
 	ELSEIF RAND:2 == 0
 		PRINTFORML 「아…스승도, 나로 할 때, 기대해 주고 있군요」
 		PRINTFORML %CALLNAME:TARGET%의 시선은, 당신이 부풀어 오른 고관에 따라지고 있다…
@@ -265,7 +265,7 @@ ELSEIF TALENT:연모 && CFLAG:99
 	DRAWLINE
 	IF RAND:2 == 0
 		PRINTFORML 「하아…아아…, 응…스승…자고 있다…」
-		PRINTFORML %CALLNAME:TARGET%는 당신이 잠에 들고 있는 것을 확인하면, 살그머니 속삭였다…
+		PRINTFORML %타겟은()% 당신이 잠에 들고 있는 것을 확인하면, 살그머니 속삭였다…
 		PRINTFORMW 「처음은, 스승은 단순한,손단이었지만, 지금은…」
 		PRINTFORMW 「나는, 스승의…당신가, 매우, 정말로, 좋아합니다」
 	ELSE
@@ -3280,7 +3280,7 @@ ELSEIF SHOOT("파후파후")
 ;-------------------------------------------------
 ;컨닐링구스で사정
 ;-------------------------------------------------
-ELSEIF SHOOT("逆컨닐링구스")
+ELSEIF SHOOT("역컨닐링구스")
 	PRINTFORMW 
 ;-------------------------------------------------
 ;역애널、역레이프で사정
@@ -3295,7 +3295,7 @@ ELSEIF SHOOT("조수")
 ;-------------------------------------------------
 ;PLAYERが女で、イってしまった…
 ;-------------------------------------------------
-ELSEIF SHOOT("조교자が여자")
+ELSEIF SHOOT("조교자가여자")
 	;強절정
 	IF COND("절정", PLAYER) >= 2
 		PRINTFORMW 

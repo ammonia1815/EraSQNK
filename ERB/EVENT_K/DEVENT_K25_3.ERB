@@ -17,8 +17,8 @@ IF MARK:반발각인 == 3
 ;체력が低め（1000이하）の時は休ませる
 ;ELSEIF BASE:0 <= 1000
 ;	PRINTFORMW 
-;☆２さん이벤트(現状브래지어ッドサック修得フラグのみ)
-ELSEIF CEVENT("브래지어ッドサック습득") == 0 && GETBIT(CFLAG:RESULT:201, 30) == 0
+;☆２さん이벤트(現状흡혈修得フラグのみ)
+ELSEIF CEVENT("흡혈습득") == 0 && GETBIT(CFLAG:RESULT:201, 30) == 0
 	PRINTFORMW %CALLNAME:RESULT%의 방으로부터 소리가 들립니다……
 	PRINTFORMW 도대체 무엇을 하고 있는지%CALLNAME:MASTER%하지만 안을 들여다 보면―――
 	PRINTFORML 
@@ -29,33 +29,33 @@ ELSEIF CEVENT("브래지어ッドサック습득") == 0 && GETBIT(CFLAG:RESULT:2
 	PRINTFORMW 「응……꽤 능숙하네요. 기본적인 곳은 괜찮은 것 같습니다」
 	PRINTFORMW 『호우, 라는 것은 뒤는 저 녀석으로 실천할 뿐(만큼)이다！』
 	PRINTFORMW ………%CALLNAME:TARGET%의 왠지 불온한 일을입로 하고 있습니다
-	CALL SET_CEVENT, "브래지어ッドサック습득"
+	CALL SET_CEVENT, "흡혈습득"
 ;☆トマト栽培開始이벤트
 ELSEIF TEXTS("季節") == "봄" && TIME == 0 && CEVENT("ミニトマト栽培") == 0 && TALENT:연모
 	;☆初回
 	IF CEVENT("ミニトマト栽培初回") == 0
 		PRINTFORMW %CALLNAME:MASTER%하지만 자기 방의 창으로부터 아무렇지도 않게 뜰을 바라보면,%CALLNAME:TARGET%의 나무 그늘에 주저앉고 있는 것이 보였다.
-		PRINTFORMW 아무래도 planter에 뭔가를 심고 있는 것 같지만……신경이 쓰였다%CALLNAME:MASTER%는 뜰에 나와%CALLNAME:TARGET%에 말을 걸었다.
+		PRINTFORMW 아무래도 planter에 뭔가를 심고 있는 것 같지만……신경이 쓰였다%마스터는()% 뜰에 나와%CALLNAME:TARGET%에 말을 걸었다.
 		PRINTFORMW 「오오,%CNAME("二人称")%……응？아아, 이것인가？」
 		PRINTFORMW 「뭐, 출입의 상인이 미니 토마토의 모종을 양보해 주었으므로, 그것을 planter에 옮겨 심고 있던 것이다」
 		PRINTFORMW 「뭐든지 호 로스 원산으로, 모종에 담겨진 마력에 의해 성장이 외보다 빠른 품종인것 같다. 마법과는 편리한 것이다」
 		PRINTFORMW 「후훅, 수확하면%CNAME("二人称")%에도 먹여 줄거니까, 기대해 두어라♪」
-		PRINTFORMW 아주 조금만 흙먼지로 더러워진 얼굴로,%CALLNAME:TARGET%는 미소를 띄웠다……
+		PRINTFORMW 아주 조금만 흙먼지로 더러워진 얼굴로,%타겟은()% 미소를 띄웠다……
 		CALL SET_CEVENT, "ミニトマト栽培初回"
 		CALL SET_CEVENT, "ミニトマト栽培"
 	;☆二回目以降
 	ELSEIF CEVENT("ミニトマト栽培二回目以降")
 		PRINTFORMW %CALLNAME:MASTER%하지만 자기 방의 창으로부터 아무렇지도 않게 뜰을 바라보면,%CALLNAME:TARGET%의 나무 그늘에 주저앉고 있는 것이 보였다.
-		PRINTFORMW 아무래도 planter에 뭔가를 심고 있는 것 같지만……신경이 쓰였다%CALLNAME:MASTER%는 뜰에 나와%CALLNAME:TARGET%에 말을 걸었다.
+		PRINTFORMW 아무래도 planter에 뭔가를 심고 있는 것 같지만……신경이 쓰였다%마스터는()% 뜰에 나와%CALLNAME:TARGET%에 말을 걸었다.
 		PRINTFORMW 「오오,%CNAME("二人称")%……응？아아, 이것인가？」
 		PRINTFORMW 「실은 또 미니 토마토를 기르려고 생각해서 말이야, 준비해 있던 곳이다」
 		;☆収穫이벤트を見たことがある
 		IF CEVENT("ミニトマト収穫")
 			PRINTFORMW 「금년도 맛있는 미니 토마토가 많이 여물도록(듯이), 애정 담아 돌봐 주지 않아와♪」
-			PRINTFORMW %CALLNAME:TARGET%는 즐거운 듯한 표정으로 그렇게 말하면, 콧노래 섞임으로 작업을 재개했다.
+			PRINTFORMW %타겟은()% 즐거운 듯한 표정으로 그렇게 말하면, 콧노래 섞임으로 작업을 재개했다.
 		ELSE
 			PRINTFORMW 「작년은 재배에 실패해 버렸지만……금년이야말로, 맛있는 토마토를 먹여 주겠어！」
-			PRINTFORMW %CALLNAME:TARGET%는 삽을 편손에 강력하게 결의 표명한 후, 작업을 재개했다.
+			PRINTFORMW %타겟은()% 삽을 편손에 강력하게 결의 표명한 후, 작업을 재개했다.
 		ENDIF
 		PRINTFORMW ……일중에 옥외에서 이런 일을 하고 있다흡혈귀등%CALLNAME:TARGET%정도의 것일 것이다……
 		CALL SET_CEVENT, "ミニトマト栽培"
@@ -67,27 +67,27 @@ ELSEIF TEXTS("季節") == "여름" && CEVENT("ミニトマト栽培") && CEVENT(
 	IF CEVENT("収穫경험あり") == 0
 		PRINTFORMW %CALLNAME:MASTER%하지만 복도를 걷고 있으면,%CALLNAME:TARGET%의 방으로부터 나왔다.
 		PRINTFORMW 「오옷,%CNAME("二人称")%！지금 부르러 가려고 생각하고 있던 것이다！」
-		PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:MASTER%의손를 잡아 방으로 끌여들이면, 그대로 안쪽에 있는 책상의 아래까지 데려 간다.
+		PRINTFORMW %타겟은()% %CALLNAME:MASTER%의손를 잡아 방으로 끌여들이면, 그대로 안쪽에 있는 책상의 아래까지 데려 간다.
 		PRINTFORMW 책상 위에 놓여진 작은 바스켓안에는, 붉고, 신선한 미니 토마토가 많이 들어가 있었다.
 		PRINTFORMW 「어때,%CNAME("一人称")%하지만손간가 걸어 기른 미니 토마토다！이렇게 많이 수확할 수 있던 것이다！」
 		PRINTFORMW 「%CNAME("二人称")%, 맛을 봐 줘！이봐요, 앙……」
-		PRINTFORMW %CALLNAME:TARGET%는 바스켓으로부터 미니 토마토를 하나 집어올려,%CALLNAME:MASTER%의입원래로옮겼다.
+		PRINTFORMW %타겟은()% 바스켓으로부터 미니 토마토를 하나 집어올려,%CALLNAME:MASTER%의입원래로옮겼다.
 		PRINTFORMW %CALLNAME:MASTER%하지만 내밀어진 그것을 가득 넣으면, 과즙이 흘러넘쳐, 적당한 신맛과 희미한 달콤함이입가득 퍼진다……
 		PRINTFORM 「맛있는가？
 		;☆初栽培初収穫
 		IF CEVENT("ミニトマト栽培二回目以降") == 0
 			PRINTFORMW 응응, 그럴 것이다！여하튼%CNAME("一人称")%하지만 기른 것이니까！」
 			PRINTFORMW 햇빛을 근심손로 한다흡혈귀의 몸에서는, 시중을 드는 것도 용이하지 않았을 것이다……
-			PRINTFORM %CALLNAME:MASTER%는 자랑스럽게가슴을친다
+			PRINTFORM %마스터는()% 자랑스럽게가슴을친다
 		ELSE
 			PRINTFORMW 그런가, 좋았다……！작년의 반성을 살려, 다양하게 궁리한 보람이 있었다고 하는 것이다！」
 			PRINTFORMW 햇빛을 근심손로 한다흡혈귀의 몸에서는, 시중을 드는 것도 용이하지 않았을 것이다……
-			PRINTFORM %CALLNAME:MASTER%는 안도의 표정을 띄운다
+			PRINTFORM %마스터는()% 안도의 표정을 띄운다
 		ENDIF
 		PRINTFORMW %CALLNAME:TARGET%의 머리를 상냥하게 어루만져 주었다.
 		PRINTFORMW 「왓……♪뭐, 뭐,%CNAME("一人称")%에 걸리면, 이 정도 누워서 떡먹기이지만！후하하하하！！」
 		PRINTFORMW 「자, 아직 많이 있을거니까, 좀 더 먹어 줘！이봐요 이봐요, 앙……♪」
-		PRINTFORMW %CALLNAME:MASTER%는 잠깐의 사이,%CALLNAME:TARGET%에 촉구받는 대로 미니 토마토를 계속 먹었다……
+		PRINTFORMW %마스터는()% 잠깐의 사이,%CALLNAME:TARGET%에 촉구받는 대로 미니 토마토를 계속 먹었다……
 		SIF CEVENT("収穫경험あり") == 0
 			CALL SET_CEVENT, "収穫경험あり"
 		SIF CEVENT("ミニトマト栽培二回目以降") == 0
@@ -95,12 +95,12 @@ ELSEIF TEXTS("季節") == "여름" && CEVENT("ミニトマト栽培") && CEVENT(
 	;☆二回目以降
 	ELSE
 		PRINTFORMW 「%CNAME("二人称")%, 오늘의\@ COND("낮") ? 昼 # 夕 \@밥은 내가 만들겠어, 조금 기다리고 있어 줘！」
-		PRINTFORMW %CALLNAME:TARGET%는 어쩐지 힘을 낸 모습으로 키친으로 사라졌다……
-		PRINTFORMW ……기다리는 것 당분간.%CALLNAME:TARGET%를 할 수 있던 요리를 %CALLNAME:MASTER%의 전에 늘어놓아 간다.
+		PRINTFORMW %타겟은()% 어쩐지 힘을 낸 모습으로 키친으로 사라졌다……
+		PRINTFORMW ……기다리는 것 당분간.%타겟을()% 할 수 있던 요리를 %CALLNAME:MASTER%의 전에 늘어놓아 간다.
 		PRINTFORMW ……샐러드로부터 스프로부터, 거의 모든 요리에 미니 토마토가 충분하게 사용되고 있다……
 		PRINTFORMW 「후후,%CNAME("一人称")%하지만손소금에 걸어 기른 미니 토마토를 사용한 요리들이다！자%CNAME("二人称")%, 먹어 봐 줘♪」
-		PRINTFORMW 겉모습도 향기도 자주(잘), 식욕을 돋운다.%CALLNAME:MASTER%는 예를 말해 먹기 시작했다……
-		PRINTFORMW ！ ……맛있어……자연히(과)입로부터 나온 그 말에,%CALLNAME:TARGET%는 기쁨을 숨기지 못할 모습이다.
+		PRINTFORMW 겉모습도 향기도 자주(잘), 식욕을 돋운다.%마스터는()% 예를 말해 먹기 시작했다……
+		PRINTFORMW ！ ……맛있어……자연히(과)입로부터 나온 그 말에,%타겟은()% 기쁨을 숨기지 못할 모습이다.
 		PRINTFORMW 「그, 그런가……！아, 아무튼%CNAME("一人称")%(이)가 기른 미니 토마토에%CNAME("一人称")%의 요리 솜씨가 더해지면 당연하다！후하하하하！！」
 		PRINTFORMW 「어이쿠！한 그릇 더를 갖고 싶어지면 사양말고 말해 줘, 아직 많이 있을거니까！」
 		PRINTFORMW %CALLNAME:TARGET%의 마음이 가득찼다손요리를 배 가득 될 때까지 만끽했다……
@@ -120,12 +120,12 @@ ELSEIF TIME == 0 && RAND:3 == 0
 				PRINTFORMW 「……마지막에 이것을 한 방울 늘어뜨릴 수 있으면……좋아 좋아, 이것으로 해충 없애고의 약을 할 수 있었어」
 				PRINTFORMW 「미니 토마토를 들쑤셔 먹으려고 하는 벌레들을 섬멸해, 게다가 미니 토마토에는 악영향을 주지 않는다……후후, 완벽하다」
 				PRINTFORMW ……아무래도, 미니 토마토의 재배에 사용하는 약을 만들고 있던 것 같다.
-				PRINTFORMW %CALLNAME:MASTER%는 만발인%CALLNAME:TARGET%의 모습에입원래에 미소를 띄워, 방으로부터 멀어졌다……
+				PRINTFORMW %마스터는()% 만발인%CALLNAME:TARGET%의 모습에입원래에 미소를 띄워, 방으로부터 멀어졌다……
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 「……마지막에 이것을 한 방울 늘어뜨릴 수 있으면……좋아 좋아, 이것으로 성장 촉진제를 할 수 있었어」
 				PRINTFORMW 「이것으로 미니 토마토는 건강하고 튼튼하게 되어, 수확량도 증가할 것이다……후후후, 즐거움이다」
 				PRINTFORMW ……아무래도, 미니 토마토의 재배에 사용하는 약을 만들고 있던 것 같다.
-				PRINTFORMW %CALLNAME:MASTER%는 만발인%CALLNAME:TARGET%의 모습에입원래에 미소를 띄워, 방으로부터 멀어졌다……
+				PRINTFORMW %마스터는()% 만발인%CALLNAME:TARGET%의 모습에입원래에 미소를 띄워, 방으로부터 멀어졌다……
 			ELSE
 				PRINTFORMW 「……마지막에 이것을 한 방울 늘어뜨릴 수 있으면……우와앗！？」
 				PRINTFORMW %CALLNAME:TARGET%의 독살스러운 색을 했다액체를 병에 늘어뜨린 순간, 뭉게뭉게연기가 분출했다.
@@ -133,7 +133,7 @@ ELSEIF TIME == 0 && RAND:3 == 0
 				PRINTFORMW 「쿨럭……이, 이상하구나……어째서……」
 				PRINTFORMW 「……앗！？크, 큰일난, 더하는 양을 잘못보고 있었다！」
 				PRINTFORMW 「%CNAME("一人称")%로 했던 것(적)이 이런 초보적인 미스를……어, 어쩔 수 없다！재시도다！」
-				PRINTFORMW %CALLNAME:TARGET%의 기분을 고쳐 다시 조제를 시작한 것을 지켜봐,%CALLNAME:MASTER%는 방으로부터 멀어졌다……
+				PRINTFORMW %CALLNAME:TARGET%의 기분을 고쳐 다시 조제를 시작한 것을 지켜봐,%마스터는()% 방으로부터 멀어졌다……
 			ENDIF
 		ELSEIF RAND:2 == 0
 			PRINTFORMW 복도를 걷는다%CALLNAME:MASTER%하지만 문득 창 밖에 눈을 돌리면, 미니 토마토를 돌보고 있다%CALLNAME:TARGET%의 보였다.
@@ -143,7 +143,7 @@ ELSEIF TIME == 0 && RAND:3 == 0
 			PRINTFORMW 도서실에 가면,%CALLNAME:TARGET%의 진지한 표정으로 책을 읽고 있었다.
 			PRINTFORMW 무엇을 읽고 있는 것인가 신경이 쓰였다%CALLNAME:MASTER%뒤, 뒤로부터 살그머니%CALLNAME:TARGET%에 가까워져 들여다 봐 본다……
 			PRINTFORMW ……아무래도 식물의 육아 방법에 대해 자세하게 쓰여져 있는 책인 것 같다.
-			PRINTFORMW 상당히 집중하고 있는지,%CALLNAME:TARGET%(은)는 %CALLNAME:MASTER%에 전혀 눈치채지 않은 것 같다……
+			PRINTFORMW 상당히 집중하고 있는지,%타겟은()% %CALLNAME:MASTER%에 전혀 눈치채지 않은 것 같다……
 			PRINTFORMW 방해 하는 것도 나쁘다고 생각해, 조용하게 그 자리를 뒤로 했다……
 		ENDIF
 	;☆［호기심］持ちの몽마がいる
@@ -155,15 +155,15 @@ ELSEIF TIME == 0 && RAND:3 == 0
 			PRINTFORMW (들)물으면, 방에 놀러 왔다%CALLNAME:LOCAL%하지만 관에 흥미를 나타낸 것 같고, 자 보고 싶다고 말하기 시작한 것 같다.
 			PRINTFORMW %CALLNAME:TARGET%의 허가하면%CALLNAME:LOCAL%는 관안에 가로놓여, 그대로 정말로 잠 시작해 버린 것이라고 한다……
 			PRINTFORMW 즉, 침상이 점령되었으므로,%CALLNAME:MASTER%의 침대를 빌려 낮잠자고 싶다고 하는 일인 것 같다.
-			PRINTFORMW 자신의 방의 침대에서 자면 좋은 것이 아닐것인가 라고 하는%CALLNAME:MASTER%에,%CALLNAME:TARGET%하 「%CALLNAME:MASTER%의 침대는 관과 같은 정도잘 때의 기분이 좋다」라고 돌려주어 왔다.
-			PRINTFORMW 복잡한 기분이 되었다%CALLNAME:MASTER%(와)과는 대조적으로,%CALLNAME:TARGET%는 기쁜 듯한 얼굴로 침대에 기어들고 있다……
+			PRINTFORMW 자신의 방의 침대에서 자면 좋은 것이 아닐것인가 라고 하는%CALLNAME:MASTER%에,%타겟은()%  「%CALLNAME:MASTER%의 침대는 관과 같은 정도잘 때의 기분이 좋다」라고 돌려주어 왔다.
+			PRINTFORMW 복잡한 기분이 되었다%CALLNAME:MASTER%(와)과는 대조적으로,%타겟은()% 기쁜 듯한 얼굴로 침대에 기어들고 있다……
 		;☆それ以外
 		ELSE
 			PRINTFORMW 리빙에 가면, 졸린 것 같은 표정의%CALLNAME:TARGET%의 토마토 쥬스를 마시고 있었다.
 			PRINTFORMW (들)물으면, 방에 놀러 왔다%CALLNAME:LOCAL%하지만 관에 흥미를 나타낸 것 같고, 자 보고 싶다고 말하기 시작한 것 같다.
 			PRINTFORMW %CALLNAME:TARGET%의 허가하면%CALLNAME:LOCAL%는 관안에 가로놓여, 그대로 정말로 잠 시작해 버린 것이라고 한다……
 			PRINTFORMW %CALLNAME:TARGET%에는 「낮잠은 관으로」라고 하는 구애됨이 있는 것 같고, 어쩔 수 없이 일어나고 있는 것 같다.
-			PRINTFORMW 그렇게 이야기하고 있는 동안에도,%CALLNAME:TARGET%는 꾸벅꾸벅하기 시작하고 있다.
+			PRINTFORMW 그렇게 이야기하고 있는 동안에도,%타겟은()% 꾸벅꾸벅하기 시작하고 있다.
 			PRINTFORMW 이윽고 머리가 풀썩 내린 순간에 눈을 떠, 놀란 것처럼 근처를 둘러보았다……
 		ENDIF
 	ELSE
@@ -177,12 +177,12 @@ ELSEIF TIME == 0 && RAND:3 == 0
 		ELSE
 			PRINTFORM 슈·아·라·클레임
 		ENDIF
-		PRINTFORMW 를 가득 넣는다%CALLNAME:TARGET%는 만면의 미소를 띄워, 확실히 지복이라고 하는 모습이다.
+		PRINTFORMW 를 가득 넣는다%타겟은()% 만면의 미소를 띄워, 확실히 지복이라고 하는 모습이다.
 		;☆연모
 		IF TALENT:연모
-			PRINTFORMW 라고%CALLNAME:TARGET%(은)는 %CALLNAME:MASTER%를 눈치챈 것 같다.
+			PRINTFORMW 라고%타겟은()% %마스터를()% 눈치챈 것 같다.
 			PRINTFORMW 느슨해진 얼굴을 보여져 버린 것을 부끄러워하면서도, 함께 차를 마시지 않을까 권해 온다……
-			PRINTFORMW %CALLNAME:MASTER%는 권유에 응해 둘이서 맛있는 홍차와 과자를 즐겼다……
+			PRINTFORMW %마스터는()% 권유에 응해 둘이서 맛있는 홍차와 과자를 즐겼다……
 		;☆［유치］or [미련함] 持ちの몽마がいる
 		ELSEIF RAND:2 && (FIND_COND("유치") || FIND_COND("미련함"))
 			IF FIND_COND("미련함") && RANDIF(1, FIND_COND("유치"))
@@ -191,10 +191,10 @@ ELSEIF TIME == 0 && RAND:3 == 0
 				LOCAL = FIND_COND("유치")
 			ENDIF
 			PRINTFORMW 라고%CALLNAME:LOCAL%하지만 리빙에 나타났다.
-			PRINTFORMW %CALLNAME:RESULT%하%CALLNAME:TARGET%의 과자를 먹고 있는 것을 보면, 자신에게도 줘와 졸라댄다……
-			PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:LOCAL%의 얼굴과 하나 남아 있는 과자를 비교해 봐, 잠깐 헤맨 모습을 보인 뒤―――
+			PRINTFORMW %조사처리(CALLNAME:RESULT,"는")%%CALLNAME:TARGET%의 과자를 먹고 있는 것을 보면, 자신에게도 줘와 졸라댄다……
+			PRINTFORMW %타겟은()% %CALLNAME:LOCAL%의 얼굴과 하나 남아 있는 과자를 비교해 봐, 잠깐 헤맨 모습을 보인 뒤―――
 			PRINTFORMW %CALLNAME:RESULT%쪽에, 접시를 쑥 내몄다！
-			PRINTFORMW 기쁜듯이 예를 말한다%CALLNAME:LOCAL%에 대해,%CALLNAME:TARGET%는 수줍음 감추기인가, 외면해 홍차를 마시는 것 냈다……
+			PRINTFORMW 기쁜듯이 예를 말하는 %CALLNAME:LOCAL%에 대해,%타겟은()% 수줍음 감추기인가, 외면해 홍차를 마시는 것 냈다……
 		;☆それ以外
 		ELSE
 			PRINTFORMW 라고%CALLNAME:MASTER%로 보여지고 있는 일을 눈치챘다%CALLNAME:TARGET%다, 당황해 가라앉힌 표정을 손질해, 홍차를 마시는 것 냈다.
@@ -247,13 +247,13 @@ ELSE
 		IF (RANDIF(1, FIND_COND("빈유"), (TALENT:MASTER:남자 == 0 && TALENT:MASTER:거유), (TALENT:MASTER:남자 == 0 && TALENT:MASTER:빈유)) && FIND_COND("거유"))
 			LOCAL = FIND_COND("거유")
 			PRINTFORMW 라고 리빙에%CALLNAME:LOCAL%하지만 들어 왔다.
-			PRINTFORMW %CALLNAME:TARGET%는 자신의가슴(와)과%CALLNAME:LOCAL%의 풍부한가슴을비교해 보면, 분한 듯한 표정으로 2잔째의 두유를 글래스에 주희생타 했다……
+			PRINTFORMW %타겟은()% 자신의가슴(와)과%CALLNAME:LOCAL%의 풍부한가슴을비교해 보면, 분한 듯한 표정으로 2잔째의 두유를 글래스에 주희생타 했다……
 		;☆빈유が来た
 		ELSEIF (RANDIF(1, (TALENT:MASTER:남자 == 0 && TALENT:MASTER:거유), (TALENT:MASTER:남자 == 0 && TALENT:MASTER:빈유)) && FIND_COND("빈유"))
 			LOCAL = FIND_COND("빈유")
 			PRINTFORMW 라고 리빙에%CALLNAME:LOCAL%하지만 들어 왔다.
-			PRINTFORMW %CALLNAME:LOCAL%하%CALLNAME:TARGET%의 두유를 마시고 있는것을 눈치채면, 자신에게도 나누면 좋겠다고 말하기 시작했다.
-			PRINTFORMW %CALLNAME:TARGET%는 기분 좋게 응해 선반으로부터 꺼낸 글래스에 두유를 따라%CALLNAME:LOCAL%에 건네주고 있다.
+			PRINTFORMW %조사처리(CALLNAME:LOCAL,"는")%%CALLNAME:TARGET%의 두유를 마시고 있는것을 눈치채면, 자신에게도 나누면 좋겠다고 말하기 시작했다.
+			PRINTFORMW %타겟은()% 기분 좋게 응해 선반으로부터 꺼낸 글래스에 두유를 따라%CALLNAME:LOCAL%에 건네주고 있다.
 			PRINTFORMW 같은 고민을 가지는 것 같은 종류, 서로 통하는 것이 있을 것이다……
 		;☆女당신が거유
 		ELSEIF (RANDIF(1, (TALENT:MASTER:남자 == 0 && TALENT:MASTER:빈유)) && TALENT:MASTER:남자 == 0 && TALENT:MASTER:거유)
@@ -261,11 +261,11 @@ ELSE
 		;☆女당신が빈유
 		ELSEIF TALENT:MASTER:남자 == 0 && TALENT:MASTER:빈유
 			PRINTFORMW %CALLNAME:MASTER%하지만 있는 일을 눈치챘다%CALLNAME:TARGET%이, 입다물어 찬장에서 글래스를 꺼내, 두유를 따라%CALLNAME:MASTER%에 내민다.
-			PRINTFORMW %CALLNAME:MASTER%하솔직에 받아 단번에 다 마시면,%CALLNAME:TARGET%에 한 그릇 더를 요구했다……
+			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%솔직에 받아 단번에 다 마시면,%CALLNAME:TARGET%에 한 그릇 더를 요구했다……
 		;☆それ以外
 		ELSE
-			PRINTFORMW %CALLNAME:TARGET%는 글래스를 비우면, 확인하도록(듯이) 자신의가슴을손대고 있다.
-			PRINTFORMW %CALLNAME:MASTER%는 그녀의 은밀한 노력을 지켜보면, 조용하게 그 자리를 뒤로 했다……
+			PRINTFORMW %타겟은()% 글래스를 비우면, 확인하도록(듯이) 자신의가슴을손대고 있다.
+			PRINTFORMW %마스터는()% 그녀의 은밀한 노력을 지켜보면, 조용하게 그 자리를 뒤로 했다……
 		ENDIF
 	ENDIF
 ENDIF

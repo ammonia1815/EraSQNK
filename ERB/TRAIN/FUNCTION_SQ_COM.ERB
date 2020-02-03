@@ -359,7 +359,7 @@ CASEELSE
     BUG_CHECK += 333
 ENDSELECT
 SIF BUG_CHECK == 666
-    THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+    THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 RETURNF LOCAL
 
 ;-------------------------------------------------
@@ -447,7 +447,7 @@ FOR LCOUNT, 0, 7
 	CASE ""
 	    ;비워둠
 	CASEELSE
-        THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS:LCOUNT%" 를 찾을 수 없습니다.
+        THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS:LCOUNT%" 를 찾을 수 없습니다.
 	ENDSELECT
 	SIF LOCAL
 		RETURNF LOCAL
@@ -524,7 +524,7 @@ CASE "Ｖ치구"
 CASE "Ｐ치구"
 	SETBIT ARG, 21
 CASEELSE
-    THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+    THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 RETURNF ARG
 
@@ -577,7 +577,7 @@ CASE "Ａ"
 CASE "Ｂ"
 	STAIN:ARG:Ｂ = 0
 CASEELSE
-    THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+    THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 
 ;-------------------------------------------------
@@ -1128,7 +1128,7 @@ CASE "와일드스윙"
 	SIF TEQUIP:ARG:체위
 		RETURNF GETBIT(TEQUIP:ARG:특수행동, 0)
 CASEELSE
-    THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+    THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 RETURNF 0
 
@@ -2398,7 +2398,7 @@ CASE 60 TO 69
 		LOCALS = %TRAINNAME:ARG%
 		;굴곡위で連続実行
 		IF PREVCOM == 67 && INSERT("굴곡위")
-			LOCALS = 種付けプレス
+			LOCALS = 교배프레스
 		ELSEIF PENIS(PLAYER) && STATE("하드스킨", PLAYER) && TEQUIP:넘어뜨리기 == 0
 			LOCALS = 하드피스톤
 		ELSEIF INSERT("기승위")
@@ -2633,9 +2633,9 @@ CASE 60 TO 79
 			LOCALS = 양구멍삽입(３Ｐ)
 		ENDIF
 	ELSEIF ARG == 67
-		;굴곡위で連続実行
+		;굴곡위で連続実行		;種付けプレス
 		SIF PREVCOM == 67 && INSERT("굴곡위")
-			LOCALS = 種付けプレス
+			LOCALS = 교배프레스	
 	ELSEIF ARG == 68
 		;기승위
 		SIF INSERT("기승위")
@@ -3251,7 +3251,7 @@ CASE "양손피스트"
 CASE "드래곤"
 	RETURNF 5
 CASEELSE
-    THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+    THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 RETURNF LOCAL
 
@@ -3326,7 +3326,7 @@ CASE "피스트"
 CASE "드래곤"
 	RETURNF 4
 CASEELSE
-    THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+    THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 RETURNF LOCAL
 
@@ -3429,7 +3429,7 @@ CASE "バッド"
 	LOCAL += GETBITS(EQUIP:ARG:스테이트변화, 3, 6, 8) + GETBITS(EQUIP:ARG:스테이트변화, 11, 14, 16)
 	RETURNF LOCAL
 CASEELSE
-    THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+    THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 RETURNF 0
 
@@ -3505,7 +3505,7 @@ CASE "에올군"
 	;EQUIP:ARG:에올군 = MIN(EQUIP:ARG:에올군 + 1, 3)
 	EQUIP:ARG:에올군 = 3
 CASEELSE
-    THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+    THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 
 @REMOVE_STATE, ARG, ARGS
@@ -3600,7 +3600,7 @@ CASE "バッド"
 	CLEARBIT TEQUIP:ARG:구속, 30
 	CLEARBIT TEQUIP:ARG:구속, 31
 CASEELSE
-    THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+    THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 
 ;-------------------------------------------------
@@ -4607,7 +4607,7 @@ CASEELSE
 		;아이템 사용 이벤트
 		;CASE ITEMNAME:BOUGHT에 대응
 	ELSE
-    	THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+    	THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 	ENDIF
 ENDSELECT
 RETURNF 0
@@ -5014,7 +5014,7 @@ CASE "청소Ａ핥기"
 	SIF GETBIT(TCVAR:ARG:151, 50)
 		RETURNF 1
 CASEELSE
-    THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+    THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 RETURNF 0
 

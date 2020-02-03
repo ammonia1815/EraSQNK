@@ -94,34 +94,34 @@ ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2
 	PRINTFORMW 「아라, 이것 뿐시간걸쳐보통이하그렇다면, 당신뭔가 벌써 죽이고 있어요？」
 	PRINTFORMW 「그렇게 낮은 평가하고 있지 않기 때문에, 좀 더 나를 닦아, 예의범절을 가르쳐, 좋아하게 해 보세요？」
 	PRINTFORMW 죽인다, 그렇다고 하는 말에 등골이 오싹해졌지만, 떨어뜨리는 자신도 없을 것은 아니다…
-	PRINTFORMW 「후훗, 그래그래, 그 늠름하다얼굴를 좋아해…지금일도 즐길 수 있을 것 같구나」
+	PRINTFORMW 「후훗, 그래그래, 그 늠름하다얼굴을 좋아해…지금일도 즐길 수 있을 것 같구나」
 	SETBIT CFLAG:201, 2
 ;굴복각인Lv3
 ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 	;반발각인Lv3취득してから굴복각인Lv3になった場合
 	IF MARK:반발각인의취득이력 >= 3
 		PRINTFORMW 「분하지만, 생각을 고치지 않을 수 없어요. 당신노손련, 확실한 것이군요…」
-		PRINTFORMW 저항를 계속해 왔다%CALLNAME:TARGET%(이었)였지만, 그얼굴는 홍조 해, 이미 계속 참을 수 없으면%CALLNAME:MASTER%에 기대고 걸려 왔다
+		PRINTFORMW 저항를 계속해 왔다%타겟이었()%지만, 그얼굴은 홍조 해, 이미 계속 참을 수 없으면%CALLNAME:MASTER%에 기대고 걸려 왔다
 		PRINTFORMW 「이제 안돼…인내 따위 할 수 있을 이유 없잖아」
 		PRINTFORMW 「당신하지만 나로 하고 온 것처럼, 나도당신를 좋아하게 시켜 받아요…」
 		PRINTFORMW 「그것이당신의 방식, 무엇일까요？」
 		PRINTFORMW …확실히, 어중간한조교를 한 기억은 없다. 
-		PRINTFORMW 그녀의 말에 생긋입원을 비뚤어지게 한다%CALLNAME:MASTER%에, %조사처리(CALLNAME:TARGET,"는")% 눈을 핏발이 서게 하면서 덤벼 들어 왔다
+		PRINTFORMW 그녀의 말에 생긋입원을 비뚤어지게 하는 %CALLNAME:MASTER%에, %조사처리(CALLNAME:TARGET,"는")% 눈을 핏발이 서게 하면서 덤벼 들어 왔다
 	ELSE
 		PRINTFORMW 「곤란했군요」
-		PRINTFORMW (와)과입그럼 말하지만, %조사처리(CALLNAME:TARGET,"는")% 정말로 곤란해 하고 있는지 의심하고 싶어지는 것 같은 소얼굴를 기리고 있다
-		PRINTFORMW 「아아, 최근은 말야, 당신노얼굴를 보는 것이 기다려지게 되어 버렸어」
+		PRINTFORMW (와)과입그럼 말하지만, %조사처리(CALLNAME:TARGET,"는")% 정말로 곤란해 하고 있는지 의심하고 싶어지는 것 같은 소얼굴을 기리고 있다
+		PRINTFORMW 「아아, 최근은 말야, 당신노얼굴을 보는 것이 기다려지게 되어 버렸어」
 		PRINTFORMW 「반대로당신하지만 없다시간띠가 지루해 말야. (와)과…라고 해도, 쑤셔, 」
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 요염하게 미소지었는지라고 생각하면, 다음의 순간%CALLNAME:TARGET%의 얼굴하지만 눈앞에까지 다가오고 있었다
 		PRINTFORMW 「당신, 처음은 아무것도 아니게 보였는데…지금은, 매우 두고 자소…」
 		PRINTFORMW 「…후훗, 떨고 있지만 내가 무서운거야？달라요, 나와 같아 고조됨을 견디고 있는 거네」
-		PRINTFORMW 달콤하고 위험한 향기를 발한다%조사처리(CALLNAME:TARGET,"가")% 갑자기%CALLNAME:MASTER%의 목덜미에 입김을 내뿜으면, 마치 피가 비등하는 것 같은감각에 습격당했다
+		PRINTFORMW 달콤하고 위험한 향기를 발하는 %조사처리(CALLNAME:TARGET,"가")% 갑자기%CALLNAME:MASTER%의 목덜미에 입김을 내뿜으면, 마치 피가 비등하는 것 같은감각에 습격당했다
 		PRINTFORMW 「나도 인내의 한계…♪함께 높은 곳에 끝까지 오릅시다…♪」
 	ENDIF
 	SETBIT CFLAG:201, 3
 ;연모
 ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
-	PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 침대 위에서발를 조, 팔에 해당한다날개를 턱을 괴는 행동 해, 의미심장한 미소를 띄우면서%조사처리(CALLNAME:MASTER,"를")% 보고 있다
+	PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 침대 위에서발을 조, 팔에 해당한다날개를 턱을 괴는 행동 해, 의미심장한 미소를 띄우면서%조사처리(CALLNAME:MASTER,"를")% 보고 있다
 	PRINTFORMW 「…결정했어요」
 	PRINTFORMW 이윽고 조용하게, 그러나 확실한 의사를 가졌다입조로%조사처리(CALLNAME:TARGET,"가")% 단언했다
 	PRINTFORMW 「%CALLNAME:MASTER%! 나와 함께 마왕군에 오는거야!」
@@ -155,7 +155,7 @@ IF MARK:반발각인 == 3
 	;一回目
 	IF CFLAG:461 == 0
 		PRINTFORMW 앞일, 어쩐지 원망의 말 같아 보인 말을 내뱉을 수 있던 것을 생각해 낸다. 
-		PRINTFORMW 그런%CALLNAME:TARGET%의 얼굴를 생각해 내면서 방에 들어간 순간, 언젠가 같은 충격이%조사처리(CALLNAME:MASTER,"를")% 덮쳤다! 
+		PRINTFORMW 그런%CALLNAME:TARGET%의 얼굴을 생각해 내면서 방에 들어간 순간, 언젠가 같은 충격이%조사처리(CALLNAME:MASTER,"를")% 덮쳤다! 
 		PRINTFORMW 분명한 적의를 가지고 발해진 그 폭풍은, %조사처리(CALLNAME:MASTER,"를")% 벽에 내던졌다…충격에 가볍게 현기증을 일으킨다. 
 		PRINTFORMW 「…왔군요」
 		PRINTFORMW 엷은 웃음이야말로 떠올리고는 있지만, 춤추듯 내려간 그녀의 눈동자에는 증오라고 생각되는 불길이 흔들거리고 있다. 
@@ -183,7 +183,7 @@ IF MARK:반발각인 == 3
 		ELSEIF RAND:2 == 0
 			PRINTFORMW %CALLNAME:TARGET%의 방에 들어갔지만…방 안에는 아무도 없다. 
 			PRINTFORMW 의심스럽게 생각하면서 방 안을 바라보자고 한 순간, 배후로부터%CALLNAME:TARGET%에 습격당하고 마루에 내던질 수 있었다! 
-			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:TARGET%에 덥쳐지면서도, 발를 잡아 어떻게든 붙잡았다…
+			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% %CALLNAME:TARGET%에 덥쳐지면서도, 발을 잡아 어떻게든 붙잡았다…
 			PRINTFORMW <습격당했기 때문에 이번조교에서의당신노정력하지만 감소했습니다…>
 			;33％정력ダウン
 			BASE:MASTER:정력 = BASE:MASTER:정력 - MAXBASE:MASTER:정력 / 3
@@ -268,9 +268,9 @@ ELSEIF TALENT:연모
 			;이하랜덤
 			IF RAND:6 > 3 - MARK:반발각인의취득이력
 				;반발각인Lv3経由している場合は若干発生率高めに
-				PRINTFORMW (와)과, 방에발를 밟아 넣은 다음의 순간, 꾸물거려 와 시야가 회전해, 깨달으면 침대 위에 굴려지고 있었다. 
+				PRINTFORMW (와)과, 방에발을 밟아 넣은 다음의 순간, 꾸물거려 와 시야가 회전해, 깨달으면 침대 위에 굴려지고 있었다. 
 				PRINTFORMW 「늦었지 않아…기다리고 있었어요」
-				PRINTFORMW %CALLNAME:MASTER%의얼굴의 위에 걸쳐, 얼굴를 상기 시키고 있다%조사처리(CALLNAME:TARGET,"가")% , 억지로%CALLNAME:MASTER%의 입술을 빼앗아 온다…
+				PRINTFORMW %CALLNAME:MASTER%의얼굴의 위에 걸쳐, 얼굴을 상기 시키고 있다%조사처리(CALLNAME:TARGET,"가")% , 억지로%CALLNAME:MASTER%의 입술을 빼앗아 온다…
 				PRINTFORMW 「후후후후…시작해요」
 				PRINTFORMW 이것으로는 어느 쪽이조교스승인 것인가 모른다…
 				TEQUIP:넘어뜨리기 = 1
@@ -291,7 +291,7 @@ ELSEIF TALENT:연모
 			IF RESULT == 0
 				IF RAND:2 == 0
 					PRINTFORMW 「…우후후후, 걸렸군요」
-					PRINTFORMW 덮어씌웠다%CALLNAME:MASTER%의 몸에발를 관련되고, 요령 있게 서로의체위를 뒤엎는다
+					PRINTFORMW 덮어씌웠다%CALLNAME:MASTER%의 몸에발을 관련되고, 요령 있게 서로의체위를 뒤엎는다
 					PRINTFORMW 「나를 갖고 싶지요？충분히 맛보게 해 준다」
 					PRINTFORMW %CALLNAME:TARGET%에 밀어 넘어뜨려져 버렸다…
 					TEQUIP:넘어뜨리기 = 1
@@ -301,7 +301,7 @@ ELSEIF TALENT:연모
 					PRINTFORMW 균열을 집요하게 더듬으면, 거기로부터는 끊임없이 밀이 넘쳐 나오고 있다
 					PRINTFORMW 허덕이는 소리가 한층 더 높아져, %조사처리(CALLNAME:TARGET,"는")% 몸을 움츠리게 해 움찔움찔 작게 경련한다
 					PRINTFORMW 「……!!？？」
-					PRINTFORMW 눈을 크게 열어얼굴를 진빨강로 해 자신의 상황에 당황한다%조사처리(CALLNAME:TARGET,"를")%, %조사처리(CALLNAME:MASTER,"는")% 더욱귀여워한다것으로 했다
+					PRINTFORMW 눈을 크게 열어얼굴을 진빨강로 해 자신의 상황에 당황하는 %조사처리(CALLNAME:TARGET,"를")%, %조사처리(CALLNAME:MASTER,"는")% 더욱귀여워한다것으로 했다
 				ENDIF
 			ELSE
 				IF RAND:2 == 0
@@ -319,7 +319,7 @@ ELSEIF TALENT:연모
 			ENDIF
 		ELSEIF RAND:2 == 0
 			PRINTFORMW 「있고!」
-			PRINTFORMW 구령 제일, 갈아입음중의%CALLNAME:MASTER%에 가차 없이 열풍을 발한다%CALLNAME:TARGET%
+			PRINTFORMW 구령 제일, 갈아입음중의%CALLNAME:MASTER%에 가차 없이 열풍을 발하는 %CALLNAME:TARGET%
 			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 보기 흉하게 방 안을 누워 간다…
 			PRINTFORMW 「틈투성이…당신, 그런 것은 마왕군 중(안)에서 살아갈 수 없어요？」
 			PRINTFORMW …아무도 마왕군에 참가한다고는 한 마디도 말하지 않습니다만…
@@ -332,7 +332,7 @@ ELSEIF TALENT:연모
 			PRINTFORMW …그것은 도둑이라고 말합니다…%조사처리(CALLNAME:MASTER,"는")% 풀썩 고개 숙인다
 			PRINTFORMW 「당신하지만 어떤 것을 읽고 있을까, 이해가 깊어지려고 생각해」
 			PRINTFORMW 「좋지 않아, 나와당신의 사이인 것이고♪」
-			PRINTFORMW 근심이 없는 소얼굴그리고 그렇게 말한다%CALLNAME:TARGET%에 껴안아지고, 지극히 자연스럽게 입술을 빼앗긴다…
+			PRINTFORMW 근심이 없는 소얼굴그리고 그렇게 말하는 %CALLNAME:TARGET%에 껴안아지고, 지극히 자연스럽게 입술을 빼앗긴다…
 			PRINTFORMW 승손에 책을 가져 가는 것은 안된다고 다짐을 받아 두었지만, 그 중 허락해 버릴 것 같은 자신이 한심하다…
 		ENDIF
 	ENDIF
@@ -385,7 +385,7 @@ IF STATE("撃沈", MASTER)
 	ELSEIF TALENT:연모
 		PRINTFORMW 「그렇게 너무 한 생각 는 없지만…」
 		PRINTFORMW 「손간이 걸려요♪」
-		PRINTFORMW 이렇게 말하면서도, 희희낙락 하면서%조사처리(CALLNAME:MASTER,"를")% 간호한다%CALLNAME:TARGET%(이었)였다
+		PRINTFORMW 이렇게 말하면서도, 희희낙락 하면서%조사처리(CALLNAME:MASTER,"를")% 간호하는 %타겟이었()%다
 	;その他
 	ELSE
 		PRINTFORMW 「좀 더 연습하고 싶은 것이지만…」
@@ -1694,7 +1694,7 @@ IF SELECTCOM == 63
 		ELSEIF TALENT:연모
 			IF RAND:3 == 0
 				PRINTFORMW 「아아…언제 봐도당신의 몸은 멋져. 떨어지고 싶지 않네요♪」
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%의 허리에 돌렸다발를 꽉 단단히 조여 왔다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%의 허리에 돌렸다발을 꽉 단단히 조여 왔다…
 			ELSEIF RAND:2 == 0
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%에 살그머니 몸을 맡겨 왔다…
 				PRINTFORMW 「우후후…♪당신라는거 정말 굉장한거네. 나도 헤롱헤롱이 되어 버려요♪」
@@ -3006,7 +3006,7 @@ IF SELECTCOM == 170 && TEQUIP:비디오카메라
 				PRINTFORMW 「예쁘게 찍는거야？염가판매 하면 용서하지 않기 때문에♪」
 			;구속中
 			ELSEIF TEQUIP:구속
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 명백하게 싫을 것 같은얼굴를 하고 있다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 명백하게 싫을 것 같은얼굴을 하고 있다…
 				PRINTFORMW 「헤에…어쨌든지, 그 철의 상자에 기록하자는 것？」
 				PRINTFORML [0] 예
 				PRINTFORML [1] 아니오
@@ -3073,7 +3073,7 @@ IF SELECTCOM == 170 && TEQUIP:비디오카메라
 				PRINTFORMW 「공부에 사용하는거야？그렇게 경계하지 않는거야」
 			;구속中
 			ELSEIF TEQUIP:구속
-				PRINTFORMW 비디오카메라를 꺼내면, 역시%조사처리(CALLNAME:TARGET,"는")% 명백하게 싫을 것 같은얼굴를 했다
+				PRINTFORMW 비디오카메라를 꺼내면, 역시%조사처리(CALLNAME:TARGET,"는")% 명백하게 싫을 것 같은얼굴을 했다
 				PRINTFORMW 「또？아무래도 그 철의 상자에 기록하고 싶다고 말하는거야？」
 				PRINTFORML [0] 예
 				PRINTFORML [1] 아니오
@@ -3301,7 +3301,7 @@ IF SELECTCOM == 173 && TEQUIP:새댁플레이
 		IF MARK:반발각인 == 3
 			;구속されていない場合
 			IF TEQUIP:구속 == 0
-				PRINTFORMW 에이프런를솔직에 받았다%CALLNAME:TARGET%(이었)였지만, 
+				PRINTFORMW 에이프런를솔직에 받았다%타겟이었()%지만, 
 				PRINTFORMW 눈 깜짝할 순간에 구조로 찢어놀림쓸모 있게 되고 없애 버렸다…
 				PRINTFORMW <에이프런를 잃었습니다>
 				TEQUIP:새댁플레이 = 0
@@ -3326,7 +3326,7 @@ IF SELECTCOM == 173 && TEQUIP:새댁플레이
 		IF MARK:반발각인 == 3
 			;구속されていない場合
 			IF TEQUIP:구속 == 0
-				PRINTFORMW 에이프런를솔직에 받았다%CALLNAME:TARGET%(이었)였지만, 
+				PRINTFORMW 에이프런를솔직에 받았다%타겟이었()%지만, 
 				PRINTFORMW 눈 깜짝할 순간에 구조로 찢어놀림쓸모 있게 되고 없애 버렸다…
 				PRINTFORMW <에이프런를 잃었습니다>
 				TEQUIP:새댁플레이 = 0
@@ -4735,7 +4735,7 @@ CASE "매각した"
 		;	PRINTFORMW 몽마たちが%조사처리(CALLNAME:MASTER,"를")% 呼ぶ声が, 急激に遠ざかる. 薄暗い通路の入り입を勢いよく飛び出し, 
 		;ELSE
 		;いなければ
-			PRINTFORMW 어슴푸레한 통로의들이입를 힘차게 뛰쳐나와, 
+			PRINTFORMW 어슴푸레한 통로의들이입을 힘차게 뛰쳐나와, 
 		;ENDIF
 		PRINTFORMW 이미 원형을 두지 않은 우리 집을 뒤로 하면서, %CALLNAME:MASTER%의 몸은 더 하늘 높이 날아 오른다…
 		PRINTFORMW 「또 만날 수 있어 기뻐요, 원·어주인모양…어때？ 당신의 저택의 하늘로부터의 경치는？최고겠지？」
@@ -4772,12 +4772,12 @@ CASE "매각した"
 		PRINTFORMW 「아, 나의기분는 따로 신경쓰지 마. 지금 나는 지금부터 어떻게 할까를 생각하고 있기 때문에」
 		PRINTFORMW 「데몬족에손를 빌리는 것도 싫고, 동료의하피족도 기대가 될지 어떨지…」
 		PRINTFORMW 「리즈·라즈들과도 제휴가…응？무엇은 팔린 후의 탈주의손는 두야？」
-		PRINTFORMW 수상한 듯이 응시한다%CALLNAME:MASTER%의 시선을 알아차려인가, %조사처리(CALLNAME:TARGET,"는")% 시원스럽게 말씀하셨다. 
+		PRINTFORMW 수상한 듯이 응시하는 %CALLNAME:MASTER%의 시선을 알아차려인가, %조사처리(CALLNAME:TARGET,"는")% 시원스럽게 말씀하셨다. 
 		PRINTFORMW 「지금부터 나를 파는 것이겠지？그 후 어떻게 마왕님에게 귀순할까, 라는 이야기야」
 		PRINTFORMW 「역시 뒤탈 없고 군세 인솔해 섬멸하는 것이 정석이군요. 마왕군으로서의 체재도 있고」
 		PRINTFORMW …%조사처리(CALLNAME:TARGET,"는")% 이제(벌써) 도망칠 생각으로 있다. 게다가 최악의손단으로. 현기증이 해 왔다…
 		PRINTFORMW 「그렇지만 너무 서둘러 주어 버리면당신의 고손님에 대한 신용에도 관계되고…」
-		PRINTFORMW 「보기 좋게 탈주하는 것이 제일일까？ 당신노얼굴를 잡지 않고 끝마칠 수 있고…」
+		PRINTFORMW 「보기 좋게 탈주하는 것이 제일일까？ 당신노얼굴을 잡지 않고 끝마칠 수 있고…」
 		PRINTFORMW 「아핫, 괜찮아요, 딴 곳이 어떻게 되려고, 당신에는 폐를 끼치지 않도록 하기 때문에」
 		PRINTFORMW 그러한 문제가 아니다, 이렇게 말하려고 했다%CALLNAME:MASTER%에, %조사처리(CALLNAME:TARGET,"는")% 더욱 추격을 곱한다. 
 		PRINTFORMW 「그 대신, 당신도 재빨리 짐 모아 두세요？」
@@ -4824,7 +4824,7 @@ CASE "아침키스"
 	;それ以外
 	ELSE
 		PRINTFORMW 「후훗, 눈을 뜸？」
-		PRINTFORMW 「그렇게 놀라지 않아도 괜찮지 않아？ 얼굴를 보러 온 것 뿐이야？」
+		PRINTFORMW 「그렇게 놀라지 않아도 괜찮지 않아？ 얼굴을 보러 온 것 뿐이야？」
 	ENDIF
 	RETURN 1
 ;----------------------------------------------------------------
@@ -4895,7 +4895,7 @@ CASE "조수で성처리：事後"
 ;-------------------------------------------------
 CASE "서류작업：도움"
 	IF RANDCHK(2, CFLAG:ARG:71, 0, 1)
-		PRINTFORMW 피로가 쌓였다%CALLNAME:MASTER%하,%CALLNAME:ARG%에 맛사지를 부탁해 보았습니다
+		PRINTFORMW 피로가 쌓였다%조사처리(CALLNAME:MASTER,"는")%,%CALLNAME:ARG%에 맛사지를 부탁해 보았습니다
 		PRINTL 
 		;三姉妹勢ぞろい
 		IF GETCHARA(39) > MASTER && GETCHARA(40) > MASTER
@@ -4910,7 +4910,7 @@ CASE "서류작업：도움"
 		ELSE
 			PRINTFORMW 「이제(벌써), 사치스러운 부탁을 해 주어요」
 			PRINTFORMW 「라도 좋아요. 월등히의 맛사지를 해 아겔♪」
-			PRINTFORMW %CALLNAME:ARG%하%CALLNAME:MASTER%의 뒤로 서면, 요령 있게도 날개로 어깨를 비비어 주고 있습니다
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")%%CALLNAME:MASTER%의 뒤로 서면, 요령 있게도 날개로 어깨를 비비어 주고 있습니다
 			PRINTFORML ………
 			PRINTFORML ……
 			PRINTFORMW …
@@ -4920,7 +4920,7 @@ CASE "서류작업：도움"
 
 		SETBIT CFLAG:ARG:71, 1
 	ELSE
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
 		PRINTL 
 		PRINTFORMW 「후후후, 나에게 공물이라니 센스가 있지 않아」
 		PRINTFORML 「그러면 이것을 술안주에 향후의 이야기라도 할까！」

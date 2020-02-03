@@ -48,7 +48,7 @@ IF GETBIT(CFLAG:201, 0) == 0
 		PRINTFORMW 그렇다, 그와 같이다, 나에게도 알았던 것이 있다. 지금 눈앞에 있는 것은 나의 아가씨다!
 		PRINTFORMW 「네, 조금 전부터 그렇게 말하네요?」
 		PRINTFORMW …아이를 타인에게 팔다는 이야기는 제법 어디로이기도 하지만, 부친에게 조교 시킨다고 어떠한 것이다 이것은? 그녀는 무엇을 생각하고 있지?
-		PRINTFORMW 「-오늘…? %CNAME("一人称")%는 「여기서 기다리고 있으면 기분 좋게 해 줄 수 있다」라고 어머님에게 들었기에 여기에 있을 뿐입니다?」
+		PRINTFORMW 「-오늘…? %조사처리(CNAME("一人称"),"는")% 「여기서 기다리고 있으면 기분 좋게 해 줄 수 있다」라고 어머님에게 들었기에 여기에 있을 뿐입니다?」
 		PRINTFORMW 뭐야 이건, 설명이 어중간하게 생략해지고 있잖아. 이것은 저것일까? 나에게 아가씨에게 자신이 부끄러운 일을 하고 있는 것을 설명하는 수치 플레이일까?
 		PRINTFORMW 「그…%CNAME("一人称")%,  무엇인가 안되었습니까? 기분 좋게 해 줄 수 없습니까?」
 		PRINTFORMW 아가씨가, 눈의 구석에서 눈물을 띄워 이쪽을 올려보고 있는……뭐,  「금방 먹을 수 있도록 차려놓은 ?먹지 않으면 무려든지」라고 말하고, 임신하지 않으면 문제 없지요!
@@ -66,9 +66,9 @@ IF GETBIT(CFLAG:201, 0) == 0
 		PRINTFORMW 솔직한 것은 실로 좋은 일이구나, 하지만 좀 더 오블랏에 쌀까!
 		PRINTFORMW 「알았다…조금, 변」
 		PRINTFORMW 좋다! 너무 바뀌지 않다!, 네, 조금 기다려 이 아이도 조교하지 않으면 안 되는 것일까? 그녀는 정말로 무엇을 생각하고 있지?
-		PRINTFORMW 「나비 오늘…? %CNAME("一人称")%는 「여기서 기다리고 있으면 기분 좋게 해 줄 수 있다」…라고, 언니~에 들은…만」
+		PRINTFORMW 「나비 오늘…? %조사처리(CNAME("一人称"),"는")% 「여기서 기다리고 있으면 기분 좋게 해 줄 수 있다」…라고, 언니~에 들은…만」
 		PRINTFORMW 뭐야 이건, 아가씨가 한패다! 이것은 벌써 안된다…도망칠 수 없다. 혹시 밖에서 매복하고 있을 가능성조차 있잖아!
-		PRINTFORMW 「…%CNAME("一人称")%는, 안돼? 할 수 없어?」
+		PRINTFORMW 「…%조사처리(CNAME("一人称"),"는")%, 안돼? 할 수 없어?」
 		PRINTFORMW 아가씨가, 눈의 구석에서 눈물을 띄워 얼굴을 숙이게 하고 있는……뭐,  「돌다리를 두드려 건넌다」 정도 신중하게 가면 아무렇지 않아요!
 		PRINTFORMW 「!…아, 하는…의? 좋았다…」
 		;ダウナー気味で로리ときたらこの딸빈유じゃね？という作者の我侭から強制的に빈유化されます
@@ -105,13 +105,13 @@ ELSEIF MARK:반발각인 == 3
 ELSEIF GETBIT(CFLAG:201, 1) == 0 && MARK:굴복각인 == 1
 	IF BASE:몇번째 == 1
 		PRINTFORMW 「%CNAME("二人称")%♪오늘도 와 주셨습니다…네, 괜찮아요, 언제라도♪」
-		PRINTFORMW %CALLNAME:TARGET%는 시원스럽게와 옷을 벗어 가는
+		PRINTFORMW %타겟은()% 시원스럽게와 옷을 벗어 가는
 	ELSEIF BASE:몇번째 == 2
 		PRINTFORMW 「아, %CNAME("二人称")%. …기다려, 지금…준비한다」
-		PRINTFORMW %CALLNAME:TARGET%는 느긋하게 옷을 벗어 가는
+		PRINTFORMW %타겟은()% 느긋하게 옷을 벗어 가는
 	ELSE
 		PRINTFORMW 「%CNAME("二人称")%,  오늘도 -오늘 힘내세요♪」
-		PRINTFORMW %CALLNAME:TARGET%는 허겁지겁 옷을 벗는다. 그러나, 노력하는 것은 피차일반이다
+		PRINTFORMW %타겟은()% 허겁지겁 옷을 벗는다. 그러나, 노력하는 것은 피차일반이다
 	ENDIF
 	SETBIT CFLAG:201, 1
 	RETURN 1
@@ -119,10 +119,10 @@ ELSEIF GETBIT(CFLAG:201, 1) == 0 && MARK:굴복각인 == 1
 ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2
 	IF BASE:몇번째 == 1
 		PRINTFORMW 「후훗, %CNAME("二人称")%,  너무 좋아입니다♪」
-		PRINTFORMW %CALLNAME:TARGET%는 그렇게 말하고 침대 위로부터 가슴의 근처에 뛰어들었다
+		PRINTFORMW %타겟은()% 그렇게 말하고 침대 위로부터 가슴의 근처에 뛰어들었다
 	ELSEIF BASE:몇번째 == 2
 		PRINTFORMW 「어서 오세요, %CNAME("二人称")%. 쭉 기다렸다…」
-		PRINTFORMW %CALLNAME:TARGET%는 발 밑까지 아장아장하며 걸어 오면 허리의 근처에 달려들어 안겼다
+		PRINTFORMW %타겟은()% 발 밑까지 아장아장하며 걸어 오면 허리의 근처에 달려들어 안겼다
 	ELSE
 		PRINTFORMW 「%CNAME("二人称")%라고, 잘 보면 꽤 멋있는!」
 		PRINTFORMW 고마워요…응? 과연 이것은 칭찬할 수 있어서 있는 것인가?
@@ -151,51 +151,51 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 		PRINTFORMW …능숙하다. 설탕과 소금을 잘못한다든가 온통 개그일까하고 생각했지만, 그런 것도 없고 보통으로 맛있었다. 아가씨의 머리를 어루만져 하면 쑥스러운 듯하게 웃음 침대로 향해 갔다
 	ELSE
 		PRINTFORMW 「%CNAME("二人称")%,  오세요」
-		PRINTFORMW %CALLNAME:MASTER%가 방에 들어가면%CALLNAME:TARGET%는 벌써 침대 위에 앉아 있었다
+		PRINTFORMW %마스터가()% 방에 들어가면%타겟은()% 벌써 침대 위에 앉아 있었다
 		PRINTFORMW 「오늘도 할 것 같군요, 조교? …우응, 가득 기분 좋게 해」
-		PRINTFORMW 침대의 위로 들뜨다%CALLNAME:TARGET%에 갑작스러운가 되는 것처럼%CALLNAME:MASTER%는 가까워져 갔다
+		PRINTFORMW 침대의 위로 들뜨다%CALLNAME:TARGET%에 갑작스러운가 되는 것처럼%마스터는()% 가까워져 갔다
 	ENDIF
 	SETBIT CFLAG:201, 3
 	RETURN 1
 ;굴복각인Lv3+연모
 ELSEIF GETBIT(CFLAG:201, 4) == 0 && TALENT:연모
 	IF BASE:몇번째 == 1
-		PRINTFORMW %CALLNAME:MASTER%가 방에 들어가면, %CALLNAME:TARGET%는 왠지 딴 쪽을 벗기고 있다
+		PRINTFORMW %마스터가()% 방에 들어가면, %타겟은()% 왠지 딴 쪽을 벗기고 있다
 		PRINTFORMW 「아버님…계셨군요」
-		PRINTFORMW 묘하게 목소리가 어두운, 평상시라면 기쁜듯이 모여 오는데…이상하게 생각해 가까워지면%CALLNAME:TARGET%는 이불안에도 꾸물거려 넣었다
-		PRINTFORMW %CALLNAME:MASTER%는 시트의 틈새로부터 안을 들여다보는……이, 얼굴은 확인할 수 없었다
-		PRINTFORMW %CALLNAME:MASTER%가 무슨 일인 걸까 하고 들으면%CALLNAME:TARGET%는 오열교사리의 소리로 이야기를 시작한다
+		PRINTFORMW 묘하게 목소리가 어두운, 평상시라면 기쁜듯이 모여 오는데…이상하게 생각해 가까워지면%타겟은()% 이불안에도 꾸물거려 넣었다
+		PRINTFORMW %마스터는()% 시트의 틈새로부터 안을 들여다보는……이, 얼굴은 확인할 수 없었다
+		PRINTFORMW %마스터가()% 무슨 일인 걸까 하고 들으면%타겟은()% 오열교사리의 소리로 이야기를 시작한다
 		PRINTFORMW 「아버님…%CNAME("一人称")%…는, 나쁜 아이입니다, 최초, 는…구, 아버지를 만나는 것 조차…,  오면 -와 도 에, 있고 히…」
 		PRINTFORMW 조금씩%CALLNAME:TARGET%의 목소리가 알아 듣기 힘들어진, 시트아래의 얼굴은 다양한 국물로 꽤나 곤란한 것이 되어 있을 것이다
 		PRINTFORMW 「도,,  나는, 가, 인내가로 송곳입니다. 이런 것, 안돼등라고 쉿 주는 것…에 」
 		PRINTFORMW 안쪽으로부터 시트를 마음껏 꽉 쥐고 있는 것 같다, 주름이 무섭게 되어 있다. 그렇게 잡으면 사랑스러운 손에 상처가 붙어 버릴 것이다에
 		PRINTFORMW 「도…도, 종류나무에 입니다…와-에 대해, 가족 히야 없어서……」
 		PRINTFORMW 「(*딸)아가씨와 글자라고가 아니고에…의 무렵을…사랑하고 있습니다, 쭉 쭉 사랑하고 있었으면 좋은 …? …!」
-		PRINTFORMW %CALLNAME:MASTER%는 시트마다%CALLNAME:TARGET%를 들어 올려, 꿀감인가 무언가의 같게 시트를 뜯어, 탐내듯이 입술을 부피 잤다
-		PRINTFORMW 「응무…츄우…후아？！(와)과…(와)과─？……저…미안해요, 이상한 일 말해. 대답은 필요없습니다…%CNAME("一人称")%는 기억해 받을 수 있으면, 좋습니다」
-		PRINTFORMW 조금 붉어진 작은 손을 어루만지고 문지르면서, %CALLNAME:MASTER%는%CALLNAME:TARGET%과 한번 더 입술을 부피 잤다.
+		PRINTFORMW %마스터는()% 시트마다%타겟을()% 들어 올려, 꿀감인가 무언가의 같게 시트를 뜯어, 탐내듯이 입술을 부피 잤다
+		PRINTFORMW 「응무…츄우…후아？！(와)과…(와)과─？……저…미안해요, 이상한 일 말해. 대답은 필요없습니다…%조사처리(CNAME("一人称"),"는")% 기억해 받을 수 있으면, 좋습니다」
+		PRINTFORMW 조금 붉어진 작은 손을 어루만지고 문지르면서, %마스터는()%%타겟과()% 한번 더 입술을 부피 잤다.
 	ELSEIF BASE:몇번째 == 2
-		PRINTFORMW %CALLNAME:MASTER%가 방에 들어가면, %CALLNAME:TARGET%는 터덜터덜하고 이쪽에 들러 왔다
+		PRINTFORMW %마스터가()% 방에 들어가면, %타겟은()% 터덜터덜하고 이쪽에 들러 왔다
 		PRINTFORMW 「%CNAME("二人称")%…어서 오세요」
 		PRINTFORMW 언제에도 늘어나 목소리가 어두운, 기쁜듯이 모여 오는 중 까지는 언제나 대로지만의에…이상하게 생각해 안아 올리면%CALLNAME:TARGET%의 눈은 붉어지고 있던, 방금전까지 울고 있었던 것 같다
-		PRINTFORMW %CALLNAME:MASTER%는 머리를 어루만지면서%CALLNAME:TARGET%를 꼭 껴안으면, 떨어지지 않게 매달렸다
-		PRINTFORMW 당분간 그렇게 해서 있으면%CALLNAME:TARGET%는 조금 침착했는지 평소의 음색으로 이야기하기 시작했다
+		PRINTFORMW %마스터는()% 머리를 어루만지면서%타겟을()% 꼭 껴안으면, 떨어지지 않게 매달렸다
+		PRINTFORMW 당분간 그렇게 해서 있으면%타겟은()% 조금 침착했는지 평소의 음색으로 이야기하기 시작했다
 		PRINTFORMW 「%CNAME("二人称")%…%CNAME("一人称")%이런 것 몰랐던…엄마~에, 바이바이 할 때도 이렇게는, 안 되었다…의」
-		PRINTFORMW %CALLNAME:TARGET%는 담담하게 말해 있는 것 같이 들리지만 그 몸은 탱글탱글(부들부들)하고 떨고 있다. 이쪽을 올려보는 눈은 붉게 부어 있어도상 아름다웠다
-		PRINTFORMW 「만날 수 없게 되는 것도 아니면서, %CNAME("二人称")%가 나가는 것…이네의. 알고 있는데, 없어지는 것이 아니다는」
+		PRINTFORMW %타겟은()% 담담하게 말해 있는 것 같이 들리지만 그 몸은 탱글탱글(부들부들)하고 떨고 있다. 이쪽을 올려보는 눈은 붉게 부어 있어도상 아름다웠다
+		PRINTFORMW 「만날 수 없게 되는 것도 아니면서, %조사처리(CNAME("二人称"),"가")% 나가는 것…이네의. 알고 있는데, 없어지는 것이 아니다는」
 		PRINTFORMW 조금씩 손에 가득차는 힘이 강하게 되어 있는, 이 작은 몸으로 어째서 이렇게 강한 힘이 나는지, 이상할 정도다
-		PRINTFORMW 「그런데도 %CNAME("二人称")%가 없어진 후의 이 방은……외토리로 보내는 이 방은…춥고, 외로운…의」
+		PRINTFORMW 「그런데도 %조사처리(CNAME("二人称"),"가")% 없어진 후의 이 방은……외토리로 보내는 이 방은…춥고, 외로운…의」
 		PRINTFORMW 「안된다고 알고 있지만, 이지만…쭉 라고 갖고 싶다고, 생각해버린다, 의」
-		PRINTFORMW %CALLNAME:MASTER%는 숙인 %CNAME("一人称")%를 들어 올려, 머리를 어루만져 그 입술에 키스를 했다
+		PRINTFORMW %마스터는()% 숙인 %조사처리(CNAME("一人称"),"를")% 들어 올려, 머리를 어루만져 그 입술에 키스를 했다
 		PRINTFORMW 「응…츄우…우……%CNAME("二人称")%……고마워요, 지금부터는 하기 전에, 꽉 해…그것과, -도. 그렇게 하면%CNAME("一人称")%, 참을 수 있다…로부터」
-		PRINTFORMW 매우 가볍게라고 작은 몸을 한 번 높게 안아 올려%CALLNAME:MASTER%과%CALLNAME:TARGET%는 한번 더 입술을 부피 잤다.
+		PRINTFORMW 매우 가볍게라고 작은 몸을 한 번 높게 안아 올려%마스터와()%%타겟은()% 한번 더 입술을 부피 잤다.
 	ELSE
 		PRINTFORMW 그런데, 이것은 어떠한 것일까?
 		PRINTFORMW 창은 열려 있지 않고 관안을 걷고 있다고 하는 보고도 없었다고 말하는데%조사처리(CALLNAME:TARGET,"가")% 없는 것은 아닐까
 		PRINTFORMW 모친이 놓쳤어? …있을 수 없는, 조교 하도록 보낸 것은 그녀다. …그럼, 자주적으로 도망쳤어?
 		PRINTFORMW 그렇다고는 해도 방금전부터 침대하 근처로부터 쿡쿡하고 목소리가 들리는…와 이제 이런 놀러 교제할 필요는 없는가
 		PRINTFORMW 「꺄아아,  후훗 %CNAME("二人称")%,  서두른, 서둘렀어?」
-		PRINTFORMW 목덜미를 잡힐 수 있는이면서%CALLNAME:TARGET%는 즐거운 듯이 웃고 있는, 흐뭇한 광경이지만 여기는 부모로서 일단 밖에들
+		PRINTFORMW 목덜미를 잡힐 수 있는이면서%타겟은()% 즐거운 듯이 웃고 있는, 흐뭇한 광경이지만 여기는 부모로서 일단 밖에들
 		PRINTFORMW 「이앙, 죄송합니다,  %CNAME("二人称")%. 벌써 하지 않을테니까 용서해?」
 		PRINTFORMW 눈을 치켜 뜨고 봄에 사과하고 있는…전혀 화낼 생각이 없어져 버렸지 않은가
 		PRINTFORMW 「아하,  상냥한 %CNAME("二人称")%,  정말 좋아해요」
@@ -237,7 +237,7 @@ IF BASE:몇번째 == 1
 	;굴복각인Lv2
 	ELSEIF MARK:굴복각인 == 2
 		PRINTFORML 「%CNAME("二人称")%…너무 좋아입니다 …」
-		PRINTFORML 자고 있는…웬지 모르게이지만%CALLNAME:TARGET%는 잘 자고 있는 생각이 드는…여하튼 잠자는 얼굴은 사랑스럽다, 오락가락하며 서로 양보한다
+		PRINTFORML 자고 있는…웬지 모르게이지만%타겟은()% 잘 자고 있는 생각이 드는…여하튼 잠자는 얼굴은 사랑스럽다, 오락가락하며 서로 양보한다
 		PRINTFORMW 그대로 침대에 몰래 들어가도 눈치채지지 않았지만, 포근포근하고가슴을 비비면 분명히 눈치채져 버린다. 얼굴을 새빨갛게 해 화내지만 별로 박력은 없다
 		PRINTFORML 「%CNAME("二人称")%! 무엇을 히죽히죽 하고 있는 것입니까, 제대로 사람의 이야기를 듣고 있습니까?」
 		PRINTFORMW 정정이다, 박력이 없기는 커녕 오히려 사랑스럽다
@@ -245,7 +245,7 @@ IF BASE:몇번째 == 1
 	;굴복각인Lv3＋연모無し
 	ELSEIF MARK:굴복각인 == 3 && TALENT:연모 == 0
 		PRINTFORML 「%CNAME("二人称")%,  오늘도 기분 좋게 해 주세요」
-		PRINTFORMW 침대 위에 정좌를 해 기다리고 있으면 강요해%CALLNAME:MASTER%가 문을 열면 활기 차게 소리를 냈다
+		PRINTFORMW 침대 위에 정좌를 해 기다리고 있으면 강요해%마스터가()% 문을 열면 활기 차게 소리를 냈다
 		PRINTFORML 그렇다고는 해도…왠지 묘하게 얼굴이 붉은, 잘 보면 조금 피부도 땀이 배고 있는 것 같은…
 		PRINTFORMW 「개,  세세한 것은 좋아요, 빨리 시작합시다!」
 		RETURN 1
@@ -254,19 +254,19 @@ IF BASE:몇번째 == 1
 		;랜덤で구상が変化する（使わない場合はすべて同じにすればよい）
 		IF RAND:3 == 0
 			PRINTFORML 「%CNAME("二人称")%!」
-			PRINTFORMW %CALLNAME:TARGET%는%CALLNAME:MASTER%의 모습을 찾아내면 조금 위에 달려 와, 발 밑으로 양팔을 벌렸다
+			PRINTFORMW %타겟은()%%CALLNAME:MASTER%의 모습을 찾아내면 조금 위에 달려 와, 발 밑으로 양팔을 벌렸다
 			PRINTFORML 「%CNAME("二人称")%,  포옹해 주세요!」
-			PRINTFORMW 팔을 벌린 채로 깡총깡총 뛰는%CALLNAME:TARGET%를 안아 올리면, 기쁜듯이 키스를 해 왔다
+			PRINTFORMW 팔을 벌린 채로 깡총깡총 뛰는%타겟을()% 안아 올리면, 기쁜듯이 키스를 해 왔다
 			PRINTFORML 「쪽,  후훗…매일은 만날 수 없기 때문에, 지금의 여기에(우리집,나) 가득 응석부립니다!」
 			PRINTFORMW 웃은 얼굴이 조금 모친을 닮아 있는…생각이 들었다
 		ELSEIF RAND:2 == 0
 			PRINTFORML 「…,  %CNAME("二人称")%? ……구―,  %CNAME("二人称")%…」
-			PRINTFORMW 체를 좌우로 흔들흔들하며 흔들면서%CALLNAME:TARGET%는 침대중에서 얼굴을 보이고 있다. 자 있는 것인가 일어나 있는 것인가, 미묘하게 판단이 곤란하는 상태다.
+			PRINTFORMW 체를 좌우로 흔들흔들하며 흔들면서%타겟은()% 침대중에서 얼굴을 보이고 있다. 자 있는 것인가 일어나 있는 것인가, 미묘하게 판단이 곤란하는 상태다.
 			PRINTFORML 「오늘도 …기분 좋게 해서,  주세요…」
 			PRINTFORMW 다행인 것에 본인은 흥미와 같지만
 		ELSE
 			PRINTFORML 「%CNAME("二人称")%! %CNAME("二人称")%,  %CNAME("二人称")%,  %CNAME("二人称")%!」
-			PRINTFORMW 무엇인가 오늘의%CALLNAME:TARGET%는 텐션이 높은, 팔을 탁탁하고 휘두르면서%CALLNAME:MASTER%것을 부르고 있다
+			PRINTFORMW 무엇인가 오늘의%타겟은()% 텐션이 높은, 팔을 탁탁하고 휘두르면서%CALLNAME:MASTER%것을 부르고 있다
 			PRINTFORML 「아아, …이런 일에서는 단잠을 얻는 일도 실현되지 않습니다…어떻게 해야 할까요 %CNAME("二人称")%!…라고, 계셨습니까?」
 			PRINTFORMW 아무래도 양을 세는 요령으로 "자려고 하고 있었던 것 같다, 그렇다고는 해도 눈치채지 못한다고는 무슨 일일까?
 		ENDIF
@@ -291,8 +291,8 @@ ELSEIF BASE:몇번째 == 2
 		RETURN 1
 	;굴복각인Lv2
 	ELSEIF MARK:굴복각인 == 2
-		PRINTFORML %CALLNAME:TARGET%는 조용히 책을 읽고 있다, 방금전부터 방에는 페이지를 넘기는음이 가끔 하는 정도다
-		PRINTFORMW 몇분 후…마지막 페이지를 다 읽어%CALLNAME:TARGET%는 책을 닫고 의자에서 휙 뛰어 내렸다.
+		PRINTFORML %타겟은()% 조용히 책을 읽고 있다, 방금전부터 방에는 페이지를 넘기는음이 가끔 하는 정도다
+		PRINTFORMW 몇분 후…마지막 페이지를 다 읽어%타겟은()% 책을 닫고 의자에서 휙 뛰어 내렸다.
 		PRINTFORML 「…? %CNAME("二人称")%…있던, 의?」
 		PRINTFORMW 무엇인가 이상하다고 생각하면 눈치채지 않았던 것일까, 아무래도 집중하면 주위가 안보이게 되는 것 같다.
 		RETURN 1
@@ -306,12 +306,12 @@ ELSEIF BASE:몇번째 == 2
 	ELSEIF TALENT:연모
 		;랜덤で구상が変化する（使わない場合はすべて同じにすればよい）
 		IF RAND:3 == 0
-			PRINTFORMW 방에 들어가면%CALLNAME:TARGET%는 입술을 날카롭게 할 수 있는 이쪽을 향하고 있었다
+			PRINTFORMW 방에 들어가면%타겟은()% 입술을 날카롭게 할 수 있는 이쪽을 향하고 있었다
 			PRINTFORMW 그 얼굴이 유쾌했기 때문에 당분간 바라보고 있으면 뺨을 부풀리고 외면해 버렸다
-			PRINTFORMW %CALLNAME:MASTER%는 쓴웃음하면서 등진 아가씨를 안아 올리고 키스를 하면서 침대에 들어갔다
+			PRINTFORMW %마스터는()% 쓴웃음하면서 등진 아가씨를 안아 올리고 키스를 하면서 침대에 들어갔다
 		ELSEIF RAND:2 == 0
 			PRINTFORMW 「약속…쪽―,  해?」
-			PRINTFORMW 방을 열어 첫소리가 그것이었다, 조용히 눈을 감는%CALLNAME:TARGET%를 안아 올리고 키스를 한다
+			PRINTFORMW 방을 열어 첫소리가 그것이었다, 조용히 눈을 감는%타겟을()% 안아 올리고 키스를 한다
 			PRINTFORMW 「…,  후훗…고마워, %CNAME("二人称")%」
 		ELSE
 			PRINTFORML 「―,  쪽,  후우…쪽, 쪽」
@@ -356,7 +356,7 @@ ELSE
 			PRINTFORMW 단호히 다르면 조생이라고 해 주셨으면 싶다
 		ELSE
 			PRINTFORML 「후훗♪」
-			PRINTFORMW %CALLNAME:TARGET%는 사랑스럽게 미소짓고 있다
+			PRINTFORMW %타겟은()% 사랑스럽게 미소짓고 있다
 		ENDIF
 		RETURN 1
 	ENDIF
@@ -395,17 +395,17 @@ IF BASE:몇번째 == 1
 	;굴복각인Lv1이하
 	ELSEIF MARK:굴복각인 <= 1
 		PRINTFORMW 「하아…하아…,  마지막입니까? 네, 수고 하셨습니다」
-		PRINTFORMW %CALLNAME:TARGET%는 그대로 포슨, 라고 침대에 넘어지고 넣었다
+		PRINTFORMW %타겟은()% 그대로 포슨, 라고 침대에 넘어지고 넣었다
 		RETURN 1
 	;굴복각인Lv2
 	ELSEIF MARK:굴복각인 == 2
 		PRINTFORMW 「아…끝나, 군요…네. 또, 부탁합니다」
-		PRINTFORMW %CALLNAME:TARGET%는 조금 외로운 것 같은 얼굴을 하고 있다
+		PRINTFORMW %타겟은()% 조금 외로운 것 같은 얼굴을 하고 있다
 		RETURN 1
 	;굴복각인Lv3
 	ELSEIF MARK:굴복각인 == 3
 		PRINTFORMW 「후아…지쳤습니다, 오늘 밤은 가득 잘 수 있을 것 같아입니다…」
-		PRINTFORMW 말하고 있는 곁으로부터 자 버린, 시트를 걸쳐%CALLNAME:PLAYER%는 방을 뒤로 했다
+		PRINTFORMW 말하고 있는 곁으로부터 자 버린, 시트를 걸쳐%조사처리(CALLNAME:PLAYER,"는")% 방을 뒤로 했다
 		RETURN 1
 	ENDIF
 ELSEIF BASE:몇번째 == 2
@@ -421,12 +421,12 @@ ELSEIF BASE:몇번째 == 2
 	;연모
 	ELSEIF TALENT:연모
 		PRINTFORMW 「기다려…잠깐만, 이야기…해?」
-		PRINTFORMW 그로부터 당분간%CALLNAME:TARGET%과 다른사랑이 없는 이야기를 하고 즐겼다
+		PRINTFORMW 그로부터 당분간%타겟과()% 다른사랑이 없는 이야기를 하고 즐겼다
 		RETURN 1
 	;굴복각인Lv1이하
 	ELSEIF MARK:굴복각인 <= 1
 		PRINTFORMW 「%CNAME("二人称")%,  수고하셨습니다…또, 오는…이군요?」
-		PRINTFORMW %CALLNAME:TARGET%는 불안한 듯하게 고개를 갸웃하고 있다. 꼭 껴안아 머리를 어루만지면 얼굴을 붉게 해 번민
+		PRINTFORMW %타겟은()% 불안한 듯하게 고개를 갸웃하고 있다. 꼭 껴안아 머리를 어루만지면 얼굴을 붉게 해 번민
 		RETURN 1
 	;굴복각인Lv2
 	ELSEIF MARK:굴복각인 == 2

@@ -107,7 +107,7 @@ IF TEQUIP:Ｗ넘어뜨리기
 			IF PREVEX("사정") && RAND:3
 				PRINTFORM 정액이 눅진눅진하게 넘쳐흐르는 
 			ELSEIF ABL:새드끼 >= 3 && RAND:2 == 0
-				PRINTFORM 마음껏 즐긴 
+				PRINTFORM 마음껏 즐긴 ㄴ
 			ELSE
 				PRINTFORM 범해져서 풀려있는 
 			ENDIF
@@ -121,10 +121,10 @@ IF TEQUIP:Ｗ넘어뜨리기
 ELSEIF CHECK_COM("３Ｐ봉사")
 	CALL TRAIN_MESSAGE_3P
 ELSEIF CHECK_COM("치구청소컨닐링구스")
-	PRINTFORM %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의 저기를 펴넓혀,
-	PRINTFORM %TEXTR("陰唇に残る치구","질구にこびりついている치구", "白くドロリとした汚れ", "チーズの様な汚れ", "粘膜を彩る恥ずかしい汚れ")%
+	PRINTFORM %타겟은()% %CALLNAME:PLAYER%의 그곳을 펴넓혀,
+	PRINTFORM %TEXTR("음순에 남아있던 치구","질구에 맺힌 치구", "희고 물렁한 더러움", "치즈 같이 더러움", "점막을 물들인 부끄러운 더러움")%
 	IF RAND:2 && PLAYER == MASTER && TALENT:냄새민감 && TALENT:연모
-		PRINTFORMW 노%TEXTS("匂い")%를 냄새 맡으면서, 혀로 깨끗하게 청소했다…
+		PRINTFORMW 의 %조사처리(TEXTS("匂い"),"를")% 맡으면서, 혀로 깨끗하게 청소했다…
 	ELSEIF RAND:2
 		PRINTFORMW 를 혀로 구석구석까지 빨아냈다…
 	ELSE
@@ -162,7 +162,7 @@ ELSE
 	;尿のお청소
 	IF GETBIT(CHECK_COM("청소컨닐링구스"), 1)
 		IF PREVPLAY("질내욕뇨", PLAYER)
-			PRINTFORM 대량으로 퍼부어진 오줌을 역류시키고 있는 
+			PRINTFORM 대량으로 퍼부어진 오줌이 역류하고 있는 
 		ELSE
 			PRINTFORM 배뇨 직후에 %TEXTR("지독한", "강한", "암모니아")% 냄새를 풍기는 
 		ENDIF

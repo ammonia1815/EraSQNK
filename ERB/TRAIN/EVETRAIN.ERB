@@ -32,9 +32,9 @@ TARGET:1 = ASSI
 
 ;레벨리미터체크
 CALL SETFLAG, "레벨리미터"
-;크리스마스ツリー체크
-SIF DAYEV("크리스마스期間")
-	TFLAG:33 += NUM("크리스마스ツリー") * 30
+;크리스마스트리체크
+SIF DAYEV("크리스마스주간")
+	TFLAG:33 += NUM("크리스마스트리") * 30
 ;드렁크による무드보정
 SIF STATE("드렁크", TARGET)
 	TFLAG:33 += 90
@@ -73,7 +73,7 @@ CASE "훈제연어"
 CASE "허니비스킷", "베이크드애플"
 	;유치なキャラはお菓子に弱い
 	IF TALENT:유치
-		PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 과자를 먹고 기분이 좋아진것같다
+		PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 과자를 먹고 기분이 좋아진 것 같다
 		CFLAG:2 += 50
 		PALAM:순종 += 500
 	ENDIF
@@ -84,7 +84,7 @@ CASE "파두르사워"
 CASE "개다래와인"
 	;개다래ワイン
 	IF BASE:종족 == 6
-		PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 눈동자를 멍하게하고 발정하고있다…
+		PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 눈동자를 멍하게 하고 발정하고 있다…
 		PALAM:Ｖ윤 += 3000
 		PALAM:순종 += 3000
 		PALAM:욕정 += 3000

@@ -138,9 +138,9 @@ IF TEQUIP:Ｗ넘어뜨리기
 	IF SELECTCOM:1 == PREVCOM:1 && SELECTCOM:1 >= 0
 		PRINTFORM %TEXTS("Ｗ넘어뜨리기 중")%
 	ELSEIF PREVCOM:1 == 65 || PREVCOM:1 == 66 || PREVCOM:1 == 67
-		PRINTFORM %CALLNAME:(TARGET:1)%하지만 질로부터해방했다
+		PRINTFORM %조사처리(CALLNAME:(TARGET:1),"가")% 질로부터 해방된
 	ELSEIF PREVCOM:1 == 75
-		PRINTFORM %CALLNAME:(TARGET:1)%노애널로부터해방된지 얼마 안된
+		PRINTFORM %CALLNAME:(TARGET:1)%의 애널로부터 해방된지 얼마 안된
 	ELSEIF PREVCOM:1 == 83
 		PRINTFORM %CALLNAME:(TARGET:1)%의 오줌의 구멍으로부터해방된지 얼마 안된
 	ENDIF
@@ -149,7 +149,7 @@ IF TEQUIP:Ｗ넘어뜨리기
 	ELSEIF INSERT("Ａ인서트")
 		PRINTFORMW %CALLNAME:MASTER%의 페니스를 애널에서 뽑아, 이번엔 질에 뿌리까지 파묻었다…
 	ELSEIF INSERT("요도인서트")
-		PRINTFORMW %CALLNAME:MASTER%의페니스를로부터 뽑아, 이번은 질로 근원까지 삼켜 왔다…
+		PRINTFORMW %CALLNAME:MASTER%의 페니스로부터 뽑아, 이번은 질로 근원까지 삼켜 왔다…
 	ELSE
 		PRINTFORMW %CALLNAME:MASTER%의 페니스에 걸터앉아서, 천천히 허리를 내렸다…
 	ENDIF
@@ -193,10 +193,10 @@ ELSE
 				CALL TEXT, "와일드스윙"
 			ELSEIF INSERT("Ｖ인서트")
 				IF TEQUIP:키스
-					PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%를해방하지 않고,%TEXTS("키스継続")%다시 허리를 움직이기 시작했다…
+					PRINTFORMW %타겟은()% %조사처리(CALLNAME:PLAYER,"를")% 해방하지 않고,%TEXTS("키스継続")%다시 허리를 움직이기 시작했다…
 					CALL SETFLAG, "추가키스플래그", TARGET
 				ELSE
-					PRINTFORMW %CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%를해방하지 않고, 질을 힘들게 잡은 채로 다시 허리를 움직이기 시작했다…
+					PRINTFORMW %타겟은()% %조사처리(CALLNAME:PLAYER,"를")% 해방하지 않고, 질을 힘들게 잡은 채로 다시 허리를 움직이기 시작했다…
 					CALL TEXT, "추가地の文：기승위"
 				ENDIF
 			ELSEIF INSERT("Ａ인서트")
@@ -210,7 +210,7 @@ ELSE
 				ENDIF
 				PRINTFORMW 삼켜버렸다…
 			ELSEIF INSERT("요도인서트")
-				PRINTFORM %CALLNAME:TARGET%는 허리를 띄우고 나서%NAMES("페니스", PLAYER)%를\@ PENIS(PLAYER) ? 해방する # 抜く \@라고 젖은 그것을 이번은 질로
+				PRINTFORM %타겟은()% 허리를 띄우고 나서%NAMES("페니스", PLAYER)%를\@ PENIS(PLAYER) ? 풀어주고 # 뽑고 \@, 젖은 그것을 이번은 질로
 				IF TALENT:임신 == 0
 					IF RAND:2 && ABL:Ｖ확장 > SIZE("페니스", PLAYER)
 						PRINT 뿌리끝까지 
@@ -227,7 +227,7 @@ ELSE
 				PRINTFORMW %조사처리(TEXTS("Ｖ삽입前"),"를")% 찔러 올렸다…
 			;前回は
 			ELSEIF INSERT("요도인서트")
-				PRINTFORM %CALLNAME:TARGET%를 안아 올려, 오줌의 구멍으로부터 뽑아 냈다%NAMES("페니스", PLAYER)%그래서
+				PRINTFORM %타겟을()% 안아 올려, 오줌의 구멍으로부터 뽑아 낸%NAMES("페니스", PLAYER)%로
 				PRINTFORMW %조사처리(TEXTS("Ｖ삽입前"),"를")% 찔러 올렸다…
 			;체위が정상위
 			ELSEIF INSERT("정상위") || INSERT("굴곡위")

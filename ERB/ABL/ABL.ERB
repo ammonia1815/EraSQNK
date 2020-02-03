@@ -283,7 +283,7 @@ REDRAW 0
 
 PRINTFORML 
 PRINTFORML 여기에선 각종 구슬 1만개를 경험치 10P로 교환하는 장소 입니다.
-PRINTFORML 조교로 쌓는 경험치 보다 좋은것은 아니지만, 남는 구슬을 처리할때 유용합니다.
+PRINTFORML 조교로 쌓는 경험치 보다 좋은 것은 아니지만, 남는 구슬을 처리할때 유용합니다.
 PRINTFORML 
 PRINTFORM 현재 경험치의{EXP:경험치}Ｐ에서, 
 IF ARG < 0
@@ -564,10 +564,10 @@ IF TALENT:반항적
 	ENDIF
 	IF LOCAL
 		IF LOCAL == 1
-			PRINTFORM 상냥하게 접한 덕분인가,%CALLNAME:TARGET%하
-			PRINTFORMW \@EXP:조교횟수 > 1 ? 最近%CALLNAME:MASTER%에 막역해 온 것 같다… # 어깨가 힘을 뺀 것 같다… \@
+			PRINTFORM 상냥하게 접한 덕분인가,%타겟은()% 
+			PRINTFORMW \@EXP:조교횟수 > 1 ? 最近%CALLNAME:MASTER%에 친근해진 것 같다… # 어깨의 힘을 뺀 것 같다… \@
 		ENDIF
-		PRINTFORMW %CALLNAME:TARGET%하【반항적】는 아니게 되었습니다
+		PRINTFORMW %타겟은()% 【반항적】이 아니게 되었습니다
 		TALENT:반항적 = 0
 	ENDIF
 ENDIF
@@ -576,12 +576,12 @@ IF MARK:반발각인 == 0
 	;好感度が4000이상で연모か음란を持っていると、매각가능に
 	IF CFLAG:2 >= 4000 && COND("매각가능플래그") == 0 && (TALENT:음란 || TALENT:연모)
 		PRINTFORMW %CALLNAME:TARGET%의 이쪽을 보는 눈이 이상하다…
-		PRINTFORML %CALLNAME:TARGET%는 몸도 마음도%CALLNAME:MASTER%에 의존해 버리고 있는 것 같다…
+		PRINTFORML %타겟은()% 몸도 마음도 %CALLNAME:MASTER%에 의존해 버리고 있는 것 같다…
 		IF ABL:순종 < 5
 			ABL:순종 = 5
-			PRINTL 순종하지만LV5(이)가 되었다
+			PRINTL 순종이 LV5이 되었다
 		ENDIF
-		PRINTFORMW %CALLNAME:TARGET%의매각가능(이)가 되었습니다
+		PRINTFORMW %타겟을()% 매각할 수 있게 되었습니다
 		SETBIT CFLAG:1, 0
 	;好感度が2500이상、순종が3이상かつ봉사쾌락경험500이상で연모
 	ELSEIF CONFIG("연모と음란の任意획득") == 0 && COND("연모취득가능")
@@ -607,7 +607,7 @@ SIF ABL:욕망 < 4 && (TALENT:냉정 || TALENT:억압 || TALENT:저항)
 
 IF COND("매각가능플래그") == 0
 	IF ABL:순종 >= 5 || ABL:욕망 >= 5 || (ABL:기교 >= 3 && ABL:봉사정신 >= 3) || (ABL:노출벽 >= 3 && ABL:자위중독 >= 2) || ABL:마조끼 >= 3 || ABL:Ｃ감각+ABL:Ｖ감각+ABL:Ａ감각+ABL:Ｂ감각+ABL:Ｍ감각 >= 13
-		PRINTFORMW %CALLNAME:TARGET%의매각가능(이)가 되었습니다
+		PRINTFORMW %타겟을()% 매각할 수 있게 되었습니다
 		SETBIT CFLAG:1, 0
 	ENDIF
 ENDIF
@@ -617,7 +617,7 @@ SIF MARK:반발각인
 
 IF COND("조수가능플래그") == 0
 	IF ABL:순종 >= 3 && (ABL:기교 >= 4 || (ABL:욕망 >= 3 && ABL:기교 >= 3) || ABL:순종 >= 5 || ABL:레즈끼 >= 3)
-		PRINTFORMW %CALLNAME:TARGET%의%TEXTS("조수の명칭")%(이)가 될 수 있게 되었습니다
+		PRINTFORMW %타겟이()% %조사처리(TEXTS("조수の명칭"),"가")% 될 수 있게 되었습니다
 		SETBIT CFLAG:1, 1
 	ENDIF
 ENDIF

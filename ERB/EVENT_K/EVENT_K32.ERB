@@ -40,7 +40,7 @@ IF GETBIT(CFLAG:201, 0) == 0
 ;반발각인Lv3
 ELSEIF MARK:반발각인 == 3
 	PRINTFORMW 「힛, 야…그만두엇…부탁…허락해…」
-	PRINTFORML %조사처리(CALLNAME:PLAYER,"는")% 눈물을 머금고, %CALLNAME:PLAYER%의 어깨를 잡아저항한다%CALLNAME:TARGET%의 입술을 억지로 빼앗아
+	PRINTFORML %조사처리(CALLNAME:PLAYER,"는")% 눈물을 머금고, %CALLNAME:PLAYER%의 어깨를 잡아저항하는 %CALLNAME:TARGET%의 입술을 억지로 빼앗아
 	PRINTFORMW 배트에밀어넘어뜨린다(와)과무리해에옷를 벗겨냈다
 	CALL SETFLAG, "전부벗긴다", TARGET
 ;굴복각인Lv1
@@ -71,7 +71,7 @@ ELSEIF GETBIT(CFLAG:201, 3) == 0 && MARK:굴복각인 == 3 && TALENT:연모 == 0
 	DRAWLINE
 	PRINTFORMW 「나네…당신에게 감사하고 있어요」
 	PRINTFORMW 「이제(벌써), 일생 이대로도 좋다…당신에게 여러 가지 일을 가르쳐져 줘…정말로 꿈같다」
-	PRINTFORMW 하아…(와)과 한숨과도 허덕임과도 취할 수 있는 안타까운 소리를 흘림, 배트 위에서발를Ｍ글자에 열렸다%조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%에 과시하는 것처럼자위에 빠진다
+	PRINTFORMW 하아…(와)과 한숨과도 허덕임과도 취할 수 있는 안타까운 소리를 흘림, 배트 위에서발을Ｍ글자에 열렸다%조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%에 과시하는 것처럼자위에 빠진다
 	PRINTFORMW 「저기…좀 더 봐…나를 보고 있었으면 좋은거야…」
 	PRINTFORMW 「앞으로도…함께…쭉, 쭉 즐깁시다…」
 	SETBIT CFLAG:201, 3
@@ -142,7 +142,7 @@ IF MARK:반발각인 == 3
 	DRAWLINE
 	IF RAND:2 == 0
 		PRINTFORMW 「싫어엇, 그만두엇, 그만두어어…부탁이니까…허락해」
-		PRINTFORMW 지금부터 행해지는 행위에 대한다공포에파랑자리째, 필사적으로 피하려고 한다%CALLNAME:TARGET%
+		PRINTFORMW 지금부터 행해지는 행위에 대한다공포에파랑자리째, 필사적으로 피하려고 하는 %CALLNAME:TARGET%
 		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 그녀를 배트의 구석에 추적하면, 익숙해졌다손돌출하고옷를 벗기기 시작했다
 		CALL SETFLAG, "衣装全脱ぎ", TARGET
 	ELSE
@@ -191,9 +191,9 @@ ELSEIF MARK:굴복각인 == 3 && TALENT:연모 == 0
 	ELSE
 		PRINTFORML 「응웃…싫다…아좋은거야…」
 		PRINTFORML 방에 들어가면%조사처리(CALLNAME:TARGET,"는")% 자위에 빠지고 있었다
-		PRINTFORML 배트에 상체를 가라앉히고, 네발로 엎드림으로 상스럽게 비밀스런 장소에손가락를 기게 한다%CALLNAME:TARGET%
+		PRINTFORML 배트에 상체를 가라앉히고, 네발로 엎드림으로 상스럽게 비밀스런 장소에손가락를 기게 하는 %CALLNAME:TARGET%
 		PRINTFORMW ｢싫다…안돼, 나, 보여지면서 가 버린다아…｣
-		PRINTFORMW %CALLNAME:MASTER%를 깨달으면%조사처리(CALLNAME:TARGET,"는")% 달콤한 한숨을 흘려 가볍다절정에 이르렀다
+		PRINTFORMW %마스터를()% 깨달으면%조사처리(CALLNAME:TARGET,"는")% 달콤한 한숨을 흘려 가볍다절정에 이르렀다
 	ENDIF
 	RETURN 1
 ;굴복각인Lv3+연모
@@ -404,7 +404,7 @@ IF SELECTCOM == 1
 			;반발각인Lv3
 			IF MARK:반발각인 == 3
 				PRINTFORMW 「아니…그만두어, 떼어 놓아…읏」
-				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 저항한다%조사처리(CALLNAME:TARGET,"를")% 억누르고, 혀끝을 비밀스런 장소로 기게 해 간다
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 저항하는 %조사처리(CALLNAME:TARGET,"를")% 억누르고, 혀끝을 비밀스런 장소로 기게 해 간다
 			;굴복각인Lv2이상
 			ELSEIF MARK:굴복각인 >= 2
 				PRINTFORMW 「하아…좋은거야…좀 더…느끼게 해」
@@ -421,7 +421,7 @@ IF SELECTCOM == 1
 			;반발각인Lv3
 			IF MARK:반발각인 == 3
 				PRINTFORMW 「아니…그만두어, 부탁…읏」
-				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 저항한다%조사처리(CALLNAME:TARGET,"를")% 배트에넘어뜨리기, 억지로다리를 열게 했다
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 저항하는 %조사처리(CALLNAME:TARGET,"를")% 배트에넘어뜨리기, 억지로다리를 열게 했다
 			;연모
 			ELSEIF TALENT:연모
 				PRINTFORMW 「읏…당신의 혀로…빨려지는 것만으로……」

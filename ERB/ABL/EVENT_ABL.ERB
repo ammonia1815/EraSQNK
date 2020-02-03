@@ -568,7 +568,7 @@ CASE "외견연령"
 	SELECTCASE BASE:ARG:종족
 	;例外のある종족…ただしここでのCFLAG:ARG:209による分岐は특수なキャラメイクの時のみ有効
 	;通常の소환をするときには無意味なので、初回조교前の구상선택画面での설정も必須となる
-	;스큘라
+	;스킬라
 	CASE 15
 		IF CFLAG:ARG:209 == 2
 			LOCAL = 2
@@ -621,7 +621,7 @@ CASE "흡정체질"
 		;밴시, 알바스타
 		SIF CFLAG:ARG:8 == 2 || CFLAG:ARG:8 == 4
 			LOCAL += 1
-	;알케니, 루시펠
+	;아라크네, 루시펠
 	CASE 18, 21
 		LOCAL += 1
 	ENDSELECT
@@ -860,7 +860,7 @@ CASE 0
 		LOCAL = 1 + ABL:ARG:기교
 	ENDIF
 CASE 1
-	;리리스
+	;릴리스
 	IF CFLAG:ARG:8 == 4
 		LOCAL = 25
 	;아스모데
@@ -874,7 +874,7 @@ CASE 1
 		LOCAL = 5 + CFLAG:ARG:8*5
 	ENDIF
 CASE 2
-	;리림
+	;릴림
 	IF CFLAG:ARG:8 == 4
 		LOCAL = 24
 	;알프
@@ -885,7 +885,7 @@ CASE 2
 		LOCAL = 3 + CFLAG:ARG:8*5
 	ENDIF
 CASE 3
-	;스코그스라
+	;스코그슬로
 	IF CFLAG:ARG:8 == 3
 		LOCAL = 18
 	;알라우네
@@ -899,7 +899,7 @@ CASE 4
 	;티타니아
 	IF CFLAG:ARG:8 == 3
 		LOCAL = 18
-	;랴난시
+	;리난시
 	ELSEIF CFLAG:ARG:8 == 2
 		LOCAL = 11
 	;픽시
@@ -954,7 +954,7 @@ CASE 10
 	;에키드나
 	IF CFLAG:ARG:8 == 4
 		LOCAL = 20
-	;멜루지네
+	;멜루진
 	ELSEIF CFLAG:ARG:8 == 2
 		LOCAL = 14
 	;라미아
@@ -973,10 +973,10 @@ CASE 11
 		LOCAL = 10 + CFLAG:ARG:8*4
 	ENDIF
 CASE 12
-	;뷔브르
+	;뷔이브
 	IF CFLAG:ARG:8 == 4
 		LOCAL = 18
-	;살라맨더
+	;샐러맨더
 	ELSEIF CFLAG:ARG:8 == 2
 		LOCAL = 12
 	;리저드맨
@@ -995,15 +995,15 @@ CASE 14
 	;다키니
 	IF CFLAG:ARG:8 == 3
 		LOCAL = 14
-	;아프사라스
+	;압사라
 	ELSE
 		LOCAL = 5 + CFLAG:ARG:8*3
 	ENDIF
 CASE 15
-	;카류브디스
+	;카리브디스
 	IF CFLAG:ARG:8 == 2
 		LOCAL = 17
-	;스큘라
+	;스킬라
 	ELSE
 		LOCAL = 14 + CFLAG:ARG:8*2
 	ENDIF
@@ -1030,10 +1030,10 @@ CASE 17
 		LOCAL = 12 + CFLAG:ARG:8*2
 	ENDIF
 CASE 18
-	;셰로브
+	;실로브
 	IF CFLAG:ARG:8 == 3
 		LOCAL = 14
-	;알케니
+	;아라크네
 	ELSE
 		LOCAL = 9 + CFLAG:ARG:8*2
 	ENDIF
@@ -1270,7 +1270,7 @@ IF BASE:ARG:신장
 	ENDIF
 	IF LOCAL
 		SIF CONFIG("３사이즈：표시")
-			PRINTFORML （%CALLNAME:ARG%의 신장과 허리둘레 등을 재측정합니다）
+			PRINTFORML （%CALLNAME:ARG%의 신장과 허리둘레 등을 다시 잽니다）
 
 		IF TALENT:ARG:요정
 			SIF BASE:ARG:신장 > NUM("요정の상한")
@@ -1306,7 +1306,7 @@ IF BASE:ARG:신장
 	;라미아の꼬리
 	IF TALENT:ARG:라미아 && BASE:ARG:신장의추가요소 == 0
 		SIF CONFIG("３사이즈：표시")
-			PRINTFORML （%CALLNAME:ARG%의 꼬리 길이를 재겠습니다）
+			PRINTFORML （%CALLNAME:ARG%의 꼬리 길이를 잽니다）
 		BASE:ARG:신장의추가요소 = 350 + RAND:100
 	ENDIF
 

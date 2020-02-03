@@ -55,12 +55,12 @@ ELSE
 	ENDIF
 	CALL SONG_SELECT, LOCAL
 	IF TEQUIP:연주중 == 1
-		PRINTFORMW %조사처리(CALLNAME:LOCAL,"는")% 따뜻하고 부드러운 노래를 연주하기시작했다…
+		PRINTFORMW %조사처리(CALLNAME:LOCAL,"는")% 따뜻하고 부드러운 노래를 연주하기 시작했다…
 	ELSEIF TEQUIP:연주중 == 2
-		PRINTFORML %조사처리(CALLNAME:LOCAL,"는")% 아름다운 목소리로 노래하기시작했다. 
-		PRINTFORMW 주변에 로맥틱한 분위기가 감돈다…
+		PRINTFORML %조사처리(CALLNAME:LOCAL,"는")% 아름다운 목소리로 노래하기 시작했다. 
+		PRINTFORMW 주변에 로맨틱한 분위기가 감돈다…
 	ELSEIF TEQUIP:연주중 == 3
-		PRINTFORML %조사처리(CALLNAME:LOCAL,"는")% 곡을 연주하기시작했다! 
+		PRINTFORML %조사처리(CALLNAME:LOCAL,"는")% 곡을 연주하기 시작했다! 
 		PRINTFORMW 주변에 아름다운 선율이 메아리친다…
 	ENDIF
 ENDIF
@@ -97,17 +97,17 @@ ENDIF
 
 IF TEQUIP:연주중 == 1
 	PRINTFORML ＜평온의노래(제 {11 - TEQUIP:LOCAL:연주중}프레이즈)＞
-	PRINTFORML %조사처리(CALLNAME:LOCAL,"는")% 마음이 편안해지는 노래를 연주하고있다…
+	PRINTFORML %조사처리(CALLNAME:LOCAL,"는")% 마음이 편안해지는 노래를 연주하고 있다…
 	DOWNBASE:체력 = MULTIPLY(DOWNBASE:체력, 100 - TALENT:LOCAL:가창기능*10)
 	DOWNBASE:기력 = MULTIPLY(DOWNBASE:기력, 100 - TALENT:LOCAL:가창기능*10)
 	PRINTFORML %CALLNAME:TARGET%의 체력기력 소비{TALENT:LOCAL:가창기능*10}％감소
 ELSEIF TEQUIP:연주중 == 2
 	PRINTFORML ＜로맨스송(제 {11 - TEQUIP:LOCAL:연주중}프레이즈)＞
-	PRINTFORML %조사처리(CALLNAME:LOCAL,"는")% 로맨틱한 노래를 연주하고있다…
+	PRINTFORML %조사처리(CALLNAME:LOCAL,"는")% 로맨틱한 노래를 연주하고 있다…
 	TFLAG:33 += RAND:(TALENT:LOCAL:가창기능 + 1) + 1
 ELSEIF TEQUIP:연주중 == 3
 	PRINTFORML ＜비가갠뒤의윤무곡(제 {11 - TEQUIP:LOCAL:연주중}프레이즈)＞
-	PRINTFORML %조사처리(CALLNAME:LOCAL,"는")% 아름다운 선율을 연주하고있다…
+	PRINTFORML %조사처리(CALLNAME:LOCAL,"는")% 아름다운 선율을 연주하고 있다…
 ENDIF
 
 ;가창경험を加算＆疲労

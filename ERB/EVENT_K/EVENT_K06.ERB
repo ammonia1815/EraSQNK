@@ -69,7 +69,7 @@ ELSEIF GETBIT(CFLAG:201, 2) == 0 && MARK:굴복각인 == 2
 	;새드ッ気Lv2이상
 	IF ABL:새드끼 >= 2
 ;OriginalString : %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%の옷に손をかけ, 脱がそうとしてきた
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%노옷에손를 써라, 벗기려고 해 왔다
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%의옷에손를 써라, 벗기려고 해 왔다
 	ELSE
 ;OriginalString : %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%の姿を認めると, 옷を脱ぎ始めた
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%의 모습을 인정하면, 옷를 벗기 시작했다
@@ -212,7 +212,7 @@ ELSEIF TALENT:연모
 		;ねこみみめいど
 		IF CHECK_SHIRT("메이드복")
 ;OriginalString : %조사처리(CALLNAME:MASTER,"가")% 部屋に入ると, 손を止めて얼굴を伏せた
-			PRINTFORML %조사처리(CALLNAME:MASTER,"가")% 방에 들어가면, 손를 멈추어얼굴를 덮었다
+			PRINTFORML %조사처리(CALLNAME:MASTER,"가")% 방에 들어가면, 손를 멈추어얼굴을 덮었다
 ;OriginalString : 「……にゃう, えっちなメイドに……お仕置き, してください…にゃ♪」
 			PRINTFORMW 「……냐우, 엣치한 메이드에게……벌, 해 주세요…냐♪」
 		ELSE
@@ -393,13 +393,13 @@ ELSEIF TEQUIP:넘어뜨리기 && RAND:2 == 0
 		ENDIF
 		IF TALENT:MASTER:남자
 ;OriginalString : %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%の페니스を両손で握ると, 猛烈な勢いでしごき始めた…
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%노페니스를 양손그리고 잡으면, 맹렬한 기세로 훑어 내기 시작했다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%의페니스를 양손그리고 잡으면, 맹렬한 기세로 훑어 내기 시작했다…
 		ELSEIF TALENT:MASTER:후타나리 == 0
 ;OriginalString : %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%の비렬を激しくかき混ぜながら, 유두や클리토리스に爪と牙で鈍い아픔と快感を与え続けた…
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%노비렬를 격렬하게 휘저으면서, 유두야클리토리스에 손톱과 송곳니로 둔하다아픔(와)과 쾌감을 계속 주었다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%의비렬를 격렬하게 휘저으면서, 유두야클리토리스에 손톱과 송곳니로 둔하다아픔(와)과 쾌감을 계속 주었다…
 		ELSE
 ;OriginalString : %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%の페니스を片손で握ると, 猛烈な勢いでしごき始めた…
-			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%노페니스를 편손그리고 잡으면, 맹렬한 기세로 훑어 내기 시작했다…
+			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%의페니스를 편손그리고 잡으면, 맹렬한 기세로 훑어 내기 시작했다…
 ;OriginalString : さらにザラついた舌で비렬を激しくかき混ぜながら, 유두を爪で虐めている…
 			PRINTFORMW 한층 더 껄끔거린 혀로비렬를 격렬하게 휘저으면서, 유두를 손톱으로 괴롭히고 있다…
 		ENDIF
@@ -554,13 +554,13 @@ IF SELECTCOM == 0
 ;OriginalString : 「にゃ…あっ, 優し…ぃ……んっ」
 			PRINTFORML 「냐…앗, 상냥하다…이……읏」
 ;OriginalString : %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%に입付けをして, 体を優しく撫でた
-			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%에입청구서를 해, 몸을 상냥하게 어루만졌다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%에입맞춤을 해, 몸을 상냥하게 어루만졌다
 		;それ以外
 		ELSE
 ;OriginalString : 「にゃっ…ん…っ」
 			PRINTFORML 「냣…응…읏」
 ;OriginalString : %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%に입付けをした
-			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%에입청구서를 했다
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%에입맞춤을 했다
 		ENDIF
 		CFLAG:221 = 1
 		RETURN 1
@@ -1061,7 +1061,7 @@ IF SELECTCOM == 3 && TEQUIP:샤워 == 0
 ;OriginalString : 「んぁっ……壊れちゃう……にゃ…, ひぁ…んんっ」
 			PRINTFORML 「응앗……망가져 버린다……냐…, 히아…응읏」
 ;OriginalString : 呟きを聞いて振り返ると, %조사처리(CALLNAME:TARGET,"는")% 얼굴を上気させて, 一人自分を慰めつづけていた
-			PRINTFORMW 군소리를 들어 되돌아 보면, %조사처리(CALLNAME:TARGET,"는")% 얼굴를 상기 시켜, 한사람 자신을 계속 위로하고 있었다
+			PRINTFORMW 군소리를 들어 되돌아 보면, %조사처리(CALLNAME:TARGET,"는")% 얼굴을 상기 시켜, 한사람 자신을 계속 위로하고 있었다
 		;연모＋자위중독Lv3이상
 		ELSEIF TALENT:연모 && ABL:자위중독 >= 3
 			;ねこみみめいど
@@ -1283,7 +1283,7 @@ IF SELECTCOM == 4
 			ELSEIF ABL:새드끼 >= 3
 				IF RAND:2 == 0
 ;OriginalString : 「にゃは…입を犯されるの, 嬉しいニャ？」
-					PRINTFORML 「냐하…입를 범해져, 기쁜 냐？」
+					PRINTFORML 「냐하…입을 범해져, 기쁜 냐？」
 ;OriginalString : 「ふふ…イヤがってもわかるにゃ…♪」
 					PRINTFORMW 「후후…싫어해도 알려면…♪」
 				ELSE
@@ -2229,7 +2229,7 @@ IF SELECTCOM == 60
 ;OriginalString : 「奥で…膨らんでる…にゃ, にゃ…はぁ, はぁ, ぁ, ぁ, このまま中で…ふあ…にゃあっ♪」
 					PRINTFORML 「안쪽에서…부풀어 오르고 있다…냐, 냐…하아, 하아, 아, 아, 이대로 안으로…후아…냐앗♪」
 ;OriginalString : %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 背中で발を絡め, さらに体を密着させようとした
-					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 등으로발를 관련되고, 한층 더 몸을 밀착 시키려고 했다
+					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 등으로발을 관련되고, 한층 더 몸을 밀착 시키려고 했다
 				ENDIF
 			ENDIF
 		;굴복각인Lv3＋V감각Lv3이상
@@ -2255,7 +2255,7 @@ IF SELECTCOM == 60
 		;それ以外（연모無し, 순종Lv5未満）
 		ELSE
 ;OriginalString : %CALLNAME:TARGET%にしがみつき, ぎこちなく허리를 振り続ける%CALLNAME:PLAYER%に, %조사처리(CALLNAME:TARGET,"는")% 腕を回し, 軽く抱きしめる
-			PRINTFORMW %CALLNAME:TARGET%에 매달려, 어색하고허리를 계속 거절한다%CALLNAME:PLAYER%에, %조사처리(CALLNAME:TARGET,"는")% 팔을 돌려, 가볍게 껴안는다
+			PRINTFORMW %CALLNAME:TARGET%에 매달려, 어색하고허리를 계속 거절하는 %CALLNAME:PLAYER%에, %조사처리(CALLNAME:TARGET,"는")% 팔을 돌려, 가볍게 껴안는다
 		ENDIF
 		RETURN 1
 	ENDIF
@@ -2600,7 +2600,7 @@ IF SELECTCOM == 90
 						PRINTFORMW 「냐하하……손댄 것 뿐으로 쫑긋쫑긋 하고 있는 것에는…무엇을 기대하고 있는지 냐…？」
 					ELSE
 ;OriginalString : 「しゅ…しゅっ…, うにゃ, %CNAME("二人称")%の…熱くなってるにゃ…」
-						PRINTFORMW 「슈…슛…, 우냐, %CNAME("二人称")%노…뜨거워지고 있는 것에는…」
+						PRINTFORMW 「슈…슛…, 우냐, %CNAME("二人称")%의…뜨거워지고 있는 것에는…」
 					ENDIF
 					IF RAND:2 == 0
 ;OriginalString : 「にゃは…장갑で扱かれるの, イイみたいだにゃ～」
@@ -3581,14 +3581,14 @@ IF SELECTCOM == 135 && TEQUIP:재갈
 ;OriginalString : 「んっ……, んー…ぅ, …はふ…ぅ……っ♪」
 			PRINTFORML 「읏……, 응─…우, …하후…우……읏♪」
 ;OriginalString : 마조心を刺激されたらしく, 입を封じられると%조사처리(CALLNAME:TARGET,"는")% 蕩けた表情を浮かべた
-			PRINTFORMW 마조마음이 자극된 것 같고, 입를 봉쇄되면%조사처리(CALLNAME:TARGET,"는")% 녹은 표정을 띄웠다
+			PRINTFORMW 마조마음이 자극된 것 같고, 입을 봉쇄되면%조사처리(CALLNAME:TARGET,"는")% 녹은 표정을 띄웠다
 			RETURN 1
 		;마조끼Lv5
 		ELSEIF ABL:마조끼 >= 5
 ;OriginalString : 「んんっ……, …んぅ…, んー…♪」
 			PRINTFORML 「응읏……, …응우…, 응─…♪」
 ;OriginalString : 마조心を刺激されたらしく, 입を封じられると%조사처리(CALLNAME:TARGET,"는")% 蕩けた表情を浮かべた
-			PRINTFORMW 마조마음이 자극된 것 같고, 입를 봉쇄되면%조사처리(CALLNAME:TARGET,"는")% 녹은 표정을 띄웠다
+			PRINTFORMW 마조마음이 자극된 것 같고, 입을 봉쇄되면%조사처리(CALLNAME:TARGET,"는")% 녹은 표정을 띄웠다
 			RETURN 1
 		;마조끼Lv3
 		ELSEIF ABL:마조끼 >= 3
@@ -4421,7 +4421,7 @@ IF SELECTCOM == 125 || SELECTCOM == 126
 ;OriginalString : 「んっ, …っ, にゃっ, 엉덩이, ボクのでめちゃくちゃにしてあげるにゃ…」
 					PRINTFORML 「읏, …읏, 냣, 엉덩이, 나의 것으로 터무니없게 해 주려면…」
 ;OriginalString : %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 허리를 掴むと, 凄い勢いで애널を犯しだした
-					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 허리를 잡으면, 굉장한 기세로애널를 범 하기 시작했다
+					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 허리를 잡으면, 굉장한 기세로애널을 범 하기 시작했다
 					;애널광＋역조교進行Lv5이상
 					IF TALENT:MASTER:애널광 && CFLAG:461 >= 5
 ;OriginalString : 「엉덩이のナカ…ぐちゃぐちゃになってるにゃ…, えっちな穴だにゃ～♪」
@@ -5018,7 +5018,7 @@ IF SELECTCOM == 95 && PENIS(PLAYER)
 				PRINTFORMW 「난폭하게 되는 것이 좋아에 아？좀 더 괴롭혀 주려면♪」
 				IF RAND:2 == 0
 ;OriginalString : %조사처리(CALLNAME:TARGET,"는")% 발を교묘하게 動かし, %CALLNAME:PLAYER%의 페니스弄んでいる
-					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 발를교묘하게 움직여, %CALLNAME:PLAYER%의 페니스희롱하고 있다
+					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 발을교묘하게 움직여, %CALLNAME:PLAYER%의 페니스희롱하고 있다
 ;OriginalString : 「にゃは, こんなことされて感じてるニャ？」
 					PRINTFORMW 「냐하, 이런 일 당하고 느끼고 있는 냐？」
 				ELSE
@@ -5218,7 +5218,7 @@ IF SELECTCOM == 96
 			ENDIF
 			IF RAND:2 == 0
 ;OriginalString : %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 엉덩이から입を離し, 손가락を埋めてきた…
-				PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 엉덩이로부터입를 떼어 놓아, 손가락를 묻어 왔다…
+				PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 엉덩이로부터입을 떼어 놓아, 손가락를 묻어 왔다…
 ;OriginalString : 「にゃは, 엉덩이…開いてきたにゃ～♪」
 				PRINTFORMW 「냐하, 엉덩이…개 있어 오는 것에～♪」
 			ELSE
@@ -6008,7 +6008,7 @@ IF SELECTCOM == 202
 ;OriginalString : 「ふ…にゃ…あっ, そんな…の…, はっ…, 무리…ぃ…に゛ゃああぁっ! ？」
 					PRINTFORML 「후…냐…앗, 그런…노…, 핫…, 무리…이…에″아! ？」
 ;OriginalString : イボのついた太い촉수が数本, %CALLNAME:TARGET%의 애널を拡げながら入っていく…
-					PRINTFORMW 돌기가 붙은 굵다촉수하지만 몇 개, %CALLNAME:TARGET%의 애널를 펼치면서 들어간다…
+					PRINTFORMW 돌기가 붙은 굵다촉수하지만 몇 개, %CALLNAME:TARGET%의 애널을 펼치면서 들어간다…
 					IF RAND:2 == 0
 ;OriginalString : 「は…ひゃ…ぅ…, む…う…っ…, や…, ボク…こわ…れ…, にゃ…ああ゛っ! 」
 						PRINTFORML 「하…햐…우…, 무…우…읏…, 야…, 나…개원……, 냐…아″! 」
@@ -6018,13 +6018,13 @@ IF SELECTCOM == 202
 ;OriginalString : 「ひあ…ぅ…, にゃ…あっ…, そんな, 奥まで……ぇっ! 」
 						PRINTFORML 「히아…우…, 냐…앗…, 그런, 안쪽까지……엣! 」
 ;OriginalString : 촉수は激しく%CALLNAME:TARGET%의 애널を出入りしている…
-						PRINTFORMW 촉수는 격렬하고%CALLNAME:TARGET%의 애널를 출입하고 있다…
+						PRINTFORMW 촉수는 격렬하고%CALLNAME:TARGET%의 애널을 출입하고 있다…
 					ENDIF
 				ELSE
 ;OriginalString : 「にゃ, ひあっ, 엉덩이…いっぱい…ぃ, はいっ…て, ぐ, んっ, にぁ……ぅ……あっ」
 					PRINTFORML 「냐, 히앗, 엉덩이…가득…이, 네…라고, 구, 읏, 에……우……앗」
 ;OriginalString : 何本ものの촉수が%CALLNAME:TARGET%의 애널を蹂躙していった…
-					PRINTFORMW 몇개의 것의촉수하지만%CALLNAME:TARGET%의 애널를 유린해 갔다…
+					PRINTFORMW 몇개의 것의촉수하지만%CALLNAME:TARGET%의 애널을 유린해 갔다…
 				ENDIF
 			ELSE
 				IF RAND:2 == 0
@@ -7098,7 +7098,7 @@ ELSEIF SHOOT("다리")
 ;OriginalString : 「にゃ, ボクの발がどろどろになっちゃったにゃ～…, ほら, 舐めてにゃ♪」
 					PRINTFORML 「냐, 나의발하지만 질척질척이 되어 버린～…, 이봐요, 지♪」
 ;OriginalString : %조사처리(CALLNAME:TARGET,"는")% 정액でどろどろになった발を%CALLNAME:PLAYER%의 입に割り入れてきた
-					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 정액그리고 질척질척이 되었다발를%CALLNAME:PLAYER%의 입에 나누어 넣어 왔다
+					PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 정액그리고 질척질척이 되었다발을%CALLNAME:PLAYER%의 입에 나누어 넣어 왔다
 					IF CFLAG:461 >= 6 && RAND:3 < 2
 ;OriginalString : 「んっ, そうにゃ…舐めて綺麗にするにゃ…」
 						PRINTFORML 「읏, …빨아 예쁘게 하려면…」
@@ -7117,7 +7117,7 @@ ELSEIF SHOOT("다리")
 ;OriginalString : 「にゃは, ボクの발がどろどろになっちゃったにゃ…」
 					PRINTFORML 「냐하, 나의발하지만 질척질척이 되어 버린…」
 ;OriginalString : 「ん…ボクの발を見てるにゃ？　ふふー…, そーゆーことかにゃ♪」
-					PRINTFORMW 「응…나의발를 보고 있는 것에는？후후─…, 그런 일♪」
+					PRINTFORMW 「응…나의발을 보고 있는 것에는？후후─…, 그런 일♪」
 ;OriginalString : %조사처리(CALLNAME:TARGET,"는")% 정액でどろどろになった발で%CALLNAME:PLAYER%의 페니스をしごき始めた
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 정액그리고 질척질척이 되었다발그래서%CALLNAME:PLAYER%의 페니스를 훑어 내기 시작했다
 ;OriginalString : 「ほらほら～, コレをして欲しかったにゃ～？　もうカタくなってきてるにゃ♪」
@@ -7136,7 +7136,7 @@ ELSEIF SHOOT("다리")
 ;OriginalString : 「カラダで…綺麗にするにゃあ♪」
 						PRINTFORML 「몸으로…예쁘게 하려면♪」
 ;OriginalString : %조사처리(CALLNAME:TARGET,"는")% 정액でどろどろに汚れた발を%CALLNAME:PLAYER%의 体で拭いた…
-						PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 정액그리고 질척질척에 더러워졌다발를%CALLNAME:PLAYER%의 몸으로 닦았다…
+						PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 정액그리고 질척질척에 더러워졌다발을%CALLNAME:PLAYER%의 몸으로 닦았다…
 					ELSE
 ;OriginalString : 「このままで…またおちんちん虐めてあげるにゃ♪」
 						PRINTFORML 「이대로…또 자지 괴롭혀 주려면♪」
@@ -7287,7 +7287,7 @@ ELSEIF SHOOT("입")
 ;OriginalString : 「んく, んっ, んん…にゅ…んむっ, これ…濃すぎだにゃ…ん…く」
 				PRINTFORML 「응쿠, 읏, 응응…뉴…응뭇, 이것…너무 진하고다…응…쿠」
 ;OriginalString : %조사처리(CALLNAME:TARGET,"는")% 喉に絡まった정액を飲み下そうと얼굴をほのかに빨강く染めて喉を鳴らしている
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 목에 얽혔다정액를 삼키려고얼굴를 희미하게빨강구 물들여 목을 울리고 있다
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 목에 얽혔다정액를 삼키려고얼굴을 희미하게빨강구 물들여 목을 울리고 있다
 			ELSE
 ;OriginalString : 「にゅ…んっ!  んくっ, こく……ボクの입…気持ちよかったかにゃ？」
 				PRINTFORML 「뉴…읏!  응쿳, 꿀꺽……나의입…기분 이야인가？」
@@ -7471,13 +7471,13 @@ ELSEIF SHOOT("Ｖ내사정")
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 정액를 따라지고, 가 있을 뿐이 되어 있는 것 같다…
 			ELSE
 ;OriginalString : %조사처리(CALLNAME:TARGET,"는")% 淫らな笑얼굴を浮かべ, 幸せそうな喘ぎ声を上げた
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 추잡한 소얼굴를 띄우고, 행복한 허덕이는 소리를 올렸다
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 추잡한 소얼굴을 띄우고, 행복한 허덕이는 소리를 올렸다
 			ENDIF
 		ELSEIF RAND:2 == 0
 ;OriginalString : 「にゃぁぁ…ぁ, いっぱい…せーしが出て, いちばん…奥まで犯そうとしてるにゃ…♪」
 			PRINTFORML 「냐아…아, 가득…키─해가 나와, 제일…안쪽까지 범하려고 하고 있는 것에는…♪」
 ;OriginalString : %조사처리(CALLNAME:TARGET,"가")% 蕩けそうな笑얼굴を浮かべると, 질壁が%CALLNAME:PLAYER%의 페니스をきゅっと締め付け次の子種を催促しはじめた
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 녹을 것 같은 소얼굴를 띄우면, 질벽이%CALLNAME:PLAYER%의 페니스를 꽉 억압다음의 자식을 재촉 하기 시작했다
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 녹을 것 같은 소얼굴을 띄우면, 질벽이%CALLNAME:PLAYER%의 페니스를 꽉 억압다음의 자식을 재촉 하기 시작했다
 		ELSE
 ;OriginalString : 「にゃ…は, 種付けされてるにゃ～…♪」
 			PRINTFORML 「냐…하, 교배되고 있는 것에는～…♪」
@@ -7534,7 +7534,7 @@ ELSEIF SHOOT("Ａ내사정")
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 애널에 따라졌다정액노감각만으로 몇번이나 달하고 있는 것 같다…
 		ELSE
 ;OriginalString : %조사처리(CALLNAME:TARGET,"는")% 淫らな笑얼굴を浮かべ, 幸せそうな喘ぎ声を上げた
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 추잡한 소얼굴를 띄우고, 행복한 허덕이는 소리를 올렸다
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 추잡한 소얼굴을 띄우고, 행복한 허덕이는 소리를 올렸다
 		ENDIF
 	;연모
 	ELSEIF TALENT:연모
@@ -7559,7 +7559,7 @@ ELSEIF SHOOT("Ａ내사정")
 ;OriginalString : 「っ! 　ら…め…にゃぁ, イきすぎ…ぃ, …～! 　にゃ…ぁっ! 」
 			PRINTFORML 「읏! 들…째…냐아, 너무 가고…이, …～! 냐…앗! 」
 ;OriginalString : %CALLNAME:TARGET%의 얼굴は快楽に蕩けている…
-			PRINTFORMW %CALLNAME:TARGET%의 얼굴는 쾌락에 녹고 있다…
+			PRINTFORMW %CALLNAME:TARGET%의 얼굴은 쾌락에 녹고 있다…
 		ELSE
 ;OriginalString : %조사처리(CALLNAME:TARGET,"는")% 정액の감각に体を震わせた
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 정액노감각에 몸을 진동시켰다
@@ -7936,7 +7936,7 @@ CASE "Ｖ인서트"
 			PRINTFORML 「냐우……, 좀 더 격렬하게 사귀려면…」
 			IF SELECTCOM == 20
 ;OriginalString : %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 腰の後ろで발を絡め, 更に体を密着させてきた
-				PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 허리의 뒤로발를 관련되고, 더욱 몸을 밀착시켜 왔다
+				PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 허리의 뒤로발을 관련되고, 더욱 몸을 밀착시켜 왔다
 			ELSEIF SELECTCOM == 21
 ;OriginalString : %조사처리(CALLNAME:TARGET,"는")% 엉덩이를上に突き出し, 更に体を密着させてきた
 				PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 엉덩이를위에 내밈, 더욱 몸을 밀착시켜 왔다
@@ -8347,7 +8347,7 @@ CASE "봉사"
 ;OriginalString : 「にゃは, ここも, 舐めてあげるニャ♪」
 				PRINTFORML 「냐하, 여기도, 빨아 주는 냐♪」
 ;OriginalString : %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 페니스をしごきながら, 애널を舐めてきた
-				PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 페니스를 훑어 내면서, 애널를 빨아 왔다
+				PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 페니스를 훑어 내면서, 애널을 빨아 왔다
 ;OriginalString : 「んっ…じゅる, じゅぷ…ぅ, ん, は…ぁ, せーえき出すまで…してあげるにゃ♪」
 				PRINTFORMW 「읏…쥬루, 쥬푸…우, 응, 하…아, 정액 낼 때까지…해 주려면♪」
 			ENDIF
@@ -8664,7 +8664,7 @@ CASE "굴복각인Lv3취득"
 ;OriginalString : 「にゃう…ボク, もっと…して欲しいにゃあ…」
 		PRINTFORML 「냐우…나, 좀 더…했으면 좋은 아…」
 ;OriginalString : %조사처리(CALLNAME:TARGET,"는")% 얼굴を上気させて, %조사처리(CALLNAME:MASTER,"를")% 見つめている
-		PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 얼굴를 상기 시켜, %조사처리(CALLNAME:MASTER,"를")% 응시하고 있다
+		PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 얼굴을 상기 시켜, %조사처리(CALLNAME:MASTER,"를")% 응시하고 있다
 ;OriginalString : 潤んだ瞳には%CALLNAME:MASTER%しか映っていない
 		PRINTFORMW 물기를 띤 눈동자에는%CALLNAME:MASTER%밖에 비치지 않았다
 		RETURN 1
@@ -8708,7 +8708,7 @@ CASE "조교후자위"
 ;OriginalString : 「にゃ…ん…っ, もっと…して欲しい…にゃあ…」
 			PRINTFORML 「냐…응…읏, 좀 더…해 주었으면 한다…냐아…」
 ;OriginalString : %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%のことを想いながら自らを慰めた
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%를 생각하면서 스스로를 위로했다
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %마스터를()% 생각하면서 스스로를 위로했다
 		ENDIF
 	;자위중독Lv3이상
 	ELSEIF ABL:자위중독 >= 3
@@ -8788,7 +8788,7 @@ CASE "아침펠라"
 ;OriginalString : 「にゅ…れろっ, ちゅぱ, ぴちゃっ, じゅぶっ」
 			PRINTFORML 「뉴…날름, 츄파, 피챳, 쥬붓」
 ;OriginalString : %조사처리(CALLNAME:TARGET,"는")% 一心不乱に%CALLNAME:MASTER%の페니스をしゃぶっている
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 일심 불란에%CALLNAME:MASTER%노페니스를 빨고 있다
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 일심 불란에%CALLNAME:MASTER%의페니스를 빨고 있다
 		ELSE
 ;OriginalString : 「にゅ…んっ, じゅぷ…じゅ…るぅっ……, んっ, ん…っ, んく…」
 			PRINTFORML 「뉴…읏, 쥬푸…쥬…루웃……, 읏, 응…읏, 응쿠…」
@@ -8800,7 +8800,7 @@ CASE "아침펠라"
 ;OriginalString : 「んっ, んむっ…ちゅぱっ, あ, 起きたにゃ～」
 		PRINTFORMW 「읏, 응뭇…츄팟, 아, 일어나기～」
 ;OriginalString : それだけ言うと, %조사처리(CALLNAME:TARGET,"는")% 再び%CALLNAME:MASTER%の페니스をしゃぶりだした
-		PRINTFORMW 그 만큼 말하면, %조사처리(CALLNAME:TARGET,"는")% 다시%CALLNAME:MASTER%노페니스를 빨기 시작했다
+		PRINTFORMW 그 만큼 말하면, %조사처리(CALLNAME:TARGET,"는")% 다시%CALLNAME:MASTER%의페니스를 빨기 시작했다
 	ENDIF
 	RETURN 1
 ;-------------------------------------------------
@@ -9000,7 +9000,7 @@ CASE "난교개시"
 CASE "서류작업：도움"
 	IF RANDCHK(2, CFLAG:ARG:71, 0, 1)
 ;OriginalString : %CALLNAME:MASTER%は%CALLNAME:ARG%にお茶を淹れてもらうことにしました
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에 차를 끓여 받기로 했습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에 차를 끓여 받기로 했습니다
 ;OriginalString : 
 		PRINTL 
 ;OriginalString : 「自分でやらずに指図するとは良い御身分ですにゃ～。 …まぁ、期待しないで待ってて欲しいニャ」
@@ -9022,7 +9022,7 @@ CASE "서류작업：도움"
 		SETBIT CFLAG:ARG:71, 1
 	ELSE
 ;OriginalString : %CALLNAME:MASTER%は%CALLNAME:ARG%に손招きして、お茶菓子を食べるのを手伝ってと誘いました
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
 ;OriginalString : 
 		PRINTL 
 ;OriginalString : 「にゅ？ ふ～む、ボク好みのはあんまなさそうだ……にゃ！」
@@ -9043,7 +9043,7 @@ CASE "서류작업：무시"
 	;最初に無視をした時の反応
 	IF CEVENT("서류작업：무시", ARG) == 0
 ;OriginalString : %CALLNAME:MASTER%は黙々と机に向かっている…
-		PRINTFORMW %CALLNAME:MASTER%는 묵묵히 책상에 향하고 있다…
+		PRINTFORMW %마스터는()% 묵묵히 책상에 향하고 있다…
 ;OriginalString : 
 		PRINTL 
 ;OriginalString : 「にゅう。 取り込み中だったかニャ」
@@ -9052,7 +9052,7 @@ CASE "서류작업：무시"
 		PRINTFORML 「……내가 이런 일 해도, 일 계속될까 냐？♪」
 		IF RAND:2
 ;OriginalString : %CALLNAME:ARG%は、ぎゅっと抱きついて\@ TALENT:ARG:거유 ? 가슴の谷間で腕を挟んで # \@きた…
-			PRINTFORMW %CALLNAME:ARG%하, 꽉 껴안아\@ TALENT:ARG:거유 ? 가슴の谷間で腕を挟んで # \@왔다…
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")%, 꽉 껴안아\@ TALENT:ARG:거유 ? 가슴の谷間で腕を挟んで # \@왔다…
 		ELSE
 ;OriginalString : %CALLNAME:ARG%は後ろから抱き付いて、%CALLNAME:MASTER%に身体をすり寄せながら甘えてきた…
 			PRINTFORMW %CALLNAME:ARG%는 뒤로부터 껴안아,%CALLNAME:MASTER%에 신체를 갖다대면서 응석부려 왔다…

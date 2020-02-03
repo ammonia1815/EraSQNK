@@ -228,24 +228,24 @@ LOCALS = %CONDS("요도확장度")%
 ;ちなみにMAX_STR(LOCALS) = MIN_STR(LOCALS) + 1
 ;初回
 IF FIRSTCOM(SELECTCOM) == 0
-	PRINTFORML %CALLNAME:TARGET%의는, 한번도 브지를 받아들였던 적이 없습니다
-	PRINTFORML 이번은{MIN_STR(LOCALS)}mm, 굵어도{MIN_STR(LOCALS) + 1}mm를 시험해 보는 것이 무난이라고 생각됩니다
+	PRINTFORML %타겟은()%, 한번도 브지를 받아들였던 적이 없습니다
+	PRINTFORML 이번은{MIN_STR(LOCALS)}mm, 굵어도{MIN_STR(LOCALS) + 1}mm를 시험해 보는 것이 무난하다고 생각됩니다
 	PRINTFORML ……어느 굵기의 브지를 사용합니까？
 ;ブジーよりも太いものを入れられたことがありそう
 ELSEIF MAX_STR(LOCALS) > CFLAG:452
-	PRINTFORML %CALLNAME:TARGET%에 사용한 브지로 제일 굵은 것은{CFLAG:452}mm그렇지만……그것보다 느슨해지고 있도록(듯이) 보여집니다
+	PRINTFORML %CALLNAME:TARGET%에 사용한 브지로 제일 굵은 것은{CFLAG:452}mm이지만……그것보다 느슨해진듯 합니다
 	PRINTFORML ……어느 굵기의 브지를 사용합니까？
 ELSE
 	SELECTCASE MAX_STR(LOCALS) - MIN_STR(LOCALS)*21/20
 	CASE IS >= 1
-		PRINTFORML %CALLNAME:TARGET%의는 직경{MAX(MAX_STR(LOCALS), CFLAG:452)}mm까지 경험이 끝난 상태입니다만,아픔하지만 적은 것은{MIN_STR(LOCALS)*21/20}mm까지와 같습니다
-		PRINTFORML {MAX(MIN_STR(LOCALS)*21/20, MIN_STR(LOCALS) + 1)}mm이하의 굵기가 좋다고 생각됩니다만……\@ PREVCOM == SELECTCOM ? 引き続き # 今回は \@, 어느 굵기의 브지를 사용합니까？
+		PRINTFORML %타겟은()% 직경{MAX(MAX_STR(LOCALS), CFLAG:452)}mm까지 경험이 끝난 상태입니다만, 아픔이 적은 것은{MIN_STR(LOCALS)*21/20}mm까지와 같습니다
+		PRINTFORML {MAX(MIN_STR(LOCALS)*21/20, MIN_STR(LOCALS) + 1)}mm이하의 굵기가 좋다고 생각됩니다만……\@ PREVCOM == SELECTCOM ? 이어서 # 이번은 \@, 어느 굵기의 브지를 사용합니까？
 	CASE 0
-		PRINTFORML %CALLNAME:TARGET%의는 직경{MAX(MAX_STR(LOCALS), CFLAG:452)}mm까지 경험이 끝난 상태로, 여기까지라면아픔하지만 적은 것 같습니다
-		PRINTFORML {MAX(MAX_STR(LOCALS), CFLAG:452)}mm이하의 굵기가 좋다고 생각됩니다만……\@ PREVCOM == SELECTCOM ? 引き続き # 今回は \@, 어느 굵기의 브지를 사용합니까？
+		PRINTFORML %타겟은()% 직경{MAX(MAX_STR(LOCALS), CFLAG:452)}mm까지 경험이 끝난 상태로, 여기까지라면아픔하지만 적은 것 같습니다
+		PRINTFORML {MAX(MAX_STR(LOCALS), CFLAG:452)}mm이하의 굵기가 좋다고 생각됩니다만……\@ PREVCOM == SELECTCOM ? 이어서 # 이번은 \@, 어느 굵기의 브지를 사용합니까？
 	CASEELSE
-		PRINTFORML %CALLNAME:TARGET%의는 직경{MAX(MAX_STR(LOCALS), CFLAG:452)}mm까지 경험이 끝난 상태로, 이 굵기까지는 괜찮은 것 같습니다
-		PRINTFORML {MAX_STR(LOCALS) + 1}mm에 도전해도 문제 없다고 생각되지만……\@ PREVCOM == SELECTCOM ? 계속해서 # 이번에는 \@, 어떤 굵기의 부지를 사용합니까?
+		PRINTFORML %타겟은()% 직경{MAX(MAX_STR(LOCALS), CFLAG:452)}mm까지 경험이 끝난 상태로, 이 굵기까지는 괜찮은 것 같습니다
+		PRINTFORML {MAX_STR(LOCALS) + 1}mm에 도전해도 문제 없다고 생각되지만……\@ PREVCOM == SELECTCOM ? 이어서 # 이번에는 \@, 어떤 굵기의 부지를 사용합니까?
 	ENDSELECT
 ENDIF
 
@@ -267,8 +267,8 @@ ELSEIF CALCF("요도径") >= CALCF("요도확장の壁")
 	;ちょっとお得な情報
 	CALL COM_ABLE146
 	IF RESULT && COND("身嗜み：요도확장") == 0 && ABL:요도확장 >= 0 && EXP:요도경험 >= 5 && (EXP:요도경험 >= 20 || EXP:요도확장경험 >= 5 || ABL:요도확장 >= 1)
-		PRINTFORML 몸관리그리고 지시하는 일로, 의 확장을%CALLNAME:TARGET%에도 실시하게 할 수가 있습니다
-		PRINTFORML %CALLNAME:PLAYER%의 팔에는 미치지 않다고 생각됩니다만, 어떻습니까？
+		PRINTFORML 몸관리를 지시하는 일로, 요도의 확장을%CALLNAME:TARGET%에도 실시하게 할 수가 있습니다
+		PRINTFORML %CALLNAME:PLAYER%의 손에는 미치지 않다고 생각됩니다만, 어떻습니까？
 	ENDIF
 	RESETCOLOR
 ENDIF
@@ -318,7 +318,7 @@ IF TEQUIP:니플캡 == 0 && FIRSTCOM(35)
 		PRINTFORML  [91] 니플캡를 붙인다
 	ENDIF
 ENDIF
-PRINTFORML  [99] 보발를 본다
+PRINTFORML  [99] 보발을 본다
 PRINTFORML [100] 그만둔다
 
 CALL INPUT_SELECT, LOCAL, 99, 100, LOCAL:90, LOCAL:91
@@ -336,18 +336,18 @@ CASE 99
 	PRINTFORM 과
 	CALL PRINT_COLORTEXT, "[확장적정]", DEF_COLOR("황색")
 	PRINTFORML 이 있으면 수월합니다
-	PRINTFORM 확장의 하기 쉬움에는 영향이 없다소질그렇지만,
+	PRINTFORM 확장의 하기 쉬움에는 영향이 없는 소질이지만,
 	CALL PRINT_COLORTEXT, "[도착적]", DEF_COLOR("황색")
-	PRINTFORML 하지만 있으면반감를 억제 당하는 일이지요
+	PRINTFORML 이 있으면 반감을 적게 받지요
 	PRINTFORML 
 
-	PRINTFORML 에서의 쾌감은Ｃ감각에 의존하고 있습니다……하지만, 초기는아픔하지만 강하고 대부분 쾌락을 얻을 수 있지 않습니다
-	PRINTFORML 경험을 쌓게해아픔를 줄여, 를 만지작거려지는 일에 익숙하게 하는 것이 겹요정됩니다
+	PRINTFORML 요도에서의 쾌감은 Ｃ감각에 의존하고 있습니다……하지만, 초기는 아픔이 강하고 대부분 쾌락을 얻을 수 없습니다
+	PRINTFORML 경험을 쌓게해 아픔를 줄여, 요도를 만지작거려지는 일에 익숙하게 하는 것이 필요합니다
 	PRINTFORM 요도를 자극하면서 절정을 경험시키것으로 
 	CALL PRINT_COLORTEXT, "[요도성감]", DEF_COLOR("황색")
-	PRINTFORML 에 각성되는 일이 됩니다
+	PRINTFORML 을 각성되는 일이 됩니다
 	CALL PRINT_COLORTEXT, "[요도성감]", DEF_COLOR("황색")
-	PRINTFORMW 없음이라면 기본적으로는 기분의 좋지 않다조교그래서, 빠른 취득이 겹요정그렇겠지요
+	PRINTFORMW 없다면 기본적으로는 기분의 좋지 않은 조교라서, 빠른 취득이 필요하겠지요
 	PRINTFORML -------------------------------------------------------------------------------
 CASE 90
 	CALL TRAIN_MESSAGE_COM34
@@ -396,13 +396,13 @@ CASE IS < 15
 	PRINTFORMW 젤리를 바른 {TEQUIP:요도확장기}mm의 부지를 삽입했다. 
 ;손가락並み
 CASE IS < 26
-	PRINTFORMW 손가락 정도 굵기의 {TEQUIP:요도확장기}mm의 부지를삽입했다. 
+	PRINTFORMW 손가락 정도 굵기의 {TEQUIP:요도확장기}mm의 부지를 삽입했다. 
 ;왜소페니스並み
 CASE IS < 33
-	PRINTFORMW 가느다란 딜도라 해도 괜찮은 지름{TEQUIP:요도확장기}mm의 부지를삽입했다. 
+	PRINTFORMW 가느다란 딜도라 해도 괜찮은 지름{TEQUIP:요도확장기}mm의 부지를 삽입했다. 
 ;ふつうのちんこ並み
 CASE IS < 40
-	PRINTFORMW 보통이라면 도저히 들어갈 것으로는 생각되지 않는 {TEQUIP:요도확장기}mm의 부지를삽입했다. 
+	PRINTFORMW 보통이라면 도저히 들어갈 것으로는 생각되지 않는 {TEQUIP:요도확장기}mm의 부지를 삽입했다. 
 ;거근並み～
 CASEELSE
 	PRINTFORMW 지름{TEQUIP:요도확장기}mm의 매끈한 금속제의 딜도를 삽입했다. 
@@ -421,22 +421,22 @@ IF TEQUIP:요도확장기 > MAX_STR(LOCALS) && CALCF("요도확장の限界") >=
 		ENDIF
 	CASE 24 TO 28
 		IF GETBIT(CFLAG:453, 1) == 0
-			PRINTFORML ……%CALLNAME:TARGET%의 거기는, 눈에 보여 펼쳐져 오고 있다.
-			PRINTFORMW 이대로 계속해 가면, 혹시 작은페니스정도라면삽입할 수 있게 될지도 모른다…
+			PRINTFORML ……%CALLNAME:TARGET%의 거기는, 눈에 띄게 펼쳐져 오고 있다.
+			PRINTFORMW 이대로 쭉 해 가면, 혹시 작은 페니스 정도 삽입할 수 있게 될지도 모른다…
 			SETBIT CFLAG:453, 1
 			RETURN 1
 		ENDIF
 	CASE 31 TO 35
 		IF GETBIT(CFLAG:453, 2) == 0
-			PRINTFORML ……%CALLNAME:TARGET%의 거기는, 상당히 커져 버린 것 같다.
-			PRINTFORMW 혹시, 앞으로 조금으로 일반적인 크기의 남성기에서도 받아들일 수 있게 되는 것은 아닐까…
+			PRINTFORML ……%CALLNAME:TARGET%의 거기는, 상당히 넓어져 버린 것 같다.
+			PRINTFORMW 혹시, 앞으로 조금으로 일반적인 크기의 남성기도 받아들일 수 있게 되는 것은 아닐까…
 			SETBIT CFLAG:453, 2
 			RETURN 1
 		ENDIF
 	CASE 38 TO 42
 		IF GETBIT(CFLAG:453, 3) == 0
-			PRINTFORML ……%CALLNAME:TARGET%의 거기는, 완전히 큰 구멍화해 버리고 있다
-			PRINTFORMW 아마, 성행위를 문제 없게 실시할 수 있도록(듯이)까지 될 것이다…
+			PRINTFORML ……%CALLNAME:TARGET%의 거기는, 완전히 큰 구멍으로 되었다
+			PRINTFORMW 아마, 성행위를 문제 없게 실시할 수 있을 것이다…
 			SETBIT CFLAG:453, 3
 			RETURN 1
 		ENDIF
@@ -447,11 +447,11 @@ ENDIF
 IF FIRSTCOM(SELECTCOM) == 0 && EXP:요도확장경험 == 0
 	;初回から확장
 	IF TEQUIP:요도확장기 > MIN_STR(LOCALS)
-		PRINTFORMW 구멍에 대해서 막대기가 잠시 큰저항을 \@ TEQUIP:요도확장기 - MIN_STR(LOCALS) >= 2 ? 통과 # 해버렸다 \@같지만, 매끄러운 금속 막대는 요도 괄약근의 저항을 개의치 않고,배뇨를 위한 구멍을 뚫고 굵기에 길들여 간다…
+		PRINTFORMW 구멍에 비해 막대기가 \@ TEQUIP:요도확장기 - MIN_STR(LOCALS) >= 2 ? 거대한 # 큰 \@것 같지만, 매끄러운 금속 막대는 요도 괄약근의 저항을 개의치 않고,배뇨를 위한 구멍을 뚫고 굵기에 길들여 간다…
 	ELSEIF PENIS(TARGET)
-		PRINTFORMW 처음이라 삽입에 오래걸리긴 했지만, %CALLNAME:TARGET%의 요도는 침입해온 금속막대의 페니스의 밑부분까지 받아들였다…
+		PRINTFORMW 처음이라 삽입에 오래 걸리긴 했지만, %CALLNAME:TARGET%의 요도는 침입해온 금속막대의 페니스의 뿌리까지 받아들였다…
 	ELSE
-		PRINTFORMW 처음이라 삽입에 오래걸리긴 했지만, %CALLNAME:TARGET%의 요도는 침입해온 금속막대를 제대로 방광까지 받아들였다…
+		PRINTFORMW 처음이라 삽입에 오래 걸리긴 했지만, %CALLNAME:TARGET%의 요도는 침입해온 금속막대를 제대로 방광까지 받아들였다…
 	ENDIF
 ;各조교ごとの二回目以降のセリフ（簡潔）
 ELSEIF CHOSECOM(SELECTCOM)
@@ -459,21 +459,21 @@ ELSEIF CHOSECOM(SELECTCOM)
 		IF TALENT:요도성감
 			PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 			IF RAND:2
-				PRINTFORM 연결되는 막대기를\@ PENIS(TARGET) ? 음경의근원 # 방광 \@까지 유유히 받아들였다, 
+				PRINTFORM 연결되는 막대기를\@ PENIS(TARGET) ? 뿌리 # 방광 \@까지 유유히 받아들였다, 
 			ELSE
-				PRINTFORM 본래는액체밖에 통과하는 일이 없는 구멍에서\@ TALENT:요도성감 ? 嬉々として # \@이물을 삼켜,
+				PRINTFORM 본래는 액체밖에 통과하는 일이 없는 구멍에서\@ TALENT:요도성감 ? 즐겁게 # \@이물을 삼켜,
 			ENDIF
 			IF TALENT:요도성감 && RAND:3 == 0
 				PRINTFORMW 상기된 얼굴에서 소변을 뚝뚝 떨어지며 플레이를 즐기고 있다…
 			ELSEIF RAND:2
-				PRINTFORMW 출입에 맞추어 괄약근을 쥐었다 펴고 있다…
+				PRINTFORMW 출입에 맞추어 괄약근을 조였다 펴고 있다…
 			ELSE
-				PRINTFORMW 점막을 문질러 줄 수있는 움직임에, 기분 좋은 자극듯한 반응을 보이고있다…
+				PRINTFORMW 점막을 문지르는 움직임에, 기분 좋은 자극을 받는듯한 반응을 보이고있다…
 			ENDIF
 		ELSEIF PENIS(TARGET)
-			PRINTFORMW 특히 걸리는 것도없고 깊숙이 침투 한 금속막대는, 출입할때마다 음경 해면체를 제쳐가면서 %CALLNAME:TARGET%의 요도를 이물질에 익혀간다…
+			PRINTFORMW 특히 걸리는 것 없이 깊숙이 침투 한 금속막대는, 출입할때마다 음경 해면체를 제쳐 가면서 %CALLNAME:TARGET%의 요도를 이물질에 익숙해져간다…
 		ELSE
-			PRINTFORMW 미끄러지듯 방광까지 도달한 금속막대는, 출입 때마다 흘러나온 액체로 웅덩이를 넓히면서%CALLNAME:TARGET%의 요도를 이물질에 익혀간다…
+			PRINTFORMW 미끄러지듯 방광까지 도달한 금속막대는, 출입 때마다 흘러나온 액체로 요도를 넓히면서%CALLNAME:TARGET%의 요도를 이물질에 익숙해져간다…
 		ENDIF
 	ELSE
 		PRINTFORMW 저항이 강한 구멍을, 금속제의 확장막대가 천천히 그러나 확실히 성기로 만들어 간다…
@@ -496,14 +496,14 @@ ELSEIF TEQUIP:요도확장기 > MIN_STR(LOCALS)
 ELSE
 	IF CHECK("요도플레이")
 		IF TALENT:요도성감
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%는 부지가 요도를 출입 할 때마다 쾌감에 허리를 떨며 그다지 싫지만은 않은듯한 모습이 비정상적인 플레이를 즐기고있다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%는 부지가 요도를 출입 할 때마다 쾌감에 허리를 떨며 그다지 싫지만은 않은 듯한 모습으로 비정상적인 플레이를 즐기고있다…
 		ELSE
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%는 별다른 통증을 느끼지는 않았지만, 허리를 달리는 부르르 소름 돋는 한 뭐라고 말할 수 없는 감각에 불안스러운 표정을 짓고 있다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%는 별다른 통증을 느끼지는 않았지만, 허리를 찌르는 부르르 소름 돋는듯한 뭐라고 말할 수 없는 감각에 불안스러운 표정을 짓고 있다…
 		ENDIF
 	ELSEIF PENIS(TARGET)
-		PRINTFORMW 굵고 매끄러운 금속 막대는%CALLNAME:TARGET%의 저항을 무릅쓰고 요도 깊숙이 침입하며 삽입할때마다, 좁은 점막의 길을 자극에 익숙해지게 만들고 확장하고 있다…
+		PRINTFORMW 굵고 매끄러운 금속 막대는 %CALLNAME:TARGET%의 저항을 무릅쓰고 요도 깊숙이 침입하며 삽입할때마다, 좁은 점막의 길을 자극에 익숙해지게 만들고 확장하고 있다…
 	ELSE
-		PRINTFORMW 굵고 매끄러운 금속 막대는%CALLNAME:TARGET%의 저항을 무릅쓰고 방광까지 침입하며 삽입할대마다, 오줌을 지리며 좁은 점막의 길을 확장하고 있다…
+		PRINTFORMW 굵고 매끄러운 금속 막대는 %CALLNAME:TARGET%의 저항을 무릅쓰고 방광까지 침입하며 삽입할대마다, 오줌을 지리며 좁은 점막의 길을 확장하고 있다…
 	ENDIF
 ENDIF
 

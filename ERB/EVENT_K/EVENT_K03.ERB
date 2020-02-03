@@ -290,7 +290,7 @@ ELSEIF MARK:굴복각인 == 3 && TALENT:연모 == 0
     	PRINTFORMW （…아직이에요？…그 사람은…슬슬 계(오)실 것으로는？）
 		PRINTFORMW （아아…이렇게도 범해지는 것을 바라고 있다니…）
 		IF COND("身嗜み：자위금지") == 0
-			PRINTFORMW %CALLNAME:TARGET%노손는 자연히(과)자위를 시작한다…
+			PRINTFORMW %CALLNAME:TARGET%의손는 자연히(과)자위를 시작한다…
 	    	PRINTFORMW 「으응…, 아앗, …응…후아아…」
 	    	PRINTFORMW （…저…이렇게나 음란해져 버렸군요…）
 	    	EXP:자위경험 += 1
@@ -435,7 +435,7 @@ IF SELECTCOM == 0
 		;반발각인Lv3
 		IF MARK:반발각인 == 3
 			PRINTFORMW 「으응!! 무…웃!」
-			PRINTFORMW 싫어한다%CALLNAME:TARGET%에게, 억지로 입을 맞추었다
+			PRINTFORMW 싫어하는 %CALLNAME:TARGET%에게, 억지로 입을 맞추었다
 		;굴복각인Lv2이상
 		ELSEIF MARK:굴복각인 >= 2
 			PRINTFORMW 「아…응…」
@@ -814,7 +814,7 @@ IF SELECTCOM == 5
 				IF CALCF("Ｂ발정")
 					PRINTFORMW （…기분이 좋지만…부족하다…유두하지만…）
 					PRINTFORMW 「응아아…유두를 만지작거려 주세요…들이마셔 주세요…」
-					PRINTFORML %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 강하게 떠났다유두에손를 늘린다
+					PRINTFORML %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%의 강하게 떠났다유두에손를 늘린다
 				ENDIF
 				PRINTFORMW 「으응…기분 좋아! 가슴 기분 좋아!」
 			ENDIF
@@ -5133,7 +5133,7 @@ CASE "난교개시"
 ;서류작업이벤트
 ;-------------------------------------------------
 CASE "서류작업：도움"
-	PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에 차를 끓여 받기로 했습니다
+	PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%%CALLNAME:ARG%에 차를 끓여 받기로 했습니다
 	PRINTL 
 	PRINTFORMW 「차…입니까？ 네, 물론 좋아요……맡겨 주세요」
 	PRINTFORML ………

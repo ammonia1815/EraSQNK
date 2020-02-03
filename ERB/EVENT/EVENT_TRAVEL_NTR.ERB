@@ -122,10 +122,10 @@ LOCAL += ABL:ARG:욕망
 ;쇼타…筆下ろしとか, ナンパはしてこない, 레이프系には発展しない
 ;거근쇼타…거근・大量사정, ナンパはしてこない, 레이프系には発展しない
 ;筋肉質な男…野동물ックス・大量사정（거근쇼타と差別化できないので保留)
-;太った男…ねちっこい・多分一番NTRっぽい
-;痩せた男…애널専門, 見た目がひょろいのでナンパの대상ではない
-;チンピラ…悪いやつ, 集団専用
-;浮浪者…小汚いのでナンパの대상ではない, 集団専用
+;살찐 남자…ねちっこい・多分一番NTRっぽい
+;마른 남자…애널専門, 見た目がひょろいのでナンパの대상ではない
+;양아치…悪いやつ, 集団専用
+;부랑자…小汚いのでナンパの대상ではない, 集団専用
 
 ;PLAY_TRAVELに플레이の系統を記録
 ;몽마が상대の플레이とか（未実装, メイヴ様によるSM조교とか루시펠との堕落섹스とかどうかな？誰か作って）
@@ -134,7 +134,7 @@ LOCAL += ABL:ARG:욕망
 ;레이프（作業量的に손が回らないのでとりあえずコメントアウト. 誰か作って><）
 ;浮気
 
-PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 몰래%CALLNAME:MASTER%로부터 떨어지면 ,
+PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 몰래 %CALLNAME:MASTER%로부터 떨어져서, 
 IF RAND:3 == 0
 	PRINTFORML 주체하지 못하는 욕망을 해소하기 위해, 그 배출구를 물색하기 시작했다…
 ELSEIF RAND:2 == 0
@@ -155,8 +155,8 @@ FOR LCOUNT, 0, 100
 		;난교/輪姦
 		IF RAND:4 == 0
 			IF RAND:2 == 0
-				NPC_CALLNAME = 浮浪者
-				PRINTFORML 꾀죄죄하다%NPC_CALLNAME%끊어 가 따라다니고 있는 것 같습니다…
+				NPC_CALLNAME = 부랑자
+				PRINTFORML 꾀죄죄한 %NPC_CALLNAME%가 졸졸 따라다니고 있는 것 같습니다…
 				;輪姦
 				IF RAND:3 == 0
 					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 눈을 맞추지 않고 무시하려고 했습니다만, %NPC_CALLNAME%들에게 둘러싸지고, 
@@ -168,24 +168,24 @@ FOR LCOUNT, 0, 100
 						;계절
 						SELECTCASE TEXTS("계절")
 						CASE "봄"
-							PRINTFORM 벚꽃길의 옆의 수풀
+							PRINTFORM 벚꽃길 옆의 수풀
 						CASE "여름"
-							PRINTFORM 골짜기를 건너는 다리 밑
+							PRINTFORM 굴다리 밑
 						CASE "가을"
-							PRINTFORM 신사의 회사안
+							PRINTFORM 신사의 건물안
 						CASE "동"
-							PRINTFORM 폐옥
+							PRINTFORM 폐가
 						ENDSELECT
 					ENDIF
 					PRINTFORML 에 끌어들여져 버렸습니다! 
 					;플래그確定
-					NPC_NAME = 浮浪者
+					NPC_NAME = 부랑자
 					PLAY_TRAVEL = 輪姦
 				;난교
 				ELSEIF RAND:2 == 0
-					PRINTFORML 처음은 무시하려고 생각했다%CALLNAME:TARGET%(이었)였지만, 울적 했다성욕에 눈을 핏발이 서게 한다%NPC_CALLNAME%들의 모습에, 
+					PRINTFORML 처음은 무시하려고 생각했던 %타겟이었()%지만, 성욕으로 눈에 핏발이 선 %NPC_CALLNAME%들의 모습에, 
 					PRINTFORML 「군것질」에는 절호의 상대라고 생각을 고친 것 같습니다…
-					PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 그들의 보금자리이다
+					PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 그들의 보금자리인
 					;뱃놀이
 					IF ARGS == "뱃놀이"
 						PRINTFORM 폐선 하치장
@@ -193,96 +193,96 @@ FOR LCOUNT, 0, 100
 						;계절
 						SELECTCASE TEXTS("계절")
 						CASE "봄"
-							PRINTFORM 벚꽃길의 옆의 수풀
+							PRINTFORM 벚꽃길 옆의 수풀
 						CASE "여름"
-							PRINTFORM 골짜기를 건너는 다리 밑
+							PRINTFORM 굴다리 밑
 						CASE "가을"
-							PRINTFORM 신사의 회사안
+							PRINTFORM 신사의 건물안
 						CASE "동"
-							PRINTFORM 폐옥
+							PRINTFORM 폐가
 						ENDSELECT
 					ENDIF
-					PRINTFORML 까지 안내시키면, %NPC_CALLNAME%들을 선정적인 행동으로 유혹하기 시작했습니다…
+					PRINTFORML 까지 안내받자, %NPC_CALLNAME%들을 선정적인 행동으로 유혹하기 시작했습니다…
 					;플래그確定
-					NPC_NAME = 浮浪者
+					NPC_NAME = 부랑자
 					PLAY_TRAVEL = 난교
 				ELSE
-					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%들을 무시해, 그 자리를 떨어졌습니다…
+					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%들을 무시해, 그 자리에서 멀어졌습니다…
 					;플래그リセット
 					NPC_NAME = 
 				ENDIF
 			ELSE
-				NPC_CALLNAME = チンピラ
-				PRINTFORML (무늬)격이 나쁘다%NPC_CALLNAME%들에게 이야기 걸쳐지고 있는 것 같습니다…
+				NPC_CALLNAME = 양아치
+				PRINTFORML 질이 나쁜 %NPC_CALLNAME%들에게 말 걸어진 것 같습니다…
 				;輪姦
 				IF RAND:3 == 0 && TALENT:Ａ처녀 == 0
-					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 눈을 맞추지 않고 무시하려고 했습니다만, %NPC_CALLNAME%들에게 둘러싸지고, 
+					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 눈을 맞추지 않고 무시하려고 했습니다만, %NPC_CALLNAME%들에게 둘러싸여서 
 					;뱃놀이
 					IF ARGS == "뱃놀이"
 						PRINTFORM 도망갈 장소가 없는 배위
 					ELSE
-						PRINTFORM 인기가 없다
+						PRINTFORM 인기척이 없는
 						;계절
 						SELECTCASE TEXTS("계절")
 						CASE "봄"
-							PRINTFORM 벚꽃길의 옆의 수풀
+							PRINTFORM 벚꽃길 옆의 수풀
 						CASE "여름"
-							PRINTFORM 골짜기를 건너는 다리 밑
+							PRINTFORM 굴다리 밑
 						CASE "가을"
-							PRINTFORM 신사의 회사안
+							PRINTFORM 신사의 건물안
 						CASE "동"
-							PRINTFORM 폐옥
+							PRINTFORM 폐가
 						ENDSELECT
 					ENDIF
 					PRINTFORML 에 끌어들여져 버렸습니다! 
 					;플래그確定
-					NPC_NAME = チンピラ
+					NPC_NAME = 양아치
 					PLAY_TRAVEL = 輪姦
 				;난교
 				ELSEIF RAND:2 == 0 && TALENT:Ａ처녀 == 0
-					PRINTFORML 처음은 무시하려고 생각했다%CALLNAME:TARGET%(이었)였지만, 천한욕망를 은폐도 하지 않는다%NPC_CALLNAME%들의 모습에, 
+					PRINTFORML 처음은 무시하려고 생각했던 %타겟이었()%지만, 천한 욕망을 감추지도 않는 %NPC_CALLNAME%들의 모습에, 
 					PRINTFORML 「군것질」에는 절호의 상대라고 생각을 고친 것 같습니다…
 					PRINTFORM %조사처리(CALLNAME:TARGET,"는")%
 					;뱃놀이
 					IF ARGS == "뱃놀이"
 						PRINTFORM 연회용의 넓은 뱃놀이의 배
 					ELSE
-						PRINTFORM 그들의 대기 장소이다
+						PRINTFORM 그들이 모이는 장소인
 						;계절
 						SELECTCASE TEXTS("계절")
 						CASE "봄"
-							PRINTFORM 벚꽃길의 옆의 수풀
+							PRINTFORM 벚꽃길 옆의 수풀
 						CASE "여름"
-							PRINTFORM 골짜기를 건너는 다리 밑
+							PRINTFORM 굴다리 밑
 						CASE "가을"
-							PRINTFORM 신사의 회사안
+							PRINTFORM 신사의 건물안
 						CASE "동"
-							PRINTFORM 폐옥
+							PRINTFORM 폐가
 						ENDSELECT
 					ENDIF
-					PRINTFORML 까지 안내시키면, 선정적인 행동으로 그들의 흥분을 부추기기 시작했습니다…
+					PRINTFORML 까지 안내받자, 선정적인 행동으로 그들의 흥분을 부추기기 시작했습니다…
 					;플래그確定
-					NPC_NAME = チンピラ
+					NPC_NAME = 양아치
 					PLAY_TRAVEL = 난교
 				ELSE
-					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%들을 무시해, 그 자리를 떨어졌습니다…
+					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%들을 무시해, 그 자리에서 멀어졌습니다…
 					;플래그リセット
 					NPC_NAME = 
 				ENDIF
 			ENDIF
 		ELSE
-			;痩せた男（A처녀は除外）
+			;마른 남자（A처녀は除外）
 			IF RAND:3 == 0 && TALENT:Ａ처녀 == 0
-				NPC_CALLNAME = 痩せた男
+				NPC_CALLNAME = 마른 남자
 				;一時플래그
-				NPC_NAME = 痩せた男
-				PRINTFORM 버릇(성벽)이 비뚤어지고 있을 것 같은
+				NPC_NAME = 마른 남자
+				PRINTFORM 성벽이 비뚤어진 것 같은
 			;살찐 남자
 			ELSEIF RAND:2 == 0
-				NPC_CALLNAME = 太った男
-				PRINTFORM 성욕의 강한 듯한
+				NPC_CALLNAME = 살찐 남자
+				PRINTFORM 성욕이 강한 듯한
 				;一時플래그
-				NPC_NAME = 太った男
+				NPC_NAME = 살찐 남자
 			;근육질인 남자
 			;ELSEIF RAND:2 == 0
 			;	NPC_CALLNAME = 筋肉質な男
@@ -291,39 +291,39 @@ FOR LCOUNT, 0, 100
 			;	NPC_NAME = 筋肉質な男
 			;그 외
 			ELSE
-				NPC_CALLNAME = 男
+				NPC_CALLNAME = 남자
 				PRINTFORM %TEXTR("경박할 것 같은", "별로 인기 없을 것 같은", "놀아 그런", "멋진 사람", "모험자풍의", "관광객풍의", "현지의")%
 				;一時플래그
-				NPC_NAME = 男
+				NPC_NAME = 남자
 			ENDIF
 			;輪姦・난교系以外
-			PRINTFORML %NPC_CALLNAME%에 이야기 걸쳐지고 있는 것 같습니다…
-			PRINTFORMW 아무래도 헌팅과 같다
+			PRINTFORML %NPC_CALLNAME%에 이야기 걸어지고 있는 것 같습니다…
+			PRINTFORMW 아무래도 헌팅 같다
 			IF RAND:3 == 0
-				PRINTFORML 말교묘하게 권해 온다%NPC_CALLNAME%에 완전히 그럴 기분이 들어 버렸다%조사처리(CALLNAME:TARGET,"는")%, 
+				PRINTFORML 교묘하게 꼬시는 %NPC_CALLNAME%에 완전히 그럴 기분이 들어 버린 %조사처리(CALLNAME:TARGET,"는")%, 
 				PRINTFORM %NPC_CALLNAME%에 이끌리는 대로, 
 				;뱃놀이
 				IF ARGS == "뱃놀이"
-					PRINTFORM 둘이서의 배위
+					PRINTFORM 둘이서의 배 위
 				ELSE
-					PRINTFORM 인기가 없다
+					PRINTFORM 인기척이 없는
 					;계절
 					SELECTCASE TEXTS("계절")
 					CASE "봄"
-						PRINTFORM 벚꽃길의 옆의 수풀
+						PRINTFORM 벚꽃길 옆의 수풀
 					CASE "여름"
-						PRINTFORM 골짜기를 건너는 다리 밑
+						PRINTFORM 굴다리 밑
 					CASE "가을"
-						PRINTFORM 신사의 회사안
+						PRINTFORM 신사의 건물안
 					CASE "동"
-						PRINTFORM 폐옥
+						PRINTFORM 폐가
 					ENDSELECT
 				ENDIF
-				PRINTFORML 로 붙어 가 버렸다…
+				PRINTFORML 로 따라가 버렸다…
 
 				;플래그確定
 				SELECTCASE NPC_NAME
-				CASE "痩せた男", "太った男", "筋肉質な男"
+				CASE "마른 남자", "살찐 남자", "筋肉質な男"
 				;그 외
 				CASEELSE
 					NPC_NAME = 男
@@ -336,74 +336,74 @@ FOR LCOUNT, 0, 100
 			;	IF ARGS == "뱃놀이"
 			;		PRINTFORM 도망갈 장소가 없는 뱃놀이의 배위
 			;	ELSE
-			;		PRINTFORM 인기가 없다
+			;		PRINTFORM 인기척이 없는
 			;		;계절
 			;		SELECTCASE TEXTS("계절")
 			;		CASE "봄"
-			;			PRINTFORM 벚꽃길의 옆의 수풀
+			;			PRINTFORM 벚꽃길 옆의 수풀
 			;		CASE "여름"
-			;			PRINTFORM 골짜기를 건너는 다리 밑
+			;			PRINTFORM 굴다리 밑
 			;		CASE "가을"
-			;			PRINTFORM 신사의 회사안
+			;			PRINTFORM 신사의 건물안
 			;		CASE "동"
-			;			PRINTFORM 폐옥
+			;			PRINTFORM 폐가
 			;		ENDSELECT
 			;	ENDIF
 			;	PRINTFORML へ連れ込まれてしまいました…! 
 			;	;플래그確定
 			;	SELECTCASE NPC_NAME
-			;	CASE "痩せた男", "太った男", "筋肉質な男"
+			;	CASE "마른 남자", "살찐 남자", "筋肉質な男"
 			;	;그 외
 			;	CASEELSE
 			;		NPC_NAME = 男
 			;	ENDSELECT
 			;	PLAY_TRAVEL = 레이프
 			ELSE
-				PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%를 가볍고 취급, 그 자리를 떨어졌습니다…
+				PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %조사처리(NPC_CALLNAME,"를")% 하찮게 대하고, 그 자리를 떠났습니다…
 				;플래그リセット
 				NPC_NAME = 
 			ENDIF
 		ENDIF
 	;ナンパした
 	ELSE
-		PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 전부터 걸어 왔다
+		PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 앞에 걸어 가는 
 		;対複数
 		IF RAND:4 == 0
 			;똘마니
 			IF RAND:2 == 0 || TALENT:남자
-				NPC_CALLNAME = チンピラ
-				PRINTFORML (무늬)격이 나쁘다%NPC_CALLNAME%들에게 말을 걸고 있습니다…
+				NPC_CALLNAME = 양아치
+				PRINTFORML 질이 나쁜 %NPC_CALLNAME%들에게 말을 걸고 있습니다…
 				;輪姦
 				IF RAND:6 == 0
-					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%들을 일부러 화나게 하도록(듯이) 매도를 시작했다! 
+					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%들을 일부러 화나게 하듯이 매도를 시작했다! 
 					IF RAND:2 == 0 && TALENT:Ａ처녀 == 0
-						PRINTFORM 격노했다%NPC_CALLNAME%들에게 둘러싸지고, %조사처리(CALLNAME:TARGET,"는")% 
+						PRINTFORM 격노한 %NPC_CALLNAME%들에게 둘러싸지고, %조사처리(CALLNAME:TARGET,"는")% 
 						;뱃놀이
 						IF ARGS == "뱃놀이"
 							PRINTFORM 도망갈 장소가 없는 배위
 						ELSE
-							PRINTFORM 인기가 없다
+							PRINTFORM 인기척이 없는
 							;계절
 							SELECTCASE TEXTS("계절")
 							CASE "봄"
-								PRINTFORM 벚꽃길의 옆의 수풀
+								PRINTFORM 벚꽃길 옆의 수풀
 							CASE "여름"
-								PRINTFORM 골짜기를 건너는 다리 밑
+								PRINTFORM 굴다리 밑
 							CASE "가을"
-								PRINTFORM 신사의 회사안
+								PRINTFORM 신사의 건물안
 							CASE "동"
-								PRINTFORM 폐옥
+								PRINTFORM 폐가
 							ENDSELECT
 						ENDIF
 						PRINTFORML 에 질질 끌어 들여져 버렸습니다!
 						PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 는 분노와 함께 스스로에게 향하는 번들거리는 동물적 욕망에 가슴이 두근 두근 하고 있습니다…
 						;플래그確定
-						NPC_NAME = チンピラ
+						NPC_NAME = 양아치
 						PLAY_TRAVEL = 輪姦
 					ELSE
-						PRINTFORML 일부러 화나게 해 스스로를 윤간시키려고 기도한%CALLNAME:TARGET%였지만…
-						PRINTFORML %NPC_CALLNAME%들은%CALLNAME:TARGET%의 말에 깊게 다쳐, 반울음이 되면서 해산해 버렸습니다…
-						PRINTFORML 품위가 없는 듯이  보인 것은 외형만으로 ,  내면은 유리의 하트였던 것 같습니다…
+						PRINTFORML 일부러 화나게 해 스스로를 윤간시키려고 의도한 %타겟이었()%지만
+						PRINTFORML %NPC_CALLNAME%들은 %CALLNAME:TARGET%의 말에 깊은 상처를 입고, 반쯤 울면서 물러났습니다…
+						PRINTFORML 품위가 없는 듯이 보인 것은 외형만으로 ,  내면은 유리멘탈이었던 것 같습니다…
 						;플래그リセット
 						NPC_NAME = 
 					ENDIF
@@ -415,60 +415,60 @@ FOR LCOUNT, 0, 100
 						IF ARGS == "뱃놀이"
 							PRINTFORM 연회용의 넓은 뱃놀이의 배
 						ELSE
-							PRINTFORM 그들의 대기 장소이다
+							PRINTFORM 그들이 모이는 장소인
 							;계절
 							SELECTCASE TEXTS("계절")
 							CASE "봄"
-								PRINTFORM 벚꽃길의 옆의 수풀
+								PRINTFORM 벚꽃길 옆의 수풀
 							CASE "여름"
-								PRINTFORM 골짜기를 건너는 다리 밑
+								PRINTFORM 굴다리 밑
 							CASE "가을"
-								PRINTFORM 신사의 회사안
+								PRINTFORM 신사의 건물안
 							CASE "동"
-								PRINTFORM 폐옥
+								PRINTFORM 폐가
 							ENDSELECT
 						ENDIF
-						PRINTFORML 까지 안내시키면 ,  선정적인 행동으로 그들의 흥분을 부추기기 시작했습니다…
+						PRINTFORML 까지 안내받자 ,  선정적인 행동으로 그들의 흥분을 부추기기 시작했습니다…
 						;플래그確定
-						NPC_NAME = チンピラ
+						NPC_NAME = 양아치
 						PLAY_TRAVEL = 난교
 					ELSE
-						PRINTFORML 말교묘하게 유혹을 시도했다%CALLNAME:TARGET%(이었)였지만, %NPC_CALLNAME%들에게 「%TEXTR("そういう集まりじゃないんで", "そういうの間に合ってるんで")%…」라고 거절당해 버렸습니다…
+						PRINTFORML 교묘한 말로 유혹을 시도한 %타겟이었()%지만, %NPC_CALLNAME%들에게 「%TEXTR("그런 모임이 아니에요", "그럴 시간 없어요")%…」라고 거절당해 버렸습니다…
 						;플래그リセット
 						NPC_NAME = 
 					ENDIF
 				ENDIF
 			ELSE
 				NPC_CALLNAME = 소년
-				PRINTFORML 어린아이의 연령의 정도도 가지 않는다%NPC_CALLNAME%들에게 말을 걸고 있습니다…
+				PRINTFORML 나이도 차지 않아 보이는 %NPC_CALLNAME%들에게 말을 걸고 있습니다…
 				;쇼타난교
 				IF RAND:4 == 0 && TALENT:Ａ처녀 == 0
 					PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%들
 					;뱃놀이
 					IF ARGS == "뱃놀이"
-						PRINTFORM 를 연회용의 넓은 뱃놀이의 배의 위에 데리고 들어가면,
+						PRINTFORM 를 연회용의 넓은 뱃놀이 배 위에 데리고 들어가,
 					ELSE
-						PRINTFORM 에 그들의 비밀의 놀이터이다
+						PRINTFORM 을 비밀의 놀이터인 
 						;계절
 						SELECTCASE TEXTS("계절")
 						CASE "봄"
-							PRINTFORM 벚꽃길의 옆의 수풀
+							PRINTFORM 벚꽃길 옆의 수풀
 						CASE "여름"
-							PRINTFORM 골짜기를 건너는 다리 밑
+							PRINTFORM 굴다리 밑
 						CASE "가을"
-							PRINTFORM 신사의 회사안
+							PRINTFORM 신사의 건물안
 						CASE "동"
-							PRINTFORM 폐옥
+							PRINTFORM 폐가
 						ENDSELECT
-						PRINTFORML 로 안내시키면, 
+						PRINTFORML 로 안내받자, 
 					ENDIF
 					PRINTFORML 성에 대한 흥미를 불어넣는 듯하게 그 흥분을 부추기기 시작했습니다…
 					;플래그確定
 					NPC_NAME = 쇼타
 					PLAY_TRAVEL = 난교
 				ELSE
-					PRINTFORML 그런데, 놀랐다%NPC_CALLNAME%들은 새끼 거미를 흩뜨리도록(듯이) 도망쳐 버렸습니다…
-					PRINTFORML 조금 지나치게 한것같습니다…
+					PRINTFORML 그런데, 놀란 %NPC_CALLNAME%들은 양떼처럼 도망쳐 버렸습니다…
+					PRINTFORML 조금 지나치게 한 것 같습니다…
 					;플래그リセット
 					NPC_NAME = 
 				ENDIF
@@ -476,10 +476,10 @@ FOR LCOUNT, 0, 100
 		ELSE
 			;살찐 남자
 			IF RAND:2 == 0
-				NPC_CALLNAME = 太った男
-				PRINTFORM 성욕의 강한 듯한
+				NPC_CALLNAME = 살찐 남자
+				PRINTFORM 성욕이 강한 듯한
 				;一時플래그
-				NPC_NAME = 太った男
+				NPC_NAME = 살찐 남자
 			;근육질인 남자
 			;ELSEIF RAND:2 == 0
 			;	NPC_CALLNAME = 筋肉質な男
@@ -489,35 +489,35 @@ FOR LCOUNT, 0, 100
 			;쇼타
 			ELSEIF RAND:2 == 0 && TALENT:남자 == 0
 				NPC_CALLNAME = 소년
-				PRINTFORM 어린아이의 연령의 정도도 가지 않는다
+				PRINTFORM 다 크지도 않은
 				;一時플래그
 				NPC_NAME = 쇼타
 			;그 외
 			ELSE
-				NPC_CALLNAME = 男
-				PRINTFORM %TEXTR("경박할 것 같은", "별로 인기 없을 것 같은", "놀아 그런", "멋진 사람", "모험자풍의", "관광객풍의", "현지의")%
+				NPC_CALLNAME = 남자
+				PRINTFORM %TEXTR("경박할 것 같은", "별로 인기 없을 것 같은", "놀고싶은", "멋진 사람", "모험자풍의", "관광객풍의", "현지의")%
 				;一時플래그
-				NPC_NAME = 男
+				NPC_NAME = 남자
 			ENDIF
 			;輪姦・난교系以外
 			PRINTFORML %NPC_CALLNAME%에 말을 걸고 있습니다…
 			IF RAND:3 == 0
-				PRINTFORM 추잡한 유혹에 완전히 그럴 기분이 들었다%NPC_CALLNAME%하, %조사처리(CALLNAME:TARGET,"를")% 
+				PRINTFORM 추잡한 유혹에 완전히 그럴 기분이 든 %조사처리(NPC_CALLNAME,"는")%, %조사처리(CALLNAME:TARGET,"를")% 
 				;뱃놀이
 				IF ARGS == "뱃놀이"
-					PRINTFORM 둘이서의 배위
+					PRINTFORM 둘이서의 배 위
 				ELSE
-					PRINTFORM 인기가 없다
+					PRINTFORM 인기척이 없는
 					;계절
 					SELECTCASE TEXTS("계절")
 					CASE "봄"
-						PRINTFORM 벚꽃길의 옆의 수풀
+						PRINTFORM 벚꽃길 옆의 수풀
 					CASE "여름"
-						PRINTFORM 골짜기를 건너는 다리 밑
+						PRINTFORM 굴다리 밑
 					CASE "가을"
-						PRINTFORM 신사의 회사안
+						PRINTFORM 신사의 건물안
 					CASE "동"
-						PRINTFORM 폐옥
+						PRINTFORM 폐가
 					ENDSELECT
 				ENDIF
 				PRINTFORML 로 데리고 들어가 버렸습니다…! 
@@ -525,22 +525,22 @@ FOR LCOUNT, 0, 100
 				PLAY_TRAVEL = 浮気
 				IF NPC_NAME == "쇼타"
 					IF RAND:2 == 0
-						PRINTFORMW 부끄러워한다%NPC_CALLNAME%를 억누르고, 앞으로 구부림이 되어 숨기고 있었다팬티를 벗게 해 주면……
-						PRINTFORML %CALLNAME:TARGET%의 눈앞에 말도 각이나라고 하는 것 같은 거대한 페니스가 나타났습니다!
-						PRINTFORML 상상이다로 하고 있지 않았다 씩씩한 육 창에 , %조사처리(CALLNAME:TARGET,"는")% 꿀꺽하고 침을 삼켜 붐비었습니다…!
+						PRINTFORMW 부끄러워하는 %조사처리(NPC_CALLNAME,"를")% 억누르고, 앞으로 구부려 숨기고 있던 팬티를 벗기자……
+						PRINTFORML %CALLNAME:TARGET%의 눈앞에 말의 그것처럼 거대한 페니스가 나타났습니다!
+						PRINTFORML 상상도 못한 크고 아름다운 육봉에, %조사처리(CALLNAME:TARGET,"는")% 꿀꺽하고 침을 삼켰습니다…!
 						;플래그確定
 						NPC_NAME = 거근쇼타
 					ENDIF
 				ENDIF
 			ELSE
-				PRINTFORML 말교묘하게 유혹을 걸었다%CALLNAME:TARGET%(이었)였지만, %NPC_CALLNAME%에 가볍게 다루어져 버렸습니다…
+				PRINTFORML 교묘한 말로 유혹을 시도한 %타겟이었()%지만, %NPC_CALLNAME%에 가볍게 다루어져 버렸습니다…
 				;플래그リセット
 				NPC_NAME = 
 			ENDIF
 		ENDIF
 		;仕切り直しセリフ
 		SIF NPC_NAME == ""
-			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 기분을 고쳐 ,  다음의 사냥감을 물색하기 시작했습니다…
+			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 기분을 바꿔,  다음의 사냥감을 물색하기 시작했습니다…
 	ENDIF
 	;상대が決まった場合はループ脱出
 	SIF NPC_NAME != ""
@@ -559,58 +559,58 @@ CASE "輪姦"
 	FOR LCOUNT, 0, 100
 		;ループ2回目以降の処理
 		IF NUM_PLAY_TRAVEL > 0
-			;チンピラの場合뱃놀이では舟の上なので増えない, 浮浪者は増える
-			IF (NPC_NAME == "チンピラ" && ARGS != "뱃놀이") || NPC_NAME == "浮浪者"
+			;양아치の場合뱃놀이では舟の上なので増えない, 부랑자は増える
+			IF (NPC_NAME == "양아치" && ARGS != "뱃놀이") || NPC_NAME == "부랑자"
 				;何人増えるか(0～8人), ループ回数によって減少する. 
 				MEMO = RAND:10 - NUM_PLAY_TRAVEL
 				;増えた場合の処理
 				IF MEMO > 0
 					NUM_NPC += MEMO
-					PRINTFORMW 소란을 우연히 들었다{MEMO}사람의%NPC_CALLNAME%하지만 능욕에 새롭게 더해졌다! 
+					PRINTFORMW 소란을 우연히 들은 %조사처리(NPC_CALLNAME,"이")% {MEMO}명 능욕에 참가했다! 
 				ENDIF
 			ENDIF
 
 			;ループ回数が5이상の場合, 薬を使用するかもしれない
-			IF NUM_PLAY_TRAVEL >= 5 && NPC_NAME == "チンピラ" && TEQUIP:미약 == 0 && RAND:3 == 0
+			IF NUM_PLAY_TRAVEL >= 5 && NPC_NAME == "양아치" && TEQUIP:미약 == 0 && RAND:3 == 0
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %TEXTR("수상한 약", "희석시켜 사용하는 미약의 원액", "가축용의 흥분제")%가 주사되어 버렸다…!
 				TEQUIP:미약 = 200
 			ENDIF
 		ENDIF
 		PRINTFORML 
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% {NUM_NPC}사람의%NPC_CALLNAME%에 윤간되고 있다…
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME% {NUM_NPC}명에 윤간되고 있다…
 		PRINTFORML 
 		;薬使用後
 		IF TEQUIP:미약
 			;前段
 			IF RAND:8 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 음말을 아우성치면서, %NPC_CALLNAME%의 위에서허리를 털고 있다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 음어를 내뱉으면서, %NPC_CALLNAME%의 위에서 허리를 흔들고 있다…
 			ELSEIF RAND:7 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 뒤로부터 범한다%NPC_CALLNAME%에 『내사정』를 조르고 있다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 뒤로부터 범하는 %NPC_CALLNAME%에 『질내사정』를 조르고 있다…
 			ELSEIF RAND:6 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%\@TALENT:남자 ?  엉덩이 # 보지\@를 난폭하게 찔리면서 ,  다하고 붙일 수 있었던 페니스를 탐욕에 빨고 있다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%\@TALENT:남자 ?  엉덩이 # 보지\@를 난폭하게 찔리면서 ,  물고 있는 페니스를 탐욕에 빨고 있다…
 			ELSEIF RAND:5 == 0
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 범해지는 쾌락에 다리를 벌려 머리를 흔들면서 허덕이고 있다…
 			ELSEIF RAND:4 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 스스로%NPC_CALLNAME%(와)과 연결되고 있는 부분을 쬐어, 음미로운 미소를 띄우고 있다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 스스로 %조사처리(NPC_CALLNAME,"과")% 연결되고 있는 부분을 보이며, 음란한 미소를 띄우고 있다…
 			ELSEIF RAND:3 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 백탁이 넘쳐 나오는\@TALENT:남자 ?  어널 # 보지\@를 넓히면서 ,  음란하게 페니스를 조르고 있다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 백탁이 넘쳐 나오는\@TALENT:남자 ?  애널을 # 보지를\@ 넓히면서 ,  음란하게 페니스를 조르고 있다…
 			ELSEIF RAND:2 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 는 치켜든 엉덩이를 움켜쥠에 받으며 ,  짐승과 같이 범해지고 있는…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 치켜든 엉덩이를 잡혀,  짐승처럼 범해지고 있다…
 			ELSE
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 도구와 같이 범해지면서도 ,  기쁨의 목소리를 내고 있다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 도구와 같이 범해지면서도, 기쁨의 소리를 내고 있다…
 			ENDIF
 		ELSE
 			;前段
 			IF RAND:8 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 뒤로부터%NPC_CALLNAME%에 엉덩이를 잡아지고, 몹시 거칠게 범해지고 있다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 뒤로부터 %NPC_CALLNAME%에 엉덩이를 잡혀 몹시 거칠게 범해지고 있다…
 			ELSEIF RAND:7 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 위로 향해 되고, 정면에서 덮어씌운다%NPC_CALLNAME%에 난폭하게허리를 쳐박혀지고 있다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 위를 향해 정면에서 덮힌 %NPC_CALLNAME%에 난폭하게 허리를 박혀지고 있다…
 			ELSEIF RAND:6 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%,  욕소리를 퍼부을 수 있는이면서 범해지고 있는…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%, 욕을 들으면서 범해지고 있다…
 			ELSEIF RAND:5 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 『 질내사정 』을 조르는 말을 강요받으면서 ,  강직하게 관통되어서 있다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 『 질내사정 』라는 말을 강요받으면서 , 강직하게 관통되고 있다…
 			ELSEIF RAND:4 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%(와)과 연결되고 있는 모양을 주위에 노출되면서 범해지고 있다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(NPC_CALLNAME,"과")% 연결된 모습을 주위에 보여지면서 범해지고 있다…
 			ELSEIF RAND:3 == 0
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%는 머리를 땅에 짓눌리면서 허리를 부딪치고 있다…
 			ELSEIF RAND:2 == 0
@@ -623,42 +623,42 @@ CASE "輪姦"
 		;中段
 		PRINTFORM 게다가
 		IF RAND:4 == 0
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 머리를 잡아지고 이라마치오의 요령으로 입안을 난폭하게 범해지고 있는…!
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 머리를 잡아져 이라마치오하듯이 입안을 난폭하게 범해지고 있다…!
 		ELSEIF RAND:3 == 0
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 정액 투성이가 된 페니스를 고통에 허덕이는 입에 비틀어 박아져 있다…!
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 정액 투성이가 된 페니스를 고통에 허덕이는 입에 박히고 있다…!
 		ELSEIF RAND:2 == 0
-			PRINTFORMW 빈 손에는 다른 남자의 페니스를 악등 되어%조사처리(CALLNAME:TARGET,"는")% 자위 봉사를 강제당하고 있다…!
+			PRINTFORMW 빈 손에는 다른 남자의 페니스를 잡혀 %조사처리(CALLNAME:TARGET,"는")% 대딸을 강제당하고 있다…!
 		ELSE
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 머리카락을 잡혀, 이상한 악취를 발하는 남근을 입안에 엉망으로 붐비어지고 있다…!
 		ENDIF
 
 		PRINTFORML 
 
-		;後段(질内・肛内사정)
+		;後段(질안・肛内사정)
 		IF RAND:5 == 0
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%에 양다리를 안아지도록(듯이) 경련, 탁류와 같은정액의 분류가질안으로 발해졌다! 
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%에 양 다리를 껴안도록 이끌려 뿌연 정액이 질안에 싸졌다! 
 		ELSEIF RAND:4 == 0
-			PRINTFORMW %CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 질内\@에%NPC_CALLNAME%의 자식이 흘려 넣어졌다! 
+			PRINTFORMW %CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 질안\@에%NPC_CALLNAME%의 정자가 흘려 넣어졌다! 
 		ELSEIF RAND:3 == 0
-			PRINTFORMW %CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 질内\@에%NPC_CALLNAME%의 자식이 충만했다! 
+			PRINTFORMW %CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 질안\@에%NPC_CALLNAME%의 정자가 채워졌다! 
 		ELSEIF RAND:2 == 0
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 『임신해라!』(이)라고 말해 버려지면서, \@TALENT:남자 ?  항내 # 질내\@사정되었다!
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 『임신해라!』라고 말해지면서, \@TALENT:남자 ?  항내 # 질내\@사정되었다!
 		ENDIF
 
 		IF TEQUIP:미약
 			;後段（薬사용중のみ追加）
 			IF RAND:6 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 질내를 불 태우는 정액의 열에 열락의 목소리를 높였다. …
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 질내를 데우는 정액의 열기에 열락의 목소리를 높였다. …
 			ELSEIF RAND:5 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%\@TALENT:남자 ?  직장 # 자궁\@을 자식으로 채워지는 황홀감에 잠겨 있다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%\@TALENT:남자 ?  직장 # 자궁\@을 정자로 채워지는 황홀감에 잠겨 있다…
 			ELSEIF RAND:4 == 0
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%\@TALENT:남자 ?  직장 # 질\@과 입안을 농후한 정액에 채워지고면서 ,  도취하고 있다…
 			ELSEIF RAND:3 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%노사정그와 동시에다리를 교차시키고, 제대로 종을 짜내려고 하고 있다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%의 사정과 동시에 다리를 교차시켜, 제대로 정액을 짜내려고 하고 있다…
 			ELSEIF RAND:2 == 0
 				PRINTFORMW 다리를 M자에 열려 노출된%CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 보지\@로부터는 끊임없이 정액이 흐르기 시작하고 있다…
 			ELSE
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% \@TALENT:남자 ? 애널 # 질内\@로부터 넘쳐 나온다정액를손가락그리고 떠올리면, %NPC_CALLNAME%들에게 과시하도록(듯이) 혀로 빨아냈다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% \@TALENT:남자 ? 애널 # 질안\@로부터 넘쳐 나오는 정액을 손가락으로 떠올리고 %NPC_CALLNAME%들에게 과시하듯이 혀로 빨았다…
 			ENDIF
 		ENDIF
 
@@ -666,11 +666,11 @@ CASE "輪姦"
 		;정액세례
 		IF RAND:2 == 0
 			IF RAND:3 == 0
-				PRINTFORMW 더해 ,  입안으로부터 뽑아 내진 페니스로부터도 정령이 발해져%CALLNAME:TARGET%의 얼굴을 희게 염색해 냈다
+				PRINTFORMW 추가로, 입안으로부터 뽑아 내진 페니스에서도 정자가 싸져 %CALLNAME:TARGET%의 얼굴을 하얗게 물들여 갔다
 			ELSEIF RAND:2 == 0
-				PRINTFORMW 동시에 ,  얼굴에 꽉 눌리고 있던 페니스로부터도 정액이 튀어%CALLNAME:TARGET%를 백탁 젖어로 해
+				PRINTFORMW 동시에, 얼굴에 눌리고 있던 페니스에서도 정액이 튀어 %타겟을()% 부카케로 해
 			ELSE
-				PRINTFORMW 거기에 맞추는것 같이 ,  양손안의 페니스로부터 백탁을 퍼부을 수 있었다
+				PRINTFORMW 거기에 맞추듯이,  양 손 안의 페니스로부터 정액이 퍼부어졌다
 			ENDIF
 		ENDIF
 
@@ -679,9 +679,9 @@ CASE "輪姦"
 		;事後的な描写
 		IF RAND:2 == 0
 			IF RAND:2 == 0
-				PRINTFORMW 주저않는 %CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 보지\@로부터는 대량의 정액이 넘쳐 나오고 있다
+				PRINTFORMW 주저앉은 %CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 보지\@로부터는 대량의 정액이 넘쳐 나오고 있다
 			ELSE
-				PRINTFORMW %NPC_CALLNAME%하지만 몇번인가신체를 진동시키고 나서, 페니스를 앞지르면%CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 보지\@로부터 범해진 증거가 흐르기 시작해 왔다
+				PRINTFORMW %조사처리(NPC_CALLNAME,"은")% 몇 번 신체를 진동시키고 나서, 페니스를 뽑자 %CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 보지\@로부터 범해진 증거가 흐르기 시작해 왔다
 			ENDIF
 		ENDIF
 
@@ -692,11 +692,11 @@ CASE "輪姦"
 			TOTAL_CREAMPIE += CREAMPIE
 			;輪姦中の総질내사정回数が2の倍数の時, 落書き表示
 			IF TOTAL_CREAMPIE % 2 == 0
-				PRINTFORML %NPC_CALLNAME%들은욕망를 토해냈다%CALLNAME:TARGET%의 신체에, 추잡한 말을 써 늘어 놓아 간다…
+				PRINTFORML %NPC_CALLNAME%들은 욕망을 토해낸 %CALLNAME:TARGET%의 신체에, 추잡한 말을 써 늘어 놓아 간다…
 				;落書きは3つ表示（重複しないようある程度カテゴリ分けをする）
 				PRINTFORM %조사처리(CALLNAME:TARGET,"는")%
 				CALL GRAFFITI_TRAVEL_NTR
-				PRINTFORMW 와 낙서 되어 버렸다!
+				PRINTFORMW 라고 낙서 되어 버렸다!
 			ENDIF
 
 			;NUM_MARK は正の字の個数. TOTAL_CREAMPIE/5がNUM_MARKを越えるごとに正の字の処理を行う
@@ -704,9 +704,9 @@ CASE "輪姦"
 				SIF TOTAL_CREAMPIE % 2 == 0
 					PRINTFORM 게다가
 				IF NUM_MARK == 0
-					PRINTFORM 몇번이나질내사정를 반복해졌다%CALLNAME:TARGET%에 『교배 회수』를 나타내는【정】의 글자가 낙서 되어【
+					PRINTFORM 몇번이나 질내사정을 당한 %CALLNAME:TARGET%에 『교배 횟수』를 나타내는 【正】이 낙서 되어【
 				ELSE
-					PRINTFORM %CALLNAME:TARGET%에 쓰여진 『교배 회수』를 나타내는【정】의 글자가 써발되어【
+					PRINTFORM %CALLNAME:TARGET%에 쓰여진 『교배 횟수』를 나타내는 【正】이 써져【
 				ENDIF
 				NUM_MARK = TOTAL_CREAMPIE / 5
 				CALL TEXT, "正の字", TOTAL_CREAMPIE
@@ -735,11 +735,11 @@ CASE "輪姦"
 				;PRINTL 와 넓적다리에 낙서 되고 있다…
 			ENDIF
 			IF (TALENT:음란 || ABL:마조끼 >= 3) && RAND:3 == 0
-				PRINTFORMW 기입해진 말에%조사처리(CALLNAME:TARGET,"는")% 도착적인 흥분을 강하게 느껴 한층 더 능욕을 조르고 있다…
+				PRINTFORMW 써진 말에 %조사처리(CALLNAME:TARGET,"는")% 도착적인 흥분을 강하게 느껴 한층 더 능욕을 조르고 있다…
 			ELSEIF RAND:2 == 0
-				PRINTFORMW 기입해진 말에%조사처리(CALLNAME:TARGET,"는")% 흥분을 느끼고 있다…
+				PRINTFORMW 써진 말에 %조사처리(CALLNAME:TARGET,"는")% 흥분을 느끼고 있다…
 			ELSE
-				PRINTFORMW 비참한 모습이 되었다%CALLNAME:TARGET%에%NPC_CALLNAME%들은 껄껄조소하고 있다…
+				PRINTFORMW 비참한 모습이 된 %CALLNAME:TARGET%에 %NPC_CALLNAME%들은 껄껄 조소하고 있다…
 			ENDIF
 		ENDIF
 
@@ -757,7 +757,7 @@ CASE "輪姦"
 			NUM_NPC -= MEMO
 		ENDSELECT
 		SIF MEMO != 0
-			PRINTFORMW {MEMO}사람의%NPC_CALLNAME%하지만만족했다…
+			PRINTFORMW %NPC_CALLNAME% {MEMO}명이 만족했다…
 
 		;このターンの질내사정数のカウントをリセット
 		CREAMPIE = 0
@@ -778,7 +778,7 @@ CASE "난교"
 
 	SELECTCASE NPC_NAME
 	CASE "쇼타"
-		PRINTFORMW 흥분했다%NPC_CALLNAME%들과의 육욕의 연회가 시작되었습니다…! 
+		PRINTFORMW 흥분한 %NPC_CALLNAME%들과의 육욕의 연회가 시작되었습니다…! 
 
 		;陵辱参加人数が0になるまで続行
 		FOR LCOUNT, 0, 100
@@ -792,67 +792,67 @@ CASE "난교"
 					;増えた場合の処理
 					IF MEMO > 0
 						NUM_NPC += MEMO
-						PRINTFORMW 소란을 우연히 들었다{MEMO}사람의%NPC_CALLNAME%하지만 연회에 참가했다! 
+						PRINTFORMW 소란을 우연히 들은 %NPC_CALLNAME% {MEMO}명이 연회에 참가했다! 
 					ENDIF
 				ENDIF
 			ENDIF
 			PRINTFORML 
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% {NUM_NPC}사람의%NPC_CALLNAME%(와)과 즐기고 있다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% {NUM_NPC}명의 %조사처리(NPC_CALLNAME,"과")% 즐기고 있다…
 			PRINTFORML 
 			;前段
 			IF RAND:8 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 네발로 엎드림으로%NPC_CALLNAME%를 맞아들이고, 정통도 끝나지 않았다아이페니스를 탐내고 있다
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 네발로 엎드려 %조사처리(NPC_CALLNAME,"를")% 맞아들여, 동정페니스를 탐내고 있다
 			ELSEIF RAND:7 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 위로 돌리고로%NPC_CALLNAME%를 맞아들이고, 본능이 향하는 대로허리를 흔들리게 하고 있다
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 누워 %조사처리(NPC_CALLNAME,"를")% 맞아들이고, 본능이 향하는 대로 허리를 흔들게 하고 있다
 			ELSEIF RAND:6 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%, 숨도 끊어질듯 끊어질듯한%NPC_CALLNAME%들의 허덕이는 소리를 즐기면서허리를 모습, 정령을 짜내고 있다
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%, 숨도 끊어질듯한%NPC_CALLNAME%들의 허덕이는 소리를 즐기면서 허리를 튕기며, 정자를 짜내고 있다
 			ELSEIF RAND:5 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 『아이 만들기』의 방법을%NPC_CALLNAME%들에게 속삭이면서, 질내사정를 재촉하고 있다
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 『아이 만들기』의 방법을 %NPC_CALLNAME%들에게 속삭이면서, 질내사정을 재촉하고 있다
 			ELSEIF RAND:4 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 위로 향해 했다%NPC_CALLNAME%의 위에 걸쳐, 가차 없이허리를 사용하고 있다
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 위로 누운 %NPC_CALLNAME%의 위에 앉아, 가차 없이 허리를 사용하고 있다
 			ELSEIF RAND:3 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%의 허리에발를 관련되고, 질내사정그리고 정통을 맞이하게 하려고 하고 있다
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%의 허리에 발을 감고, 질내사정으로 동정을 졸업하게 하려고 하고 있다
 			ELSEIF RAND:2 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 처음으로 맛보는 쾌락에 도중 중단이 되어 버렸다%NPC_CALLNAME%의 위에서허리를 털고 있다
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 처음으로 맛보는 쾌락에 취해 %NPC_CALLNAME%의 위에서 허리를 흔들고 있다
 			ELSE
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 일심 불란에허리를 거절한다%NPC_CALLNAME%의 격렬하다허리놀림에 교성을 올리고 있다
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 일심 불란한 %NPC_CALLNAME%의 격렬한 허리놀림에 교성을 올리고 있다
 			ENDIF
 
 			PRINTFORM 게다가
 			;中段
 			IF RAND:4 == 0
-				PRINTFORMW 순번 대기를 하고 있다%NPC_CALLNAME%들의페니스를 양손그리고 잡아당기고 있다…
+				PRINTFORMW 차례를 기다리고 있는 %NPC_CALLNAME%들의 페니스를 양손으로 잡아당기고 있다…
 			ELSEIF RAND:3 == 0
-				PRINTFORMW 풋내나는 정액 투성이가 된 페니스를 입으로 깊숙이 물고 ,  청소 펠라를 하고 있다…
+				PRINTFORMW 풋내나는 정액 투성이가 된 페니스를 입으로 깊숙이 물고 청소 펠라를 하고 있다…
 			ELSEIF RAND:2 == 0
-				PRINTFORMW 비었다손에는 미성숙인%NPC_CALLNAME%노페니스를 쥠, 수음봉사그리고 즐겁게 하고 있다…
+				PRINTFORMW 빈 손에는 미성숙한 %NPC_CALLNAME%의 페니스를 잡아 대딸로 즐겁게 하고 있다…
 			ELSE
-				PRINTFORMW %NPC_CALLNAME%들과 입술을 겹침이네, 키스의 맛을 철저히 가르치고 있다…
+				PRINTFORMW %NPC_CALLNAME%들과 입술을 겹쳐, 키스의 맛을 철저히 가르치고 있다…
 			ENDIF
 			;후단(질내·항내 사정)
 			IF RAND:3 == 0
-				PRINTFORMW %CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 질内\@에%NPC_CALLNAME%의 자식이 흘려 넣어졌다
+				PRINTFORMW %CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 질안\@에%NPC_CALLNAME%의 정자가 흘려 넣어졌다
 			ELSEIF RAND:2 == 0
-				PRINTFORMW %CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 질内\@에%NPC_CALLNAME%의 자식이 충만했다
+				PRINTFORMW %CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 질안\@에%NPC_CALLNAME%의 정자가 채워졌다
 			ELSE
-				PRINTFORMW %CALLNAME:TARGET%의 \@TALENT:남자 ? 肛内 # 질内\@에%NPC_CALLNAME%의 자식이사정되었다
+				PRINTFORMW %CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 질안\@에%NPC_CALLNAME%의 정자가 사정되었다
 			ENDIF
 			;後段2（정액세례・事後的な描写）
 			;정액세례
 			IF RAND:2 == 0
 				IF RAND:3 == 0
-					PRINTFORMW 더해 ,  입안으로부터 뽑아 내진 페니스로부터도 정령이 발해져%CALLNAME:TARGET%의 얼굴을 희게 염색해 냈다
+					PRINTFORMW 추가로, 입안에서 뽑아내진 페니스에서도 정액이 나와 %CALLNAME:TARGET%의 얼굴을 하얗게 물들였다
 				ELSEIF RAND:2 == 0
-					PRINTFORMW 동시에 ,  얼굴에 꽉 눌리고 있던 페니스로부터도 정액이 튀어%CALLNAME:TARGET%를 백탁 젖어로 해
+					PRINTFORMW 동시에, 얼굴에 눌리고 있던 페니스에서도 정액이 튀어 %타겟을()% 부카케 해
 				ELSE
-					PRINTFORMW 거기에 맞추는것 같이 ,  양손안의 페니스로부터 백탁을 퍼부을 수 있었다
+					PRINTFORMW 거기에 맞추는 것처럼 양 손안의 페니스로부터 정액이 튀어나왔다
 				ENDIF
 			;事後的な描写
 			ELSE
 				IF RAND:2 == 0
-					PRINTFORMW 작은 페니스가 뽑아 내진%CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 보지\@로부터 ,  대량의 정액이 넘쳐 나오고 있다
+					PRINTFORMW 작은 페니스가 뽑아 내진 %CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 보지\@로부터 ,  대량의 정액이 넘쳐 나오고 있다
 				ELSE
-					PRINTFORMW %NPC_CALLNAME%하지만 몇번인가신체를 진동시키고 나서, 페니스를 앞지르면%CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 보지\@로부터욕망를 토해낸 증거가 흐르기 시작해 왔다
+					PRINTFORMW %조사처리(NPC_CALLNAME,"은")% 몇번 신체를 진동시키고 나서, 페니스를 뽑자 %CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 보지\@로부터 욕망을 토해낸 증거가 흐르기 시작해 왔다
 				ENDIF
 			ENDIF
 
@@ -874,7 +874,7 @@ CASE "난교"
 				NUM_NPC -= MEMO
 			ENDSELECT
 			SIF MEMO != 0
-				PRINTFORMW {MEMO}사람의%NPC_CALLNAME%하지만만족했다…
+				PRINTFORMW %NPC_CALLNAME% {MEMO}명이 만족했다…
 
 			;このターンの질내사정数のカウントをリセット
 			CREAMPIE = 0
@@ -883,65 +883,65 @@ CASE "난교"
 			SIF NUM_NPC <= 0
 				BREAK
 		NEXT
-	;チンピラ・浮浪者
+	;양아치・부랑자
 	CASEELSE
-		PRINTFORMW 선정적인%CALLNAME:TARGET%에%NPC_CALLNAME%들이 쇄도해 갈 것입니다…! 
+		PRINTFORMW 선정적인 %CALLNAME:TARGET%에 %NPC_CALLNAME%들이 몰려올 것입니다…! 
 
 		;陵辱参加人数が0になるまで続行
 		FOR LCOUNT, 0, 100
 			;ループ2回目以降の処理
 			IF NUM_PLAY_TRAVEL > 0
 				;仲間を呼ぶ
-				;チンピラの場合뱃놀이では舟の上なので増えない, 浮浪者は増える
-				IF (NPC_NAME == "チンピラ" && ARGS != "뱃놀이") || NPC_NAME == "浮浪者"
+				;양아치の場合뱃놀이では舟の上なので増えない, 부랑자は増える
+				IF (NPC_NAME == "양아치" && ARGS != "뱃놀이") || NPC_NAME == "부랑자"
 					;何人増えるか(0～8人), ループ回数で減少
 					MEMO = RAND:4 - NUM_PLAY_TRAVEL
 					;増えた場合の処理
 					IF MEMO > 0
 						NUM_NPC += MEMO
-						PRINTFORMW 소란을 우연히 들었다{MEMO}사람의%NPC_CALLNAME%하지만 육욕의 연회에 새롭게 더해졌다! 
+						PRINTFORMW 소란을 우연히 들은 %NPC_CALLNAME% {MEMO}명이 육욕의 연회에 새롭게 더해졌다! 
 					ENDIF
 				ENDIF
 			ENDIF
 			PRINTFORML 
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% {NUM_NPC}사람의%NPC_CALLNAME%(와)과 즐기고 있다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% {NUM_NPC}명의 %조사처리(NPC_CALLNAME,"과")% 즐기고 있다…
 			PRINTFORML 
 			;前段
 			IF RAND:8 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 뒤로부터%NPC_CALLNAME%에 엉덩이를 잡아지고, 몹시 거칠게 범해지고 있다
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 뒤로부터 %NPC_CALLNAME%에 엉덩이를 잡혀 몹시 거칠게 범해지고 있다
 			ELSEIF RAND:7 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 위로 향해 되고, 정면에서 덮어씌운다%NPC_CALLNAME%에 난폭하게허리를 쳐박혀지고 있다
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 위를 향해 정면에서 덮힌 %NPC_CALLNAME%에 난폭하게 허리를 박혀지고 있다
 			ELSEIF RAND:6 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%,  욕소리를 퍼부을 수 있는이면서 범해지고 있는
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")%, 욕을 들으면서 범해지고 있다
 			ELSEIF RAND:5 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 『 질내사정 』을 조르는 말을 강요받으면서 ,  강직하게 관통되어서 있다
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 『 질내사정 』라는 말을 강요받으면서 , 강직하게 관통되고 있다
 			ELSEIF RAND:4 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%(와)과 연결되고 있는 모양을 주위에 노출되면서 범해지고 있다
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(NPC_CALLNAME,"과")% 연결된 모습을 주위에 보여지면서 범해지고 있다
 			ELSEIF RAND:3 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 머리를 지면에 누르고 붙일 수 있는이면서 ,  허리를 부딪힐 수 있고 있다
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 머리를 지면에 눌러 붙이면서, 허리를 부딪히고 있다
 			ELSEIF RAND:2 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 양팔을 누르고 붙일 수 있는이면서 능욕되고 있다
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 양팔을 눌러 붙이면서 능욕되고 있다
 			ELSE
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 몹시 거칠고 허리를 부딪힐 수 있고 있다
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 몹시 거칠게 허리를 부딪히고 있다
 			ENDIF
 			PRINTFORM 게다가
 			;中段
 			IF RAND:4 == 0
-				PRINTFORMW 머리를 잡아지고 이라마치오의 요령으로 입안을 난폭하게 범해지고 있는…
+				PRINTFORMW 머리를 잡아져 이라마치오하듯이 입안을 난폭하게 범해지고 있다…
 			ELSEIF RAND:3 == 0
-				PRINTFORMW 정액 투성이가 된 페니스를 고통에 허덕이는 입에 비틀어 박아져 있다…
+				PRINTFORMW 정액 투성이가 된 페니스를 고통에 허덕이는 입에 박히고 있다…
 			ELSEIF RAND:2 == 0
-				PRINTFORMW 빈 손에는 다른 남자의 페니스를 악등 되어 자위 봉사를 강제당하고 있다…
+				PRINTFORMW 빈 손에는 다른 남자의 페니스를 잡혀 대딸을 강제당하고 있다…
 			ELSE
-				PRINTFORMW 머리카락을 잡아 거론되어 이상한 냄새를 발하는 남근을 입안에 말이야 글자 붐비어지고 있다…
+				PRINTFORMW 머리카락을 잡아 올려져 이상한 냄새를 발하는 남근을 입안에 넣어지고 있다…
 			ENDIF
 			;후단(질내·항내 사정)
 			IF RAND:5 == 0
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%에 양다리를 안아지도록(듯이) 경련, 탁류와 같은정액의 분류를질안으로 발해졌다
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%에 양 다리를 껴안도록 이끌려 뿌연 정액을 \@TALENT:남자 ? 애널 # 질\@안으로 싸졌다
 			ELSEIF RAND:4 == 0
-				PRINTFORMW %CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 질内\@에%NPC_CALLNAME%의 자식이 흘려 넣어졌다
+				PRINTFORMW %CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 질안\@에%NPC_CALLNAME%의 정자가 흘려 넣어졌다
 			ELSEIF RAND:3 == 0
-				PRINTFORMW %CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 질内\@에%NPC_CALLNAME%의 자식이 충만했다
+				PRINTFORMW %CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 질안\@에%NPC_CALLNAME%의 정자가 채워졌다
 			ELSEIF RAND:2 == 0
 				PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 「임신해라」라고 말해 버려지면서, \@TALENT:남자 ?  항내 # 질내\@사정되었다
 			ENDIF
@@ -949,18 +949,18 @@ CASE "난교"
 			;정액세례
 			IF RAND:2 == 0
 				IF RAND:3 == 0
-					PRINTFORMW 더해 ,  입안으로부터 뽑아 내진 페니스로부터도 정령이 발해져%CALLNAME:TARGET%의 얼굴을 희게 염색해 냈다
+					PRINTFORMW 추가로, 입안에서 뽑아내진 페니스에서도 정액이 나와 %CALLNAME:TARGET%의 얼굴을 하얗게 물들였다
 				ELSEIF RAND:2 == 0
-					PRINTFORMW 동시에 ,  얼굴에 꽉 눌리고 있던 페니스로부터도 정액이 튀어%CALLNAME:TARGET%를 백탁 젖어로 해
+					PRINTFORMW 동시에, 얼굴에 눌리고 있던 페니스에서도 정액이 튀어 %타겟을()% 부카케 해
 				ELSE
-					PRINTFORMW 거기에 맞추는것 같이 ,  양손안의 페니스로부터 백탁을 퍼부을 수 있었다
+					PRINTFORMW 거기에 맞추는 것처럼 양 손안의 페니스로부터 정액이 튀어나왔다
 				ENDIF
 			;事後的な描写
 			ELSE
 				IF RAND:2 == 0
-					PRINTFORMW 들어앉는%CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 보지\@로부터는 대량의 정액이 넘쳐 나오고 있다
+					PRINTFORMW 버티고 있는 %CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 보지\@로부터는 대량의 정액이 넘쳐 나오고 있다
 				ELSE
-					PRINTFORMW %NPC_CALLNAME%하지만 몇번인가신체를 진동시키고 나서, 페니스를 앞지르면%CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 보지\@로부터 범해진 증거가 흐르기 시작해 왔다
+					PRINTFORMW %조사처리(NPC_CALLNAME,"은")% 몇번 신체를 진동시키고 나서, 페니스를 뽑자 %CALLNAME:TARGET%의 \@TALENT:남자 ? 애널 # 보지\@로부터 범해진 증거가 흐르기 시작했다
 				ENDIF
 			ENDIF
 
@@ -971,11 +971,11 @@ CASE "난교"
 				TOTAL_CREAMPIE += CREAMPIE
 				;輪姦중의 총질내 사정 회수가 2의 배수때 ,  낙서 표시
 				IF TOTAL_CREAMPIE % 2 == 0
-					PRINTFORML %NPC_CALLNAME%들은욕망를 토해냈다%CALLNAME:TARGET%의 신체에, 추잡한 말을 써 늘어 놓아 간다…
+					PRINTFORML %NPC_CALLNAME%들은 욕망을 토해낸 %CALLNAME:TARGET%의 신체에, 추잡한 말을 써 놓는다…
 					;낙서는 3개 표시(중복 하지 않게 어느 정도 카테고리 나누기를 한다)
 					PRINTFORM %조사처리(CALLNAME:TARGET,"는")%
 					CALL GRAFFITI_TRAVEL_NTR
-					PRINTFORMW 와 낙서 되어 버렸다!
+					PRINTFORMW 로 낙서 되어 버렸다!
 				ENDIF
 
 				;NUM_MARK は正の字の個数. TOTAL_CREAMPIE/5がNUM_MARKを越えるごとに正の字の処理を行う
@@ -983,9 +983,9 @@ CASE "난교"
 					SIF TOTAL_CREAMPIE % 2 == 0
 						PRINTFORM 게다가
 					IF NUM_MARK == 0
-						PRINTFORM 몇번이나질내사정를 반복해졌다%CALLNAME:TARGET%에 『교배 회수』를 나타내는【정】의 글자가 낙서 되어【
+						PRINTFORM 몇번이나 질내사정 당한 %CALLNAME:TARGET%에 『교배 횟수』를 나타내는 【正】이 낙서되어【
 					ELSE
-						PRINTFORM %CALLNAME:TARGET%에 쓰여진 『교배 회수』를 나타내는【정】의 글자가 써발되어【
+						PRINTFORM %CALLNAME:TARGET%에 쓰여진 『교배 횟수』를 나타내는 【正】이 써져 【
 					ENDIF
 					NUM_MARK = TOTAL_CREAMPIE / 5
 					CALL TEXT, "正の字", TOTAL_CREAMPIE
@@ -1014,11 +1014,11 @@ CASE "난교"
 					;PRINTL 와 넓적다리에 낙서 되고 있다…
 				ENDIF
 				IF (TALENT:음란 || ABL:마조끼 >= 3) && RAND:3 == 0
-					PRINTFORMW 기입해진 말에%조사처리(CALLNAME:TARGET,"는")% 도착적인 흥분을 강하게 느껴 한층 더 능욕을 조르고 있다…
+					PRINTFORMW 써진 글자에 %조사처리(CALLNAME:TARGET,"는")% 도착적인 흥분을 강하게 느껴 한층 더 능욕을 조르고 있다…
 				ELSEIF RAND:2 == 0
-					PRINTFORMW 기입해진 말에%조사처리(CALLNAME:TARGET,"는")% 흥분을 느끼고 있다…
+					PRINTFORMW 써진 글자에 %조사처리(CALLNAME:TARGET,"는")% 흥분을 느끼고 있다…
 				ELSE
-					PRINTFORMW 비참한 모습이 되었다%CALLNAME:TARGET%에%NPC_CALLNAME%들은 껄껄조소하고 있다…
+					PRINTFORMW 비참한 모습이 된 %CALLNAME:TARGET%에 %NPC_CALLNAME%들은 껄껄 조소하고 있다…
 				ENDIF
 			ENDIF
 		
@@ -1036,7 +1036,7 @@ CASE "난교"
 				NUM_NPC -= MEMO
 			ENDSELECT
 			SIF MEMO != 0
-				PRINTFORMW {MEMO}사람의%NPC_CALLNAME%하지만만족했다…
+				PRINTFORMW %NPC_CALLNAME% {MEMO}명이 만족했다…
 
 			;このターンの질내사정数のカウントをリセット
 			CREAMPIE = 0
@@ -1054,11 +1054,11 @@ CASE "난교"
 
 ;CASE "레이프"
 ;	SELECTCASE NPC_NAME
-;	;痩せた男（애널専門）
-;	CASE "痩せた男"
+;	;마른 남자（애널専門）
+;	CASE "마른 남자"
 ;
-;	;太った男(ねちっこい/NTRっぽい)
-;	CASE "太った男"
+;	;살찐 남자(ねちっこい/NTRっぽい)
+;	CASE "살찐 남자"
 ;	;筋肉質な男(野동물ックス・大量사정)
 ;	CASE "筋肉質な男"
 ;
@@ -1069,43 +1069,43 @@ CASE "난교"
 ;
 CASE "浮気"
 	SELECTCASE NPC_NAME
-	;痩せた男（애널専門）
-	CASE "痩せた男"
+	;마른 남자（애널専門）
+	CASE "마른 남자"
 		;A감각3이상
 		IF ABL:Ａ감각 >= 3 && RAND:2 == 0
-			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%의 편집적인애널에의 고문에 교성을 올리고 있다…
+			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%의 편집적인 애널의 고문에 교성을 올리고 있다…
 		ELSE
-			PRINTFORML %NPC_CALLNAME%하지만%CALLNAME:TARGET%의 애널를 집요하게 몰아세우고 있다…
+			PRINTFORML %조사처리(NPC_CALLNAME,"는")% %CALLNAME:TARGET%의 애널을 집요하게 몰아세우고 있다…
 		ENDIF
 		IF RAND:2 == 0
-			PRINTFORM 손가락이나 혀로
+			PRINTFORM 손가락과 혀로
 		ELSE
-			PRINTFORM 로션하지만 충분히 도 되었다도구그래서
+			PRINTFORM 로션을 충분히 바른 도구로
 		ENDIF
-		PRINTFORM 엉덩이구멍을 희롱해졌다%조사처리(CALLNAME:TARGET,"는")%, 
+		PRINTFORM 엉덩이구멍을 희롱해진 %조사처리(CALLNAME:TARGET,"는")%, 
 		IF TALENT:거유 && RAND:3 == 0
-			PRINTFORMW 하복부로부터 덮쳐 오는 쾌감에 풍부한 유방을 프룬과 흔들면서 ,  신체를 진동시키고 있다…
+			PRINTFORMW 하복부로부터 덮쳐 오는 쾌감에 풍부한 유방을 출렁 흔들면서,  신체를 진동시키고 있다…
 		ELSEIF TALENT:큰엉덩이 && RAND:3 == 0
-			PRINTFORMW 부끄럼없음에 얼굴을 붉히면서도 ,  한층 더 항학을 조르듯이 큰 엉덩이를 흔들고 있는…
+			PRINTFORMW 부끄럼에 얼굴을 붉히면서도 , 한층 더 항학을 조르듯이 큰 엉덩이를 흔들고 있다…
 		ELSEIF TALENT:작은엉덩이 && RAND:3 == 0
-			PRINTFORMW 작은 엉덩이를 격렬하게 진동시키면서 ,  단정치 못한 목소리를 내고야가 라고 있다…
+			PRINTFORMW 작은 엉덩이를 격렬하게 진동시키면서 ,  단정치 못한 목소리를 내고 있다…
 		ELSEIF RAND:3 == 0
 			PRINTFORMW %NPC_CALLNAME%의 고문에 야무지지 못하게 군침을 늘어뜨려 허덕이고 있다……
 		ELSEIF RAND:2 == 0
-			PRINTFORMW 어널을 끈질기게 꾸짖을 수 있어 벌벌하고 신체를 뛰게 하고 있다…
+			PRINTFORMW 애널을 끈질기게 꾸짖을 수 있어 덜덜 신체를 뛰게 하고 있다…
 		ELSE
-			PRINTFORMW 어널로부터 보내지는 격렬한 쾌감에 부끄럼없음를 잊어 계속 허덕이고 있다…
+			PRINTFORMW 애널로부터 보내지는 격렬한 쾌감에 부끄럼을 잊어 계속 허덕이고 있다…
 		ENDIF
 		;A정상위・A후배위
 		IF RAND:2 == 0
-			PRINTFORML %NPC_CALLNAME%하%조사처리(CALLNAME:TARGET,"가")% 완전히 잘 나간 것 와 확인하면, 흥분하는 육봉을 과시하고, 비웃으면서%조사처리(CALLNAME:TARGET,"를")% 넘어뜨리기…
+			PRINTFORML %조사처리(NPC_CALLNAME,"는")% %조사처리(CALLNAME:TARGET,"가")% 일어난 것을 확인하자 흥분한 육봉을 과시하고 웃으면서 %조사처리(CALLNAME:TARGET,"를")% 넘어뜨렸다…
 			;A정상위
 			IF RAND:2 == 0
 				IF TALENT:애널광 && RAND:2 == 0
-					PRINTFORML 완전히 발정한%조사처리(CALLNAME:TARGET,"는")% 다리확확 넓히면 약간 허리를 띄워 엉덩이로 페니스를 받아들이는 몸의 자세가 되었다
-					PRINTFORML %NPC_CALLNAME%하지만 덥치도록(듯이)해허리를 가라앉히면, 즈부부부…(와)과 소리를 내고, 음경이 풀렸다애널에 들어간다
+					PRINTFORML 완전히 발정한 %조사처리(CALLNAME:TARGET,"는")% 다리를 벌리고 약간 허리를 띄워 엉덩이로 페니스를 받아들이는 자세가 되었다
+					PRINTFORML %조사처리(NPC_CALLNAME,"이")% 뒤로부터 덮치듯이 허리를 내리자 푸욱 소리를 내면서 음경이 풀린 애널에 들어간다…
 				ELSE
-					PRINTFORM %NPC_CALLNAME%하%조사처리(CALLNAME:TARGET,"를")% 
+					PRINTFORM %조사처리(NPC_CALLNAME,"는")%%조사처리(CALLNAME:TARGET,"를")% 
 					IF RAND:2 == 0
 						PRINTFORM 위로 향해 난폭하게 밀어 넘어뜨리면,
 					ELSE
@@ -1113,30 +1113,30 @@ CASE "浮気"
 					ENDIF
 					;A감각3이상
 					IF ABL:Ａ감각 >= 5 && RAND:3 == 0
-						PRINTFORML 이미 부드럽게 다 녹고 있다애널를 관철했다
+						PRINTFORML 이미 부드럽게 녹고 있는 애널을 뚫었다
 					ELSEIF ABL:Ａ감각 >= 3
-						PRINTFORML 조신한 듯이 꽃봉오리를 열었다애널를 관철했다
+						PRINTFORML 살짝 입을 연 애널을 뚫었다
 					ELSE
-						PRINTFORML 아직도 이물을 거절하려고 한다애널를 억지로 관철했다! 
+						PRINTFORML 아직도 이물을 거절하려고 하는 애널을 억지로 뚫었다! 
 					ENDIF
 				ENDIF
 
 				IF RAND:3 == 0
-					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%노허리놀림에 교성을 올려, 발를 관련되어허리를 강압하고 있다…
+					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%의 허리놀림에 교성을 올려, 스스로 탐내듯이 허리를 움직이고 있다…
 				ELSEIF RAND:2 == 0
-					PRINTFORML 열을 띠었다%NPC_CALLNAME%노페니스가장벽을 도려내 범한다감각에, %조사처리(CALLNAME:TARGET,"는")% 허덕이고 있다…
+					PRINTFORML 열을 띈 %NPC_CALLNAME%의 페니스가 장벽을 도려내 범하는 감각에, %조사처리(CALLNAME:TARGET,"는")% 허덕이고 있다…
 				ELSE
-					PRINTFORML %NPC_CALLNAME%하%CALLNAME:TARGET%의 국혈의 감촉을 맛보면서, 리드미컬하게허리를 움직이고 있다…
+					PRINTFORML %조사처리(NPC_CALLNAME,"는")%%CALLNAME:TARGET%의 애널의 감촉을 맛보면서, 리드미컬하게 허리를 움직이고 있다…
 				ENDIF
 
 				;처녀
 				IF TALENT:처녀
 					IF RAND:3 == 0
-						PRINTFORMW %NPC_CALLNAME%의 남근이애널를 찌를 때마다%CALLNAME:TARGET%의 처녀의 화순[花唇]은 녹진녹진 애액을 흘러넘치게 했다
+						PRINTFORMW %NPC_CALLNAME%의 남근이 애널을 찌를 때마다 %CALLNAME:TARGET%의 처녀의 꽃잎은 녹진녹진 애액을 흘러넘치게 했다. 
 					ELSEIF RAND:2 == 0
-						PRINTFORMW %NPC_CALLNAME%의 노장[怒張]이 쑤컹쑤컹더러운구멍에 삽입되면, 그 움직임에 맞추고%CALLNAME:TARGET%의 처녀구멍으로부터 꿀이 흘러나왔다
+						PRINTFORMW %%NPC_CALLNAME%의 막대기가 쑤컹쑤컹 더러운구멍에 삽입되자 그 움직임에 맞춰 %CALLNAME:TARGET%의 처녀구멍으로부터 꿀이 흘러나왔다. 
 					ELSE
-						PRINTFORMW 뒤의 구멍에%NPC_CALLNAME%의 육봉이 출입할 때마다%조사처리(CALLNAME:TARGET,"는")% 처녀의 꽃봉오리로부터 뜨거운 액을 방울져 떨어지게 했다
+						PRINTFORMW 뒤의 구멍에 %NPC_CALLNAME%의 육봉이 출입할 때마다 %조사처리(CALLNAME:TARGET,"는")% 처녀의 꽃봉오리로부터 뜨거운 액을 방울져 떨어지게 했다. 
 					ENDIF
 				ENDIF
 
@@ -1144,381 +1144,381 @@ CASE "浮気"
 			ELSE
 				IF TALENT:애널광 && RAND:2 == 0
 					IF TALENT:연모
-						PRINTFORML 네발로 엎드림의 자세를 받아들이게 해졌다%조사처리(CALLNAME:TARGET,"는")%, %NPC_CALLNAME%에 뒤로부터애널를 범해졌다…
-						PRINTFORML %CALLNAME:MASTER%이외의 페니스를 비틀어 넣어졌다%CALLNAME:TARGET%의 바람기인 고혈은 ,  배덕감을 스파이스에 흥분의 정도를 높여 간다…
+						PRINTFORML 네발로 엎드린 %조사처리(CALLNAME:TARGET,"는")%, %NPC_CALLNAME%에 뒤로부터 애널을 범해졌다…
+						PRINTFORML %CALLNAME:MASTER%이외의 페니스를 비틀어 넣어진 %CALLNAME:TARGET%의 바람기있는 애널은,  배덕감을 스파이스로 흥분의 정도를 높여 간다…
 					ELSE
-						PRINTFORML 완전히 발정했다%CALLNAME:TARGET%신체를 덮어 엉덩이만을 높게 내걸면, %NPC_CALLNAME%를 권하도록(듯이)엉덩이구멍을 양손그리고 넓혔다…
-						PRINTFORML %NPC_CALLNAME%하지만 뒤로부터 덥치도록(듯이)해허리를 가라앉히면, 푸욱푸욱 소리를 내고, 음경이 풀렸다애널에 들어간다…
+						PRINTFORML 완전히 발정한 %CALLNAME:TARGET%의 신체를 덮어 엉덩이만을 높게 하고, %조사처리(NPC_CALLNAME,"를")% 권하듯이 엉덩이구멍을 양손으로 넓혔다…
+						PRINTFORML %조사처리(NPC_CALLNAME,"이")% 뒤로부터 덮치듯이 허리를 내리자 푸욱 소리를 내면서 음경이 풀린 애널에 들어간다…
 					ENDIF
 				ELSE
-					PRINTFORM %NPC_CALLNAME%하%조사처리(CALLNAME:TARGET,"를")% 
+					PRINTFORM %조사처리(NPC_CALLNAME,"는")%%조사처리(CALLNAME:TARGET,"를")% 
 					IF RAND:2 == 0
-						PRINTFORM 를 납죽 엎드림에 굴리면,
+						PRINTFORM 를 납죽 엎드리게 굴려,
 					ELSE
-						PRINTFORM 를 납죽 엎드림에 시키면,
+						PRINTFORM 를 납죽 엎드리게 하고,
 					ENDIF
 					;A감각3이상
 					IF ABL:Ａ감각 >= 5 && RAND:3 == 0
-						PRINTFORML 이미 부드럽게 녹고 자르고 있는 어널을 관철했다
+						PRINTFORML 이미 부드럽게 녹고 있는 애널을 뚫었다
 					ELSEIF ABL:Ａ감각 >= 3
-						PRINTFORML 신무성해에 입을 연 어널을 관철했다
+						PRINTFORML 살짝 입을 연 애널을 뚫었다
 						ELSE
-					PRINTFORML 아직도 이물을 거절하려고 하는 어널을 억지로 관철했다
+					PRINTFORML 아직도 이물을 거절하려고 하는 애널을 억지로 뚫었다
 					ENDIF
 				ENDIF
 				IF RAND:3 == 0
-					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%노허리놀림에 교성을 올려, 스스로 탐내도록(듯이)허리를 움직이고 있다…
+					PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%의 허리놀림에 교성을 올려, 스스로 탐내듯이 허리를 움직이고 있다…
 				ELSEIF RAND:2 == 0
-					PRINTFORML 열을 띠었다%NPC_CALLNAME%노페니스가장벽을 도려내 범한다감각에, %조사처리(CALLNAME:TARGET,"는")% 허덕이고 있다…
+					PRINTFORML 열을 띈 %NPC_CALLNAME%의 페니스가 장벽을 도려내 범하는 감각에, %조사처리(CALLNAME:TARGET,"는")% 허덕이고 있다…
 				ELSE
-					PRINTFORML %NPC_CALLNAME%하%CALLNAME:TARGET%의 국혈의 감촉을 맛보면서, 리드미컬하게허리를 움직이고 있다…
+					PRINTFORML %조사처리(NPC_CALLNAME,"는")%%CALLNAME:TARGET%의 애널의 감촉을 맛보면서, 리드미컬하게 허리를 움직이고 있다…
 				ENDIF
 				IF TALENT:처녀
 					IF RAND:3 == 0
-						PRINTFORMW %NPC_CALLNAME%의 남근이애널를 찌를 때마다%CALLNAME:TARGET%의 처녀의 화순[花唇]은 녹진녹진 애액을 흘러넘치게 했다. 
+						PRINTFORMW %NPC_CALLNAME%의 남근이 애널을 찌를 때마다 %CALLNAME:TARGET%의 처녀의 꽃잎은 녹진녹진 애액을 흘러넘치게 했다. 
 					ELSEIF RAND:2 == 0
-						PRINTFORMW %NPC_CALLNAME%의 노장[怒張]이 쑤컹쑤컹더러운구멍에 삽입되면, 그 움직임에 맞추고%CALLNAME:TARGET%의 처녀구멍으로부터 꿀이 흘러나왔다. 
+						PRINTFORMW %NPC_CALLNAME%의 막대기가 쑤컹쑤컹 더러운구멍에 삽입되자 그 움직임에 맞춰 %CALLNAME:TARGET%의 처녀구멍으로부터 꿀이 흘러나왔다. 
 					ELSE
-						PRINTFORMW 뒤의 구멍에%NPC_CALLNAME%의 육봉이 출입할 때마다%조사처리(CALLNAME:TARGET,"는")% 처녀의 꽃봉오리로부터 뜨거운 액을 방울져 떨어지게 했다. 
+						PRINTFORMW 뒤의 구멍에 %NPC_CALLNAME%의 육봉이 출입할 때마다 %조사처리(CALLNAME:TARGET,"는")% 처녀의 꽃봉오리로부터 뜨거운 액을 방울져 떨어지게 했다. 
 					ENDIF
 				ENDIF
 			ENDIF
 			PRINTFORML 
 			;사정
 			IF RAND:2 == 0
-				PRINTFORM 입을 눌러 고혈을 범해지는 감각에 참고 있던%CALLNAME:TARGET%였지만 ,
+				PRINTFORM 입을 눌러 애널을 범해지는 감각에 참고 있던 %타겟이었()%지만,
 			ELSE
-				PRINTFORM 필사적으로 엉덩이의 쾌감에 참고 있던%CALLNAME:TARGET%였지만 ,
+				PRINTFORM 필사적으로 엉덩이의 쾌감에 참고 있던 %타겟이었()%지만,
 			ENDIF
 			IF RAND:3 == 0
-				PRINTFORML 한 번 소리를 내 버리면 ,  앞으로는  완전히 인내가 효과가 없게 되어 버렸다…
+				PRINTFORML 한 번 소리를 내자 완전히 참지 못하게 되어 버렸다…
 			ELSEIF RAND:2 == 0
-				PRINTFORML %NPC_CALLNAME%의 집요한허리놀림에굴복해, 안타까운 소리로 항학[肛虐]을 요구하게 되어 있었다…
+				PRINTFORML %NPC_CALLNAME%의 집요한 허리놀림에 굴복해, 안타까운 소리로 항학을 요구하고 있다…
 			ELSE
-				PRINTFORML 뜨겁고 고음경으로 고혈을 찔리는 동안 ,  완전히 발정해 ,  쳐 올리기에 맞추어 부끄러운 느낌도 없이 교성을 올리고 있었다…
+				PRINTFORML 뜨거운 자지로 애널을 찔리는 동안 완전히 발정해 쳐 올리는 동작에 맞추어 부끄러운 느낌도 없이 교성을 올리고 있었다…
 			ENDIF
 			IF RAND:2 == 0
-				PRINTFORML %NPC_CALLNAME%하%CALLNAME:TARGET%에 덮어씌우면서허리를 모습, 사정의 순간에페니스를 아누스의 안쪽 깊게까지 찔러 넣었다! 
+				PRINTFORML %조사처리(NPC_CALLNAME,"는")% %CALLNAME:TARGET%에 넣은 상태로 허리를 튕겨, 사정의 순간에 페니스를 아누스의 안쪽 깊게까지 찔러 넣었다! 
 			ELSE
-				PRINTFORML %NPC_CALLNAME%하%CALLNAME:TARGET%에 종을 조르는 대사를 말하게 하면, 직장깊게까지 찔러 넣고 나서 수컷국물을 털어 놓았다! 
+				PRINTFORML %조사처리(NPC_CALLNAME,"는")% %CALLNAME:TARGET%에 정자를 조르는 대사를 말하게 하면, 직장 깊게까지 찔러 넣고 나서 수컷국물을 쌌다! 
 			ENDIF
 			IF RAND:2 == 0
-				PRINTFORML 깊게 쑤셔 넣어졌다%NPC_CALLNAME%의 육주[肉柱]는 움찔움찔 경련해, %CALLNAME:TARGET%의 직장에 정령을 쏟아 간다…
+				PRINTFORML 깊게 쑤셔 넣어진 %NPC_CALLNAME%의 살기둥은 움찔움찔 경련해, %CALLNAME:TARGET%의 직장에 정자를 쏟아 간다…
 			ELSE
-				PRINTFORML 항열에 녹았다%CALLNAME:TARGET%의 장안으로, , , (와)과%NPC_CALLNAME%의 육경[肉莖]으로부터 종 국물이 발해져 간다…
+				PRINTFORML 항열에 녹은 %CALLNAME:TARGET%의 장안으로 %NPC_CALLNAME%의 육봉으로부터 정자가 짜내져 간다…
 			ENDIF
 		;A기승위・A대면좌위・A배면좌위
 		ELSE
-			PRINTFORML %NPC_CALLNAME%하%조사처리(CALLNAME:TARGET,"가")% 완전히 잘 나간 것 와 확인하면, 『위가 되어 자신으로부터 끼워라』라고 명령했다…
+			PRINTFORML %조사처리(NPC_CALLNAME,"는")% %조사처리(CALLNAME:TARGET,"가")% 간 것을 확인하고, 『위에서 스스로 끼워라』라고 명령했다…
 			IF RAND:4 == 0
-				PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%의 허리 위를 넘으면, 
+				PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%의 허리 위에 올라타, 
 			ELSEIF RAND:3 == 0
-				PRINTFORM 위로 돌리고의%NPC_CALLNAME%의 위에 걸쳤다%조사처리(CALLNAME:TARGET,"는")%, 
+				PRINTFORM 위를 향해 누운 %NPC_CALLNAME%의 위에 올라탄 %조사처리(CALLNAME:TARGET,"는")%, 
 			ELSEIF RAND:2 == 0
-				PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%의 허리 위에 걸쳐, 
+				PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%의 허리 위에 앉아, 
 			ELSE
 				PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%의 위에 걸치면, 
 			ENDIF
 			IF TALENT:큰엉덩이 && RAND:2 == 0
 				IF RAND:2 == 0
 					IF RAND:2 == 0
-						PRINTFORM 살집이 좋다
+						PRINTFORM 살집이 붙은
 					ELSE
-						PRINTFORM 포동포동하고 했다
+						PRINTFORM 포동포동한
 					ENDIF
-					PRINTFORM 엉덩이를 받아들이고 쉽도록 좌우로압 와,
+					PRINTFORM 엉덩이를 넣기 쉽도록 좌우로 펼쳐,
 				ELSE
-					PRINTFORM 스스로의 고육을 잡아 국문을 힘껏 넓혀
+					PRINTFORM 스스로의 엉덩이를 잡아 항문을 힘껏 넓혀
 				ENDIF
 			ELSE
 				IF RAND:2 == 0
-					PRINTFORM 뒤로 젖힌 육봉의 첨단을엉덩이구멍에 주면, 
+					PRINTFORM 뒤로 젖힌 육봉의 끝을 엉덩이구멍에 맞추고, 
 				ELSE
-					PRINTFORM 음미롭게허리를 구불거리게 해라, 
+					PRINTFORM 음란하게 허리를 구불거리면서, 
 				ENDIF
 			ENDIF
 			IF RAND:4 == 0
-				PRINTFORML 작은보라색의 오므라짐에%NPC_CALLNAME%의 육봉을 물어 간다…
+				PRINTFORML 작은 갈색 오므라진 곳에 %NPC_CALLNAME%의 육봉을 물어 간다…
 			ELSEIF RAND:3 == 0
-				PRINTFORML 그대로%NPC_CALLNAME%의 음봉을 근본까지 삼켜 간다…
+				PRINTFORML 그대로 %NPC_CALLNAME%의 육봉을 뿌리까지 삼켜 간다…
 			ELSEIF RAND:2 == 0
-				PRINTFORML 기다리는 페니스에 서서히 체중을 걸쳐 국좌로 삼키게 해 간다…
+				PRINTFORML 기다리는 페니스에 서서히 체중을 앉아 애널로 삼켜간다…
 			ELSE
-				PRINTFORML 점액 투성이가 된 아누스로 천천히%NPC_CALLNAME%의 것을 삼켜 간다…
+				PRINTFORML 점액 투성이가 된 아누스로 천천히 %NPC_CALLNAME%의 것을 삼켜 간다…
 			ENDIF
 			;A기승위
 			IF RAND:3 == 0
-				PRINTFORM 승마 위의 자세로 연결된%조사처리(CALLNAME:TARGET,"는")%
+				PRINTFORM 승마 위의 자세로 연결된 %조사처리(CALLNAME:TARGET,"는")%
 				IF RAND:4 == 0
-					PRINTFORM %NPC_CALLNAME%노가슴판에손를 붙어 몸을 지지하면서, 
+					PRINTFORM %NPC_CALLNAME%의 가슴팍에 손을 붙여 몸을 지지하면서, 
 				ELSEIF RAND:3 == 0
-					PRINTFORM 장액으로 질퍽질퍽하고음을 울리는 국문에 막대기를 안쪽까지 단단히 물고면서 ,
+					PRINTFORM 장액으로 질퍽질퍽하고 소리를 내는 항문에 막대기를 안쪽까지 단단히 물면서 ,
 				ELSEIF RAND:2 == 0
-					PRINTFORM 끝까지 녹은 표정으로 장내의 육 경을 조임(억압)이면서 ,
+					PRINTFORM 끝까지 녹은 표정으로 장내의 육봉을 조이면서 ,
 				ELSE
-					PRINTFORM %NPC_CALLNAME%노장벽에서 육봉을 조르면서면서, 
+					PRINTFORM %NPC_CALLNAME%의 장벽에서 육봉을 조르면서, 
 				ENDIF
 				IF RAND:4 == 0
-					PRINTFORM 쾌락을 탐내는 위해 허리를 격렬하게 상하시키고
+					PRINTFORM 쾌락을 탐내는 위해 허리를 격렬하게 피스톤질시키기
 				ELSEIF RAND:3 == 0
-					PRINTFORM %NPC_CALLNAME%의 허리 위에서 튀도록(듯이)허리를 모습
+					PRINTFORM %NPC_CALLNAME%의 허리 위에서 튀듯이 허리를 움직이기
 				ELSEIF RAND:2 == 0
-					PRINTFORM 스스로 허리를 움직여
+					PRINTFORM 스스로 허리를 움직이기
 				ELSE
-					PRINTFORM 구블구블하며 한 허리의 움직임을 더하고
+					PRINTFORM 구블구블하며 한 허리의 움직임을 더하기
 				ENDIF
 				PRINTFORML 시작했다…
 
-				PRINTFORM %NPC_CALLNAME%하지만
+				PRINTFORM %조사처리(NPC_CALLNAME,"은")%
 				IF TALENT:거유
-					PRINTFORM 머리 위로 크게 흔들리는 풍만한 젖을 비비어 하기 만이면서,
+					PRINTFORM 머리 위로 크게 흔들리는 풍만한 젖을 비비고 만지면서,
 				ELSEIF TALENT:빈유
-					PRINTFORM 땀이 흐르고 떨어지는 납작한 유방에 손을 기게 한 개개 ,
+					PRINTFORM 땀이 흐르고 떨어지는 납작한 유방에 손을 대어 만지면서,
 				ELSE
-					PRINTFORM 흔들리는 유방을 덥석이면서 ,
+					PRINTFORM 흔들리는 유방을 비비면서,
 				ENDIF
-				PRINTFORML 강력하게 아래로부터 쳐올린다와
+				PRINTFORML 강력하게 아래로부터 쳐올려 
 				PRINTFORM %조사처리(CALLNAME:TARGET,"는")%
 				IF RAND:2 == 0
-					PRINTFORML 교성을 뒤집히게 해 아양을 부리는 태도를 쬐었다…
+					PRINTFORML 교성을 내며 애교을 부린다…
 				ELSE
-					PRINTFORML 짐승과 같은 헐떡이는 소리를 올려바보모습을 쬐었다…
+					PRINTFORML 짐승과 같은 헐떡이는 소리를 내며 바보모습을 쬐었다…
 				ENDIF
 
 			;A대면좌위
 			ELSEIF RAND:2 == 0
-				PRINTFORM 대면좌위의 자세로 연결된%조사처리(CALLNAME:TARGET,"는")% ,
+				PRINTFORM 대면좌위의 자세로 연결된 %조사처리(CALLNAME:TARGET,"는")% ,
 				IF RAND:3 == 0
-					PRINTFORM %NPC_CALLNAME%의 목에 팔을 돌려 입술을 거듭하면, 
+					PRINTFORM %NPC_CALLNAME%의 목에 팔을 감아 입술을 거듭하고, 
 				ELSEIF RAND:2 == 0
-					PRINTFORM %NPC_CALLNAME%(와)과 농후한키스를 해혀를 얽어와, 
+					PRINTFORM %조사처리(NPC_CALLNAME,"과")% 농후한 키스를 해 혀를 얽히고, 
 				ELSE
-					PRINTFORM %NPC_CALLNAME%의 목에손를 돌려신체를 밀착시키고, 
+					PRINTFORM %NPC_CALLNAME%의 목에 손을 감아 신체를 밀착시키고, 
 				ENDIF
 				IF RAND:3 == 0
-					PRINTFORM 페니스의 감촉을 즐기도록 허리를 구부러지게 해
+					PRINTFORM 페니스의 감촉을 즐기도록 허리를 피스톤질하기
 				ELSEIF RAND:2 == 0
-					PRINTFORM 긴 stroke로 허리를 강탈
+					PRINTFORM 긴 stroke로 허리를 튕기기
 				ELSE
-					PRINTFORM 느긋하게 허리를 상하에 움직여
+					PRINTFORM 느긋하게 허리를 상하에 움직이기
 				ENDIF
 				PRINTFORML 시작했다…
 
-				PRINTFORM %NPC_CALLNAME%하지만
+				PRINTFORM %조사처리(NPC_CALLNAME,"은")%
 				IF TALENT:거유 && RAND:2 == 0
-					PRINTFORM 아래로부터 찔러올린다번에 풍부한 젖이%NPC_CALLNAME%의 눈앞에서 흔들어라, 
+					PRINTFORM 아래로부터 찔러올리고 큰 가슴이 %NPC_CALLNAME%의 눈앞에서 흔들려 
 				ELSEIF TALENT:큰엉덩이 && RAND:2 == 0
-					PRINTFORM 승마에 서툰 모습을 덥석으로 하면서 허리를 격렬하게 쳐올린다와
+					PRINTFORM 승마에 서툰 모습으로 허리를 격렬하게 쳐올리고 
 				ELSE
-					PRINTFORM %CALLNAME:TARGET%의 움직임에 맞추도록 쳐올린다와
+					PRINTFORM %CALLNAME:TARGET%의 움직임에 맞추도록 쳐올리고 
 				ENDIF
 				PRINTFORM %조사처리(CALLNAME:TARGET,"는")%
 				IF RAND:2 == 0
-					PRINTFORML 교성을 뒤집히게 해 아양을 부리는 태도를 쬐었다…
+					PRINTFORML 교성을 내며 애교을 부린다…
 				ELSE
-					PRINTFORML 짐승과 같은 헐떡이는 소리를 올려바보모습을 쬐었다…
+					PRINTFORML 짐승과 같은 헐떡이는 소리를 내며 바보모습을 쬐었다…
 				ENDIF
 			;A배면좌위
 			ELSE
-				PRINTFORM 배면좌위의 자세로 연결된%조사처리(CALLNAME:TARGET,"는")% ,
+				PRINTFORM 배면좌위의 자세로 연결된 %조사처리(CALLNAME:TARGET,"는")% ,
 				IF ABL:자위중독 >= 3 && RAND:2 == 0
 					IF RAND:2 == 0
-						PRINTFORML 음핵그래서자위를 하면서, %NPC_CALLNAME%에 밀어올려지고 있다…
+						PRINTFORML 음핵으로 자위를 하면서, %NPC_CALLNAME%에 밀어올려지고 있다…
 					ELSE
-						PRINTFORML 손가락에서의음핵를 희롱하면서 스스로도허리를 상하시키고, %조사처리(CALLNAME:TARGET,"는")% 야비하게 쾌락을 탐내고 있다…
+						PRINTFORML 손가락이 음핵를 희롱하면서 스스로도 허리를 피스톤질시키고, %조사처리(CALLNAME:TARGET,"는")% 게걸스레 쾌락을 탐내고 있다…
 					ENDIF
-					PRINTFORML 자위에 열중했다%조사처리(CALLNAME:TARGET,"가")% 엉덩이구멍의 억압을 조금이라도 느슨하게하면, 예의 범절이라고 칭해%NPC_CALLNAME%에 난폭하게허리를 밀어올릴 수 있다, %조사처리(CALLNAME:TARGET,"는")% 혀를 내밀어 보기 흉한 아헤얼굴를 쬐고 있다…
+					PRINTFORML 자위에 열중한 %조사처리(CALLNAME:TARGET,"가")% 엉덩이구멍의 조임을 조금이라도 느슨하게 하면, 예의가 나쁘다고 %조사처리(NPC_CALLNAME,"가")% 난폭하게 허리를 밀어올려 %조사처리(CALLNAME:TARGET,"는")% 혀를 내밀어 보기 흉한 아헤가오를 보이고 있다…
 				ELSE
 					;가슴
 					IF RAND:2 == 0
 						IF TALENT:거유 && RAND:2 == 0
-							PRINTFORML 큰 젖을 비비어 하기 만여지고면서 ,  쳐올려져 있다…
+							PRINTFORML 큰 젖을 비비고 만지면서 , 쳐올리고 있다…
 						ELSEIF TALENT:빈유 && RAND:2 == 0
-							PRINTFORML %NPC_CALLNAME%에 얇다가슴의 정상을 비틀어 올려지면서, 밀어올려지고 있다…
+							PRINTFORML %NPC_CALLNAME%에 작은 가슴의 끝부분을 비틀면서, 밀어올려지고 있다…
 						ENDIF
-						PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 양손를%NPC_CALLNAME%의 목의 뒤로 돌려, 머리를 끌어 들여키스를 주고 받으면서, 밀어올림에 맞추어 스스로도허리를 털고 있다…
-						PRINTFORMW 추잡하게, 그리고 매끄럽게허리를 구불거리게 되어지면서 상하시키는 그 모습은, 욕구에 빠졌다동물그것 같다…
+						PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 양손을 %NPC_CALLNAME%의 목의 뒤로 돌려, 머리를 끌어 들이고 키스를 주고 받으면서, 밀어올림에 맞추어 스스로도 허리를 흔들고 있다…
+						PRINTFORMW 추잡하면서 매끄럽게 허리를 피스톤질하는 그 모습은, 욕구에 빠진 동물같다…
 					ELSE
 						PRINTFORML %NPC_CALLNAME%에음핵를 희롱해지면서, 밀어올려지고 있다…
-						PRINTFORMW 충혈했다음핵를%NPC_CALLNAME%(이)가 희롱할 때, %조사처리(CALLNAME:TARGET,"는")% 깊숙히 노장[怒張]을 문 국좌[菊座]가 꼭 죄여, %NPC_CALLNAME%를 즐겁게 하고 있다…
+						PRINTFORMW 충혈한 음핵을 %조사처리(NPC_CALLNAME,"가")% 희롱할 때, %조사처리(CALLNAME:TARGET,"는")% 깊숙히 육봉을 문 뒷보지를 꼭 죄여, %조사처리(NPC_CALLNAME,"를")% 즐겁게 하고 있다…
 					ENDIF
 				ENDIF
 			ENDIF
 
 			PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 			IF RAND:3 == 0
-				PRINTFORMW %NPC_CALLNAME%에엉덩이구멍을 격렬하게 범해지고, 배덕적인 쾌락을 향수하고 있다…
+				PRINTFORMW %NPC_CALLNAME%에 엉덩이구멍을 격렬하게 범해져 배덕적인 쾌락을 즐기고 있다…
 			ELSEIF RAND:2 == 0
-				PRINTFORMW 애널섹스의 포로가 되었던 것처럼, 야무지지 못하게 이완 한 표정을 보이면서, 소리가 되지 않는 절규를 지르고 있다…
+				PRINTFORMW 애널섹스의 포로가 된 것처럼, 야무지지 못하게 풀린 표정을 보이면서, 소리 나지 않는 절규를 지르고 있다…
 			ELSE
-				PRINTFORMW 야무지지 못하게 혀를 늘어뜨리면서, 페니스가 국좌[菊座]를 경작하는 쾌락에 부들부들 지체를 진동시키고 있다…
+				PRINTFORMW 야무지지 못하게 혀를 늘어뜨리면서, 페니스가 애널을 긁는 쾌락에 부들부들 몸을 진동시키고 있다…
 			ENDIF
 			PRINTFORML 
 			;사정
 			IF RAND:3 == 0
-				PRINTFORMW %NPC_CALLNAME%하%CALLNAME:TARGET%의 허리를 잡아 밀착시키면, 포함올린다충동에 따라, 직장의 안쪽 깊게 마음껏욕망를배설했다…! 
+				PRINTFORMW %조사처리(NPC_CALLNAME,"는")% %CALLNAME:TARGET%의 허리를 잡아 밀착시키고 충동에 몸을 맡겨 직장의 안쪽 깊게 마음껏 욕망을 배설했다…! 
 			ELSEIF RAND:2 == 0
-				PRINTFORMW %NPC_CALLNAME%는 높아진다사정감에 몸을 맡김, %CALLNAME:TARGET%의 제일 깊은 곳으로백탁를 폭발시켰다…! 
+				PRINTFORMW %조사처리(NPC_CALLNAME,"는")% 높아지는 사정감에 몸을 맡기고, %CALLNAME:TARGET%의 제일 깊은 곳으로백탁를 폭발시켰다…! 
 			ELSE
-				PRINTFORMW %NPC_CALLNAME%하허리를 안쪽까지 발사해 움찔움찔 여러 번 경련시키면, %CALLNAME:TARGET%의 직장안쪽 깊게정액를 쏟았다…! 
+				PRINTFORMW %조사처리(NPC_CALLNAME,"는")% 허리를 안쪽까지 밀어 움찔움찔 여러 번 경련하면서 %CALLNAME:TARGET%의 직장 안쪽 깊게 정액을 쏟았다…! 
 			ENDIF
 		ENDIF
-		PRINTFORM %CALLNAME:TARGET%의 어널은 쏟아지는 %TEXTR("하얗게 흐린 액", "수컷국물", "종 국물", "더럽고 흐림", "백탁", "유전자국물", "정액")%에 절정 해,
+		PRINTFORM %CALLNAME:TARGET%의 애널은 쏟아지는 %TEXTR("하얗게 흐린 액", "수컷국물", "종 국물", "더럽고 흐림", "백탁", "유전자국물", "정액")%에 절정 해,
 		IF RAND:5 == 0
 			PRINTFORMW 느슨해지는 일 없이 찔러 페니스를 계속 짜고 있다…
 		ELSEIF RAND:4 == 0
-			PRINTFORMW 요도내의 잔재조차 짜 취하려고 하는것 같이 강렬한 야무짐을 보이고 있다…
+			PRINTFORMW 요도내의 잔재조차 짜 내려고 하는 것 같이 강렬한 조임을 보이고 있다…
 		ELSEIF RAND:3 == 0
 			PRINTFORMW 탐욕에 페니스에 달라붙고 있다…
 		ELSEIF RAND:2 == 0
-			PRINTFORMW 아직 부족하다고 만에 페니스를 힘들게 잡고 붙이고 있다…
+			PRINTFORMW 아직 부족하다고 페니스를 힘들게 잡아 넣고 있다…
 		ELSE
 			PRINTFORMW 아직도 맥동을 계속하는 페니스에 휘감기고 있다…
 		ENDIF
 		PRINTFORML 
 		IF RAND:3 == 0
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 발정해 버렸다얼굴그래서허리를 구불거리게 해라, 한층 더엉덩이구멍사정를 바라고 있다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 발정해 버린 얼굴로 허리를 튕기며, 한층 더 엉덩이구멍 사정을 바라고 있다…
 		ELSEIF RAND:2 == 0
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 배설기관에사정되는 굴욕감에 비뚤어진 정욕을 끓어오르게 했다, 한층 더 항학[肛虐]을 조르고 있다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 배설기관에 사정되는 굴욕감에 비뚤어진 정욕을 끓어오르며, 한층 더 항학을 조르고 있다…
 		ELSE
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 넋을 잃고 도취에 잠기면서 ,  한층 더 능욕을 기대해 아첨하도록 엉덩이를 흔들고 있는…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 넋을 잃고 도취에 잠기면서, 한층 더 능욕을 기대해 애교부리듯 엉덩이를 흔들고 있다…
 		ENDIF
 
 		PRINTFORML 
 		PRINTFORML 
 		CALL EXP_CALC_TRAVEL_UWAKI, "애널"
 		PRINTFORML 
-	;太った男(ねちっこい/NTRっぽい))
-	CASE "太った男"
-		PRINTFORM %NPC_CALLNAME%에인기(이)가 없는 곳에 데리고 들어가졌다%조사처리(CALLNAME:TARGET,"는")%, 
+	;살찐 남자(ねちっこい/NTRっぽい))
+	CASE "살찐 남자"
+		PRINTFORM %NPC_CALLNAME%에 인기척이 없는 곳에 데리고 들어가진 %조사처리(CALLNAME:TARGET,"는")%, 
 		;本番
 		;삽입
 		;정상 위
 		IF RAND:4 == 0
-			PRINTFORM 서로 마주 본 자세로 ,
+			PRINTFORM 서로 마주 본 자세로, 
 		;후배위
 		ELSEIF RAND:3 == 0
 			IF RAND:3 == 0
-				PRINTFORM 개와 같은 자세로 ,
+				PRINTFORM 개와 같은 자세로, 
 			ELSEIF RAND:2 == 0
-				PRINTFORM 짐승의 교미와 같이 뒤로부터 ,
+				PRINTFORM 짐승의 교미처럼 뒤로 부터, 
 			ELSE
-				PRINTFORM 납죽 엎드림으로 몰려
+				PRINTFORM 네발로 엎드려서,
 			ENDIF
 		;대면좌위
 		ELSEIF RAND:2 == 0
 			IF RAND:3 == 0
-				PRINTFORM 얼싸안은 자세로 ,
+				PRINTFORM 얼싸안은 자세로, 
 			ELSEIF RAND:2 == 0
-				PRINTFORM 연인과 같이 서로 와 같이 껴안으면서,
+				PRINTFORM 연인처럼 서로 껴안으면서, 
 			ELSE
-				PRINTFORM 끈적끈적하게 농후한 키스를 거듭하면서,
+				PRINTFORM 끈적끈적 농후한 키스를 거듭하면서, 
 			ENDIF
 		;배면좌위
 		ELSE
 			IF RAND:3 == 0
 				PRINTFORM 뒤로부터
 				IF TALENT:거유
-					PRINTFORM 손바닥으로부터 흘러넘치는 거유을 생각하는 대로 희롱해지고면서 ,
+					PRINTFORM 손바닥으로부터 흘러넘치는 거유을 마음대로 흔들며,
 				ELSEIF TALENT:빈유
-					PRINTFORM 빈약한 가슴의 끝부분을 손가락끝으로 마잡도록 궁리해 거론되면서,
+					PRINTFORM 작은 가슴의 끝부분을 손가락끝으로 쓸듯 만져지면서,
 				ELSE
-					PRINTFORM 모양 좋은 가슴을 희롱해지고면서 ,
+					PRINTFORM 모양 좋은 가슴을 흔들면서,
 				ENDIF
 			ELSEIF RAND:2 == 0
-				PRINTFORM 뒤로부터 껴안을 수 있는이면서 ,
+				PRINTFORM 뒤로부터 껴안아지면서, 
 			ELSE
-				PRINTFORM 뒤로부터 껴안을 수 있는이면서 ,
+				PRINTFORM 뒤로부터 껴안아지면서, 
 			ENDIF
 		ENDIF
 		IF RAND:4 == 0
-			PRINTFORML 안쪽까지 관통되어서 있다…!
+			PRINTFORML 안쪽까지 관통되고 있다…!
 		ELSEIF RAND:3 == 0
-			PRINTFORML 범해지고 있는…!
+			PRINTFORML 범해지고 있다…!
 		ELSEIF RAND:2 == 0
-			PRINTFORML 페니스로 관통되어서 있다…!
+			PRINTFORML 페니스로 관통되고 있다…!
 		ELSE
-			PRINTFORML 허리를 부딪힐 수 있고 있다…!
+			PRINTFORML 허리를 부딪히고 있다…!
 		ENDIF
 		PRINTFORML 
 		PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 		;삽입に対する反応
 		IF RAND:3 == 0
-			PRINTFORML 신체의 심지를%NPC_CALLNAME%의 육창[肉槍]으로 관그, 목을 뒤로 젖히게 해신체를 실룩거리게 하고 있다…
+			PRINTFORML 신체의 가운데를 %NPC_CALLNAME%의 육봉으로 찔려, 머리를 뒤로 젖히면서 몸을 실룩거리게 하고 있다…
 		ELSEIF RAND:2 == 0
-			PRINTFORML %NPC_CALLNAME%의 칼리태페니스에질고기를밀어벌려, 말로 할 수 없는 소리를 높이면서 등을 활처럼 뒤로 젖혀지고 있다…
+			PRINTFORML %NPC_CALLNAME%의 사냥용 왕자지에 질육을 밀어벌려져, 말도 안되는 소리를 내면서 등을 활처럼 뒤로 젖히고 있다…
 		ELSE
-			PRINTFORMW %NPC_CALLNAME%의 여자를 울리는 흉기에 관그, 질입로부터 애액을 흘러넘치도록(듯이) 흘리면서, 허리를 흠칫흠칫 진동시켜 몸부림치고 있다…
+			PRINTFORMW %NPC_CALLNAME%의 여자를 울리는 흉기에 찔려, 질구로부터 애액을 흘러넘치듯이 흘리면서, 허리를 흠칫흠칫 진동시켜 몸부림치고 있다…
 		ENDIF
 
 		IF RAND:3 == 0
-			PRINTFORMW %NPC_CALLNAME%하키스를 하면서 용서 없게 삽입질을 반복해, %CALLNAME:TARGET%의 질에 스스로의페니스의 형태를 조각해 간다…
+			PRINTFORMW %조사처리(NPC_CALLNAME,"는")% 키스를 하면서 용서 없게 피스톤질을 반복해, %CALLNAME:TARGET%의 질에 스스로의 페니스의 형태를 조각해 간다…
 		ELSEIF RAND:2 == 0
-			PRINTFORML %NPC_CALLNAME%하%CALLNAME:TARGET%의 질안에, 스스로의 노장[怒張]의 형태를 철저히 가르치도록(듯이) 삽입질을 반복하고 있다…
+			PRINTFORML %조사처리(NPC_CALLNAME,"는")% %CALLNAME:TARGET%의 질안에, 스스로의 장대의 형태를 철저히 가르치듯이 피스톤질을 반복하고 있다…
 		ELSE
-			PRINTFORMW %NPC_CALLNAME%하%CALLNAME:TARGET%의 치태를 걱정하는 일 없고, 자궁구를 비틀어 여는것 같이 울퉁불퉁질안쪽을 밀어올리고 있다…
+			PRINTFORMW %조사처리(NPC_CALLNAME,"는")% %CALLNAME:TARGET%의 치태를 걱정하는 일 없이, 자궁구를 비틀어 여는 것처럼 울퉁불퉁 질안쪽을 밀어올리고 있다…
 		ENDIF
 		IF RAND:5 == 0
-			PRINTFORML 마치질안을 자신의페니스의 형태에 맞도록(듯이) 만들어 바꿀까의 같은%NPC_CALLNAME%노허리놀림에, %조사처리(CALLNAME:TARGET,"는")% 단정치 못한 소리를 높이고 있다…
+			PRINTFORML 마치 질안을 자신의 페니스의 형태에 맞도록 만드는 것 같은 %NPC_CALLNAME%의 허리놀림에, %조사처리(CALLNAME:TARGET,"는")% 단정치 못한 소리를 높이고 있다…
 		ELSEIF RAND:4 == 0
-			PRINTFORMW %NPC_CALLNAME%의 격렬하고, 끈질기다허리놀림에, %조사처리(CALLNAME:TARGET,"는")% 암컷의얼굴그래서질내사정를 졸라대고 있다…
+			PRINTFORMW %NPC_CALLNAME%의 격렬하고, 끈질긴 허리놀림에, %조사처리(CALLNAME:TARGET,"는")% 암컷의 얼굴로 질내사정을 졸라대고 있다…
 		ELSEIF RAND:3 == 0
-			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 고조되는 정욕대로, %NPC_CALLNAME%(와)과의 정사에 빠지고, 혀를 내밀면서 등을 활처럼 피하고 있다…
+			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 고조되는 정욕대로, %조사처리(NPC_CALLNAME,"과")%의 정사에 빠지고, 혀를 내밀면서 등을 활처럼 꺾고 있다…
 		ELSEIF RAND:2 == 0
-			PRINTFORMW %NPC_CALLNAME%하지만 후벼파도록(듯이)허리를 사용해도, %조사처리(CALLNAME:TARGET,"는")% 애액을 흩날리게 하면서 열락의 소리를 높이고 있다…
+			PRINTFORMW %조사처리(NPC_CALLNAME,"이")% 후벼파듯이 허리를 사용해, %조사처리(CALLNAME:TARGET,"는")% 애액을 흩날리게 하면서 열락의 소리를 높이고 있다…
 		ELSE
-			PRINTFORML 집요하게 계속된다%NPC_CALLNAME%의 달콤한 고문에%조사처리(CALLNAME:TARGET,"는")% 억제하는 일도 잊고, 열락에 녹은 소리를 지르고 있다…
+			PRINTFORML 집요하게 계속되는 %NPC_CALLNAME%의 달콤한 고문에 %조사처리(CALLNAME:TARGET,"는")% 억제하는 일도 잊고, 열락에 녹은 소리를 지르고 있다…
 		ENDIF
 
 		;질내사정
 		IF RAND:4 == 0
-			PRINTFORML %NPC_CALLNAME%하%조사처리(CALLNAME:TARGET,"를")% 한층 더 강하고 찌르기올린다(와)과, 브르르신체를 진동시키고 농후한정액를 풀었다…! 
+			PRINTFORML %조사처리(NPC_CALLNAME,"는")% %조사처리(CAL LNAME:TARGET,"를")% 한층 더 강하고 찔러 올려, 부르르 신체를 진동하고 농후한 정액을 풀었다…! 
 		ELSEIF RAND:3 == 0
-			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%에 귓전으로 『임신해라! 수정해라! 』라고 속삭여지면서질안에 농후한정액를 흘려 넣어지고 있다…! 
+			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%에 귓전으로 『임신해라! 수정해라! 』라고 속삭여지면서 질안에 농후한 정액을 흘려 넣어지고 있다…! 
 		ELSEIF RAND:2 == 0
-			PRINTFORML %NPC_CALLNAME%하절정의 연속으로황홀로 하고 있다%CALLNAME:TARGET%의 허리를 훨씬 끌어 들이면, 내던지도록(듯이)욕망를 풀었다…! 
+			PRINTFORML %조사처리(NPC_CALLNAME,"는")% 절정의 연속으로 황홀하게 된 %CALLNAME:TARGET%의 허리를 훨씬 끌어 들이고, 내던지듯 욕망을 풀었다…! 
 		ELSE
-			PRINTFORML %NPC_CALLNAME%는 갑자기%CALLNAME:TARGET%의 안쪽을 격렬하고 찌르기올린다(와)과, 자궁구에 밀착시킨 남근의 첨단으로부터욕망의 덩어리를 대량으로 토해냈다…! 
+			PRINTFORML %조사처리(NPC_CALLNAME,"는")% 갑자기 %CALLNAME:TARGET%의 안쪽을 격렬하게 찔러 올려, 자궁구에 밀착시킨 남근의 끝으로부터 욕망의 덩어리를 대량으로 토해냈다…! 
 		ENDIF
 		IF COND("위험일", ARG)
-			PRINTFORML %CALLNAME:MASTER%의 것은 아닌 정액이 ,  위험일의 자궁으로 토해내져 있는 것으로도 관계없이
-			PRINTFORMW %CALLNAME:TARGET%의 유육[柔肉]은%NPC_CALLNAME%의 것으로 휘감겨 마지막 한 방울까지 짜내려고 단단히 조이고 있다…
+			PRINTFORML %CALLNAME:MASTER%의 것은 아닌 정액이, 위험일의 자궁으로 토해내져 있는 것으로도 관계없이
+			PRINTFORMW %CALLNAME:TARGET%의 유육[柔肉]은 %NPC_CALLNAME%의 것으로 휘감겨 마지막 한 방울까지 짜내려고 단단히 조이고 있다…
 		ELSE
 			IF RAND:7 == 0
-				PRINTFORML %NPC_CALLNAME%(와)과%CALLNAME:TARGET%의 결합부로부터, 다 들어가지 않았던 대량의정액하지만 흘러넘치기 시작하고 있다…
+				PRINTFORML %조사처리(NPC_CALLNAME,"과")% %CALLNAME:TARGET%의 결합부로부터, 다 들어가지 않았던 대량의 정액이 흘러 넘치기 시작하고 있다…
 			ELSEIF RAND:6 == 0
-				PRINTFORML %CALLNAME:TARGET%과 남자와의 결합부로부터 대량의 정액이 흐르고 떨어져 마루에 하얀 웅덩이를 만들고 있다…
+				PRINTFORML %타겟과()% 남자와의 결합부로부터 대량의 정액이 흘러 떨어져 마루에 하얀 웅덩이를 만들고 있다…
 			ELSEIF RAND:5 == 0
-				PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 자신이 정옷되어 간다감각에 휩싸여지면서, %NPC_CALLNAME%노입청구서를 감수 하고 있다…
+				PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 자신이 정복되어가는 감각에 휩싸여지면서, %NPC_CALLNAME%의 입맞춤을 감수 하고 있다…
 			ELSEIF RAND:4 == 0
-				PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 태내에 묵직하게 무겁게 모여 간다 농후한 자식을 느끼면서 ,  배덕의 절정에 만취해 있다…
+				PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 태내에 묵직하게 무겁게 모여 가는 농후한 정자를 느끼면서 , 배덕의 절정에 만취해 있다…
 			ELSEIF RAND:3 == 0
-				PRINTFORML %NPC_CALLNAME%노페니스가질안에서 맥박쳐 자식을 토해낼 때마다, %조사처리(CALLNAME:TARGET,"는")% 『진심』이 되어 있는 것 같이 환희의 소리를 미치게 하고 있다…
+				PRINTFORML %NPC_CALLNAME%의 페니스가 질 안에서 맥박쳐 정자를 토해낼 때마다, %조사처리(CALLNAME:TARGET,"는")% 『진심』이 된 것처럼 환희의 소리를 내고 있다…
 			ELSEIF RAND:2 == 0
-				PRINTFORML %NPC_CALLNAME%노정액하지만질안에 내던지도록(듯이) 발해질 때, %조사처리(CALLNAME:TARGET,"는")% 머리를 흔들면서 짐승과 같은 허덕이는 소리를 올리면서절정에 이르고 있다…
+				PRINTFORML %NPC_CALLNAME%의 정액이 질안에 채워지듯이 싸질 때, %조사처리(CALLNAME:TARGET,"는")% 머리를 흔들면서 짐승과 같은 허덕이는 소리를 내면서 절정에 이르고 있다…
 			ELSE
-				PRINTFORML 정숙함 등 잊어 암컷의 용모를 비치는 %CALLNAME:TARGET%의 태내에 ,  이름마저 모르는 상대의 농후한 자식이 추방해져 버렸다…
+				PRINTFORML 정숙함을 잊어 암컷의 용모를 비치는 %CALLNAME:TARGET%의 태내에, 이름마저 모르는 상대의 농후한 정자가 채워졌다…
 			ENDIF
 		ENDIF
 
 		;事後
 		IF RAND:7 == 0
-			PRINTFORML 암컷의 본능대로 종 눌러 짬을 했다%조사처리(CALLNAME:TARGET,"는")%, %NPC_CALLNAME%에 새로운내사정를 아첨한 표정으로 졸라대고 있다…
+			PRINTFORML 암컷의 본능대로 정자를 짜낸 %조사처리(CALLNAME:TARGET,"는")%, %NPC_CALLNAME%에 새로운 질내사정을 애교부리는 표정으로 졸라대고 있다…
 		ELSEIF RAND:6 == 0
-			PRINTFORML 녹은 표정으로절정의 여운에 잠긴다%CALLNAME:TARGET%의 여음[女陰]으로부터%NPC_CALLNAME%의 자식이 끝 없게 흘러넘치고, 흘러 떨어지고 있다…
+			PRINTFORML 녹은 표정으로 절정의 여운에 잠긴 %CALLNAME:TARGET%의 보지로부터 %NPC_CALLNAME%의 정자가 끝 없게 흘러 넘쳐 떨어지고 있다…
 		ELSEIF RAND:5 == 0
-			PRINTFORMW 완전히%NPC_CALLNAME%의 자지에 친숙해 졌다%CALLNAME:TARGET%의 질입는 뻐끔입를 넓히고, 충분히 쏟아진 자식을 흘려 보내고 있다……
+			PRINTFORMW 완전히 %NPC_CALLNAME%의 자지에 친숙해 진 %CALLNAME:TARGET%의 질구는 뻐끔 입을 벌리고, 쏟아진 정자를 흘려 보내고 있다……
 		ELSEIF RAND:4 == 0
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%노페니스에 달라붙었다정액를 혀를 사용해 예쁘게 빨아내고 있다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%의 페니스에 달라붙은 정액을 혀를 사용해 예쁘게 빨아내고 있다…
 		ELSEIF RAND:3 == 0
-			PRINTFORMW 뻥입을 연%CALLNAME:TARGET%의 질 입구로부터는 ,  끝까지 들어가지 않은 정액이 질척질척넘쳐 나오고 하고 있다…
+			PRINTFORMW 뻥 뚫린 %CALLNAME:TARGET%의 질 입구로부터 끝까지 들어가지 않은 정액이 질척질척 넘쳐 나오고 있다…
 		ELSEIF RAND:2
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%(와)과 혀를 얽히게 할 수 있는 만나면서, 허리를 깊게 강압, 다음의 교배를 졸라대고 있다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(NPC_CALLNAME,"과")% 혀를 얽히면서, 허리를 깊게 눌러, 다음의 교배를 졸라대고 있다…
 		ELSE
-			PRINTFORMW %CALLNAME:TARGET%피부인것 같은 표정으로 질내로부터 정액을 흘러넘치게 한이면서 ,  한층 더 교배를 조르기 하고 있다…
+			PRINTFORMW %타겟은()% 가지 못한 표정으로 질내로부터 정액을 흘러넘치면서 , 한층 더 교배를 조르고 있다…
 		ENDIF
 		PRINTFORML 
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%의 집요한질내사정에음주, 완전히 『그 기분』이 되어 버리고 있다…
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%의 집요한 질내사정에 취해 완전히 『그 기분』이 되어 버리고 있다…
 		PRINTFORML 
 		PRINTFORML 
 		CALL EXP_CALC_TRAVEL_UWAKI, "浮気"
@@ -1528,78 +1528,78 @@ CASE "浮気"
 
 	;쇼타(거근)…거근・大量사정
 	CASE "거근쇼타"
-		PRINTFORM %NPC_CALLNAME%를 그늘에 데리고 들어갔음이 분명한%CALLNAME:TARGET%(이었)였지만, 
+		PRINTFORM %조사처리(NPC_CALLNAME,"를")% 그늘에 데리고 들어갔음이 분명한 %타겟이었()%지만, 
 		IF RAND:2 == 0
-			PRINTFORM %NPC_CALLNAME%의 팔(정도)만큼도 있다거근(와)과 젊음 맡긴 강행인허리놀림에 주도권을 빼앗기고, 
+			PRINTFORM %NPC_CALLNAME%의 팔 정도의 거근과 젊은 혈기의 무리한 허리놀림에 주도권을 빼앗기고, 
 		ELSE
-			PRINTFORM %NPC_CALLNAME%의 흉악한 자지에 종횡 무진에질를 구멍을 뚫음, 
+			PRINTFORM %NPC_CALLNAME%의 흉악한 자지가 종횡 무진하게 질에 박혀, 
 		ENDIF
 		IF RAND:4 == 0
 			PRINTFORML 마치 성 처리 완구와 같이 사용되고 있었다…
 		ELSEIF RAND:3 == 0
-			PRINTFORML 이미 여러 번 눈일지도 모르는 절정을 맛보게 되어라고 있었다…
+			PRINTFORML 이미 몇번째인지도 모르는 절정을 맛보고 있었다…
 		ELSEIF RAND:2 == 0
-			PRINTFORML 되는 대로 범해져서 있었다…
+			PRINTFORML 되는 대로 범해지고 있었다…
 		ELSE
-			PRINTFORML 반대로 교성을 주게 하고 버리고 있었다…
+			PRINTFORML 반대로 교성을 내뱉게 되어 버렸다…
 		ENDIF
 
 		IF RAND:3 == 0
-			PRINTFORML 네발로 엎드림이 되었다%CALLNAME:TARGET%에 매달리도록(듯이)하면서, %NPC_CALLNAME%는 무아정신없이 허리를 사용하고 있다…
+			PRINTFORML 네발로 엎드린 %CALLNAME:TARGET%에 매달리듯이 하면서, %조사처리(NPC_CALLNAME,"는")% 무아지경으로 허리를 사용하고 있다…
 		ELSEIF RAND:2 == 0
-			PRINTFORMW 가감(상태)를 모른다%NPC_CALLNAME%하지만 강하고 찌르기올린다여행에, %CALLNAME:TARGET%의 하복부는거근의 형태에 분위기를 살리고 있다…
+			PRINTFORMW 상태를 모르는 %NPC_CALLNAME%의 강한 찔러 올리는 움직임에, %CALLNAME:TARGET%의 하복부는 거근의 형태가 보이고 있다…
 		ELSE
-			PRINTFORMW %NPC_CALLNAME%의 굵다페니스를 문다%CALLNAME:TARGET%의 비순[秘唇]은 크고확장되어 버리고 있다…
+			PRINTFORMW %NPC_CALLNAME%의 굵은 페니스를 문 %CALLNAME:TARGET%의 보지는 크게 확장되어 버렸다…
 		ENDIF
 		IF RAND:2 == 0
 			PRINTFORMW 눈물과 군침을 흘려 보내면서, %조사처리(CALLNAME:TARGET,"는")% 질벽에 새겨지는 강렬한 쾌감에 몸을 진동시키고 있다…
 		ELSE
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%노거근에질안을 비틀어 열 수 있는 쾌락에 기쁨의 비명을 올리고 있다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %NPC_CALLNAME%의 거근에 질안을 비틀어 열어지는 쾌락에 기쁨의 비명을 올리고 있다…
 		ENDIF
 
 		;질내사정
 		IF RAND:3 == 0
-			PRINTFORML %NPC_CALLNAME%하%조사처리(CALLNAME:TARGET,"를")% 한층 더 강하고 찌르기올린다(와)과, 브르르신체를 진동시키고 농후한정액를 풀었다…! 
+			PRINTFORML %조사처리(NPC_CALLNAME,"는")% %조사처리(CAL LNAME:TARGET,"를")% 한층 더 강하게 찔러 올려, 부르르 신체를 진동하고 농후한 정액을 풀었다…! 
 		ELSEIF RAND:2 == 0
-			PRINTFORML %NPC_CALLNAME%는 몽롱이 되고 있다%CALLNAME:TARGET%헤허리를 강하고, 한층 더 안쪽으로 밀어넣으면, 대량의정액를 풀었다…! 
+			PRINTFORML %조사처리(NPC_CALLNAME,"는")% 몽롱하게 된 %CALLNAME:TARGET%에 허리를 강하게, 한층 더 안쪽으로 밀어넣고 대량의 정액을 짜냈다…! 
 		ELSE
-			PRINTFORML %NPC_CALLNAME%는 갑자기%CALLNAME:TARGET%의 안쪽을 격렬하고 찌르기올린다(와)과, 자궁구에 밀착시켰다거근로부터욕망의 덩어리를 대량으로 토해냈다…! 
+			PRINTFORML %조사처리(NPC_CALLNAME,"는")% 갑자기 %CALLNAME:TARGET%의 안쪽을 격렬하고 찔러 올려, 자궁구에 밀착시킨 거근으로부터 욕망의 덩어리를 대량으로 토해냈다…! 
 		ENDIF
 		IF RAND:4 == 0
-			PRINTFORML 왕자지의 크기에 알맞은 대량의 정액을 흘려 넣어져%조사처리(CALLNAME:TARGET,"는")% 정체를 없애 느끼는 얼굴을 쬐고 있다…
+			PRINTFORML 왕자지의 크기에 알맞은 대량의 정액을 흘려 넣어져 %조사처리(CALLNAME:TARGET,"는")% 정신을 잃고 아헤가오를 하고 있다…
 		ELSEIF RAND:3 == 0
-			PRINTFORML 자궁에 두드려 붙여지는 것 같은 굉장할 기세의 사정을 퍼부을 수 있던%조사처리(CALLNAME:TARGET,"는")%,  야무지지 못하게 표정을 이완시켜, 반실신해 버리고 있다…
+			PRINTFORML 자궁에 두드려 붙여지는 것 같은 굉장할 기세의 사정을 퍼부어진 %조사처리(CALLNAME:TARGET,"는")%,  야무지지 못하게 표정을 이완시켜, 반실신해 버리고 있다…
 		ELSEIF RAND:2 == 0
-			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 너무 씩씩한 수컷의 포로가 되어, %NPC_CALLNAME%상대에 아첨하고, 다음의 교배를 졸라대고 있다…
+			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 너무 씩씩한 수컷의 포로가 되어, %NPC_CALLNAME%에 애교부리고, 다음 교배를 졸라대고 있다…
 		ELSE
-			PRINTFORML 사정도 끝나지 않는 동안에 다시허리를 쳐박기 시작했다%NPC_CALLNAME%에, %조사처리(CALLNAME:TARGET,"는")% 완전히 함락 해 버리고 있었다…
+			PRINTFORML 사정도 끝나지 않았지만 다시 허리를 쳐박기 시작한 %NPC_CALLNAME%에, %조사처리(CALLNAME:TARGET,"는")% 완전히 함락 해 버리고 있었다…
 		ENDIF
 		PRINTFORML 
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 왕자지의 쾌락에 저속해져 야무지지 못한 표정인 채 하는 대로 범해지고 있는…
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 왕자지의 쾌락에 저속해져 야무지지 못한 표정인 채 하는 대로 범해지고 있다…
 		PRINTFORML 
 		PRINTFORML 
 		CALL EXP_CALC_TRAVEL_UWAKI, "거근쇼타"
 		PRINTFORML 
 	;쇼타…筆下ろしとか
 	CASE "쇼타"
-		PRINTFORM %NPC_CALLNAME%를 그늘에 데리고 들어갔다%조사처리(CALLNAME:TARGET,"는")%, 
+		PRINTFORM %조사처리(NPC_CALLNAME,"를")% 그늘에 데리고 들어간 %조사처리(CALLNAME:TARGET,"는")%, 
 		IF RAND:3 == 0
-			PRINTFORMW %NPC_CALLNAME%의 미성숙인페니스를 제대로 안쪽까지 뭄, 섹스의 맛을 철저히 가르치고 있다…
+			PRINTFORMW %NPC_CALLNAME%의 미성숙한 페니스를 제대로 안쪽까지 물고, 섹스의 맛을 철저히 가르치고 있다…
 		ELSEIF RAND:2 == 0
-			PRINTFORMW 흥분한다%NPC_CALLNAME%의 앞에서 네발로 엎드림이 되어, 욕망대로허리를 흔들리게 하고 있다…
+			PRINTFORMW 흥분하는 %NPC_CALLNAME%의 앞에서 네발로 엎드림이 되어, 욕망대로 허리를 흔들고 있다…
 		ELSE
-			PRINTFORMW %NPC_CALLNAME%의 위에 걸쳐, 마음껏허리를 털고 있다…
+			PRINTFORMW %NPC_CALLNAME%의 위에 앉아, 마음껏 허리를 흔들고 있다…
 		ENDIF
 		IF TALENT:몽마 && RAND:2 == 0
-			PRINTFORML 몽마노%조사처리(CALLNAME:TARGET,"가")% 주는 쾌락에 초심인%NPC_CALLNAME%하지만 견딜 수 있을 리도 없고, %NPC_CALLNAME%는 몇분으로 가지지 못하고정액를 짜져 버렸다…
+			PRINTFORML 몽마의 %조사처리(CALLNAME:TARGET,"가")% 주는 쾌락에 초심인%NPC_CALLNAME%하지만 견딜 수 있을 리도 없고, %조사처리(NPC_CALLNAME,"는")% 몇분으로 가지지 못하고정액을 짜져 버렸다…
 		ELSE
-			PRINTFORML %CALLNAME:TARGET%의 몸에 완전히 열중해, %NPC_CALLNAME%는 녹았다얼굴그래서허리를 여차저차 거절하면, 눈 깜짝할 순간에정액를 발해 버렸다…
+			PRINTFORML %CALLNAME:TARGET%의 몸에 완전히 열중해, %조사처리(NPC_CALLNAME,"는")% 녹은 얼굴로 허리를 여차저차 흔들자, 눈 깜짝할 순간에 정액을 싸 버렸다…
 		ENDIF
 		PRINTFORML 
 		IF RAND:2 == 0
-			PRINTFORMW 완전히%CALLNAME:TARGET%에 열중해 버렸다%NPC_CALLNAME%하, 사정했다(뿐)만이라고 말하는데 다시허리를 거절하기 시작했다…
+			PRINTFORMW 완전 %CALLNAME:TARGET%에 열중해 버린 %조사처리(NPC_CALLNAME,"는")%, 꽤 사정한 것 같은데 다시 허리를 흔들기 시작했다…
 		ELSE
-			PRINTFORMW 정령을 발했다%NPC_CALLNAME%는 이미 숨도 끊어질듯 끊어질듯이 되어 있었지만, %조사처리(CALLNAME:TARGET,"가")% 만족해 개방되는 것은 당분간앞의 일이 될 것 같다…
+			PRINTFORMW 정액을 낸 %조사처리(NPC_CALLNAME,"는")% 이미 숨도 끊어질듯 하지만, %조사처리(CALLNAME:TARGET,"가")% 만족해 해방되는 것은 꽤 먼 일이 될 것 같다…
 		ENDIF
 		PRINTFORML 
 		PRINTFORML 
@@ -1608,28 +1608,28 @@ CASE "浮気"
 	;モブ男
 	CASEELSE
 		IF RAND:4 == 0
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 이름도 모른다%NPC_CALLNAME%노성욕(이)가 처리되고입(이)가 되어 있다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 이름도 모르는 %NPC_CALLNAME% 성욕의 처리구가 되어 있다…
 		ELSEIF RAND:3 == 0
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 요구되는 대로, %NPC_CALLNAME%에신체를 허락하고 있다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 요구되는 대로, %NPC_CALLNAME%에 신체를 허락하고 있다…
 		ELSEIF RAND:2 == 0
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 성욕(이)가 향하는 대로, %NPC_CALLNAME%의 육봉을 탐내고 있다……
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 성욕이 향하는 대로, %NPC_CALLNAME%의 육봉을 탐내고 있다……
 		ELSE
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 그늘에서%NPC_CALLNAME%의 위에 걸쳐, 마음껏허리를 털고 있다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 그늘에서 %NPC_CALLNAME%의 위에 앉아, 마음껏 허리를 흔들고 있다…
 		ENDIF
 		IF RAND:3 == 0
-			PRINTFORML 경련한다%NPC_CALLNAME%노허리를 %조사처리(CALLNAME:TARGET,"는")% 단단히 끼워 넣음, 꿀단지의 안쪽으로 쏟는 듯%NPC_CALLNAME%의 귀에 속삭여 부추기고 있다…
+			PRINTFORML 경련하는 %NPC_CALLNAME%의 허리를 %조사처리(CALLNAME:TARGET,"가")% 단단히 끼워 넣고, 꿀단지의 안쪽으로 쏟으라고 %NPC_CALLNAME%의 귀에 속삭여 부추기고 있다…
 		ELSEIF RAND:2 == 0
-			PRINTFORMW 격렬하게 흐트러진다%CALLNAME:TARGET%의 허리놀림에 희롱해지고, %NPC_CALLNAME%는 촉구받는 대로사정감을 높여 간다…
+			PRINTFORMW 격렬하게 흐트러진 %CALLNAME:TARGET%의 허리놀림에 희롱해지고, %조사처리(NPC_CALLNAME,"는")% 촉구받는 대로 사정감을 높여 간다…
 		ELSE
-			PRINTFORMW %NPC_CALLNAME%하%CALLNAME:TARGET%의 고기단지가 가져오는 쾌락에 신음해, 사정에 향하여 원숭이와 같이허리를 털고 있다…
+			PRINTFORMW %조사처리(NPC_CALLNAME,"는")%%CALLNAME:TARGET%의 고기단지가 가져오는 쾌락에 신음해, 사정에 향하여 원숭이처럼 허리를 흔들고 있다…
 		ENDIF
 		IF TALENT:몽마 && RAND:2 == 0
-			PRINTFORML 몽마노%조사처리(CALLNAME:TARGET,"가")% 주는 쾌락에 거역할 수 있을 리도 없고, %NPC_CALLNAME%는 몇분으로 가지지 못하고정액를 짜져 버린다…
+			PRINTFORML 몽마의 %조사처리(CALLNAME:TARGET,"가")% 주는 쾌락에 거역할 수 있을 리도 없고, %조사처리(NPC_CALLNAME,"는")% 몇분으로 가지지 못하고정액을 짜져 버린다…
 		ELSE
-			PRINTFORML %CALLNAME:TARGET%의 몸에 완전히 열중했다%NPC_CALLNAME%하, 눈 깜짝할 순간에 쾌락에 굴해, 짜지는 대로정액를 발해 버린다…
+			PRINTFORML %CALLNAME:TARGET%의 몸에 완전히 열중했다%조사처리(NPC_CALLNAME,"는")%, 눈 깜짝할 순간에 쾌락에 굴해, 짜지는 대로정액을 싸 버린다…
 		ENDIF
 		PRINTFORML 
-		PRINTFORMW 정령을 발했다%NPC_CALLNAME%는 이미 숨도 끊어질듯 끊어질듯이 되어 있었지만, %조사처리(CALLNAME:TARGET,"가")% 만족해 개방되는 것은 당분간앞의 일이 될 것 같다…
+		PRINTFORMW 정액을 낸 %조사처리(NPC_CALLNAME,"는")% 이미 숨도 끊어질듯 하지만, %조사처리(CALLNAME:TARGET,"가")% 만족해 해방되는 것은 꽤 먼 일이 될 것 같다…
 		PRINTFORML 
 		PRINTFORML 
 		CALL EXP_CALC_TRAVEL_UWAKI, "浮気"
@@ -1757,92 +1757,93 @@ PRINTFORM 【
 		PRINTDATA
 			DATAFORM 수정 완료
 			DATAFORM 교배 완료
-			DATAFORM 수정제
-			DATAFORM 교배제
-			DATAFORM 바람기 정자로 수정중
-			DATAFORM 바람기 정자로 교배되어 버렸습니다
-			DATAFORM 빨강외인에 임신해져 미안해요
-			DATAFORM 바람기SEX최고
+			DATAFORM 수정OK
+			DATAFORM 교배OK
+			DATAFORM 외도 정자로 수정중
+			DATAFORM 외도 정자로 교배되어 버렸습니다
+			DATAFORM 아기 다른 사람에게 임신해져 미안해요
+			DATAFORM 외도SEX최고
 			DATAFORM 바람피어 버렸습니다
 			DATAFORM 마마로 되어 버렸습니다
 			DATAFORM 자지가 있으면 누구라도 좋은거야
-			DATAFORM 바람기 보지 너무 좋아
-			DATAFORM 바람기 중독Lv5
+			DATAFORM 외도 보지 너무 좋아
+			DATAFORM 외도 중독Lv5
 			DATAFORM NTR되어 버렸습니다
 		ENDDATA
 	;모유체질
 	ELSEIF TALENT:모유체질 && RAND:2 == 0
 		PRINTDATA
 			DATAFORM 암소노예
-			DATAFORM 무료 밀크 서버
-			DATAFORM 자유롭게 젖가슴 마셔
-			DATAFORM 사유[사유[射乳]] 중독Lv5
-			DATAFORM 사유[사유[射乳]]노예
-			DATAFORM 젖가축
+			DATAFORM 무료 밀크 제공
+			DATAFORM 자유롭게 가슴 빨아
+			DATAFORM 분유 중독Lv5
+			DATAFORM 분유 노예
+			DATAFORM 젖소
+			DATAFORM 밀크노예
 		ENDDATA
 	;その他
 	ELSE
 		PRINTDATA
 			DATAFORM 수정 완료
 			DATAFORM 교배 완료
-			DATAFORM 수정제
-			DATAFORM 교배제
+			DATAFORM 수정OK
+			DATAFORM 교배OK
 			DATAFORM 질내사정전용
-			DATAFORM 섹스중독Lv5
+			DATAFORM 섹스 중독Lv5
 			DATAFORM 정액 중독Lv5
 			DATAFORM 자지 중독Lv5
 			DATAFORM 섹스이상
 			DATAFORM 자지 의존증
-			DATAFORM 정액의존증
+			DATAFORM 정액 의존증
 		ENDDATA
 	ENDIF
 PRINTFORM 】【
 	;称号系
 	PRINTDATA
 		DATAFORM 육변기
-		DATAFORM 공중편녀
+		DATAFORM 공중변소녀
 		DATAFORM 정액변녀
-		DATAFORM 성 처리편녀
+		DATAFORM 성 처리 변소녀
 		DATAFORM 색마녀
 		DATAFORM 음란치녀
-		DATAFORM 빈가축
-		DATAFORM 드 변태
+		DATAFORM 성노예
+		DATAFORM 초 변태
 		DATAFORM 치녀
-		DATAFORM 드M
+		DATAFORM 마조
 		DATAFORM 매춘
 		DATAFORM 암캐
 		DATAFORM 암퇘지
-		DATAFORM 돼지노예
+		DATAFORM 암노예
 		DATAFORM 노출광
-		DATAFORM 색광
+		DATAFORM 색정광
 		DATAFORM 직업：변기
 		DATAFORM 직업：정액 소믈리에
-		DATAFORM 특기：아헤얼굴
-		DATAFORM 특기：정액 눌러 짬
+		DATAFORM 특기：아헤가오
+		DATAFORM 특기：정액 짜기
 		DATAFORM 좋아하는 것：자지
 		DATAFORM 좋아하는 것：정액
 		DATAFORM 정액 탱크
-		DATAFORM 자지 호된 훈련구멍
+		DATAFORM 자지 훈련구멍
 		DATAFORM 정액배설구멍
 		DATAFORM 음란보지
 		DATAFORM 질내사정용자지 케이스
-		DATAFORM 연중발정중
-		DATAFORM 즉하메OK
+		DATAFORM 일년내내발정중
+		DATAFORM 즉시섹스OK
 		DATAFORM 자지의 연인
-		DATAFORM 생 하메 전문
+		DATAFORM 노콘 전문
 		DATAFORM 파파 모집중
-		DATAFORM 인지불요정의 교배 변기
+		DATAFORM 피임X 정액 변기
 		DATAFORM 윤간 희망
 		DATAFORM 노예지원
-		DATAFORM 피임불요정
-		DATAFORM 책일특매
+		DATAFORM 피임불필요
+		DATAFORM 오늘한정
 		DATAFORM 레이프환영
-		DATAFORM 오자지 환영
+		DATAFORM 더러운 자지 환영
 		DATAFORM 변태플레이대환영
-		DATAFORM 하메 도망 환영
-		DATAFORM 데카틴 환영
+		DATAFORM 싸튀 환영
+		DATAFORM 왕자지 환영
 		DATAFORM 자지굴복각인Lv3
-		DATAFORM 언제라도 보지발정중
+		DATAFORM 언제든 보지발정중
 	ENDDATA
 PRINTFORM 】【
 	;セリフ系
@@ -1850,39 +1851,39 @@ PRINTFORM 】【
 		DATAFORM 나는 가축입니다
 		DATAFORM 나는 변태입니다
 		DATAFORM 나는 암퇘지입니다
-		DATAFORM 밖에사정없고
-		DATAFORM 정액세례라고 주세요
-		DATAFORM 빗치로 미안해요
-		DATAFORM 정액 담그어로 해 주세요
+		DATAFORM 체외사정금지
+		DATAFORM 부카케해주세요
+		DATAFORM 빗치라서 미안해요
+		DATAFORM 정액으로 샤워시켜 주세요
 		DATAFORM 정자 베풀어 주세요
 		DATAFORM 무책임 교배 희망
-		DATAFORM 아래의입로부터 자지 먹여
-		DATAFORM 아래의 입에 밀크 먹여 주세요
-		DATAFORM 기분 좋지 않았으면 사과합니다
+		DATAFORM 아래 입로부터 자지 먹여
+		DATAFORM 아래 입에 밀크 먹여 주세요
+		DATAFORM 기분 좋지 않았으면 죄송합니다
 		DATAFORM 교배 최고
-		DATAFORM 언제라도 사용해
-		DATAFORM 범해 주세요 부탁합니다
-		DATAFORM 빨리 하메하메 해
-		DATAFORM 헐렁보지로 미안해요
+		DATAFORM 언제라도 사용가능
+		DATAFORM 제발 범해 주세요
+		DATAFORM 빨리 섹스 해
+		DATAFORM 헐렁보지라서 미안해요
 		DATAFORM 암퇘지조교되어 버렸습니다
 		DATAFORM 범해 주세요
 		DATAFORM 자지로 뚫어
 		DATAFORM 임신하게 해 주세요
 		DATAFORM 파이즈리시켜 주세요
 		DATAFORM 자지와 결혼합니다
-		DATAFORM 섹스너무 좋아
+		DATAFORM 섹스 너무 좋아
 		DATAFORM 보지 너무 좋아
 		DATAFORM 자지 너무 좋아
 		DATAFORM 교배 너무 좋아
-		DATAFORM 정액먹여
+		DATAFORM 정액먹여줘
 		DATAFORM 암퇘지라고 불러
-		DATAFORM 내사정되면 기뻐합니다
-		DATAFORM 음란몽마에 벌 해
-		DATAFORM 자지 따위에 지지 않는다! (소)
+		DATAFORM 질내사정되면 기뻐합니다
+		DATAFORM 음란몽마 벌 해줘
+		DATAFORM 자지 따위에 지지 않아! (웃음)
 		DATAFORM 완전굴복했습니다
-		DATAFORM 자지에옷종 해 버렸습니다
+		DATAFORM 자지에 복종 해버렸습니다
 		DATAFORM 지금이라면 교배해 마음껏
-		DATAFORM 무책임하게임신시켜
+		DATAFORM 무책임하게 임신시켜
 	ENDDATA
 PRINTFORM 】
 ;종족固有(1/2の確立で追加. 毎回は表示しない. 落書きの数が増えてきたら変更を検討）
@@ -1893,7 +1894,7 @@ PRINTFORM 】
 			;타마모専用
 			IF NAMES("종족", NO:TARGET, CFLAG:TARGET:8) == "타마모" && RAND:2 == 0
 				PRINTFORM 【
-				PRINTFORM 백탁음란9아양의여우
+				PRINTFORM 백탁음란구미호
 				PRINTFORM 】
 			ELSE
 				IF RAND:2 == 0
@@ -1902,7 +1903,7 @@ PRINTFORM 】
 					PRINTFORM 】
 				ELSE
 					PRINTFORM 【
-					PRINTFORM 음란여자여우
+					PRINTFORM 음란암여우
 					PRINTFORM 】
 				ENDIF
 			ENDIF

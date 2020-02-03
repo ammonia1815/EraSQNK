@@ -80,14 +80,14 @@ CALL CALC, "조교소스", LOCAL:0, LOCAL:1, LOCAL:2, LOCAL:3, LOCAL:4, LOCAL:5,
 IF TALENT:PLAYER:남자
 	PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:PLAYER,"를")% 억누르고, 음모를 깎기 시작했다…
 ELSE
-	PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 가랑이를 밀어열고, 그곳의 털을 깎기 시작했다. 
+	PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 가랑이를 열고, 그곳의 털을 깎기 시작했다. 
 ENDIF
 
 IF ABL:기교 >= 4 && RAND:5 == 0
 	PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 음모를 
 	SIF ABL:기교 >= 5
 		PRINT 정성스럽게 
-	PRINTW 탈모당하고말았다…
+	PRINTW 제모당하고 말았다…
 	BASE:PLAYER:음모 = 200
 	DOWNBASE:체력 += 30
 	DOWNBASE:기력 += 80
@@ -102,7 +102,7 @@ ELSE
 	IF ABL:기교 >= 4
 		PRINT 정중하게 
 	ELSEIF ABL:기교 <= 2 && RAND:2 == 0
-		PRINT 조금 실수해버린 것같아서, 그 결과
+		PRINT 조금 실수해버린 것 같아 그 결과
 	ENDIF
 	PRINTFORMW %CALLNAME:PLAYER%의 음모를 깎아서 맨질맨질하게 만들었습니다…
 	BASE:PLAYER:음모 = 300

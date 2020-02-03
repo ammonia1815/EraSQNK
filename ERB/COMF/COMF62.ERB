@@ -90,26 +90,26 @@ IF TEQUIP:러브트랩
 	IF INSERT("인서트") && COND("前Ｔ조교자") == PLAYER
 		;체위が굴곡위
 		IF INSERT("굴곡위")
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 질내에 있는 페니스의 감촉을 맛보면서, 다시 허리를 움직이기시작했다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 질내에 있는 페니스의 감촉을 맛보면서, 다시 허리를 움직이기 시작했다…
 		ELSE
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 위를 향해 드러누운 %조사처리(CALLNAME:PLAYER,"를")% 받아들이면서, 다시 허리를 움직이기시작했다…
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 위를 향해 드러누운 %조사처리(CALLNAME:PLAYER,"를")% 받아들이면서, 다시 허리를 움직이기 시작했다…
 		ENDIF
 	ELSE
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 위를 향해 드러누운 %조사처리(CALLNAME:PLAYER,"를")% 받아들이면서, 허리를 움직이기시작했다…
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 위를 향해 드러누운 %조사처리(CALLNAME:PLAYER,"를")% 받아들이면서, 허리를 움직이기 시작했다…
 	ENDIF
 ELSEIF CHECK_COM("３Ｐ봉사")
 	CALL TRAIN_MESSAGE_3P
 ;それ以外
 ELSE
 	IF PREVPLAY("Ｖ굴곡위") && COND("前Ｔ조교자") == PLAYER
-		PRINTFORM 사타구니를 전개에 시킨 부끄러운 몸의 자세인 채,
+		PRINTFORM 사타구니를 활짝 연 부끄러운 자세인 채,
 		IF TEQUIP:키스
 			PRINTFORM %CALLNAME:TARGET%%TEXTS("키스継続助詞付き")%
 			CALL SETFLAG, "추가키스플래그", TARGET
 		ELSE
-			PRINTFORM 다시%CALLNAME:TARGET%노
+			PRINTFORM 다시%CALLNAME:TARGET%의
 		ENDIF
-		PRINTFORMW %TEXTS("Ｖ삽입前")%를 범하기 시작했다…
+		PRINTFORMW %조사처리(TEXTS("Ｖ삽입前"),"를")% 범하기 시작했다…
 	;前回と今回の조교자が同じで, 抜かない플래그がある場合
 	ELSEIF INSERT("인서트") && COND("前Ｔ조교자") == PLAYER
 		;애널섹스から移行
@@ -117,27 +117,27 @@ ELSE
 			IF INSERT("정상위")
 				PRINTFORM %조사처리(CALLNAME:TARGET,"를")% 뒤집어서, 애널에서 뽑은 %조사처리(NAMES("페니스", PLAYER),"로")% 
 			ELSEIF INSERT("굴곡위")
-				PRINTFORM 다리를 크게벌리고 허리를 높이 올린 자세를 한 %CALLNAME:TARGET%의 애널에서 %조사처리(NAMES("페니스", PLAYER),"를")% 뽑고, 
+				PRINTFORM 다리를 크게 벌리고 허리를 높이 올린 자세를 한 %CALLNAME:TARGET%의 애널에서 %조사처리(NAMES("페니스", PLAYER),"를")% 뽑고, 
 			ENDIF
 			PRINTFORMW %조사처리(TEXTS("Ｖ삽입前"),"를")% 깊숙히 꿰뚫었다…
 		;체위が굴곡위
 		ELSEIF INSERT("굴곡위")
 			IF TEQUIP:키스
-				PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%%TEXTS("키스継続助詞付き")%, 다시 허리를 움직이기 시작했다…
+				PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")%%CALLNAME:TARGET%%TEXTS("키스継続助詞付き")%, 다시 허리를 움직이기 시작했다…
 				CALL SETFLAG, "추가키스플래그", TARGET
 			;조교자が남자か후타나리である
 			ELSEIF PENIS(PLAYER)
-				PRINTFORMW %CALLNAME:TARGET%의 질내의 감촉을 맛보면서, 다시 허리를 움직이기시작했다…
+				PRINTFORMW %CALLNAME:TARGET%의 질내의 감촉을 맛보면서, 다시 허리를 움직이기 시작했다…
 			ELSE
 			;페니스밴드を使用している場合
-				PRINTFORMW %CALLNAME:TARGET%의 질내에서 뽑지않고, 다시 허리를 움직이기시작했다…
+				PRINTFORMW %CALLNAME:TARGET%의 질내에서 뽑지 않고, 다시 허리를 움직이기 시작했다…
 			ENDIF
 		;체위が정상위
 		ELSEIF INSERT("정상위")
 			IF RAND:2
-				PRINTFORMW %CALLNAME:TARGET%의 양다리를 붙자고 허리를 띄우면서 앞으로 밀어넘어뜨리고, 무릎을 어깨에 걸고 범하기시작했다…
+				PRINTFORMW %CALLNAME:TARGET%의 양다리를 붙자고 허리를 띄우면서 앞으로 밀어넘어뜨리고, 무릎을 어깨에 걸고 범하기 시작했다…
 			ELSE
-				PRINTFORMW %조사처리(CALLNAME:TARGET,"를")% 뒤집어서, 그곳이 얼굴 앞에 오도록해서 범하기시작했다…
+				PRINTFORMW %조사처리(CALLNAME:TARGET,"를")% 뒤집어서, 그곳이 얼굴 앞에 오도록 해서 범하기 시작했다…
 			ENDIF
 		ENDIF
 	ELSE
@@ -149,21 +149,21 @@ ELSE
 		ENDIF
 		IF COND("前Ｔから대상のみ변경") && PREVCOM:1 >= 60 && PREVCOM:1 <= 79
 			CALL TEXT, "추가地の文：穴から穴へ"
-			PRINTFORM %CALLNAME:TARGET%를 뒤엎으면,
+			PRINTFORM %타겟을()% 뒤엎고,
 		;穴開きでない팬티をはいていて, ずらされていないなら, 必ずずらす
 		ELSEIF !CHECK_CLO("Ｖ노출") && CHECK_CLO("Ｖ노출可")
 			PRINTFORM %CALLNAME:TARGET%의 
 			CALL SETFLAG, "바텀을노출：텍스트有り", TARGET
 			PRINTFORM , 굴곡위의 몸의 자세로
 		ELSE
-			PRINTFORM %CALLNAME:TARGET%를 뒤엎으면,
+			PRINTFORM %타겟을()% 뒤엎고,
 		ENDIF
 
 		IF TEQUIP:키스
 			PRINTFORM 입술을 빼앗으면서
 			CALL SETFLAG, "추가키스플래그", TARGET
 		ELSE
-			PRINTFORM 결합부가 자주(잘) 보이도록(듯이)하면서
+			PRINTFORM 결합부가 잘 보이게끔
 		ENDIF
 		IF TALENT:작은몸집
 			PRINT 어린 균열

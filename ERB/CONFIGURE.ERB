@@ -57,7 +57,7 @@ RESETCOLOR
 
 ;たった一度の変更いろいろ
 SIF GETBIT(FLAG:11, 1) == 0
-	PRINTFORML  [90] 주인의 외견연령 기준치를 변경한다 (한 번만입니다)
+	PRINTFORML  [90] 주인의 외견연령 기준치를 변경한다 (한번뿐입니다)
 SIF GETBIT(FLAG:11, 2) == 0
 	PRINTFORML  [91] 모든 사람의 유두 상세를 변경한다 (한번뿐입니다)
 
@@ -92,18 +92,18 @@ ELSEIF RESULT == 40
 	ENDIF
 ELSEIF RESULT == 90
 	IF GETBIT(FLAG:11, 1) == 0
-		PRINTFORML 외견연령의 사양변경에 따라, 한 번뿐이지만 주인의 그것을 변경할 수 있습니다.
+		PRINTFORML 외견연령의 사양이 변경됨에 따라, 한 번뿐이지만 주인의 것을 변경할 수 있습니다.
 		IF TALENT:MASTER:오토코노코
 			CALL PRINT_STR, "황색_다만, 오토코노코는[ 2]나 [ 3]을 선택해도, 오토코노코인 한 외견은 소년입니다_L"
 			CALL PRINT_STR, "황색_물론 [ 0]을 선택하면 외모가 어린 오토코노코의 완성입니다_L"
 		ENDIF
-		PRINTFORML ……どれにしますか？
+		PRINTFORML ……어느 것으로 하시겠습니까？
 		PRINTL 
 		PRINTFORML  [ 0] 아이
 		PRINTFORML  [ 1] \@ TALENT:MASTER:남자 ? 소년 # 소녀 \@
 		PRINTFORML  [ 2] \@ TALENT:MASTER:남자 ? 청년 # 누님 \@
 		PRINTFORML  [ 3] \@ TALENT:MASTER:남자 ? 어른 # 숙녀\@
-		PRINTFORML [100] 考え直してくる
+		PRINTFORML [100] 다시 생각한다
 
 		CALL INPUT_SELECT, 4, 100
 
@@ -126,7 +126,7 @@ ELSEIF RESULT == 90
 	ENDIF
 ELSEIF RESULT == 91
 	IF GETBIT(FLAG:11, 2) == 0
-		PRINTFORML 유두의 상세 묘사법의 추가에 따라 한 번뿐이지만 그것을 모두 변경할 수 있습니다
+		PRINTFORML 유두의 상세 묘사법의 추가에 따라 한 번뿐이지만 모두 변경할 수 있습니다
 		;1ページ目を表示
 		CALL RESELECT_ERECT, 0, 0
 	ENDIF
@@ -559,7 +559,7 @@ CASE "ボイス"
 CASE "EmueraTunes"
 	RETURNF FLAG:501
 CASEELSE
-	THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다
+	THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다
 ENDSELECT
 RETURNF 0
 
@@ -598,7 +598,7 @@ CASE "조교全般"
 		IF GETBIT(FLAG:207, 3)
 			PRINT 어른만 난다
 		ELSEIF GETBIT(FLAG:207, 2)
-			PRINT 누님과 어른만 난다
+			PRINT 청년부터 난다
 		ELSEIF GETBIT(FLAG:207, 1)
 			PRINT 아이 이외에는 모두 난다
 		ELSEIF GETBIT(FLAG:207, 0)
@@ -610,7 +610,7 @@ CASE "조교全般"
 	ENDIF
 	RESETCOLOR
 	PRINTFORML  [ 6] \@ CONFIG("페니스상세설정") ? ○ # －\@ 페니스의 상세 설정
-	PRINTFORML  [ 7] \@ CONFIG("조수상대でも연모適用") ? ○ # －\@ %TEXTS("조수の명칭")% 조교中에 연모 구상을 사용한다
+	PRINTFORML  [ 7] \@ CONFIG("조수상대でも연모適用") ? ○ # －\@ %TEXTS("조수の명칭")% 조교중에 연모 구상을 사용한다
 	PRINTFORML  [ 8] \@ CONFIG("寝取られ") ? ○ # －\@ 상사상애인 상대를 빼앗기는 이벤트의 발생
 	PRINTFORML  [ 9] \@ CONFIG("촉수설정") ? ○ # －\@ 촉수설정
 	PRINTFORML  [10] \@ CONFIG("내부데이터の표시") ? ○ # －\@ 카운터 확률 등 몇 가지 내부 데이터의 표시
@@ -697,7 +697,7 @@ CASE "システム＆이벤트全般"
 	PRINTFORM  [ 4] \@ CONFIG("성기상세표시") ? ○ # －\@ V와 A등 성기의 능력의 상세 표시：
 	SETCOLOR DEF_COLOR("暗황색")
 	IF CONFIG("성기상세표시")
-		PRINTFORML 한다＆ＶＡ확장 ＬＶ의 변화는\@ CONFIG("ＶＡ상세표시：수동ＬＶＵＰ") ? 수동 # 자동 \@으로 진행
+		PRINTFORML 이후＆ＶＡ확장 ＬＶ의 변화는\@ CONFIG("ＶＡ상세표시：수동ＬＶＵＰ") ? 수동 # 자동 \@으로 진행
 	ELSE
 		PRINTFORML 하지 않는다
 	ENDIF
@@ -739,7 +739,7 @@ CASE "システム＆이벤트全般"
 	IF CONFIG("몽마化時の特徴変化") == 0
 		PRINTL 특징을 계승하지 않는다
 	ELSEIF CONFIG("몽마化時の特徴変化：外見のみ")
-		PRINTL 외관적인 특징을 계승한다
+		PRINTL 외관의 특징을 계승한다
 	ELSEIF CONFIG("몽마化時の特徴変化：全部")
 		PRINTL 외견＆내면의 특징을 계승한다
 	ENDIF
@@ -765,9 +765,9 @@ CASE "システム＆이벤트全般"
 	PRINTFORML  [15] \@ CONFIG("유니크캐릭터의다중소환") ? ○ # －\@ 유니크 캐릭터의 다중 소환
 	PRINTFORML  [16] \@ CONFIG("요바이아침기습금지") ? ○ # －\@ 요바이와 아침봉사를 금지한다
 	PRINTFORML  [17] \@ CONFIG("대사の名前비표시") ? ○ # －\@ 조교 외 이벤트의 대사에 첨부되는 이름을 표시하지 않는다.
-	PRINTFORML  [18] \@ CONFIG("하룻밤개방の이벤트全표시") ? ○ # －\@ 하룻밤 개방 이벤트를 전 캐릭터 표시시키다
+	PRINTFORML  [18] \@ CONFIG("하룻밤개방の이벤트全표시") ? ○ # －\@ 하룻밤 개방 이벤트를 모든 캐릭터 표시한다
 	PRINTFORML  [19] \@ CONFIG("온천여행에서의바람기") ? ○ # －\@ 온천여행에서 바람기 이벤트의 해금
-	PRINTFORML  [20] \@ CONFIG("쇼타메이드") ? ○ # －\@ 쇼타도 다방에 일시킨다
+	PRINTFORML  [20] \@ CONFIG("쇼타메이드") ? ○ # －\@ 쇼타도 다방에서 일 시킨다
 	PRINTFORML  [21] \@ CONFIG("성희롱금지") ? ○ # －\@ 주인이 선택지 없이 성희롱 등을 하는 것을 금지한다
 	PRINTFORML  [22] \@ CONFIG("蓄精") ? ○ # －\@ 하룻밤 개방 이벤트 등으로 보온병에 정액을 축적할 수 있도록 한다.
 	PRINTFORML [100] 돌아간다
@@ -952,7 +952,7 @@ CASE "사정箇所の변경"
 		PRINTL [30] 랜덤
 		PRINTL [40] 여유가 있으면 선택
 		IF ITEM:보온병
-			PRINTL [90] 보온병에 정액을 보존한다
+			PRINTL [90] 보온병에 정액을 모은다
 			CALL INPUT_SELECT, 7, 20, 30, 40, 90
 		ELSE
 			CALL INPUT_SELECT, 7, 20, 30, 40
@@ -988,7 +988,7 @@ CASE "사정箇所の변경"
 			PRINTW ―여유가 있을 때 선택하도록 설정했습니다―
 			FLAG:LOCAL = 40
 		ELSEIF RESULT == 90 && ITEM:보온병
-			PRINTW ―보온병에 보존하도록 설정했습니다―
+			PRINTW ―보온병에 모으도록 설정했습니다―
 			FLAG:LOCAL = 90
 		ENDIF
 	ENDSELECT
@@ -1160,7 +1160,7 @@ CASE "갈아입히기설정"
 		CALL INPUT_SELECT, 3
 		FLAG:201 = RESULT
 	CASE 2
-		PRINTL 　　실내나 실외에서 신발을 벗거나 신거나 하도록 하시겠습니까?
+		PRINTL 　　 실내나 실외에서 신발을 벗거나 신거나 하도록 하시겠습니까?
 		PRINTL [ 0] 특별히 지시하지 않는다
 		PRINTL [ 1] 조교 개시시와, 야외에서 돌아올 때에 벗도록 한다
 		CALL INPUT_SELECT, 2
@@ -1187,7 +1187,7 @@ CASE "일상"
 	FLAG:205 = RESULT
 	SELECTCASE FLAG:205
 	CASE 0
-		PRINTW 휴식때만으로 설정한다
+		PRINTW 휴식때에만 설정한다
 	CASE 1
 		PRINTW 시간이 경과할때마다 발생하도록 설정한다
 	CASE 2
@@ -1198,7 +1198,7 @@ CASE "自動喘ぎ"
 	IF FLAG:206
 		PRINTW 자동 신음 엔진을 적용하도록 설정합니다
 	ELSE
-		PRINTW 대사가 준비되어있지 않은 경우에는 말하지 않습니다
+		PRINTW 구상이 준비되어있지 않은 경우에는 말하지 않습니다
 	ENDIF
 CASE "음모と겨털"
 	REDRAW 0
@@ -1214,7 +1214,7 @@ CASE "음모と겨털"
 		IF GETBIT(FLAG:207, 3)
 			PRINT ：어른만 자란다
 		ELSEIF GETBIT(FLAG:207, 2)
-			PRINT ：누님과 어른만 자란다
+			PRINT ：청년부터 자란다
 		ELSEIF GETBIT(FLAG:207, 1)
 			PRINT ：아이가 아니면 자란다
 		ELSEIF GETBIT(FLAG:207, 0)
@@ -1535,9 +1535,9 @@ CASE "주인・조수の몽마化"
 CASE "몽마化時の特徴変化"
 	PRINTL 몽마화 했을 때의 변화를 설정합니다
 	PRINTFORML 외견특징은 일부를 제외하고 「원래 몽마가 아닌 캐릭터」만 계승합니다
-	PRINTL [0] 변화하지않는다
+	PRINTL [0] 변화하지 않는다
 	PRINTL [1] 외견만 영향을 받는다
-	PRINTL [2] 외견에 더해서, 성격도 영향을 받는다
+	PRINTL [2] 외견과 더불어 성격도 영향을 받는다
 	CALL INPUT_SELECT, 3
 	FLAG:242 = RESULT
 	IF RESULT == 0
@@ -1677,10 +1677,10 @@ CASE "성기상세표시"
 		INVERTBIT FLAG:254, 1
 		;たった一度の初期化
 		IF CONFIG("ＶＡ상세표시：수동ＬＶＵＰ") && GETBIT(FLAG:11, 0) == 0
-			PRINTFORML 모든 캐릭터의Ｖ확장도와Ａ확장도를 초기화하나요？
+			PRINTFORML 모든 캐릭터의 Ｖ확장도와 Ａ확장도를 초기화합니까？
 			PRINTFORML 정말 한번밖에 없으니, 잘 생각하고 선택하세요 
 			PRINTFORML [ 0] 초기화한다
-			PRINTFORML [ 1] 초기화하지않는다
+			PRINTFORML [ 1] 초기화하지 않는다
 			CALL INPUT_SELECT, 2
 			IF RESULT == 0
 				FOR LCOUNT, 1, CHARANUM
@@ -1733,7 +1733,7 @@ CASE "페니스상세설정：범용"
 	REDRAW 0
 	PRINTFORML 다음의 성격의 캐릭터에 대해, 경향을 설정하십시오
 	PRINTFORML 난수요소가 들어가지만, 선택한 경향이 될 확률이 높아집니다
-	PRINTFORML 다만, 아들 등 성숙하지 않은 몸을 가진 캐릭터는 작고 포경이 안되어있는 경향이 높아집니다
+	PRINTFORML 다만, 아들 등 성숙하지 않은 몸을 가진 캐릭터는 작고 포경이 안 되어있을 가능성이 높아집니다
 	PRINTFORML （주의：크다고 다 좋은 것은 아닙니다! ）
 	FOR LCOUNT, 0, 3
 		SELECTCASE LCOUNT
@@ -1810,7 +1810,7 @@ CASE "페니스상세설정：주인"
 	TALENT:MASTER:페니스 = MAX(TALENT:MASTER:페니스, 1)
 	PRINTFORML %NAME:MASTER%의 페니스의 성질을 결정해주세요
 	SIF PENIS(MASTER) == 0
-		PRINTFORML （현재는 없어보입니다만, 만약 있다면이라는 가정하에 대답）
+		PRINTFORML （현재는 없지만, 만약 있다는 가정하에 대답）
 	PRINTFORM 크기…
 	SETCOLOR DEF_COLOR("暗황색")
 	IF GETBIT(TALENT:MASTER:페니스, 3)
@@ -1916,7 +1916,7 @@ CASE "하룻밤개방の이벤트全표시"
 CASE "온천여행에서의바람기"
 	INVERTBIT FLAG:275, 0
 	IF CONFIG(ARGS)
-		PRINTW 성욕을 추체 하지 못하고 있으면, 주인과 여행 와중에도 남자 고기잡이를 시작해 버릴지도 모릅니다.
+		PRINTW 성욕을 주체 하지 못하면, 주인과 여행 중에도 남자 고기잡이를 시작해 버릴지도 모릅니다.
 	ELSE
 		PRINTW 여행 중에 남자를 찾고 다니지 않습니다.
 	ENDIF
@@ -1930,7 +1930,7 @@ CASE "요도を확장하기쉬움"
 CASE "쇼타메이드"
 	INVERTBIT FLAG:277, 0
 	IF CONFIG(ARGS)
-		PRINT 오토코노코 이외에 쇼타(남자이면서 외견이 어리다...…능력 표시의 속성에
+		PRINT 오토코노코 이외에 쇼타 (남자이면서 외견이 어림...…능력 표시의 속성에
 		CALL PRINT_COLORTEXT, "[쇼타]", DEF_COLOR("노랑")
 		PRINTW 로 표시됩니다)를 다방에서 일할 수 있도록 합니다
 	ELSE
@@ -1943,16 +1943,16 @@ CASE "匂いの표기변경"
 		CALL PRINTL_COLORTEXT, "일반적으로 좋다고 해도 불쾌하다고는 단정하기 어려운 냄새가 나는 냄새", DEF_COLOR("황색")
 		CALL PRINT_COLORTEXT, "……예를 들면, 좋아하는 상대의 성기 냄새나 체취입니다.", DEF_COLOR("황색")
 		PRINTFORML 의 표기를 골라 주세요.
-		PRINTFORML （다만, 머리카락의 냄새, 요리의 냄새 등의 일반적으로 좋은 향기의 것은,「匂い」로 고정,
-		PRINTFORMW 두피의 냄새, 배설물의 냄새 등의 일반적으로 좋지 않은 향기는「臭い」로 고정합니다）
+		PRINTFORML （다만, 머리카락의 냄새, 요리의 냄새 등의 일반적으로 좋은 향기의 것은,「내음」로 고정,
+		PRINTFORMW 두피의 냄새, 배설물의 냄새 등의 일반적으로 좋지 않은 향기는「냄새」로 고정합니다）
 		PRINTFORML 
 	ENDIF
 	PRINTFORML 그럼 다음 중에 선택해주세요
 	PRINTL 
-	PRINTFORML [ 0] 匂い
-	PRINTFORML [ 1] 臭い
-	PRINTFORML [ 2] におい
-	PRINTFORML [ 3] ニオイ
+	PRINTFORML [ 0] 내음
+	PRINTFORML [ 1] 냄새
+	PRINTFORML [ 2] 향내
+	PRINTFORML [ 3] 향기
 
 	CALL INPUT_SELECT, 4
 
@@ -1993,7 +1993,7 @@ CASE "蓄精"
 	IF CONFIG(ARGS)
 		PRINTFORMW 하루밤 개방등의 일부 이벤트에서 보온병에 정액을 모으는 선택지가 나오게 됩니다.
 	ELSE
-		PRINTFORMW 조교中에만 보온병에 정액을 모으는 선택지가 등장합니다.
+		PRINTFORMW 조교 중에만 보온병에 정액을 모으는 선택지가 등장합니다.
 	ENDIF
 
 CASE "유두の상세설정"
@@ -2182,7 +2182,7 @@ CASEELSE
 		PRINTFORML （아무것도 입력하지 않으면 %조사선택(CNAMET(ARG, "一人称"), "가")% 독음이 됩니다）
 		PRINTL 
 		PRINTFORML (전각30문자 (반각이면 60문자) 이내로 입력해주세요)
-		PRINTFORML 일인칭에, "%CALLNAME:TARGET%様"이라고 입력했다면, 마찬가지로 "CARNAME_TARGET님"라고 입력해 주세요.
+		PRINTFORML 일인칭에, "%CALLNAME:TARGET%様"이라고 입력했다면, 마찬가지로 "CALLNAME_TARGET님"라고 입력해 주세요.
 
 		CALL INPUTS_SELECT, 60
 
@@ -2198,7 +2198,7 @@ CASEELSE
 		RESTART
 	CASE 11
 		IF RESULTS == CEVENTS("二人称주인", ARG)
-			PRINTFORMW 변경하지않았습니다
+			PRINTFORMW 변경하지 않았습니다
 			RESTART
 		ENDIF
 
@@ -2214,7 +2214,7 @@ CASEELSE
 		PRINTFORML （아무것도 입력하지 않으면 %조사선택(CNAMET(ARG, "二人称"), "가")% 독음이 됩니다）
 		PRINTL 
 		PRINTFORML (전각30문자 (반각이면 60문자) 이내로 입력해주세요)
-		PRINTFORML 2인칭에, "%CALLNAME:MASTER%様"이라고 입력했다면, 마찬가지로 "CARNAME_MASTER님"라고 입력해 주세요.
+		PRINTFORML 2인칭에, "%CALLNAME:MASTER%様"이라고 입력했다면, 마찬가지로 "CALLNAME_MASTER님"라고 입력해 주세요.
 
 		CALL INPUTS_SELECT, 60
 
@@ -2289,7 +2289,7 @@ MEMO_LINECOUNT = LINECOUNT
 REDRAW 0
 PRINTL 
 PRINTFORML 캐릭터 정렬을 실행합니다
-PRINTFORML 두사람의 차례를 바꾸고 싶은 경우에는 계속해서 두사람을 선택해주세요
+PRINTFORML 둘의 차례를 바꾸고 싶은 경우에는 계속해서 둘을 선택해주세요
 PRINTFORML 또, 호감도나 캐릭터번호 등으로 한번에 정렬하고 싶은 경우에는 [200]을 선택해주세요
 
 FOR LCOUNT, 2, CHARANUM

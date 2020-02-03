@@ -3,25 +3,25 @@
 IF (BASE:체력 <= 0 || BASE:정력 <= 0) && COND("몽마", PLAYER) && COND("몽마化가능")
 	PRINTFORMW 체력의 한계를 넘은 %조사처리(CALLNAME:TARGET,"는")%, 몽마가 되었다…
 	IF CONFIG("대상の몽마化：여체화") && TALENT:남자
-		PRINTFORMW 몽마가 된영향으로, %조사처리(CALLNAME:TARGET,"는")% 여자가 되었다…
+		PRINTFORMW 몽마가 된 영향으로, %조사처리(CALLNAME:TARGET,"는")% 여자가 되었다…
 		CALL CHANGE_SEX, TARGET
 	ENDIF
 	CALL CHANGE_SUCCUBUS, TARGET, PLAYER
-;조교대상の체력が0이하である
+;조교대상の체력이 0이하일 때
 ELSEIF BASE:체력 <= 0
 	IF TEQUIP:넘어뜨리기
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 격렬한 피로로 어깨를들썩이고있다…
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 심한 피로로 어깨를 들썩이고 있다…
 		PRINTFORMW 조금 무리를 해버린 것 같다…
-	;몽마or상위몽마or魔王の欠片である
+	;몽마or상위몽마or마왕의조각 있음
 	ELSEIF TALENT:몽마 || TALENT:상위몽마 || TALENT:마왕의조각
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 격렬한 피로로 숨이 끊어질 것만 같다…
-		PRINTFORMW 조금 무리를 과하게 시킨것 같다…
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 심한 피로로 숨이 끊어질 것만 같다…
+		PRINTFORMW 조금 무리를 과하게 한 것 같다…
 	;それ以外はゲームオーバー
 	ELSE
 		PRINTFORMW ………
 		PRINTFORMW ……
 		PRINTFORMW …
-		PRINTFORMW ★★★%조사처리(CALLNAME:TARGET,"는")% 사라져버렸다★★★
+		PRINTFORMW ★★★%조사처리(CALLNAME:TARGET,"는")% 사라져 버렸다★★★
 		PRINTFORMW 
 		PRINTFORMW 
 		PRINTFORMW 
@@ -31,7 +31,7 @@ ELSEIF BASE:체력 <= 0
 	IF TEQUIP:넘어뜨리기
 	;마조끼が3이상
 	ELSEIF ABL:마조끼 >= 3
-		PRINTFORMW 그러나, %CALLNAME:TARGET%의 얼굴에는 어딘가 기쁜 표정마저 감돌고있다…. 
+		PRINTFORMW 그러나, %CALLNAME:TARGET%의 얼굴에는 어딘가 기쁜 표정이 감돌고 있다…. 
 	;それ以外で순종Lvが1이상なら1下げる. 넘어뜨리기のときは除外
 	ELSEIF ABL:순종 > 0
 		ABL:순종 -= 1
@@ -54,7 +54,7 @@ IF BASE:체력 < 500
 	IF CEVENT("消滅予定")
 		CALL ASSI_DOWN, TARGET
 	ELSE
-		PRINTFORMW ★\@ BASE:체력 < 500 ? 体 # 精 \@力が限界に来ています、조교を終了します。★
+		PRINTFORMW ★\@ BASE:체력 < 500 ? 체 # 정 \@력이 한계에 도달해, 조교를 종료합니다. ★
 		BEGIN AFTERTRAIN
 	ENDIF
 ENDIF
@@ -401,7 +401,7 @@ IF CONFIG("주인・조수の몽마化") && TARGET && COND("몽마")
 		PRINTFORMW %CALLNAME:ASSI%의 상태가 이상하다…
 		IF CONFIG("주인・조수の몽마化：캔슬可")
 			PRINTL [0] 지켜본다
-			PRINTL [1] 말을건다
+			PRINTL [1] 말을 건다
 			CALL INPUT_SELECT, 2
 			IF RESULT == 0
 				PRINTFORMW 체력의 한계를 넘어선 %조사처리(CALLNAME:ASSI,"는")%, 몽마가 되었다…
@@ -411,14 +411,14 @@ IF CONFIG("주인・조수の몽마化") && TARGET && COND("몽마")
 					PRINTW …아직도 상태가 이상하다
 					PRINTL [0] 지켜본다
 					PRINTL [1] 위험해보이면 멈춘다
-					PRINTL [2] 말을건다
+					PRINTL [2] 말을 건다
 					CALL INPUT_SELECT, 2
 					IF RESULT == 0
 						PRINTFORMW 몽마가 된 영향으로, %조사처리(CALLNAME:ASSI,"는")% 여자가 되었다…
 						CALL CHANGE_SEX, ASSI
 					ELSEIF RESULT == 1
 						PRINTFORMW 위험한 기색을 느낀 %조사처리(CALLNAME:MASTER,"가")% 말을 걸자, %조사처리(CALLNAME:ASSI,"는")% 상태가 돌아온 것 같다…
-						PRINTFORMW 그러나, 아무리봐, 남자의 모습이라고 하기엔 위화감이 느껴지게 되고말았다…
+						PRINTFORMW 그러나, 아무래도, 남자의 모습으로 있는 것에 위화감을 느끼는 것 같다…
 						PRINTFORMW 몽마가 된 영향으로, %조사처리(CALLNAME:ASSI,"는")% 오토코노코가 되고 말았다…! 
 						CALL CALC, "작은몸집化", ASSI
 						CALL CALC, "男乳化", ASSI
@@ -428,13 +428,13 @@ IF CONFIG("주인・조수の몽마化") && TARGET && COND("몽마")
 					ENDIF
 				ENDIF
 			ELSEIF RESULT == 1
-				PRINTFORMW 말을걸자, %조사처리(CALLNAME:ASSI,"는")% 상태가 돌아온것 같다
+				PRINTFORMW 말을 걸자, %조사처리(CALLNAME:ASSI,"는")% 상태가 돌아온 것 같다
 			ENDIF
 		ELSE
 			PRINTFORMW 체력의 한계를 넘어선 %조사처리(CALLNAME:ASSI,"는")% , 몽마가 되었다…
 			CALL CHANGE_SUCCUBUS, ASSI, TARGET
 			IF CONFIG("주인・조수の몽마化：여체화") && TALENT:ASSI:남자
-				PRINTFORMW 몽마가 된영향으로, %조사처리(CALLNAME:ASSI,"는")% 여자가 되었다…
+				PRINTFORMW 몽마가 된 영향으로, %조사처리(CALLNAME:ASSI,"는")% 여자가 되었다…
 				CALL CHANGE_SEX, ASSI
 			ENDIF
 		ENDIF
@@ -448,11 +448,11 @@ IF CONFIG("주인・조수の몽마化") && TARGET && COND("몽마")
 			PRINTL [1] 저항한다
 			CALL INPUT_SELECT, 2
 			IF RESULT == 0
-				PRINTFORMW 체력의 한계를 넘어선 %조사처리(CALLNAME:MASTER,"는")%, 몽마가되었다…
+				PRINTFORMW 체력의 한계를 넘어선 %조사처리(CALLNAME:MASTER,"는")%, 몽마가 되었다…
 				CALL CHANGE_SUCCUBUS, MASTER, TARGET
 				IF CONFIG("주인・조수の몽마化：여체화") && TALENT:MASTER:남자
 					PRINTL 
-					PRINTW …아직도 변화가 계속되는 느낌이든다…
+					PRINTW …아직도 변화가 계속되는 느낌이 든다…
 					PRINTL [0] 받아들인다
 					PRINTL [1] 저항한다
 					PRINTL [2] 필사적으로 저항한다
@@ -461,17 +461,17 @@ IF CONFIG("주인・조수の몽마化") && TARGET && COND("몽마")
 						PRINTFORMW 몽마가 된 영향으로, %조사처리(CALLNAME:MASTER,"는")% 여자가되었다…
 						CALL CHANGE_SEX, MASTER
 					ELSEIF RESULT == 1
-						PRINTFORMW 마음을 강하게 먹자 그것은 서서히 진정되었지만, 아무리봐, 남자의 모습이라기엔 위화감이 느껴지게되어버렸다…
+						PRINTFORMW 마음을 강하게 먹자 그것은 서서히 진정되었지만, 아무래도, 남자의 모습으로 있는 것에 위화감을 느껴진다…
 						PRINTFORMW 몽마가 된 영향으로, %조사처리(CALLNAME:MASTER,"는")% 오토코노코가 되어버렸다…! 
 						CALL CALC, "작은몸집化", MASTER
 						CALL CALC, "男乳化", MASTER
 						TALENT:MASTER:오토코노코 = 1
 					ELSEIF RESULT == 2
-						PRINTFORMW 마음을 강하게먹자, 그것은 서서히 진정되어갔다…
+						PRINTFORMW 마음을 강하게 먹자, 그것은 서서히 진정되어 갔다…
 					ENDIF
 				ENDIF
 			ELSEIF RESULT == 1
-				PRINTFORMW 마음을 강하게먹자, 그것은 서서히 진정되어갔다…
+				PRINTFORMW 마음을 강하게 먹자, 그것은 서서히 진정되어 갔다…
 			ENDIF
 		ELSE
 			PRINTFORMW 체력의 한계를 넘은 %조사처리(CALLNAME:MASTER,"는")%, 몽마가 되었다…
@@ -575,7 +575,7 @@ IF DAYEV("日曜", "ゲーム内") && TIME == 0
 	DRAWLINE
 	CALL ABLUP_MASTER, "주말"
 	DRAWLINE
-	PRINTW １週間が過ぎ、日の行の朝がやってきた。
+	PRINTW １주일이 지나, 일요일 아침이 왔다.
 	IF MONEY:7 > 0
 		PRINTFORMW 다방의 수입까지 합해서, 자금 %조사처리(MONEY_C(1500 + MONEY:7),"를")% 획득했다
 		MONEY += MONEY:7
@@ -659,6 +659,6 @@ DRAWLINE
 PRINTL ------------------------------------GAMEOVER-----------------------------------
 DRAWLINE
 
-PRINTW 여기서 재기동하지않으면, 게임을 종료합니다
+PRINTW 여기서 다시 시작하지 않으면, 게임을 종료합니다
 QUIT
 

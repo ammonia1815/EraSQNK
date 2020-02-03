@@ -879,7 +879,7 @@ CASE "봉사"
 		CASE "弱"
 			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 쉴틈없이 계속해서 %CALLNAME:PLAYER%의 페니스를 훑고있다……
 		CASEELSE
-			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 페니스의 페니스에 푹 빠져있다……
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 페니스에 푹 빠져있다……
 		ENDSELECT
 	ENDIF
 CASE "ＳＭ"
@@ -896,7 +896,7 @@ CASE "ＳＭ"
 		PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 괴롭힘에 희롱당하고있다……
 	ENDSELECT
 CASEELSE
-    THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+    THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 
 @COUNTER_POWER
@@ -1132,21 +1132,21 @@ IF COND("넘어뜨리기확률") > RAND:100
 			ENDIF
 
 			IF LOCAL:2 && RANDIF(2, LOCAL:1)
-				PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%에 덥침, 당연히페니스를 스스로의질그리고 물어 왔다! 
+				PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:PLAYER,"를")% 덮쳐, 페니스를 스스로의 질로 물어 왔다! 
 
 				CALL SET_INSERT, TARGET, PLAYER, 65
 			ELSEIF LOCAL:1 && RAND:2
-				PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 위로 향해 되었다%CALLNAME:PLAYER%의 페니스를손그리고 붙잡기, 
+				PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 위로 향해 된 %CALLNAME:PLAYER%의 페니스를 손으로 붙잡고, 
 				IF RAND:2
-					PRINTFORML 얼굴를 너머가랑이를 코에 문질러 왔다! 
+					PRINTFORML 얼굴 너머 가랑이를 코에 문질러 왔다! 
 				ELSE
-					PRINTFORML 엉덩이를얼굴에 강압하도록(듯이)해 타 왔다! 
+					PRINTFORML 엉덩이를 얼굴에 강압하듯 올라타 왔다! 
 				ENDIF
 				TEQUIP:식스나인 = 90
 				TEQUIP:PLAYER:식스나인 = 1
 				TEQUIP:안면기승 = 1
 			ELSE
-				PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 위로 향해 쓰러졌다%CALLNAME:PLAYER%의 얼굴를 무릎서기로 너머, 천천히허리를 떨어뜨려가랑이그리고 코와입를 막아 왔다! 
+				PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 위로 향해 쓰러진 %CALLNAME:PLAYER%의 얼굴을 무릎서기로 올라타, 천천히 허리를 떨어뜨려 가랑이로 코와 입을 막았다! 
 				TEQUIP:안면기승 = 1
 			ENDIF
 		ENDIF
@@ -1196,7 +1196,7 @@ IF BASE:MASTER:정력 <= 0
 	;스톡が残っていれば復活
 	IF BASE:MASTER:스톡 >= 1
 		IF TEQUIP:촉수
-			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 기력을 쥐어짜서 다시 촉수를 조종하기시작했다……!
+			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 기력을 쥐어짜서 다시 촉수를 조종하기 시작했다……!
 		ELSEIF STATE("황홀", PLAYER)
 			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 황홀해하면서도, 기력을 쥐어짰다……!
 		ELSE
@@ -1239,8 +1239,8 @@ SIF STATE("撃沈", ARG) || (BASE:ARG:체력 >= 500 && BASE:ARG:정력 > 0)
 	RETURN 0
 SIF ARG == ASSI
 	PRINTFORML ★%TEXTS("조수の명칭")%격침★
-PRINTFORMW %CALLNAME:ARG%는 이제(벌써)체력의 한계다……
-PRINTFORMW 이것이상%CALLNAME:ARG%를조교에 참가시키는 것은무리같다……
+PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 이제 체력의 한계다……
+PRINTFORMW 이것 이상%조사처리(CALLNAME:ARG,"를")% 조교에 참가시키는 것은 무리 같다……
 CALL ADD_STATE, ARG, "撃沈"
 CALL SETFLAG, "撃沈", ARG
 
@@ -1310,11 +1310,11 @@ CASE "바람의애무"
 	ELSE
 		PRINTFORMW 그러나 %CALLNAME:PLAYER%에게는 효과가 없었다! 
 	ENDIF
-CASE "블러드 썩"
+CASE "흡혈"
 	SELECTCASE ARG
 	;不発
 	CASE 0
-		PRINTFORML ＜%CALLNAME:TARGET%의 블러드 썩! ＞
+		PRINTFORML ＜%CALLNAME:TARGET%의 흡혈! ＞
 		IF RAND:2 == 0 && TEQUIP:아이마스크
 			IF RAND:3 == 0
 				PRINTFORML 그러나 %조사처리(CALLNAME:TARGET,"가")% 가른 것은 공기 뿐이었다…
@@ -1341,11 +1341,11 @@ CASE "블러드 썩"
 		LOCALS = !! !! ! 
 	ENDSELECT
 
-	PRINTFORML ＜%CALLNAME:TARGET%의 블러드 썩%LOCALS%＞
+	PRINTFORML ＜%CALLNAME:TARGET%의 흡혈 %LOCALS%＞
 	PRINTFORML %CALLNAME:PLAYER%의 정력이 {ARG}감소했다!
 	SIF BASE:체력 < MAXBASE:체력
-		PRINTFORML %CALLNAME:TARGET%노체력하지만{LIMIT(MAXBASE:체력 - BASE:체력, 1, 100*ARG)}회복했다！
-	PRINTFORMW 흡혈과 함께 상태를 말로 표현함 하기 어려운 쾌감이%CALLNAME:PLAYER%를 덮친다……！
+		PRINTFORML %CALLNAME:TARGET%의 체력이 {LIMIT(MAXBASE:체력 - BASE:체력, 1, 100*ARG)}회복했다！
+	PRINTFORMW 흡혈과 함께 상태를 말로 표현하기 어려운 쾌감이 %조사처리(CALLNAME:PLAYER,"를")% 덮친다……！
 	BASE:PLAYER:정력 -= ARG
 	TCVAR:PLAYER:109 += ARG
 	BASE:체력 += LIMIT(MAXBASE:체력 - BASE:체력, 1, 100*ARG)
@@ -1379,14 +1379,14 @@ CASE "멜티키스"
 		PRINTFORMW %CALLNAME:PLAYER%의 하드스킨의 효과가 사라졌다! 
 	;PLAYERが황홀
 	ELSEIF STATE("황홀", PLAYER)
-		PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 황홀해하는 %CALLNAME:PLAYER%의 입술을 훔치자, 더욱더 이성이 녹아내려간다…
+		PRINTFORMW %조사처리(CALLNAME:TARGET,"가")% 황홀해 하는 %CALLNAME:PLAYER%의 입술을 훔치자, 더욱 더 이성이 녹아내려간다…
 		BASE:PLAYER:절정 += 500 * ABL:PLAYER:Ｍ감각 * ABL:기교
 	ELSEIF STATE("흐물흐물", PLAYER)
 		PRINTFORML 흐물흐물하게 되어버린 사이에 키스를 반복해, %조사처리(CALLNAME:PLAYER,"는")% 황홀해져버렸다!
 		CALL ADD_STATE, PLAYER, "황홀"
 		FORCEWAIT
 	ELSE
-		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%에게 흐물흐물해져버렸다!（주는 쾌감 다운!）
+		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%에게 흐물흐물해져 버렸다!（주는 쾌감 다운!）
 		CALL ADD_STATE, PLAYER, "흐물흐물"
 		;M감각Lv3이상だと황홀が付くかも
 		IF STATE("황홀", PLAYER) == 0 && ABL:PLAYER:Ｍ감각 >= 3 && RAND:3 == 0
@@ -1474,5 +1474,5 @@ CASE "운명검열"
 	ENDIF
 	PRINTFORMW %LASTWORD가()% 금지되었다!
 CASEELSE
-    THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+    THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT

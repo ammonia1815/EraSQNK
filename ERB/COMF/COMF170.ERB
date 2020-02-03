@@ -27,14 +27,14 @@ IF TEQUIP:비디오카메라
 
 	ELSEIF TEQUIP:비디오카메라 >= 8 && ABL:ASSI:자위중독 >= RAND:6 && RAND:2
 		IF TALENT:ASSI:냉정 + TALENT:ASSI:무관심 + TALENT:ASSI:감정결핍 && RAND:2
-			PRINTFORMW 촬영를 끝냈다%조사처리(CALLNAME:ASSI,"는")% 냉정를 가장하고 있지만, 열을 가진 스스로의가랑이를 손대고 싶은 모습으로 내퇴[內腿]에손를 기게 하고 있다…
+			PRINTFORMW 촬영을 끝낸 %조사처리(CALLNAME:ASSI,"는")% 냉정를 가장하고 있지만, 열을 가진 스스로의 가랑이를 손대고 싶은 모습으로 내퇴[內腿]에 손를 기게 하고 있다…
 		ELSE
-			PRINTFORMW 충분히 보게 되었다%조사처리(CALLNAME:ASSI,"는")% 인내 할 수 없었던 것일까, 편손를가랑이에 늘리고 있다…
+			PRINTFORMW 충분히 보게 된 %조사처리(CALLNAME:ASSI,"는")% 인내 할 수 없었던 것일까, 한손을 가랑이에 넣고 있다…
 		ENDIF
 	;減点요정素無し, かつ尺が超短編ではない
 	ELSEIF GETBITS(CFLAG:69, 1, 2) == 0
 		IF TALENT:ASSI:젖기쉬움 && ABL:ASSI:욕망 >= RAND:6 && RAND:2
-			PRINTFORMW %CALLNAME:ASSI%하%TEXTS("조수の명칭")%로서 확실히 일을 해냈지만, 그다리에는 음액이 외곬 타고 있다…
+			PRINTFORMW %조사처리(CALLNAME:ASSI,"는")%%TEXTS("조수の명칭")%로서 확실히 일을 해냈지만, 그 다리에는 음액이 주르륵 내려오고 있다…
 		ELSE
 			PRINTFORMW %조사처리(CALLNAME:ASSI,"는")% 좋은 영상이 찍혔다고 기쁜듯이 하고 있다…
 		ENDIF
@@ -54,22 +54,22 @@ ELSE
 		IF TALENT:호기심
 			PRINT 처음 본 것에 흥미진진의
 		ELSE
-			PRINT 이상한 것을 보는것 같이촬영기재를 바라본다
+			PRINT 이상한 것을 보는 것 같이 촬영기재를 바라보는
 		ENDIF
 	ELSEIF ABL:노출벽 >= 3 || TALENT:부끄럼없음
 		IF TALENT:상사상애 && TALENT:음란 && RAND:2
-			PRINT 자신들 사랑을 타인에게 과시해 주려고 분위기를 살리고 있다
+			PRINT 자신들 사랑을 타인에게 과시해 주려고 분위기를 살리고 있는
 		ELSEIF COND("인기：ＡＶ") && RAND:2
 			IF TALENT:강기 || TALENT:교만
-				PRINT 자신의인기의 상태를 받아 그렇지만도 않은 모습으로 준비를 하고 있다
+				PRINT 자신의 인기의 상태를 받아 그렇지만도 않은 모습으로 준비를 하고 있는
 			ELSE
-				PRINT 작품 만들기에도 익숙해져 렌즈 너머의손님로부터의 접수를 염려하고 있다
+				PRINT 작품 만들기에도 익숙해져 렌즈 너머의 손님의 접수를 염려하고 있는
 			ENDIF
 		ELSE
-			PRINT 비디오카메라하지만 시야에 들어간 순간에 눈을 빛낸다
+			PRINT 비디오카메라가 시야에 들어간 순간에 눈을 빛내는
 		ENDIF
 	ELSEIF TEQUIP:야외플레이
-		PRINT 주위를 불안한 듯이 듣고 있다
+		PRINT 주위를 불안한 듯이 두리번거리고 있는
 	ELSEIF TALENT:부끄럼쟁이
 		PRINT 얼굴을 새빨갛게 붉히고 이쪽의 상태를 엿보는 
 	ELSE
@@ -77,70 +77,70 @@ ELSE
 	ENDIF
 	PRINTFORM %조사처리(CALLNAME:TARGET,"를")% 거들떠도 안보고, 
 	IF ASSI <= 0
-		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 비디오카메라를손경인 높이의 받침대에 둬조교를 재개했다. 
-		PRINTFORMW （%TEXTS("조수の명칭")%하지만 없기 때문에 조금질이 떨어집니다만 어쩔 수 없습니다…）
+		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 비디오카메라를 손높이의 받침대에 둬 조교를 재개했다. 
+		PRINTFORMW （%조사처리(TEXTS("조수の명칭"),"가")% 없기 때문에 조금 질이 떨어지지만 어쩔 수 없다…）
 	ELSEIF ASSIPLAY
-		PRINTFORMW %CALLNAME:PLAYER%는 촬영를 %CALLNAME:MASTER%에 맡겨조교를 재개했다. 
+		PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 촬영을 %CALLNAME:MASTER%에 맡겨 조교를 재개했다. 
 	ELSE
 		LOCALS = 
 		IF TEQUIP:야외플레이 || TEQUIP:관내노출플레이
 			IF CHARA_NUM("관내노출관객数")
-				LOCALS = ギャラリーたちと一緒にくすくすと笑いながら, 
+				LOCALS = 갤러리들과 함께 킥킥거리며, 
 			ELSEIF ABL:ASSI:새드끼 >= 3
-				LOCALS = ギャラリーがいないことを惜しがりつつ, 
+				LOCALS = 갤러리가 없는 것을 아쉬워하면서, 
 			ELSE
-				LOCALS = 周囲に人がいないことを確認しつつ, 
+				LOCALS = 주위에 사람이 없는것을 확인하면서, 
 			ENDIF
 		ELSEIF (COND("모친") == ASSI || COND("부친") == ASSI || COND("모친", ASSI) == TARGET || COND("부친", ASSI) == TARGET) && RAND:3 == 0
 			IF COND("모친") == ASSI || COND("부친") == ASSI
-				LOCALS = 我が子の性的な成長記録をしっかり残そうと가슴の内で思いながら, 
+				LOCALS = 자신의 아기 성적 성장기록을 확실히 남긴다고 머릿속에서 생각하면서, 
 			ELSE
-				LOCALS = 自分の親の情事を記録することに興奮しつつ, 
+				LOCALS = 자신의 부모님을 찍는다는 것에 흥분하면서, 
 			ENDIF
 		ELSEIF (TALENT:ASSI:음란 || TALENT:ASSI:상사상애) && RAND:4 == 0
 			IF TALENT:ASSI:음란 && RANDIF(1, TALENT:ASSI:상사상애)
 				IF TALENT:ASSI:교만
-					LOCALS = 過激なシーンを見せるようにと지시を出して, 
+					LOCALS = 과격한 씬을 보여주라고 지시하며, 
 				ELSE
-					LOCALS = これから見せられる情事に期待をしながら, 
+					LOCALS = 앞으로 보여줄 정사에 기대를 하면서, 
 				ENDIF
 			ELSE
 				IF TALENT:ASSI:음란
-					LOCALS = 「今は%CALLNAME:TARGET%의 番」と自分に言い聞かせ, 
+					LOCALS = 「지금은 %CALLNAME:TARGET%의 차례」 라고 자신에게 말하면서, 
 				ELSE
-					LOCALS = 寂しげな表情を浮かべていたが, しぶしぶ
+					LOCALS = 외로운 표정을 짓고 있었지만, 마지못해
 				ENDIF
 			ENDIF
 		ELSEIF ABL:ASSI:자위중독 >= 3 && RAND:3 == 0
-			LOCALS = 片손を\@ TALENT:ASSI:남자 ? 가랑이 # 秘所 \@に伸ばしそうになるのを我慢しながら, 
+			LOCALS = 한 손을\@ TALENT:ASSI:남자 ? 가랑이 # 비소 \@에 뻗을것만 같은 걸 참으면서, 
 
 		ELSEIF TALENT:ASSI:새드 && RANDIF(1, TALENT:ASSI:유치, TALENT:ASSI:솔직, TALENT:ASSI:호기심, TALENT:ASSI:고무, TALENT:ASSI:조야, TALENT:ASSI:질투)
-			LOCALS = 直接조교出来ないのを悔しがりつつも, しっかり仕事をこなそうと
+			LOCALS = 직접 조교하지 않는 것을 질투하면서도, 제대로 일을 해내려고
 		ELSEIF TALENT:ASSI:질투 && RANDIF(1, TALENT:ASSI:유치, TALENT:ASSI:솔직, TALENT:ASSI:호기심, TALENT:ASSI:고무, TALENT:ASSI:조야)
-			LOCALS = 行為に加われない事に焼きもちを妬きながら, %CALLNAME:MASTER%の為だと自分に言い聞かせつつ
+			LOCALS = 행위에 가담하지 않는 것에 질투하며, %마스터를()% 위해서라고 자신에게 말하게 하면서
 		ELSEIF TALENT:ASSI:조야 && RANDIF(1, TALENT:ASSI:유치, TALENT:ASSI:솔직, TALENT:ASSI:호기심, TALENT:ASSI:고무)
-			LOCALS = 自分に任せるようにと가슴을張り, 
+			LOCALS = 자신에게 맡기라고 가슴을 내밀며, 
 		ELSEIF TALENT:ASSI:고무 && RANDIF(1, TALENT:ASSI:유치, TALENT:ASSI:솔직, TALENT:ASSI:호기심)
-			LOCALS = %조사처리(CALLNAME:TARGET,"를")% やんややんやと応援しながら, 
+			LOCALS = %조사처리(CALLNAME:TARGET,"를")% 열심히 응원하면서, 
 		ELSEIF TALENT:ASSI:호기심 && RANDIF(1, TALENT:ASSI:유치, TALENT:ASSI:솔직)
 			IF RELATION:ASSI:TARGET >= 150
-				LOCALS = %CALLNAME:TARGET%의 痴態を逃さず記録しようと, はりきって
+				LOCALS = %CALLNAME:TARGET%의 치태를 빠짐없이 기록하려고 기를 쓰고
 			ELSE
-				LOCALS = %CALLNAME:MASTER%達の痴態を逃さず記録しようと, はりきって
+				LOCALS = %CALLNAME:MASTER%들의 치태를 빠짐없이 기록하려고 기를 쓰고
 			ENDIF
 		ELSEIF TALENT:ASSI:솔직 && RANDIF(1, TALENT:ASSI:유치)
-			LOCALS = %CALLNAME:MASTER%に言われた通りに
+			LOCALS = %조사처리(CALLNAME:MASTER,"가")% 말한 대로
 		ELSEIF TALENT:ASSI:유치
-			LOCALS = %CALLNAME:MASTER%の言葉に元気良く返事すると, 즐거운듯이 
+			LOCALS = %CALLNAME:MASTER%의 말에 씩씩하게 대답하면서, 즐거운듯이 
 		ELSEIF ABL:ASSI:자위중독 >= 3 && RAND:3 == 0
-			LOCALS = 片손を\@ TALENT:ASSI:남자 ? 가랑이 # 秘所 \@に伸ばしそうになるのを我慢しながら, 
+			LOCALS = 한 손을\@ TALENT:ASSI:남자 ? 가랑이 # 비소 \@에 뻗을것만 같은 걸 참으면서 
 		ENDIF
 
 		IF LOCALS == ""
-			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 비디오카메라를 %CALLNAME:ASSI%에손건네줘촬영를 시작하게 했다…
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 비디오카메라를 %CALLNAME:ASSI%에 건네줘 촬영을 시작하게 했다…
 		ELSE
-			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 비디오카메라를 %CALLNAME:ASSI%에손건네주었다. 
-			PRINTFORMW %조사처리(CALLNAME:ASSI,"는")% %LOCALS%촬영를 개시했다…
+			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 비디오카메라를 %CALLNAME:ASSI%에 건네주었다. 
+			PRINTFORMW %조사처리(CALLNAME:ASSI,"는")% %LOCALS%촬영을 개시했다…
 		ENDIF
 		TRYCALLFORM GUEST_KOJO_K{NO:ASSI}_{CFLAG:ASSI:209}, "조수：촬영개시", ASSI
 	ENDIF
@@ -509,7 +509,7 @@ IF TEQUIP:비디오카메라 >= 10
 	RETURN 1
 ELSEIF BASE:기력 <= 0 && GETBIT(CFLAG:69, 0) == 0
 	PRINTFORML 
-	PRINTFORML %CALLNAME:TARGET%에게서 지루한 분위기가 풍겨오고있다. 
+	PRINTFORML %CALLNAME:TARGET%에게서 지루한 분위기가 풍겨나오고 있다. 
 	PRINTFORML 이 이상의 촬영은 그만두는 편이 좋을 것같다…
 	SETBIT CFLAG:69, 0
 ENDIF

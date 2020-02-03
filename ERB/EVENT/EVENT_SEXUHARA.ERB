@@ -73,12 +73,12 @@ ENDIF
 
 @README_SEXUHARA
 CLEARLINE 1
-CALL PRINT_STR, "하트핑크_話しかけてきた상대_に、ちょっかいをかけます_L"
-CALL PRINT_STR, "別にしたくないのなら、ＳＨＯＰ画面の他の선택지を選んでください_L"
-CALL PRINT_STR, "行う頻度が高いものは、次回から_황색_ショートカット커맨드として표시_されます_L"
-CALL PRINT_STR, "やりたい行動が상성されなかった場合には _황색_일람から選ぶ_ を선택してください_W"
+CALL PRINT_STR, "하트핑크_말을 걸어온 상대_에게、조금 괴롭힙니다_L"
+CALL PRINT_STR, "특별히 하고 싶지 않으시다면、ＳＨＯＰ화면에서 다른 선택지를 골라주세요_L"
+CALL PRINT_STR, "하는 빈도가 높은 것은 다음부터_황색_단축커맨드로서 표시_됩니다_L"
+CALL PRINT_STR, "하고싶은 행동이 표시되지 않은 경우 _황색_목록에서 선택한다_ 를 선택해주세요_W"
 PRINTL 
-PRINTFORML 그러면,이하로부터 행동을 선택해 주세요
+PRINTFORML 그러면, 행동을 선택해 주세요
 CALL LIST_SEXUHARA, "README"
 
 @LIST_SEXUHARA, ARGS
@@ -179,26 +179,26 @@ CASE "애널을만지작거린다"
 CASE "가슴을만진다"
 
 CASE "칭찬하기"
-	PRINTFORM %CALLNAME:MASTER%하
+	PRINTFORM %조사처리(CALLNAME:MASTER,"는")%
 
 	PRINTFORM %CALLNAME:ARG%
 	;上の方ほどよく입にする
 	IF ABL:ARG:조수 >= 3 && RANDF(3, R_ADD + 8) == 0
-		PRINTFORM 의 일해 모습
+		PRINTFORM 의 일하는 모습
 	ELSEIF TALENT:ARG:청초 && RANDF(3, R_ADD + 7) == 0
 		PRINTFORM 의 세련된 여성다움
 	ELSEIF TALENT:ARG:기품 && RANDF(3, R_ADD + 6) == 0
-		PRINTFORM 의 물건이 있는 행동거지
+		PRINTFORM 의 기품이 있는 행동거지
 	ELSEIF TALENT:ARG:매혹 && RANDF(3, R_ADD + 5) == 0
 		PRINTFORM 의 사람을 끌어당기는 소행
 	ELSEIF TALENT:ARG:거유 && RANDF(3, R_ADD + 4) == 0
-		PRINTFORM 노가슴의 크기
+		PRINTFORM 의 가슴의 크기
 	ELSEIF TALENT:ARG:매력 && RANDF(3, R_ADD + 3) == 0
 		PRINTFORM 의 아름다움
 	ELSEIF TALENT:ARG:피부색 && RANDF(3, R_ADD + 2) == 0
-		PRINTFORM 노피부색
+		PRINTFORM 의 피부색
 	ELSEIF TALENT:ARG:귀모양 && RANDF(3, R_ADD + 1) == 0
-		PRINTFORM 노귀모양
+		PRINTFORM 의 귀모양
 	ELSEIF TALENT:ARG:현명함 && RANDF(3, R_ADD) == 0
 		PRINTFORM 의 영리함
 	ENDIF
@@ -210,7 +210,7 @@ CASE "허벅지를쓰다듬는다"
 CASE "엉덩이를쓰다듬는다"
 
 CASEELSE
-	THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+	THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 ENDSELECT
 
 ;地の文書いてないので、なにやったかだけ表示
@@ -265,7 +265,7 @@ CASE "허벅지를쓰다듬는다"
 CASE "엉덩이를쓰다듬는다"
 
 CASEELSE
-	THROW %GAMEBASE_YEAR%버젼 BUG : "%ARGS%" 를 찾을 수 없습니다.
+	THROW %GAMEBASE_YEAR% Ver.{VER_ERASQN()} BUG : "%ARGS%" 를 찾을 수 없습니다.
 
 ENDSELECT
 

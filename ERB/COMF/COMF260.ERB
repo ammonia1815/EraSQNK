@@ -59,7 +59,7 @@ IF CHECK_COM("로션마사지", SELECTCOM)
 	PRINTFORM %CALLNAME:TARGET%의 
 	IF TALENT:작은엉덩이
 		IF TALENT:장사 && RAND:3 == 0
-			PRINTFORM 긴장되었다엉덩이
+			PRINTFORM 긴장된 엉덩이
 		ELSEIF RAND:3 == 0
 			IF AGE(TARGET) <= 2
 				PRINTFORM 의욕과 매끄러움을 겸비한 엉덩이의 유육[柔肉]
@@ -67,17 +67,17 @@ IF CHECK_COM("로션마사지", SELECTCOM)
 				PRINTFORM 작은 흔들림이면서도 부드러움도 겸비한 엉덩이의 유육[柔肉]
 			ENDIF
 		ELSEIF RAND:2
-			PRINTFORM 살집의 얇다엉덩이
+			PRINTFORM 살집이 얇은 엉덩이
 		ELSE
-			PRINTFORM 좀 작은엉덩이
+			PRINTFORM 좀 작은 엉덩이
 		ENDIF
 	ELSE
 		IF RAND:4 == 0
 			SIF TALENT:큰엉덩이
-				PRINTFORM 충분히 고기가 붙었다
+				PRINTFORM 육덕진
 			SELECTCASE CONDS("피부색")
 			CASE "갈색피부"
-				PRINTFORM 갈색색의
+				PRINTFORM 갈색의
 			CASE "백옥"
 				PRINTFORM 새하얗다
 			CASEELSE
@@ -87,31 +87,31 @@ IF CHECK_COM("로션마사지", SELECTCOM)
 		ELSEIF RAND:3 == 0
 			PRINTFORM 포동포동 둥그스름을 띤 허리 주위의 고기
 		ELSEIF RAND:2
-			PRINTFORM \@ TALENT:큰엉덩이 ? お餅の様に # \@부드러운 엉덩이살
+			PRINTFORM \@ TALENT:큰엉덩이 ? 떡같은 # \@부드러운 엉덩이살
 		ELSE
-			PRINTFORM 포동포동했다엉덩이
+			PRINTFORM 포동포동한 엉덩이
 		ENDIF
 	ENDIF
 
 	IF TALENT:큰엉덩이 && RAND:3 == 0
-		PRINTFORM 에 손가락을 박히게 해%TEXTR("揉みしだき", "存分に捏ね", "触り心地を堪能し")%(이)면서,
+		PRINTFORM 에 손가락을 집어넣어 %TEXTR("비비", "마음껏 반죽하", "만지며 만끽하")%면서,
 	ELSEIF RAND:3 == 0
-		PRINTFORM 를 소우에 밀어 열어
+		PRINTFORM 를 좌우로 밀어 열고
 		IF TALENT:남자 == 0 && RAND:2
-			PRINTFORM 저기
+			PRINTFORM 그곳
 		ELSE
 			PRINTFORM 애널
 		ENDIF
-		PRINTFORM 를 보고 추찰이면서,
+		PRINTFORM 을 관찰이면서,
 	ELSEIF RAND:2
-		PRINTFORM 를 움켜잡아%TEXTR("窄まり", "肛門")%의 주름을%TEXTR("親指の腹で撫で", "優しく애무し", "丹念に指で撫で")%(이)면서,
+		PRINTFORM 을 움켜잡아 %TEXTR("오므라진", "항문")%의 주름을%TEXTR("엄지로 쓰다듬으", "상냥하게 애무하", "정성껏 손가락으로 쓰다듬으")%면서,
 	ELSE
-		PRINTFORM 의 감촉을손바닥으로%TEXTR("堪能し", "味わい", "楽しみ")%(이)면서,
+		PRINTFORM 의 감촉을 손바닥으로%TEXTR("감질나게하", "맛보", "즐기")%면서,
 	ENDIF
 
-	PRINTFORMW 로션를 사타구니의 점막%TEXTR("に", "へと念入りに")%%TEXTR("塗り広げ", "馴染ませ")%…
+	PRINTFORMW 로션를 사타구니의 점막%TEXTR("에 ", "에 정성스럽게 ")%%TEXTR("펴발랐다", "익숙해지게 했다")%…
 ELSE
-	PRINTFORMW %CALLNAME:PLAYER%하%CALLNAME:TARGET%의 전신에로션를 쳐발랐다…
+	PRINTFORMW %조사처리(CALLNAME:PLAYER,"은")% %CALLNAME:TARGET%의 전신에 로션을  쳐발랐다…
 ENDIF
 
 IF SELECTCOM == 260
@@ -125,7 +125,7 @@ IF SELECTCOM == 260
 	ENDIF
 	PRINTFORM 몸은 발려진 로션으로 반들번들하게 빛을 반사해서, 
 	IF TALENT:슬라임
-		PRINTFORM 언제에도 늘어나
+		PRINTFORM 평소보다
 	ELSEIF TALENT:작은몸집 || COND("근친")
 		PRINTFORM 배덕적인 
 	ELSEIF TALENT:청초 || TALENT:기품

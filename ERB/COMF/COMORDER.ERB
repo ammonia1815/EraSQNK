@@ -60,7 +60,7 @@ IF (TALENT:PLAYER:여자 && TALENT:여자) || (TALENT:PLAYER:남자 && TALENT:�
 			LOCALS = %LOCALS% + %ABLNAME:9%LV{ABL:레즈끼}({ABL:레즈끼*2})
 		ELSE
 			LOCAL -= 10
-			LOCALS = %LOCALS% - 레즈끼無し(10)
+			LOCALS = %LOCALS% - 레즈끼없음(10)
 		ENDIF
 	ELSEIF TALENT:PLAYER:남자 && TALENT:남자
 		;ABL:ＢＬ끼
@@ -438,44 +438,44 @@ ENDIF
 SELECTCASE RELATION:(NO:PLAYER)
 CASE 1 TO 30
 	LOCAL -= 30
-	LOCALS = %LOCALS% - %TEXTS("조수の명칭")%との相性が最悪(30)
+	LOCALS = %LOCALS% - %TEXTS("조수の명칭")%와 상성이 최악(30)
 CASE 31 TO 50
 	LOCAL -= 15
-	LOCALS = %LOCALS% - %TEXTS("조수の명칭")%との相性が悪い(15)
+	LOCALS = %LOCALS% - %TEXTS("조수の명칭")%와 상성이 나쁨(15)
 CASE 51 TO 80
 	LOCAL -= 5
-	LOCALS = %LOCALS% - %TEXTS("조수の명칭")%との相性がいまいち(5)
+	LOCALS = %LOCALS% - %TEXTS("조수の명칭")%와 상성이 좋지 않음(5)
 CASE 120 TO 149
 	LOCAL += 5
-	LOCALS = %LOCALS% + %TEXTS("조수の명칭")%との相性なかなか(5)
+	LOCALS = %LOCALS% + %TEXTS("조수の명칭")%와 상성이 나쁘지 않음(5)
 CASE 150 TO 199
 	LOCAL += 15
-	LOCALS = %LOCALS% + %TEXTS("조수の명칭")%との相性が良好(15)
+	LOCALS = %LOCALS% + %TEXTS("조수の명칭")%와 상성이 좋음(15)
 CASE IS >= 200
 	LOCAL += 30
-	LOCALS = %LOCALS% + %TEXTS("조수の명칭")%との相性が最高(30)
+	LOCALS = %LOCALS% + %TEXTS("조수の명칭")%와 상성이 최고(30)
 ENDSELECT
 
 IF ASSI
 	SELECTCASE RELATION:(NO:ASSI)
 	CASE 1 TO 30
 		LOCAL -= 30
-		LOCALS = %LOCALS% - 相性最悪(30)
+		LOCALS = %LOCALS% - 상성최악(30)
 	CASE 31 TO 50
 		LOCAL -= 15
-		LOCALS = %LOCALS% - 相性悪い(15)
+		LOCALS = %LOCALS% - 상성나쁨(15)
 	CASE 51 TO 80
 		LOCAL -= 5
-		LOCALS = %LOCALS% - 相性いまいち(5)
+		LOCALS = %LOCALS% - 상성별로(5)
 	CASE 120 TO 149
 		LOCAL += 5
-		LOCALS = %LOCALS% + 相性なかなか(5)
+		LOCALS = %LOCALS% + 상성괜찮음(5)
 	CASE 150 TO 199
 		LOCAL += 15
-		LOCALS = %LOCALS% + 相性良好(15)
+		LOCALS = %LOCALS% + 상성좋음(15)
 	CASE IS >= 200
 		LOCAL += 30
-		LOCALS = %LOCALS% + 相性最高(30)
+		LOCALS = %LOCALS% + 상성최고(30)
 	ENDSELECT
 ENDIF
 

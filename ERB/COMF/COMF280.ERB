@@ -79,7 +79,7 @@ IF ABL:PLAYER:기교 + TFLAG:39 + STATE("에올군", PLAYER)*3 > LOCAL
 	ELSE
 		PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 
 		SIF PREVEX("절정수합계")
-			PRINTFORM , 절정의 여운에 젖어 있는%CALLNAME:TARGET%의 틈바구니에서 
+			PRINTFORM , 절정의 여운에 젖어 있는 %CALLNAME:TARGET%의 틈새에서 
 		PRINTFORMW 주도권을 되찾았다! 
 		CVARSET TEQUIP, 30, 0
 		CALL KOJO_MESSAGE_COM
@@ -107,7 +107,7 @@ ELSE
 		PRINTFORM 얼굴에 걸터앉아있는 %조사처리(CALLNAME:TARGET,"를")% 밀쳐내, 
 	;逆이라마치오
 	ELSEIF PREVCOM == 4
-		PRINTFORM %CALLNAME:PLAYER%의 입을 범하고있다 %CALLNAME:TARGET%에서, 
+		PRINTFORM %CALLNAME:PLAYER%의 입을 범하고 있는 %CALLNAME:TARGET%에서, 
 	;봉사系
 	ELSEIF (PREVCOM == 90 || PREVCOM == 91 || PREVCOM == 92 || PREVCOM == 95 || PREVCOM == 97 || PREVCOM == 99) && PENIS(PLAYER)
 		SIF PREVCOM == 90 || PREVCOM == 91 || PREVCOM == 92 || PREVCOM == 99
@@ -124,10 +124,10 @@ ELSE
 	ENDIF
 	PRINTFORML 가까스로 주도권을 되찾으려고 했지만, \@ TEQUIP:Ｗ넘어뜨리기 ? %CALLNAME:TARGET%들은 # %조사처리(CALLNAME:TARGET,"는")% \@ 빈틈을 보이지 않는다. 
 	IF TEQUIP:키스 && ABL:욕망 >= 3 && RAND:3 == 0
-		PRINTFORMW 그 뿐만 아니라,%CALLNAME:TARGET%(은)는 %CALLNAME:PLAYER%의 입술을 빼앗으면, 혀를 걸어 타액을 충분히 흘려 넣어 먹여 왔다！
+		PRINTFORMW 그 뿐만 아니라,%타겟은()% %CALLNAME:PLAYER%의 입술을 빼앗으면서 혀를 넣고 타액을 흘려 넣어 먹여 왔다！
 		CALL SETFLAG, "추가키스플래그", TARGET
 	ELSE
-		PRINTFORMW 그 뿐만 아니라, 한층 더%CALLNAME:PLAYER%를 공격해 왔다！
+		PRINTFORMW 그 뿐만 아니라, 한층 더 %조사처리(CALLNAME:PLAYER,"를")% 공격해 왔다！
 	ENDIF
 	TFLAG:39 += 1 + RAND:2
 	BASE:PLAYER:정력 -= 1

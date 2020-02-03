@@ -536,12 +536,12 @@ ENDIF
 IF GETBIT(CFLAG:69, 18)
 	CSTR:82 += "동정喪失/"
 	LOCAL += 300
-	LOCALS = %LOCALS%동정喪失%BL(1)%
+	LOCALS = %LOCALS%동정상실%BL(1)%
 ENDIF
 IF GETBIT(CFLAG:69, 19)
 	CSTR:82 += "동정狩り/"
 	LOCAL += 300
-	LOCALS = %LOCALS%동정狩り%BL(1)%
+	LOCALS = %LOCALS%동정사냥%BL(1)%
 ENDIF
 
 IF GETBIT(CFLAG:69, 20)
@@ -558,12 +558,12 @@ IF GETBIT(CFLAG:69, 23)
 ENDIF
 IF GETBIT(CFLAG:69, 42)
 	LOCAL += 1000
-	LOCALS = %LOCALS%姦%BL(1)%
+	LOCALS = %LOCALS%섹스%BL(1)%
 ENDIF
 IF GETBIT(CFLAG:69, 22) + GETBIT(CFLAG:69, 23) + GETBIT(CFLAG:69, 42) == 0
 	CSTR:82 += "本番無し/"
 	LOCAL -= 1000
-	LOCALS = %LOCALS%本番無し%BL(1)%
+	LOCALS = %LOCALS%본방없음%BL(1)%
 ENDIF
 IF GETBIT(CFLAG:69, 26)
 	LOCAL += 1500
@@ -696,7 +696,7 @@ CFLAG:69 = 0
 
 LOCAL = 0
 PRINTL 
-PRINTFORML 이번에 촬용한 비디오, 제목으로：
+PRINTFORML 이번에 촬영한 비디오 ：
 PRINTFORML 『%VIDEONAME%』
 SIF LOCALS != ""
 	PRINTFORML （장르：%LOCALS%）
@@ -714,11 +714,11 @@ ENDIF
 IF LOCAL == 0
 	;매각価格で展開を変えるのもいいな
 	IF VIDEO_VALUE >= 2000
-		PRINTFORMW 『%VIDEONAME%』를 팔아,%MONEY_C(VIDEO_VALUE)%손에 넣었다.
+		PRINTFORMW 『%VIDEONAME%』%조사만처리(VIDEONAME,"를")% 팔아,%MONEY_C(VIDEO_VALUE)%손에 넣었다.
 		MONEY += VIDEO_VALUE
 		LOCALS = 비디오매각
 	ELSE
-		PRINTFORMW 『%VIDEONAME%』%조사만처리(VIDEONAME,"는")% 거의 팔리지 않고, 얼마안되는 수입도 경비로 사라졌습니다. 
+		PRINTFORMW 『%VIDEONAME%』%조사만처리(VIDEONAME,"는")% 거의 팔리지 않아 얼마 안되는 수입도 경비로 사라졌습니다. 
 		MONEY += MIN(500, VIDEO_VALUE)
 		LOCALS = 비디오매각失敗
 	ENDIF
@@ -738,13 +738,13 @@ ELSE
 	SELECTCASE NO:TARGET
 	;빌리져・V빌리져
 	CASE 8, 9
-		PRINTFORMW %조사만처리(VIDEONAME,"를")% %조사처리(CALLNAME:TARGET,"를")% 찾고있을 부모에게 보내주기로 했다. 
+		PRINTFORMW %조사만처리(VIDEONAME,"를")% %조사처리(CALLNAME:TARGET,"를")% 찾고 있을 부모에게 보내주기로 했다. 
 	;살로메
 	CASE 24
 		PRINTFORMW %조사만처리(VIDEONAME,"를")% %조사처리(CALLNAME:TARGET,"를")% 받아들이지 않았던 남자에게 보내주기로 했다. 
 	;마샤
 	CASE 32
-		PRINTFORMW %조사만처리(VIDEONAME,"를")% %조사처리(CALLNAME:TARGET,"를")% 사랑하고있다는 시프리 마을의 청년에게 보내주기로 했다. 
+		PRINTFORMW %조사만처리(VIDEONAME,"를")% %조사처리(CALLNAME:TARGET,"를")% 사랑하고 있다는 시프리 마을의 청년에게 보내주기로 했다. 
 	;스투나（멜로나がいない）
 	CASE 34
 		IF GETCHARA(35) < 0

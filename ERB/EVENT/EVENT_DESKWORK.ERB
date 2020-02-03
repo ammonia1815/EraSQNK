@@ -61,13 +61,13 @@ IF CEVENT("서류작업：導入", ARG) == 0
 
 	;喋らない場合には범용
 	IF LINECOUNT == MEMO_LINECOUNT
-		PRINTFORM %CALLNAME:MASTER%하지만서류작업를 하고 있으면,
+		PRINTFORM %마스터가()% 서류작업을 하고 있으면,
 		;条件で分岐してフラグ설정
 		IF COND("ご無沙汰", ARG)
 			PRINTL 
-			PRINTFORM 어려운 표정을 했다
+			PRINTFORM 어려운 표정을 한
 		ENDIF
-		PRINTFORMW %CALLNAME:ARG%하지만 모습을 살펴 왔습니다
+		PRINTFORMW %조사처리(CALLNAME:ARG,"가")% 모습을 살펴 왔습니다
 	ENDIF
 	PRINTL 
 	PRINTFORML …어떻게 합니까？
@@ -163,289 +163,289 @@ SELECTCASE ARGS
 CASE "서류작업：도움"
 	;キャラ番号で分岐
 	SELECTCASE NO:ARG
-	;서큐버스、라미아、아프사라스、알케니、베르나도트、에스트、흑사피
+	;서큐버스、라미아、압사라、아라크네、베르나도트、에스트、흑사피
 	CASE 1, 10, 14, 18, 47, 48, 57
 		IF RAND:4 == 0
-			PRINTFORMW 조금 지쳤다%CALLNAME:MASTER%하,%CALLNAME:ARG%에 무릎 베개를 부탁해 보았습니다
+			PRINTFORMW 조금 지친 %마스터는()% ,%CALLNAME:ARG%에 무릎 베개를 부탁해 보았습니다
 			PRINTL 
 			PRINTFORMW 「후후후 응석꾸러기씨……좋아요, 여기에 오세요」
-			PRINTFORMW %CALLNAME:ARG%는 무릎에 실었다%CALLNAME:MASTER%의 머리를 어루만지면서, 조용하게 노래를 부르기 시작했습니다……
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 무릎에 실은 %CALLNAME:MASTER%의 머리를 어루만지면서, 조용하게 노래를 부르기 시작했습니다……
 			PRINTFORMW 「……이런 일로 좋으면, 언제라도 해 주어요♪」
 			PRINTFORML ………
 			PRINTFORML ……
 			PRINTFORMW …
-			PRINTFORMW 충분히 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+			PRINTFORMW 충분히 리프레쉬 한 %마스터는()% 서류작업에 돌아왔습니다.
 		ELSEIF RAND:3 == 0
-			PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에서류작업노도움를 부탁해 보았습니다
+			PRINTFORMW %마스터는()% %CALLNAME:ARG%에 서류작업의 도움을 부탁해 보았습니다
 			PRINTL 
 			PRINTFORMW 「이것을 정리하면 좋은거네？ 좋아요, 맡기세요」
-			PRINTFORMW %CALLNAME:ARG%는 눈앞의 서류를 적당하게 잡아, 그것들에 대충 훑어보기 시작했습니다……
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 눈앞의 서류를 적당하게 잡아, 그것들을 대충 훑어보기 시작했습니다……
 			PRINTFORML ………
 			PRINTFORML ……
 			PRINTFORMW …
-			PRINTFORMW %CALLNAME:ARG%하지만 도와 준 덕분으로,%CALLNAME:MASTER%는 예정의 반의시간그리고 일을 끝냈습니다.
+			PRINTFORMW %조사처리(CALLNAME:ARG,"가")% 도와 준 덕분으로, %마스터는()% 절반의 시간으로 일을 끝냈습니다.
 			PRINTFORMW 「후후, 이런 것으로 좋았으면 언제라도 도와 주어요」
 			PRINTFORMW 「시시한 것은 빨리 끝내, 좀 더 즐거운 것 합시다♪」
 		ELSEIF RAND:2
-			PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에 차를 끓여 받기로 했습니다
+			PRINTFORMW %마스터는()% %CALLNAME:ARG%에 차를 끓여 받기로 했습니다
 			PRINTL 
 			PRINTFORMW 「아라. 뭔가 드문 일 부탁받아 버렸어요……, 그렇지만 그렇구나, 좋아요♪」
 			PRINTFORML ………
 			PRINTFORML ……
 			PRINTFORMW …
-			PRINTFORML 「네, 어떨까……차, 차분하다？ ｽﾞｽﾞ……！」
-			PRINTFORMW 「으, 응, 이봐요, 밀크와…그래！벌꿀도 넣어 봐 주지 않을까……어때？」
-			PRINTFORMW 여러가지발한 덕분인가 어떻게든 마실 수 있는 맛이 되어,%CALLNAME:ARG%도가슴을어루만지고 내리고 있습니다…
+			PRINTFORML 「네, 어떨까……차, 차분하다？아……！」
+			PRINTFORMW 「으, 응, 이봐요, 밀크랑…그래！벌꿀도 넣어 볼까……어때？」
+			PRINTFORMW 여러가지 넣은 것 때문인지 어떻게든 마실 수 있는 맛이 되어,%CALLNAME:ARG%도 가슴을 어루만지고 내리고 있습니다…
 			PRINTL 
-			PRINTFORMW %CALLNAME:MASTER%하지만 또 대접해 주고라고 말하면,%CALLNAME:ARG%는 웃는 얼굴로 수긍했습니다.
+			PRINTFORMW %마스터가()%  또 대접해 줘라고 말하면,%조사처리(CALLNAME:ARG,"는")% 웃는 얼굴로 수긍했습니다.
 		ELSE
-			PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+			PRINTFORMW %마스터는()% %CALLNAME:ARG%에 손짓으로 불러, 차과자를 먹는 것을 권했습니다
 			PRINTL 
 			PRINTFORMW 「풋,…킥킥……아하하♪ 재미있는 일 말해요……좋아요, 도와 준다♪」
-			PRINTFORMW 묘한 권유 불평이 공을 세웠는지,%CALLNAME:ARG%하%CALLNAME:MASTER%(와)과 단 둘에서의 다회에 기쁜 듯합니다…
+			PRINTFORMW 묘한 유혹 문구가 효과를 냈는지, %조사처리(CALLNAME:ARG,"는")% %마스터와()% 단 둘에서의 티타임에 기쁜 듯합니다…
 			PRINTL 
-			PRINTFORMW 온화한 교환으로 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+			PRINTFORMW 온화한 교환으로 리프레쉬한 %마스터는()% 서류작업에 돌아왔습니다.
 		ENDIF
 	;임프、고블린、ロッコ、스텔라、돌로레스、娘
 	CASE 2, 31, 40, 50, 59, 97
 		IF RAND:5 == 0
-			PRINTFORMW 조금 지쳤다%CALLNAME:MASTER%하,%CALLNAME:ARG%에 무릎 베개를 부탁해 보았습니다
+			PRINTFORMW 조금 지친 %마스터는()% ,%CALLNAME:ARG%에 무릎 베개를 부탁해 보았습니다
 			PRINTL 
 			PRINTFORMW 「…풋♪ 꺄하핫,%CNAMET(ARG, "二人称")%아이 보았다～이♪」
 			PRINTFORM 「그렇지만 말야─, 좋아, 정말 좋아하는%CNAMET(ARG, "二人称")%의 부탁이군
 			CALL HEARTMARK_E
-			PRINTFORM 「이봐요 이봐요～,%CALLNAME:ARG%마마의 무릎, 빌·려·준·다
+			PRINTFORM 「이봐요 이봐요～,%CALLNAME:ARG%마마의 무릎, 빌·려·줄·께
 			CALL HEARTMARK_E
 			PRINTFORML ………
 			PRINTFORML ……
 			PRINTFORMW …
-			PRINTFORMW 살집의 얇은 베개였지만, 충분히 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+			PRINTFORMW 살집이 얇은 베개였지만, 충분히 리프레쉬한 %마스터는()% 서류작업에 돌아왔습니다.
 		ELSEIF RAND:4 == 0
-			PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%를 무릎 위에 태워 능률ＵＰ를 꾀하기로 했습니다
+			PRINTFORMW %마스터는()% %조사처리(CALLNAME:ARG,"를")% 무릎 위에 태워 능률ＵＰ를 꾀하기로 했습니다
 			PRINTL 
 			IF RAND:2
-				PRINTFORMW 「저기%CNAMET(ARG, "二人称")%. %CNAMET(ARG, "一人称")%노엉덩이에 뭔가 딱딱한 것 맞고 있지만……이것, 뭐♪」
-				PRINTFORMW 웃는 얼굴로 발기했다페니스를 희롱한다%CALLNAME:ARG%의 순진한님이, 피로가 거짓말과 같이 당겨 간다…
+				PRINTFORMW 「저기 %CNAMET(ARG, "二人称")%. %CNAMET(ARG, "一人称")%의 엉덩이에 뭔가 딱딱한 것이 닿고 있지만……이것, 뭘까♪」
+				PRINTFORMW 웃는 얼굴로 발기한 페니스를 희롱하는 %CALLNAME:ARG%의 순진한 손짓에, 피로가 거짓말과 같이 사라져 간다…
 			ELSE
 				PRINTFORMW 「응후훗♪ %CNAMET(ARG, "二人称")%저, 정말로 장난꾸러기씨인 것이니까～♪」
-				PRINTFORMW 위기분그리고 몸을 칠한다%CALLNAME:ARG%의 좋은 냄새에, 피로가 거짓말과 같이 당겨 간다…
+				PRINTFORMW 기분이 좋아 몸을 비벼대는 %CALLNAME:ARG%의 좋은 냄새에, 피로가 거짓말과 같이 사라져 간다…
 			ENDIF
 			PRINTL 
-			PRINTFORMW 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+			PRINTFORMW 리프레쉬한 %마스터는()% 서류작업에 돌아왔습니다.
 		ELSEIF RAND:3 == 0
-			PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에서류작업노도움를 부탁해 보았습니다
+			PRINTFORMW %마스터는()% %CALLNAME:ARG%에 서류작업의 도움을 부탁해 보았습니다
 			PRINTL 
-			PRINTFORML 「응 좋아, 가득도움하네요♪」
+			PRINTFORML 「응 좋아, 잔뜩 도와주네요♪」
 			PRINTFORMW 「엣또……우선 이것을 읽는거네요」
-			PRINTFORMW %CALLNAME:ARG%하%CALLNAME:MASTER%의 근처에 앉아, 서류와 노려보기를 시작했습니다……
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")% %CALLNAME:MASTER%의 근처에 앉아, 서류와 노려보기를 시작했습니다……
 			PRINTFORML ………
 			PRINTFORML ……
 			PRINTFORMW …
-			PRINTFORMW 「있지있지%CNAMET(ARG, "二人称")%, 이것은 어떤 의미？」
-			PRINTFORMW %CALLNAME:ARG%하지만 많이 질문해 오므로 일은 진행되지 않았습니다만,%CALLNAME:MASTER%에는 좋은 기분 전환이 되었습니다.
+			PRINTFORMW 「있지있지 %CNAMET(ARG, "二人称")%, 이것은 어떤 의미？」
+			PRINTFORMW %조사처리(CALLNAME:ARG,"가")% 많이 질문해 오므로 일은 진행되지 않았습니다만,%CALLNAME:MASTER%에게는 좋은 기분 전환이 되었습니다.
 		ELSEIF RAND:2
-			PRINTFORMW 피로가 쌓였다%CALLNAME:MASTER%하,%CALLNAME:ARG%에 맛사지를 부탁해 보았습니다
+			PRINTFORMW 피로가 쌓인 %마스터는()% ,%CALLNAME:ARG%에 마사지를 부탁해 보았습니다
 			PRINTL 
 			PRINTFORMW 「응후후, 좋아♪」
-			PRINTFORMW 「똑똑 분을 칩시다♪ 똑똑, 똑똑, 똑똑 응♪」
-			PRINTFORMW %CALLNAME:ARG%는 싱글벙글 하면서 능숙하게 어깨를 두드리는 일 해 왔습니다…
+			PRINTFORMW 「똑똑 어깨를 안마해줄께♪ 똑똑, 똑똑, 똑똑 응♪」
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 싱글벙글 하면서 능숙하게 어깨를 두드리는 일 해 왔습니다…
 			PRINTFORML ………
 			PRINTFORML ……
 			PRINTFORMW …
-			PRINTFORMW 결림에 이별을 고했다%CALLNAME:MASTER%하,%CALLNAME:ARG%의 머리를 어루만져서류작업에 돌아왔습니다.
+			PRINTFORMW 결림이 사라진 %마스터는()% ,%CALLNAME:ARG%의 머리를 어루만져 서류작업에 돌아왔습니다.
 		ELSE
-			PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+			PRINTFORMW %마스터는()% %CALLNAME:ARG%에 손짓으로 불러, 차과자를 먹는 것을 도와주라고 권했습니다
 			PRINTL 
 			IF RAND:2
 				PRINTFORMW 「엣, 업무 중인데……좋은거야？ ……응후후♪」
 				PRINTFORML 「%CNAMET(ARG, "一人称")%,%CNAMET(ARG, "二人称")%(이)다～～～～있고 좋아！」
-				PRINTFORMW 과자의 일이 신경이 쓰이고 있던 모습의%CALLNAME:ARG%하,%CALLNAME:MASTER%(와)과의 다회에 굉장히 기쁜 듯합니다…
+				PRINTFORMW 과자의 일이 신경이 쓰이고 있던 모습의%조사처리(CALLNAME:ARG,"는")% ,%마스터와()%의 티타임에 굉장히 기쁜 듯합니다…
 			ELSE
 				PRINTFORML 「이것 먹어도 좋은거야？ 엣또……%CNAMET(ARG, "一人称")%도 이것 준닷♪」
-				PRINTFORMW %CALLNAME:ARG%는 포켓으로부터허니비스킷를 꺼내,%CALLNAME:MASTER%에 내몄습니다.
+				PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 포켓으로부터허니비스킷를 꺼내,%CALLNAME:MASTER%에 내몄습니다.
 				PRINTFORMW 「어때？ 맛있어？ 그러면 다음은 말야～」
 				PRINTFORMW %CALLNAME:ARG%로부터 과자를 받아 먹고 있으면, 왠지 행복한 기분이 되었습니다……
 			ENDIF
 			PRINTL 
-			PRINTFORMW 온화한 교환으로 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+			PRINTFORMW 온화한 교환으로 리프레쉬한 %마스터는()% 서류작업에 돌아왔습니다.
 		ENDIF
 	;드라이어드、뱀파이어、프로페테스、유니콘、핌블베트、메르야、발키리
 	CASE 3, 25, 27, 30, 49, 54, 61
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+		PRINTFORMW %마스터는()% %CALLNAME:ARG%에 손짓으로 불러, 차과자를 먹는 것을 도와주라고 권했습니다
 		PRINTL 
 		PRINTFORMW 「엣？ 하, 하아……그런 일로 좋으면……실례합니다」
-		PRINTFORMW 곤혹 기색의%CALLNAME:ARG%(이었)였지만,%CALLNAME:MASTER%(와)과 단 둘에서의 다회에 기쁜 듯합니다…
+		PRINTFORMW 곤혹 기색의%CALLNAME:ARG%(이었)였지만,%마스터와()% 단 둘에서의 티타임에 기쁜 듯합니다…
 		PRINTL 
-		PRINTFORMW 온화한 교환으로 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+		PRINTFORMW 온화한 교환으로 리프레쉬한 %마스터는()% 서류작업에 돌아왔습니다.
 	;픽시、허니비
 	CASE 4, 60
 		IF RAND:2
-			PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%를 무릎 위에 태워 능률ＵＰ를 꾀하기로 했습니다
+			PRINTFORMW %마스터는()% %조사처리(CALLNAME:ARG,"를")% 무릎 위에 태워 능률ＵＰ를 꾀하기로 했습니다
 			PRINTL 
 			IF RAND:2
-				PRINTFORMW 「저기%CNAMET(ARG, "二人称")%. %CNAMET(ARG, "一人称")%노엉덩이에 뭔가 딱딱한 것 맞고 있지만……이것, 뭐♪」
-				PRINTFORMW 웃는 얼굴로 발기했다페니스를 희롱한다%CALLNAME:ARG%의 순진한님이, 피로가 거짓말과 같이 당겨 간다…
+				PRINTFORMW 「저기%CNAMET(ARG, "二人称")%. %CNAMET(ARG, "一人称")%의 엉덩이에 뭔가 딱딱한 것 닿고 있지만……이것, 뭘까♪」
+				PRINTFORMW 웃는 얼굴로 발기한 페니스를 희롱하는 %CALLNAME:ARG%의 순진한 손짓에, 피로가 거짓말과 같이 사라져 간다…
 			ELSE
 				PRINTFORMW 「응후훗♪ %CNAMET(ARG, "二人称")%저, 정말로 장난꾸러기씨인 것이니까～♪」
-				PRINTFORMW 위기분그리고 몸을 칠한다%CALLNAME:ARG%의 좋은 냄새에, 피로가 거짓말과 같이 당겨 간다…
+				PRINTFORMW 기분이 좋아 몸을 비벼대는 %CALLNAME:ARG%의 좋은 냄새에, 피로가 거짓말과 같이 사라져 간다…
 			ENDIF
 			PRINTL 
-			PRINTFORMW 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+			PRINTFORMW 리프레쉬한 %마스터는()% 서류작업에 돌아왔습니다.
 		ELSE
-			PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+			PRINTFORMW %마스터는()% %CALLNAME:ARG%에 손짓으로 불러, 차과자를 먹는 것을 도와주라고 권했습니다
 			PRINTL 
-			PRINTFORMW 「……♪ %CNAMET(ARG, "二人称")%, 말하는 일오모지로～이♪」
-			PRINTFORMW 「그럼………이 쿠키１매 뿐이라면, 도와 준다♪」
-			PRINTFORMW 묘한 권유 불평이 공을 세웠는지,%CALLNAME:ARG%하%CALLNAME:MASTER%(와)과 단 둘에서의 다회에 기쁜 듯합니다…
+			PRINTFORMW 「……♪ %CNAMET(ARG, "二人称")%, 하는말 재미있～네♪」
+			PRINTFORMW 「그럼………이 쿠키 하나 준다면, 도와 준다♪」
+			PRINTFORMW 묘한 유혹 문구가 효과를 냈는지, %조사처리(CALLNAME:ARG,"는")% %마스터와()% 단 둘에서의 티타임에 기쁜 듯합니다…
 			PRINTL 
-			PRINTFORMW 온화한 교환으로 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+			PRINTFORMW 온화한 교환으로 리프레쉬한 %마스터는()% 서류작업에 돌아왔습니다.
 		ENDIF
 	;실프、미믹、쟈브쟈브
 	CASE 5, 33, 43
 		IF RAND:2
-			PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에 차를 끓여 받기로 했습니다
+			PRINTFORMW %마스터는()% %CALLNAME:ARG%에 차를 끓여 받기로 했습니다
 			PRINTL 
 			PRINTFORMW 「응훗, 맡겨～♪ 굉장한 맛있는 것 먹여 주어 버리기 때문에！」
 			PRINTFORML ………
 			PRINTFORML ……
 			PRINTFORMW …
-			PRINTFORMW 「기다리게 했습니다～♪ 자, 마셔 마셔 오─들 꾸욱！♪」
-			PRINTFORMW 「어때？ 맛있어？ ……%CNAMET(ARG, "一人称")%, 도～웃 정말 좋아하게 되어 버렸다？♪」
+			PRINTFORMW 「기다리게 했습니다～♪ 자, 마셔 마셔 꿀─꺽 하고！♪」
+			PRINTFORMW 「어때？ 맛있어？ ……%CNAMET(ARG, "一人称")%, 정～말 더 좋아하게 되어 버렸다？♪」
 			PRINTL 
-			PRINTFORMW 기세에 밀렸다%CALLNAME:MASTER%하지만 다시 반했다고 하면,%CALLNAME:ARG%는 웃는 얼굴로 수긍했습니다.
+			PRINTFORMW 기세에 밀린 %마스터가()%  다시 반했다고 하면,%조사처리(CALLNAME:ARG,"는")% 웃는 얼굴로 수긍했습니다.
 		ELSE
-			PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+			PRINTFORMW %마스터는()% %CALLNAME:ARG%에 손짓으로 불러, 차과자를 먹는 것을 도와주라고 권했습니다
 			PRINTL 
-			PRINTFORML 「좋아요♪ 그러면 이것 받아요………햐이♪」
-			PRINTFORMW 룰루랄라의%CALLNAME:ARG%는 막대 모양의 과자를 물어, 반대측을 보내 왔다.
-			PRINTFORMW 아무래도, 여기측에서 먹기 시작하라고 하는 일인것 같다……
+			PRINTFORML 「좋아요♪ 그러면 이것 받아먹………어♪」
+			PRINTFORMW 룰루랄라하며 %조사처리(CALLNAME:ARG,"는")% 막대 모양의 과자를 물어, 반대측을 보내 왔다.
+			PRINTFORMW 아무래도, 여기측에서 먹기 시작하라고 하는 일인 것 같다……
 			PRINTL 
-			PRINTFORMW 온화한 교환으로 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+			PRINTFORMW 온화한 교환으로 리프레쉬한 %마스터는()% 서류작업에 돌아왔습니다.
 		ENDIF
-	;村娘、스큘라、드라군、마샤
+	;村娘、스킬라、드라군、마샤
 	CASE 8, 9, 15, 24, 26, 32, 44, 55
 		IF RAND:3 == 0
-			PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에서류작업노도움를 부탁해 보았습니다
+			PRINTFORMW %마스터는()% %CALLNAME:ARG%에 서류작업의 도움을 부탁해 보았습니다
 			PRINTL 
-			PRINTFORMW （와…와와와……이것, 엣치의 기록이다아……）
+			PRINTFORMW （하…와와와……이것, 엣치의 기록이다아……）
 			PRINTFORMW （다른 사람은, 이, 이런 일 하고 있다아……♪）
 			PRINTL 
-			PRINTFORMW %CALLNAME:ARG%는 시종 건성이었지만, 생각했던 것보다는 도움이 되었습니다.
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 시종 건성이었지만, 생각했던 것보다는 도움이 되었습니다.
 		ELSEIF RAND:2
-			PRINTFORM %CALLNAME:MASTER%하%CALLNAME:ARG%에,
-			PRINTFORMW 계속 앉아 있는 채로엉덩이하지만 아파져 왔기 때문에 의자가 되어 주지 않겠는가？(와)과 농담을 말해 보았습니다
+			PRINTFORM %마스터는()% %CALLNAME:ARG%에게,
+			PRINTFORMW 계속 앉아있어서 엉덩이가 아프니까 의자가 되어주지 않겠니?라고 농담을 해봤습니다.
 			PRINTL 
-			PRINTFORMW 「엣…에？ 엣또………이, 있고─입니다,…？」
-			PRINTFORMW 「미, 미안해요, 지금의 없음으로 부탁합니다……」
-			PRINTFORMW  %CALLNAME:ARG%는 새빨갛게 되어, 숙이면서 심심하고손를 움직이고 있다……
+			PRINTFORMW 「엣…에？ 엣또………아, 안돼─요,…？」
+			PRINTFORMW 「미, 미안해요, 지금은 좀 봐주세요……」
+			PRINTFORMW  %조사처리(CALLNAME:ARG,"는")% 새빨갛게 되어, 고개를 숙이면서 손을 움직이고 있다……
 			PRINTL 
-			PRINTFORMW 약간 마음이 치유되었다%CALLNAME:MASTER%하,%CALLNAME:ARG%에 인사를 해 일하러 돌아왔습니다.
+			PRINTFORMW 약간 마음이 치유된 %마스터는()% ,%CALLNAME:ARG%에 인사를 해 일하러 돌아왔습니다.
 		ELSE
-			PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+			PRINTFORMW %마스터는()% %CALLNAME:ARG%에 손짓으로 불러, 차과자를 먹는 것을 도와주라고 권했습니다
 			PRINTL 
-			PRINTFORMW 「엣？ 으, 응……%CNAMET(ARG, "一人称")%그리고 좋으면……근처, 앉아도 괜찮다？」
-			PRINTFORMW 곤혹 기색의%CALLNAME:ARG%(이었)였지만,%CALLNAME:MASTER%(와)과 단 둘에서의 다회에 기쁜 듯합니다…
+			PRINTFORMW 「엣？ 으, 응……%조사처리(CNAMET(ARG, "一人称"),"가")% 좋으면……근처, 앉아도 괜찮다？」
+			PRINTFORMW 당황스런 %CALLNAME:ARG%였지만,%마스터와()% 단 둘에서의 티타임에 기쁜 듯합니다…
 			PRINTL 
-			PRINTFORMW 온화한 교환으로 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+			PRINTFORMW 온화한 교환으로 리프레쉬한 %마스터는()% 서류작업에 돌아왔습니다.
 		ENDIF
 	;하피、メイブ、에스프라나
 	CASE 11, 17, 38
 		IF RAND:2
-			PRINTFORM %CALLNAME:MASTER%하%CALLNAME:ARG%에,
-			PRINTFORMW 계속 앉아 있는 채로엉덩이하지만 아파져 왔기 때문에 의자가 되어 주지 않겠는가？(와)과 농담을 말해 보았습니다
+			PRINTFORM %마스터는()% %CALLNAME:ARG%에게,
+			PRINTFORMW 계속 앉아있어서 엉덩이가 아프니까 의자가 되어주지 않겠니?라고 농담을 해봤습니다.
 			PRINTL 
 			PRINTFORML 「는 아아～？」
-			PRINTFORMW 「완전히, 예의범절이 나쁘다입저기……누가주인님인가 재차 가르쳐 주지 않으면 안 되는 것일까？」
+			PRINTFORMW 「완전히, 예의범절이 나쁜 말이네……누가 주인님인가 재차 가르쳐 줘야 하는 것일까？」
 			PRINTFORMW 「이봐요, 뭐 언제까지나 의자에 앉아 있는거야…빨리 마루에 내리세요」
-			PRINTFORMW %CALLNAME:ARG%는 마루에 정좌했다%CALLNAME:MASTER%의 앞에서 고압적인 자세가 되어…뺨에 철썩 극히 약한 평손치는 것을 해 왔다
-			PRINTFORMW 「뭐 하고 있어？ 이런 때에는 말해지지 않아도%CNAMET(ARG, "一人称")%의 코코에키스한다라고 모르는거야？」
-			PRINTFORMW 「정말…질 나쁜 하인을 가지면 걱정이 끊어지지 않네요……오늘은 정성스럽게 확실히 익히게 해 아겔로부터 감사 하세요？」
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 마루에 정좌한 %CALLNAME:MASTER%의 앞에서 고압적인 자세가 되어…뺨에 철썩 극히 약하게 손바닥을 쳐왔다
+			PRINTFORMW 「뭐 하고 있어？ 이런 때에는 말해지지 않아도%CNAMET(ARG, "一人称")%의 이곳에 키스한다라고 모르는거야？」
+			PRINTFORMW 「정말…질 나쁜 하인을 가지면 걱정이 끊어지지 않네요……오늘은 정성스럽게 확실히 익히게 해 진심으로부터 감사 하세요？」
 			PRINTL 
 			EXP:PLAYER:커닐링구스경험 += 5
 			PRINTFORML 커닐링구스경험＋5（%CALLNAME:MASTER%）
 			PRINTL 
-			PRINTFORM %CALLNAME:MASTER%하…충분히 예의범절을 가르쳐져 버렸다……
+			PRINTFORM %마스터는()% …충분히 예의범절을 가르쳐져 버렸다……
 			CALL HEARTMARK_W
 		ELSE
-			PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+			PRINTFORMW %마스터는()% %CALLNAME:ARG%에 손짓으로 불러, 차과자를 먹는 것을 도와주라고 권했습니다
 			PRINTL 
-			PRINTFORML 「하？ ………풋, 아하하하♪ 빠는 이외에도, 꽤 능숙한 사용법이 아니다……좋아요, 교제해 준다♪」
-			PRINTFORMW 묘한 권유 불평이 공을 세웠는지,%CALLNAME:ARG%하%CALLNAME:MASTER%(와)과 단 둘에서의 다회에 기쁜 듯합니다…
+			PRINTFORML 「하？ ………풋, 아하하하♪ 핥는 이외에도, 꽤 능숙한 사용법이 아니다……좋아요, 교제해 준다♪」
+			PRINTFORMW 묘한 유혹 문구가 효과를 냈는지, %조사처리(CALLNAME:ARG,"는")% %마스터와()% 단 둘에서의 티타임에 기쁜 듯합니다…
 			PRINTL 
-			PRINTFORMW 온화한 교환으로 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+			PRINTFORMW 온화한 교환으로 리프레쉬한 %마스터는()% 서류작업에 돌아왔습니다.
 		ENDIF
 	;리저드맨、솔저、리즈・라즈、루빗사
 	CASE 12, 28, 39, 52
 		IF RAND:3 == 0
-			PRINTFORM %CALLNAME:MASTER%하%CALLNAME:ARG%에,
-			PRINTFORMW 계속 앉아 있는 채로엉덩이하지만 아파져 왔기 때문에 의자가 되어 주지 않겠는가？(와)과 농담을 말해 보았습니다
+			PRINTFORM %마스터는()% %CALLNAME:ARG%에,
+			PRINTFORMW 계속 앉아있어서 엉덩이가 아프니까 의자가 되어주지 않겠니?라고 농담을 해봤습니다.
 			PRINTL 
 			PRINTFORMW 「하아？ 좀,%CNAMET(ARG, "二人称")%……머리 이상한 것이 아니다？」
-			PRINTFORMW %CALLNAME:ARG%상대에게, 이 농담을 사용하는 것은 너무 빠른 것 같다…완전하게 손해를 보는 눈으로 보여지고 있다……
+			PRINTFORMW %CALLNAME:ARG%상대에게, 이 농담을 사용하는 것은 너무 빠른 것 같다…완전하게 바보를 보는 눈으로 보여지고 있다……
 			PRINTL 
-			PRINTFORMW 완전히 기가 막힌 모습의%CALLNAME:ARG%야, 약간 긴 한숨을 쉬면서 방에서 나가 버렸다.
+			PRINTFORMW 완전히 기가 막힌 모습의 %조사처리(CALLNAME:ARG,"는")%, 약간 긴 한숨을 쉬면서 방에서 나가 버렸다.
 		ELSEIF RAND:2
-			PRINTFORMW 피로가 쌓였다%CALLNAME:MASTER%하,%CALLNAME:ARG%에 맛사지를 부탁해 보았습니다
+			PRINTFORMW 피로가 쌓인 %마스터는()% ,%CALLNAME:ARG%에 마사지를 부탁해 보았습니다
 			PRINTL 
-			PRINTFORMW 「맛사지해 주었으면 한다고%CNAMET(ARG, "二人称")%, 상당히 늙은이 냄새가 나네요」
-			PRINTFORMW 「뭐,%CNAMET(ARG, "一人称")%는 별로 좋지만」
-			PRINTFORMW 반사적으로 싫은 소리를 말해 버린다%CALLNAME:ARG%(이었)였지만, 행위 자체에는 오히려 내켜하는 마음인 모습이다…
+			PRINTFORMW 「마사지해 주었으면 한다고 %CNAMET(ARG, "二人称")%, 상당히 늙은이 냄새가 나네요」
+			PRINTFORMW 「뭐,%조사처리(CNAMET(ARG, "一人称"),"는")% 괜찮지만」
+			PRINTFORMW 반사적으로 싫은 소리를 말해 버린 %CALLNAME:ARG%였지만, 행위 자체에는 오히려 내키는 모습이다…
 			PRINTFORML ………
 			PRINTFORML ……
 			PRINTFORMW …
 			PRINTFORMW 「후후…어때？ 능숙한 것이겠지」
-			PRINTFORMW 「%CNAMET(ARG, "二人称")%하지만 어디를 어떻게 해 주었으면 한가 라니,%CNAMET(ARG, "一人称")%에는 바로 앎인 것이니까」
+			PRINTFORMW 「%조사처리(CNAMET(ARG, "二人称"),"가")% 어디를 어떻게 해 주었으면 한가 라니,%CNAMET(ARG, "一人称")%에는 바로 아는 것이니까」
 			PRINTFORML ………
 			PRINTFORML ……
 			PRINTFORMW …
-			PRINTFORMW 「하이, 끝」
-			PRINTFORML %CALLNAME:MASTER%하지만 의자에서 일어서, 가벼워진 몸을 펴면서 위로하면,
+			PRINTFORMW 「그래, 끝」
+			PRINTFORML %마스터가()%  의자에서 일어서, 가벼워진 몸을 펴면서 위로하면,
 			PRINTFORMW 「…지쳤지 않은가 하고？ 바보같구나, 그렇지 않아요」
 			PRINTFORMW 「오히려, 의지해 받을 수 있어 조금……우응, 아무것도 아니에요」
-			PRINTFORMW %CALLNAME:ARG%는 표정을 눈치채이지 않게, 후익과 얼굴을 피했다.
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 표정을 눈치채이지 않게, 휙 얼굴을 피했다.
 		ELSE
-			PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+			PRINTFORMW %마스터는()% %CALLNAME:ARG%에 손짓으로 불러, 차과자를 먹는 것을 도와주라고 권했습니다
 			PRINTL 
-			PRINTFORMW 「……무슨 말하고 있는 거야？ 그런 일로 돕는 것도 아무것도 없을텐데……이봐요, 거기 앉기 때문에 조금 어긋나」
-			PRINTFORMW 입그럼 기가 막힌 바람이지만,%CALLNAME:ARG%는 조금 기쁜 듯한 얼굴로%CALLNAME:MASTER%(와)과의 다회를 만끽하고 있다…
+			PRINTFORMW 「……무슨 말하고 있는 거야？ 그런 일로 돕는 것도 아무것도 없을텐데……이봐요, 거기 앉으면 조금 어긋나」
+			PRINTFORMW 입으로는 기가 막힌 듯한 말을 했지만,%조사처리(CALLNAME:ARG,"는")% 조금 기쁜 듯한 얼굴로 %마스터와()%의 티타임을 만끽하고 있다…
 			PRINTL 
-			PRINTFORMW 온화한 교환으로 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+			PRINTFORMW 온화한 교환으로 리프레쉬한 %마스터는()% 서류작업에 돌아왔습니다.
 		ENDIF
 	;うぃっち、번더스내치？
 	CASE 19, 42
-		PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+		PRINTFORMW %마스터는()% %CALLNAME:ARG%에 손짓으로 불러, 차과자를 먹는 것을 도와주라고 권했습니다
 		PRINTL 
 		PRINTFORMW 「흐음……아라, 과자만？ 차가 없잖아」
-		PRINTFORMW 「조금 기다리고 있어,%CNAMET(ARG, "一人称")%하지만 소중히 간직함의 끓여 주기 때문에」
-		PRINTFORMW %CALLNAME:ARG%의 차……에 대해서는 감히 언급을 피하지만, 둘이서 즐거운 한때를 보냈다……
+		PRINTFORMW 「조금 기다리고 있어,%조사처리(CNAMET(ARG, "一人称"),"가")% 소중히 간직한 것을 끓여 주기 때문에」
+		PRINTFORMW %CALLNAME:ARG%의 차……에 대해서는 언급을 피하지만, 둘이서 즐거운 한때를 보냈다……
 		PRINTL 
-		PRINTFORMW 온화한 교환으로 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+		PRINTFORMW 온화한 교환으로 리프레쉬한 %마스터는()% 서류작업에 돌아왔습니다.
 	;セリフが多いキャラは범용地の文には流さない
 	CASE 1, 6, 19, 21, 22, 34, 35, 41, 46, 58
 
 	CASEELSE
 		IF RAND:3 == 0
-			PRINTFORMW 조금 지쳤다%CALLNAME:MASTER%하,%CALLNAME:ARG%에 무릎 베개를 부탁해 보았습니다
+			PRINTFORMW 조금 지친 %마스터는()% ,%CALLNAME:ARG%에 무릎 베개를 부탁해 보았습니다
 			PRINTL 
-			PRINTFORMW %CALLNAME:ARG%는 무릎에 실었다%CALLNAME:MASTER%의 머리를 어루만지면서, 조용하게 노래를 부르기 시작했습니다……
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 무릎에 실었다%CALLNAME:MASTER%의 머리를 어루만지면서, 조용하게 노래를 부르기 시작했습니다……
 			PRINTFORML ………
 			PRINTFORML ……
 			PRINTFORMW …
-			PRINTFORMW 충분히 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+			PRINTFORMW 충분히 리프레쉬한 %마스터는()% 서류작업에 돌아왔습니다.
 		ELSEIF RAND:2
-			PRINTFORMW 피로가 쌓였다%CALLNAME:MASTER%하,%CALLNAME:ARG%에 맛사지를 부탁해 보았습니다
+			PRINTFORMW 피로가 쌓인 %마스터는()% ,%CALLNAME:ARG%에 마사지를 부탁해 보았습니다
 			PRINTL 
-			PRINTFORMW %CALLNAME:ARG%는 싱글벙글 하면서 능숙하게 어깨를 두드리는 일 해 왔습니다…
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 싱글벙글 하면서 능숙하게 어깨를 두드리는 일 해 왔습니다…
 			PRINTFORML ………
 			PRINTFORML ……
 			PRINTFORMW …
-			PRINTFORMW 결림에 이별을 고했다%CALLNAME:MASTER%하,%CALLNAME:ARG%의 머리를 어루만져서류작업에 돌아왔습니다.
+			PRINTFORMW 결림이 사라진 %마스터는()% ,%CALLNAME:ARG%의 머리를 어루만져 서류작업에 돌아왔습니다.
 		ELSE
-			PRINTFORMW %CALLNAME:MASTER%하%CALLNAME:ARG%에손불러 해, 차과자를 먹는 것을 도와와 권했습니다
+			PRINTFORMW %마스터는()% %CALLNAME:ARG%에 손짓으로 불러, 차과자를 먹는 것을 도와주라고 권했습니다
 			PRINTL 
-			PRINTFORMW 묘한 권유 불평이 공을 세웠는지,%CALLNAME:ARG%하%CALLNAME:MASTER%(와)과 단 둘에서의 다회에 기쁜 듯합니다…
+			PRINTFORMW 묘한 유혹 문구가 효과를 냈는지, %조사처리(CALLNAME:ARG,"는")% %마스터와()% 단 둘에서의 티타임에 기쁜 듯합니다…
 			PRINTL 
-			PRINTFORMW 온화한 교환으로 리프레쉬 했다%CALLNAME:MASTER%하서류작업에 돌아왔습니다.
+			PRINTFORMW 온화한 교환으로 리프레쉬한 %마스터는()% 서류작업에 돌아왔습니다.
 		ENDIF
 	ENDSELECT
 
@@ -455,58 +455,58 @@ CASE "서류작업：무시"
 	IF CEVENT("서류작업：무시", ARG) == 0
 		;キャラ番号で分岐
 		SELECTCASE NO:ARG
-		;서큐버스、라미아、아프사라스、알케니、베르나도트、에스트、흑사피
+		;서큐버스、라미아、압사라、아라크네、베르나도트、에스트、흑사피
 		CASE 1, 10, 14, 18, 47, 48, 57
-			PRINTFORMW %CALLNAME:MASTER%는 묵묵히 책상에 향하고 있다…
+			PRINTFORMW %마스터는()% 묵묵히 책상에 향하고 있다…
 			PRINTL 
 			IF TALENT:거유 && RAND:3
 				PRINTFORMW 「후우……이 방, 조금 덥지 않을까」
-				PRINTFORMW %CALLNAME:ARG%하가슴원을 느슨한, 골짜기를 과시하면서 탁탁 부치고 있습니다…
+				PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 가슴원을 느슨한, 골짜기를 과시하면서 탁탁 부치고 있습니다…
 			ELSE
-				PRINTFORMW 「저기…일뿐 하지 않고？ %CNAMET(ARG, "一人称")%(와)과…놉시다……♪」
+				PRINTFORMW 「저기…일만 하지 말고？ %CNAMET(ARG, "一人称")%하고…놉시다……♪」
 				IF TALENT:음란 && RAND:2
-					PRINTFORMW %CALLNAME:ARG%하%CALLNAME:MASTER%의 사타구니에손를 늘려, 상냥하게 더듬어 왔다…
+					PRINTFORMW %조사처리(CALLNAME:ARG,"는")% %CALLNAME:MASTER%의 사타구니에 손를 늘려, 상냥하게 더듬어 왔다…
 				ELSE
-					PRINTFORMW %CALLNAME:ARG%는 뒤로부터 껴안아 귓전으로달콤한말를 속삭이면서,%CALLNAME:MASTER%의가슴을더듬어 왔다…
+					PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 뒤로부터 껴안아 귓전으로 달콤한말을 속삭이면서,%CALLNAME:MASTER%의 가슴을 더듬어 왔다…
 				ENDIF
 			ENDIF
 		;임프、고블린、ロッコ、스텔라、돌로레스、娘
 		;픽시、허니비
 		CASE 2, 4, 31, 40, 50, 59, 60, 97
-			PRINTFORMW %CALLNAME:MASTER%는 묵묵히 책상에 향하고 있다…
+			PRINTFORMW %마스터는()% 묵묵히 책상에 향하고 있다…
 			PRINTL 
 			PRINTFORMW 「저기～저기～,%CNAMET(ARG, "二人称", "甘え")%…♪」
 			IF TALENT:요정
-				PRINTFORMW %CALLNAME:ARG%하%CALLNAME:MASTER%의 어깨에 걸터앉아, 싱글벙글 미소지어 왔다…
+				PRINTFORMW %조사처리(CALLNAME:ARG,"는")% %CALLNAME:MASTER%의 어깨에 걸터앉아, 싱글벙글 미소지어 왔다…
 			ELSEIF RAND:2
-				PRINTFORMW %CALLNAME:ARG%하, 규～웃 껴안아\@ TALENT:거유 ? 가슴の谷間で腕を挟んで # 甘えて \@왔다…
+				PRINTFORMW %조사처리(CALLNAME:ARG,"는")% , 푸～욱 껴안아\@ TALENT:거유 ? 가슴골에 팔을 껴 # 어리광부려 \@왔다…
 			ELSE
-				PRINTFORMW %CALLNAME:ARG%는 뒤로부터 껴안아 응석부리면서,%CALLNAME:MASTER%의가슴을더듬어 왔다…
+				PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 뒤로부터 껴안아 응석부리면서,%CALLNAME:MASTER%의 가슴을 더듬어 왔다…
 			ENDIF
 		;드라이어드、뱀파이어、프로페테스、유니콘、핌블베트、메르야、발키리
 		CASE 3, 25, 27, 30, 49, 54, 61
 			PRINTFORMW 「…조금 이야기 하고 싶은 것이 있던 것이지만, 지금은 바쁜 것 같네요」
 			PRINTFORMW 「유감이지만, 다시 하기로 하겠습니다……너무 바짝 긴장하지 말아 주세요？」
-			PRINTFORMW %CALLNAME:ARG%는 한 마디%CALLNAME:MASTER%를 돌봐, 꾸벅 일례 하고 나서 조용하게 퇴실했습니다.
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 한 마디 %마스터를()% 돌봐, 꾸벅 인사 하고 나서 조용하게 퇴실했습니다.
 			CALL SET_CEVENT, "서류작업：퇴실", ARG
 		;실프、미믹、쟈브쟈브
 		CASE 5, 33, 43
-			PRINTFORMW %CALLNAME:MASTER%는 묵묵히 책상에 향하고 있다…
+			PRINTFORMW %마스터는()% 묵묵히 책상에 향하고 있다…
 			PRINTL 
-			PRINTFORM 「응후훗…♪ 일 하고 있다%CNAMET(ARG, "주인")%도 멋지구나
+			PRINTFORM 「응후훗…♪ 일 하고 있는 %CNAMET(ARG, "주인")%도 멋지구나
 			CALL HEARTMARK_E
 			PRINTFORMW 「이, 이군요, 이것은 어떤 의미야？ %CNAMET(ARG, "一人称")%에도 가르쳐 줫♪」
 			IF RAND:2
-				PRINTFORMW %CALLNAME:ARG%하, 꽉 껴안아\@ TALENT:거유 ? 가슴の谷間で腕を挟んで # \@왔다…
+				PRINTFORMW %조사처리(CALLNAME:ARG,"는")% , 꽉 껴안아\@ TALENT:거유 ? 가슴골에 팔을 껴 # \@왔다…
 			ELSE
-				PRINTFORMW %CALLNAME:ARG%는 뒤로부터 껴안아,%CALLNAME:MASTER%의가슴을더듬으면서 응석부려 왔다…
+				PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 뒤로부터 껴안아,%CALLNAME:MASTER%의 가슴을 더듬으면서 응석부려 왔다…
 			ENDIF
-		;村娘、스큘라、드라군、마샤
+		;村娘、스킬라、드라군、마샤
 		CASE 8, 9, 15, 24, 26, 32, 44, 55
-			PRINTFORMW %CALLNAME:MASTER%는 묵묵히 책상에 향하고 있다…
+			PRINTFORMW %마스터는()% 묵묵히 책상에 향하고 있다…
 			PRINTL 
 			PRINTFORMW 「저～……좋다면%CNAMET(ARG, "一人称")%, 도울까요？」
-			PRINTFORMW %CALLNAME:ARG%는 어깨 너머에 들여다 보면서, 소극적으로 심부름을 신청하고 있다…
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 어깨 너머에 들여다 보면서, 소극적으로 심부름을 신청하고 있다…
 		;하피、メイブ、에스프라나
 		CASE 11, 17, 38
 
@@ -524,34 +524,34 @@ CASE "서류작업：무시"
 		SIF LINECOUNT != MEMO_LINECOUNT
 			RETURN 1
 
-		PRINTFORMW %CALLNAME:MASTER%는 묵묵히 책상에 향하고 있다…
+		PRINTFORMW %마스터는()% 묵묵히 책상에 향하고 있다…
 		PRINTL 
 		PRINTFORMW 「…………」
 		IF TALENT:ARG:강기 + TALENT:ARG:교만 && TALENT:ARG:솔직 == 0 && RANDIF(3, TALENT:ARG:꼬리, TALENT:ARG:거유 >= 2, TALENT:ARG:내성적 + TALENT:ARG:겁쟁이) == 0
-			PRINTFORMW %CALLNAME:ARG%는 팔짱을 껴 외면하면서, 등힐끗%CALLNAME:MASTER%의 모습을 살피고 있다…
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 팔짱을 껴 외면하면서, 등 너머 힐끗%CALLNAME:MASTER%의 모습을 살피고 있다…
 		ELSEIF TALENT:ARG:내성적 + TALENT:ARG:겁쟁이 && RANDIF(3, TALENT:ARG:꼬리, TALENT:ARG:거유 >= 2) == 0
-			PRINTFORMW %CALLNAME:ARG%하%CALLNAME:MASTER%의 셔츠의 옷자락을 잡아, 허약하게 이끌어 왔다…
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")% %CALLNAME:MASTER%의 셔츠의 옷자락을 잡아, 허약하게 이끌어 왔다…
 		ELSEIF TALENT:ARG:거유 >= 2 && RANDIF(3, TALENT:ARG:꼬리) == 0
-			PRINTFORM %CALLNAME:ARG%하가슴아래에서 팔짱을 껴, 젖가슴을 강조해 과시하면서 잠시 멈춰서고 있습니다…
+			PRINTFORM %조사처리(CALLNAME:ARG,"는")% 가슴아래에서 팔짱을 껴, 젖가슴을 강조해 과시하면서 잠시 멈춰서고 있습니다…
 		ELSEIF TALENT:ARG:꼬리 && RAND:3
-			PRINTFORM %CALLNAME:ARG%는 긴장한 공기를 조성하면서,
+			PRINTFORM %조사처리(CALLNAME:ARG,"는")% 긴장한 공기를 조성하면서,
 			;=1猫、=2狼、=3キツネ、=4ウサギ、=5ウマ、=6悪魔の꼬리、=7トカゲ、=8자바워크、=13蜂
 			SELECTCASE TALENT:ARG:꼬리
 			CASE 1, 6
 				PRINTFORMW 꼬리를 꾸불꾸불움직이고 있다…
 			CASE 2, 3, 5
-				PRINTFORMW 꼬리를 파탁…파탁…(와)과 움직이고 있다…
+				PRINTFORMW 꼬리를 찰싹…찰싹…하고 움직이고 있다…
 			CASE 4, 13
 				PRINTFORMW 꼬리를 쫑긋쫑긋 움직이고 있다…
 			CASEELSE
-				PRINTFORMW 심심한 것 같이꼬리를 스스로의발에 찰싹찰싹 부딪치거나 하고 있다…
+				PRINTFORMW 심심한 것 같이 꼬리를 스스로의 발에 찰싹찰싹 부딪히거나 하고 있다…
 			ENDSELECT
 		ELSE
-			PRINTFORM %CALLNAME:ARG%하%CALLNAME:MASTER%에 뒤로부터
+			PRINTFORM %조사처리(CALLNAME:ARG,"는")% %CALLNAME:MASTER%의 뒤로 부터
 			IF TALENT:ARG:거유 >= 2 && RANDIF(1, AGE(ARG) == 1, TALENT:ARG:매력, TALENT:ARG:작은몸집)
-				PRINTFORM 풍만한가슴
+				PRINTFORM 풍만한 가슴
 			ELSEIF TALENT:ARG:작은몸집 && RANDIF(1, AGE(ARG) == 1, TALENT:ARG:매력)
-				PRINTFORM 조그만신체
+				PRINTFORM 조그만 신체
 			ELSEIF TALENT:ARG:매력 && RANDIF(1, AGE(ARG) == 1)
 				PRINTFORM 매력적인 신체
 			ELSEIF AGE(ARG) == 1
@@ -559,9 +559,9 @@ CASE "서류작업：무시"
 			ELSE
 				PRINTFORM 신체
 			ENDIF
-			PRINTFORM 를 강압
+			PRINTFORM 를 누르면서 
 			IF TALENT:ARG:냉정 + TALENT:ARG:감정결핍
-				PRINTW (이)면서, 가만히 응시하고 있습니다…
+				PRINTW 가만히 응시하고 있습니다…
 			ELSE
 				PRINTW 무, 무언으로 응석부리고 있습니다…
 			ENDIF
@@ -569,47 +569,47 @@ CASE "서류작업：무시"
 	;無視してしまった…
 	ELSE
 		SELECTCASE NO:ARG
-		;서큐버스、라미아、아프사라스、알케니、에스트、흑사피
+		;서큐버스、라미아、압사라、아라크네、에스트、흑사피
 		CASE 1, 10, 14, 18, 48, 57
-			PRINTFORML 「……방해 했군요. -응이다」
-			PRINTFORMW %CALLNAME:ARG%는 흐트러진 착의인 채, 즈카즈카！(와)과발소리를 내 방으로부터 나갔습니다……
+			PRINTFORML 「……방해 했군요. 흥-이다」
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 흐트러진 착의인 채, 타박타박！하고 발소리를 내면서 방으로부터 나갔습니다……
 		;임프、고블린、미믹、ロッコ、스텔라、돌로레스、娘
 		;픽시、허니비
 		CASE 2, 4, 31, 33, 40, 50, 59, 60, 97
 			IF COND("ご無沙汰", ARG) && COND("욕구불만", ARG)
-				PRINTFORMW 「…%CNAMET(ARG, "二人称")%. %CNAMET(ARG, "一人称")%………싫게 되어 버렸다？」
+				PRINTFORMW 「…%CNAMET(ARG, "二人称")%. %CNAMET(ARG, "一人称")%………싫어져 버렸어？」
 				PRINTFORMW 「최근 별로 방에 와 주지 않고,%CNAMET(ARG, "一人称")%저기…」
 				PRINTL 
 				PRINTL 
 				PRINTFORMW 「에, 에헤헤. 지금 것은 말야, 농담이야」
-				PRINTFORMW 「입고의 연기가 굉장해서, 깜짝 놀라 버린 것이겠지！ ……」
+				PRINTFORMW 「박진감있는 연기가 굉장해서, 깜짝 놀라 버린 것이겠지！ ……」
 				PRINTFORMW 「%CNAMET(ARG, "一人称")%……, 돌아가네요！」
-				PRINTFORMW %CALLNAME:ARG%는 종종걸음으로 방을 나가 버렸다…
+				PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 종종걸음으로 방을 나가 버렸다…
 			ELSE
-				PRINTFORMW 「……오늘은 물러나 주지만, 다음은%CNAMET(ARG, "一人称")%(와)과 놀아？」
+				PRINTFORMW 「……오늘은 물러나 주지만, 다음은 %CNAMET(ARG, "一人称")%하고 놀아？」
 				PRINTFORMW 「%CNAMET(ARG, "二人称")%……일 힘내！」
-				PRINTFORMW 이기적임 말해질까하고 생각했는데, 격려받아 버렸다.
+				PRINTFORMW 제멋대로 말해질까하고 생각했는데, 격려받아 버렸다.
 			ENDIF
 		;드라이어드、뱀파이어、프로페테스、유니콘、핌블베트、메르야、발키리
 		CASE 3, 25, 27, 30, 49, 54, 61
 			PRINTFORMW 「…조금 이야기 하고 싶은 것이 있던 것이지만, 지금은 바쁜 것 같네요」
 			PRINTFORMW 「유감이지만, 다시 하기로 하겠습니다……너무 바짝 긴장하지 말아 주세요？」
-			PRINTFORMW %CALLNAME:ARG%는 한 마디%CALLNAME:MASTER%를 돌봐, 꾸벅 일례 하고 나서 조용하게 퇴실했습니다.
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 한 마디%마스터를()% 돌봐, 꾸벅 인사 하고 나서 조용하게 퇴실했습니다.
 			CALL SET_CEVENT, "서류작업：퇴실", ARG
 		;실프、쟈브쟈브
 		CASE 5, 43
 			PRINTFORM 「♪～～♪～～♪～～
 			CALL HEARTMARK_E
-			PRINTFORMW %CALLNAME:ARG%하%CALLNAME:MASTER%에 껴안은 채로, 즐거운 듯이 콧노래를 노래하고 불리는 것을 기다리고 있다…
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")% %CALLNAME:MASTER%에 껴안은 채로, 즐거운 듯이 콧노래를 부르면서 불리는 것을 기다리고 있다…
 			CALL SET_CEVENT, "서류작업：무시できない", ARG
-		;村娘、스큘라、살로메、드라군、마샤、린、소녀
+		;村娘、스킬라、살로메、드라군、마샤、린、소녀
 		CASE 8, 9, 15, 24, 26, 32, 44, 55
-			PRINTFORMW 「방해 해……미안해요」
-			PRINTFORMW %CALLNAME:ARG%는 아래를 향해 터벅터벅 방을 나갔습니다…
+			PRINTFORMW 「방해 해서……미안해요」
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 아래를 향해 터벅터벅 방을 나갔습니다…
 		;하피、メイブ、에스프라나
 		CASE 11, 17, 38
-			PRINTFORMW 「정말, 게으른 것이니까. 이봐요, 빨리 끝내%CNAMET(ARG, "一人称")%의 상대 하세요？」
-			PRINTFORMW %CALLNAME:ARG%하%CALLNAME:MASTER%를 바보 취급한 말투를 하고 있지만, 의자에 앉아 예의범절 좋게 기다리고 있다…
+			PRINTFORMW 「정말, 게으른 것이니까. 이봐요, 빨리 끝내고 %CNAMET(ARG, "一人称")%의 상대 하세요？」
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")% %마스터를()% 바보 취급한 말투를 하고 있지만, 의자에 앉아 예의바르게 기다리고 있다…
 			CALL SET_CEVENT, "서류작업：무시できない", ARG
 		;마치헤어
 		CASE 58
@@ -618,7 +618,7 @@ CASE "서류작업：무시"
 		;他の誰がしゃべるか未定（雛形置き場）
 		CASEELSE
 			PRINTFORMW 「……하아」
-			PRINTFORMW %CALLNAME:ARG%는 아래를 향해 터벅터벅 방을 나갔습니다…
+			PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 아래를 향해 터벅터벅 방을 나갔습니다…
 		ENDSELECT
 
 		PRINTL 

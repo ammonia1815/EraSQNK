@@ -52,7 +52,7 @@ ENDIF
 
 CALL SET_NEWNAME
 
-;스큘라短編だったり長編だったり
+;스킬라短編だったり長編だったり
 IF NO:TARGET == 15
 	IF RAND:2
 		CFLAG:209 = 2
@@ -144,14 +144,14 @@ CASE "류두흐동굴"
 	;스투나は멜로나が倒されていないなら멜로나を伴って現れる
 	IF NO:TARGET == 34 && PALAM_EXPLORER("中보스격파") == 0 && (CONFIG("탐색ボス") || GETCHARA(35) < 0)
 		CALL ADD_CHARACTER_EXPLORER, 35
-	;뷔브르, 멜로나, 上位種でないなら複数かも
+	;뷔이브, 멜로나, 上位種でないなら複数かも
 	ELSEIF NO:TARGET == 34 || NO:TARGET == 35 || (NO:TARGET == 12 && CFLAG:8 == 4)
 	ELSEIF PALAM_EXPLORER("敵の強さ") + PALAM_EXPLORER("ハーレム")*2 > RAND:20 && CFLAG:8 == 0
 		CALL WANDERING_MONSTER
 		SIF PALAM_EXPLORER("敵の強さ") + PALAM_EXPLORER("ハーレム")*2 > RAND:20
 			CALL WANDERING_MONSTER
 	ENDIF
-CASE "안쇼스海"
+CASE "안쇼스 해"
 	;레비아탄は머메이드２体とともに現れる
 	IF NO:TARGET == 13 && CFLAG:8 == 3
 		CALL ADD_CHARACTER_EXPLORER, 13
@@ -245,7 +245,7 @@ IF NO:TARGET == 22 && CFLAG:8 == 2 && PALAM_EXPLORER("敵キャラ数") == 1
 	CALL ADD_CHARACTER_EXPLORER, 222
 	LOCALS:2 = %NAME:PALAM_EXPLORER("二人目")%(LV:{ABL:PALAM_EXPLORER("二人目"):90})
 	LOCALS:3 = %NAME:PALAM_EXPLORER("三人目")%(LV:{ABL:PALAM_EXPLORER("三人目"):90})
-	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 세명으로 분신해서 덤벼들었다! 
+	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 세 명으로 덤벼들었다! 
 ENDIF
 
 ;무드 0,1～4,5～8,9이상でランク分け. 
@@ -348,7 +348,7 @@ CASE 3
 	ENDIF
 CASE 13
 	IF CFLAG:8 == 3
-		CALL SET_PALAM_EXPLORER, "안쇼스海：보스격파"
+		CALL SET_PALAM_EXPLORER, "안쇼스 해：보스격파"
 		CALL SET_PALAM_EXPLORER, "보스격파"
 	ENDIF
 CASE 34
@@ -419,10 +419,10 @@ CASEELSE
 			LASTWORD = %CALLNAME:TARGET%
 			;ストメロ限定
 			IF NO:TARGET == 34 && PALAM_EXPLORER("敵キャラ数") >= 2 && NO:PALAM_EXPLORER("二人目") == 35
-				PRINTFORML %LASTWORD와()% 멜로나는 일어나, 동료마가 된 듯이 %CALLNAME:PLAYER%를 보고 있다…
+				PRINTFORML %LASTWORD와()% 멜로나는 일어나, 동료마가 된 듯이 %조사처리(CALLNAME:PLAYER,"를")% 보고 있다…
 			;하피姉妹
 			ELSEIF NO:TARGET == 38 && PALAM_EXPLORER("敵キャラ数") >= 2
-				PRINTFORML %LASTWORD와()% 여동생은 일어나, 동료마가 된 듯이 %CALLNAME:PLAYER%를 보고 있다…
+				PRINTFORML %LASTWORD와()% 여동생은 일어나, 동료마가 된 듯이 %조사처리(CALLNAME:PLAYER,"를")% 보고 있다…
 			;강기かツンデレ（스투나と리저드맨）限定
 			ELSEIF NO:TARGET == 12 || NO:TARGET == 34
 				PRINTFORM %LASTWORD는()%  
@@ -435,11 +435,11 @@ CASEELSE
 				ENDIF
 				PRINTFORM %CALLNAME:PLAYER%
 				IF RAND:3 == 0
-					PRINTFORML %조사만처리(CALLNAME:PLAYER,"를")% 어딘가 기대하는 눈동자로 계속 노려보고있다…
+					PRINTFORML %조사만처리(CALLNAME:PLAYER,"를")% 어딘가 기대하는 눈동자로 계속 노려보고 있다…
 				ELSEIF RAND:2 == 0
-					PRINTFORML %조사만처리(CALLNAME:PLAYER,"를")% 힐끔힐끔 쳐다보면서 얼굴을 붉히고있다…
+					PRINTFORML %조사만처리(CALLNAME:PLAYER,"를")% 힐끔힐끔 쳐다보면서 얼굴을 붉히고 있다…
 				ELSE
-					PRINTFORML %조사만처리(CALLNAME:PLAYER,"를")% 유혹하는 듯이 도발하고있다…
+					PRINTFORML %조사만처리(CALLNAME:PLAYER,"를")% 유혹하는 듯이 도발하고 있다…
 				ENDIF
 			;その他범용
 			ELSE
@@ -461,13 +461,13 @@ CASEELSE
 				ELSEIF RAND:3 == 0
 					PRINTFORML 의 발치에 가까이 다가온다…
 				ELSEIF RAND:2 == 0
-					PRINTFORML 에게 손을 내밀어 따라왔다…
+					PRINTFORML 에게 손을 뻗어 따라 왔다…
 				ELSE
-					PRINTFORML 에게 더욱더 행위를 요구하고있다…
+					PRINTFORML 에게 더욱 더 행위를 요구하고 있다…
 				ENDIF
 			ENDIF
 
-			PRINTFORML [0] 손을 잡는다 [1] 돌아보지않는다
+			PRINTFORML [0] 손을 잡는다 [1] 돌아보지 않는다
 			CALL INPUT_SELECT, 2
 
 			IF RESULT == 0

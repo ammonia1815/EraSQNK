@@ -327,7 +327,7 @@ SIF TFLAG:9 == 0 && ABL:봉사정신 >= 3
 ;伝説の「あ～ん」ktkr! 
 SIF TFLAG:10 == 0 && ABL:봉사정신 >= 3
 	CALL CALC, "랜덤선택", 10
-;どきどき노팬티orファスナー開けっ放し接손님
+;どきどき노팬티or파스너開けっ放し接손님
 SIF TFLAG:11 == 0 && ABL:욕망 >= 4 && ABL:노출벽 >= 4 && TALENT:남자 == 0 && COND("제복：스커트") + COND("제복：파스너")
 	CALL CALC, "랜덤선택", 11
 ;ちょっと暇な시간帯で, ジュースをこぼして拭き拭き
@@ -446,7 +446,7 @@ EVENT_NAMES = %EVENT_NAMES_CAFE(RESULT)%
 ;소질の関係ない이벤트群
 SELECTCASE EVENT_NAMES
 CASE "パンチラ"
-	PRINTFORM %CALLNAME:TARGET%는, 손님에게 자연스럽게 
+	PRINTFORM %타겟은()%, 손님에게 자연스럽게 
 	IF COND("제복：바니")
 		PRINTFORMW 야한 행동을 대놓고 보여주면서 즐겁게 일하고있습니다. 
 	ELSE
@@ -598,7 +598,7 @@ CASE "パンチラ"
 		ENDIF
 	ENDIF
 CASE "성희롱"
-	PRINTFORM %CALLNAME:TARGET%는 
+	PRINTFORM %타겟은()% 
 	IF RAND:3 == 0
 		PRINTFORM 테이블을 걸레질하는 중에, 
 		LOCALS = 걸레질
@@ -623,7 +623,7 @@ CASE "성희롱"
 	ENDIF
 	;露骨過ぎるので, ちょっと확률低い
 	IF TALENT:음란 && TALENT:부끄럼쟁이 == 0 && COND("다방：おさわり") && RANDIF(3, TALENT:냉정 + TALENT:감정결핍 + TALENT:음란, TALENT:강기)
-		PRINTFORM …만, %CALLNAME:TARGET%는 요염한 미소를 띄우며, 역으로 손님
+		PRINTFORM …만, %타겟은()% 요염한 미소를 띄우며, 역으로 손님
 		IF RAND:2 == 0
 			PRINTFORM 의 손을
 			IF COND("제복：바니") || COND("身嗜み：노팬티")
@@ -652,10 +652,10 @@ CASE "성희롱"
 			ENDIF
 		ENDIF
 	ELSEIF TALENT:부끄럼쟁이 && RANDIF(1, TALENT:냉정 + TALENT:감정결핍 + TALENT:음란, TALENT:강기)
-		PRINTFORMW %CALLNAME:TARGET%는 갑작스런 해프닝에 「\@ COND("오토코노코") ? 왓 # 히야앙 \@!」하고 귀여운 비명을 질러버리고, 매우 부끄러운 듯이, 손님을 타일렀습니다. 
+		PRINTFORMW %타겟은()% 갑작스런 해프닝에 「\@ COND("오토코노코") ? 왓 # 히야앙 \@!」하고 귀여운 비명을 질러버리고, 매우 부끄러운 듯이, 손님을 타일렀습니다. 
 		PRINTFORMW 손님은 맘에 든 여자아이를 못된 장난으로 울려버린것 같은 표정으로, 당황하며 사과하고 있습니다…
 	ELSEIF TALENT:강기 && RANDIF(1, TALENT:냉정 + TALENT:감정결핍 + TALENT:호색 + TALENT:음란)
-		PRINTFORM %CALLNAME:TARGET%는 반사적으로 
+		PRINTFORM %타겟은()% 반사적으로 
 		IF RAND:3 == 0 && COND("다리が無い") == 0
 			PRINTFORM 걷어차버리고 말았습니다만, 
 		ELSEIF RAND:2
@@ -666,14 +666,14 @@ CASE "성희롱"
 		PRINTFORMW 주위에선 어째서인지 박수가 일고 있습니다…
 	ELSEIF TALENT:냉정 + TALENT:감정결핍 + TALENT:음란
 		IF (CHECK_PANTIES("Ｈ") || RAND:3 == 0) && ABL:봉사정신 >= 3 && ABL:노출벽 && LOCALS != "상차림" && COND("다방：おさわり")
-			PRINTFORM …주변에 손님이 없는 것을 확인한 %CALLNAME:TARGET%는 
+			PRINTFORM …주변에 손님이 없는 것을 확인한 %타겟은()% 
 			IF LOCALS == "걸레질"
 				PRINTFORM 어깨너머로 손님을 슬쩍 보고는, 다리를 어깨넓이로 벌려 걸레질 하는 동안만 
 			ELSE
 				PRINTFORM 손님을 슬쩍 보고, 
 				IF COND("제복：바니") && COND("제복：파스너") && COND("다방：Ｖ섹스") && TALENT:여자
 					PRINTFORM 못된 장난을 치고 있는 손을 가랑이 부분의 지퍼 손잡이로 유도해 주문동안만 
-					LOCALS:2 = ファスナー
+					LOCALS:2 = 파스너
 				ELSEIF RAND:2 || COND("제복：바니")
 					PRINTFORM 다리를 조금 벌리고 주문동안만 
 				ELSE
@@ -729,28 +729,28 @@ CASE "성희롱"
 				PRINTFORMW %LOCALS:1%,  다리 사이의 부드러운 감촉이나 촉촉한 허벅지 안쪽을 손바닥 전체로 즐겼습니다…
 			ENDIF
 		ELSE
-			PRINTFORMW …만, %CALLNAME:TARGET%는 익숙한 모습으로 흘려보내고 있습니다…
+			PRINTFORMW …만, %타겟은()% 익숙한 모습으로 흘려보내고 있습니다…
 		ENDIF
 	ELSE
-		PRINTFORMW %CALLNAME:TARGET%는 무심코, 뺨을 붉히며 색기 넘치는 목소리를 내고 말았습니다…. 
+		PRINTFORMW %타겟은()% 무심코, 뺨을 붉히며 색기 넘치는 목소리를 내고 말았습니다…. 
 		PRINTFORMW 예상외의 \@ LOCAL ? 감촉에 고개를 갸웃하면서, 손님은 # 반응에 당황한 손님은, \@바로 장난을 그만두고 사죄했습니다…
 	ENDIF
 CASE "オムライス"
-	PRINTFORMW %CALLNAME:TARGET%는 오무라이스에 케찹으로 초상화를 그리는 서비스를 주문받았습니다. 
+	PRINTFORMW %타겟은()% 오무라이스에 케찹으로 초상화를 그리는 서비스를 주문받았습니다. 
 	PRINTL 
 	IF TALENT:교만 + TALENT:강기 && RANDIF(2, TALENT:양기, TALENT:호색, TALENT:현명함)
-		PRINTFORMW …%CALLNAME:TARGET%는 자신의 웃는얼굴을 그리는데 저항감이 있는듯, 어찌해도 \@TALENT:건방짐 ? 건방진 # 새침한\@ 느낌의 그림이 되어버렸습니다. 
+		PRINTFORMW …%타겟은()% 자신의 웃는얼굴을 그리는데 저항감이 있는듯, 어찌해도 \@TALENT:건방짐 ? 건방진 # 새침한\@ 느낌의 그림이 되어버렸습니다. 
 		PRINTFORMW 하지만, 그럴듯한 리얼함이 손님에겐 먹힌 것 같습니다…
 	ELSEIF TALENT:양기 && RANDIF(2, TALENT:호색, TALENT:현명함)
 		IF TALENT:작은몸집 && TALENT:유치 && RAND:2
-			PRINTFORMW …%CALLNAME:TARGET%는 손님의 무릎위에 앉아, 익숙한 모습으로 그려냈습니다…
-			PRINTFORMW 손님은 %CALLNAME:TARGET%를 쓰다듬고 싶은 충동을 필사적으로 견디고 있습니다…
+			PRINTFORMW …%타겟은()% 손님의 무릎위에 앉아, 익숙한 모습으로 그려냈습니다…
+			PRINTFORMW 손님은 %타겟을()% 쓰다듬고 싶은 충동을 필사적으로 견디고 있습니다…
 		ELSE
-			PRINTFORMW …%CALLNAME:TARGET%는 데포르메한 자신의 웃는얼굴을 그리며, 싱긋 손님에게 미소지었습니다…
+			PRINTFORMW …%타겟은()% 데포르메한 자신의 웃는얼굴을 그리며, 싱긋 손님에게 미소지었습니다…
 			PRINTFORMW 손님은 즐거워 보이는 웃는 얼굴에 완전히 넉다운 당해 버렸습니다…
 		ENDIF
 	ELSEIF TALENT:호색 && RANDIF(2, TALENT:현명함)
-		PRINTFORM ……%CALLNAME:TARGET%는 손님의 
+		PRINTFORM ……%타겟은()% 손님의 
 		IF ABL:욕망 >= 5 && RAND:2
 			PRINTFORM 허벅지 위에 내려앉아서,
 		ELSE
@@ -765,29 +765,29 @@ CASE "オムライス"
 		ENDIF
 	;현명함人にはみんな厳しいｗ
 	ELSEIF TALENT:현명함 && RAND:2
-		PRINTFORMW ……조금 실수한 듯, %CALLNAME:TARGET%가 그린것은 추상화로밖에 보이지 않았습니다. 
+		PRINTFORMW ……조금 실수한 듯, %타겟이()% 그린것은 추상화로밖에 보이지 않았습니다. 
 		PRINTFORMW 손님은「맛있어」라고 달래주었지만, 동료들 사이에선『거장, 거장! 』하고 놀림받은 듯 합니다…
 	ELSEIF RAND:2
-		PRINTFORMW …만, %CALLNAME:TARGET%가 그린 것은「좋을것도 나쁠것도 없는」정도의 모양새 였습니다. 
-		PRINTFORMW 손님의 미묘한 반응에, %CALLNAME:TARGET%는 리벤지를 결심한 듯 합니다…
+		PRINTFORMW …만, %타겟이()% 그린 것은「좋을것도 나쁠것도 없는」정도의 모양새 였습니다. 
+		PRINTFORMW 손님의 미묘한 반응에, %타겟은()% 리벤지를 결심한 듯 합니다…
 	ELSE
 		PRINTFORMW ……아무래도, 자기로서도 만족할 만한 솜씨의 것을 그려낸 것 같습니다. 
 		IF ABL:봉사정신 + TALENT:헌신*3 >= 4 && RAND:2
-			PRINTFORMW 자신작을 만들고 기분이 좋은 %CALLNAME:TARGET%는, 손님에게『아-앙』도 해주고 있습니다…
+			PRINTFORMW 자신작을 만들고 기분이 좋은 %타겟은()%, 손님에게『아-앙』도 해주고 있습니다…
 		ELSE
 			PRINTFORMW 손님도 감탄하고 있습니다…
 		ENDIF
 	ENDIF
 CASE "스커트めくり"
 	IF RAND:2 && CHECK_PANTIES("끈")
-		PRINTFORMW %CALLNAME:TARGET%는 장난꾸러기 꼬마에게 끈팬티의 끈 한쪽을 풀려져 버렸습니다! 
+		PRINTFORMW %타겟은()% 장난꾸러기 꼬마에게 끈팬티의 끈 한쪽을 풀려져 버렸습니다! 
 		LOCALS = 紐解き
 	ELSE
-		PRINTFORMW %CALLNAME:TARGET%는 장난꾸러기 꼬마에게 아이스께끼를 당해버렸습니다! 
+		PRINTFORMW %타겟은()% 장난꾸러기 꼬마에게 아이스께끼를 당해버렸습니다! 
 	ENDIF
 
 	IF TALENT:교만 + TALENT:강기 && TALENT:부끄럼쟁이 == 0 && RANDIF(1, TALENT:부끄럼없음, TALENT:냉정 + TALENT:감정결핍)
-		PRINTFORMW %CALLNAME:TARGET%는 \@ TALENT:조야 && RAND:3 == 0 ? 엉덩이 쪽의 팬티에 먹혀든 것을 손을 뻗어 고치면서  # \@발랑까진 아이를 가볍게 설교하기 시작했지만, 아이가 이해한 모습을 보이자, 웃는 얼굴로 머리를 쓰다듬으면서 보내준 것같습니다…
+		PRINTFORMW %타겟은()% \@ TALENT:조야 && RAND:3 == 0 ? 엉덩이 쪽의 팬티에 먹혀든 것을 손을 뻗어 고치면서  # \@발랑까진 아이를 가볍게 설교하기 시작했지만, 아이가 이해한 모습을 보이자, 웃는 얼굴로 머리를 쓰다듬으면서 보내준 것같습니다…
 	ELSEIF TALENT:냉정 + TALENT:감정결핍 && RANDIF(1, TALENT:부끄럼없음)
 		IF LOCALS == "紐解き" && RAND:2 && ABL:노출벽 >= 1
 			PRINTFORM 배꼽이 보일 정도로 걷어올려진 스커트 아래에 드러난 
@@ -811,10 +811,10 @@ CASE "스커트めくり"
 				PRINTFORM \@ RAND:2 ? Ｈ # 과격 \@한 속옷에 
 			ENDIF
 		ENDIF
-		PRINTFORMW 일순 점내가 웅성거렸습니다만, %CALLNAME:TARGET%는 화려하게 흘려넘긴 듯 합니다…
+		PRINTFORMW 일순 점내가 웅성거렸습니다만, %타겟은()% 화려하게 흘려넘긴 듯 합니다…
 	ELSEIF TALENT:부끄럼없음
 		IF TALENT:솔직 + TALENT:양기 && TALENT:작은몸집 == 0
-			PRINTFORM %CALLNAME:TARGET%는 쭈구리고 앉아 눈높이를 맞추고, 
+			PRINTFORM %타겟은()% 쭈구리고 앉아 눈높이를 맞추고, 
 			IF ABL:노출벽 >= 3 + RAND:4 && COND("제복：미니스커트")
 				PRINTFORM 자연스럽게 다리를 열어 
 				IF RAND:3 == 0
@@ -836,7 +836,7 @@ CASE "스커트めくり"
 				PRINTFORMW 아이를 얼굴을 쓰다듬으며 부드럽게 설득했습니다…
 			ENDIF
 		ELSE
-			PRINTFORM …만, %CALLNAME:TARGET%는 
+			PRINTFORM …만, %타겟은()% 
 			IF TALENT:냉정 + TALENT:감정결핍 && ABL:봉사정신 >= 3 && ABL:노출벽 && COND("제복：미니스커트") && RAND:2
 				PRINTFORM 스커트를 붙잡아 아이에게만 몰래 팬티를 보여주면서 주의시키고 
 			ELSE
@@ -846,18 +846,18 @@ CASE "스커트めくり"
 		ENDIF
 	ELSEIF RAND:2
 		IF COND("오토코노코") && RAND:2
-			PRINTFORM %CALLNAME:TARGET%는 부자연스럽게 가랑이가 부푼 것을 지적당하지 않을까 조마조마해하면서, 
+			PRINTFORM %타겟은()% 부자연스럽게 가랑이가 부푼 것을 지적당하지 않을까 조마조마해하면서, 
 		ELSE
-			PRINTFORM %CALLNAME:TARGET%는 부끄러운데도 화를 내지도 못하고, 
+			PRINTFORM %타겟은()% 부끄러운데도 화를 내지도 못하고, 
 		ENDIF
 		PRINTFORMW 그 뒤엔 어떻게 말도 못할 기분으로 지낸 듯 합니다…
 	ELSEIF RAND:2 && EQUIP:팬티 && LOCALS != "紐解き"
-		PRINTFORMW 주변의 손님들에게 완전히 먹혀버린 %PANTIES(TARGET)%를 죄다 보여버린 %CALLNAME:TARGET%는, 새빨간 얼굴로 빠른 목소리로 아이를 타이르고 있습니다…
+		PRINTFORMW 주변의 손님들에게 완전히 먹혀버린 %PANTIES(TARGET)%를 죄다 보여버린 %타겟은()%, 새빨간 얼굴로 빠른 목소리로 아이를 타이르고 있습니다…
 	ELSE
-		PRINTFORMW %CALLNAME:TARGET%는 살짝 뺨을 붉히고, 곤란한 얼굴로 아이를 타이르고 있습니다…
+		PRINTFORMW %타겟은()% 살짝 뺨을 붉히고, 곤란한 얼굴로 아이를 타이르고 있습니다…
 	ENDIF
 CASE "こけてパンもろ"
-	PRINTFORM %CALLNAME:TARGET%는 
+	PRINTFORM %타겟은()% 
 	IF COND("제복：스커트") && TALENT:부끄럼쟁이 && RAND:2
 		PRINTFORM 스커트 길이에 너무 신경쓴 나머지, 
 	ELSE
@@ -866,7 +866,7 @@ CASE "こけてパンもろ"
 	PRINTFORMW 가게 내에서 넘어져 다리를 쩍 벌린 채로 엉덩방아를 찢고 말았습니다. 
 	IF TALENT:부끄럼쟁이 == 0 && (TALENT:부끄럼없음 || ABL:노출벽 >= 3)
 		IF ABL:노출벽 >= 3 && RAND:2
-			PRINTFORM 주목받고있는 것을 깨달은 %CALLNAME:TARGET%는 
+			PRINTFORM 주목받고있는 것을 깨달은 %타겟은()% 
 			IF COND("제복：바니")
 				IF RAND:2
 					PRINTFORMW 양 다리를 안쪽 허벅지가 보일 정도로 벌려, 가랑이를 근처의 손님에게 마음껏 보였습니다
@@ -920,7 +920,7 @@ CASE "こけてパンもろ"
 		PRINTFORMW 한심하다고할지 부끄럽다고해야할지, 그 뒤부터는 일을 제대로 할 수 없었던 것같습니다… 
 	ENDIF
 CASE "자위중독"
-	PRINTFORMW %CALLNAME:TARGET%는, 그럭저럭 성실하게 일한 것 같습니다. 
+	PRINTFORMW %타겟은()%, 그럭저럭 성실하게 일한 것 같습니다. 
 	PRINTFORM …하지만, 점내가 한가하게 되었다거나 할 때, 무의식적으로 
 	IF RAND:2
 		PRINTFORM 테이블 모서리에 \@ COND("오토코노코") ?  페니스를 # 그곳을 \@ 문질러붙이고 있는 것
@@ -937,7 +937,7 @@ CASE "자위중독"
 		ELSE
 			PRINTFORM 이 눈에 거슬린 
 		ENDIF
-		PRINTFORM %CALLNAME:WAITRESS%는, %CALLNAME:TARGET%를 탈의실
+		PRINTFORM %CALLNAME:WAITRESS%는, %타겟을()% 탈의실
 		IF ABL:WAITRESS:레즈끼 >= 3 && RAND:2
 			PRINTFORM 에 데려가 만족시키기로 
 		ELSE
@@ -964,7 +964,7 @@ CASE "자위중독"
 				PRINTFORMW 의자에 앉아 다리를 벌리고, \@ COND("오토코노코") ? 여성용의 # \@ 팬티를 비껴내고 졸라대기 시작했습니다… 
 			ENDIF
 		ELSE
-			PRINTFORM 의자에 앉은 %CALLNAME:TARGET%는 
+			PRINTFORM 의자에 앉은 %타겟은()% 
 			IF TALENT:교만 + TALENT:강기 && TALENT:부끄럼쟁이 == 0
 				PRINTFORM 쑥쓰러운 표정으로 
 			ELSEIF TALENT:호색 && ABL:레즈끼
@@ -1080,9 +1080,9 @@ CASE "자위중독"
 		PRINTFORMW 손님에게 발견되기 전에 제대로 교육 다시 해야할 것인가도 모릅니다…
 	ENDIF
 CASE "身体が화照る"
-	PRINTFORMW 손님의 주문을 받고있는 %CALLNAME:TARGET%는, 어딘가 열에 들뜬 듯한 얼굴로 멍-하니 있습니다. 
-	PRINTFORMW 의아해하는 손님이 말을 걸자, %CALLNAME:TARGET%는 당황한 모습으로 주문을 받기시작했습니다. 
-	PRINTFORML …주방에 주문을 전달하고, 도망치듯이 화장실에 틀어박힌 %CALLNAME:TARGET%는, 
+	PRINTFORMW 손님의 주문을 받고있는 %타겟은()%, 어딘가 열에 들뜬 듯한 얼굴로 멍-하니 있습니다. 
+	PRINTFORMW 의아해하는 손님이 말을 걸자, %타겟은()% 당황한 모습으로 주문을 받기시작했습니다. 
+	PRINTFORML …주방에 주문을 전달하고, 도망치듯이 화장실에 틀어박힌 %타겟은()%, 
 	IF COND("제복：바니")
 		LOCALS = 속옷
 	ELSE
@@ -1111,7 +1111,7 @@ CASE "身体が화照る"
 		PRINTFORM 방금 전에 몰래 손댄 손님과의 정사를 회상하면서, 
 		CFLAG:36 += 1
 	ELSE
-		PRINTFORM %CALLNAME:MASTER%과 함께한 정사를 회상하면서, 
+		PRINTFORM %마스터와()% 함께한 정사를 회상하면서, 
 	ENDIF
 	;내사정された
 	IF EXP_GAIN(17) && RAND:2
@@ -1141,7 +1141,7 @@ CASE "身体が화照る"
 		PRINTFORMW 허벅지에 흘러내려오는 액체를 황홀한 얼굴로 닦았습니다…
 	ENDIF
 CASE "テーブル拭き１"
-	PRINTFORM %CALLNAME:TARGET%는 
+	PRINTFORM %타겟은()% 
 	IF RAND:2
 		PRINTFORM 디저트를 가져가는 일만 남은 
 	ELSE
@@ -1227,7 +1227,7 @@ CASE "テーブル拭き１"
 	ENDIF
 	;욕망+노출벽-부끄럼쟁이*3が３이상なら
 	IF LOCAL <= 2 && ABL:욕망 + ABL:노출벽 - TALENT:부끄럼쟁이*3 >= 3 && RAND:4
-		PRINTFORM 문득 자신의 가슴팍에 열중한 시선을 눈치 챈 %CALLNAME:TARGET%는, 
+		PRINTFORM 문득 자신의 가슴팍에 열중한 시선을 눈치 챈 %타겟은()%, 
 		IF LOCAL == 1 && COND("다방：おさわり")
 			PRINTFORM 테이블 위에 놓인 손님의 손에, 
 			IF RAND:2
@@ -1257,7 +1257,7 @@ CASE "テーブル拭き１"
 		ELSE
 			PRINTFORMW  비어있는 손으로 슬쩍 옷깃을 내렸습니다. 
 		ENDIF
-		PRINTFORM 놀란 얼굴을 한 손님에게, %CALLNAME:TARGET%는 
+		PRINTFORM 놀란 얼굴을 한 손님에게, %타겟은()% 
 		IF TALENT:교만 && TALENT:강기
 			IF TALENT:심술쟁이 && RAND:2
 				PRINTFORMW 히죽히죽 웃으면서 윙크했습니다…
@@ -1281,7 +1281,7 @@ CASE "テーブル拭き１"
 			PRINTFORMW 윙크했습니다…
 		ENDIF
 	ELSE
-		PRINTFORM 깨끗하게 청소를 끝마친 %CALLNAME:TARGET%는, 
+		PRINTFORM 깨끗하게 청소를 끝마친 %타겟은()%, 
 		IF RAND:2
 			PRINTFORM 얼굴을 붉히고 수줍어하고 있는 
 		ELSE
@@ -1311,7 +1311,7 @@ CASE "クリーム拭き取り"
 	ELSE
 		LOCALS = 청년
 	ENDIF
-	PRINTFORM 주방에 돌아가려던 %CALLNAME:TARGET%는, 뺨을 크림으로 더럽히면서 
+	PRINTFORM 주방에 돌아가려던 %타겟은()%, 뺨을 크림으로 더럽히면서 
 	IF RAND:3 == 0
 		PRINTFORM 파르페를 입에 가져가는 
 	ELSEIF RAND:2
@@ -1320,7 +1320,7 @@ CASE "クリーム拭き取り"
 		PRINTFORM 소프트크림을 덥석 문 
 	ENDIF
 	PRINTFORMW %LOCALS%의 앞을 지나갔습니다. 
-	PRINTFORM %CALLNAME:TARGET%는 %LOCALS%의 얼굴을 보고 
+	PRINTFORM %타겟은()% %LOCALS%의 얼굴을 보고 
 	IF TALENT:강기 && RAND:2 == 0
 		PRINTFORM 히죽 웃고, 
 	ELSEIF RAND:3 == 0 || TALENT:심술쟁이
@@ -1361,11 +1361,11 @@ CASE "クリーム拭き取り"
 		ELSE
 			PRINTFORM 미소짓고
 		ENDIF
-		PRINTFORMW , %CALLNAME:TARGET%는 가게 안쪽으로 돌아갔습니다…
+		PRINTFORMW , %타겟은()% 가게 안쪽으로 돌아갔습니다…
 	ENDIF
 ;あーん（하피さんは, 손がそのままの場合はついばむ？）
 CASE "あ～ん"
-	PRINTFORM %CALLNAME:TARGET%는 계산 일을 하면서, 계산대 옆에 놓인 
+	PRINTFORM %타겟은()% 계산 일을 하면서, 계산대 옆에 놓인 
 	IF RAND:3 == 0
 		PRINTFORM 각양각색의 
 	ELSEIF RAND:2
@@ -1383,7 +1383,7 @@ CASE "あ～ん"
 		LOCALS = 비스킷
 	ENDIF
 	PRINTFORMW %LOCALS%를 손님에게 서비스하고 있습니다. 
-	PRINTFORM 단순작업의 반복에 질린것인지, %CALLNAME:TARGET%는 거스름돈을 지갑에 넣고 있는 손님의 입가에, 
+	PRINTFORM 단순작업의 반복에 질린것인지, %타겟은()% 거스름돈을 지갑에 넣고 있는 손님의 입가에, 
 	;솔직
 	IF TALENT:솔직 && RANDIF(2, TALENT:감정결핍, TALENT:양기, TALENT:부끄럼쟁이, TALENT:소악마, TALENT:작은몸집)
 		PRINTFORM 빙긋 웃으면서 
@@ -1537,15 +1537,15 @@ CASE "あ～ん"
 	ENDIF
 	PRINTFORMW 예상치도 못한 럭키한 전개에, 손님은 헤롱헤롱해져버리고 말았습니다…
 
-	;唇に挟んで・아이専用→皿を置くと, %CALLNAME:TARGET%는 おもむろに1つを唇に挟んで(咥えて), 「んっ」と差し出してきました. 
-	;소년(소녀)はどきどきしながらも(ためらいながらも)입を近づけ, %CALLNAME:TARGET%가 咥えたお菓子に입を近づけました. 
-	;(TARGET유치専用？)唇が触れそうになる瞬間, %CALLNAME:TARGET%는 お菓子を半分持っていってしまいました. %CALLNAME:TARGET%는, 悪戯が成功した아이のように微笑んでいます. 
-	;소년(略)が唇が触れないように受け取ろうとすると, %CALLNAME:TARGET%는 입を突き出し, 부드러운 唇を押し付けてきました(ついばむ様なくちづけをしました). 
-	;唇を触れ合わせたまま, %CALLNAME:TARGET%는 舌を使って, お菓子を소년(略)の입に含ませました. 
-	;얼굴を真っ빨강にしたまま固まっている(柔らかくなったお菓子を呆然と噛んでいる)소년(略)に, %CALLNAME:TARGET%는 소년(略)の頭を撫でて(ウィンクして・ニカッと笑って), 店の奥へ戻っていきました. 
+	;唇に挟んで・아이専用→皿を置くと, %타겟은()% おもむろに1つを唇に挟んで(咥えて), 「んっ」と差し出してきました. 
+	;소년(소녀)はどきどきしながらも(ためらいながらも)입を近づけ, %타겟이()% 咥えたお菓子に입を近づけました. 
+	;(TARGET유치専用？)唇が触れそうになる瞬間, %타겟은()% お菓子を半分持っていってしまいました. %타겟은()%, 悪戯が成功した아이のように微笑んでいます. 
+	;소년(略)が唇が触れないように受け取ろうとすると, %타겟은()% 입を突き出し, 부드러운 唇を押し付けてきました(ついばむ様なくちづけをしました). 
+	;唇を触れ合わせたまま, %타겟은()% 舌を使って, お菓子を소년(略)の입に含ませました. 
+	;얼굴を真っ빨강にしたまま固まっている(柔らかくなったお菓子を呆然と噛んでいる)소년(略)に, %타겟은()% 소년(略)の頭を撫でて(ウィンクして・ニカッと笑って), 店の奥へ戻っていきました. 
 ;どきどき노팬티接손님(노출벽？음란？両方？)
 CASE "노팬티接손님"
-	PRINTFORM 손님에게 주문을 받고있는 %CALLNAME:TARGET%는, 
+	PRINTFORM 손님에게 주문을 받고있는 %타겟은()%, 
 	IF RAND:3 == 0 && COND("제복：스커트")
 		PRINTFORMW 끊임없이 스커트 옷자락을 신경쓰고 있습니다.
 	ELSEIF RAND:2
@@ -1553,7 +1553,7 @@ CASE "노팬티接손님"
 	ELSE
 		PRINTFORMW 뺨을 살짝 상기시키고, 거동이 의심스럽습니다. 
 	ENDIF
-	PRINTFORML 이상하게 생각한 손님이 말을 걸자, %CALLNAME:TARGET%는 당황해서 주문을 복창하기 시작했습니다. 
+	PRINTFORML 이상하게 생각한 손님이 말을 걸자, %타겟은()% 당황해서 주문을 복창하기 시작했습니다. 
 	PRINTFORM 그리고, 고개를 갸웃대는 손님을 거들떠보지도않고, 
 	IF TALENT:부끄럼쟁이 && RAND:3
 		PRINTFORM 도망치듯이 
@@ -1567,7 +1567,7 @@ CASE "노팬티接손님"
 	ELSE
 		PRINTFORM 아무도 없는 탈의실
 	ENDIF
-	PRINTFORM 로 도망친 %CALLNAME:TARGET%는 
+	PRINTFORM 로 도망친 %타겟은()% 
 	IF RAND:3 == 0
 		PRINTFORM 흥분으로 눈동자를 흐리면서 
 	ELSEIF RAND:2
@@ -1633,7 +1633,7 @@ CASE "노팬티接손님"
 	ENDIF
 	PRINTFORMW 가게 안으로 돌아갔습니다…
 CASE "飲み物溢してつまみ食い"
-	PRINTFORMW %CALLNAME:TARGET%는 구석의 후미진 자리에 앉아 독서를 하고 있는 손님의 바지에,  찬물을 쏟아버렸습니다. 
+	PRINTFORMW %타겟은()% 구석의 후미진 자리에 앉아 독서를 하고 있는 손님의 바지에,  찬물을 쏟아버렸습니다. 
 	PRINTFORMW 당황해 발치에 몸을 굽혀 젖은 부분을 닦기 시작했습니다만, 아무래도 청년의 가랑이에 텐트가 쳐져있는 것을 눈치채버린 것같습니다…
 	PRINTFORM 그것을 
 	;호색
@@ -1656,7 +1656,7 @@ CASE "飲み物溢してつまみ食い"
 	ELSE
 		PRINTFORM 본 
 	ENDIF
-	PRINTFORM %CALLNAME:TARGET%는 \@RAND:2 ? 점내가 한가한 # 자리가 사각인 \@ 것을 재빨리 확인하고, 손님
+	PRINTFORM %타겟은()% \@RAND:2 ? 점내가 한가한 # 자리가 사각인 \@ 것을 재빨리 확인하고, 손님
 	;교만
 	IF TALENT:교만 && RANDIF(2, TALENT:냉정, TALENT:양기, TALENT:부끄럼쟁이, TALENT:소악마, TALENT:호색)
 		PRINTFORM 을 자신있게 
@@ -1680,12 +1680,12 @@ CASE "飲み物溢してつまみ食い"
 		PRINTFORM 의 부푼 사타구니를 만지면서 
 	ENDIF
 	PRINTFORMW 유혹하기 시작했습니다! 
-	PRINTFORM 갑작스런 전개에 당황하면서도 청년이 고개를 끄덕이자, %CALLNAME:TARGET%는 재빠르게 손님의 페니스를 꺼내어 
+	PRINTFORM 갑작스런 전개에 당황하면서도 청년이 고개를 끄덕이자, %타겟은()% 재빠르게 손님의 페니스를 꺼내어 
 	IF TALENT:교만 + TALENT:심술쟁이 + TALENT:소악마 && RANDIF(2, TALENT:악취둔감 == 0)
 		PRINTFORM %TEXTR("발기한 것을", "포경인 것을", "치구가 끼어있는 것을", "오줌 냄새가 나는 것을")% 
 		PRINTFORM %TEXTR("추궁하면서", "놀리면서")% 
 	ELSEIF TALENT:악취둔감 == 0 && RAND:2
-		PRINTFORM %TEXTS("匂い")%를 냄새 맡으면서
+		PRINTFORM %조사처리(TEXTS("匂い"),"를")% 냄새 맡으면서
 	ELSEIF PENIS(TARGET) && RAND:2
 		IF TALENT:남자 && RAND:2
 			PRINTFORM 음란한 행위에 흥분하면서 
@@ -1739,7 +1739,7 @@ CASE "飲み物溢してつまみ食い"
 		PRINTL 
 	ENDIF
 
-	PRINTFORM 타고난 테크닉으로 쥐어짜낸 정액을 \@TALENT:작은몸집 ? 꿀꺽꿀꺽 # 꿀꺽 \@ 삼킨 %CALLNAME:TARGET%는, 타액따위로 질퍽질퍽해진 페니스를 
+	PRINTFORM 타고난 테크닉으로 쥐어짜낸 정액을 \@TALENT:작은몸집 ? 꿀꺽꿀꺽 # 꿀꺽 \@ 삼킨 %타겟은()%, 타액따위로 질퍽질퍽해진 페니스를 
 	LOCAL = 0
 	IF ABL:노출벽 >= 3 && TALENT:호색 + TALENT:음란 + TALENT:도착적 && COND("제복：스커트") && RAND:3 == 0
 		PRINTFORM 갓 벗은 팬티로 닦아내
@@ -1750,7 +1750,7 @@ CASE "飲み物溢してつまみ食い"
 	ELSE
 		PRINTFORMW 손수건으로 깨끗하게 닦았습니다. 
 	ENDIF
-	PRINTFORM 그렇게 대충 일을 매듭지은 %CALLNAME:TARGET%는, 
+	PRINTFORM 그렇게 대충 일을 매듭지은 %타겟은()%, 
 	IF LOCAL == 0 && TALENT:호색 && ABL:봉사정신 >= 3 && ABL:노출벽 >= 3 && PENIS(TARGET) == 0 && RAND:3 == 0
 		IF COND("제복：바니")
 			PRINTFORM 봉사하고 있는 동안에 흥분해 뜨겁게 뜸들어 버린 스스로의 다리 사이를 손님에게 1어루만지게 하면,
@@ -1797,8 +1797,8 @@ CASE "トイレでつまみ食い"
 	ELSE
 		PRINTFORM 화장실을 청소하러 온 
 	ENDIF
-	PRINTFORMW %CALLNAME:TARGET%가 안의 칸을 열자, 한 명의 %LOCALS%가 변기에 앉아 \@ ( PENIS(TARGET) || RAND:3 == 0) ? %CALLNAME:TARGET%의 이름을 말하면서 # \@ 자위행위를 하는 장면과 우연히 마주쳤습니다! 
-	PRINTFORM %CALLNAME:TARGET%는 순간 멍한 얼굴이 되었지만, 
+	PRINTFORMW %타겟이()% 안의 칸을 열자, 한 명의 %LOCALS%가 변기에 앉아 \@ ( PENIS(TARGET) || RAND:3 == 0) ? %CALLNAME:TARGET%의 이름을 말하면서 # \@ 자위행위를 하는 장면과 우연히 마주쳤습니다! 
+	PRINTFORM %타겟은()% 순간 멍한 얼굴이 되었지만, 
 	IF LOCALS:1 == "휴식" && RAND:2
 		PRINTFORM 아직 시간이 있다는 것을 생각해내고, 
 	ELSEIF RAND:2 && ABL:정액중독 >= 3 && LOCALS == "청년"
@@ -1936,7 +1936,7 @@ CASE "トイレでつまみ食い"
 			PRINTL 
 		ENDIF
 
-		PRINTFORM %CALLNAME:TARGET%는 
+		PRINTFORM %타겟은()% 
 		IF RAND:10 == 0
 			IF RAND:2
 				PRINTFORM 나이에 비해 큰 크것에 
@@ -1994,7 +1994,7 @@ CASE "トイレでつまみ食い"
 		CALL SIMULATE_TRAIN_COM, SELECTCOM, LOCAL
 
 		IF ABL:새드끼 >= MAX(ABL:봉사정신, 3) && RAND:3
-			PRINTFORM 어느정도 만족한 %CALLNAME:TARGET%는, 정액을 흘리는 \@ SELECTCOM == 75 ? 애널 # 그곳 \@을 녹초가 된 
+			PRINTFORM 어느정도 만족한 %타겟은()%, 정액을 흘리는 \@ SELECTCOM == 75 ? 애널 # 그곳 \@을 녹초가 된 
 			IF ABL:새드끼 >= 5 && RAND:3
 				PRINTFORM 청년에게 안쪽까지 깨끗하게 빨게 한 
 				CALL SIMULATE_TRAIN_COM, 1, 3
@@ -2006,7 +2006,7 @@ CASE "トイレでつまみ食い"
 			ENDIF
 			PRINTFORMW 후에, 팔랑팔랑 손을 흔들면서 \@ LOCALS:1 == "휴식" ? 그 장소를 떠났다 # 아르바이트로 돌아왔다 \@……
 		ELSE
-			PRINTFORM 그 노력에 부응해서, %CALLNAME:TARGET%는 
+			PRINTFORM 그 노력에 부응해서, %타겟은()% 
 			IF EQUIP:팬티 && RAND:5 == 0 && (COND("제복：스커트") || COND("제복：파스너") == 0)
 				IF COND("제복：바니")
 					PRINTFORM 땀에 젖은 하이레그 팬티를 선물로 준 
@@ -2066,7 +2066,7 @@ CASE "トイレでつまみ食い"
 			PRINTL 
 		ENDIF
 
-		PRINTFORM %CALLNAME:TARGET%는 
+		PRINTFORM %타겟은()% 
 
 		IF SELECTCOM == 126
 			PRINTFORM 애널섹스를 요구해오는 %LOCALS%의 음란함에 
@@ -2113,7 +2113,7 @@ CASE "トイレでつまみ食い"
 		CALL SIMULATE_TRAIN_COM, SELECTCOM, LOCAL
 
 		IF ABL:새드끼 >= MAX(ABL:봉사정신, 3) && RAND:3
-			PRINTFORM 잔뜩 사정해 만족한 %CALLNAME:TARGET%는, \@ SELECTCOM == 126 ? 엉덩이구멍에서 뽑아낸 # 서로의 점액으로 질척질척한 \@ 페니스를 완전히 쾌락에 녹아버린 %LOCALS%
+			PRINTFORM 잔뜩 사정해 만족한 %타겟은()%, \@ SELECTCOM == 126 ? 엉덩이구멍에서 뽑아낸 # 서로의 점액으로 질척질척한 \@ 페니스를 완전히 쾌락에 녹아버린 %LOCALS%
 			IF ABL:새드끼 >= 5 && RAND:3
 				PRINTFORM 에게 정성껏 청소펠라해서 깨끗하게 만들도록 시킨 
 				CALL SIMULATE_TRAIN_COM, 4, 3
@@ -2125,7 +2125,7 @@ CASE "トイレでつまみ食い"
 			ENDIF
 			PRINTFORMW 후에, 팔랑팔랑 손을 흔들면서 \@ LOCALS:1 == "휴식" ? 그 장소를 떠났다 # 아르바이트로 돌아왔다 \@……
 		ELSE
-			PRINTFORM 그 노력에 부응해서, %CALLNAME:TARGET%는 
+			PRINTFORM 그 노력에 부응해서, %타겟은()% 
 			IF RAND:3 == 0
 				PRINTFORM 이마에 키스한 
 			ELSEIF RAND:2
@@ -2153,7 +2153,7 @@ CASE "トイレでつまみ食い"
 	CFLAG:36 += 1
 
 CASE "テーブル拭き２"
-	PRINTFORM 점내의 혼잡이 일단락되어서, %CALLNAME:TARGET%는 
+	PRINTFORM 점내의 혼잡이 일단락되어서, %타겟은()% 
 	IF RAND:2
 		PRINTFORMW 식기가 정돈된 테이블을 청소하며 돌기시작했습니다. 
 	ELSE
@@ -2162,7 +2162,7 @@ CASE "テーブル拭き２"
 	IF TALENT:작은몸집 && (TALENT:유치 || RAND:2)
 		IF RAND:2
 			IF TALENT:유치 && RAND:2
-				PRINTFORM %CALLNAME:TARGET%가 테이블에 엎드려, 발을 동동거리면서 행주로 
+				PRINTFORM %타겟이()% 테이블에 엎드려, 발을 동동거리면서 행주로 
 			ELSE
 				PRINTFORM %CALLNAME:TARGET%같이 작은 아이가 기다란 마포걸레로 
 			ENDIF
@@ -2173,15 +2173,15 @@ CASE "テーブル拭き２"
 			ENDIF
 		ELSEIF RAND:2
 			PRINTFORMW …만, 팔길이가 부족한건지, 테이블 위에 엎드려 상의 안쪽을 닦고 있습니다. 
-			PRINTFORMW 주위의 손님들은, 발을 동동거리면서 걸레질을 하고 있는 %CALLNAME:TARGET%를 멀리서 귀여워하면서, 차를 즐기고 있는 것 같습니다…
+			PRINTFORMW 주위의 손님들은, 발을 동동거리면서 걸레질을 하고 있는 %타겟을()% 멀리서 귀여워하면서, 차를 즐기고 있는 것 같습니다…
 		ELSE
-			PRINTFORMW %CALLNAME:TARGET%는 안 쪽에 손이 닿지 않아서, 자리에 앉아 테이블을 정성들여 닦고 있습니다. 
+			PRINTFORMW %타겟은()% 안 쪽에 손이 닿지 않아서, 자리에 앉아 테이블을 정성들여 닦고 있습니다. 
 			PRINTFORMW …만, 혼잡을 처리한 후의 단순작업의 반복때문인지, 마지막 테이블을 닦던 도중에 푹 엎드려 자버렸습니다…
 		ENDIF
 	ELSEIF TALENT:장사 && RAND:2
 		PRINTFORMW 그정도로 근육질로는 보이지않는 %CALLNAME:TARGET% 이지만, 무거워보이는 테이블 등을 휙휙 한손으로 움직이면서 콧노래를 하면서 걸레질을 하고있습니다…
 	ELSE
-		PRINTFORMW %CALLNAME:TARGET%는 몸을 앞으로 기울이고 템포 좋게 테이블을 안쪽까지 깨끗하게 닦고있었습니다만…
+		PRINTFORMW %타겟은()% 몸을 앞으로 기울이고 템포 좋게 테이블을 안쪽까지 깨끗하게 닦고있었습니다만…
 		IF COND("제복：미니스커트")
 			LOCALS = 스커트가 말려올라가, 
 			IF COND("身嗜み：노팬티")
@@ -2207,7 +2207,7 @@ CASE "テーブル拭き２"
 		;ひそひそ話に気付く？
 		IF RAND:2
 			PRINTFORMW 뒷자리 손님이 소곤거리는 대화의 내용으로, %LOCALS%를 보이고있었다는 사실을 깨달은 것 같습니다! 
-			PRINTFORM 그 사실을 깨달은 %CALLNAME:TARGET%는
+			PRINTFORM 그 사실을 깨달은 %타겟은()%
 			IF TALENT:호색 && ABL:노출벽 >= 3
 				IF ABL:노출벽 >= 5 && COND("제복：스커트") && CHECK_PANTIES("Ｈ") && RAND:2
 					PRINTFORMW , …뒤로 손을 뻗어 스커트를 누르는 척하면서, Ｔ백을 손가락으로 밀어 한순간만 엉덩이 구멍을 보여준 것 같습니다! 
@@ -2221,7 +2221,7 @@ CASE "テーブル拭き２"
 						PRINTFORMW 팬티 너머의 다리사이를 손님에게 과시하면서 즐기기시작했습니다! 
 					ENDIF
 				ENDIF
-				PRINTFORMW 그리고, 걸레질을 마친 %CALLNAME:TARGET%는 뒷자리의 손님의 커다랗게 부푼 사타구니를 슬쩍보고, 즐거운 듯한 미소를 지으며 다음 테이블로 향했습니다…
+				PRINTFORMW 그리고, 걸레질을 마친 %타겟은()% 뒷자리의 손님의 커다랗게 부푼 사타구니를 슬쩍보고, 즐거운 듯한 미소를 지으며 다음 테이블로 향했습니다…
 			ELSEIF TALENT:냉정 || TALENT:감정결핍 || (TALENT:부끄럼없음 && TALENT:조야)
 				PRINTFORMW , …딱히 안색을 바꾸는 일 없이, 손님에게 보여지면서 잠자코 계속했습니다…
 			ELSE
@@ -2229,7 +2229,7 @@ CASE "テーブル拭き２"
 			ENDIF
 		ELSE
 			PRINTFORMW 열중한 나머지, 뒷자리 손님에게 %LOCALS%를 차분히 감상하게 해버린 것 같습니다. 
-			PRINTFORMW 그것을 눈치채지 못한 %CALLNAME:TARGET%는, 어딘가 행복한 표정을 짓는 손님에게 이상하다는 듯한 표정을 지으며 다음 테이블로 향했습니다…
+			PRINTFORMW 그것을 눈치채지 못한 %타겟은()%, 어딘가 행복한 표정을 짓는 손님에게 이상하다는 듯한 표정을 지으며 다음 테이블로 향했습니다…
 		ENDIF
 	ENDIF
 CASE "チップ"
@@ -2246,14 +2246,14 @@ CASE "チップ"
 	ELSE
 		PRINTFORM 말투가 
 	ENDIF
-	PRINTFORMW 마음에 들었는 지, %CALLNAME:TARGET%는 담당한 손님에게서 상당히 넉넉한 팁을 받은 것 같습니다. 
+	PRINTFORMW 마음에 들었는 지, %타겟은()% 담당한 손님에게서 상당히 넉넉한 팁을 받은 것 같습니다. 
 	IF TALENT:호색 && RANDIF(1, TALENT:유치, TALENT:하피)
 		IF COND("제복：바니") || (TALENT:거유 && RAND:2) || COND("身嗜み：노팬티")
 			LOCALS = 가슴
 		ELSE
 			LOCALS = 팬티
 		ENDIF
-		PRINTFORM 그러자, 팁을 준 손님에게 %CALLNAME:TARGET%는 
+		PRINTFORM 그러자, 팁을 준 손님에게 %타겟은()% 
 		SELECTCASE LOCALS
 		CASE "가슴"
 			IF COND("제복：바니")
@@ -2281,30 +2281,30 @@ CASE "チップ"
 		CASE "가슴"
 			PRINTFORMW \@ RAND:2 ? 부드러운 # 매력적인 \@ 가슴계곡을 내밀었습니다! 
 			IF RAND:3 == 0
-				PRINTFORMW %CALLNAME:TARGET%는 돈을 찔러넣기만하고 떠나려던 손님의 손을 위에서 누르고, 잠깐만 가슴을 만지게해준 것 같습니다…
+				PRINTFORMW %타겟은()% 돈을 찔러넣기만하고 떠나려던 손님의 손을 위에서 누르고, 잠깐만 가슴을 만지게해준 것 같습니다…
 			ELSEIF RAND:2
-				PRINTFORMW %CALLNAME:TARGET%는 가슴을 반죽하듯 주물러 손님의 눈을 즐겁게 하면서, 틈새에 팁을 넣어달라고 재촉했습니다…
+				PRINTFORMW %타겟은()% 가슴을 반죽하듯 주물러 손님의 눈을 즐겁게 하면서, 틈새에 팁을 넣어달라고 재촉했습니다…
 			ELSE
-				PRINTFORMW 가슴에 닿지 않도록 조심스럽게 꽂아넣은 손님에게, %CALLNAME:TARGET%는 안쪽까지 깊이 넣어달라고 속삭였습니다…
+				PRINTFORMW 가슴에 닿지 않도록 조심스럽게 꽂아넣은 손님에게, %타겟은()% 안쪽까지 깊이 넣어달라고 속삭였습니다…
 			ENDIF
 		CASEELSE
 			PRINTFORMW 팬티 안에 넣어달라고 재촉했습니다! 
 			IF RAND:2
-				PRINTFORMW %CALLNAME:TARGET%는 팁을 꽂아넣고 그냥 떠나려던 손님의 손을 위에서 누르고, 잠깐동안 가랑이를 만지게 해준 것 같습니다…
+				PRINTFORMW %타겟은()% 팁을 꽂아넣고 그냥 떠나려던 손님의 손을 위에서 누르고, 잠깐동안 가랑이를 만지게 해준 것 같습니다…
 			ELSE
-				PRINTFORMW 민감한 장소에 닿지 않도록 신중하게 꽂아넣는 손님에게, %CALLNAME:TARGET%는 안쪽까지 깊이 넣어달라고 속삭였습니다…
+				PRINTFORMW 민감한 장소에 닿지 않도록 신중하게 꽂아넣는 손님에게, %타겟은()% 안쪽까지 깊이 넣어달라고 속삭였습니다…
 			ENDIF
 		ENDSELECT
 		PRINTL 
 		PRINTFORMW ……그 뒤는 신기하게도 고액의 팁을 %CALLNAME:TARGET%에게 내미는 손님이 끊이지 않았습니다. 
 	ELSEIF TALENT:하피 && RANDIF(1, TALENT:유치)
-		PRINTFORMW 설마하던 고액 동전의 등장에 %CALLNAME:TARGET%는 눈동자를 빛내고,  초조한 마음을 억누르면서 팁을 품에 넣었습니다. 
+		PRINTFORMW 설마하던 고액 동전의 등장에 %타겟은()% 눈동자를 빛내고,  초조한 마음을 억누르면서 팁을 품에 넣었습니다. 
 		PRINTFORMW 본능적인 욕구가 충족 되었는지, 금품을 받은 기쁨에 잠겨 있는 것 같습니다…
 	ELSEIF TALENT:유치
-		PRINTFORML %CALLNAME:TARGET%는 눈을 빛낼내며, 온몸으로 기쁨을 표현했습니다. 
+		PRINTFORML %타겟은()% 눈을 빛낼내며, 온몸으로 기쁨을 표현했습니다. 
 		PRINTFORMW 머리속은 \@ RAND:2 ?  과자로 # 무엇을 살까하는 생각으로 \@ 가득한 것같습니다…
 	ELSE
-		PRINTFORM %CALLNAME:TARGET%는 
+		PRINTFORM %타겟은()% 
 		IF TALENT:냉정 + TALENT:감정결핍
 			PRINTFORMW 표정으로 드러내지는 않았지만, 기분탓인인지 기뻐보입니다. 
 		ELSE
@@ -2313,7 +2313,7 @@ CASE "チップ"
 		PRINTFORMW 그 광경이 방아쇠가 되었는지, 그날 가게의 서비스는 최상이었던 것같습니다… 
 	ENDIF
 CASE "財布忘れた상대をつまみ食い"
-	PRINTFORM %CALLNAME:TARGET%가 일단락 된 점내
+	PRINTFORM %타겟이()% 일단락 된 점내
 	IF RAND:2
 		PRINTFORM 에서 접시를 치우는 일을 
 	ELSE
@@ -2321,7 +2321,7 @@ CASE "財布忘れた상대をつまみ食い"
 	ENDIF
 	PRINTFORMW 하고있자, 불안한 모습으로 주머니를 뒤적뒤적거리고 있는 손님을 발견했습니다. 
 	PRINTFORMW …아무래도 식사를 마친 뒤 지갑을 깜빡한 것을 깨달아버린 것 같습니다. 
-	PRINTFORM 그것을 들은 %CALLNAME:TARGET%는 
+	PRINTFORM 그것을 들은 %타겟은()% 
 	;솔직
 	IF TALENT:솔직 && RANDIF(2, TALENT:감정결핍, TALENT:양기, TALENT:부끄럼쟁이, TALENT:소악마)
 		PRINTFORM 빙긋 미소를 짓고, 
@@ -2398,7 +2398,7 @@ CASE "財布忘れた상대をつまみ食い"
 		ENDIF
 		PRINTFORM %LOCALS%로 
 	ENDIF
-	PRINTFORM 몇번이고 뽑 \@ ABL:봉사정신 >= 3 ? 아준 # 아낸\@ %CALLNAME:TARGET%는, 
+	PRINTFORM 몇번이고 뽑 \@ ABL:봉사정신 >= 3 ? 아준 # 아낸\@ %타겟은()%, 
 	IF COND("제복：바니")
 		PRINTFORM 가랑이 부분만 노출시킨 상태로 
 	ELSEIF ABL:노출벽 >= 3 && RAND:2
@@ -2469,7 +2469,7 @@ CASE "財布忘れた상대をつまみ食い"
 	ENDIF
 	CALL SETFLAG, "일반인상대の성행위종료"
 
-	PRINTFORM %CALLNAME:TARGET%는 
+	PRINTFORM %타겟은()% 
 	;상대は동정
 	IF LOCALS:1 == "동정"
 		IF RAND:3
@@ -2497,14 +2497,14 @@ CASE "財布忘れた상대をつまみ食い"
 
 CASE "暇なときの시간潰し"
 	PRINTFORMW 오늘은 날씨가 조금 안좋은 탓인지, 점내는 손님의 모습이 드문드문합니다
-	PRINTFORM 짬을 주체 못한 %CALLNAME:TARGET%는
+	PRINTFORM 짬을 주체 못한 %타겟은()%
 	IF ABL:정액중독 >= 3 && (TALENT:호색 || ABL:새드끼 >= 3) && FIND_COND("출연가능な점원", "!여자") && RANDIF(2, ABL:봉사정신 >= 3, ABL:자위중독 + TALENT:음란 >= 4)
 		WAITRESS = FIND_COND("출연가능な점원", "!여자")
 		SETBIT CFLAG:WAITRESS:95, 1
 		IF RAND:2 && (TALENT:교만 || TALENT:악취민감)
 			PRINTFORMW , 직원실의 %CALLNAME:WAITRESS%에게 밀크티를 끓여달라고 한 것 같습니다.
 			PRINTFORMW ……
-			PRINTFORM …%CALLNAME:TARGET%는 준비 해준 %CALLNAME:WAITRESS%에게 고맙다는 말을 하며, 
+			PRINTFORM …%타겟은()% 준비 해준 %CALLNAME:WAITRESS%에게 고맙다는 말을 하며, 
 			IF BASE:WAITRESS:정력 > BASE:MASTER:정력
 				PRINTFORMW 감칠맛과 목넘김의 훌륭함에 감탄의 한숨을 쉬면서 티타임을 즐겼습니다…
 			ELSEIF AGE(WAITRESS) <= 2
@@ -2524,14 +2524,14 @@ CASE "暇なときの시간潰し"
 				PRINTFORMW 를 핥고 빨기 시작했습니다
 			ENDIF
 			IF ABL:자위중독 >= 3 && RAND:3 == 0
-				PRINTFORMW %CALLNAME:TARGET%는 목에 휘감기는 정액의 맛을 음미하고, 자위를 함께 하면서 매장이 혼잡 해지기 전까지 %CALLNAME:WAITRESS%를 쾌락 고문 시킨것 같습니다…
+				PRINTFORMW %타겟은()% 목에 휘감기는 정액의 맛을 음미하고, 자위를 함께 하면서 매장이 혼잡 해지기 전까지 %CALLNAME:WAITRESS%를 쾌락 고문 시킨것 같습니다…
 			ELSEIF RAND:2
-				PRINTFORM %CALLNAME:TARGET%는, 자신의 입에 대량으로 사정하면서 
+				PRINTFORM %타겟은()%, 자신의 입에 대량으로 사정하면서 
 				SIF ABL:ＬＶ > ABL:WAITRESS:ＬＶ
 					PRINTFORM 필사적으로 
 				PRINTFORMW 침착하게 하게 %CALLNAME:WAITRESS%의 일하는 모습을 곁눈질로 바라보며, 즐겁게 쉬는 시간을 만끽 한 것 같습니다.…
 			ELSE
-				PRINTFORMW %CALLNAME:TARGET%는 접객 하는것은 안중에도 없는 듯 %CALLNAME:WAITRESS%의 정액을 몇번이나 싸게만들어, 목을 적시면서 즐겁게 보낸 것 같습니다…
+				PRINTFORMW %타겟은()% 접객 하는것은 안중에도 없는 듯 %CALLNAME:WAITRESS%의 정액을 몇번이나 싸게만들어, 목을 적시면서 즐겁게 보낸 것 같습니다…
 			ENDIF
 			LOCAL:1 = 2 + RAND:(ABL:정액중독 + 1)
 			EXP:펠라경험 += LOCAL:1
@@ -2546,28 +2546,28 @@ CASE "暇なときの시간潰し"
 	ELSEIF COND("身嗜み：자위금지") == 0 && ABL:자위중독 + TALENT:음란 >= 4 && RANDIF(2, ABL:봉사정신 >= 3)
 		PRINTFORMW  탈의실에서 자위를 하기로 한 모양입니다
 		IF RAND:3
-			PRINTFORMW …하지만, 절정 직전에 호출되어버린 %CALLNAME:TARGET%는, 옷차림을 최소한으로 정돈하고 그냥 플로어에 돌아오는 처지가 되어버리고 말았습니다
+			PRINTFORMW …하지만, 절정 직전에 호출되어버린 %타겟은()%, 옷차림을 최소한으로 정돈하고 그냥 플로어에 돌아오는 처지가 되어버리고 말았습니다
 			IF TALENT:음란 && (COND("발정기") || TALENT:발정체질) && RAND:3 == 0
-				PRINTFORMW 달아오른 신체로 숨기지 못한다 엣치한%TEXTS("匂い")%를 시키고 있다%CALLNAME:TARGET%에 접근해진 손님들은, 예외없이 일어설 수 없게 되어 버리고 있습니다…
+				PRINTFORMW 달아오른 신체로 숨기지 못한다 엣치한%조사처리(TEXTS("匂い"),"를")% 시키고 있다%CALLNAME:TARGET%에 접근해진 손님들은, 예외없이 일어설 수 없게 되어 버리고 있습니다…
 			ELSEIF RAND:3 || COND("제복：바니") || COND("身嗜み：노팬티")
 				PRINTFORM \@ TALENT:현명함 ? 익숙하게 # \@ 생각을 바꾸고 바쁜 가게안을 이리저리 돌아다니기 시작한 %CALLNAME:TARGET%이었지만, 
 				IF TALENT:남자 == 0 && (COND("발정기") || TALENT:발정체질) && RAND:2
 					PRINTFORM 흥분이 식지않는 자궁과 질에서 흘러나오는 애액
 					IF COND("제복：바니")
 						PRINTFORMW 이 허벅지의 망사 타이즈에까지 새어나와버렸습니다…
-						PRINTFORMW 이 모습 제대로 숨기지 않으면… 하고 %CALLNAME:TARGET%는 넓적다리를 문질러붙이고 가랑이의 틈새를 메우면서, 평소보다도 가슴을 두근거리면서 일을 했습니다 
+						PRINTFORMW 이 모습 제대로 숨기지 않으면… 하고 %타겟은()% 넓적다리를 문질러붙이고 가랑이의 틈새를 메우면서, 평소보다도 가슴을 두근거리면서 일을 했습니다 
 					ELSE
 						IF COND("身嗜み：노팬티")
 							PRINTFORMW 이 한줄기, 팬티를 입고 있지 않은 탓에 허벅지를 타고 내려갔습니다…
 						ELSE
 							PRINTFORMW 에서 팬티는 시시각각 커다란 얼굴이 넓어지고 있습니다…
 						ENDIF
-						PRINTFORMW %CALLNAME:TARGET%는 개구장이 아이의 아이스케키를 경계하면서, 평소보다도 가슴을 두근거리면서 일을 했습니다 
+						PRINTFORMW %타겟은()% 개구장이 아이의 아이스케키를 경계하면서, 평소보다도 가슴을 두근거리면서 일을 했습니다 
 					ENDIF
 				ELSEIF TALENT:남자 == 0 && TALENT:젖기쉬움 && COND("身嗜み：노팬티") == 0 && RAND:2
 					PRINTFORM 애액이 나오기 쉬운 체질 탓에 
 					IF COND("제복：바니")
-						PRINTFORMW 땀을 흘렸다는 것으로는 속이지 못할정도로 음미로운%TEXTS("匂い")%를 환기성이 나쁜 제옷의 사타구니로부터 근처로 뿌리고 있습니다…
+						PRINTFORMW 땀을 흘렸다는 것으로는 속이지 못할정도로 음미로운%조사처리(TEXTS("匂い"),"를")% 환기성이 나쁜 제옷의 사타구니로부터 근처로 뿌리고 있습니다…
 					ELSE
 						PRINTFORMW 질척질척해진 팬티가 조금 불쾌한 것 같습니다…
 					ENDIF
@@ -2575,7 +2575,7 @@ CASE "暇なときの시간潰し"
 					PRINTFORMW 방금 전의 플레이의 여운 때문에 배어나오는 것을 본 손님은 두근두근해하고 있습니다…
 				ENDIF
 			ELSE
-				PRINTFORM 급하게 나온 탓에 팬티를 입는 것을 잊어버리고 나타난 %CALLNAME:TARGET%는, 
+				PRINTFORM 급하게 나온 탓에 팬티를 입는 것을 잊어버리고 나타난 %타겟은()%, 
 				IF TALENT:부끄럼쟁이
 					PRINTFORMW 허벅지를 맞비비듯이 딱 붙이고 부끄러운듯이 절박한 상황을 헤쳐나간 것 같습니다…
 				ELSEIF ABL:노출벽 >= 3
@@ -2589,7 +2589,7 @@ CASE "暇なときの시간潰し"
 		ELSE
 			LOCAL = LIMIT(RAND:(ABL:자위중독 + 1), 1, 5)
 			PRINTFORMW ……
-			PRINTFORMW …\@ LOCAL == 1 ? 気持ちよく # {LOCAL}회 정도 \@절정を迎えてすっかり만족した%CALLNAME:TARGET%저, 전신으로부터 희미하게 땀흘린 엣치한%TEXTS("匂い")%를 감돌게 하면서 플로어에 복귀했습니다…
+			PRINTFORMW …\@ LOCAL == 1 ? 気持ちよく # {LOCAL}회 정도 \@절정を迎えてすっかり만족した%CALLNAME:TARGET%저, 전신으로부터 희미하게 땀흘린 엣치한%조사처리(TEXTS("匂い"),"를")% 감돌게 하면서 플로어에 복귀했습니다…
 			IF TALENT:남자 == 0
 				EXP:절정경험 += LOCAL
 				PRINTFORML 절정경험＋{LOCAL}
@@ -2606,14 +2606,14 @@ CASE "暇なときの시간潰し"
 		IF FIND_COND("출연가능な점원", "흡혈귀") && RAND:4 == 0
 			WAITRESS = FIND_COND("출연가능な점원", "흡혈귀")
 			SETBIT CFLAG:WAITRESS:95, 1
-			PRINTFORMW 가게에서 은식기를 꺼내 변색되는것을 제거 하고있는 %CALLNAME:TARGET%를, %CALLNAME:WAITRESS%는 기둥의 그림자 뒤에서 정말 복잡한 얼굴로 엿보고 있습니다…
+			PRINTFORMW 가게에서 은식기를 꺼내 변색되는것을 제거 하고있는 %타겟을()%, %CALLNAME:WAITRESS%는 기둥의 그림자 뒤에서 정말 복잡한 얼굴로 엿보고 있습니다…
 		ELSE
 			WAITRESS = FIND_COND("출연가능な점원")
 			SETBIT CFLAG:WAITRESS:95, 1
 			IF MIN(ABL:봉사정신, ABL:WAITRESS:봉사정신) >= 4
-				PRINTFORMW 마찬가지로 점내의 더러움이 신경 쓰였다는 %CALLNAME:WAITRESS%와 함께 구석 구석까지 깨끗하게 만든 %CALLNAME:TARGET%는, 상쾌한 표정으로 땀을 닦고 있습니다…
+				PRINTFORMW 마찬가지로 점내의 더러움이 신경 쓰였다는 %CALLNAME:WAITRESS%와 함께 구석 구석까지 깨끗하게 만든 %타겟은()%, 상쾌한 표정으로 땀을 닦고 있습니다…
 			ELSEIF ABL:WAITRESS:봉사정신 >= 3
-				PRINTFORMW 청소의 보좌로서%CALLNAME:WAITRESS%를 권했다%CALLNAME:TARGET%하, 언제나 그다지 청소 할 수 없는 부분을 깨끗이 되어있고 어쩐지 즐거운 듯 합니다…
+				PRINTFORMW 청소의 보좌로서%CALLNAME:WAITRESS%를 권했다%타겟은()% , 언제나 그다지 청소 할 수 없는 부분을 깨끗이 되어있고 어쩐지 즐거운 듯 합니다…
 			ELSE
 				PRINTFORMW %CALLNAME:TARGET%의 철저한 모습을 알고있는 %CALLNAME:WAITRESS%는, 도와달라고 하기 부탁받기 전에 허둥지둥 몸을 숨겼습니다…
 			ENDIF
@@ -2625,7 +2625,7 @@ CASE "暇なときの시간潰し"
 		PRINTFORMW ……
 		;勝ち
 		IF RAND:(10 + TALENT:현명함*5 - TALENT:미련함*5) >= RAND:(10 + TALENT:WAITRESS:현명함*5 - TALENT:WAITRESS:미련함*5)
-			PRINTFORM …도박 트럼프에서 큰 승리를 한 %CALLNAME:TARGET%는 승자의 권리로서 %CALLNAME:WAITRESS%
+			PRINTFORM …도박 트럼프에서 큰 승리를 한 %타겟은()% 승자의 권리로서 %CALLNAME:WAITRESS%
 			IF RAND:3 == 0 && TALENT:호색 + TALENT:해방 + TALENT:소악마 + TALENT:쾌감에솔직 && CHECK("性別による拒絶反応", TARGET, WAITRESS) == 0
 				IF TALENT:여자 && COND("다방：Ｖ섹스") && PENIS(WAITRESS) && COND("다방：인서트", WAITRESS) && RAND:2
 					PRINTFORMW 에게 봉사하라고 명령하고, \@ COND("身嗜み：노팬티") == 0 ? 눈앞에서 팬티를 내린 뒤 # \@의자에 앉아 다리를 펼쳤습니다
@@ -2683,7 +2683,7 @@ CASE "暇なときの시간潰し"
 			ELSEIF RAND:2 && TALENT:호색 + TALENT:심술쟁이 + TALENT:소악마 && TALENT:WAITRESS:호색 + TALENT:WAITRESS:심술쟁이 + TALENT:WAITRESS:소악마 + TALENT:WAITRESS:교만
 				IF RAND:3 == 0 && COND("제복：스커트")
 					PRINTFORMW 의 어른 스러운 팬티를 몰수해하고, 스커트 주머니에서 꺼낸 상당히 H한 디자인의 팬티를 입고 아르바이트를 하라고 명령했습니다
-					PRINTFORMW %CALLNAME:WAITRESS%는 노팬티보다는 좋다고 말하며 순순히 따랐습니다만, 이번엔 %CALLNAME:TARGET%를 생각하며 복수에 불타고있는 것 같습니다.…
+					PRINTFORMW %CALLNAME:WAITRESS%는 노팬티보다는 좋다고 말하며 순순히 따랐습니다만, 이번엔 %타겟을()% 생각하며 복수에 불타고있는 것 같습니다.…
 				ELSE
 					IF COND("제복：바니")
 						PRINTFORMW 의 팬티를 몰수해하고, 바니 슈트 밑에 속옷을 입지않고 아르바이트하도록 명령했습니다 
@@ -2708,7 +2708,7 @@ CASE "暇なときの시간潰し"
 				PRINTFORMW 케이크를 먹으며 즐거운 시간을 보냈습니다…
 			ENDIF
 		ELSE
-			PRINTFORM …거기에, 도박 트럼프에 어이없이 대패를 당한 %CALLNAME:TARGET%는 %CALLNAME:WAITRESS%에게
+			PRINTFORM …거기에, 도박 트럼프에 어이없이 대패를 당한 %타겟은()% %CALLNAME:WAITRESS%에게
 			IF RAND:2 && TALENT:WAITRESS:호색 + TALENT:WAITRESS:심술쟁이 + TALENT:WAITRESS:소악마 && COND("身嗜み：노팬티") == 0
 				PRINTFORM 하루 급료는 물론이고 팬티까지 빼앗겨버려, 
 				IF COND("제복：스커트")
@@ -2727,7 +2727,7 @@ CASE "휴식"
 	PRINTFORMW 몽마들은 점내에 넘치는 손님을 상대하면서, 교대로 휴식을 합니다.
 
 	IF COND("다방：펠라") && RAND:4 == 0
-		PRINTFORMW %CALLNAME:TARGET%를 자신의 차례가 오면, 손님중 한명에게 말을걸어, 교묘하게 휴식실에 데리고 들어갑니다! 
+		PRINTFORMW %타겟을()% 자신의 차례가 오면, 손님중 한명에게 말을걸어, 교묘하게 휴식실에 데리고 들어갑니다! 
 		PRINTFORMW ……잠시 후 나온%CALLNAME:TARGET%의 얼굴은, 유난히 윤기가 납니다
 
 		CALL SETFLAG, "일반인상대の성행위初期설정"
@@ -2754,17 +2754,17 @@ CASE "휴식"
 		PRINTFORMW 차례가 온%CALLNAME:TARGET%와 %CALLNAME:WAITRESS%는, 조달한 빵과 약간의 과자를 들고 휴식실에 처박혔습니다
 		PRINTFORMW 두 사람은 점심 식사를하면서, %TEXTR("ガールズトーク", "さっきのイヤな손님の事", "新メニューの評判")%로 분위기가 살았습니다
 	ELSE
-		PRINTFORMW %CALLNAME:TARGET%를 자신의 차례가 오면, 조달한 샌드위치를 들고 휴식시에 처박혔습니다
-		PRINTFORMW 바쁜 점내을 뒷전으로, %CALLNAME:TARGET%를 잠시 날개를쉬고 재충전했습니다.
+		PRINTFORMW %타겟을()% 자신의 차례가 오면, 조달한 샌드위치를 들고 휴식시에 처박혔습니다
+		PRINTFORMW 바쁜 점내을 뒷전으로, %타겟을()% 잠시 날개를쉬고 재충전했습니다.
 	ENDIF
 
 CASE "査察"
-	PRINTFORMW 몽마들이 잘 일하고 있는지 궁금해졌다 %CALLNAME:MASTER%는 , 변장하고 사찰 해보기로했습니다
+	PRINTFORMW 몽마들이 잘 일하고 있는지 궁금해졌다 %마스터는()% , 변장하고 사찰 해보기로했습니다
 	PRINTFORMW ……………
 	PRINTFORMW ………
 	PRINTFORMW …
 	IF ABL:MASTER:기교 - ABL:기교/2 - RAND:10 >= 0
-		PRINTFORMW 솜씨좋게 변장해%CALLNAME:MASTER%는 입점시 누구에게도 들키지 않고 몰래 매장의 모습을 들었습니다
+		PRINTFORMW 솜씨좋게 변장해%마스터는()% 입점시 누구에게도 들키지 않고 몰래 매장의 모습을 들었습니다
 		IF RAND:2 && (FIND_COND("출연가능な점원", "강기") || TALENT:상사상애)
 			PRINTFORMW 그러자,%CALLNAME:TARGET%의 폐인 손님 이 따라다녀 성희롱 비슷한 행위를 받고 있습니다！
 			IF FIND_COND("출연가능な점원", "강기") && RANDIF(1, TALENT:상사상애)
@@ -2782,14 +2782,14 @@ CASE "査察"
 	ELSEIF CFLAG:30 >= 50 && RAND:2
 		PRINTFORMW 몽마들은 변장을 한눈에 간파하면, 무언가 이유를 붙여%CALLNAME:MASTER%테이블에 가까워 지려고하고 있습니다
 		PRINTFORMW 하지만%CALLNAME:TARGET%의 목소리에, 모두 일하러 돌아갔습니다
-		PRINTFORMW %CALLNAME:TARGET%는 상당한 발언권이 있는 것 같습니다
+		PRINTFORMW %타겟은()% 상당한 발언권이 있는 것 같습니다
 	ELSE
-		PRINTFORMW 변장 한%CALLNAME:MASTER%는 , 몰래 가게를 관찰하고있었습니다 만……
-		PRINTFORMW 가까이 다가온%CALLNAME:TARGET%가 갑자기%CALLNAME:MASTER%의가랑이에 접근해 왔습니다.
+		PRINTFORMW 변장 한%마스터는()% , 몰래 가게를 관찰하고있었습니다 만……
+		PRINTFORMW 가까이 다가온%타겟이()% 갑자기%CALLNAME:MASTER%의가랑이에 접근해 왔습니다.
 		WAITRESS = FIND_COND("출연가능な점원")
 		SETBIT CFLAG:WAITRESS:95, 1
-		PRINTFORMW %CALLNAME:TARGET%가 조용이 웃고 멀어지면서 이번에는%CALLNAME:WAITRESS%가 마찬가지로 다가오고 있습니다
-		PRINTFORMW ……%CALLNAME:MASTER%는 전부 들켜버려서, 몽마들의 장난감이 되어버렸습니다
+		PRINTFORMW %타겟이()% 조용이 웃고 멀어지면서 이번에는%CALLNAME:WAITRESS%가 마찬가지로 다가오고 있습니다
+		PRINTFORMW ……%마스터는()% 전부 들켜버려서, 몽마들의 장난감이 되어버렸습니다
 		PRINTFORMW 너무 당당히 점원들이 끈적 끈적하고 있었으므로, 점내의 손님에게 \@ TALENT:MASTER:남자 ? 질투 # 好奇 \@보여져 버렸습니다.
 	ENDIF
 
@@ -2797,14 +2797,14 @@ CASE "査察"
 CASE "눈에띄고싶어함"
 	SELECTCASE RAND:100
 	CASE IS > 75
-		PRINTFORMW %CALLNAME:TARGET%는 너무 바빠서 힘들어보입니다. 
+		PRINTFORMW %타겟은()% 너무 바빠서 힘들어보입니다. 
 		PRINTFORMW 그럼에도 중간 중간에 적절히 포즈를 취하며 주목을 받고있습니다. 
 		IF RAND:2 == 0
 			WAITRESS = FIND_COND("출연가능な점원")
 			SETBIT CFLAG:WAITRESS:95, 1
 			PRINTFORMW 함께 일하던 %CALLNAME:WAITRESS%가 쓴 웃음을 지었다는 느낌이 들었다. 
 		ELSE
-			PRINTFORMW 너무 너무 흥이 올랐는지, %CALLNAME:TARGET%는 나동그라졌습니다. 
+			PRINTFORMW 너무 너무 흥이 올랐는지, %타겟은()% 나동그라졌습니다. 
 			IF COND("제복：바니")
 				PRINTFORMW 손님이 주목하고 있었으니, 어느 의미로는 대성공입니다. 
 			ELSE
@@ -2812,7 +2812,7 @@ CASE "눈에띄고싶어함"
 			ENDIF
 		ENDIF
 	 CASE 20 TO 75
-		PRINTFORMW %CALLNAME:TARGET%는, 노래를 부르면서 접객를 하고있습니다. 
+		PRINTFORMW %타겟은()%, 노래를 부르면서 접객를 하고있습니다. 
 		PRINTFORMW 그 노랫소리에, 점내의 분위기가 좋아졌습니다.
 		IF RAND:2 == 0
 			PRINTFORMW 주목을 받아서, %CALLNAME:TARGET%도 기분이 좋은 것같습니다. 
@@ -2822,38 +2822,38 @@ CASE "눈에띄고싶어함"
 		ENDIF
 	CASEELSE
 		PRINTFORMW 점내가 상당히 한산해서 그런지, 딱히 실수도 없고 일은 순조롭습니다. 
-		PRINTFORMW 주목해주는 손님도 적어서, %CALLNAME:TARGET%는 불만스러워보입니다. 
-		PRINTFORMW 동료가 묻자, %CALLNAME:TARGET%는 쓴웃음을 지어주었습니다. 
+		PRINTFORMW 주목해주는 손님도 적어서, %타겟은()% 불만스러워보입니다. 
+		PRINTFORMW 동료가 묻자, %타겟은()% 쓴웃음을 지어주었습니다. 
 	ENDSELECT
 CASE "레즈끼"
 	SELECTCASE RAND:100
 	CASE IS > 75
-		PRINTFORMW %CALLNAME:TARGET%는 미인 손님이 신경쓰이는 모양입니다
+		PRINTFORMW %타겟은()% 미인 손님이 신경쓰이는 모양입니다
 		PRINTFORMW 하지만 바쁜 탓에, 좀처럼 말을 걸 수 없습니다. 
 		IF RAND:5 < ABL:레즈끼
 			PRINTFORMW %CALLNAME:TARGET%에게, 그 손님이 말을 걸어주었습니다. 
 			PRINTFORMW 기쁜듯이 그 곳으로 향했습니다. 
 		ELSE
-			PRINTFORMW %CALLNAME:TARGET%는, 틈을 봐서 말을 걸려고 하고있습니다. 
+			PRINTFORMW %타겟은()%, 틈을 봐서 말을 걸려고 하고있습니다. 
 			PRINTFORMW 하지만 잘 되지않았던 모양입니다. 
 		ENDIF
 	 CASE 20 TO 75
 		IF RAND:5 < ABL:레즈끼
-			PRINTFORMW %CALLNAME:TARGET%는, 미인 손님을 바라보거나 하면서 일을 열심히 하고있는 것 같습니다
+			PRINTFORMW %타겟은()%, 미인 손님을 바라보거나 하면서 일을 열심히 하고있는 것 같습니다
 		ELSE
-			PRINTFORMW %CALLNAME:TARGET%는, 미인 손님에게 적극적으로 말을 걸고있습니다
-			PRINTFORMW 아무래도, 상대도 %CALLNAME:TARGET%를 마음에 들어하는 것 같습니다
+			PRINTFORMW %타겟은()%, 미인 손님에게 적극적으로 말을 걸고있습니다
+			PRINTFORMW 아무래도, 상대도 %타겟을()% 마음에 들어하는 것 같습니다
 		ENDIF
 	CASEELSE
 		IF RAND:5 < ABL:레즈끼
-			PRINTFORMW %CALLNAME:TARGET%는, 미인 손님에게 말을 걸지 말지 고민하고있는 것 같습니다. 
+			PRINTFORMW %타겟은()%, 미인 손님에게 말을 걸지 말지 고민하고있는 것 같습니다. 
 			PRINTFORMW 약속이 있었는지, 남자 친구가 와서 실망인 것 같습니다. 
 		ELSE
-			PRINTFORMW 한가해서 %CALLNAME:TARGET%는, 미인 손님을 꼬시고있습니다…
+			PRINTFORMW 한가해서 %타겟은()%, 미인 손님을 꼬시고있습니다…
 		ENDIF
 	ENDSELECT
 CASE "不遜な接손님"
-	PRINTFORM %CALLNAME:TARGET%는 손님에게 
+	PRINTFORM %타겟은()% 손님에게 
 	IF TALENT:교만 || RAND:2
 		PRINTFORM 교만한 
 	ELSE
@@ -2862,25 +2862,25 @@ CASE "不遜な接손님"
 	PRINTFORMW 태도로 대했습니다. 
 	IF RAND:(1 + TALENT:매혹 + TALENT:수수께끼의매력 + TALENT:매력 + TALENT:인기)
 		PRINTFORMW …그런데, 도리어 손님의 마음에 들어버린 것같습니다.
-		PRINTFORMW 그것에 기분이 좋아졌는지, %CALLNAME:TARGET%는 내내 좋은 결과를 보여주었습니다. 
+		PRINTFORMW 그것에 기분이 좋아졌는지, %타겟은()% 내내 좋은 결과를 보여주었습니다. 
 	ELSE
 		WAITRESS = FIND_COND("출연가능な점원")
 		SETBIT CFLAG:WAITRESS:95, 1
 		PRINTFORMW 당장 달려온 %CALLNAME:WAITRESS%에게 한 소리 들었지만, 그 이후에는 열중하지 않았던것 같습니다…
 	ENDIF
 CASE "모유"
-	PRINTFORMW %CALLNAME:TARGET%가 일하러 나오고서부터는, 카페오레와 밀크티가 지금까지의 배 이상으로 팔리게되었습니다. 
+	PRINTFORMW %타겟이()% 일하러 나오고서부터는, 카페오레와 밀크티가 지금까지의 배 이상으로 팔리게되었습니다. 
 	IF TALENT:부끄럼쟁이 && RAND:2 == 0
-		PRINTFORMW 결코 만드는 모습을 보여주진 않지만, 주방에서 나오는 %CALLNAME:TARGET%는, 확실히 뺨을 상기시키고 만족한 표정을 하고 있습니다…
+		PRINTFORMW 결코 만드는 모습을 보여주진 않지만, 주방에서 나오는 %타겟은()%, 확실히 뺨을 상기시키고 만족한 표정을 하고 있습니다…
 	ELSE
 		PRINTFORMW 손님들 사이에서는 『보통 우유로는 맛볼 수 없는 감칠맛』이라고 호평을 받고 있습니다만, 아마도……
 	ENDIF
 CASE "아이"
 	IF RAND:2 == 0
-		PRINTFORMW %CALLNAME:TARGET%는 양손으로 쟁반을 머리위에 받쳐들고, 뚜벅뚜벅 손님의 테이블에 가서, 혀짧은 말투로 주문을 복창하고 있습니다. 
+		PRINTFORMW %타겟은()% 양손으로 쟁반을 머리위에 받쳐들고, 뚜벅뚜벅 손님의 테이블에 가서, 혀짧은 말투로 주문을 복창하고 있습니다. 
 		PRINTFORMW 손님은, 손자를 보는 듯한 얼굴로 미소짓고있습니다…
 	ELSE
-		PRINTFORM %CALLNAME:TARGET%는 활기차게 주문을 받았던 것까지는 좋았습니다만, 
+		PRINTFORM %타겟은()% 활기차게 주문을 받았던 것까지는 좋았습니다만, 
 		IF RAND:3 == 0
 			PRINTFORM 츄로스를 
 		ELSEIF RAND:2
@@ -2900,7 +2900,7 @@ CASE "아이"
 		PRINTFORMW 어떻게하면, 이렇게까지 훌륭하게 실수할 수 있는 걸까…? 
 	ENDIF
 CASE "폭유"
-	PRINTFORMW 손님에게 호출되어 주문을 받고있는 %CALLNAME:TARGET%는, 어딘가 기분이 언짢은 듯 합니다. 
+	PRINTFORMW 손님에게 호출되어 주문을 받고있는 %타겟은()%, 어딘가 기분이 언짢은 듯 합니다. 
 	PRINTFORMW 그래도 마음을 다잡고 손님에게 미소를 지은 순간, 파앙! 하는 소리를 내며, 
 	IF COND("제복：바니")
 		PRINTFORM 앞가슴 단추 
@@ -2914,11 +2914,11 @@ CASE "폭유"
 	PRINTFORMW 가 튕겨날아갔습니다. 
 	PRINTFORMW 아무래도, 제복의 가슴께가 불편한 모양입니다…. 
 	IF TALENT:부끄럼쟁이
-		PRINTFORMW %CALLNAME:TARGET%는 잠깐의 틈이 지난 후, 수치심에 비명을 지르면서 노출된 \@ COND("제복：바니") ?  가슴을 # 브래지어를 \@ 양손으로 가리고, 가게 안쪽으로 뛰쳐들어갔습니다…
+		PRINTFORMW %타겟은()% 잠깐의 틈이 지난 후, 수치심에 비명을 지르면서 노출된 \@ COND("제복：바니") ?  가슴을 # 브래지어를 \@ 양손으로 가리고, 가게 안쪽으로 뛰쳐들어갔습니다…
 	ELSEIF TALENT:부끄럼없음
-		PRINTFORMW %CALLNAME:TARGET%는, 점 내의 시선이 자신의 가슴팍에 모이는 것을 신경쓰는 모습도 없이, 손님에게 다른 점원을 보내겠다고 말한 뒤, 남성손님의 시선을 모으면서 가게 안으로 들어갔습니다. 
+		PRINTFORMW %타겟은()%, 점 내의 시선이 자신의 가슴팍에 모이는 것을 신경쓰는 모습도 없이, 손님에게 다른 점원을 보내겠다고 말한 뒤, 남성손님의 시선을 모으면서 가게 안으로 들어갔습니다. 
 	ELSE
-		PRINTFORMW %CALLNAME:TARGET%는, 수줍은 모습으로 자리를 얼버무리고, 재빨리 가게 안으로 들어갔습니다…
+		PRINTFORMW %타겟은()%, 수줍은 모습으로 자리를 얼버무리고, 재빨리 가게 안으로 들어갔습니다…
 	ENDIF
 ;食器の落ちた音に反応すると, そこには…! 
 CASE "팬티見せつけ"
@@ -2927,21 +2927,21 @@ CASE "팬티見せつけ"
 	ELSE
 		LOCALS = 청년
 	ENDIF
-	PRINTFORMW 떨어뜨린 식기들을 주우려고 몸을 굽힌  %CALLNAME:TARGET%는, 한 %LOCALS%가 소리에 반응해 시선을 자신에게 향한 것을 깨달은 모양입니다…
+	PRINTFORMW 떨어뜨린 식기들을 주우려고 몸을 굽힌  %타겟은()%, 한 %LOCALS%가 소리에 반응해 시선을 자신에게 향한 것을 깨달은 모양입니다…
 	IF COND("제복：바니") || COND("身嗜み：노팬티")
 		LOCALS:1 = 가랑이
 	ELSE
 		LOCALS:1 = 팬티
 	ENDIF
 	IF RAND:2
-		PRINTFORM 핑하고 와버린 %CALLNAME:TARGET%는, 
+		PRINTFORM 핑하고 와버린 %타겟은()%, 
 		IF RAND:2
 			PRINTFORMW 일부러 한쪽 무릎을 세우고 %LOCALS%에게 %LOCALS:1%가 보이기 쉬운 자세로 정리를 계속했습니다. 
 		ELSE
 			PRINTFORMW 일부러 다리를 크게 벌리고 %LOCALS%에게 %LOCALS:1%를 보여주면서 정리를 계속했습니다. 
 		ENDIF
 	ELSE
-		PRINTFORM %CALLNAME:TARGET%는 
+		PRINTFORM %타겟은()% 
 		IF TALENT:강기 && RAND:3
 			PRINTFORM 씨익 웃고, 
 		ELSE
@@ -2960,7 +2960,7 @@ CASE "팬티見せつけ"
 		ELSEIF COND("제복：스커트")
 			PRINTFORM 
 			IF COND("身嗜み：노팬티")
-				PRINTFORM %CALLNAME:TARGET%는 %CALLNAME:MASTER%의 아래에서 팬티를 입고 있지 않은, \@ TALENT:클리피어스 + TALENT:라비아피어스 ? 귀걸이 장식 된 # \@성기를 훤히 들여다 보이도록 하고 있습니다…
+				PRINTFORM %타겟은()% %CALLNAME:MASTER%의 아래에서 팬티를 입고 있지 않은, \@ TALENT:클리피어스 + TALENT:라비아피어스 ? 귀걸이 장식 된 # \@성기를 훤히 들여다 보이도록 하고 있습니다…
 			ELSE
 				PRINTFORM 완전히 노출의 즐거움에 눈을 떠 버린듯한 %CALLNAME:TARGET%의 팬티는
 				IF RAND:3 == 0
@@ -2992,14 +2992,14 @@ CASE "팬티見せつけ"
 		ENDIF
 	ENDIF
 	IF RAND:2
-		PRINTFORMW \@ COND("제복：스커트") ?  미니스커트 안에서 보이는 # 눈앞의 \@광경에 푹 빠진 %LOCALS%를 곁눈질로 보면서, %CALLNAME:TARGET%는 즐겁게 작업을 마쳤습니다…
+		PRINTFORMW \@ COND("제복：스커트") ?  미니스커트 안에서 보이는 # 눈앞의 \@광경에 푹 빠진 %LOCALS%를 곁눈질로 보면서, %타겟은()% 즐겁게 작업을 마쳤습니다…
 	ELSE
 		PRINTFORMW ………
 		PRINTFORMW ……
 
 		CALL SELF_KOJO_L, EVENT_NAMES
 
-		PRINTFORM …작업을 마친 %CALLNAME:TARGET%가 %LOCALS%에게 
+		PRINTFORM …작업을 마친 %타겟이()% %LOCALS%에게 
 		;소악마
 		IF TALENT:소악마 && RANDIF(1, TALENT:심술쟁이)
 			IF ABL:노출벽 >= 3 && TALENT:여자 && COND("제복：스커트") && RAND:2
@@ -3026,39 +3026,39 @@ CASE "팬티見せつけ"
 CASE "내성적"
 	SELECTCASE RAND:100
 	CASE IS > 60
-		PRINTFORMW %CALLNAME:TARGET%는 사람이 많은 탓에 곤혹스러워하고 있습니다…
-		PRINTFORMW 당황스러워 하던 중에 %CALLNAME:TARGET%는 손님에게 불려갔습니다. 
+		PRINTFORMW %타겟은()% 사람이 많은 탓에 곤혹스러워하고 있습니다…
+		PRINTFORMW 당황스러워 하던 중에 %타겟은()% 손님에게 불려갔습니다. 
 		IF RAND:2 == 0
-			PRINTFORMW %CALLNAME:TARGET%는 긴장으로 눈물을 짓고 있습니다…
+			PRINTFORMW %타겟은()% 긴장으로 눈물을 짓고 있습니다…
 		ELSE
-			PRINTFORMW %CALLNAME:TARGET%는 자신에게 잘된 일이라고 말하면서 갔습니다…
+			PRINTFORMW %타겟은()% 자신에게 잘된 일이라고 말하면서 갔습니다…
 		ENDIF
 	CASE 20 TO 60
-		PRINTFORMW %CALLNAME:TARGET%는 울상을 지으면서도 열심히 일하고 있습니다…
+		PRINTFORMW %타겟은()% 울상을 지으면서도 열심히 일하고 있습니다…
 		PRINTFORMW 단지 타고난 성격때문인지, 아직도 접객에는 익숙해지지 않는 것같습니다. 
 		IF RAND:2 == 0
 			WAITRESS = FIND_COND("출연가능な점원")
 			SETBIT CFLAG:WAITRESS:95, 1
-			PRINTFORMW 그 모습을 보다 못한 %CALLNAME:WAITRESS%는 %CALLNAME:TARGET%를 격려하였습니다…
+			PRINTFORMW 그 모습을 보다 못한 %CALLNAME:WAITRESS%는 %타겟을()% 격려하였습니다…
 		ELSE
 			PRINTFORMW 어떻게 주방담당이 될 수 없을까 고민하고 있습니다…
 		ENDIF
 	CASEELSE
 		PRINTFORMW 오늘은 손님이 적은 것같습니다. 
-		PRINTFORMW %CALLNAME:TARGET%는 기분 탓인지 기뻐보입니다…
+		PRINTFORMW %타겟은()% 기분 탓인지 기뻐보입니다…
 	ENDSELECT
 ;양기, 미련함（おバカ）
 CASE "양기"
 	SELECTCASE RAND:100
 	CASE IS > 70
-		PRINTFORMW  %CALLNAME:TARGET%는 주문을 틀려버린 모양입니다. 
+		PRINTFORMW  %타겟은()% 주문을 틀려버린 모양입니다. 
 		IF RAND:2 == 0
 			PRINTFORMW 「바쁘니까 어쩔 수 없다」며  손님은 웃으며 용서해주었습니다…
 		ELSE
-			PRINTFORMW ……틀린 주문은 %CALLNAME:TARGET%가 맛있게 먹었습니다…
+			PRINTFORMW ……틀린 주문은 %타겟이()% 맛있게 먹었습니다…
 		ENDIF
 	CASE 30 TO 70
-		PRINTFORMW 한가해서 %CALLNAME:TARGET%는 개인기연습을 하고있습니다. 
+		PRINTFORMW 한가해서 %타겟은()% 개인기연습을 하고있습니다. 
 		PRINTFORMW 그것을 보고있던 손님에게는 대호평이었습니다…
 	CASEELSE
 		PRINTFORMW 언제나 실수가 눈에 띄던 %CALLNAME:TARGET%도, 바쁘지 않았던 덕분에 실수가 적었던 모양입니다. 
@@ -3070,32 +3070,32 @@ CASE "음기"
 	CASE IS > 70
 		PRINTFORMW 오늘은 상당히 혼잡한 것 같습니다만, %CALLNAME:TARGET%의 주변에만 손님이 없습니다. 
 		IF RAND:2 == 0 && COND("제복：스커트") && COND("身嗜み：노팬티") == 0
-			PRINTFORMW …%CALLNAME:TARGET%는 팬티를 슬쩍 노출시켜 봤습니다
+			PRINTFORMW …%타겟은()% 팬티를 슬쩍 노출시켜 봤습니다
 			PRINTFORMW 아무도 떡밥을 물지 않았습니다…
 		ELSE
 			PRINTFORMW 손님이 점원을 불렀습니다만, 다른 점원이 왔습니다. 
 			PRINTFORMW 음침함이 진해진 기분이 듭니다…
 		ENDIF
 	CASE 20 TO 70
-		PRINTFORMW %CALLNAME:TARGET%가 가져오는 커피에는 코어한 수요가 있는 것 같습니다. 
-		PRINTFORMW %CALLNAME:TARGET%는 어딘가 복잡한 얼굴을 하고 있습니다…
+		PRINTFORMW %타겟이()% 가져오는 커피에는 코어한 수요가 있는 것 같습니다. 
+		PRINTFORMW %타겟은()% 어딘가 복잡한 얼굴을 하고 있습니다…
 	CASEELSE
 		PRINTFORMW 오늘은 손님도 별로 들어오지 않았습니다. 
 		PRINTFORMW 가게안이 전체적으로 가라앉은 분위기입니다…
 	ENDSELECT
 ;쿨系（と見られてしまう이벤트, ルリコンホイホイ）
 CASE "쿨"
-	PRINTFORMW %CALLNAME:TARGET%는 억양이 없는 목소리로 메뉴를 읽고있습니다. 
+	PRINTFORMW %타겟은()% 억양이 없는 목소리로 메뉴를 읽고있습니다. 
 	IF RAND:(1 + TALENT:매혹 + TALENT:수수께끼의매력 + TALENT:매력 + TALENT:인기) >= 2
 		PRINTFORMW %CALLNAME:TARGET%의 단골손님인 듯, 황홀한 표정을 보이고 있습니다…
 	ELSEIF RAND:(1 + TALENT:매혹 + TALENT:수수께끼의매력 + TALENT:매력 + TALENT:인기)
 		PRINTFORMW …그 손님은 참을수 없었던 것 같습니다…
 	ELSE
-		PRINTFORMW %CALLNAME:TARGET%는 붙임성이 없다라며 불평했습니다…
+		PRINTFORMW %타겟은()% 붙임성이 없다라며 불평했습니다…
 	ENDIF
 ;요정さん
 CASE "요정"
-	PRINTFORM %CALLNAME:TARGET%는 케이크가 든 접시를 들고, 
+	PRINTFORM %타겟은()% 케이크가 든 접시를 들고, 
 	IF RAND:100 >= 70
 		PRINTFORM 아주 혼잡한 
 	ELSE
@@ -3104,7 +3104,7 @@ CASE "요정"
 	PRINTFORMW 가게의 천장 근처를 휙휙 콧노래를 섞어가면서 날고있습니다. 
 	WAITRESS = FIND_COND("출연가능な점원")
 	SETBIT CFLAG:WAITRESS:95, 1
-	PRINTFORM 어수선한 가게를 돌아 다니는 %CALLNAME:WAITRESS%를 거들떠 보지도 않고 %CALLNAME:TARGET%는 고객의 
+	PRINTFORM 어수선한 가게를 돌아 다니는 %CALLNAME:WAITRESS%를 거들떠 보지도 않고 %타겟은()% 고객의 
 	IF RAND:2
 		PRINTFORM 앞
 	ELSE
@@ -3122,7 +3122,7 @@ CASE "요정"
 	ELSE
 		PRINTFORM 미소로 답례하고 
 	ENDIF
-	PRINTFORM 케이크를 먹으려하자, %CALLNAME:TARGET%가 
+	PRINTFORM 케이크를 먹으려하자, %타겟이()% 
 	IF RAND:3 == 0
 		PRINTFORM 손가락을 물고 
 	ELSEIF RAND:2
@@ -3137,7 +3137,7 @@ CASE "요정"
 	ENDIF
 	PRINTFORMW 손님은 뺨을 느슨하게하고, 포크로 케이크를 %CALLNAME:TARGET%의 눈 앞에 내밀었습니다. 
 	IF RAND:2
-		PRINTFORM %CALLNAME:TARGET%는 
+		PRINTFORM %타겟은()% 
 		IF RAND:2
 			PRINTFORM 눈을 빛내고
 		ELSE
@@ -3154,7 +3154,7 @@ CASE "요정"
 		ELSE
 			PRINTFORM 허우적대면서 날뛰는 
 		ENDIF
-		PRINTFORMW %CALLNAME:TARGET%를 끌고 가게 안쪽으로 돌아갔습니다…
+		PRINTFORMW %타겟을()% 끌고 가게 안쪽으로 돌아갔습니다…
 	ENDIF
 ;라미아さん
 CASE "라미아"
@@ -3166,9 +3166,9 @@ CASE "라미아"
 	IF RAND:2
 		PRINTFORMW %CALLNAME:TARGET%의 뱀부분이 신기한지, 손님의 시선은 무심코 그 쪽을 보고맙니다.
 		IF RAND:3 == 0
-			PRINTFORMW %CALLNAME:TARGET%가 하반신을 재주좋게 움직여서 이동하는 광경은, 꽤 박력있습니다… 
+			PRINTFORMW %타겟이()% 하반신을 재주좋게 움직여서 이동하는 광경은, 꽤 박력있습니다… 
 		ELSEIF RAND:2
-			PRINTFORMW %CALLNAME:TARGET%는 그것을 신경쓰는 기색도 없이, 오히려 즐기고있는 것처럼 보입니다…
+			PRINTFORMW %타겟은()% 그것을 신경쓰는 기색도 없이, 오히려 즐기고있는 것처럼 보입니다…
 			;「ふふ♪蛇の身体が珍しいかしら」
 			;「じろじろ見ちゃって…. 触ってみたい？」
 		ELSE
@@ -3182,14 +3182,14 @@ CASE "라미아"
 	ELSE
 		PRINTFORMW %CALLNAME:TARGET%의 커다란 꼬리를, 아이가 찰싹찰싹 만지고있습니다. 
 		IF (TALENT:임신 + TALENT:출산경험 || ABL:봉사정신 >= 5) && RAND:2
-			PRINTFORMW 꺄꺄거리며 즐거워하는 아이를, %CALLNAME:TARGET%는 자애로 가득 찬 표정으로 어루만지고있습니다… 
+			PRINTFORMW 꺄꺄거리며 즐거워하는 아이를, %타겟은()% 자애로 가득 찬 표정으로 어루만지고있습니다… 
 		ELSE
-			PRINTFORMW 당황해서 그만두게하려는 부모를 말리고, %CALLNAME:TARGET%는 미소지으며, 꼬리 끝을 만지게해주었습니다… 
+			PRINTFORMW 당황해서 그만두게하려는 부모를 말리고, %타겟은()% 미소지으며, 꼬리 끝을 만지게해주었습니다… 
 		ENDIF
 	ENDIF
 ;머메이드さん
 CASE "머메이드"
-	PRINTFORM 제복의 스커트 자락에서 사람 다리가 아닌 윤기있는 싱싱한 물고기 비늘이 뻗어나와있는 %CALLNAME:TARGET%가, 
+	PRINTFORM 제복의 스커트 자락에서 사람 다리가 아닌 윤기있는 싱싱한 물고기 비늘이 뻗어나와있는 %타겟이()%, 
 	;今にも寝入りそうな(ペンとメモを握ったまま目を閉じてる)
 	IF RAND:2
 		PRINTFORM 어딘가 멍한 모습으로 
@@ -3199,8 +3199,8 @@ CASE "머메이드"
 	PRINTFORMW 끼익끼익… 휠체어로 가게안을 이동하고 있습니다. 
 	PRINTFORM 손님이 주문을 하려고 말을걸자, 
 	IF RAND:2
-		PRINTFORMW %CALLNAME:TARGET%는 퍼뜩 눈을 뜨고 조용히 품에서 물통을 꺼내서, 뚜껑에 붓고 물을 꿀꺽꿀꺽 마시기시작했습니다. 
-		PRINTFORM 맛있게 물을 마신 %CALLNAME:TARGET%는, 
+		PRINTFORMW %타겟은()% 퍼뜩 눈을 뜨고 조용히 품에서 물통을 꺼내서, 뚜껑에 붓고 물을 꿀꺽꿀꺽 마시기시작했습니다. 
+		PRINTFORM 맛있게 물을 마신 %타겟은()%, 
 		IF RAND:2
 			PRINTFORM 돌변해서 발랄한 모습으로 
 		ELSE
@@ -3208,9 +3208,9 @@ CASE "머메이드"
 		ENDIF
 		PRINTFORMW 활기차게 주문을 받고, 드륵드륵 방금전보다 재빠르게 휠체어를 움직여 주방으로 돌아갔습니다… 
 	ELSE
-		PRINTFORM %CALLNAME:TARGET%는 팟하고 눈을 뜨고, 갑자기 육지에 밀려올라온 물고기마냥 입을 뻐끔뻐끔거리기 시작하더니, 
+		PRINTFORM %타겟은()% 팟하고 눈을 뜨고, 갑자기 육지에 밀려올라온 물고기마냥 입을 뻐끔뻐끔거리기 시작하더니, 
 		PRINTFORMW 손님의 손에 있는 찬물을 붙잡고, 꿀꺽꿀꺽 목을 울리며 단숨에 마셨습니다. 
-		PRINTFORM 한숨 돌린 %CALLNAME:TARGET%는, 
+		PRINTFORM 한숨 돌린 %타겟은()%, 
 		IF RAND:2
 			PRINTFORM 감사를 담은 미소를 지으며
 		ELSE
@@ -3231,7 +3231,7 @@ CASE "カオス料理"
 	;不自然な組み合わせが作られるのは避けた方がいいかもしれません. 
 	;もっと食材などを발せばマトモな料理も増えるかもしれません. ガンガン발して下さい. 
 
-	PRINTFORMW %CALLNAME:TARGET%는 알고지내는 손님에게 자신의 요리를 먹어달라고 부탁하고있다. 
+	PRINTFORMW %타겟은()% 알고지내는 손님에게 자신의 요리를 먹어달라고 부탁하고있다. 
 	PRINTFORMW 아무래도 상당한 자신작인 모양이다. 
 	VARSET LOCALS
 	SPLIT "리조또, 쇼트케이크, 커피콩, 홍차잎, 훈제연어, 양고기육포, 몽마의 촉수, 무지개색으로 녹아있는 유동체 알수없는 그ー것ー은ー정ー말ー로 에피쿠로스적인 투구벌레, 츄로스, 허니비스켓, 베이크드애플, 전병, 나타데코코, 젤리, 프리터, 주먹밥, 햄버거, 고명야키소바, 버섯, 카르보나라, 마운틴스테이크, 시더우드, 페퍼민트, 로즈마리, 시프리샌드, 루이스브레드, 바나나, 챠밍부케, 문드롭스, 오므라이스, 후추, 수박, 알로에, 도롱뇽, 한방차, 동충하초, 일곱가지색, 극채색, 무언가", ", ", LOCALS
@@ -3244,57 +3244,57 @@ CASE "カオス料理"
 
 	;反応
 	IF RAND:9 == 0
-		PRINTFORMW 손님이 정말 먹어도 괜찮은가 고민하고있자, %CALLNAME:TARGET%는 「양념을 잊었다」라고 말하고 타바스코를 한가득 부었다! 
+		PRINTFORMW 손님이 정말 먹어도 괜찮은가 고민하고있자, %타겟은()% 「양념을 잊었다」라고 말하고 타바스코를 한가득 부었다! 
 		PRINTFORMW 손님의 움직임은 완전히 멈춰있다……
 	ELSEIF RAND:8 == 0
 		PRINTFORMW 외형은 이름이상으로 정상적이었지만, 아무래도 요리에서 자극적인 냄새가 풍겨나오고있다. 
 		PRINTFORMW 손님은 올라오는 자극을 어떻게는 참으면서도, 눈물을 흘리면서 요리를 먹었다! 
-		PRINTFORMW 하지만 %CALLNAME:TARGET%는 무자비하게도 한그릇을 더 가져왔다……
+		PRINTFORMW 하지만 %타겟은()% 무자비하게도 한그릇을 더 가져왔다……
 	ELSEIF RAND:7 == 0
 		PRINTFORMW 손님이 그것을 입에 넣은 순간, 움직임이 딱 멈춘 채 굳어버렸다. 아무래도 입에 넣은 그것을 삼킬 수 없는 모양이다. 
-		PRINTFORMW 하지만 그런 것따윈 상관없이, %CALLNAME:TARGET%는 두입째를 권하고있다………
+		PRINTFORMW 하지만 그런 것따윈 상관없이, %타겟은()% 두입째를 권하고있다………
 	ELSEIF RAND:6 == 0
 		PRINTFORMW 손님은 한입 먹은 순간 순식간에 안색을 바꾸고, 화장실을 향해 달리기 시작했다. 
-		PRINTFORMW %CALLNAME:TARGET%는 잠시동안, 뭐가 문제였는지 계속 고민했다. 
+		PRINTFORMW %타겟은()% 잠시동안, 뭐가 문제였는지 계속 고민했다. 
 	ELSEIF RAND:5 == 0
 		PRINTFORMW 손님은 요리를 절반정도 입에 넣고, 갑자기 정신을 잃고 쓰러져버렸다. 
-		PRINTFORMW %CALLNAME:TARGET%는 손님이 정신을 차릴 때까지, 한동안 간호해야만 했다………
+		PRINTFORMW %타겟은()% 손님이 정신을 차릴 때까지, 한동안 간호해야만 했다………
 	ELSEIF RAND:4
 		PRINTFORM 요리를 입에 넣은 
 		IF RAND:2
 			PRINTFORMW 남자손님은 몸을 슬쩍 테이블 쪽으로…정확히는 하반신을 테이블 아래에 밀어넣었다. 
-			PRINTFORMW %CALLNAME:TARGET%가 맛의 감상을 물으려고 접근하자, 남자 손님은 더욱더 테이블에 몸을 기대었다. 
+			PRINTFORMW %타겟이()% 맛의 감상을 물으려고 접근하자, 남자 손님은 더욱더 테이블에 몸을 기대었다. 
 		ELSE
 			PRINTFORMW 여성 손님은 갑자기 얼굴을 붉히고, 쭈뼛쭈뼛 두 다리를 움직이기 시작했다. 
 			PRINTFORMW %CALLNAME:TARGET%에게 요리의 감상을 말하는 동안에도, 여성 손님은 움직임을 멈추려하지 않았다. 
 		ENDIF
-		PRINTFORMW 손님의 모습이 이상한 것을 깨달은  %CALLNAME:TARGET%는 「의무실에 가죠」라고 손님의 손을 당겼지만, 손님은 붕붕 고개를 젓고 『참을 수 없게 되어버려! 』라고 필사적으로 거절했다. 
+		PRINTFORMW 손님의 모습이 이상한 것을 깨달은  %타겟은()% 「의무실에 가죠」라고 손님의 손을 당겼지만, 손님은 붕붕 고개를 젓고 『참을 수 없게 되어버려! 』라고 필사적으로 거절했다. 
 	ELSEIF RAND:3
 		PRINTFORMW 천천히 그것을 입에 넣은 손님은………갑자기 허리를 핑하고 펴고, 통로 바닥에 쓰러졌다! 
 		PRINTFORMW ―만, 그 표정은 황홀함으로 물들어, 왠지 기분좋은 얼굴로 꿈틀댔다. 
-		PRINTFORMW %CALLNAME:TARGET%는 상상한 대로 요리가 만들어진건지, 만족한 얼굴로 미소짓고있다…. 
+		PRINTFORMW %타겟은()% 상상한 대로 요리가 만들어진건지, 만족한 얼굴로 미소짓고있다…. 
 	ELSEIF RAND:2
 		PRINTFORMW 손님은 조심조심 요리를 입에 넣고……곧 눈빛을 바꾸더니, 정신없이 그것을 먹기시작했다! 
-		PRINTFORMW 그 모습을 본 %CALLNAME:TARGET%는, 자신의 요리실력에 자신감을 갖게 된 것같다………
+		PRINTFORMW 그 모습을 본 %타겟은()%, 자신의 요리실력에 자신감을 갖게 된 것같다………
 	ELSE
 		PRINTFORMW 손님 앞에 나온 요리는 매우 이질적인 외형이었지만, 손님은 요리를 한입 먹더니 행복한 표정을 짓고는, 매우 맛있었다고 말했다. 
 		PRINTFORMW 아무래도 겉보기와는 다르게 상당히 맛있었던 모양이다. 
-		PRINTFORMW %CALLNAME:TARGET%는, 언젠가 %CALLNAME:PLAYER%에게 이 요리를 만들어주려 다짐했다………
+		PRINTFORMW %타겟은()%, 언젠가 %CALLNAME:PLAYER%에게 이 요리를 만들어주려 다짐했다………
 	ENDIF
 	;※一度作ったらDAILY LIFEの方で実際마스터に食べさせてもいいかも. 
 ;인기者が盗撮される
 CASE "盗撮"
 	IF COND("제복：바니")
-		PRINTFORMW %CALLNAME:TARGET%는 가슴과 다리사이 , 엉덩이 등 성적인 부분을 도촬당한 것같습니다! 
+		PRINTFORMW %타겟은()% 가슴과 다리사이 , 엉덩이 등 성적인 부분을 도촬당한 것같습니다! 
 	ELSE
-		PRINTFORMW %CALLNAME:TARGET%는 스커트 안을 도촬당한 것같습니다! 
+		PRINTFORMW %타겟은()% 스커트 안을 도촬당한 것같습니다! 
 	ENDIF
 	IF ABL:노출벽 >= 3
 		IF TALENT:겁쟁이 + TALENT:내성적 + TALENT:부끄럼쟁이 && RANDIF(2, TALENT:교만, TALENT:양기+TALENT:눈에띄고싶어함)
 			IF RAND:2
-				PRINTFORM %CALLNAME:TARGET%는 가슴을 두근두근거리면서, 
+				PRINTFORM %타겟은()% 가슴을 두근두근거리면서, 
 			ELSE
-				PRINTFORM 그것을 깨달은 %CALLNAME:TARGET%는 부끄러움에 몸을 붉히면서, 
+				PRINTFORM 그것을 깨달은 %타겟은()% 부끄러움에 몸을 붉히면서, 
 			ENDIF
 			IF COND("제복：바니")
 				PRINTFORMW 야한 의상을 입은 자신의 모습이 녹화되는 것을 즐겼습니다…
@@ -3306,23 +3306,23 @@ CASE "盗撮"
 				PRINTFORMW 팬티 속을 찍히는 것을 즐겼습니다…
 			ENDIF
 		ELSEIF TALENT:양기 + TALENT:눈에띄고싶어함 && RANDIF(2, TALENT:교만)
-			PRINTFORM  …하지만, 그것을 눈치챈 %CALLNAME:TARGET%는 손님의 귓가에 그만두라고 속삭이면서도, 자신
+			PRINTFORM  …하지만, 그것을 눈치챈 %타겟은()% 손님의 귓가에 그만두라고 속삭이면서도, 자신
 			SIF RAND:2 && (ABL:노출벽 >= 5 || TALENT:젖기쉬움) && TALENT:남자 == 0
 				PRINTFORM 의 \@ COND("제복：바니") ?  부끄러운 장소 # 노출의 쾌락에 얼룩진 팬티 \@
 			PRINTFORMW 를 찍은 사진만큼은 용서해준 것 같습니다…
 		ELSEIF TALENT:교만 && RAND:2
-			PRINTFORMW …하지만, 그것을 깨달은 %CALLNAME:TARGET%는, \@ PENIS(TARGET) ? 페니스를 찍히지 않도록 주의하면서 # \@ 적극적으로 셔터찬스를 만든 것 같습니다…
+			PRINTFORMW …하지만, 그것을 깨달은 %타겟은()%, \@ PENIS(TARGET) ? 페니스를 찍히지 않도록 주의하면서 # \@ 적극적으로 셔터찬스를 만든 것 같습니다…
 			PRINTFORMW 아무래도, 다른 점원보다 찍힌 횟수에서 밀리는게 참을 수 없었던 것 같다…
 		ELSE
-			PRINTFORMW …하지만, 그것을 눈치챈 %CALLNAME:TARGET%는, 오히려 보폭을 넓히고 부끄러운 부분을 찍히는 즐거움을 맛봤습니다…
+			PRINTFORMW …하지만, 그것을 눈치챈 %타겟은()%, 오히려 보폭을 넓히고 부끄러운 부분을 찍히는 즐거움을 맛봤습니다…
 		ENDIF
 	ELSEIF TALENT:장난감이되어버려라
-		PRINTFORMW …하지만, 그것을 눈치챈 %CALLNAME:TARGET%는 촬영장비를 장난감으로 만들어 무사할 수 있었습니다. 
+		PRINTFORMW …하지만, 그것을 눈치챈 %타겟은()% 촬영장비를 장난감으로 만들어 무사할 수 있었습니다. 
 		SIF NO:TARGET == 50
 			PRINTFORMW 「여기가 가게가 아니었다면…… 장난감이 되는건 오빠일지도 몰라♪」
 	ELSEIF TALENT:교만
 		WAITRESS = FIND_COND("출연가능な점원")
-		PRINTFORMW 그것을 %CALLNAME:WAITRESS%에게 배운 %CALLNAME:TARGET%는, 보이는 것과 보는 것은 상당히 다른 것 같고, 분개하고 있습니다…
+		PRINTFORMW 그것을 %CALLNAME:WAITRESS%에게 배운 %타겟은()%, 보이는 것과 보는 것은 상당히 다른 것 같고, 분개하고 있습니다…
 		IF TALENT:강기 && RAND:2
 			PRINTFORMW 참을 수 없었는지, 범인을 향해 발소리를 크게 울리며 다가가서……아. 카메라를 발로 차부숴버렸다……
 		ELSE
@@ -3330,21 +3330,21 @@ CASE "盗撮"
 		ENDIF
 	ELSEIF TALENT:겁쟁이 || TALENT:내성적 || TALENT:부끄럼쟁이
 		IF CHECK_PANTIES("Ｈ") && COND("제복：스커트")
-			PRINTFORMW %CALLNAME:TARGET%는\@ COND("오토코노코") ? , 남자인데도 분위기를 타서 # \@ 야한 팬티를 입고있었다는 것을 기억하고는 얼굴에서 불이 날것만 같습니다…
+			PRINTFORMW %타겟은()%\@ COND("오토코노코") ? , 남자인데도 분위기를 타서 # \@ 야한 팬티를 입고있었다는 것을 기억하고는 얼굴에서 불이 날것만 같습니다…
 		ELSE
-			PRINTFORMW %CALLNAME:TARGET%는 신경쓰지 않는 것처럼 행동하지만, 조금 슬픈 것 같습니다…
+			PRINTFORMW %타겟은()% 신경쓰지 않는 것처럼 행동하지만, 조금 슬픈 것 같습니다…
 		ENDIF
 	ELSE
 		IF TALENT:도착적 && RAND:3
-			PRINTFORMW %CALLNAME:TARGET%는 자신의 사진이 딸감으로 사용되는 것을 상상하고, 뺨을 붉히고 있습니다…
+			PRINTFORMW %타겟은()% 자신의 사진이 딸감으로 사용되는 것을 상상하고, 뺨을 붉히고 있습니다…
 		ELSEIF ABL:자위중독 >= 3 && COND("제복：스커트") && COND("身嗜み：노팬티") == 0 && TALENT:남자 == 0 && TALENT:젖기쉬움 && TALENT:부끄럼없음 == 0 && RAND:2
 			WAITRESS = FIND_COND("출연가능な점원")
-			PRINTFORMW 그것을 %CALLNAME:WAITRESS%에게 배운 %CALLNAME:TARGET%는, 팬티가 애액으로 흠뻑 젖은 것을 떠올리고 머리를 싸쥐고 고민하고 있습니다.
-			PRINTFORMW …%CALLNAME:TARGET%는 아르바이트 중에 자위하는 것을 자제하기로 다짐하면서, 탈의실로 팬티를 갈아입으러 갔습니다……
+			PRINTFORMW 그것을 %CALLNAME:WAITRESS%에게 배운 %타겟은()%, 팬티가 애액으로 흠뻑 젖은 것을 떠올리고 머리를 싸쥐고 고민하고 있습니다.
+			PRINTFORMW …%타겟은()% 아르바이트 중에 자위하는 것을 자제하기로 다짐하면서, 탈의실로 팬티를 갈아입으러 갔습니다……
 		ELSEIF COND("음모") >= 6 && TALENT:호색 && TALENT:유치 == 0 && TALENT:남자 == 0 && RAND:3
-			PRINTFORMW %CALLNAME:TARGET%는 그곳 털을 정리하지 않은 것을 후회하고 있는 것 같습니다…
+			PRINTFORMW %타겟은()% 그곳 털을 정리하지 않은 것을 후회하고 있는 것 같습니다…
 		ELSE
-			PRINTFORMW %CALLNAME:TARGET%는 흥흥 거리면서도, 자신의 \@TALENT:매력 ? 매력이 # 인기가\@ 증명된거 같아 나쁘지만은 않아보입니다…
+			PRINTFORMW %타겟은()% 흥흥 거리면서도, 자신의 \@TALENT:매력 ? 매력이 # 인기가\@ 증명된거 같아 나쁘지만은 않아보입니다…
 		ENDIF
 	ENDIF
 ;꼬리
@@ -3355,7 +3355,7 @@ CASE "가슴の谷間"
 	IF TALENT:양기 && RAND:2
 		WAITRESS = FIND_COND("출연가능な점원", "!거유")
 		SETBIT CFLAG:WAITRESS:95, 1
-		PRINTFORMW %CALLNAME:TARGET%는 어딘가 기운이 없어보입니다. 
+		PRINTFORMW %타겟은()% 어딘가 기운이 없어보입니다. 
 		PRINTFORMW 걱정한%CALLNAME:WAITRESS%가 묻자, 「말을 건넨 사람이 모두 시선을 밑으로 돌린다」라는 것입니다.. 
 		PRINTFORM …그것을 들은%CALLNAME:WAITRESS%는 지친 얼굴로, %CALLNAME:TARGET%의 
 		IF COND("제복：바니")
@@ -3364,7 +3364,7 @@ CASE "가슴の谷間"
 			PRINTFORMW 앞가슴의 단추를 너무 풀어서 훤히 드러나보이는 골짜기를 바라보았습니다… 
 		ENDIF
 	ELSE
-		PRINTFORM %CALLNAME:TARGET%는
+		PRINTFORM %타겟은()%
 		IF TALENT:양기 && RAND:3 == 0
 			PRINTFORM 가볍게 서비스하는 기분으로, 
 		ELSEIF RAND:2
@@ -3446,22 +3446,22 @@ CASE "치료の名目でつまみ食い"
 	SIF RAND:2 && (ABL:레즈끼 > RAND:10 || (TALENT:남자 && ABL:ＢＬ끼 < 3) )
 		CALL SETFLAG, "일반인상대の성행위설정：상대が女"
 
-	PRINTFORMW %CALLNAME:TARGET%는 안색이 나빠보이는 \@ TALENT:PLAYER:남자 ? 남 # 여\@자손님을 발견하고, 스탭룸 옆의 의무실에서 치료하도록 권했습니다. 
+	PRINTFORMW %타겟은()% 안색이 나빠보이는 \@ TALENT:PLAYER:남자 ? 남 # 여\@자손님을 발견하고, 스탭룸 옆의 의무실에서 치료하도록 권했습니다. 
 	PRINTFORMW 손님은 상당히 괴로워보이는 모습으로, %CALLNAME:TARGET%에게 기대면서 의무실에 갔습니다…
 	PRINTL 
 	PRINTFORMW －의무실－
-	PRINTFORMW 의자에 앉은 손님을 간단하게 문진한 %CALLNAME:TARGET%는, 손님에게 찬장의 약품을 혼합해서 만든 즉효성의 약을 먹인 것 같습니다. 
+	PRINTFORMW 의자에 앉은 손님을 간단하게 문진한 %타겟은()%, 손님에게 찬장의 약품을 혼합해서 만든 즉효성의 약을 먹인 것 같습니다. 
 	PRINTFORMW 그 효과는 굉장해서, 반신반의하며 약을 먹은 손님의 안색이 순식간에 좋아져, 금새 건강해지게 되었습니다. 
 	PRINTFORMW …그런데. 
 	IF TALENT:PLAYER:남자
 		PRINTFORMW 손님의 다리 사이에 24인용 텐트가 쳐져서 걸을 수 없을 정도가 되었습니다!
 	ELSE
 		PRINTFORMW 손님은 얼굴을 붉히고, 뜨거운 한숨을 흘리면서 다리 사이를 스커트 위에서 누르고 있습니다. 
-		PRINTFORML 그 상태를 %CALLNAME:TARGET%가 보고 손님에게 스커트를 걷어올리라고 말하자, 걷어올려진 손님의 다리 사이에는… 
+		PRINTFORML 그 상태를 %타겟이()% 보고 손님에게 스커트를 걷어올리라고 말하자, 걷어올려진 손님의 다리 사이에는… 
 		PRINTFORMW 애액이 흘러넘쳐서 팬티는 물론, 무릎까지 적실정도로 굉장한 상태입니다…! 
 	ENDIF
 	PRINTFORMW 아무래도, 약의 효력이 너무 강한 것 같습니다. 
-	PRINTFORM 이 상태에 자신의 책임을 느낀 %CALLNAME:TARGET%는, 
+	PRINTFORM 이 상태에 자신의 책임을 느낀 %타겟은()%, 
 	IF TALENT:PLAYER:남자
 		IF COND("다방：Ｖ섹스") && COND("제복：스커트") && COND("身嗜み：노팬티") == 0
 			IF RAND:3 == 0
@@ -3484,7 +3484,7 @@ CASE "치료の名目でつまみ食い"
 
 	IF TALENT:PLAYER:남자
 		IF COND("다방：Ｖ섹스")
-			PRINTFORMW %CALLNAME:TARGET%를 침대에 밀어넘어뜨리고 딱딱해진 거근으로 이성을 잃은 짐승과 같이 범하기시작했습니다! 
+			PRINTFORMW %타겟을()% 침대에 밀어넘어뜨리고 딱딱해진 거근으로 이성을 잃은 짐승과 같이 범하기시작했습니다! 
 			SELECTCOM = 61
 			;文章に齟齬が出ないように調整
 			EXP:정액경험 += 10
@@ -3497,7 +3497,7 @@ CASE "치료の名目でつまみ食い"
 			CALL SETFLAG, "정음경험", 5, TARGET, -4
 		ENDIF
 	ELSE
-		PRINTFORMW %CALLNAME:TARGET%를 향해 그곳을 잡아벌리고 졸라대기시작했습니다…! 
+		PRINTFORMW %타겟을()% 향해 그곳을 잡아벌리고 졸라대기시작했습니다…! 
 		SELECTCOM = 98
 	ENDIF
 
@@ -3510,12 +3510,12 @@ CASE "치료の名目でつまみ食い"
 	PRINTFORMW ……
 	IF TALENT:PLAYER:남자
 		IF COND("다방：Ｖ섹스")
-			PRINTFORMW …%CALLNAME:TARGET%는 자궁을 짓눌러버릴 것같은 사정없는 피스톤운동과 묻지도 따지지도 않고 반복되는 대량의 질내 사정을 마음껏 즐긴 것같습니다. 
+			PRINTFORMW …%타겟은()% 자궁을 짓눌러버릴 것같은 사정없는 피스톤운동과 묻지도 따지지도 않고 반복되는 대량의 질내 사정을 마음껏 즐긴 것같습니다. 
 		ELSE
-			PRINTFORMW …%CALLNAME:TARGET%는 손님의 가랑이에 얼굴을 묻고 목에 휘감기는 듯한 진한 정액을 듬뿍 맛보고 만족한 것같습니다. 
+			PRINTFORMW …%타겟은()% 손님의 가랑이에 얼굴을 묻고 목에 휘감기는 듯한 진한 정액을 듬뿍 맛보고 만족한 것같습니다. 
 		ENDIF
 	ELSE
-		PRINTFORMW …%CALLNAME:TARGET%는 손님의 다리 사이에 얼굴을 묻고 질에 꽂아넣은 손가락으로 Ｇ스폿을 계속 자극하면서 계속 혀로 그곳을 애무해, 물총 뿐만 아니라 실금까지 시키면서 즐긴 것같습니다. 
+		PRINTFORMW …%타겟은()% 손님의 다리 사이에 얼굴을 묻고 질에 꽂아넣은 손가락으로 Ｇ스폿을 계속 자극하면서 계속 혀로 그곳을 애무해, 물총 뿐만 아니라 실금까지 시키면서 즐긴 것같습니다. 
 	ENDIF
 	PRINTL 
 	PRINTFORM 그 후, 제정신으로 돌아온 손님의 
@@ -3532,31 +3532,31 @@ CASE "치료の名目でつまみ食い"
 	CFLAG:36 += 1
 
 CASE "ハーブティー"
-	PRINTFORMW %CALLNAME:TARGET%가 일하기 시작한 뒤부터, 허브티 등의 약효가 있는 음료가 배 이상 팔리게 되었습니다. 
+	PRINTFORMW %타겟이()% 일하기 시작한 뒤부터, 허브티 등의 약효가 있는 음료가 배 이상 팔리게 되었습니다. 
 	WAITRESS = FIND_COND("출연가능な점원", "약독내성")
 	IF WAITRESS && RAND:4 == 0
 		SETBIT CFLAG:WAITRESS:95, 1
-		PRINTFORMW 효과가 강한듯한 것에 대해서는 %CALLNAME:WAITRESS%시음 받거나 하면서, 오늘도 %CALLNAME:TARGET%는 새로운 제품 개발에 힘 쓰고 있는 것 같습니다…
+		PRINTFORMW 효과가 강한듯한 것에 대해서는 %CALLNAME:WAITRESS%시음 받거나 하면서, 오늘도 %타겟은()% 새로운 제품 개발에 힘 쓰고 있는 것 같습니다…
 	ELSEIF RAND:3 == 0
-		PRINTFORMW 특별히 수당같은 것은 지급하지 않고 있습니다만, %CALLNAME:TARGET%는 「이것저것 실험하니까」라며 즐겁게 만들고 있는 것 같습니다…
+		PRINTFORMW 특별히 수당같은 것은 지급하지 않고 있습니다만, %타겟은()% 「이것저것 실험하니까」라며 즐겁게 만들고 있는 것 같습니다…
 	ELSEIF RAND:2 == 0
 		PRINTFORMW 가끔씩 피로회복에 효과가 있는 드링크를 마신 남성손님이 자리에서 일어날수 없게 되었습니다만, 평판은 아주 좋은 것같습니다…
 	ELSE
 		PRINTFORMW 만들고 있는 장면을 본 동료들은 마실 생각이 거의 없어졌습니다만, 효과의 수준은 과연 전문가, 의심의 여지는 없습니다…
 	ENDIF
 CASE "주인がトイレで"
-	PRINTFORMW %CALLNAME:MASTER%이 다방 준비를 하러가자, 아무래도 %CALLNAME:TARGET%가 화장실에서 돌아오지 않은 것 같다. 
+	PRINTFORMW %CALLNAME:MASTER%이 다방 준비를 하러가자, 아무래도 %타겟이()% 화장실에서 돌아오지 않은 것 같다. 
 	PRINTFORMW 어쩔수 없어서 보러가보니, 명백하게 요염함이 섞여있는 목소리가 화장실의 개인실 안에서 들려온다…
-	PRINTFORMW 설마, 하고 생각하고 문을 황급히 열어보자, 도대체 무슨 일인건지 %CALLNAME:TARGET%가 여성손님의 다리사이에 얼굴을 묻고있었다! 
+	PRINTFORMW 설마, 하고 생각하고 문을 황급히 열어보자, 도대체 무슨 일인건지 %타겟이()% 여성손님의 다리사이에 얼굴을 묻고있었다! 
 	PRINTFORMW 음핵을 혀로 희롱하면서 Ｇ스팟을 괴롭히는 %CALLNAME:TARGET%의 테크닉에, 여성 손님은 신음소리를 억누르지 못하고 몸을 떨면서 끊임없이 절정하고, 
-	PRINTFORMW 게다가, %CALLNAME:TARGET%는 그것도 모자라서, 황홀한 표정을 하면서 실금까지해대는 손님의 엉덩이 구멍에까지 손을 뻗어 즐기려는 것 같다…
+	PRINTFORMW 게다가, %타겟은()% 그것도 모자라서, 황홀한 표정을 하면서 실금까지해대는 손님의 엉덩이 구멍에까지 손을 뻗어 즐기려는 것 같다…
 	PRINTL 
 	PRINTFORMW …근데. 이 뒤처리는 어떻게 해야하려나……
 	PRINTL 
 	WAITRESS = FIND_COND("출연가능な점원", "조합지식")
 	SETBIT CFLAG:WAITRESS:95, 1
 	PRINTFORMW 참상에 현기증을 느낀 %CALLNAME:MASTER%이었지만, 역시 일반인에게 손대는 것은 곤란 하기 때문에 %CALLNAME:WAITRESS%의 약으로 여성 고객의 기억을 꿈처럼 애매 모호하게 만들어 돌려보냈습니다. 
-	PRINTFORMW %CALLNAME:TARGET%를 크게 혼내놨지만, 정말로 반성하고 있는 건지는 의문입니다…
+	PRINTFORMW %타겟을()% 크게 혼내놨지만, 정말로 반성하고 있는 건지는 의문입니다…
 	PRINTL 
 	PRINTFORML 덧붙여, 그 여성 손님은 분명히 기억이 없어졌을텐데도, 다방 단골이 되어 가게에 와서는, 
 	PRINTFORMW 뜨거운 시선을 %CALLNAME:TARGET%에게 보내고있는 것 같습니다……
@@ -3572,7 +3572,7 @@ CASE "주인がトイレで"
 	;MASTERに出演플래그
 	SETBIT CFLAG:MASTER:95, 1
 CASE "お茶を淹れる"
-	PRINTFORM %CALLNAME:TARGET%는 손수 끓인 홍차를 
+	PRINTFORM %타겟은()% 손수 끓인 홍차를 
 	IF TALENT:기품
 		IF RAND:2
 			PRINTFORM 우아한 태도로 
@@ -3589,7 +3589,7 @@ CASE "お茶を淹れる"
 		PRINTFORM 기운차게 
 	ENDIF
 	PRINTFORMW 손님들에게 서비스하고 있습니다. 
-	PRINTFORM 손님들에게 맛있다고 칭찬을 받은 %CALLNAME:TARGET%는 
+	PRINTFORM 손님들에게 맛있다고 칭찬을 받은 %타겟은()% 
 	IF TALENT:조합지식 && RAND:5 == 0
 		PRINTFORMW 즐거운 듯이 대답 하면서, 딱 한방울 떨어뜨린 미약의 효과가 언제나올까―, 하고 손님의 상태를 살피고있습니다…
 	ELSEIF TALENT:현명함 + TALENT:조합지식 && RAND:2
@@ -3604,11 +3604,11 @@ CASE "コスプレ"
 	PRINTFORMW 오늘은 코스프레 데이입니다 
 	PRINTFORMW 봄에 맞춰서 점원 모두가 기모노를 입고, 점내도 벚꽃에 어울리는 화려한 색조로 장식되어있습니다 
 	IF TALENT:빈유
-		PRINTFORMW 기모노는 가슴이 작은 쪾이 예쁘게 보여서, 머리카락을 틀어올린 %CALLNAME:TARGET%는 기쁜 얼굴로 접객을 했습니다… 
+		PRINTFORMW 기모노는 가슴이 작은 쪾이 예쁘게 보여서, 머리카락을 틀어올린 %타겟은()% 기쁜 얼굴로 접객을 했습니다… 
 	ELSEIF BASE:종족사고 == 16 || BASE:종족사고 == 22
 		PRINTFORMW 역시 전통복을 입는데 익숙해서 그런지, %CALLNAME:TARGET%의 행동은 빼어나게 아름답습니다… 
 	ELSE
-		PRINTFORMW %CALLNAME:TARGET%는 익숙하지않은 기모노에, 조금 움직이기 힘들어하고있습니다… 
+		PRINTFORMW %타겟은()% 익숙하지않은 기모노에, 조금 움직이기 힘들어하고있습니다… 
 	ENDIF
 
 ;一定확률이벤트
@@ -3662,11 +3662,11 @@ CASE IS >= 3
 	IF LOCAL >= 4
 		PRINTFORMW 이번에는 대성공이었습니다
 	ELSEIF LOCAL == 3
-		PRINTFORMW %CALLNAME:TARGET%는 고정팬이 생긴 모양입니다
+		PRINTFORMW %타겟은()% 고정팬이 생긴 모양입니다
 	ENDIF
 	;솔직
 	IF TALENT:솔직 && RANDIF(2, TALENT:내성적, TALENT:양기)
-		PRINTFORM %CALLNAME:TARGET%는 콧노래를 부르며 
+		PRINTFORM %타겟은()% 콧노래를 부르며 
 		IF RAND:2
 			PRINTFORMW 청소를 하고있습니다…
 		ELSE
@@ -3677,14 +3677,14 @@ CASE IS >= 3
 		IF LOCAL >= 4
 			WAITRESS = FIND_COND("출연가능な점원")
 			SETBIT CFLAG:WAITRESS:95, 1
-			PRINTFORMW %CALLNAME:WAITRESS%의 칭찬에, %CALLNAME:TARGET%는 수줍어 하고있습니다…
+			PRINTFORMW %CALLNAME:WAITRESS%의 칭찬에, %타겟은()% 수줍어 하고있습니다…
 		ELSE
-			PRINTFORMW 오늘의 근무도 끝나, %CALLNAME:TARGET%는 안심하고 가슴을 쓸어내리고 있습니다…
+			PRINTFORMW 오늘의 근무도 끝나, %타겟은()% 안심하고 가슴을 쓸어내리고 있습니다…
 		ENDIF
 	;양기
 	ELSEIF TALENT:양기 && RAND:2 == 0
 		IF TALENT:미련함 && RAND:2
-			PRINTFORM %CALLNAME:TARGET%는 
+			PRINTFORM %타겟은()% 
 			IF TALENT:빈유
 				PRINTFORM 조그만 
 			ELSEIF TALENT:거유
@@ -3699,13 +3699,13 @@ CASE IS >= 3
 		ELSE
 			WAITRESS = FIND_COND("출연가능な점원")
 			SETBIT CFLAG:WAITRESS:95, 1
-			PRINTFORMW %CALLNAME:TARGET%는 %CALLNAME:WAITRESS%와 수고의 하이파이브를 나누고 있습니다…
+			PRINTFORMW %타겟은()% %CALLNAME:WAITRESS%와 수고의 하이파이브를 나누고 있습니다…
 		ENDIF
 	ELSEIF LOCAL >= 4
 		IF RAND:2
 			PRINTFORMW %CALLNAME:TARGET%의 표정도 환합니다…
 		ELSE
-			PRINTFORMW %CALLNAME:TARGET%는 동료로부터의 평판도 좋은 것같습니다…
+			PRINTFORMW %타겟은()% 동료로부터의 평판도 좋은 것같습니다…
 		ENDIF
 	ELSE
 		PRINTFORMW 어딘지 모르게 기쁜듯한 표정을 하고있습니다…
@@ -3715,23 +3715,23 @@ CASE IS >= 3
 	IF GETBIT(TALENT:인기, 2) == 0 && COND("인기：다방")
 		PRINTL 
 		SETCOLOR DEF_COLOR("황색")
-		PRINTFORMW %CALLNAME:TARGET%는 다방 %NAMES("다방")%의 간판아가씨\@ TALENT:남자 ? (？) # \@가 되었습니다
+		PRINTFORMW %타겟은()% 다방 %NAMES("다방")%의 간판아가씨\@ TALENT:남자 ? (？) # \@가 되었습니다
 		SETBIT TALENT:인기, 2
 		RESETCOLOR
 	ENDIF
 CASE 0
 	PRINTL 
 	PRINTFORMW 이번에는 아무 사고없이 끝났습니다
-	PRINTFORMW 단지 자극이 적어, %CALLNAME:TARGET%는 조금 불만족스러운 것 같습니다…
+	PRINTFORMW 단지 자극이 적어, %타겟은()% 조금 불만족스러운 것 같습니다…
 CASE IS < 0
 	PRINTL 
-	PRINTFORMW %CALLNAME:TARGET%는 \@ LOCAL <= -2 ? 마지막으로 큰실수를 저질렀습니다 # 실수가 많았던 것 같습니다 \@
+	PRINTFORMW %타겟은()% \@ LOCAL <= -2 ? 마지막으로 큰실수를 저질렀습니다 # 실수가 많았던 것 같습니다 \@
 	IF LOCAL <= -3 && COND("다리が無い") == 0 && PENIS(TARGET) == 0 && TALENT:겁쟁이 + TALENT:냉정 + TALENT:감정결핍 + TALENT:음기 == 0 && TALENT:교만 + TALENT:건방짐 + TALENT:강기 + TALENT:양기
-		PRINTFORMW 너무 끔찍한 실수를 저질렀기 때문에……%CALLNAME:TARGET%는 의자에 M자 다리 형태로 구속되어 깃털 빗자루로 간지럼 당했습니다! 
+		PRINTFORMW 너무 끔찍한 실수를 저질렀기 때문에……%타겟은()% 의자에 M자 다리 형태로 구속되어 깃털 빗자루로 간지럼 당했습니다! 
 		IF TALENT:오줌싸개버릇 || ABL:요도확장 >= 0
-			PRINTFORMW 웃음이 너무 지나쳐 버린 %CALLNAME:TARGET%는, 가벼운 요실금때문에 바지에 점점 얼룩이 늘리면서 필사적으로 숨을 고르고 있습니다…
+			PRINTFORMW 웃음이 너무 지나쳐 버린 %타겟은()%, 가벼운 요실금때문에 바지에 점점 얼룩이 늘리면서 필사적으로 숨을 고르고 있습니다…
 		ELSE
-			PRINTFORMW 웃음이 너무 지나쳐 버린 %CALLNAME:TARGET%는, 복근의 통증에 시달리면서 필사적으로 숨을 고르고 있습니다…
+			PRINTFORMW 웃음이 너무 지나쳐 버린 %타겟은()%, 복근의 통증에 시달리면서 필사적으로 숨을 고르고 있습니다…
 		ENDIF
 	ELSE
 		PRINTFORMW 기억이 남은것 인지, 우울한 표정을 하고 있습니다…
@@ -3748,9 +3748,9 @@ WAITRESS = 0
 ;IF COND("다방：난교") && LOCAL > 0 && NUM("다방：난교予定人数") < 5
 ;	LOCAL = MIN(5 - NUM("다방：난교予定人数"), LOCAL)
 ;	IF LOCAL == 1
-;		PRINTFORMW (%CALLNAME:TARGET%는 자신에게 마음이 있을 것 같은 손님의 한사람에게 비밀의 권유를 한 것 같습니다…)
+;		PRINTFORMW (%타겟은()% 자신에게 마음이 있을 것 같은 손님의 한사람에게 비밀의 권유를 한 것 같습니다…)
 ;	ELSE
-;		PRINTFORMW (%CALLNAME:TARGET%는{LOCAL}인의 자신에게 마음이 있을 것 같은 손님에게 비밀의 권유를 한 것 같습니다…)
+;		PRINTFORMW (%타겟은()%{LOCAL}인의 자신에게 마음이 있을 것 같은 손님에게 비밀의 권유를 한 것 같습니다…)
 ;	ENDIF
 ;	CFLAG:32 += LOCAL
 ;ENDIF
@@ -3793,7 +3793,7 @@ PRINTL
 SELECTCASE RESULT
 CASE 1
 	PRINTFORMW 폐점 후의 탈의실에서, %CALLNAME:TARGET% 일행이 옷을 갈아입고 있습니다. 
-	PRINTFORM %CALLNAME:TARGET%가 제복을 벗자, 
+	PRINTFORM %타겟이()% 제복을 벗자, 
 	IF TALENT:거유 >= 2 && RAND:3
 		PRINTFORM 거함거포주의인 
 	ELSEIF RAND:4 == 0
@@ -3824,31 +3824,31 @@ CASE 1
 	PRINTFORMW 시선이 집중되었습니다. 
 	IF TALENT:부끄럼쟁이 == 0
 		IF (ABL:레즈끼 >= 3 || TALENT:바이) && RAND:3 == 0
-			PRINTFORMW 좋은 먹이를 포착한 표정의 %CALLNAME:TARGET%는, 『비비면 커진다』를 내세우면서, %CALLNAME:WAITRESS%의 가슴을 주물럭 거리기 시작했습니다…
+			PRINTFORMW 좋은 먹이를 포착한 표정의 %타겟은()%, 『비비면 커진다』를 내세우면서, %CALLNAME:WAITRESS%의 가슴을 주물럭 거리기 시작했습니다…
 		;현명함
 		ELSEIF TALENT:현명함 && RANDIF(1, TALENT:양기, TALENT:냉정, TALENT:심술쟁이, TALENT:강기, TALENT:교만, TALENT:호색)
-			PRINTFORMW 표정으로 모든 것을 헤아린 %CALLNAME:TARGET%는, 재빨리 화제를 바꿔 자리를 떠났습니다…
+			PRINTFORMW 표정으로 모든 것을 헤아린 %타겟은()%, 재빨리 화제를 바꿔 자리를 떠났습니다…
 		;양기
 		ELSEIF TALENT:양기 && RANDIF(1, TALENT:냉정, TALENT:심술쟁이, TALENT:강기, TALENT:교만, TALENT:호색)
-			PRINTFORMW %CALLNAME:TARGET%는 쾌활하게 웃으며, 말랑말랑 흔들리는 가슴을 %CALLNAME:WAITRESS%에게 맞추면서 떠들고 있습니다…
+			PRINTFORMW %타겟은()% 쾌활하게 웃으며, 말랑말랑 흔들리는 가슴을 %CALLNAME:WAITRESS%에게 맞추면서 떠들고 있습니다…
 		;냉정
 		ELSEIF TALENT:냉정 && RANDIF(1, TALENT:심술쟁이, TALENT:강기, TALENT:교만, TALENT:호색)
-			PRINTFORMW %CALLNAME:TARGET%는 별로 상관하지않고, 빠르게 옷을 갈아입었습니다…
+			PRINTFORMW %타겟은()% 별로 상관하지않고, 빠르게 옷을 갈아입었습니다…
 		;심술쟁이
 		ELSEIF TALENT:심술쟁이 && RANDIF(1, TALENT:강기, TALENT:교만, TALENT:호색)
-			PRINTFORMW %CALLNAME:TARGET%는 능글 능글 거리며, 보라는듯 부드러운 가슴을 %CALLNAME:WAITRESS%에게 과시하고 있습니다…
+			PRINTFORMW %타겟은()% 능글 능글 거리며, 보라는듯 부드러운 가슴을 %CALLNAME:WAITRESS%에게 과시하고 있습니다…
 		;강기
 		ELSEIF TALENT:강기 && RANDIF(1, TALENT:교만, TALENT:호색)
-			PRINTFORMW %CALLNAME:TARGET%는 풍만한 가슴을 시선에서 숨기지 않고, 유유히 갈아입고있습니다…
+			PRINTFORMW %타겟은()% 풍만한 가슴을 시선에서 숨기지 않고, 유유히 갈아입고있습니다…
 		;교만
 		ELSEIF TALENT:교만 && RANDIF(1, TALENT:호색)
-			PRINTFORMW %CALLNAME:TARGET%는 가슴을 강조하는 포즈를 취하고, 그다지 싫지는 않아 보입니다…
+			PRINTFORMW %타겟은()% 가슴을 강조하는 포즈를 취하고, 그다지 싫지는 않아 보입니다…
 		;호색+その他
 		ELSE
-			PRINTFORMW %CALLNAME:TARGET%는 호기심이 가득해 보이는 %CALLNAME:WAITRESS%에게, 가슴을 만지게 해주고 있습니다…
+			PRINTFORMW %타겟은()% 호기심이 가득해 보이는 %CALLNAME:WAITRESS%에게, 가슴을 만지게 해주고 있습니다…
 		ENDIF
 	ELSE
-		PRINTFORM %CALLNAME:TARGET%는, 
+		PRINTFORM %타겟은()%, 
 		;강기
 		IF TALENT:강기 && RANDIF(1, TALENT:솔직, TALENT:내성적)
 			IF RAND:3 == 0
@@ -3889,7 +3889,7 @@ CASE 1
 		ENDIF
 	ENDIF
 CASE 2
-	PRINTFORM 폐점 후, 옷을 다 갈아입은 %CALLNAME:TARGET%가 탈의실에서 나오자, 
+	PRINTFORM 폐점 후, 옷을 다 갈아입은 %타겟이()% 탈의실에서 나오자, 
 	IF RAND:2
 		PRINTFORM 점내의 정리 
 	ELSE
@@ -3904,7 +3904,7 @@ CASE 2
 		PRINTFORM 조용히 
 	ENDIF
 	PRINTFORMW 숨소리를 내고 있었습니다. 
-	PRINTFORM %CALLNAME:TARGET%는 
+	PRINTFORM %타겟은()% 
 	IF RAND:2
 		PRINTFORM 작게 미소짓고 
 	ELSE
@@ -3916,28 +3916,28 @@ CASE 2
 		PRINTFORMW , 어깨에 살짝 웃옷을 걸쳐주었습니다…
 	ENDIF
 CASE 3
-	PRINTFORMW 영업시간도 끝나고, 조명도 반쯤 꺼진 점내에서, %CALLNAME:TARGET%가 대걸레질을 하고있습니다. 
-	PRINTFORML 문득, 뭔가 생각난 듯이 안절부절 못하고 주의를 신경쓰기 시작한 %CALLNAME:TARGET%는, 
+	PRINTFORMW 영업시간도 끝나고, 조명도 반쯤 꺼진 점내에서, %타겟이()% 대걸레질을 하고있습니다. 
+	PRINTFORML 문득, 뭔가 생각난 듯이 안절부절 못하고 주의를 신경쓰기 시작한 %타겟은()%, 
 	IF PENIS(TARGET) && RANDIF(1, TALENT:후타나리)
 		WAITRESS = FIND_COND("출연가능な점원")
-		PRINTFORMW 탈의실로부터 빌려 왔다%CALLNAME:WAITRESS%노팬티노%TEXTS("匂い")%를 냄새 맡으면서,노출시켰다페니스를 잡아당기기 시작했습니다…
+		PRINTFORMW 탈의실로부터 빌려 왔다%CALLNAME:WAITRESS%의팬티노%조사처리(TEXTS("匂い"),"를")% 냄새 맡으면서,노출시켰다페니스를 잡아당기기 시작했습니다…
 	ELSE
 		PRINTFORMW 테이블에 기대어 놓은 대걸레 자루에, 비소를 눌러대고 천천히 신체를 흔들기 시작했습니다…
 	ENDIF
 	PRINTFORMW 가게의 안에서 들려오는 종업원의 잡담에, %CALLNAME:TARGET%의 억누른 목소리가 전혀 들리지않습니다…
 CASE 4
 	PRINTFORML 오늘의 가게는 매우 바빳던 것 같습니다. 
-	PRINTFORMW %CALLNAME:TARGET%는 인적없는 가게 안에서 혼자 늦은 귀가를 하려하고 있습니다. 
-	PRINTFORMW 탈의실에서, %CALLNAME:TARGET%가 혼자 옷을 갈아입고 있을 때, 갑자기 그녀의 팬 한사람이 새빨갛게 얼굴을 붉히고 들어왔습니다. 
+	PRINTFORMW %타겟은()% 인적없는 가게 안에서 혼자 늦은 귀가를 하려하고 있습니다. 
+	PRINTFORMW 탈의실에서, %타겟이()% 혼자 옷을 갈아입고 있을 때, 갑자기 그녀의 팬 한사람이 새빨갛게 얼굴을 붉히고 들어왔습니다. 
 	PRINTFORMW 아무래도 %CALLNAME:TARGET%의 색기와 가게의 분위기에 참을 수 없게되어버렸던 모양입니다. 
 
 	;相愛か연모か음란かそれ以外で分岐　31
 	;嫁はさすがに손を出すとマズイよね
 	IF TALENT:상사상애
-		PRINTFORMW %CALLNAME:TARGET%는 침착하게 사랑하는 사람이 있다는 것을 말하고 정중하게 돌려보낸 모양입니다. 
+		PRINTFORMW %타겟은()% 침착하게 사랑하는 사람이 있다는 것을 말하고 정중하게 돌려보낸 모양입니다. 
 	;연모は음란かつ정액중독なら我慢できずにお입で　36
 	ELSEIF TALENT:연모
-		PRINTFORM %CALLNAME:TARGET%는 텐트를 치고있는 팬의 사타구니 근처를 보고 웃으
+		PRINTFORM %타겟은()% 텐트를 치고있는 팬의 사타구니 근처를 보고 웃으
 		IF TALENT:음란 && ABL:정액중독 >= 3
 			PRINTFORMW 면서, 
 			PRINTFORMW %CALLNAME:MASTER%의 페니스를 떠올리면서 핥아서 봉사해준 것 같습니다. 
@@ -3947,22 +3947,22 @@ CASE 4
 		ENDIF
 	;음란なら大サービス! 　45
 	ELSEIF TALENT:음란
-		PRINTFORMW %CALLNAME:TARGET%는 요염한 미소를 짓고 속옷 차림으로 팬에게 다가가, 
+		PRINTFORMW %타겟은()% 요염한 미소를 짓고 속옷 차림으로 팬에게 다가가, 
 		PRINTFORMW 바지 위에서도 알수있을 정도로 격분한 사타구니를 문지르면서 귀에 뜨거운 입김을 내뿜자
 		PRINTFORMW 흥분의 한계에 도달한 팬에게 덮쳐졌습니다. 
 		PRINTL
 		IF TALENT:처녀 == 0 && TALENT:Ａ처녀 == 0
-			PRINTFORMW 몸 안의 모든 부분에 정액을 쏟아부어져, %CALLNAME:TARGET%는 크게 만족한 것 같습니다. 
+			PRINTFORMW 몸 안의 모든 부분에 정액을 쏟아부어져, %타겟은()% 크게 만족한 것 같습니다. 
 		ELSE 
-			PRINTFORMW 팬의 정액을 쥐어짜내, %CALLNAME:TARGET%는 크게 만족한 것 같습니다. 
+			PRINTFORMW 팬의 정액을 쥐어짜내, %타겟은()% 크게 만족한 것 같습니다. 
 		ENDIF
 		;つまみ食い人数+1
 		CFLAG:36 += 1
 	;その他　ちょっとカワイソス？
 	ELSE
-		PRINTFORMW %CALLNAME:TARGET%는 갑작스러운 침입자에 놀라면서도, 그 목적을 짐작해보면 몽마로서의 본능때문인지 
+		PRINTFORMW %타겟은()% 갑작스러운 침입자에 놀라면서도, 그 목적을 짐작해보면 몽마로서의 본능때문인지 
 		PRINTFORMW %CALLNAME:MASTER%의 조교의 성과때문인지, 몸이 뜨거워지는 것을 느꼈습니다. 
-		PRINTFORMW %CALLNAME:TARGET%가 자기 몸의 이변에 당황한 사이에 팬에게 덮쳐져버려, 
+		PRINTFORMW %타겟이()% 자기 몸의 이변에 당황한 사이에 팬에게 덮쳐져버려, 
 		PRINTFORM 변변한 저항도 하지못한채 
 		IF TALENT:처녀 == 0
 			PRINTFORMW 정액이 쏟아부어져버리고 만 모양입니다…
@@ -3971,9 +3971,9 @@ CASE 4
 		ENDIF
 	ENDIF
 CASE 5
-	PRINTFORMW %CALLNAME:MASTER%이 폐점 후의 탈의실을 방문하자, %CALLNAME:TARGET%가 녹초가 되어 소파에 앉아있습니다…
-	PRINTFORMW 그 모습을 보다못한 %CALLNAME:MASTER%는, 지친 다리를 맛사지해 주기로 했습니다. 
-	PRINTFORM %CALLNAME:TARGET%는 
+	PRINTFORMW %CALLNAME:MASTER%이 폐점 후의 탈의실을 방문하자, %타겟이()% 녹초가 되어 소파에 앉아있습니다…
+	PRINTFORMW 그 모습을 보다못한 %마스터는()%, 지친 다리를 맛사지해 주기로 했습니다. 
+	PRINTFORM %타겟은()% 
 	;솔직
 	IF TALENT:솔직 && RANDIF(1, TALENT:양기, TALENT:부끄럼쟁이, TALENT:소악마, TALENT:호색, TALENT:교만, TALENT:강기)
 		PRINTFORMW 오늘 있었던 사건을 이야기하거나하며 여유로운 모습으로, 기분좋게 다리를 주무르는 것을 즐겼습니다…
@@ -4024,23 +4024,23 @@ CASE 5
 	;MASTERに出演플래그
 	SETBIT CFLAG:MASTER:95, 1
 CASE 6
-	PRINTFORMW 개점후에 %CALLNAME:MASTER%은 점내의 모습을 둘러보다가, 펜으로 뭔가를 노트에 끼적이는 %CALLNAME:TARGET%를 발견했다. 
+	PRINTFORMW 개점후에 %CALLNAME:MASTER%은 점내의 모습을 둘러보다가, 펜으로 뭔가를 노트에 끼적이는 %타겟을()% 발견했다. 
 	PRINTFORMW 신경쓰여서 들여다보자, 그것은………
 	IF TALENT:반하기쉬움 && RANDIF(2, TALENT:호색, TALENT:광기)
 		PRINTFORMW 망상넘치는 연애소설이었다…
-		PRINTFORMW 들여다보는 것을 깨달은 %CALLNAME:TARGET%가 무서운 기세로 숨긴 덕에 정신적 피해는 적었지만……아우 달달해! 
+		PRINTFORMW 들여다보는 것을 깨달은 %타겟이()% 무서운 기세로 숨긴 덕에 정신적 피해는 적었지만……아우 달달해! 
 	ELSEIF TALENT:광기 && RANDIF(2, TALENT:호색)
 		IF TALENT:망신
 			PRINTFORMW %CALLNAME:TARGET%의 「살해리스트」였다!! ! 
 			PRINTFORMW 접객업이라는게 역시 상당히……아니, 그렇다치더라도 리스트의 이름이……너무 지나쳐!! 
 		ELSE
 			PRINTFORMW 어쩐지 추상화같습니다
-			PRINTFORMW 대놓고 보고있어도 %CALLNAME:TARGET%가 전혀 신경쓰지 않기에 잠시 보고있었지만…
+			PRINTFORMW 대놓고 보고있어도 %타겟이()% 전혀 신경쓰지 않기에 잠시 보고있었지만…
 			PRINTFORMW 이 그림은, 깊이 관여하지 않는 편이 좋다는 느낌이 든다…
 		ENDIF
 	ELSEIF TALENT:호색 && RAND:2
 		IF COND("다방：섹스") && RAND:2
-			PRINTFORMW %CALLNAME:TARGET%가 지금까지 손댄 손님 목록이었다
+			PRINTFORMW %타겟이()% 지금까지 손댄 손님 목록이었다
 			PRINTFORMW 손님의 눈에 띄기 전에 그만두게 해야하는 건 아닐지……
 		ELSE
 			PRINTFORMW 바이트 중에 떠오른 플레이내용인 것같습니다
@@ -4056,7 +4056,7 @@ CASE 7
 	PRINTFORMW 테이블 위에는……팔리지 않고 남은 케이크가 줄지어 있습니다. 
 	PRINTFORMW 그래!  그녀들은 남은 케이크의 우선권을 걸고 있습니다! ! 
 	IF RAND:CHARA_NUM("플로어점원") == 0
-		PRINTFORMW ……목적의 케이크를손에 넣은 것 같다%CALLNAME:TARGET%가 , 큰 환성을 올렸습니다! ! ! 
+		PRINTFORMW ……목적의 케이크를손에 넣은 것 같다%타겟이()% , 큰 환성을 올렸습니다! ! ! 
 		PRINTL 
 
 		SETCOLOR DEF_COLOR("황색")
@@ -4065,11 +4065,11 @@ CASE 7
 		CALL CALC, "욕구불만解消", TARGET, 10
 	ELSE
 		WAITRESS = FIND_COND("출연가능な점원")
-		PRINTFORMW 배분이 끝났다%CALLNAME:TARGET%(와)과%CALLNAME:WAITRESS%하, 서로의 케이크를 능숙한 일교환하려고 일하고 있을 때보다 진지한 표정으로 서로 이야기하고 있습니다……
+		PRINTFORMW 배분이 끝났다%타겟과()%%조사처리(CALLNAME:WAITRESS,"는")%, 서로의 케이크를 능숙한 일교환하려고 일하고 있을 때보다 진지한 표정으로 서로 이야기하고 있습니다……
 	ENDIF
 
 CASE 8
-	PRINTFORMW 이제(벌써) 가게의 빛을 꺼, 관에 돌아간다시간(이)가 되었습니다만……%CALLNAME:TARGET%는 의자에 앉아 골아떨어지고 있습니다…
+	PRINTFORMW 이제(벌써) 가게의 빛을 꺼, 관에 돌아간다시간(이)가 되었습니다만……%타겟은()% 의자에 앉아 골아떨어지고 있습니다…
 	PRINTFORMW 이대로 방치할 수도 없기 때문에,%CALLNAME:MASTER%하지만 짊어져 돌아가는 일이 되었습니다！
 	PRINTFORMW ………
 	PRINTFORMW ……
@@ -4077,9 +4077,9 @@ CASE 8
 		WAITRESS = FIND_COND("출연가능な점원", "연모")
 		PRINTFORMW …옆에서 걷고 있다%CALLNAME:WAITRESS%들은 부러워해, 「다음은%CNAMET(WAITRESS, "一人称")%하지만！」 『아니오 내가……』라고 서로 견제하고 있습니다…
 	ELSEIF TALENT:겁쟁이 || TALENT:내성적 || TALENT:부끄럼쟁이
-		PRINTFORMW …도중에 눈을 떴다%CALLNAME:TARGET%는 얼굴을 새빨갛게 하면,%CALLNAME:MASTER%의 등에 얼굴을 가라앉혔습니다…
+		PRINTFORMW …도중에 눈을 떴다%타겟은()% 얼굴을 새빨갛게 하면,%CALLNAME:MASTER%의 등에 얼굴을 가라앉혔습니다…
 	ELSE
-		PRINTFORMW …%CALLNAME:TARGET%는 돌아가는 길의 도중에 눈을 떴지만, 관에 도착할 때까지 특등석을 만끽했습니다.
+		PRINTFORMW …%타겟은()% 돌아가는 길의 도중에 눈을 떴지만, 관에 도착할 때까지 특등석을 만끽했습니다.
 	ENDIF
 
 ENDSELECT

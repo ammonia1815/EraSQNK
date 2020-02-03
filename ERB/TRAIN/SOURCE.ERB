@@ -169,7 +169,7 @@ IF TEQUIP:Ｗ넘어뜨리기
 	CALL TARGET_MILK_CHECK_TEXT, TARGET:1
 	;사정or절정(こらえた時には発生しない)
 	IF NOWEX:(TARGET:1):절정수합계 + NOWEX:(TARGET:1):사정
-		PRINTFORM %CALLNAME:(TARGET:1)%하
+		PRINTFORM %조사처리(CALLNAME:(TARGET:1),"는")%
 		IF NOWEX:(TARGET:1):사정
 			IF SELECTCOM:1 == 121
 				PRINTFORM %CALLNAME:MASTER%의 장내에 정액을 토하
@@ -361,11 +361,11 @@ IF ERECT_B && ERECT_B_BEFORE == 0
 	PRINTL 
 	;授乳済み
 	IF EXP_GAIN(73)
-		CALL PRINT_STR, "하트핑크_CALLNAME:TARGET_の함몰していた유두が、性的興奮と授乳の刺激でムクムクと立ち上がった！_W"
+		CALL PRINT_STR, "하트핑크_CALLNAME:TARGET_의 함몰되어 있던 유두가, 흥분과 모유의 자극으로 부스스 일어났다!_W"
 	ELSEIF COND("유두비대")
-		CALL PRINT_STR, "하트핑크_CALLNAME:TARGET_の함몰していた大きな유두が、性的興奮を引き金にして노출した！_W"
+		CALL PRINT_STR, "하트핑크_CALLNAME:TARGET_의 함몰되어 있던 큰 유두가, 흥분으로 노출되었다!_W"
 	ELSE
-		CALL PRINT_STR, "하트핑크_CALLNAME:TARGET_の함몰していた유두が性的興奮を引き金にして노출した！_W"
+		CALL PRINT_STR, "하트핑크_CALLNAME:TARGET_의 함몰되어 있던 유두가 흥분으로 노출되었다!_W"
 	ENDIF
 ENDIF
 
@@ -715,9 +715,9 @@ NEXT
 ;-------------------------------------------------
 SETCOLOR DEF_COLOR("핑크")
 SIF TALENT:Ｖ손상 > V_SONSHOU
-	PRINTFORMW %CALLNAME:TARGET%의 질하삽입된 것의 크기에 계속 참지 못하고, 부수어져 버렸다! 
+	PRINTFORMW %CALLNAME:TARGET%의 질이 삽입된 것의 크기를 견디지 못하고, 부서져 버렸다! 
 SIF TALENT:Ａ손상 > A_SONSHOU
-	PRINTFORMW %CALLNAME:TARGET%의 애널하삽입된 것의 크기에 계속 참지 못하고, 부수어져 버렸다! 
+	PRINTFORMW %CALLNAME:TARGET%의 애널이 삽입된 것의 크기를 견디지 못하고, 부서져 버렸다! 
 RESETCOLOR
 
 
@@ -729,9 +729,9 @@ NEXT
 
 SETCOLOR DEF_COLOR("핑크")
 SIF TALENT:PLAYER:Ｖ손상 > V_SONSHOU:1
-	PRINTFORMW %CALLNAME:PLAYER%의 질하삽입된 것의 크기에 계속 참지 못하고, 부수어져 버렸다! 
+	PRINTFORMW %CALLNAME:PLAYER%의 질이 삽입된 것의 크기를 견디지 못하고, 부서져 버렸다! 
 SIF TALENT:PLAYER:Ａ손상 > A_SONSHOU:1
-	PRINTFORMW %CALLNAME:PLAYER%의 애널하삽입된 것의 크기에 계속 참지 못하고, 부수어져 버렸다! 
+	PRINTFORMW %CALLNAME:PLAYER%의 애널이 삽입된 것의 크기를 견디지 못하고, 부서져 버렸다! 
 RESETCOLOR
 
 
@@ -1127,9 +1127,9 @@ FOR LCOUNT, 0, 5
 		;今回のターンの절정具合の表示で使用する
 		;특수な절정
 		IF LCOUNT == 0 && NOWEX:ARG:요도절정
-			LOCALS = %LOCALS%절정\@NOWEX:ARG:(LCOUNT + 6) ? 寸止め # \@
+			LOCALS = %LOCALS%절정\@NOWEX:ARG:(LCOUNT + 6) ? 직전멈춤 # \@
 		ELSE
-			LOCALS = %SUBSTRING(EXNAME:LCOUNT, 0, 2)%%LOCALS%절정\@NOWEX:ARG:(LCOUNT + 6) ? 寸止め # \@
+			LOCALS = %SUBSTRING(EXNAME:LCOUNT, 0, 2)%%LOCALS%절정\@NOWEX:ARG:(LCOUNT + 6) ? 직전멈춤 # \@
 		ENDIF
 		PRINTFORML %LOCALS% \@ ARG == ASSI ? (%TEXTS("조수の명칭")%) # \@
 	ENDIF
@@ -1165,7 +1165,7 @@ ELSEIF CHECK_ECST(ARG) >= 2
 		SETCOLOR DEF_COLOR("황색")
 	ENDSELECT
 
-	PRINTFORML %LOCALS% \@ ARG == ASSI ? (%TEXTS("조수の명칭")%) # \@ (それぞれ{CHECK_ECST(ARG)}배의구슬를 얻을 수 있습니다)
+	PRINTFORML %LOCALS% \@ ARG == ASSI ? (%TEXTS("조수の명칭")%) # \@ (각 {CHECK_ECST(ARG)}배의 구슬을 얻습니다)
 
 	RESETCOLOR
 ENDIF
@@ -1180,21 +1180,21 @@ ENDIF
 IF NOWEX:ARG:가는것을참았다
 	PRINTL 
 	IF NOWEX:ARG:사정직전멈춤 && COND("요도사용中", ARG)
-		PRINTFORML %CALLNAME:ARG%는 포함올린다정액를 어떻게도 하지 못하고, 신체를 굳어지게 해 필사적으로 참고 있다…
+		PRINTFORML %CALLNAME:ARG%는 치밀어 오르는 정액를 어찌할 도리가 없이, 몸을 굳어지게 해 필사적으로 견디고 있다…
 	ELSEIF EX:ARG:가는것을참았다 == 1 && SELECTCOM == 3
-		PRINTFORML %조사처리(CALLNAME:ARG,"는")%, 더욱더 절정을 찾으며 자신을 안달나게 하고있다…
+		PRINTFORML %조사처리(CALLNAME:ARG,"는")%, 더욱 더 절정을 찾으며 자신을 안달나게 하고있다…
 	ELSEIF EX:ARG:가는것을참았다 == 1 && RAND:3 == 0
 		PRINTFORML %조사처리(CALLNAME:ARG,"는")% 절정을 견뎌냈다! 
 	ELSE
 		IF EXP_GAIN(6, ARG) == 0 && EX:ARG:절정수합계 == 0 && INSERT("인서트", ARG) && TALENT:ARG:강기 && RAND:3 == 0
-			PRINTFORML %조사처리(CALLNAME:ARG,"는")% %조사처리(CALLNAME:PLAYER,"를")% 먼저 가게해주겠다, 라며 쾌감을 견디고있다…
+			PRINTFORML %조사처리(CALLNAME:ARG,"는")% %조사처리(CALLNAME:PLAYER,"를")% 먼저 가게 해주겠다며 쾌감을 견디고있다…
 		ELSEIF INSERT("인서트", ARG) && RANDIF(3, COND("視力", ARG) )
 			IF INSERT("Ｖ인서트", ARG)
 				PRINTFORML %조사처리(CALLNAME:ARG,"는")% 질을 꽈악 조이면서, 절정에 저항하고있다…
 			ELSEIF INSERT("Ａ인서트", ARG)
-				PRINTFORML %조사처리(CALLNAME:ARG,"는")% 애널에서 내뿜어져나오는 쾌감에 필사적으로 견디고있다…
+				PRINTFORML %조사처리(CALLNAME:ARG,"는")% 애널에서 내뿜어져 나오는 쾌감에 필사적으로 견디고있다…
 			ELSEIF INSERT("요도인서트", ARG)
-				PRINTFORML %CALLNAME:ARG%는 신체의 심부를 덮치는 금단의 쾌락에 필사적으로 참고 있다…
+				PRINTFORML %CALLNAME:ARG%는 몸의 깊은 곳을 덮치는 금단의 쾌락에 필사적으로 참고 있다…
 			ENDIF
 		ELSEIF COND("視力", ARG) && RAND:3 == 0
 			IF RAND:2
@@ -1439,8 +1439,8 @@ RESETCOLOR
 ;요도성감の獲得…めんどくさい感覚なので弄りながらのＣ절정で良いこととする
 IF TALENT:요도성감 == 0 && COND("요도성감플래그") && NOWEX:Ｃ절정 + NOWEX:요도절정
 	TALENT:요도성감 = 1
-	PRINTFORML ……%CALLNAME:TARGET%는 것을 꾸짖어지면서의절정에 의해, 새로운 경지를 열어 버린 것 같다
-	PRINTFORM %CALLNAME:TARGET%하
+	PRINTFORML ……%타겟은()% 요도를 괴롭혀지면서 절정해, 새로운 경지를 열어 버린 것 같다
+	PRINTFORM %타겟은()% 
 	CALL PRINT_COLORTEXT, "[요도성감]", DEF_COLOR("황색")
 	PRINTFORML 를 얻었다
 	FORCEWAIT
@@ -1739,7 +1739,7 @@ IF TEQUIP:ARG:비디오카메라 && NOWEX:ARG:방뇨 + NOWEX:ARG:절정실금 &&
 ENDIF
 ;性器ピアス
 IF COND("피어스ＯＮ플래그", ARG) && COND("클리피어스플래그", ARG) + COND("라비아피어스플래그", ARG) + COND("니플피어스플래그", ARG) && GETBIT(CFLAG:ARG:12, 4) == 0
-	PRINTL ＜이상경험：성기 피어스＞
+	PRINTL ＜이상경험：성기 피어싱＞
 	LOCAL:50 += 1
 	SETBIT CFLAG:ARG:12, 4
 ENDIF
@@ -1855,7 +1855,7 @@ IF COND("바늘다루기플래그", ARG) && GETBIT(CFLAG:ARG:12, 21) == 0
 ENDIF
 ;耐え難い고통
 IF PALAM:ARG:고통 + CUP:ARG:고통 >= 50000 && GETBIT(CFLAG:ARG:12, 22) == 0
-	PRINTL ＜이상경험：견디기힘든 고통＞
+	PRINTL ＜이상경험：견디기 힘든 고통＞
 	LOCAL:50 += 1
 	SETBIT CFLAG:ARG:12, 22
 ENDIF
@@ -1863,7 +1863,7 @@ ENDIF
 IF TALENT:ARG:임신 && TALENT:ARG:연모 == 0 && GETBIT(CFLAG:ARG:12, 23) == 0
 	IF COND("정액의우세", ARG) == -3 && MARK:ARG:용간각인 == 2
 	ELSEIF MARK:ARG:반발각인 == 3 || TALENT:ARG:반항적 || (COND("정액의우세", ARG) == -5 && TALENT:ARG:구지배자의자취 == 0)
-		PRINTL ＜이상경험：바라지않는 임신＞
+		PRINTL ＜이상경험：원치 않은 임신＞
 		LOCAL:50 += 1
 		SETBIT CFLAG:ARG:12, 23
 	ENDIF
